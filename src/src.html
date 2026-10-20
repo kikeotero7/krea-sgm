@@ -648,7 +648,7 @@ const invTotal=f=>calc(f).total;
 
 function seed(){
   db={prices:{},custom:[]};
-  if(!DEMO)return {v:2,company:{name:'SGM',legal:'Construcciones SGM · Trabajos integrales',nif:'',address:'',city:'',email:'',phone:'+34 670 24 33 95',iban:'',iva:21,validity:30,dueDays:15,
+  if(!DEMO)return {v:2,company:{name:'Construcciones SGM',legal:'Sergio García Molina',nif:'',address:'',city:'',email:'',phone:'+34 670 24 33 95',iban:'',iva:21,validity:30,dueDays:15,
     conditions:'Incluye mano de obra y materiales de las partidas descritas.\nMediciones y estado del soporte se confirmarán tras visita técnica.\nCualquier trabajo adicional requerirá presupuesto previo.\nNo incluye licencias ni tasas municipales.',
     payment:'30 % a la aceptación, 40 % durante la obra y 30 % a la entrega.',gestorName:'',gestorEmail:''},clients:[],works:[],quotes:[],invoices:[],expenses:[],prices:{},custom:[],contacts:[]};
   const T=today(),D=n=>addDays(T,-n);
