@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Construcciones SGM · Caso de estudio | KREA Digital Studio</title>
+<meta name="description" content="Dos apps para una empresa de reformas: presupuestos y facturas, y control de obra con fichajes. Diseño y desarrollo de KREA Digital Studio.">
+<meta property="og:title" content="Construcciones SGM · Caso de estudio · KREA Digital Studio">
+<meta property="og:description" content="App de presupuestos y facturas y app de control de obra y fichajes para una empresa de reformas.">
+<meta property="og:image" content="https://sgm.kreadigitalstudio.es/portafolio/img/esc-inicio.webp">
+<meta name="theme-color" content="#14261a">
+<link rel="icon" type="image/png" href="../icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Caso de estudio a página única: portada con foto, dos proyectos como capítulos con capturas reales y accesos directos */
+:root{
+  --paper:#f3f6f1; --surface:#ffffff; --ink:#192028; --muted:#56635a; --line:#dde5d9;
+  --green:#14741a; --green-strong:#0d5a12; --green-soft:#e4f0e1; --forest:#14261a; --forest-ink:#eef4ec;
+  --f-display:'Archivo','Arial Narrow',system-ui,sans-serif;
+  --f-body:'Instrument Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-display);font-stretch:108%;margin:0;letter-spacing:-.01em;text-wrap:balance;line-height:1.08}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--f-display);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:12px;padding:14px 20px;font-weight:700;text-decoration:none;border:1.5px solid var(--green);transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--green);color:#fff}
+.btn.primary:hover{background:var(--green-strong)}
+.btn.ghost{background:var(--surface);color:var(--green-strong)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+:focus-visible{outline:3px solid rgba(20,116,26,.45);outline-offset:3px}
+
+/* Barra */
+.top{position:sticky;top:0;z-index:20;background:rgba(243,246,241,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.krea{font-family:var(--f-display);font-weight:800;letter-spacing:.08em;font-size:14px}
+.krea span{color:var(--muted);font-weight:600;letter-spacing:.02em}
+.top nav{display:flex;gap:18px;font-size:14px;font-weight:600}
+.top nav a{text-decoration:none;color:var(--muted)}
+.top nav a:hover{color:var(--green)}
+
+/* Portada */
+.hero{position:relative;overflow:hidden;background:var(--surface)}
+.hero-img{position:absolute;inset:0;background:url(img/portada.webp) center 55%/cover no-repeat}
+.hero-veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(250,252,249,.97) 0%,rgba(250,252,249,.95) 38%,rgba(250,252,249,.55) 64%,rgba(250,252,249,0) 100%)}
+.hero .wrap{position:relative;padding-block:72px 80px;display:grid;gap:22px;max-width:1180px}
+.hero .logo{width:190px}
+.hero h1{font-size:clamp(34px,5vw,60px);font-weight:800;max-width:15ch}
+.hero p{margin:0;font-size:19px;color:var(--ink);max-width:46ch;font-weight:500}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+
+/* Ficha */
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:-40px;position:relative;z-index:2}
+.facts div{background:var(--surface);padding:20px 22px}
+.facts dt{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.facts dd{margin:6px 0 0;font-weight:600;line-height:1.4}
+
+/* Reto */
+.intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;padding-block:80px 40px}
+.intro h2{font-size:clamp(28px,3.4vw,40px);font-weight:800;margin-top:10px}
+.intro p{margin:0 0 14px;color:var(--muted);font-size:17px}
+.intro strong{color:var(--ink)}
+
+/* Proyectos */
+.project{padding-block:60px}
+.project-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:end;margin-bottom:34px}
+.num{font-family:var(--f-display);font-weight:800;font-size:15px;color:var(--green);letter-spacing:.06em}
+.project h2{font-size:clamp(32px,4vw,50px);font-weight:800;margin:8px 0 14px}
+.project-head p{margin:0;color:var(--muted);font-size:17px;max-width:52ch}
+.access{background:var(--forest);color:var(--forest-ink);border-radius:18px;padding:24px;display:grid;gap:14px}
+.access h3{font-size:18px;font-weight:700}
+.access .row{display:flex;gap:10px;flex-wrap:wrap}
+.access .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.access .btn.primary{background:#fff;color:var(--forest);border-color:#fff}
+.access .btn.primary:hover{background:#e7f2e5}
+.access small{display:block;font-size:13px;color:rgba(238,244,236,.75);line-height:1.5}
+.access code{font-family:inherit;font-weight:700;color:#fff;background:rgba(255,255,255,.12);padding:1px 7px;border-radius:6px}
+
+.shots{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
+.shot{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(20,38,26,.05),0 14px 34px rgba(20,38,26,.08)}
+.shot a{display:block}
+.shot img{width:100%;height:auto}
+.shot figcaption{padding:10px 14px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+.s-wide{grid-column:span 8}.s-side{grid-column:span 4}.s-third{grid-column:span 4}.s-half{grid-column:span 6}
+.phones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-content:start}
+.phone img{aspect-ratio:390/700;object-fit:cover;object-position:top}
+
+.feats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.feat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.feat b{display:block;font-family:var(--f-display);font-size:17px;margin-bottom:6px}
+.feat p{margin:0;color:var(--muted);font-size:15px}
+.divider{height:1px;background:var(--line)}
+
+/* Diseño */
+.design{background:var(--forest);color:var(--forest-ink);margin-top:40px}
+.design .wrap{padding-block:72px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px}
+.design h2{font-size:clamp(28px,3.4vw,40px);font-weight:800;margin-top:10px}
+.design .eyebrow{color:#8fd08f}
+.design ul{margin:0;padding:0;list-style:none;display:grid;gap:14px}
+.design li{border-top:1px solid rgba(255,255,255,.14);padding-top:14px}
+.design li b{display:block;color:#fff}
+.design li span{color:rgba(238,244,236,.78);font-size:15px}
+.swatches{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.sw{display:grid;gap:6px;font-size:12px;color:rgba(238,244,236,.78)}
+.sw i{display:block;width:64px;height:44px;border-radius:10px;border:1px solid rgba(255,255,255,.2)}
+
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:34px;color:var(--muted);font-size:14px}
+footer b{color:var(--ink)}
+
+@media (max-width:960px){
+  .facts{grid-template-columns:1fr 1fr}
+  .intro,.project-head,.design .wrap{grid-template-columns:1fr;gap:26px}
+  .s-wide,.s-side,.s-third,.s-half{grid-column:span 12}
+  .feats{grid-template-columns:1fr 1fr}
+  .top nav{display:none}
+}
+@media (max-width:600px){
+  .hero-veil{background:linear-gradient(180deg,rgba(250,252,249,.6) 0%,rgba(250,252,249,.93) 45%,rgba(250,252,249,.98) 100%)}
+  .hero .wrap{padding-block:48px 72px}
+  .hero p{font-size:17px}
+  .facts{grid-template-columns:1fr}
+  .feats{grid-template-columns:1fr}
+  .phones{grid-template-columns:1fr 1fr}
+  .phones .shot:nth-child(3){display:none}
+  .btn{width:100%;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="krea">KREA DIGITAL STUDIO <span>· Caso de estudio</span></div>
+  <nav aria-label="Secciones"><a href="#presupuestos">Presupuestos</a><a href="#fichajes">Control de obra</a><a href="#diseno">Diseño</a></nav>
+</div></header>
+
+<section class="hero">
+  <div class="hero-img" aria-hidden="true"></div><div class="hero-veil" aria-hidden="true"></div>
+  <div class="wrap">
+    <img class="logo" src="img/logo-sgm.webp" alt="Construcciones SGM · Trabajos integrales">
+    <span class="eyebrow">Construcciones SGM · Reformas y trabajos integrales</span>
+    <h1>Dos apps para llevar una empresa de reformas desde el móvil y el ordenador</h1>
+    <p>Presupuestos y facturas en minutos, y el control de las obras y del equipo en tiempo real. Con la imagen de SGM y pensadas para quien está más en la obra que en la oficina.</p>
+    <div class="ctas">
+      <a class="btn primary" href="#presupuestos">Ver SGM Presupuestos</a>
+      <a class="btn ghost" href="#fichajes">Ver SGM Control de obra</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <dl class="facts">
+    <div><dt>Cliente</dt><dd>Construcciones SGM · Sergio García Molina</dd></div>
+    <div><dt>Sector</dt><dd>Reformas y trabajos integrales · Sevilla</dd></div>
+    <div><dt>Entregables</dt><dd>2 apps instalables (móvil, tablet y ordenador)</dd></div>
+    <div><dt>Estudio</dt><dd>KREA Digital Studio · diseño y desarrollo</dd></div>
+  </dl>
+
+  <section class="intro">
+    <div><span class="eyebrow">El reto</span><h2>Menos tiempo en la oficina, más control de cada obra</h2></div>
+    <div>
+      <p>Sergio hacía cada presupuesto en Excel y podía tardar <strong>una hora</strong> en uno solo. Las facturas, los clientes y los gastos estaban repartidos entre hojas, papeles y WhatsApp.</p>
+      <p>Con varias obras abiertas a la vez, además, necesitaba saber <strong>quién está trabajando, dónde y desde qué hora</strong>, y cumplir el registro diario de jornada sin papeleo.</p>
+      <p>La respuesta fueron dos herramientas a medida, sencillas de usar, que comparten la identidad de la empresa.</p>
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- Proyecto 1 -->
+<section class="project" id="presupuestos"><div class="wrap">
+  <div class="project-head">
+    <div>
+      <div class="num">01 · App de gestión</div>
+      <h2>SGM Presupuestos</h2>
+      <p>Presupuestos profesionales en minutos, facturas, clientes, obras y gastos. Con un asistente al que se le cuenta el trabajo y monta las partidas, y PDF corporativos que se envían por WhatsApp o correo desde la propia app.</p>
+    </div>
+    <aside class="access" aria-label="Acceso a SGM Presupuestos">
+      <h3>Entrar en la app</h3>
+      <div class="row">
+        <a class="btn primary" href="../demo/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Entrar en la demo</a>
+        <a class="btn ghost" href="../" target="_blank" rel="noopener">App de Sergio</a>
+      </div>
+      <small>Demo con datos de ejemplo · contraseña <code>sgm2026</code>. La app de Sergio es privada: solo entra él con su contraseña.</small>
+    </aside>
+  </div>
+
+  <div class="shots">
+    <figure class="shot s-wide"><a href="img/esc-inicio.webp" target="_blank" rel="noopener"><img src="img/esc-inicio.webp" alt="Inicio de la app: plantillas de presupuesto, asistente y resumen del negocio" loading="lazy" width="1440" height="900"></a><figcaption>Inicio: plantillas, asistente y lo pendiente de un vistazo</figcaption></figure>
+    <div class="phones s-side" style="grid-template-columns:1fr 1fr">
+      <figure class="shot phone"><a href="img/mov-inicio.webp" target="_blank" rel="noopener"><img src="img/mov-inicio.webp" alt="Inicio en el móvil" loading="lazy"></a><figcaption>Móvil</figcaption></figure>
+      <figure class="shot phone"><a href="img/mov-enviar.webp" target="_blank" rel="noopener"><img src="img/mov-enviar.webp" alt="Enviar una factura por WhatsApp desde el móvil" loading="lazy"></a><figcaption>Enviar PDF</figcaption></figure>
+    </div>
+    <figure class="shot s-half"><a href="img/esc-trabajos.webp" target="_blank" rel="noopener"><img src="img/esc-trabajos.webp" alt="Editor de presupuesto con asistente y partidas por capítulos" loading="lazy" width="1440" height="900"></a><figcaption>Partidas por capítulos con asistente y catálogo</figcaption></figure>
+    <figure class="shot s-half"><a href="img/esc-revisar.webp" target="_blank" rel="noopener"><img src="img/esc-revisar.webp" alt="Revisión del presupuesto con la vista previa del documento" loading="lazy" width="1440" height="900"></a><figcaption>Revisar y enviar, con el documento en directo</figcaption></figure>
+    <figure class="shot s-third"><a href="img/pdf.webp" target="_blank" rel="noopener"><img src="img/pdf.webp" alt="Presupuesto en PDF con la imagen corporativa de SGM" loading="lazy"></a><figcaption>PDF corporativo</figcaption></figure>
+    <figure class="shot s-third"><a href="img/esc-facturas.webp" target="_blank" rel="noopener"><img src="img/esc-facturas.webp" alt="Facturación y cobros" loading="lazy"></a><figcaption>Facturas, cobros y envío al gestor</figcaption></figure>
+    <figure class="shot s-third"><a href="img/esc-acceso.webp" target="_blank" rel="noopener"><img src="img/esc-acceso.webp" alt="Pantalla de acceso privado" loading="lazy"></a><figcaption>Acceso privado</figcaption></figure>
+  </div>
+
+  <div class="feats">
+    <div class="feat"><b>Presupuesto en minutos</b><p>Plantillas (baño, cocina, pintura, suelos, reforma integral), catálogo por oficios y su tarifa, que se actualiza sola al cambiar un precio.</p></div>
+    <div class="feat"><b>Asistente de presupuestos</b><p>Sergio describe el trabajo con sus palabras y el asistente añade partidas, calcula medidas y pregunta lo que falta.</p></div>
+    <div class="feat"><b>PDF y envío directo</b><p>Documento con capítulos, IVA, forma de pago y firma. Se envía por WhatsApp o correo con el PDF adjunto desde la app.</p></div>
+    <div class="feat"><b>Facturas y cobros</b><p>Factura total o por pagos desde el presupuesto aceptado, vencidas y pendientes, y un PDF mensual para la gestoría.</p></div>
+    <div class="feat"><b>Clientes y agenda</b><p>Ficha de cada cliente con su historial y forma de pago, y los contactos del móvil dentro de la app.</p></div>
+    <div class="feat"><b>Obras y gastos</b><p>Gastos con foto del ticket y margen real de cada obra: presupuestado frente a gastado.</p></div>
+  </div>
+</div></section>
+
+<div class="divider"></div>
+
+<!-- Proyecto 2 -->
+<section class="project" id="fichajes"><div class="wrap">
+  <div class="project-head">
+    <div>
+      <div class="num">02 · App de equipo</div>
+      <h2>SGM Control de obra</h2>
+      <p>Fichajes con PIN y comprobación de ubicación, panel del encargado con quién trabaja ahora, obras con su zona en el mapa, asistencia mensual e incidencias. Cumple el registro diario de jornada sin papeles.</p>
+    </div>
+    <aside class="access" aria-label="Acceso a SGM Control de obra">
+      <h3>Entrar en la app</h3>
+      <div class="row">
+        <a class="btn primary" href="../sgm-fichajes/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Entrar en la app</a>
+      </div>
+      <small>Demo con un mes de datos de ejemplo. PIN para fichar: Miguel <code>1234</code> · David <code>2345</code> · Antonio <code>3456</code>.</small>
+    </aside>
+  </div>
+
+  <div class="shots">
+    <figure class="shot s-wide"><a href="../sgm-fichajes/portafolio/escritorio-resumen.webp" target="_blank" rel="noopener"><img src="../sgm-fichajes/portafolio/escritorio-resumen.webp" alt="Resumen del encargado: quién trabaja ahora y avisos" loading="lazy"></a><figcaption>Resumen del encargado en directo</figcaption></figure>
+    <div class="phones s-side" style="grid-template-columns:1fr 1fr">
+      <figure class="shot phone"><a href="../sgm-fichajes/portafolio/movil-fichar-pin.webp" target="_blank" rel="noopener"><img src="../sgm-fichajes/portafolio/movil-fichar-pin.webp" alt="Fichar con PIN desde el móvil" loading="lazy"></a><figcaption>Fichar con PIN</figcaption></figure>
+      <figure class="shot phone"><a href="../sgm-fichajes/portafolio/movil-fichar-comprobacion.webp" target="_blank" rel="noopener"><img src="../sgm-fichajes/portafolio/movil-fichar-comprobacion.webp" alt="Comprobación de zona y horario al fichar" loading="lazy"></a><figcaption>Zona y horario</figcaption></figure>
+    </div>
+    <figure class="shot s-half"><a href="../sgm-fichajes/portafolio/escritorio-obra-zona.webp" target="_blank" rel="noopener"><img src="../sgm-fichajes/portafolio/escritorio-obra-zona.webp" alt="Obra con su zona de fichaje en el mapa" loading="lazy"></a><figcaption>Zona de fichaje de cada obra</figcaption></figure>
+    <figure class="shot s-half"><a href="../sgm-fichajes/portafolio/escritorio-asistencia.webp" target="_blank" rel="noopener"><img src="../sgm-fichajes/portafolio/escritorio-asistencia.webp" alt="Calendario de asistencia mensual" loading="lazy"></a><figcaption>Asistencia mensual</figcaption></figure>
+    <figure class="shot s-third"><a href="../sgm-fichajes/portafolio/escritorio-incidencias.webp" target="_blank" rel="noopener"><img src="../sgm-fichajes/portafolio/escritorio-incidencias.webp" alt="Revisión de incidencias" loading="lazy"></a><figcaption>Incidencias y correcciones</figcaption></figure>
+    <figure class="shot s-third"><a href="../sgm-fichajes/portafolio/escritorio-fichajes.webp" target="_blank" rel="noopener"><img src="../sgm-fichajes/portafolio/escritorio-fichajes.webp" alt="Historial de fichajes" loading="lazy"></a><figcaption>Registro de jornada exportable</figcaption></figure>
+    <figure class="shot s-third"><a href="../sgm-fichajes/portafolio/escritorio-obras.webp" target="_blank" rel="noopener"><img src="../sgm-fichajes/portafolio/escritorio-obras.webp" alt="Listado de obras y avance" loading="lazy"></a><figcaption>Obras y avance</figcaption></figure>
+  </div>
+
+  <div class="feats">
+    <div class="feat"><b>Fichar en segundos</b><p>PIN de 4 dígitos desde el móvil del operario o la tablet de la obra, con comprobación de GPS y horario.</p></div>
+    <div class="feat"><b>Panel del encargado</b><p>Quién trabaja ahora y en qué obra, avisos de quien no ha fichado y horas del equipo de la semana.</p></div>
+    <div class="feat"><b>Registro de jornada</b><p>Historial filtrable y exportación del registro diario, como exige el art. 34.9 del Estatuto de los Trabajadores.</p></div>
+  </div>
+</div></section>
+
+<section class="design" id="diseno"><div class="wrap">
+  <div>
+    <span class="eyebrow">Diseño y tecnología</span>
+    <h2>Una sola identidad para las dos apps</h2>
+    <div class="swatches" aria-label="Colores de la marca">
+      <div class="sw"><i style="background:#14741a"></i>Verde SGM</div>
+      <div class="sw"><i style="background:#14261a"></i>Verde obra</div>
+      <div class="sw"><i style="background:#192028"></i>Grafito</div>
+      <div class="sw"><i style="background:#f3f6f1"></i>Papel</div>
+    </div>
+  </div>
+  <ul>
+    <li><b>Imagen corporativa de SGM</b><span>El verde y el grafito del logotipo, tipografía Archivo para titulares y documentos con el mismo estilo que sus presupuestos.</span></li>
+    <li><b>Apps instalables</b><span>Se instalan con su icono en el móvil, la tablet y el ordenador, sin tiendas de aplicaciones, y funcionan sin conexión.</span></li>
+    <li><b>Hechas para la obra</b><span>Botones grandes, mucho contraste y estados por colores (verde correcto, ámbar revisar, rojo falta) para usarlas rápido y al sol.</span></li>
+    <li><b>Privadas</b><span>Acceso con contraseña o PIN y datos guardados en los dispositivos de la empresa.</span></li>
+  </ul>
+</div></section>
+
+<footer><div class="wrap">
+  <div><b>KREA Digital Studio</b> · Apps, webs, marca y automatizaciones con IA</div>
+  <div>Proyecto para Construcciones SGM · 2026</div>
+</div></footer>
+
+</body>
+</html>

@@ -27,6 +27,13 @@ cut=rest.index('<div class="app" id="app"></div>')
 doc+=rest[:cut]+'\n</head>\n<body>\n'+rest[cut:]+'\n</body>\n</html>\n'
 d='dist'; shutil.rmtree(d,ignore_errors=True); os.makedirs(d)
 open(f'{d}/index.html','w',encoding='utf-8').write(doc)
+# public demo (sample data, own login, not installable)
+dm=src.replace('<title>SGM Presupuestos</title>','<title>SGM Presupuestos · Demo</title>',1)
+te=dm.index('</title>')+len('</title>')
+dhead='\n<link rel="icon" type="image/png" sizes="192x192" href="../icon-192.png">\n<meta name="robots" content="noindex, nofollow">\n<meta name="description" content="Demo de la app de presupuestos de Construcciones SGM, por KREA Digital Studio.">'
+drest=dm[te:];dc=drest.index('<div class="app" id="app"></div>')
+ddoc='<!doctype html>\n<html lang="es">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n'+reset+'\n'+dm[:te]+dhead+'\n'+drest[:dc]+'\n</head>\n<body>\n'+drest[dc:]+'\n</body>\n</html>\n'
+os.makedirs(f'{d}/demo',exist_ok=True);open(f'{d}/demo/index.html','w',encoding='utf-8').write(ddoc)
 # icons
 mark=Image.open('logo-mark.png').convert('RGBA')
 def icon(size,pad,name,bg=(255,255,255,255),radius=0):
@@ -39,13 +46,15 @@ json.dump({"name":"SGM · Presupuestos","short_name":"SGM","description":"Presup
  "icons":[{"src":"icon-192.png","sizes":"192x192","type":"image/png"},{"src":"icon-512.png","sizes":"512x512","type":"image/png"},{"src":"icon-512-maskable.png","sizes":"512x512","type":"image/png","purpose":"maskable"}]},
  open(f'{d}/manifest.webmanifest','w',encoding='utf-8'),ensure_ascii=False,indent=1)
 open(f'{d}/sw.js','w').write('''// SGM · app sin conexión: guarda la app y las librerías para abrirla sin internet
-const CACHE='sgm-v2';
+const CACHE='sgm-v3';
 const SHELL=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./apple-touch-icon.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
 self.addEventListener('fetch',e=>{
   const r=e.request;if(r.method!=='GET')return;
   const u=new URL(r.url);
+  const own=u.origin===location.origin&&(u.pathname==='/'||u.pathname==='/index.html');
+  if(u.origin===location.origin&&!own&&!/\\.(png|webmanifest)$/.test(u.pathname))return;
   if(r.mode==='navigate'){e.respondWith(fetch(r).then(res=>{const c=res.clone();caches.open(CACHE).then(x=>x.put('./index.html',c));return res}).catch(()=>caches.match('./index.html')));return}
   if(u.origin===location.origin||/cdnjs\\.cloudflare\\.com|fonts\\.(googleapis|gstatic)\\.com/.test(u.host)){
     e.respondWith(caches.match(r).then(hit=>{const net=fetch(r).then(res=>{if(res.ok||res.type==='opaque'){const c=res.clone();caches.open(CACHE).then(x=>x.put(r,c))}return res}).catch(()=>hit);return hit||net}))}

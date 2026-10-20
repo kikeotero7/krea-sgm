@@ -221,7 +221,7 @@ button.card:hover{border-color:var(--line-strong);box-shadow:var(--shadow)}
 .cp b{font-weight:600}
 .cp span{font-size:12px;color:var(--muted)}
 .chosen{display:flex;align-items:center;gap:14px;border:1.5px solid var(--brand);background:var(--brand-soft);border-radius:12px;padding:14px 16px}
-.chosen .avatar{background:var(--brand);color:var(--brand-ink)}
+.chosen .avatar{background:var(--brand);color:var(--brand-ink);flex:none}
 .chosen b{display:block;font-size:16px}
 .chosen span{font-size:13px;color:var(--muted)}
 .ed-grid{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:22px;align-items:start}
@@ -456,6 +456,7 @@ const LOGO_MARK='__LOGO_MARK__';
 const LOGO_LOGIN='__LOGO_LOGIN__';
 const DEMO=true;
 const KEY=DEMO?'sgm-app-v2':'sgm-app';
+const AUTH_KEY=DEMO?'sgm-demo-auth':'sgm-auth';
 const KV_IMG={arquitectura:'__KV_ARQUITECTURA__'};
 const KVS=[['oficio','Oficio'],['arquitectura','Arquitectura'],['plano','Plano'],['interior','Interior'],['emblema','Emblema SGM'],['dibujo','Dibujo técnico']];
 function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
@@ -482,7 +483,7 @@ function kvHTML(id){
   return `<div class="kv kv-dibujo" aria-hidden="true">${drawingSVG()}<div class="kv-veil" style="background:none"></div></div>`;
 }
 const kvPicker=()=>'';
-let AUTH=store('sgm-auth')==='1';
+let AUTH=store(AUTH_KEY)==='1';
 
 /* ---------- Catálogo por capítulos (precios de ejemplo) ---------- */
 const CAPS=[
@@ -764,7 +765,7 @@ function vLogin(){
     if(DEMO){if(v.toLowerCase()!=='sgm2026')return err('Contraseña incorrecta. Vuelve a intentarlo.')}
     else if(!hasPass){if(v.length<6)return err('Usa al menos 6 caracteres.');if(v!==$('#lg-pass2').value.trim())return err('Las dos contraseñas no coinciden.');store('sgm-pass',await passHash(v))}
     else if(await passHash(v)!==store('sgm-pass'))return err('Contraseña incorrecta. Vuelve a intentarlo.');
-    AUTH=true;store('sgm-auth','1');render()});
+    AUTH=true;store(AUTH_KEY,'1');render()});
 }
 function render(){
   if(!AUTH)return vLogin();
@@ -1368,7 +1369,7 @@ const ACT={
  gestorShare:async()=>{const p=await gestorPDF();if(!p)return;const [y,m]=S.gestor.month.split('-');const ok=await shareFile(p.blob,p.name,`Hola, te envío las facturas de ${MONTHS[+m-1]} ${y} de Construcciones SGM. Un saludo, Sergio`);if(ok){S.gestor.ids.forEach(id=>{const f=db.invoices.find(f=>f.id===id);if(f&&!f.sentGestor)f.sentGestor=today()});save();closeDlg();toast('Facturas enviadas al gestor')}},
  gestorDownload:async()=>{const p=await gestorPDF();if(p)await saveFile(p.blob,p.name)},
  pdfInvoice:el=>{const f=db.invoices.find(f=>f.id===el.dataset.id);if(f)downloadPDF(f,'invoice')},
- logout:()=>{closeDlg();AUTH=false;store('sgm-auth','0');S.view='inicio';S.ed=null;render()},
+ logout:()=>{closeDlg();AUTH=false;store(AUTH_KEY,'0');S.view='inicio';S.ed=null;render()},
  confirmYes:()=>{const f=S.onYes;S.onYes=null;closeDlg();f&&f()},
  qFilter:el=>{S.qFilter=el.dataset.f;render()},
  fFilter:el=>{S.fFilter=el.dataset.f;render()},
