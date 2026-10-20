@@ -64,6 +64,9 @@ h1,h2,h3,h4{font-family:var(--f-display);font-stretch:108%;margin:0;text-wrap:ba
 .user{display:flex;align-items:center;gap:10px}
 .avatar{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--forest);color:var(--forest-ink);font-family:var(--f-display);font-weight:700}
 .user b{display:block;color:var(--ink);font-size:14px}
+.sync{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--muted)}
+.sync::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok);flex:none}
+.sync[data-st="saving"]::before{background:var(--warn)}.sync[data-st="offline"]::before,.sync[data-st="error"]::before{background:var(--danger)}
 .demo-tag{display:inline-block;background:var(--warn-soft);color:var(--warn);border-radius:6px;padding:4px 8px;font-weight:600;line-height:1.35}
 
 .topbar{display:none}
@@ -636,7 +639,8 @@ const ic=(n,c='')=>`<svg class="ic ${c}" viewBox="0 0 24 24" aria-hidden="true">
 /* ---------- Datos ---------- */
 let db;
 function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&x.v===2){x.contacts??=[];x.company.gestorName??='';x.company.gestorEmail??='';return x}}catch(e){}return seed()}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){}}
+function saveLocal(){try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){}}
+function save(){saveLocal();if(!DEMO&&CLOUD.session){CLOUD.dirty=true;store('sgm-dirty','1');setCloud('saving');clearTimeout(CLOUD.timer);CLOUD.timer=setTimeout(cloudPush,1200)}}
 function catalog(){const out=CAPS.map(c=>({id:c.id,name:c.name,items:c.items.map(([name,unit,price])=>({name,unit,price}))}));for(const x of db.custom||[]){const c=out.find(c=>c.id===x.cap);if(c&&!c.items.some(i=>i.name===x.name))c.items.push({name:x.name,unit:x.unit,price:x.price,custom:true})}return out}
 function itemInfo(name){for(const c of catalog()){const i=c.items.find(i=>i.name===name);if(i)return {cap:c.id,...i}}return null}
 function priceOf(name){const i=itemInfo(name);return db.prices[name]??i?.price??0}
@@ -723,11 +727,12 @@ function shell(){
     <div class="side-foot">
       ${DEMO?'<span class="demo-tag">Demo · datos de ejemplo guardados en este navegador</span>':''}
       ${!DEMO&&!isStandalone()?`<button class="btn sm" data-act="install">${ic('plus')} Instalar en este equipo</button>`:''}
-      <div class="user"><span class="avatar">SG</span><div style="flex:1"><b>Sergio</b>SGM · Administrador</div><button class="icon-btn" data-act="logout" aria-label="Cerrar sesión" title="Cerrar sesión"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4h4v16h-4M10 8l-4 4 4 4M6 12h10"/></svg></button></div>
+      ${DEMO?'':`<span class="sync" data-st="${CLOUD.state}">${SYNC_TXT[CLOUD.state]}</span>`}
+      <div class="user"><span class="avatar">SG</span><div style="flex:1;min-width:0"><b>Sergio</b><span style="display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${DEMO?'SGM · Administrador':esc(CLOUD.session?.email||'')}</span></div><button class="icon-btn" data-act="logout" aria-label="Cerrar sesión" title="Cerrar sesión"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4h4v16h-4M10 8l-4 4 4 4M6 12h10"/></svg></button></div>
     </div>
   </aside>
   <div class="main-col" style="min-width:0">
-    <header class="topbar"><span class="tlogo"><img src="${LOGO_MARK}" alt="Construcciones SGM"></span>${DEMO?'<span class="demo-tag">Demo</span>':''}</header>
+    <header class="topbar"><span class="tlogo"><img src="${LOGO_MARK}" alt="Construcciones SGM"></span>${DEMO?'<span class="demo-tag">Demo</span>':`<span class="sync" data-st="${CLOUD.state}" style="margin-left:auto">${SYNC_TXT[CLOUD.state]}</span>`}</header>
     <main class="main" id="main"><div class="wrap" id="view"></div></main>
   </div>
   <nav class="tabbar" aria-label="Secciones">
@@ -740,9 +745,71 @@ function shell(){
   <input type="file" id="vcf-input" accept=".vcf,text/vcard,text/x-vcard" class="sr" data-in="vcf" tabindex="-1" aria-hidden="true">
   <div id="toast-slot"></div>`;
 }
+/* ---------- Nube (Supabase): mismos datos en el móvil y en el ordenador ---------- */
+const SB_URL='https://exmrsvxzzixftnjccone.supabase.co',SB_KEY='sb_publishable_JWkNGlCccK0xUD_oVarNZA__QyrnIyn';
+const CLOUD={session:null,rev:0,dirty:false,busy:false,again:false,timer:null,state:'ok'};
+function sbStore(x){CLOUD.session=x;try{x?localStorage.setItem('sgm-session',JSON.stringify(x)):localStorage.removeItem('sgm-session')}catch(e){}}
+function sbLoad(){try{return JSON.parse(localStorage.getItem('sgm-session'))}catch(e){return null}}
+function sbKeep(j){sbStore({access_token:j.access_token,refresh_token:j.refresh_token,expires_at:Math.floor(Date.now()/1000)+(+j.expires_in||3600),email:(j.user&&j.user.email)||CLOUD.session?.email||''})}
+async function sbAuth(path,body,{method,token}={}){
+  const r=await fetch(SB_URL+'/auth/v1/'+path,{method:method||(body?'POST':'GET'),headers:{apikey:SB_KEY,'Content-Type':'application/json',...(token?{Authorization:'Bearer '+token}:{})},body:body?JSON.stringify(body):undefined});
+  const j=await r.json().catch(()=>({}));if(!r.ok)throw Object.assign(new Error(j.msg||j.error_description||j.message||j.error||('Error '+r.status)),{status:r.status,code:j.error_code||j.code||''});return j}
+async function sbToken(){const x=CLOUD.session;if(!x)throw new Error('sin sesión');
+  if(x.expires_at-90<Date.now()/1000){try{sbKeep(await sbAuth('token?grant_type=refresh_token',{refresh_token:x.refresh_token}))}catch(e){if(e.status===400||e.status===401)sessionEnded();throw e}}
+  return CLOUD.session.access_token}
+async function sbRest(method,q,body,prefer='return=representation'){
+  const t=await sbToken();const r=await fetch(SB_URL+'/rest/v1/sgm_state'+q,{method,headers:{apikey:SB_KEY,Authorization:'Bearer '+t,'Content-Type':'application/json',Prefer:prefer},body:body?JSON.stringify(body):undefined});
+  const j=await r.json().catch(()=>null);if(r.status===401){sessionEnded();throw new Error('sesión caducada')}
+  if(!r.ok)throw Object.assign(new Error((j&&j.message)||('Error '+r.status)),{status:r.status});return j}
+function sessionEnded(){sbStore(null);AUTH=false;CLOUD.rev=0;render();setTimeout(()=>toast('Vuelve a entrar con tu correo y contraseña'),300)}
+const SYNC_TXT={ok:'Sincronizado',saving:'Guardando…',offline:'Sin conexión · se guardará al volver',error:'No se ha podido sincronizar'};
+function setCloud(st){CLOUD.state=st;$$('.sync').forEach(el=>{el.dataset.st=st;el.textContent=SYNC_TXT[st]||''})}
+function normData(x){x.contacts??=[];x.custom??=[];x.prices??={};x.company.gestorName??='';x.company.gestorEmail??='';return x}
+function mergeData(remote,local){const out={...remote,...local,company:{...remote.company,...local.company},prices:{...(remote.prices||{}),...(local.prices||{})}};
+  for(const k of ['clients','works','quotes','invoices','expenses','contacts','custom']){const key=k==='custom'?'name':'id';const m=new Map();for(const it of remote[k]||[])m.set(it[key],it);for(const it of local[k]||[])m.set(it[key],it);out[k]=[...m.values()]}
+  return normData(out)}
+function canRerender(){const a=document.activeElement;return !(a&&a.matches&&a.matches('input,textarea,select'))&&!$('#dlg')?.open}
+function keepRev(r){CLOUD.rev=r;store('sgm-rev',String(r))}
+async function cloudPull(){
+  if(DEMO||!CLOUD.session||CLOUD.busy||CLOUD.dirty)return;
+  try{const rows=await sbRest('GET','?select=data,rev');
+    if(!rows.length){await cloudPush(true);return}
+    const r=rows[0];if(r.rev!==CLOUD.rev&&r.data&&r.data.v===2){db=normData(r.data);keepRev(r.rev);saveLocal();if(S.view!=='editor'&&canRerender())render()}
+    applyPendingDatos();setCloud('ok')}
+  catch(e){if(CLOUD.session)setCloud(navigator.onLine?'error':'offline')}}
+async function cloudPush(first){
+  if(DEMO||!CLOUD.session)return;if(CLOUD.busy){CLOUD.again=true;return}
+  CLOUD.busy=true;CLOUD.dirty=false;
+  try{const snap=JSON.parse(JSON.stringify(db));
+    if(first===true||!CLOUD.rev){
+      try{const j=await sbRest('POST','',{data:snap,rev:1});keepRev(j[0].rev)}
+      catch(e){if(e.status!==409)throw e;const rows=await sbRest('GET','?select=data,rev');db=mergeData(rows[0].data,snap);saveLocal();const j=await sbRest('PATCH','?rev=eq.'+rows[0].rev,{data:db,rev:rows[0].rev+1});keepRev(j.length?j[0].rev:rows[0].rev);if(canRerender())render()}}
+    else{const j=await sbRest('PATCH','?rev=eq.'+CLOUD.rev,{data:snap,rev:CLOUD.rev+1});
+      if(j.length)keepRev(j[0].rev);
+      else{const rows=await sbRest('GET','?select=data,rev');db=mergeData(rows[0].data,snap);saveLocal();const j2=await sbRest('PATCH','?rev=eq.'+rows[0].rev,{data:db,rev:rows[0].rev+1});keepRev(j2.length?j2[0].rev:rows[0].rev);if(S.view!=='editor'&&canRerender())render()}}
+    if(!CLOUD.dirty)store('sgm-dirty','0');setCloud(CLOUD.dirty?'saving':'ok');applyPendingDatos()}
+  catch(e){CLOUD.dirty=true;if(CLOUD.session)setCloud(navigator.onLine?'error':'offline')}
+  finally{CLOUD.busy=false;if(CLOUD.again||(CLOUD.dirty&&CLOUD.state==='saving')){CLOUD.again=false;clearTimeout(CLOUD.timer);CLOUD.timer=setTimeout(cloudPush,800)}}}
+function applyPendingDatos(){let x=null;try{x=JSON.parse(sessionStorage.getItem('sgm-datos'))}catch(e){}if(!x)return;try{sessionStorage.removeItem('sgm-datos')}catch(e){}
+  let n=0;for(const k in x){if(x[k]&&db.company[k]!==x[k]){db.company[k]=x[k];n++}}if(n){save();toast('Datos de la empresa guardados')}}
+function cloudStart(){CLOUD.rev=+(store('sgm-rev')||0);if(store('sgm-dirty')==='1'){CLOUD.dirty=true;cloudPush()}else cloudPull()}
+if(!DEMO){
+  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')CLOUD.dirty?cloudPush():cloudPull()});
+  window.addEventListener('online',()=>{CLOUD.dirty?cloudPush():cloudPull()});
+  window.addEventListener('offline',()=>{if(CLOUD.session)setCloud('offline')});
+  setInterval(()=>{if(document.visibilityState==='visible')CLOUD.dirty?cloudPush():cloudPull()},45000);
+}
+const authMsg=e=>{const m=String(e&&e.message||''),c=String(e&&e.code||'');
+  if(/invalid login|invalid_credentials/i.test(m+c))return 'Correo o contraseña incorrectos.';
+  if(/already registered|user_already_exists/i.test(m+c))return 'Ese correo ya tiene cuenta. Pulsa «Ya tengo cuenta» y entra.';
+  if(/database error|no tiene acceso|unexpected_failure/i.test(m+c))return 'Este correo no tiene acceso a la app de SGM.';
+  if(/weak_password|at least 6|should be at least/i.test(m+c))return 'La contraseña debe tener al menos 6 caracteres.';
+  if(e instanceof TypeError||/failed to fetch|network/i.test(m))return 'Sin conexión. Comprueba internet y vuelve a intentarlo.';
+  return 'No se ha podido entrar: '+m}
 async function passHash(t){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode('sgm-app|'+t));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
 function isStandalone(){try{return matchMedia('(display-mode: standalone)').matches||navigator.standalone===true}catch(e){return false}}
 function vLogin(){
+  if(!DEMO)return vLoginCloud();
   const hasPass=DEMO||!!store('sgm-pass');
   document.body.classList.remove('editing');
   $('#app').innerHTML=`<div class="login" style="grid-column:1/-1">
@@ -766,6 +833,53 @@ function vLogin(){
     else if(!hasPass){if(v.length<6)return err('Usa al menos 6 caracteres.');if(v!==$('#lg-pass2').value.trim())return err('Las dos contraseñas no coinciden.');store('sgm-pass',await passHash(v))}
     else if(await passHash(v)!==store('sgm-pass'))return err('Contraseña incorrecta. Vuelve a intentarlo.');
     AUTH=true;store(AUTH_KEY,'1');render()});
+}
+function loginShell(inner){
+  document.body.classList.remove('editing');
+  $('#app').innerHTML=`<div class="login" style="grid-column:1/-1">
+   <section class="login-visual">${kvHTML(KV)}<div class="login-cap"><span class="eyebrow">Construcciones SGM</span><h2>Reformas y trabajos integrales</h2><p>Presupuestos, facturas, clientes y obras en un solo sitio.</p></div></section>
+   <section class="login-panel">${inner}</section></div><div id="toast-slot"></div>`}
+let LOGIN_MODE='in';
+function vLoginCloud(){
+  if(/type=recovery/.test(location.hash||'')&&/access_token=/.test(location.hash||''))return vRecovery();
+  const isNew=LOGIN_MODE==='new';
+  loginShell(`<form class="login-box" id="login-form" autocomplete="on">
+      <div class="lg"><img src="${LOGO_LOGIN}" alt="Construcciones SGM · Trabajos integrales"></div>
+      <h1>${isNew?'Bienvenido, Sergio':'Hola, Sergio'}</h1>
+      <p class="sub">${isNew?'Crea tu cuenta con tu correo. Será la misma en el móvil y en el ordenador.':'Entra con tu correo y tu contraseña.'}</p>
+      <label class="field">Correo<input id="lg-email" type="email" autocomplete="username" inputmode="email" required value="${esc(store('sgm-last-email')||'')}" placeholder="tu@correo.com"></label>
+      <label class="field">Contraseña<input id="lg-pass" type="password" autocomplete="${isNew?'new-password':'current-password'}" placeholder="••••••••" required></label>
+      ${isNew?'<label class="field">Repite la contraseña<input id="lg-pass2" type="password" autocomplete="new-password" required></label>':''}
+      <div id="lg-err"></div>
+      <button class="btn primary" type="submit" id="lg-go">${isNew?'Crear cuenta y entrar':'Entrar'} ${ic('next')}</button>
+      <div class="row" style="justify-content:space-between">
+        <button class="btn ghost sm" type="button" data-act="loginMode">${isNew?'Ya tengo cuenta':'Primera vez: crear cuenta'}</button>
+        ${isNew?'':'<button class="btn ghost sm" type="button" data-act="forgot">¿Has olvidado la contraseña?</button>'}
+      </div>
+      <p class="hint" style="text-align:center;margin:0">Acceso privado de SGM. Solo entra Sergio.</p>
+    </form>`);
+  $('#login-form').addEventListener('submit',async e=>{e.preventDefault();const email=$('#lg-email').value.trim().toLowerCase(),pw=$('#lg-pass').value;const btn=$('#lg-go');
+    const err=t=>{$('#lg-err').innerHTML=`<div class="err">${esc(t)}</div>`;btn.disabled=false};
+    if(isNew){if(pw.length<6)return err('Usa al menos 6 caracteres.');if(pw!==$('#lg-pass2').value)return err('Las dos contraseñas no coinciden.')}
+    btn.disabled=true;$('#lg-err').innerHTML='';
+    try{if(isNew){await sbAuth('signup',{email,password:pw})}
+      sbKeep(await sbAuth('token?grant_type=password',{email,password:pw}));
+      store('sgm-last-email',email);LOGIN_MODE='in';AUTH=true;render();cloudStart()}
+    catch(ex){err(authMsg(ex))}});
+}
+function vRecovery(){
+  const p=new URLSearchParams((location.hash||'').slice(1));
+  loginShell(`<form class="login-box" id="rec-form"><div class="lg"><img src="${LOGO_LOGIN}" alt="Construcciones SGM · Trabajos integrales"></div>
+    <h1>Nueva contraseña</h1><p class="sub">Escribe la contraseña nueva para tu cuenta.</p>
+    <label class="field">Contraseña nueva<input id="rc-1" type="password" autocomplete="new-password" required></label>
+    <label class="field">Repítela<input id="rc-2" type="password" autocomplete="new-password" required></label>
+    <div id="lg-err"></div><button class="btn primary" type="submit">Guardar y entrar ${ic('next')}</button></form>`);
+  $('#rec-form').addEventListener('submit',async e=>{e.preventDefault();const a=$('#rc-1').value,b=$('#rc-2').value;const err=t=>$('#lg-err').innerHTML=`<div class="err">${esc(t)}</div>`;
+    if(a.length<6)return err('Usa al menos 6 caracteres.');if(a!==b)return err('Las dos contraseñas no coinciden.');
+    try{const tok=p.get('access_token');const u=await sbAuth('user',{password:a},{method:'PUT',token:tok});
+      sbKeep({access_token:tok,refresh_token:p.get('refresh_token'),expires_in:p.get('expires_in'),user:u});
+      try{history.replaceState(null,'',location.pathname)}catch(e){}AUTH=true;render();cloudStart();toast('Contraseña cambiada')}
+    catch(ex){err('El enlace ha caducado. Pide otro desde «¿Has olvidado la contraseña?».')}});
 }
 function render(){
   if(!AUTH)return vLogin();
@@ -1360,7 +1474,7 @@ const ACT={
  importAgenda:()=>importAgenda(),
  install:async()=>{if(window.__installEvt){window.__installEvt.prompt();try{await window.__installEvt.userChoice}catch(e){}window.__installEvt=null;render();return}
    const ios=/iphone|ipad|ipod/i.test(navigator.userAgent);dlg(`<div class="dlg-head"><h2>Instalar SGM</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div><div class="dlg-body stack small">${ios?'<div><b>iPhone:</b> abre esta página en Safari, pulsa el botón Compartir (cuadrado con flecha) y elige «Añadir a pantalla de inicio».</div>':'<div><b>Android:</b> en Chrome, menú ⋮ → «Instalar aplicación» o «Añadir a pantalla de inicio».</div><div><b>Ordenador (Chrome o Edge):</b> pulsa el icono de instalar que aparece a la derecha de la barra de direcciones, o menú ⋮ → «Instalar SGM».</div>'}<p class="hint" style="margin:0">Quedará un icono de SGM en el escritorio o en la pantalla de inicio que abre la app en su propia ventana.</p></div>`)},
- changePass:async()=>{const a=$('#pw-1').value.trim(),b=$('#pw-2').value.trim();const e=t=>$('#pw-err').innerHTML=`<div class="err">${t}</div>`;if(a.length<6)return e('Usa al menos 6 caracteres.');if(a!==b)return e('Las dos contraseñas no coinciden.');store('sgm-pass',await passHash(a));$('#pw-1').value=$('#pw-2').value='';$('#pw-err').innerHTML='';toast('Contraseña cambiada')},
+ changePass:async()=>{const a=$('#pw-1').value.trim(),b=$('#pw-2').value.trim();const e=t=>$('#pw-err').innerHTML=`<div class="err">${t}</div>`;if(a.length<6)return e('Usa al menos 6 caracteres.');if(a!==b)return e('Las dos contraseñas no coinciden.');if(DEMO)store('sgm-pass',await passHash(a));else{try{await sbAuth('user',{password:a},{method:'PUT',token:await sbToken()})}catch(ex){return e('No se ha podido cambiar: '+authMsg(ex))}}$('#pw-1').value=$('#pw-2').value='';$('#pw-err').innerHTML='';toast('Contraseña cambiada')},
  backupFile:()=>saveFile(new Blob([JSON.stringify(db)],{type:'application/json'}),'Copia SGM '+today()+'.json','Copia guardada'),
  cTab:el=>{S.cTab=el.dataset.t;render()},
  contactToClient:el=>{const k=db.contacts.find(x=>x.id===el.dataset.id);if(!k)return;const c={id:uid(),name:k.name,phone:k.phone,email:k.email,address:'',nif:'',notes:''};db.clients.push(c);db.contacts=db.contacts.filter(x=>x!==k);save();S.cTab='clientes';render();editClient(c.id);toast('Ahora es cliente: completa su dirección')},
@@ -1369,7 +1483,11 @@ const ACT={
  gestorShare:async()=>{const p=await gestorPDF();if(!p)return;const [y,m]=S.gestor.month.split('-');const ok=await shareFile(p.blob,p.name,`Hola, te envío las facturas de ${MONTHS[+m-1]} ${y} de Construcciones SGM. Un saludo, Sergio`);if(ok){S.gestor.ids.forEach(id=>{const f=db.invoices.find(f=>f.id===id);if(f&&!f.sentGestor)f.sentGestor=today()});save();closeDlg();toast('Facturas enviadas al gestor')}},
  gestorDownload:async()=>{const p=await gestorPDF();if(p)await saveFile(p.blob,p.name)},
  pdfInvoice:el=>{const f=db.invoices.find(f=>f.id===el.dataset.id);if(f)downloadPDF(f,'invoice')},
- logout:()=>{closeDlg();AUTH=false;store(AUTH_KEY,'0');S.view='inicio';S.ed=null;render()},
+ logout:async()=>{closeDlg();if(!DEMO){if(CLOUD.dirty){try{await cloudPush()}catch(e){}}try{const t=CLOUD.session?.access_token;if(t)fetch(SB_URL+'/auth/v1/logout',{method:'POST',headers:{apikey:SB_KEY,Authorization:'Bearer '+t}}).catch(()=>{})}catch(e){}sbStore(null);CLOUD.rev=0;try{localStorage.removeItem(KEY);localStorage.removeItem('sgm-rev');localStorage.removeItem('sgm-dirty')}catch(e){}db=seed()}
+   AUTH=false;store(AUTH_KEY,'0');S.view='inicio';S.ed=null;render()},
+ loginMode:()=>{LOGIN_MODE=LOGIN_MODE==='new'?'in':'new';render()},
+ forgot:async()=>{const em=($('#lg-email')?.value||'').trim();if(!em){$('#lg-err').innerHTML='<div class="err">Escribe primero tu correo.</div>';return}
+   try{await sbAuth('recover?redirect_to='+encodeURIComponent(location.origin+'/'),{email:em});toast('Te hemos enviado un correo para crear una contraseña nueva')}catch(e){toast(authMsg(e))}},
  confirmYes:()=>{const f=S.onYes;S.onYes=null;closeDlg();f&&f()},
  qFilter:el=>{S.qFilter=el.dataset.f;render()},
  fFilter:el=>{S.fFilter=el.dataset.f;render()},
@@ -1461,12 +1579,14 @@ if(e.key==='Escape'&&S.ed?.sheet){S.ed.sheet=false;render()}});
 /* ---------- Arranque ---------- */
 if(!DEMO){window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();window.__installEvt=e});window.addEventListener('appinstalled',()=>{window.__installEvt=null;toast('SGM instalada');if(AUTH)render()});if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{})}
 db=load();
+if(!DEMO){CLOUD.session=sbLoad();AUTH=!!CLOUD.session}
 /* Enlace personal de configuración: #datos=<base64url JSON>. Se aplica solo en este dispositivo y se borra de la dirección. */
 (function(){const m=(location.hash||'').match(/^#datos=([A-Za-z0-9_-]+)$/);if(!m)return;
   try{const b=m[1].replace(/-/g,'+').replace(/_/g,'/');const bin=atob(b+'==='.slice((b.length+3)%4));const x=JSON.parse(new TextDecoder().decode(Uint8Array.from(bin,c=>c.charCodeAt(0))));
     const keys=['name','legal','nif','address','city','email','phone','iban','gestorName','gestorEmail'];let n=0;for(const k of keys)if(typeof x[k]==='string'&&x[k].trim()){db.company[k]=x[k].trim();n++}
-    if(n){save();setTimeout(()=>toast('Datos de la empresa guardados'),600)}}catch(e){}
+    if(n){const pend={};for(const k of keys)if(typeof x[k]==='string'&&x[k].trim())pend[k]=x[k].trim();try{sessionStorage.setItem('sgm-datos',JSON.stringify(pend))}catch(e){}saveLocal();setTimeout(()=>toast('Datos de la empresa guardados'),600)}}catch(e){}
   try{history.replaceState(null,'',location.pathname+location.search)}catch(e){location.hash=''}})();
 const h=(location.hash||'').slice(1);if(VIEWS[h])S.view=h;
 render();
+if(!DEMO&&AUTH)cloudStart();
 </script>
