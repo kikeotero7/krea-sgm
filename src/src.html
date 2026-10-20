@@ -1,0 +1,1445 @@
+<title>SGM Presupuestos</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="theme-color" content="#14261a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" async></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" async></script>
+<style>
+/* Layout: cuaderno de obra — barra lateral blanca con el logo, área de trabajo verdosa, total siempre visible como un ticket */
+:root{
+  --bg:#f2f5f0; --surface:#ffffff; --surface-2:#f7f9f5; --ink:#192028; --muted:#5b675e; --faint:#8a958c;
+  --line:#dfe6dc; --line-strong:#c9d4c5;
+  --brand:#14741a; --brand-strong:#0d5a12; --brand-ink:#ffffff; --brand-soft:#e5f1e2; --forest:#14261a; --forest-ink:#eef4ec;
+  --warn:#9a5b00; --warn-soft:#fbefd9; --danger:#b3261e; --danger-soft:#fbe4e1; --info:#245a86; --info-soft:#e2edf7;
+  --ok:#14741a; --ok-soft:#e5f1e2;
+  --plate:#ffffff; --veil:rgba(250,252,249,.94); --veil-soft:rgba(250,252,249,.55);
+  --shadow:0 1px 2px rgba(20,38,26,.06),0 8px 24px rgba(20,38,26,.06);
+  --f-display:'Archivo','Arial Narrow',system-ui,sans-serif;
+  --f-body:'Instrument Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --r:12px; --r-sm:8px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e1310; --surface:#161d18; --surface-2:#1b241d; --ink:#e6ede4; --muted:#a3b0a5; --faint:#7d897f;
+  --line:#28332a; --line-strong:#36443a;
+  --brand:#4fae55; --brand-strong:#6cc472; --brand-ink:#0b1a0d; --brand-soft:#1c2e1f; --forest:#0b170e; --forest-ink:#e6efe4;
+  --warn:#e2a54b; --warn-soft:#2e2414; --danger:#ef8077; --danger-soft:#33191a; --info:#7db3e0; --info-soft:#14222f;
+  --ok:#6cc472; --ok-soft:#1c2e1f; --plate:#f4f7f2; --veil:rgba(14,19,16,.92); --veil-soft:rgba(14,19,16,.5);
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1310; --surface:#161d18; --surface-2:#1b241d; --ink:#e6ede4; --muted:#a3b0a5; --faint:#7d897f;
+  --line:#28332a; --line-strong:#36443a;
+  --brand:#4fae55; --brand-strong:#6cc472; --brand-ink:#0b1a0d; --brand-soft:#1c2e1f; --forest:#0b170e; --forest-ink:#e6efe4;
+  --warn:#e2a54b; --warn-soft:#2e2414; --danger:#ef8077; --danger-soft:#33191a; --info:#7db3e0; --info-soft:#14222f;
+  --ok:#6cc472; --ok-soft:#1c2e1f; --plate:#f4f7f2; --veil:rgba(14,19,16,.92); --veil-soft:rgba(14,19,16,.5);
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25); color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--f-body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--surface)}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid color-mix(in srgb,var(--brand) 55%,transparent);outline-offset:2px}
+h1,h2,h3,h4{font-family:var(--f-display);font-stretch:108%;margin:0;text-wrap:balance;letter-spacing:-.01em}
+.num,.money{font-variant-numeric:tabular-nums}
+.ic{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ---------- Shell ---------- */
+.app{display:grid;grid-template-columns:256px minmax(0,1fr);min-height:100%}
+.side{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:18px;background:var(--surface);border-right:1px solid var(--line);padding:22px 16px 18px}
+.side-logo{background:var(--plate);border-radius:var(--r);padding:12px 14px 8px;display:block}
+.side-logo img{display:block;width:100%;height:auto}
+.side-sub{font-family:var(--f-display);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:center;margin-top:-6px}
+.btn-new{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;border-radius:var(--r);background:var(--brand);color:var(--brand-ink);padding:13px 14px;font-weight:700;font-size:15px}
+.btn-new:hover{background:var(--brand-strong)}
+.nav{display:flex;flex-direction:column;gap:2px}
+.nav button{display:flex;align-items:center;gap:12px;width:100%;border:0;background:none;border-radius:10px;padding:10px 12px;text-align:left;color:var(--muted);font-weight:600}
+.nav button:hover{background:var(--surface-2);color:var(--ink)}
+.nav button[aria-current="page"]{background:var(--brand-soft);color:var(--brand-strong)}
+.nav .count{margin-left:auto;font-size:12px;background:var(--warn-soft);color:var(--warn);border-radius:20px;padding:1px 8px;font-weight:700}
+.side-foot{margin-top:auto;display:grid;gap:10px;font-size:12px;color:var(--muted)}
+.user{display:flex;align-items:center;gap:10px}
+.avatar{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--forest);color:var(--forest-ink);font-family:var(--f-display);font-weight:700}
+.user b{display:block;color:var(--ink);font-size:14px}
+.demo-tag{display:inline-block;background:var(--warn-soft);color:var(--warn);border-radius:6px;padding:4px 8px;font-weight:600;line-height:1.35}
+
+.topbar{display:none}
+.main{min-width:0;padding-block:28px 120px;padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:22px}
+.tabbar{display:none}
+
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.eyebrow{font-family:var(--f-display);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
+.head h1{font-size:clamp(26px,3vw,34px);font-weight:800;margin-top:4px}
+.head p{margin:6px 0 0;color:var(--muted);max-width:60ch}
+.head-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* ---------- Basics ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line-strong);background:var(--surface);border-radius:10px;padding:10px 14px;font-weight:600;min-height:44px;white-space:nowrap}
+.btn:hover{border-color:var(--brand);color:var(--brand-strong)}
+.btn.primary{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+.btn.primary:hover{background:var(--brand-strong);border-color:var(--brand-strong);color:var(--brand-ink)}
+.btn.ghost{border-color:transparent;background:none}
+.btn.ghost:hover{background:var(--surface-2)}
+.btn.danger{color:var(--danger)}
+.btn.danger:hover{border-color:var(--danger);color:var(--danger)}
+.btn.sm{min-height:36px;padding:6px 10px;font-size:14px}
+.btn.wa{background:#1f8f4e;border-color:#1f8f4e;color:#fff}
+.icon-btn{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--muted)}
+.icon-btn:hover{color:var(--ink);border-color:var(--line-strong)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.panel h2{font-size:18px;font-weight:700}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.field{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--muted)}
+.field input,.field select,.field textarea,.input{width:100%;min-height:46px;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);padding:10px 12px;font-size:16px;font-weight:500;color:var(--ink)}
+.field textarea{min-height:110px;resize:vertical;line-height:1.5}
+.field input:focus,.field select:focus,.field textarea:focus,.input:focus{border-color:var(--brand);outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--brand) 20%,transparent)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.stack{display:grid;gap:14px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.spacer{flex:1}
+.pill{display:inline-flex;align-items:center;gap:6px;border-radius:20px;padding:3px 10px;font-size:12px;font-weight:700;white-space:nowrap}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.st-Borrador{background:var(--surface-2);color:var(--muted);box-shadow:inset 0 0 0 1px var(--line)}
+.st-Enviado{background:var(--info-soft);color:var(--info)}
+.st-Aceptado,.st-Cobrada,.st-Terminada{background:var(--ok-soft);color:var(--ok)}
+.st-Rechazado,.st-Vencida{background:var(--danger-soft);color:var(--danger)}
+.st-Pendiente,.st-En\ curso{background:var(--warn-soft);color:var(--warn)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line-strong);background:var(--surface);border-radius:20px;padding:7px 14px;font-weight:600;font-size:14px;color:var(--muted)}
+.chip[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:var(--forest-ink)}
+.chip .n{opacity:.7;margin-left:4px}
+.search{position:relative}
+.search .ic{position:absolute;left:12px;top:50%;translate:0 -50%;color:var(--faint)}
+.search input{padding-left:40px}
+.empty{padding:36px 16px;text-align:center;color:var(--muted)}
+.empty b{display:block;color:var(--ink);font-size:16px;margin-bottom:4px}
+
+/* ---------- Dashboard ---------- */
+.hero{position:relative;overflow:hidden;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:18px;padding:32px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:28px;align-items:center;min-height:300px}
+.hero>*:not(.kv){position:relative;z-index:1}
+.hero h1{font-size:clamp(26px,2.5vw,34px);font-weight:800;line-height:1.08;margin:8px 0 10px}
+.hero p{margin:0;color:var(--muted);max-width:42ch}
+.tpls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.tpl{display:grid;gap:2px;text-align:left;border:1px solid var(--line);background:color-mix(in srgb,var(--surface) 86%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:var(--ink);border-radius:12px;padding:14px;min-height:84px;transition:border-color .15s,transform .15s,box-shadow .15s}
+.tpl:hover{border-color:var(--brand);transform:translateY(-1px);box-shadow:var(--shadow)}
+.tpl b{font-family:var(--f-display);font-size:16px;font-stretch:108%}
+.tpl span{font-size:12px;color:var(--muted)}
+.tpl.blank{border-style:dashed}
+/* Imagen de portada (6 propuestas) */
+.kv{position:absolute;inset:0;z-index:0;overflow:hidden;background:var(--surface)}
+.kv-img{position:absolute;inset:0;background-size:cover;background-position:center}
+.kv-veil{position:absolute;inset:0;background:linear-gradient(90deg,var(--veil) 0%,var(--veil) 36%,var(--veil-soft) 62%,transparent 100%)}
+.kv-oficio .kv-img{background-position:70% 40%}
+.kv-arquitectura .kv-img{background-position:center 55%}
+.kv-plano .kv-img{background-position:center 30%;filter:grayscale(1) contrast(1.05) brightness(1.06)}
+.kv-plano .kv-veil{background:linear-gradient(90deg,var(--veil) 0%,var(--veil) 38%,color-mix(in srgb,var(--brand) 22%,transparent) 100%)}
+.kv-interior .kv-img{background-position:center 60%}
+.kv-emblema{background:radial-gradient(120% 140% at 100% 0%,color-mix(in srgb,var(--brand) 16%,var(--surface)) 0%,var(--surface) 60%)}
+.kv-emblema .kv-stripes{position:absolute;right:-6%;top:-20%;bottom:-20%;width:58%;background:repeating-linear-gradient(135deg,transparent 0 34px,color-mix(in srgb,var(--brand) 9%,transparent) 34px 64px)}
+.kv-emblema .kv-mark{position:absolute;right:4%;bottom:-6%;width:46%;max-width:520px;opacity:.12}
+.kv-dibujo{background-color:var(--surface-2);background-image:linear-gradient(color-mix(in srgb,var(--brand) 9%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--brand) 9%,transparent) 1px,transparent 1px);background-size:24px 24px}
+.kv-draw{position:absolute;right:2%;bottom:0;height:96%;width:auto;max-width:62%;color:var(--brand);opacity:.55}
+.kv-draw text{fill:currentColor;stroke:none;font:600 13px var(--f-display)}
+.kv-pick{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.kv-pick b{font-weight:700;color:var(--ink);margin-right:4px}
+.kv-pick button{border:1px solid var(--line-strong);background:var(--surface);border-radius:20px;padding:5px 12px;font-size:13px;font-weight:600;color:var(--muted)}
+.kv-pick button[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+/* Acceso */
+.login{min-height:100vh;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);background:var(--surface)}
+.login-visual{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:40px;min-height:320px}
+.login-visual .kv-veil{background:linear-gradient(0deg,var(--veil) 0%,var(--veil-soft) 30%,transparent 60%)}
+.login-visual .kv-plano .kv-veil{background:linear-gradient(0deg,var(--veil) 0%,color-mix(in srgb,var(--brand) 18%,transparent) 70%)}
+.login-cap{position:relative;z-index:1;display:grid;gap:6px;max-width:460px}
+.login-cap h2{font-size:clamp(26px,3vw,40px);font-weight:800;line-height:1.05}
+.login-cap p{margin:0;color:var(--muted)}
+.login-panel{display:flex;flex-direction:column;justify-content:center;gap:22px;padding-block:40px;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.login-box{width:100%;max-width:380px;margin:0 auto;display:grid;gap:16px}
+.login-box .lg{background:var(--plate);border-radius:14px;padding:10px;width:180px;justify-self:center}
+.login-box .lg img{display:block;width:100%;height:auto}
+.login-box h1{font-size:28px;font-weight:800;text-align:center}
+.login-box .sub{text-align:center;color:var(--muted);margin:-8px 0 4px}
+.login-box .btn{min-height:50px;font-size:16px}
+.login-foot{max-width:380px;margin:0 auto;width:100%;display:grid;gap:10px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:grid;gap:4px;text-align:left}
+button.kpi:hover{border-color:var(--line-strong)}
+.kpi .k-label{font-size:13px;color:var(--muted);font-weight:600}
+.kpi .k-val{font-family:var(--f-display);font-size:26px;font-weight:800;font-stretch:104%;font-variant-numeric:tabular-nums;line-height:1.15}
+.kpi .k-sub{font-size:12px;color:var(--faint)}
+.kpi.warn .k-val{color:var(--warn)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:start}
+.todo{display:grid}
+.todo-item{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+.todo-item:first-child{border-top:0}
+.dot{width:10px;height:10px;border-radius:50%}
+.dot.warn{background:var(--warn)} .dot.danger{background:var(--danger)} .dot.info{background:var(--info)} .dot.muted{background:var(--faint)}
+.todo-item b{display:block;font-weight:600}
+.todo-item span{font-size:13px;color:var(--muted)}
+
+/* ---------- Lists ---------- */
+.list{display:grid}
+.li{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) auto auto auto;gap:16px;align-items:center;padding:14px 4px;border-top:1px solid var(--line);text-align:left;background:none;border-left:0;border-right:0;border-bottom:0;width:100%;color:inherit}
+.li:first-child{border-top:0}
+.li:hover{background:var(--surface-2)}
+.li .t{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.li .s{font-size:13px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.li .amt{font-family:var(--f-display);font-weight:700;font-variant-numeric:tabular-nums;text-align:right;min-width:110px}
+.li .date{font-size:13px;color:var(--muted);white-space:nowrap}
+.cols .li{grid-template-columns:minmax(0,1fr) auto;gap:2px 12px}.cols .li .date,.cols .li .act{display:none}.cols .li .c2{grid-column:1;grid-row:2}.cols .li .pill{grid-column:2;grid-row:2;justify-self:end}.cols .li .amt{grid-column:2;grid-row:1;min-width:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:grid;gap:10px;text-align:left;color:inherit;align-content:start}
+button.card:hover{border-color:var(--line-strong);box-shadow:var(--shadow)}
+.card h3{font-size:17px;font-weight:700}
+.card .meta{display:grid;gap:3px;font-size:13px;color:var(--muted)}
+.card .stats{display:flex;gap:16px;border-top:1px solid var(--line);padding-top:10px;font-size:13px;color:var(--muted)}
+.card .stats b{display:block;color:var(--ink);font-family:var(--f-display);font-size:16px;font-variant-numeric:tabular-nums}
+.bar{height:8px;border-radius:8px;background:var(--surface-2);box-shadow:inset 0 0 0 1px var(--line);overflow:hidden;display:flex}
+.bar i{display:block;height:100%}
+.bar .b-spent{background:var(--warn)} .bar .b-margin{background:var(--brand)}
+
+/* ---------- Editor ---------- */
+.steps{display:flex;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:6px}
+.step{flex:1;display:flex;align-items:center;gap:10px;border:0;background:none;border-radius:10px;padding:10px 12px;color:var(--muted);font-weight:600;text-align:left;min-width:0}
+.step .n{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--line-strong);font-family:var(--f-display);font-weight:700;font-size:14px}
+.step[aria-current="step"]{background:var(--brand-soft);color:var(--brand-strong)}
+.step[aria-current="step"] .n{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+.step.done .n{border-color:var(--brand);color:var(--brand)}
+.step small{display:block;font-weight:500;font-size:12px;color:var(--faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.step span{min-width:0}
+.client-pick{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.cp{display:grid;gap:2px;text-align:left;border:1px solid var(--line-strong);background:var(--surface);border-radius:10px;padding:10px 12px}
+.cp:hover{border-color:var(--brand)}
+.cp b{font-weight:600}
+.cp span{font-size:12px;color:var(--muted)}
+.chosen{display:flex;align-items:center;gap:14px;border:1.5px solid var(--brand);background:var(--brand-soft);border-radius:12px;padding:14px 16px}
+.chosen .avatar{background:var(--brand);color:var(--brand-ink)}
+.chosen b{display:block;font-size:16px}
+.chosen span{font-size:13px;color:var(--muted)}
+.ed-grid{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:22px;align-items:start}
+.picker{position:sticky;top:20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);display:flex;flex-direction:column;max-height:calc(100vh - 140px);overflow:hidden}
+.picker-head{padding:14px 14px 10px;display:grid;gap:10px;border-bottom:1px solid var(--line)}
+.picker-close{display:none}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:3px}
+.seg button{border:0;background:none;border-radius:8px;padding:8px;font-weight:600;color:var(--muted);display:flex;gap:6px;align-items:center;justify-content:center}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+.picker-body{overflow-y:auto;padding:4px 14px 14px}
+.cat-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.cat-item:first-child{border-top:0}
+.cat-item b{display:block;font-weight:600;font-size:14px}
+.cat-item span{font-size:12px;color:var(--muted)}
+.add{width:40px;height:40px;border-radius:10px;border:1.5px solid var(--brand);background:var(--surface);color:var(--brand);display:grid;place-items:center}
+.add:hover{background:var(--brand-soft)}
+.add.on{background:var(--brand);color:var(--brand-ink)}
+.cap-label{font-family:var(--f-display);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:700;margin:14px 0 2px}
+.dict textarea{min-height:150px}
+.chat{display:flex;flex-direction:column;gap:12px;padding-top:12px;min-height:100%}
+.msgs{display:grid;gap:8px;align-content:start}
+.msg{max-width:92%;padding:10px 12px;border-radius:14px;font-size:14px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere}
+.msg.user{justify-self:end;background:var(--brand);color:var(--brand-ink);border-bottom-right-radius:4px}
+.msg.assistant{justify-self:start;background:var(--surface-2);border:1px solid var(--line);border-bottom-left-radius:4px}
+.msg.note{justify-self:start;font-size:12px;font-weight:600;color:var(--brand-strong);background:var(--brand-soft);border-radius:8px;padding:5px 10px}
+.msg.think{color:var(--muted);font-style:italic}
+.ai-ex{display:grid;gap:6px}
+.ai-ex button{text-align:left;border:1px dashed var(--line-strong);background:var(--surface);border-radius:10px;padding:8px 10px;font-size:13px;color:var(--muted)}
+.ai-ex button:hover{border-color:var(--brand);color:var(--ink)}
+.compose{position:sticky;bottom:-14px;margin-top:auto;background:var(--surface);padding-block:10px 14px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:end;border-top:1px solid var(--line)}
+.compose textarea{width:100%;min-height:70px;max-height:180px;resize:vertical;border:1px solid var(--line-strong);border-radius:12px;padding:10px 12px;font-size:15px;background:var(--surface);line-height:1.45}
+.compose textarea:focus{border-color:var(--brand);outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--brand) 20%,transparent)}
+.compose .col{display:grid;gap:6px}
+.ai-badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--brand-strong);background:var(--brand-soft);border-radius:20px;padding:3px 10px}
+.ai-start{display:flex;gap:8px;margin-top:18px;max-width:520px}
+.ai-start .input{background:var(--surface)}
+.ai-start-label{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--brand-strong);margin-top:16px}
+.found{display:grid;gap:6px;margin-top:12px}
+.found label{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px}
+.found input{width:20px;height:20px;accent-color:var(--brand)}
+.found small{display:block;color:var(--muted);font-size:12px}
+.lines{display:grid;gap:14px}
+.chap{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.chap-head{display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--surface-2);border-bottom:1px solid var(--line)}
+.chap-head .ci{font-family:var(--f-display);font-weight:800;color:var(--brand);font-variant-numeric:tabular-nums}
+.chap-head h3{font-size:14px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+.chap-head .money{margin-left:auto;font-family:var(--f-display);font-weight:700}
+.line{padding:14px 16px;border-top:1px solid var(--line);display:grid;gap:10px}
+.chap-head+.line{border-top:0}
+.line-top{display:flex;gap:10px;align-items:center}
+.line-top .lno{font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums;min-width:28px}
+.line-name{flex:1;min-width:0;border:1px solid transparent;background:none;border-radius:8px;padding:6px 8px;margin:-6px -8px;font-weight:600;font-size:15px}
+.line-name:hover{border-color:var(--line)}
+.line-name:focus{border-color:var(--brand);outline:none;background:var(--surface)}
+.line-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-left:38px}
+.stepper{display:inline-flex;align-items:center;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;background:var(--surface)}
+.stepper button{width:40px;height:42px;border:0;background:var(--surface-2);font-size:20px;line-height:1;color:var(--ink)}
+.stepper button:hover{background:var(--brand-soft);color:var(--brand-strong)}
+.stepper input{width:70px;height:42px;border:0;text-align:center;font-weight:700;font-size:16px;font-variant-numeric:tabular-nums;background:transparent}
+.unit{height:44px;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);padding:0 8px;font-weight:600}
+.price{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:14px}
+.price input{width:96px;height:44px;border:1px solid var(--line-strong);border-radius:10px;text-align:right;padding:0 10px;font-weight:600;font-size:16px;font-variant-numeric:tabular-nums;background:var(--surface)}
+.line .amt{margin-left:auto;font-family:var(--f-display);font-weight:800;font-size:17px;font-variant-numeric:tabular-nums}
+.line details{padding-left:38px}
+.line summary{cursor:pointer;font-size:13px;color:var(--brand);font-weight:600;list-style:none;display:inline-flex;gap:6px;align-items:center}
+.line summary::-webkit-details-marker{display:none}
+.line .more{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) auto;gap:10px;margin-top:10px;align-items:end}
+.hint{font-size:12px;color:var(--faint)}
+.open-sheet{display:none}
+.scrim{display:none}
+.ed-bar{position:fixed;left:256px;right:0;bottom:0;z-index:30;background:var(--forest);color:var(--forest-ink);padding-block:12px calc(12px + env(safe-area-inset-bottom,0px));padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.ed-bar .in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.ed-bar .tot{display:grid;line-height:1.15}
+.ed-bar .tot span{font-size:12px;opacity:.7}
+.ed-bar .tot b{font-family:var(--f-display);font-size:24px;font-weight:800;font-variant-numeric:tabular-nums;font-stretch:104%}
+.ed-bar .btn{border-color:rgba(255,255,255,.25);background:transparent;color:inherit}
+.ed-bar .btn:hover{border-color:rgba(255,255,255,.6);color:inherit}
+.ed-bar .btn.go{background:#fff;color:#14261a;border-color:#fff}
+.ed-bar .btn.go:hover{background:#e7f2e5;color:#14261a}
+.review{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:22px;align-items:start}
+.status-seg{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:3px}
+.status-seg button{border:0;background:none;border-radius:8px;padding:8px 4px;font-size:13px;font-weight:600;color:var(--muted)}
+.status-seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+.err{background:var(--danger-soft);color:var(--danger);border-radius:10px;padding:10px 12px;font-size:14px;font-weight:600}
+
+/* ---------- Documento (papel A4, siempre claro) ---------- */
+.paper-wrap{background:#dfe4dc;border-radius:var(--r);padding:18px;overflow:hidden}
+.paper{--p-ink:#24382b;--p-muted:#607463;--p-line:#dce6da;--p-green:#237320;--p-forest:#21482c;--p-soft:#edf4eb;--p-soft2:#f4f7f2;
+  width:794px;min-height:1123px;margin:0 auto;background:#fff;color:var(--p-ink);padding:50px 50px 36px;box-shadow:0 2px 6px rgba(0,0,0,.08),0 20px 50px rgba(0,0,0,.12);font:12px/1.5 var(--f-body);display:flex;flex-direction:column;gap:22px;color-scheme:light;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.p-head{display:flex;justify-content:space-between;align-items:center;gap:30px;padding-bottom:20px;border-bottom:3px solid var(--p-green)}
+.p-head img{width:140px;height:auto;display:block}
+.p-id{text-align:right;display:grid;gap:4px;justify-items:end}
+.p-kind{font-family:var(--f-display);font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--p-green);font-size:12px}
+.p-no{font-family:var(--f-display);font-weight:800;font-size:26px;font-stretch:104%;letter-spacing:-.01em;color:#182b20}
+.p-dates{display:grid;grid-template-columns:auto auto;gap:2px 14px;margin:6px 0 0;font-size:12px}
+.p-dates dt{color:var(--p-muted)} .p-dates dd{margin:0;font-weight:600;text-align:right;color:#182b20}
+.p-parties{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.p-parties>div{background:var(--p-soft);border:1px solid #dbe6d8;border-radius:8px;padding:16px 18px;min-width:0}
+.p-parties h4{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#527047;margin-bottom:8px;font-stretch:100%}
+.p-parties strong{display:block;font-size:14px;margin-bottom:3px;color:#182b20}
+.p-parties p{margin:2px 0 0;color:#3d4842;overflow-wrap:anywhere}
+.p-parties .nw{white-space:nowrap}
+.p-work span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#61765b;font-weight:700}
+.p-work h2{font-size:22px;color:#182b20;margin-top:6px;font-weight:800;line-height:1.25}
+.p-work p{margin:4px 0 0;color:var(--p-muted)}
+.p-table{width:100%;border-collapse:collapse;table-layout:fixed}
+.p-table th{background:var(--p-forest);color:#fff;font-size:10.5px;letter-spacing:.04em;font-weight:600;padding:11px 9px;text-align:left}
+.p-table th.r,.p-table td.r{text-align:right}
+.p-table td{padding:11px 9px;vertical-align:top;border-bottom:1px solid var(--p-line);font-variant-numeric:tabular-nums;font-size:11.5px}
+.p-table tr.z td{background:var(--p-soft)}
+.p-table .chapr td{background:#dbe8d6;color:var(--p-forest);font-weight:800;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--p-forest);padding-top:9px;padding-bottom:7px}
+.p-table td b{display:block;font-weight:700;color:#203b28;font-size:12px}
+.p-table td small{display:block;color:var(--p-muted);font-size:10.5px;margin-top:4px;line-height:1.5}
+.p-table .no{color:var(--p-muted);font-size:10.5px}
+.p-table .imp{font-weight:700;color:var(--p-forest)}
+.p-bottom{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:26px;align-items:start}
+.p-sum h4,.p-cond h4,.p-pay h4{font-size:11px;letter-spacing:.04em;color:var(--p-forest);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--p-line);font-stretch:100%}
+.p-sum table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:11.5px}
+.p-foot span:first-child{white-space:nowrap}.p-foot span:last-child{text-align:right}
+.p-sum td{padding:4px 0;border-bottom:1px dotted var(--p-line)}
+.p-sum td.r{text-align:right;font-weight:600}
+.p-tot{border:1px solid var(--p-line);border-radius:8px;overflow:hidden}
+.p-tot div{display:flex;justify-content:space-between;gap:12px;padding:8px 14px;background:var(--p-soft2);border-bottom:1px solid #e1e9dd;font-variant-numeric:tabular-nums}
+.p-tot div b{font-weight:700;white-space:nowrap}
+.p-tot .grand{background:var(--p-forest);color:#fff;border:0;padding:14px;align-items:baseline}
+.p-tot .grand span{font-size:16px}
+.p-tot .grand b{font-family:var(--f-display);font-size:22px;font-weight:800}
+.p-cond p{margin:0;white-space:pre-line;color:#3d4842;font-size:11px;line-height:1.65}
+.p-pay{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.p-pay>div{background:var(--p-soft2);border:1px solid var(--p-line);border-radius:8px;padding:12px 14px}
+.p-pay h4{border:0;padding:0;margin-bottom:4px}
+.p-pay p{margin:0;font-size:11px;color:#3d4842}
+.p-iban{font-family:var(--f-display);font-weight:700;font-size:13px;letter-spacing:.04em;color:var(--p-forest)}
+.p-sign{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:4px}
+.p-sign div{border-top:1px solid #9aa79c;padding-top:6px;font-size:10.5px;color:var(--p-muted);min-height:64px}
+.p-foot{margin-top:auto;display:flex;justify-content:space-between;gap:16px;border-top:1px solid var(--p-line);padding-top:10px;font-size:9.5px;color:#7b877e}
+
+/* ---------- Dialog, sheet, toast ---------- */
+dialog{border:0;padding:0;border-radius:16px;background:var(--surface);color:var(--ink);width:min(560px,calc(100% - 24px));max-height:calc(100% - 40px);box-shadow:0 30px 80px rgba(0,0,0,.3)}
+dialog.wide{width:min(900px,calc(100% - 24px))}
+dialog::backdrop{background:rgba(10,20,13,.55)}
+.dlg{display:flex;flex-direction:column;max-height:calc(100vh - 40px)}
+.dlg-head{display:flex;align-items:center;gap:12px;padding:18px 20px;border-bottom:1px solid var(--line)}
+.dlg-head h2{font-size:19px;font-weight:700}
+.dlg-body{padding:20px;overflow-y:auto;display:grid;gap:14px}
+.dlg-body .btn{white-space:normal;text-align:center}
+.chosen>div{min-width:0}.chosen span{display:block;overflow-wrap:anywhere}
+.ag-row{grid-template-columns:auto minmax(0,1fr) auto!important}.ag-act{display:flex;gap:6px;align-items:center}
+.dlg-foot{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;padding:14px 20px;border-top:1px solid var(--line);background:var(--surface-2)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));translate:-50% 0;z-index:90;background:var(--forest);color:var(--forest-ink);border-radius:12px;padding:12px 18px;font-weight:600;box-shadow:0 12px 30px rgba(0,0,0,.25);display:flex;gap:10px;align-items:center;max-width:calc(100% - 32px)}
+.toast .ic{color:#8fd08f}
+.more-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.more-grid button{display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:16px;font-weight:600;text-align:left}
+.wa-msg{white-space:pre-line;background:#e7f7dc;color:#1b2a1d;border-radius:12px 12px 12px 2px;padding:14px;font-size:14px;line-height:1.5}
+.ticket-thumb{width:44px;height:44px;border-radius:8px;object-fit:cover;border:1px solid var(--line)}
+
+@media (max-width:1100px){
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero{grid-template-columns:1fr;padding-top:150px}
+  .hero .kv-veil{background:linear-gradient(180deg,transparent 0,var(--veil-soft) 90px,var(--veil) 190px)}
+  .hero .kv-draw{height:150px;top:8px;bottom:auto;right:8px}
+  .hero .kv-mark{width:200px;top:16px;bottom:auto}
+  .review{grid-template-columns:1fr}
+}
+@media (max-width:900px){
+  .app{grid-template-columns:1fr}
+  .login{grid-template-columns:1fr;min-height:auto}
+  .login-visual{min-height:300px;padding:24px}
+  .side{display:none}
+  .topbar{display:flex;position:sticky;top:env(safe-area-inset-top,0px);z-index:40;align-items:center;gap:12px;background:var(--surface);border-bottom:1px solid var(--line);padding-block:8px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .topbar .tlogo{background:var(--plate);border-radius:8px;padding:4px 8px}
+  .topbar img{height:34px;width:auto;display:block}
+  .topbar .demo-tag{margin-left:auto;font-size:11px}
+  .main{padding-block:18px 110px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .tabbar{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+  .tabbar button{border:0;background:none;display:grid;justify-items:center;gap:2px;padding:8px 2px 10px;font-size:11px;font-weight:600;color:var(--muted)}
+  .tabbar button[aria-current="page"]{color:var(--brand-strong)}
+  .tabbar .fab{position:relative;top:-14px}
+  .tabbar .fab span{width:54px;height:54px;border-radius:16px;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;box-shadow:0 8px 20px color-mix(in srgb,var(--brand) 45%,transparent)}
+  .tabbar .fab .ic{width:26px;height:26px}
+  body.editing .tabbar{display:none}
+  .ed-bar{left:0}
+  .ed-grid{grid-template-columns:1fr}
+  .picker{position:fixed;inset:auto 0 0 0;z-index:50;max-height:88vh;border-radius:18px 18px 0 0;translate:0 105%;transition:translate .28s ease;box-shadow:0 -20px 60px rgba(0,0,0,.25);padding-bottom:env(safe-area-inset-bottom,0px)}
+  .picker.open{translate:0 0}
+  .picker-close{display:inline-grid}
+  .open-sheet{display:inline-flex}
+  .scrim{display:block;position:fixed;inset:0;z-index:45;background:rgba(10,20,13,.5)}
+  .cols{grid-template-columns:1fr}
+  .li{grid-template-columns:minmax(0,1fr) auto;gap:4px 12px}
+  .li .date{display:none}
+  .li .c2{grid-column:1;grid-row:2}
+  .li .pill{grid-column:2;grid-row:2;justify-self:end}
+  .li .amt{grid-column:2;grid-row:1;min-width:0}
+  .li .act{display:none}
+  .grid3{grid-template-columns:1fr 1fr}
+  .steps .step small{display:none}
+}
+@media (max-width:560px){
+  .ag-row{grid-template-columns:auto minmax(0,1fr)!important}.ag-row .ag-act{grid-column:1/-1;justify-content:flex-end}
+  .login-visual{min-height:250px}
+
+  .kpis{grid-template-columns:1fr 1fr;gap:10px}
+  .kpi{padding:12px 14px}
+  .kpi .k-val{font-size:20px}
+  .tpls{grid-template-columns:1fr 1fr}
+  .hero{padding:22px 18px;border-radius:14px}
+  .grid2,.grid3{grid-template-columns:1fr}
+  .line-row,.line details{padding-left:0}
+  .line .more{grid-template-columns:1fr}
+  .steps .step{padding:8px;gap:6px;justify-content:center}
+  .steps .step span{font-size:13px}
+  .ed-bar .tot b{font-size:20px}
+  .ed-bar .hide-sm{display:none}
+  .paper-wrap{padding:8px}
+  .dlg-foot .btn{flex:1}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="app" id="app"></div>
+
+<script>
+'use strict';
+/* =========================================================
+   SGM · Presupuestos — KREA Digital Studio
+   Demo: datos de ejemplo guardados en este navegador.
+   ========================================================= */
+const LOGO_FULL='__LOGO_FULL__';
+const LOGO_MARK='__LOGO_MARK__';
+const DEMO=true;
+const KEY=DEMO?'sgm-app-v2':'sgm-app';
+const KV_IMG={arquitectura:'__KV_ARQUITECTURA__'};
+const KVS=[['oficio','Oficio'],['arquitectura','Arquitectura'],['plano','Plano'],['interior','Interior'],['emblema','Emblema SGM'],['dibujo','Dibujo técnico']];
+function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+const KV='arquitectura';
+function drawingSVG(){let h='';for(let x=24;x<580;x+=14)h+=`M${x} 300l-10 12`;
+  return `<svg class="kv-draw" viewBox="0 0 600 360" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M20 300H580"/><path d="${h}" stroke-width="1" opacity=".55"/>
+  <path d="M60 300V214l42-30v116M92 300V192M124 300V170" opacity=".5"/>
+  <path d="M150 300V176h300v124"/><path d="M128 188L300 70l172 118"/><path d="M150 172L300 88l150 84" opacity=".55"/>
+  <path d="M392 116V80h26v54"/><path d="M150 238h300" stroke-dasharray="4 6" opacity=".55"/>
+  <circle cx="300" cy="140" r="15"/><path d="M285 140h30M300 125v30" opacity=".7"/>
+  <rect x="180" y="188" width="58" height="38"/><path d="M209 188v38M180 207h58" opacity=".7"/>
+  <rect x="362" y="188" width="58" height="38"/><path d="M391 188v38M362 207h58" opacity=".7"/>
+  <rect x="180" y="250" width="58" height="34"/><path d="M209 250v34" opacity=".7"/>
+  <rect x="362" y="250" width="58" height="34"/><path d="M391 250v34" opacity=".7"/>
+  <path d="M276 300v-56h48v56"/><circle cx="314" cy="274" r="2"/>
+  <path d="M150 330H450M150 323v14M450 323v14M150 330l8-3M150 330l8 3M450 330l-8-3M450 330l-8 3" stroke-width="1.2"/><text x="300" y="350" text-anchor="middle">8,40 m</text>
+  <path d="M500 176V300M493 176h14M493 300h14" stroke-width="1.2"/><text x="512" y="243">5,20 m</text>
+  <path d="M500 70v100" stroke-dasharray="3 5" stroke-width="1.2"/><text x="512" y="125">2,80 m</text>
+  </svg>`}
+function kvHTML(id){
+  if(KV_IMG[id])return `<div class="kv kv-${id}" aria-hidden="true"><div class="kv-img" style="background-image:url(${KV_IMG[id]})"></div><div class="kv-veil"></div></div>`;
+  if(id==='emblema')return `<div class="kv kv-emblema" aria-hidden="true"><div class="kv-stripes"></div><img class="kv-mark" src="${LOGO_MARK}" alt=""><div class="kv-veil" style="background:none"></div></div>`;
+  return `<div class="kv kv-dibujo" aria-hidden="true">${drawingSVG()}<div class="kv-veil" style="background:none"></div></div>`;
+}
+const kvPicker=()=>'';
+let AUTH=store('sgm-auth')==='1';
+
+/* ---------- Catálogo por capítulos (precios de ejemplo) ---------- */
+const CAPS=[
+ {id:'dem',name:'Demoliciones y preparación',items:[['Protección de zonas comunes','ud',350],['Retirada de pavimento','m²',16],['Retirada de azulejos','m²',14],['Demolición de tabique','m²',25],['Retirada de sanitarios','ud',60],['Desmontaje de bañera','ud',120],['Carga y retirada de escombros','ud',450]]},
+ {id:'alb',name:'Albañilería',items:[['Tabique de ladrillo','m²',38],['Tabique de placa de yeso','m²',32],['Tabique hidrófugo de yeso laminado','m²',40],['Trasdosado de pared','m²',28],['Enfoscado de paredes','m²',24],['Enlucido y alisado','m²',15],['Apertura y cierre de rozas','ml',14],['Reparación de grietas','ml',18],['Recrecido de mortero','m²',22],['Mano de obra de albañil','h',22]]},
+ {id:'sue',name:'Suelos y alicatados',items:[['Nivelación de suelo','m²',16],['Colocación de porcelánico','m²',58],['Colocación de gres cerámico','m²',45],['Colocación de suelo laminado','m²',32],['Colocación de vinilo','m²',30],['Colocación de microcemento','m²',75],['Alicatado de paredes','m²',42],['Colocación de rodapié','ml',14],['Rejuntado','m²',8]]},
+ {id:'pin',name:'Pintura',items:[['Protección de mobiliario','ud',60],['Eliminación de gotelé','m²',7],['Preparación y reparación de paredes','m²',4],['Pintura de paredes','m²',9],['Pintura de techos','m²',8],['Pintura de fachada','m²',18],['Esmaltado de puertas','ud',85],['Tratamiento antihumedad','m²',12]]},
+ {id:'fon',name:'Fontanería',items:[['Renovación de tubería de agua','ml',28],['Renovación de desagües','ml',32],['Punto de agua y desagüe','ud',160],['Instalación de inodoro','ud',140],['Instalación de lavabo','ud',120],['Instalación de plato de ducha','ud',260],['Instalación de bañera','ud',320],['Instalación de mampara','ud',180],['Instalación de grifería','ud',60],['Conexión de fregadero','ud',75],['Conexión de termo','ud',90],['Sustitución de llave de paso','ud',65],['Prueba de estanqueidad','ud',80]]},
+ {id:'ele',name:'Electricidad',items:[['Renovación de cableado','ml',6.5],['Cuadro eléctrico','ud',980],['Punto de enchufe','ud',48],['Punto de luz','ud',35],['Interruptor o conmutador','ud',38],['Línea dedicada de electrodoméstico','ud',95],['Instalación de luminaria','ud',30],['Iluminación LED','ml',22],['Instalación de extractor','ud',70],['Punto de datos','ud',55]]},
+ {id:'car',name:'Carpintería y cerramientos',items:[['Puerta maciza abatible con instalación','ud',420],['Puerta hueca abatible con instalación','ud',260],['Ajuste de premarco','ud',75],['Instalación de puerta de entrada','ud',950],['Instalación de ventana','ud',380],['Instalación de persiana','ud',160],['Frente de armario','ud',650],['Cerramiento de aluminio','m²',210]]},
+ {id:'tec',name:'Techos y aislamiento',items:[['Falso techo de yeso laminado','m²',42],['Techo hidrófugo','m²',48],['Techo registrable','m²',34],['Aislamiento de lana de roca','m²',14],['Aislamiento acústico','m²',22],['Cajón para instalaciones','ml',30]]},
+ {id:'cli',name:'Climatización',items:[['Instalación de equipo de aire','ud',420],['Preinstalación de aire acondicionado','ud',290],['Conductos','ml',45],['Instalación de radiador','ud',180]]},
+ {id:'imp',name:'Impermeabilización y exteriores',items:[['Impermeabilización de ducha','m²',35],['Impermeabilización de terraza','m²',38],['Reparación de cubierta','m²',55],['Colocación de teja','m²',48],['Pavimento exterior','m²',52],['Reparación de canalón','ml',28]]},
+ {id:'coc',name:'Cocina y baño',items:[['Montaje de muebles de cocina','ud',650],['Colocación de encimera de cuarzo','ml',260],['Colocación de encimera laminada','ml',95],['Instalación de electrodoméstico','ud',60],['Montaje de mueble de baño','ud',110],['Montaje de accesorios de baño','ud',45]]},
+ {id:'fin',name:'Limpieza y entrega',items:[['Limpieza de fin de obra','ud',480],['Repaso de acabados','ud',150],['Retirada de protecciones','ud',60]]}
+];
+const UNITS=['ud','m²','ml','m³','h','kg'];
+const SCOPES=['Mano de obra y materiales','Solo mano de obra','Material aportado por el cliente'];
+const CAP_ORDER=CAPS.map(c=>c.id).concat('otr');
+
+const TEMPLATES=[
+ {id:'bano',name:'Baño',title:'Reforma de baño',lines:[['Retirada de azulejos',22],['Retirada de pavimento',5],['Retirada de sanitarios',3],['Carga y retirada de escombros',1],['Punto de agua y desagüe',3],['Impermeabilización de ducha',4],['Alicatado de paredes',22],['Colocación de porcelánico',5],['Techo hidrófugo',5],['Instalación de plato de ducha',1],['Instalación de mampara',1],['Instalación de inodoro',1],['Montaje de mueble de baño',1],['Instalación de grifería',2],['Punto de luz',2],['Limpieza de fin de obra',1]]},
+ {id:'cocina',name:'Cocina',title:'Reforma de cocina',lines:[['Retirada de azulejos',18],['Retirada de pavimento',10],['Carga y retirada de escombros',1],['Punto de agua y desagüe',2],['Línea dedicada de electrodoméstico',3],['Punto de enchufe',6],['Alicatado de paredes',18],['Colocación de porcelánico',10],['Montaje de muebles de cocina',1],['Colocación de encimera de cuarzo',3.5],['Instalación de electrodoméstico',4],['Instalación de extractor',1],['Conexión de fregadero',1],['Limpieza de fin de obra',1]]},
+ {id:'pintura',name:'Pintura',title:'Pintura de vivienda',lines:[['Protección de mobiliario',1],['Preparación y reparación de paredes',220],['Pintura de paredes',220],['Pintura de techos',80],['Esmaltado de puertas',6]]},
+ {id:'suelos',name:'Suelos',title:'Cambio de suelo',lines:[['Retirada de pavimento',60],['Carga y retirada de escombros',1],['Nivelación de suelo',60],['Colocación de porcelánico',60],['Colocación de rodapié',55]]},
+ {id:'integral',name:'Reforma integral',title:'Reforma integral de vivienda · 100 m²',lines:[['Protección de zonas comunes',1,'Protección de accesos, ascensor y zonas de paso'],['Retirada de pavimento',100,'Levantado del suelo existente y acopio de residuos'],['Carga y retirada de escombros',1,'Carga, transporte y gestión de residuos',1450],['Enfoscado de paredes',80,'Rectificación de paños y reparación de soporte'],['Enlucido y alisado',260,'Regularización fina de paredes para acabado liso'],['Apertura y cierre de rozas',140,'Canalizaciones de la nueva instalación eléctrica'],['Falso techo de yeso laminado',90,'Placa, perfilería, juntas y acabado listo para pintar'],['Techo hidrófugo',10,'Techos de cocina y baño'],['Aislamiento de lana de roca',100,'Sobre el falso techo'],['Renovación de cableado',450,'Circuitos de iluminación, tomas y servicios'],['Cuadro eléctrico',1,'Cuadro completo con protecciones y diferenciales'],['Punto de enchufe',32,'Mecanismos de gama estándar'],['Punto de luz',16,'Luminarias decorativas excluidas'],['Interruptor o conmutador',18,'Mecanismos de gama estándar y montaje'],['Línea dedicada de electrodoméstico',4,'Horno, vitrocerámica, lavadora y termo'],['Nivelación de suelo',100,'Regularización del soporte previa a la colocación'],['Colocación de porcelánico',100,'Baldosa de gama media, adhesivo, colocación y rejuntado'],['Colocación de rodapié',85,'Rodapié a juego'],['Puerta maciza abatible con instalación',7,'Tapajuntas, herrajes y retirada de hojas existentes'],['Ajuste de premarco',7,'Rectificación de huecos existentes'],['Pintura de paredes',260,'Imprimación y dos manos de pintura plástica'],['Pintura de techos',100,'Imprimación y dos manos de blanco mate'],['Limpieza de fin de obra',1,'Limpieza general y entrega']]}
+];
+
+/* Reglas del asistente «Escribir rápido»: frase → partida */
+const RULES=[
+ [/(quitar|retirar|picar|levantar|arrancar).*(azulej|alicatad)/,'Retirada de azulejos'],
+ [/(quitar|retirar|levantar|arrancar).*(suelo|pavimento|baldosa)/,'Retirada de pavimento'],
+ [/(quitar|retirar|desmontar).*ba[ñn]era/,'Desmontaje de bañera'],
+ [/(quitar|retirar|desmontar).*(sanitari|inodoro|v[aá]ter|lavabo|bid[eé])/,'Retirada de sanitarios'],
+ [/(tirar|derribar|demoler|quitar).*(tabique|pared|muro)/,'Demolición de tabique'],
+ [/escombro|contenedor|cuba/,'Carga y retirada de escombros'],
+ [/protecci[oó]n|proteger/,'Protección de zonas comunes'],
+ [/pladur.*(hidr[oó]fug|ba[ñn]o)|hidr[oó]fug.*tabique/,'Tabique hidrófugo de yeso laminado'],
+ [/(tabique|pared).*(pladur|yeso laminado)|pladur/,'Tabique de placa de yeso'],
+ [/tabique|pared nueva|levantar pared/,'Tabique de ladrillo'],
+ [/enfoscad/,'Enfoscado de paredes'],
+ [/enlucid|alisad|enyesad/,'Enlucido y alisado'],
+ [/roza/,'Apertura y cierre de rozas'],
+ [/grieta|fisura/,'Reparación de grietas'],
+ [/falso techo|techo de pladur/,'Falso techo de yeso laminado'],
+ [/gotel/,'Eliminación de gotelé'],
+ [/pint.*techo/,'Pintura de techos'],
+ [/pint.*fachada/,'Pintura de fachada'],
+ [/pint.*puerta|esmalt|lacad/,'Esmaltado de puertas'],
+ [/pint/,'Pintura de paredes'],
+ [/alicat|azulej/,'Alicatado de paredes'],
+ [/nivela|autonivel/,'Nivelación de suelo'],
+ [/laminado|tarima/,'Colocación de suelo laminado'],
+ [/vinilo/,'Colocación de vinilo'],
+ [/microcemento/,'Colocación de microcemento'],
+ [/rodapi/,'Colocación de rodapié'],
+ [/porcel[aá]nico|gres|solar|suelo/,'Colocación de porcelánico'],
+ [/plato.*ducha|ducha/,'Instalación de plato de ducha'],
+ [/mampara/,'Instalación de mampara'],
+ [/inodoro|v[aá]ter|wc/,'Instalación de inodoro'],
+ [/mueble.*ba[ñn]o/,'Montaje de mueble de baño'],
+ [/lavabo/,'Instalación de lavabo'],
+ [/ba[ñn]era/,'Instalación de bañera'],
+ [/grifo|grifer/,'Instalación de grifería'],
+ [/impermeabiliz.*terraza/,'Impermeabilización de terraza'],
+ [/impermeabiliz/,'Impermeabilización de ducha'],
+ [/termo/,'Conexión de termo'],
+ [/fregadero/,'Conexión de fregadero'],
+ [/tuber[ií]a|fontaner/,'Renovación de tubería de agua'],
+ [/desag[uü]e/,'Renovación de desagües'],
+ [/enchufe/,'Punto de enchufe'],
+ [/interruptor|conmutador/,'Interruptor o conmutador'],
+ [/punto.*luz|puntos de luz/,'Punto de luz'],
+ [/cuadro/,'Cuadro eléctrico'],
+ [/cablead|instalaci[oó]n el[eé]ctrica|electricidad/,'Renovación de cableado'],
+ [/led/,'Iluminación LED'],
+ [/extractor|campana/,'Instalación de extractor'],
+ [/puerta.*entrada|puerta blindada/,'Instalación de puerta de entrada'],
+ [/puerta/,'Puerta maciza abatible con instalación'],
+ [/ventana/,'Instalación de ventana'],
+ [/persiana/,'Instalación de persiana'],
+ [/armario/,'Frente de armario'],
+ [/aire acondicionado|split|\baire\b/,'Instalación de equipo de aire'],
+ [/radiador/,'Instalación de radiador'],
+ [/aislamiento|lana de roca/,'Aislamiento de lana de roca'],
+ [/teja|tejado|cubierta/,'Reparación de cubierta'],
+ [/encimera/,'Colocación de encimera de cuarzo'],
+ [/muebles?.*cocina|cocina/,'Montaje de muebles de cocina'],
+ [/electrodom/,'Instalación de electrodoméstico'],
+ [/limpieza|limpiar/,'Limpieza de fin de obra']
+];
+
+/* ---------- Utilidades ---------- */
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36).slice(-4);
+const r2=n=>Math.round((+n||0)*100)/100;
+function group(i){return i.replace(/\B(?=(\d{3})+(?!\d))/g,'.')}
+function eur(n){n=r2(n);const neg=n<0;const [i,d]=Math.abs(n).toFixed(2).split('.');return (neg?'−':'')+group(i)+','+d+' €'}
+function eur0(n){n=Math.round(+n||0);return (n<0?'−':'')+group(String(Math.abs(n)))+' €'}
+function qtyFmt(n){n=r2(n);if(Number.isInteger(n))return group(String(n));const [i,d]=n.toFixed(2).replace(/0$/,'').split('.');return group(i)+','+d}
+function parseNum(v){v=String(v??'').trim();if(!v)return 0;if(v.includes(','))v=v.replace(/\./g,'').replace(',','.');const n=parseFloat(v);return isFinite(n)?n:0}
+const MONTHS=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const DAYS=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+const iso=d=>{const x=new Date(d);return x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0')};
+const today=()=>iso(new Date());
+const addDays=(s,n)=>{const d=new Date(s+'T12:00:00');d.setDate(d.getDate()+n);return iso(d)};
+const daysSince=s=>Math.floor((new Date(today()+'T12:00:00')-new Date(s+'T12:00:00'))/864e5);
+function dLong(s){if(!s)return '';const d=new Date(s+'T12:00:00');return d.getDate()+' de '+MONTHS[d.getMonth()]+' de '+d.getFullYear()}
+function dShort(s){if(!s)return '';const d=new Date(s+'T12:00:00');return String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+d.getFullYear()}
+function ago(s){const n=daysSince(s);return n<=0?'hoy':n===1?'ayer':'hace '+n+' días'}
+const initials=n=>String(n||'?').split(/\s+/).filter(w=>w.length>2||/^[A-ZÁÉÍÓÚ]/.test(w)).slice(0,2).map(w=>w[0]).join('').toUpperCase()||'?';
+
+const ICONS={
+ home:'M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z',
+ file:'M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8zM14 3v5h5M9 13h6M9 17h6',
+ receipt:'M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6M9 16h3',
+ users:'M16 20v-1a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v1M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 20v-1a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8',
+ work:'M3 21h18M5 21V10l7-5 7 5v11M10 21v-6h4v6',
+ wallet:'M3 7a2 2 0 0 1 2-2h13v4M3 7v11a2 2 0 0 0 2 2h15V9H5a2 2 0 0 1-2-2zM16 14h.01',
+ tag:'M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9zM8 8h.01',
+ gear:'M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M14 4v4M8 10v4M16 16v4',
+ plus:'M12 5v14M5 12h14',
+ search:'M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM21 21l-4.3-4.3',
+ back:'M15 6l-6 6 6 6',
+ next:'M9 6l6 6-6 6',
+ trash:'M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3',
+ copy:'M9 9h11v11H9zM5 15H4V4h11v1',
+ check:'M5 12l5 5L20 7',
+ chat:'M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z',
+ eye:'M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z',
+ more:'M5 12h.01M12 12h.01M19 12h.01',
+ spark:'M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 17l.8 2.2L22 20l-2.2.8L19 23l-.8-2.2L16 20l2.2-.8z',
+ list:'M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01',
+ x:'M6 6l12 12M18 6L6 18',
+ camera:'M4 8h3l2-3h6l2 3h3v11H4zM12 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8z',
+ phone:'M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2',
+ dup:'M8 8h12v12H8zM16 8V4H4v12h4',
+ euro:'M17 6a7 7 0 1 0 0 12M4 10h9M4 14h9'
+};
+const ic=(n,c='')=>`<svg class="ic ${c}" viewBox="0 0 24 24" aria-hidden="true"><path d="${ICONS[n]}"/></svg>`;
+
+/* ---------- Datos ---------- */
+let db;
+function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&x.v===2){x.contacts??=[];x.company.gestorName??='';x.company.gestorEmail??='';return x}}catch(e){}return seed()}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){}}
+function catalog(){const out=CAPS.map(c=>({id:c.id,name:c.name,items:c.items.map(([name,unit,price])=>({name,unit,price}))}));for(const x of db.custom||[]){const c=out.find(c=>c.id===x.cap);if(c&&!c.items.some(i=>i.name===x.name))c.items.push({name:x.name,unit:x.unit,price:x.price,custom:true})}return out}
+function itemInfo(name){for(const c of catalog()){const i=c.items.find(i=>i.name===name);if(i)return {cap:c.id,...i}}return null}
+function priceOf(name){const i=itemInfo(name);return db.prices[name]??i?.price??0}
+const capName=id=>CAPS.find(c=>c.id===id)?.name||'Otros trabajos';
+function mkLine(name,qty=1,note='',price){const i=itemInfo(name);return {id:uid(),cap:i?.cap||'otr',name,unit:i?.unit||'ud',qty,price:price??priceOf(name),scope:SCOPES[0],note}}
+const client=id=>db.clients.find(c=>c.id===id);
+const work=id=>db.works.find(w=>w.id===id);
+
+function calc(d){
+  const caps=[],map={};
+  for(const l of d.lines){const k=l.cap||'otr';if(!map[k]){map[k]={id:k,name:capName(k),lines:[],sub:0};caps.push(map[k])}map[k].lines.push(l);map[k].sub=r2(map[k].sub+r2(l.qty*l.price))}
+  caps.sort((a,b)=>CAP_ORDER.indexOf(a.id)-CAP_ORDER.indexOf(b.id));
+  const base=r2(caps.reduce((s,c)=>s+c.sub,0)),disc=r2(base*(+d.discount||0)/100),net=r2(base-disc),iva=r2(net*(+d.iva||0)/100);
+  return {caps,base,disc,net,iva,total:r2(net+iva)};
+}
+function nextNumber(prefix,list,date){const y=(date||today()).slice(0,4);const re=new RegExp('^'+prefix+'-'+y+'-(\\d+)$');const max=list.reduce((m,x)=>{const k=re.exec(x.number||'');return k?Math.max(m,+k[1]):m},0);return prefix+'-'+y+'-'+String(max+1).padStart(4,'0')}
+function invStatus(f){if(f.status==='Cobrada')return 'Cobrada';return f.due&&daysSince(f.due)>0?'Vencida':'Pendiente'}
+const invTotal=f=>calc(f).total;
+
+function seed(){
+  db={prices:{},custom:[]};
+  if(!DEMO)return {v:2,company:{name:'SGM',legal:'Construcciones SGM · Trabajos integrales',nif:'',address:'',city:'',email:'',phone:'+34 670 24 33 95',iban:'',iva:21,validity:30,dueDays:15,
+    conditions:'Incluye mano de obra y materiales de las partidas descritas.\nMediciones y estado del soporte se confirmarán tras visita técnica.\nCualquier trabajo adicional requerirá presupuesto previo.\nNo incluye licencias ni tasas municipales.',
+    payment:'30 % a la aceptación, 40 % durante la obra y 30 % a la entrega.',gestorName:'',gestorEmail:''},clients:[],works:[],quotes:[],invoices:[],expenses:[],prices:{},custom:[],contacts:[]};
+  const T=today(),D=n=>addDays(T,-n);
+  const company={name:'SGM',legal:'Construcciones SGM · Trabajos integrales',nif:'B12345674',address:'Calle del Olivo, 18',city:'41010 Sevilla',email:'presupuestos@sgm.example',phone:'+34 670 24 33 95',iban:'ES12 3456 7890 1234 5678 9012',iva:21,validity:30,dueDays:15,
+    conditions:'Incluye mano de obra y materiales de las partidas descritas.\nMediciones y estado del soporte se confirmarán tras visita técnica.\nCualquier trabajo adicional requerirá presupuesto previo.\nNo incluye licencias ni tasas municipales.',
+    payment:'30 % a la aceptación, 40 % durante la obra y 30 % a la entrega.',gestorName:'Gestoría Martín (ejemplo)',gestorEmail:'gestoria@ejemplo.es'};
+  const C=[
+    {id:'c1',name:'Antonio Romero García',phone:'+34 611 23 45 67',email:'antonio.romero@ejemplo.es',address:'Calle del Mirador, 12, 2.º B · 41006 Sevilla',nif:'',notes:''},
+    {id:'c2',name:'Lucía Navarro Ruiz',phone:'+34 622 98 76 54',email:'lucia.navarro@ejemplo.es',address:'Av. de Eduardo Dato, 41, 5.º A · 41005 Sevilla',nif:'',notes:'Prefiere WhatsApp. Disponible por las tardes.'},
+    {id:'c3',name:'C. P. Av. de la Palmera, 24',phone:'+34 954 00 11 22',email:'administracion@fincas-ejemplo.es',address:'Av. de la Palmera, 24 · 41012 Sevilla',nif:'H41000000',notes:'Contacto: administrador de la finca.'},
+    {id:'c4',name:'Manuel Ortega Díaz',phone:'+34 633 44 55 66',email:'',address:'Calle Feria, 87 · 41003 Sevilla',nif:'',notes:''},
+    {id:'c5',name:'Carmen Vidal Moreno',phone:'+34 644 12 21 12',email:'carmen.vidal@ejemplo.es',address:'Calle Asunción, 30, 1.º · 41011 Sevilla',nif:'',notes:''}
+  ];
+  const W=[
+    {id:'w1',name:'Vivienda Calle del Mirador',client:'c1',address:'Calle del Mirador, 12, 2.º B · Sevilla',status:'En curso',start:D(24),notes:'Llaves en portería.'},
+    {id:'w2',name:'Zonas comunes Av. de la Palmera',client:'c3',address:'Av. de la Palmera, 24 · Sevilla',status:'Terminada',start:D(40),notes:''}
+  ];
+  const tl=id=>TEMPLATES.find(t=>t.id===id).lines.map(([n,q,note,p])=>mkLine(n,q,note||'',p));
+  const base={iva:21,discount:0,validity:30,conditions:company.conditions,payment:company.payment};
+  const Q=[
+    {...base,id:'q1',number:'PRE-'+D(20).slice(0,4)+'-0001',date:D(20),title:'Reforma integral de vivienda · 100 m²',client:'c1',work:'w1',status:'Aceptado',lines:tl('integral'),sentAt:D(19),acceptedAt:D(14)},
+    {...base,id:'q2',number:'PRE-'+D(45).slice(0,4)+'-0002',date:D(45),title:'Pintura de escalera y portal',client:'c3',work:'w2',status:'Aceptado',lines:[mkLine('Protección de zonas comunes',1,'Protección de suelos y barandillas'),mkLine('Preparación y reparación de paredes',310),mkLine('Pintura de paredes',310,'Plástica satinada lavable, color a elegir por la comunidad'),mkLine('Pintura de techos',120),mkLine('Limpieza de fin de obra',1,'',220)],sentAt:D(44),acceptedAt:D(41)},
+    {...base,id:'q3',number:'PRE-'+D(12).slice(0,4)+'-0003',date:D(12),title:'Reforma de baño',client:'c2',work:'',status:'Enviado',lines:tl('bano'),sentAt:D(10)},
+    {...base,id:'q4',number:'PRE-'+D(20).slice(0,4)+'-0004',date:D(20),title:'Cambio de suelo en salón y dormitorios',client:'c4',work:'',status:'Rechazado',lines:tl('suelos'),sentAt:D(19),discount:5},
+    {...base,id:'q5',number:'PRE-'+D(3).slice(0,4)+'-0005',date:D(3),title:'Reforma de cocina',client:'c5',work:'',status:'Enviado',lines:tl('cocina'),sentAt:D(2),iva:10},
+    {...base,id:'q6',number:'PRE-'+D(1).slice(0,4)+'-0006',date:D(1),title:'Baño de cortesía',client:'c4',work:'',status:'Borrador',lines:[mkLine('Retirada de sanitarios',2),mkLine('Instalación de inodoro',1),mkLine('Instalación de lavabo',1),mkLine('Alicatado de paredes',9),mkLine('Pintura de techos',3)]}
+  ];
+  const q1=calc(Q[0]),q2=calc(Q[1]);
+  const inv=(id,n,date,due,q,concept,price,status,paidAt)=>({id,number:'FAC-'+date.slice(0,4)+'-'+n,date,due,client:q.client,work:q.work,quote:q.id,iva:q.iva,discount:0,status,paidAt,lines:[{id:uid(),cap:'otr',name:concept,unit:'ud',qty:1,price,scope:'',note:'Presupuesto '+q.number+' · '+q.title}]});
+  const F=[
+    inv('f1','0002',D(13),D(-2),Q[0],'Anticipo del 30 % a la aceptación',r2(q1.net*.3),'Cobrada',D(11)),
+    inv('f2','0001',D(38),D(23),Q[1],'Trabajos de pintura de zonas comunes',q2.net,'Pendiente'),
+    inv('f3','0003',D(4),D(-11),Q[0],'Segundo pago del 40 % durante la obra',r2(q1.net*.4),'Pendiente')
+  ];
+  F[0].sentAt=D(13);F[1].sentAt=D(37);
+  const E=[
+    {id:uid(),date:D(22),concept:'Porcelánico 60×60 gris perla · 105 m²',supplier:'Cerámicas del Aljarafe',cat:'Material',amount:2856,work:'w1'},
+    {id:uid(),date:D(18),concept:'Cable, mecanismos y cuadro',supplier:'Almacén Eléctrico Sur',cat:'Material',amount:1384.6,work:'w1'},
+    {id:uid(),date:D(15),concept:'Contenedor de escombros (2 cubas)',supplier:'Contenedores Hispalis',cat:'Transporte',amount:290,work:'w1'},
+    {id:uid(),date:D(9),concept:'Placa de yeso, perfilería y lana de roca',supplier:'Materiales Triana',cat:'Material',amount:1912.4,work:'w1'},
+    {id:uid(),date:D(6),concept:'Electricista · instalación del cuadro',supplier:'Instalaciones R. Pérez',cat:'Subcontrata',amount:850,work:'w1'},
+    {id:uid(),date:D(39),concept:'Pintura plástica satinada · 8 cubos 15 L',supplier:'Pinturas Macarena',cat:'Material',amount:612,work:'w2'},
+    {id:uid(),date:D(5),concept:'Gasoil furgoneta',supplier:'Estación de servicio',cat:'Vehículo',amount:78.5,work:''}
+  ];
+  const K=[{id:uid(),name:'Paco (fontanero)',phone:'+34655112233',email:''},{id:uid(),name:'Rafa Electricidad',phone:'+34666778899',email:''},{id:uid(),name:'Gestoría Martín',phone:'+34954223344',email:'gestoria@ejemplo.es'},{id:uid(),name:'Almacén Materiales Triana',phone:'+34954556677',email:'pedidos@ejemplo.es'}];
+  return {v:2,company,clients:C,works:W,quotes:Q,invoices:F,expenses:E,prices:{},custom:[],contacts:K};
+}
+
+/* ---------- Estado de la interfaz ---------- */
+const S={view:'inicio',qFilter:'Todos',qSearch:'',fFilter:'Todas',cSearch:'',pSearch:'',ed:null};
+const VIEWS={inicio:'Inicio',presupuestos:'Presupuestos',facturas:'Facturas',clientes:'Clientes',obras:'Obras',gastos:'Gastos',precios:'Mis precios',ajustes:'Ajustes'};
+const NAV=[['inicio','home'],['presupuestos','file'],['facturas','receipt'],['clientes','users'],['obras','work'],['gastos','wallet'],['precios','tag'],['ajustes','gear']];
+
+function shell(){
+  const pending=db.quotes.filter(q=>q.status==='Enviado').length;
+  $('#app').innerHTML=`
+  <aside class="side">
+    <div class="side-logo"><img src="${LOGO_MARK}" alt="Construcciones SGM"></div>
+    <div class="side-sub">Trabajos integrales</div>
+    <button class="btn-new" data-act="newQuote">${ic('plus')} Nuevo presupuesto</button>
+    <nav class="nav" aria-label="Secciones">${NAV.map(([v,i])=>`<button data-act="go" data-v="${v}" ${S.view===v||(S.view==='editor'&&v==='presupuestos')?'aria-current="page"':''}>${ic(i)} ${VIEWS[v]}${v==='presupuestos'&&pending?`<span class="count">${pending}</span>`:''}</button>`).join('')}</nav>
+    <div class="side-foot">
+      ${DEMO?'<span class="demo-tag">Demo · datos de ejemplo guardados en este navegador</span>':''}
+      ${!DEMO&&!isStandalone()?`<button class="btn sm" data-act="install">${ic('plus')} Instalar en este equipo</button>`:''}
+      <div class="user"><span class="avatar">SG</span><div style="flex:1"><b>Sergio</b>SGM · Administrador</div><button class="icon-btn" data-act="logout" aria-label="Cerrar sesión" title="Cerrar sesión"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4h4v16h-4M10 8l-4 4 4 4M6 12h10"/></svg></button></div>
+    </div>
+  </aside>
+  <div class="main-col" style="min-width:0">
+    <header class="topbar"><span class="tlogo"><img src="${LOGO_MARK}" alt="Construcciones SGM"></span>${DEMO?'<span class="demo-tag">Demo</span>':''}</header>
+    <main class="main" id="main"><div class="wrap" id="view"></div></main>
+  </div>
+  <nav class="tabbar" aria-label="Secciones">
+    ${[['inicio','home','Inicio'],['presupuestos','file','Presupuestos']].map(([v,i,l])=>`<button data-act="go" data-v="${v}" ${S.view===v?'aria-current="page"':''}>${ic(i)}${l}</button>`).join('')}
+    <button class="fab" data-act="newQuote" aria-label="Nuevo presupuesto"><span>${ic('plus')}</span></button>
+    <button data-act="go" data-v="facturas" ${S.view==='facturas'?'aria-current="page"':''}>${ic('receipt')}Facturas</button>
+    <button data-act="moreMenu" ${['clientes','obras','gastos','precios','ajustes'].includes(S.view)?'aria-current="page"':''}>${ic('more')}Más</button>
+  </nav>
+  <dialog id="dlg"></dialog>
+  <input type="file" id="vcf-input" accept=".vcf,text/vcard,text/x-vcard" class="sr" data-in="vcf" tabindex="-1" aria-hidden="true">
+  <div id="toast-slot"></div>`;
+}
+async function passHash(t){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode('sgm-app|'+t));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function isStandalone(){try{return matchMedia('(display-mode: standalone)').matches||navigator.standalone===true}catch(e){return false}}
+function vLogin(){
+  const hasPass=DEMO||!!store('sgm-pass');
+  document.body.classList.remove('editing');
+  $('#app').innerHTML=`<div class="login" style="grid-column:1/-1">
+   <section class="login-visual">${kvHTML(KV)}<div class="login-cap"><span class="eyebrow">Construcciones SGM</span><h2>Reformas y trabajos integrales</h2><p>Presupuestos, facturas, clientes y obras en un solo sitio.</p></div></section>
+   <section class="login-panel">
+    <form class="login-box" id="login-form" autocomplete="on">
+      <div class="lg"><img src="${LOGO_FULL}" alt="Construcciones SGM · Trabajos integrales"></div>
+      ${hasPass?`<h1>Hola, Sergio</h1><p class="sub">Escribe tu contraseña para entrar.</p>`:`<h1>Bienvenido, Sergio</h1><p class="sub">Crea tu contraseña. La usarás para entrar desde ahora.</p>`}
+      <input type="text" name="username" value="sergio" autocomplete="username" hidden>
+      <label class="field">Contraseña<input id="lg-pass" type="password" autocomplete="${hasPass?'current-password':'new-password'}" placeholder="••••••••" required></label>
+      ${hasPass?'':'<label class="field">Repite la contraseña<input id="lg-pass2" type="password" autocomplete="new-password" required></label>'}
+      <div id="lg-err"></div>
+      <button class="btn primary" type="submit">Entrar ${ic('next')}</button>
+      <p class="hint" style="text-align:center;margin:0">Acceso privado de SGM. Solo entra Sergio.</p>
+    </form>
+    <div class="login-foot">${kvPicker()}</div>
+   </section></div><div id="toast-slot"></div>`;
+  const err=t=>{$('#lg-err').innerHTML=`<div class="err">${t}</div>`;$('#lg-pass').select()};
+  $('#login-form').addEventListener('submit',async e=>{e.preventDefault();const v=$('#lg-pass').value.trim();
+    if(DEMO){if(v.toLowerCase()!=='sgm2026')return err('Contraseña incorrecta. Vuelve a intentarlo.')}
+    else if(!hasPass){if(v.length<6)return err('Usa al menos 6 caracteres.');if(v!==$('#lg-pass2').value.trim())return err('Las dos contraseñas no coinciden.');store('sgm-pass',await passHash(v))}
+    else if(await passHash(v)!==store('sgm-pass'))return err('Contraseña incorrecta. Vuelve a intentarlo.');
+    AUTH=true;store('sgm-auth','1');render()});
+}
+function render(){
+  if(!AUTH)return vLogin();
+  shell();
+  document.body.classList.toggle('editing',S.view==='editor');
+  const v=$('#view');
+  ({inicio:vInicio,presupuestos:vPresupuestos,facturas:vFacturas,clientes:vClientes,obras:vObras,gastos:vGastos,precios:vPrecios,ajustes:vAjustes,editor:vEditor})[S.view](v);
+  fitPapers();
+}
+function go(v){S.view=v;if(v!=='editor')S.ed=null;render();window.scrollTo(0,0)}
+
+/* ---------- Inicio ---------- */
+function vInicio(v){
+  const now=new Date(),h=now.getHours(),greet=h<14?'Buenos días':h<21?'Buenas tardes':'Buenas noches';
+  const ym=today().slice(0,7);
+  const sent=db.quotes.filter(q=>q.status==='Enviado');
+  const accMonth=db.quotes.filter(q=>q.status==='Aceptado'&&(q.acceptedAt||q.date).slice(0,7)===ym);
+  const unpaid=db.invoices.filter(f=>f.status!=='Cobrada');
+  const expMonth=db.expenses.filter(e=>e.date.slice(0,7)===ym);
+  const todo=[];
+  for(const f of db.invoices.filter(f=>!f.sentAt))todo.push({k:'warn',t:`Factura ${f.number} sin enviar`,s:`${client(f.client)?.name||''} · ${eur(invTotal(f))}`,act:`data-act="sendInvoice" data-id="${f.id}"`,b:'Enviar'});
+  for(const f of db.invoices.filter(f=>invStatus(f)==='Vencida'))todo.push({k:'danger',t:`Factura ${f.number} vencida`,s:`${client(f.client)?.name||''} · ${eur(invTotal(f))} · venció ${ago(f.due)}`,act:`data-act="openInvoice" data-id="${f.id}"`,b:'Ver'});
+  for(const q of sent.filter(q=>daysSince(q.sentAt||q.date)>=7))todo.push({k:'warn',t:`${client(q.client)?.name||'Cliente'} no ha respondido`,s:`${q.title} · enviado ${ago(q.sentAt||q.date)}`,act:`data-act="whatsapp" data-id="${q.id}" data-mode="follow"`,b:'Recordar'});
+  for(const q of db.quotes.filter(q=>q.status==='Aceptado'&&!db.invoices.some(f=>f.quote===q.id)))todo.push({k:'info',t:`Aceptado sin facturar`,s:`${q.number} · ${q.title}`,act:`data-act="invoiceFrom" data-id="${q.id}"`,b:'Facturar'});
+  for(const q of db.quotes.filter(q=>q.status==='Borrador'))todo.push({k:'muted',t:`Borrador sin enviar`,s:`${q.title} · ${client(q.client)?.name||'sin cliente'}`,act:`data-act="openQuote" data-id="${q.id}"`,b:'Terminar'});
+  const last=[...db.quotes].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,5);
+  v.innerHTML=`
+  ${kvPicker()}
+  <section class="hero">
+    ${kvHTML(KV)}
+    <div>
+      <div class="eyebrow">${DAYS[now.getDay()]}, ${dLong(today())}</div>
+      <h1>${greet}, Sergio.<br>¿Qué presupuestamos hoy?</h1>
+      <p>Elige el tipo de trabajo o cuéntaselo al asistente y te monta el presupuesto.</p>
+      <div class="ai-start-label">${ic('spark')} Asistente de presupuestos</div>
+      <form class="ai-start" id="ai-start"><input class="input" id="ai-start-text" placeholder="Ej.: baño de 2 × 2,5 m, quitar todo, plato de ducha y alicatar" aria-label="Describe el trabajo"><button class="btn primary" type="submit">Preparar</button></form>
+    </div>
+    <div class="tpls">
+      ${TEMPLATES.map(t=>`<button class="tpl" data-act="newQuote" data-tpl="${t.id}"><b>${t.name}</b><span>${t.lines.length} partidas listas</span></button>`).join('')}
+      <button class="tpl blank" data-act="newQuote"><b>En blanco</b><span>Elegir partidas a mano</span></button>
+    </div>
+  </section>
+  <section class="kpis" aria-label="Resumen">
+    <button class="kpi" data-act="go" data-v="presupuestos" data-f="Enviado"><span class="k-label">Esperando respuesta</span><span class="k-val">${eur0(sent.reduce((s,q)=>s+calc(q).total,0))}</span><span class="k-sub">${sent.length} presupuesto${sent.length===1?'':'s'} enviado${sent.length===1?'':'s'}</span></button>
+    <button class="kpi" data-act="go" data-v="presupuestos" data-f="Aceptado"><span class="k-label">Aceptado este mes</span><span class="k-val">${eur0(accMonth.reduce((s,q)=>s+calc(q).total,0))}</span><span class="k-sub">${accMonth.length} trabajo${accMonth.length===1?'':'s'} ganado${accMonth.length===1?'':'s'}</span></button>
+    <button class="kpi ${unpaid.some(f=>invStatus(f)==='Vencida')?'warn':''}" data-act="go" data-v="facturas"><span class="k-label">Por cobrar</span><span class="k-val">${eur0(unpaid.reduce((s,f)=>s+invTotal(f),0))}</span><span class="k-sub">${unpaid.length} factura${unpaid.length===1?'':'s'} pendiente${unpaid.length===1?'':'s'}</span></button>
+    <button class="kpi" data-act="go" data-v="gastos"><span class="k-label">Gastos de ${MONTHS[now.getMonth()]}</span><span class="k-val">${eur0(expMonth.reduce((s,e)=>s+e.amount,0))}</span><span class="k-sub">${expMonth.length} apunte${expMonth.length===1?'':'s'}</span></button>
+  </section>
+  <div class="cols">
+    <section class="panel"><div class="panel-head"><h2>Pendiente de hacer</h2><span class="muted small">${todo.length} aviso${todo.length===1?'':'s'}</span></div>
+      <div class="todo">${todo.length?todo.slice(0,6).map(x=>`<div class="todo-item"><span class="dot ${x.k}"></span><div style="min-width:0"><b>${esc(x.t)}</b><span>${esc(x.s)}</span></div><button class="btn sm" ${x.act}>${x.b}</button></div>`).join(''):'<div class="empty"><b>Todo al día</b>No hay nada pendiente.</div>'}</div>
+    </section>
+    <section class="panel"><div class="panel-head"><h2>Últimos presupuestos</h2><button class="btn ghost sm" data-act="go" data-v="presupuestos">Ver todos ${ic('next')}</button></div>
+      <div class="list">${last.map(quoteRow).join('')||'<div class="empty"><b>Aún no hay presupuestos</b>Empieza con una plantilla o con el asistente.</div>'}</div>
+    </section>
+  </div>`;
+}
+function quoteRow(q){const c=client(q.client);return `<button class="li" data-act="openQuote" data-id="${q.id}"><div style="min-width:0"><div class="t">${esc(q.title||'Sin título')}</div><div class="s">${esc(q.number||'Sin número')}</div></div><div class="s c2">${esc(c?.name||'Sin cliente')}</div><span class="date">${dShort(q.date)}</span><span class="pill st-${q.status}">${q.status}</span><span class="amt">${eur(calc(q).total)}</span></button>`}
+
+/* ---------- Presupuestos ---------- */
+function vPresupuestos(v){
+  const states=['Todos','Borrador','Enviado','Aceptado','Rechazado'];
+  const s=S.qSearch.toLowerCase();
+  const list=[...db.quotes].sort((a,b)=>b.date.localeCompare(a.date)||(b.number||'').localeCompare(a.number||'')).filter(q=>(S.qFilter==='Todos'||q.status===S.qFilter)&&(!s||[q.title,q.number,client(q.client)?.name].join(' ').toLowerCase().includes(s)));
+  v.innerHTML=`
+  <div class="head"><div><div class="eyebrow">Presupuestos</div><h1>Tus presupuestos</h1></div><div class="head-actions"><button class="btn primary" data-act="newQuote">${ic('plus')} Nuevo presupuesto</button></div></div>
+  <div class="row"><div class="search" style="flex:1;min-width:220px">${ic('search')}<input class="input" id="q-search" data-in="qSearch" placeholder="Buscar por cliente, trabajo o número" value="${esc(S.qSearch)}"></div></div>
+  <div class="chips" role="group" aria-label="Filtrar por estado">${states.map(x=>`<button class="chip" data-act="qFilter" data-f="${x}" aria-pressed="${S.qFilter===x}">${x}<span class="n">${x==='Todos'?db.quotes.length:db.quotes.filter(q=>q.status===x).length}</span></button>`).join('')}</div>
+  <section class="panel" style="padding-block:6px"><div class="list" id="q-list">${list.length?list.map(quoteRow).join(''):'<div class="empty"><b>No hay presupuestos aquí</b>Prueba con otro filtro o crea uno nuevo.</div>'}</div></section>`;
+}
+
+/* ---------- Editor ---------- */
+function edState(q,step,isNew){return {q,step,isNew,cap:'dem',search:'',mode:'ai',dict:'',found:null,newClient:false,cq:'',err:'',chat:[],aiDraft:'',busy:false,aiLive:'',ctl:null}}
+function newQuote(tplId){
+  const t=TEMPLATES.find(t=>t.id===tplId);const c=db.company;
+  const q={id:uid(),number:'',date:today(),title:t?t.title:'',client:'',work:'',status:'Borrador',iva:c.iva,discount:0,validity:c.validity,conditions:c.conditions,payment:c.payment,lines:t?t.lines.map(([n,qq,note,p])=>mkLine(n,qq,note||'',p)):[]};
+  S.ed=edState(q,1,true);
+  S.view='editor';render();window.scrollTo(0,0);
+}
+function openQuote(id,step=3){const q=db.quotes.find(q=>q.id===id);if(!q)return;S.ed=edState(structuredClone(q),step,false);S.view='editor';render();window.scrollTo(0,0)}
+function vEditor(v){
+  const E=S.ed,q=E.q,t=calc(q),c=client(q.client);
+  const steps=[[1,'Cliente y obra',c?c.name:'Sin elegir'],[2,'Trabajos',q.lines.length+' partida'+(q.lines.length===1?'':'s')],[3,'Revisar y enviar',q.status]];
+  v.innerHTML=`
+  <div class="head"><div><div class="eyebrow">${q.number?esc(q.number):'Nuevo presupuesto'}</div><h1>${esc(q.title||'Presupuesto sin título')}</h1></div>
+    <div class="head-actions"><button class="btn ghost" data-act="exitEditor">${ic('back')} Volver</button></div></div>
+  <nav class="steps" aria-label="Pasos">${steps.map(([n,l,s])=>`<button class="step ${E.step>n?'done':''}" data-act="step" data-n="${n}" ${E.step===n?'aria-current="step"':''}><span class="n">${E.step>n?'✓':n}</span><span>${l}<small>${esc(s)}</small></span></button>`).join('')}</nav>
+  <div id="ed-body">${E.step===1?edStep1():E.step===2?edStep2():edStep3()}</div>
+  <div class="ed-bar"><div class="in">
+    <div class="tot"><span>Total con IVA</span><b id="ed-total">${eur(t.total)}</b></div>
+    <span class="spacer"></span>
+    ${E.step>1?`<button class="btn" data-act="step" data-n="${E.step-1}">${ic('back')}<span class="hide-sm">Atrás</span></button>`:''}
+    ${E.step<3?`<button class="btn go" data-act="step" data-n="${E.step+1}">${E.step===1?'Siguiente: trabajos':'Revisar'} ${ic('next')}</button>`:`<button class="btn go" data-act="saveQuote">${ic('check')} Guardar</button>`}
+  </div></div>`;
+}
+function edStep1(){
+  const E=S.ed,q=E.q,c=client(q.client);
+  const s=E.cq.toLowerCase();
+  const cl=db.clients.filter(x=>!s||(x.name+' '+x.phone+' '+x.address).toLowerCase().includes(s)).slice(0,8);
+  const works=db.works.filter(w=>!q.client||w.client===q.client);
+  return `<div class="stack" style="margin-top:18px">
+  <section class="panel stack"><h2>¿Para quién es?</h2>
+    ${c?`<div class="chosen"><span class="avatar">${esc(initials(c.name))}</span><div style="min-width:0;flex:1"><b>${esc(c.name)}</b><span>${esc([c.phone,c.address].filter(Boolean).join(' · '))}</span></div><button class="btn sm" data-act="clearClient">Cambiar</button></div>`:
+    E.newClient?`<div class="stack"><div class="grid2"><label class="field">Nombre y apellidos *<input id="nc-name" placeholder="Ej.: Rosa Martín López"></label><label class="field">Teléfono<input id="nc-phone" inputmode="tel" placeholder="+34 6…"></label></div><label class="field">Dirección<input id="nc-address" placeholder="Calle, número, piso · Ciudad"></label><div class="row"><button class="btn primary" data-act="saveNewClient">${ic('check')} Guardar cliente</button><button class="btn ghost" data-act="toggleNewClient">Cancelar</button></div></div>`:
+    `<div class="row"><div class="search" style="flex:1;min-width:200px">${ic('search')}<input class="input" id="cl-search" data-in="cq" placeholder="Buscar cliente" value="${esc(E.cq)}"></div><button class="btn primary" data-act="toggleNewClient">${ic('plus')} Cliente nuevo</button></div>
+     <div class="client-pick" id="cl-list">${cl.map(x=>`<button class="cp" data-act="pickClient" data-id="${x.id}"><b>${esc(x.name)}</b><span>${esc(x.phone||x.address||'')}</span></button>`).join('')||'<p class="muted">No hay coincidencias. Crea el cliente nuevo.</p>'}</div>`}
+  </section>
+  <section class="panel stack"><h2>¿Qué trabajo es?</h2>
+    <label class="field">Título del trabajo<input id="q-title" data-in="qf" data-k="title" value="${esc(q.title)}" placeholder="Ej.: Reforma de baño"></label>
+    <div class="grid2"><label class="field">Obra (opcional)<select id="q-work" data-in="qf" data-k="work"><option value="">Sin obra asociada</option>${works.map(w=>`<option value="${w.id}" ${w.id===q.work?'selected':''}>${esc(w.name)}</option>`).join('')}</select></label>
+    <label class="field">Fecha<input id="q-date" type="date" data-in="qf" data-k="date" value="${q.date}"></label></div>
+    ${q.lines.length?'':`<div><div class="field" style="margin-bottom:8px">Empieza con una plantilla</div><div class="chips" style="flex-wrap:wrap">${TEMPLATES.map(t=>`<button class="chip" data-act="applyTpl" data-tpl="${t.id}">${t.name} <span class="n">${t.lines.length}</span></button>`).join('')}</div></div>`}
+  </section></div>`;
+}
+function edStep2(){
+  const E=S.ed,q=E.q;
+  return `<div class="ed-grid" style="margin-top:18px">
+   ${E.sheet?'<div class="scrim" data-act="closeSheet"></div>':''}
+   <aside class="picker ${E.sheet?'open':''}" aria-label="Añadir trabajos">
+    <div class="picker-head">
+      <div class="row"><h2 style="font-size:17px">Añadir trabajos</h2>${E.mode==='ai'?`<span class="ai-badge">${SAMPLE?'IA':'Básico'}</span>`:''}<span class="spacer"></span><button class="icon-btn picker-close" data-act="closeSheet" aria-label="Cerrar">${ic('x')}</button></div>
+      <div class="seg" role="group"><button data-act="mode" data-m="ai" aria-pressed="${E.mode==='ai'}">${ic('spark')} Asistente</button><button data-act="mode" data-m="cat" aria-pressed="${E.mode==='cat'}">${ic('list')} Catálogo</button></div>
+      ${E.mode==='cat'?`<div class="search">${ic('search')}<input class="input" id="cat-search" data-in="catSearch" placeholder="Buscar: plato de ducha, enchufe…" value="${esc(E.search)}"></div>
+      <div class="chips" id="cap-chips">${CAPS.map(c=>`<button class="chip" data-act="cap" data-c="${c.id}" aria-pressed="${!E.search&&E.cap===c.id}">${c.name}</button>`).join('')}</div>`:''}
+    </div>
+    <div class="picker-body" id="picker-body">${E.mode==='cat'?catList():aiPanel()}</div>
+   </aside>
+   <section class="lines" id="lines">${linesHTML()}</section>
+  </div>`;
+}
+function catList(){
+  const E=S.ed,s=E.search.trim().toLowerCase();
+  const cats=catalog().filter(c=>s||c.id===E.cap);
+  let html='';
+  for(const c of cats){const items=c.items.filter(i=>!s||i.name.toLowerCase().includes(s)||c.name.toLowerCase().includes(s));if(!items.length)continue;if(s)html+=`<div class="cap-label">${c.name}</div>`;
+    html+=items.map(i=>{const on=E.q.lines.find(l=>l.name===i.name);return `<div class="cat-item"><div style="min-width:0"><b>${esc(i.name)}</b><span>${eur(priceOf(i.name))} / ${i.unit}${on?` · <strong style="color:var(--brand)">en el presupuesto (${qtyFmt(on.qty)} ${on.unit})</strong>`:''}</span></div><button class="add ${on?'on':''}" data-act="addItem" data-name="${esc(i.name)}" aria-label="${on?'Sumar uno a':'Añadir'} ${esc(i.name)}">${ic(on?'check':'plus')}</button></div>`}).join('')}
+  return html||'<div class="empty"><b>Sin resultados</b>Añade una partida libre desde la lista de la derecha.</div>';
+}
+function dictPanel(){
+  const E=S.ed;
+  return `<div class="dict stack" style="padding-top:12px">
+    <label class="field">Describe el trabajo como lo dirías por teléfono<textarea id="dict-text" data-in="dict" placeholder="Ej.: quitar azulejos 20 m2, quitar sanitarios, plato de ducha, inodoro, alicatar 20 m2, suelo porcelánico 5 m2, pintar techo 5 m2 y limpieza">${esc(E.dict)}</textarea></label>
+    <button class="btn primary" data-act="parse">${ic('spark')} Convertir en partidas</button>
+    <p class="hint">Separa cada trabajo con una coma. Si pones la medida (20 m2, 3 puntos…) la apunta como cantidad. En la app final esto lo hará la IA y podrás dictarlo con la voz.</p>
+    ${E.found?(E.found.length?`<div class="found">${E.found.map((f,i)=>`<label><input type="checkbox" id="fd-${i}" data-in="found" data-i="${i}" ${f.on?'checked':''}><span>${esc(f.name)}<small>«${esc(f.src)}»</small></span><strong class="num">${qtyFmt(f.qty)} ${esc(f.unit)}</strong></label>`).join('')}<button class="btn primary" data-act="addFound">${ic('plus')} Añadir ${E.found.filter(f=>f.on).length} partidas</button></div>`:'<div class="err">No he reconocido ningún trabajo. Prueba con palabras como «alicatar», «pintar», «enchufe», «plato de ducha».</div>'):''}
+  </div>`;
+}
+function linesHTML(){
+  const q=S.ed.q,t=calc(q);
+  const head=`<div class="row"><h2 style="font-size:18px">Partidas del presupuesto</h2><span class="muted small">${q.lines.length}</span><span class="spacer"></span><button class="btn sm open-sheet primary" data-act="openSheet">${ic('spark')} Asistente y catálogo</button><button class="btn sm" data-act="freeLine">${ic('plus')} Partida libre</button></div>`;
+  if(!q.lines.length)return head+`<div class="panel empty"><b>Aún no hay partidas</b>Toca los trabajos del catálogo o escribe el trabajo en «Escribir rápido».</div>`;
+  return head+t.caps.map((c,ci)=>`<div class="chap"><div class="chap-head"><span class="ci">${ci+1}</span><h3>${esc(c.name)}</h3><span class="money" id="cs-${c.id}">${eur(c.sub)}</span></div>
+   ${c.lines.map((l,li)=>`<div class="line" id="L-${l.id}">
+     <div class="line-top"><span class="lno">${ci+1}.${li+1}</span><input class="line-name" id="ln-${l.id}" data-in="line" data-id="${l.id}" data-k="name" value="${esc(l.name)}" aria-label="Descripción"></div>
+     <div class="line-row">
+       <div class="stepper"><button data-act="qty" data-id="${l.id}" data-d="-1" aria-label="Restar">−</button><input id="lq-${l.id}" inputmode="decimal" data-in="line" data-id="${l.id}" data-k="qty" value="${qtyFmt(l.qty)}" aria-label="Cantidad"><button data-act="qty" data-id="${l.id}" data-d="1" aria-label="Sumar">+</button></div>
+       <select class="unit" id="lu-${l.id}" data-in="line" data-id="${l.id}" data-k="unit" aria-label="Unidad">${UNITS.map(u=>`<option ${u===l.unit?'selected':''}>${u}</option>`).join('')}</select>
+       <label class="price">×<input id="lp-${l.id}" inputmode="decimal" data-in="line" data-id="${l.id}" data-k="price" value="${String(l.price).replace('.',',')}" aria-label="Precio por unidad">€</label>
+       <span class="amt" id="la-${l.id}">${eur(l.qty*l.price)}</span>
+     </div>
+     <details ${l.note?'open':''}><summary>${ic('next')} Detalles y notas</summary>
+       <div class="more"><label class="field">Alcance<select id="ls-${l.id}" data-in="line" data-id="${l.id}" data-k="scope">${SCOPES.map(s=>`<option ${s===l.scope?'selected':''}>${s}</option>`).join('')}</select></label>
+       <label class="field">Nota para el cliente<input id="lnote-${l.id}" data-in="line" data-id="${l.id}" data-k="note" value="${esc(l.note)}" placeholder="Medidas, estancia, acabado…"></label>
+       <button class="btn danger sm" data-act="delLine" data-id="${l.id}" style="min-height:46px">${ic('trash')} Quitar</button></div>
+     </details>
+   </div>`).join('')}</div>`).join('');
+}
+function edStep3(){
+  const E=S.ed,q=E.q;
+  return `<div class="review" style="margin-top:18px">
+   <div class="stack">
+    ${E.err?`<div class="err">${esc(E.err)}</div>`:''}
+    <section class="panel stack"><h2>Importe</h2>
+      <div class="grid2"><label class="field">IVA<select id="q-iva" data-in="qf" data-k="iva"><option value="21" ${q.iva==21?'selected':''}>21 % · general</option><option value="10" ${q.iva==10?'selected':''}>10 % · reforma de vivienda</option><option value="0" ${q.iva==0?'selected':''}>Sin IVA</option></select></label>
+      <label class="field">Descuento %<input id="q-disc" inputmode="decimal" data-in="qf" data-k="discount" value="${q.discount}"></label></div>
+      <p class="hint">El 10 % se aplica a reformas de vivienda particular cuando los materiales no superan el 40 % de la base. Confírmalo con la gestoría.</p>
+    </section>
+    <section class="panel stack"><h2>Condiciones</h2>
+      <label class="field">Validez (días)<input id="q-val" inputmode="numeric" data-in="qf" data-k="validity" value="${q.validity}"></label>
+      <label class="field">Forma de pago<input id="q-pay" data-in="qf" data-k="payment" value="${esc(q.payment)}"></label>
+      <label class="field">Condiciones y observaciones<textarea id="q-cond" data-in="qf" data-k="conditions">${esc(q.conditions)}</textarea></label>
+    </section>
+    <section class="panel stack"><h2>Estado</h2>
+      <div class="status-seg" role="group">${['Borrador','Enviado','Aceptado','Rechazado'].map(s=>`<button data-act="setStatus" data-s="${s}" aria-pressed="${q.status===s}">${s}</button>`).join('')}</div>
+      <div class="stack" style="gap:10px">
+        <button class="btn wa" data-act="sendQuote" style="min-height:52px">${ic('chat')} Enviar · WhatsApp o correo con el PDF</button>
+        ${canSave()?`<button class="btn" data-act="pdfQuote">${ic('file')} Descargar PDF</button>`:''}
+        ${q.status==='Aceptado'?`<button class="btn" data-act="invoiceFrom" data-id="${q.id}">${ic('receipt')} Crear factura</button>`:''}
+        <div class="row"><button class="btn" style="flex:1" data-act="dupQuote" data-id="${q.id}">${ic('dup')} Duplicar</button>${E.isNew?'':`<button class="btn danger" style="flex:1" data-act="delQuote" data-id="${q.id}">${ic('trash')} Eliminar</button>`}</div>
+      </div>
+    </section>
+   </div>
+   <div class="paper-wrap paper-fit" id="preview">${docHTML(q,'quote')}</div>
+  </div>`;
+}
+
+/* ---------- Documento ---------- */
+function docHTML(d,kind){
+  const co=db.company,c=client(d.client),w=work(d.work),t=calc(d),isQ=kind==='quote';
+  const number=d.number||(isQ?nextNumber('PRE',db.quotes,d.date)+' (borrador)':'');
+  const multi=t.caps.length>1;
+  return `<article class="paper">
+  <header class="p-head"><img src="${LOGO_FULL}" alt="Construcciones SGM · Trabajos integrales">
+    <div class="p-id"><span class="p-kind">${isQ?'Presupuesto':'Factura'}</span><span class="p-no">${esc(number)}</span>
+    <dl class="p-dates"><dt>Fecha</dt><dd>${dLong(d.date)}</dd>${isQ?`<dt>Válido hasta</dt><dd>${dLong(addDays(d.date,+d.validity||30))}</dd>`:`<dt>Vencimiento</dt><dd>${dLong(d.due)}</dd>`}</dl></div></header>
+  <section class="p-parties">
+    <div><h4>Empresa</h4><strong>${esc(co.name||'SGM')}</strong>${co.legal&&co.legal!==co.name?`<p>${esc(co.legal)}</p>`:''}${co.nif?`<p>NIF ${esc(co.nif)}</p>`:''}${co.address||co.city?`<p>${esc([co.address,co.city].filter(Boolean).join(' · '))}</p>`:''}${co.email?`<p>${esc(co.email)}</p>`:''}${co.phone?`<p class="nw">${esc(prettyPhone(co.phone))}</p>`:''}</div>
+    <div><h4>${isQ?'Cliente y ubicación':'Facturar a'}</h4><strong>${esc(c?.name||'Cliente sin indicar')}</strong>${c?.nif?`<p>NIF ${esc(c.nif)}</p>`:''}${c?.address?`<p>${esc(c.address)}</p>`:''}${c?.phone?`<p class="nw">${esc(prettyPhone(c.phone))}</p>`:''}${c?.email?`<p>${esc(c.email)}</p>`:''}${w&&w.address&&(!c||w.address!==c.address)?`<p>Obra: ${esc(w.address)}</p>`:''}</div>
+  </section>
+  <section class="p-work"><span>${isQ?'Descripción del trabajo':'Concepto'}</span><h2>${esc(isQ?(d.title||'Presupuesto de trabajos'):(d.lines[0]?.note||'Trabajos realizados'))}</h2>${w?`<p>${esc(w.name)}</p>`:''}</section>
+  <table class="p-table"><colgroup><col style="width:40px"><col><col style="width:62px"><col style="width:38px"><col style="width:84px"><col style="width:94px"></colgroup>
+   <thead><tr><th>Nº</th><th>Trabajo y detalle</th><th class="r">Cant.</th><th>Ud.</th><th class="r">Precio</th><th class="r">Importe</th></tr></thead>
+   <tbody>${(()=>{let z=0;return t.caps.map((cp,ci)=>(multi?`<tr class="chapr"><td>${ci+1}</td><td colspan="4">${esc(cp.name)}</td><td class="r">${eur(cp.sub)}</td></tr>`:'')+cp.lines.map((l,li)=>{const det=[l.scope,l.note].filter(Boolean).join(' · ');return `<tr class="${(z++)%2?'z':''}"><td class="no">${multi?(ci+1)+'.'+(li+1):li+1}</td><td><b>${esc(l.name)}</b>${det?`<small>${esc(det)}</small>`:''}</td><td class="r">${qtyFmt(l.qty)}</td><td>${esc(l.unit)}</td><td class="r">${eur(l.price)}</td><td class="r imp">${eur(l.qty*l.price)}</td></tr>`}).join('')).join('')})()}</tbody></table>
+  <section class="p-bottom">
+    <div class="stack" style="gap:16px">
+      ${multi?`<div class="p-sum"><h4>Resumen por capítulos</h4><table>${t.caps.map((cp,ci)=>`<tr><td>${ci+1}. ${esc(cp.name)}</td><td class="r">${eur(cp.sub)}</td></tr>`).join('')}</table></div>`:''}
+      ${isQ&&d.conditions?`<div class="p-cond"><h4>Condiciones y observaciones</h4><p>${esc(d.conditions)}</p></div>`:''}
+    </div>
+    <div class="p-tot"><div><span>Subtotal</span><b>${eur(t.base)}</b></div>${+d.discount?`<div><span>Descuento ${qtyFmt(d.discount)} %</span><b>−${eur(t.disc)}</b></div>`:''}<div><span>Base imponible</span><b>${eur(t.net)}</b></div><div><span>IVA ${qtyFmt(d.iva)} %</span><b>${eur(t.iva)}</b></div><div class="grand"><span>Total</span><b>${eur(t.total)}</b></div></div>
+  </section>
+  <section class="p-pay"><div><h4>Forma de pago</h4><p>${esc(isQ?d.payment:'Transferencia bancaria antes del '+dLong(d.due)+'.')}</p></div>${co.iban?`<div><h4>Cuenta para transferencias</h4><p class="p-iban">${esc(co.iban)}</p><p>Titular: ${esc(co.legal||co.name)}</p></div>`:''}</section>
+  ${isQ?`<section class="p-sign"><div>Conforme del cliente · Firma, nombre y fecha</div><div>Por ${esc(co.legal||co.name)}</div></section>`:''}
+  <footer class="p-foot"><span>${esc([co.legal||co.name,co.nif?'NIF '+co.nif:'',prettyPhone(co.phone)].filter(Boolean).join(' · '))}</span><span>${isQ?'Presupuesto válido hasta '+dShort(addDays(d.date,+d.validity||30))+'. Sin valor contractual hasta su aceptación firmada.':(DEMO?'Documento de ejemplo generado en la demo.':'Gracias por su confianza.')}</span></footer>
+  </article>`;
+}
+function fitPapers(){$$('.paper-fit').forEach(w=>{const p=$('.paper',w);if(!p)return;const avail=w.clientWidth-parseFloat(getComputedStyle(w).paddingLeft)*2;p.style.zoom=Math.min(1,avail/794)})}
+window.addEventListener('resize',()=>{clearTimeout(window.__fz);window.__fz=setTimeout(fitPapers,80)});
+
+/* ---------- Facturas ---------- */
+function vFacturas(v){
+  const st=['Todas','Sin enviar','Pendiente','Vencida','Cobrada'];const fm=(f,x)=>x==='Todas'||(x==='Sin enviar'?!f.sentAt:invStatus(f)===x);
+  const list=[...db.invoices].sort((a,b)=>b.date.localeCompare(a.date)).filter(f=>fm(f,S.fFilter));
+  const pend=db.invoices.filter(f=>f.status!=='Cobrada');
+  const year=today().slice(0,4);
+  v.innerHTML=`
+  <div class="head"><div><div class="eyebrow">Facturas</div><h1>Facturación y cobros</h1><p>Las facturas se crean desde un presupuesto aceptado: total o por pagos.</p></div><div class="head-actions"><button class="btn" data-act="gestor">${ic('receipt')} Enviar al gestor</button><button class="btn primary" data-act="invoicePick">${ic('plus')} Nueva factura</button></div></div>
+  <section class="kpis">
+    <div class="kpi"><span class="k-label">Pendiente de cobro</span><span class="k-val">${eur0(pend.reduce((s,f)=>s+invTotal(f),0))}</span><span class="k-sub">${pend.length} facturas</span></div>
+    <div class="kpi ${db.invoices.some(f=>invStatus(f)==='Vencida')?'warn':''}"><span class="k-label">Vencido</span><span class="k-val">${eur0(db.invoices.filter(f=>invStatus(f)==='Vencida').reduce((s,f)=>s+invTotal(f),0))}</span><span class="k-sub">Hay que reclamarlo</span></div>
+    <div class="kpi"><span class="k-label">Cobrado en ${year}</span><span class="k-val">${eur0(db.invoices.filter(f=>f.status==='Cobrada'&&(f.paidAt||f.date).startsWith(year)).reduce((s,f)=>s+invTotal(f),0))}</span><span class="k-sub">IVA incluido</span></div>
+    <div class="kpi"><span class="k-label">Facturado en ${year}</span><span class="k-val">${eur0(db.invoices.filter(f=>f.date.startsWith(year)).reduce((s,f)=>s+calc(f).net,0))}</span><span class="k-sub">Base imponible</span></div>
+  </section>
+  <div class="chips">${st.map(x=>`<button class="chip" data-act="fFilter" data-f="${x}" aria-pressed="${S.fFilter===x}">${x}<span class="n">${db.invoices.filter(f=>fm(f,x)).length}</span></button>`).join('')}</div>
+  <section class="panel" style="padding-block:6px"><div class="list">${list.length?list.map(f=>{const s=invStatus(f);return `<button class="li" data-act="openInvoice" data-id="${f.id}"><div style="min-width:0"><div class="t">${esc(f.number)}</div><div class="s">${f.sentAt?'':'<b style="color:var(--warn)">Sin enviar</b> · '}${esc(f.lines[0]?.name||'')}</div></div><div class="s c2">${esc(client(f.client)?.name||'')}</div><span class="date">${s==='Cobrada'?'Cobrada '+dShort(f.paidAt):'Vence '+dShort(f.due)}</span><span class="pill st-${s}">${s}</span><span class="amt">${eur(invTotal(f))}</span></button>`}).join(''):'<div class="empty"><b>No hay facturas aquí</b>Crea una desde un presupuesto aceptado.</div>'}</div></section>
+  <p class="hint">En la versión final, las facturas incluirán el registro Verifactu que exige Hacienda.</p>`;
+}
+
+/* ---------- Clientes y agenda ---------- */
+function vClientes(v){
+  const s=S.cSearch.toLowerCase(),tab=S.cTab||'clientes';
+  const list=db.clients.filter(c=>!s||(c.name+' '+c.phone+' '+c.address+' '+c.email).toLowerCase().includes(s));
+  const ag=db.contacts.filter(k=>!s||(k.name+' '+k.phone+' '+k.email).toLowerCase().includes(s)).sort((a,b)=>a.name.localeCompare(b.name,'es'));
+  v.innerHTML=`
+  <div class="head"><div><div class="eyebrow">Clientes</div><h1>Clientes y agenda</h1><p>Tus clientes y los contactos de tu móvil, para enviar presupuestos y facturas desde aquí.</p></div><div class="head-actions">${tab==='agenda'?`<button class="btn primary" data-act="importAgenda">${ic('users')} Traer contactos del móvil</button>`:`<button class="btn primary" data-act="editClient">${ic('plus')} Nuevo cliente</button>`}</div></div>
+  <div class="chips"><button class="chip" data-act="cTab" data-t="clientes" aria-pressed="${tab==='clientes'}">Clientes<span class="n">${db.clients.length}</span></button><button class="chip" data-act="cTab" data-t="agenda" aria-pressed="${tab==='agenda'}">Agenda del móvil<span class="n">${db.contacts.length}</span></button></div>
+  <div class="search">${ic('search')}<input class="input" id="c-search" data-in="cSearch" placeholder="Buscar por nombre, teléfono o calle" value="${esc(S.cSearch)}"></div>
+  ${tab==='clientes'?`<div class="cards">${list.map(c=>{const qs=db.quotes.filter(q=>q.client===c.id),acc=qs.filter(q=>q.status==='Aceptado');return `<button class="card" data-act="editClient" data-id="${c.id}"><div class="row" style="flex-wrap:nowrap"><span class="avatar">${esc(initials(c.name))}</span><h3 style="min-width:0">${esc(c.name)}</h3></div><div class="meta"><span>${esc(prettyPhone(c.phone)||'Sin teléfono')}</span><span>${esc(c.address||'')}</span></div><div class="stats"><div><b>${qs.length}</b>presupuestos</div><div><b>${eur0(acc.reduce((s,q)=>s+calc(q).total,0))}</b>aceptado</div></div></button>`}).join('')||'<div class="panel empty"><b>Sin clientes</b>Crea el primero.</div>'}</div>`
+  :`<section class="panel" style="padding-block:6px"><div class="list">${ag.map(k=>{const n=waNum(k.phone);return `<div class="li ag-row"><span class="avatar" style="width:36px;height:36px;font-size:13px">${esc(initials(k.name))}</span><div style="min-width:0"><div class="t">${esc(k.name)}</div><div class="s">${esc([prettyPhone(k.phone),k.email].filter(Boolean).join(' · '))}</div></div><div class="ag-act">${n?`<a class="icon-btn" href="https://wa.me/${n}" target="_blank" rel="noopener" aria-label="WhatsApp a ${esc(k.name)}" title="WhatsApp">${ic('chat')}</a><a class="icon-btn" href="tel:${esc(normPhone(k.phone))}" aria-label="Llamar a ${esc(k.name)}" title="Llamar">${ic('phone')}</a>`:''}<button class="btn sm" data-act="contactToClient" data-id="${k.id}">Hacer cliente</button><button class="icon-btn" data-act="delContact" data-id="${k.id}" aria-label="Quitar ${esc(k.name)}">${ic('trash')}</button></div></div>`}).join('')||`<div class="empty"><b>Aún no has traído contactos</b>Pulsa «Traer contactos del móvil».</div>`}</div></section>
+   <p class="hint">Los contactos se guardan solo en la app de Sergio. En el Android instalado se abre la agenda directamente; en iPhone se importan una vez desde el archivo de contactos.</p>`}`;
+}
+
+/* ---------- Obras ---------- */
+function workStats(w){const qs=db.quotes.filter(q=>q.work===w.id&&q.status==='Aceptado');const budget=qs.reduce((s,q)=>s+calc(q).net,0);const spent=db.expenses.filter(e=>e.work===w.id).reduce((s,e)=>s+e.amount,0);const billed=db.invoices.filter(f=>f.work===w.id).reduce((s,f)=>s+calc(f).net,0);return {budget,spent,billed,margin:budget-spent}}
+function vObras(v){
+  v.innerHTML=`
+  <div class="head"><div><div class="eyebrow">Obras</div><h1>Obras en marcha</h1><p>Lo presupuestado frente a lo gastado en cada obra, para ver el margen real.</p></div><div class="head-actions"><button class="btn primary" data-act="editWork">${ic('plus')} Nueva obra</button></div></div>
+  <div class="cards">${db.works.map(w=>{const s=workStats(w),pct=s.budget?Math.min(100,s.spent/s.budget*100):0;return `<button class="card" data-act="editWork" data-id="${w.id}"><div class="row"><h3 style="flex:1;min-width:0">${esc(w.name)}</h3><span class="pill st-${w.status}">${w.status}</span></div><div class="meta"><span>${esc(client(w.client)?.name||'')}</span><span>${esc(w.address)}</span></div>
+   <div class="bar" aria-label="Gastado ${Math.round(pct)} %"><i class="b-spent" style="width:${pct}%"></i><i class="b-margin" style="width:${s.budget?100-pct:0}%"></i></div>
+   <div class="stats"><div><b>${eur0(s.budget)}</b>presupuestado</div><div><b>${eur0(s.spent)}</b>gastado</div><div><b style="color:${s.margin<0?'var(--danger)':'var(--brand)'}">${eur0(s.margin)}</b>margen</div></div></button>`}).join('')||'<div class="panel empty"><b>Sin obras</b>Crea una obra al aceptar un presupuesto.</div>'}</div>`;
+}
+
+/* ---------- Gastos ---------- */
+const CATS=['Material','Subcontrata','Transporte','Herramienta','Vehículo','Otros'];
+function vGastos(v){
+  const byMonth={};[...db.expenses].sort((a,b)=>b.date.localeCompare(a.date)).forEach(e=>{(byMonth[e.date.slice(0,7)]??=[]).push(e)});
+  v.innerHTML=`
+  <div class="head"><div><div class="eyebrow">Gastos</div><h1>Gastos y tickets</h1><p>Apunta cada compra en su obra y sabrás cuánto te deja cada trabajo.</p></div></div>
+  <section class="panel stack"><h2>Apuntar gasto</h2>
+    <div class="grid3"><label class="field">Importe con IVA *<input id="e-amount" inputmode="decimal" placeholder="0,00"></label><label class="field">Concepto *<input id="e-concept" placeholder="Ej.: Azulejo 30×60"></label><label class="field">Proveedor<input id="e-supplier"></label>
+    <label class="field">Obra<select id="e-work"><option value="">General (sin obra)</option>${db.works.map(w=>`<option value="${w.id}">${esc(w.name)}</option>`).join('')}</select></label><label class="field">Tipo<select id="e-cat">${CATS.map(c=>`<option>${c}</option>`).join('')}</select></label><label class="field">Fecha<input id="e-date" type="date" value="${today()}"></label></div>
+    <div class="row"><label class="btn" for="e-photo" style="cursor:pointer">${ic('camera')} Foto del ticket</label><input id="e-photo" type="file" accept="image/*" class="sr" data-in="ticket"><img id="e-thumb" class="ticket-thumb" hidden alt="Ticket adjunto"><span class="spacer"></span><button class="btn primary" data-act="addExpense">${ic('plus')} Apuntar gasto</button></div>
+    <div id="e-err"></div>
+  </section>
+  ${Object.entries(byMonth).map(([m,es])=>{const [y,mm]=m.split('-');return `<section class="panel" style="padding-block:10px"><div class="panel-head" style="margin:6px 0"><h2 style="text-transform:capitalize">${MONTHS[+mm-1]} ${y}</h2><b class="num">${eur(es.reduce((s,e)=>s+e.amount,0))}</b></div><div class="list">${es.map(e=>`<div class="li" style="grid-template-columns:auto minmax(0,1fr) auto auto"><span>${e.thumb?`<img class="ticket-thumb" src="${e.thumb}" alt="Ticket">`:`<span class="dot muted" style="display:block;margin:0 17px"></span>`}</span><div style="min-width:0"><div class="t">${esc(e.concept)}</div><div class="s">${esc([dShort(e.date),e.supplier,e.cat,work(e.work)?.name||'General'].filter(Boolean).join(' · '))}</div></div><span class="amt">${eur(e.amount)}</span><button class="icon-btn" data-act="delExpense" data-id="${e.id}" aria-label="Borrar gasto">${ic('trash')}</button></div>`).join('')}</div></section>`}).join('')||'<div class="panel empty"><b>Sin gastos</b>Apunta el primero arriba.</div>'}`;
+}
+
+/* ---------- Mis precios ---------- */
+function vPrecios(v){
+  const s=S.pSearch.toLowerCase();
+  v.innerHTML=`
+  <div class="head"><div><div class="eyebrow">Mis precios</div><h1>Tu tarifa</h1><p>Estos son los precios que se ponen solos en cada presupuesto. Si cambias un precio dentro de un presupuesto, se guarda aquí para la próxima vez.</p></div><div class="head-actions"><button class="btn" data-act="pasteExcel">${ic('copy')} Pegar desde Excel</button><button class="btn primary" data-act="customItem">${ic('plus')} Partida propia</button></div></div>
+  <div class="search">${ic('search')}<input class="input" id="p-search" data-in="pSearch" placeholder="Buscar partida" value="${esc(S.pSearch)}"></div>
+  ${catalog().map(c=>{const items=c.items.filter(i=>!s||i.name.toLowerCase().includes(s));if(!items.length)return '';return `<section class="panel"><div class="panel-head"><h2>${esc(c.name)}</h2><span class="muted small">${items.length} partidas</span></div><div class="list">${items.map(i=>{const own=db.prices[i.name]!=null;return `<div class="cat-item" style="grid-template-columns:minmax(0,1fr) auto auto"><div style="min-width:0"><b>${esc(i.name)}</b><span>${own?'Tu precio':'Precio de ejemplo'} · por ${i.unit}${i.custom?' · partida propia':''}</span></div><label class="price"><input id="pp-${esc(i.name).replace(/\W/g,'')}" inputmode="decimal" data-in="price" data-name="${esc(i.name)}" value="${String(priceOf(i.name)).replace('.',',')}" aria-label="Precio de ${esc(i.name)}">€</label><span class="muted small" style="min-width:24px">/${i.unit}</span></div>`}).join('')}</div></section>`}).join('')}`;
+}
+
+/* ---------- Ajustes ---------- */
+function vAjustes(v){
+  const c=db.company;
+  const f=(k,l,ph='')=>`<label class="field">${l}<input id="co-${k}" data-in="co" data-k="${k}" value="${esc(c[k])}" placeholder="${ph}"></label>`;
+  v.innerHTML=`
+  <div class="head"><div><div class="eyebrow">Ajustes</div><h1>Datos de la empresa</h1><p>Salen en todos los presupuestos y facturas. Se guardan al escribir.</p></div></div>
+  <section class="panel stack"><h2>Empresa</h2><div class="grid2">${f('legal','Razón social')}${f('nif','NIF')}${f('address','Dirección')}${f('city','Código postal y ciudad')}${f('phone','Teléfono')}${f('email','Correo')}</div>${f('iban','IBAN para transferencias')}</section>
+  <section class="panel stack"><h2>Gestoría</h2><div class="grid2">${f('gestorName','Nombre del gestor o gestoría')}${f('gestorEmail','Correo del gestor')}</div></section>
+  <section class="panel stack"><h2>Valores por defecto</h2><div class="grid3"><label class="field">IVA habitual<select id="co-iva" data-in="co" data-k="iva"><option value="21" ${c.iva==21?'selected':''}>21 %</option><option value="10" ${c.iva==10?'selected':''}>10 %</option></select></label>${f('validity','Validez del presupuesto (días)')}${f('dueDays','Vencimiento de factura (días)')}</div>
+  <label class="field">Forma de pago<input id="co-payment" data-in="co" data-k="payment" value="${esc(c.payment)}"></label>
+  <label class="field">Condiciones habituales<textarea id="co-conditions" data-in="co" data-k="conditions">${esc(c.conditions)}</textarea></label></section>
+  ${DEMO?'':`<section class="panel stack"><h2>Contraseña</h2><div class="grid2"><label class="field">Contraseña nueva<input id="pw-1" type="password" autocomplete="new-password"></label><label class="field">Repite la contraseña<input id="pw-2" type="password" autocomplete="new-password"></label></div><div id="pw-err"></div><div class="row"><button class="btn primary" data-act="changePass">${ic('check')} Cambiar contraseña</button></div></section>`}
+  <section class="panel stack"><h2>Copia de seguridad</h2><p class="muted" style="margin:0">Guarda una copia de todos tus datos de vez en cuando (por ejemplo, una vez al mes).</p><div class="row">${canSave()?`<button class="btn" data-act="backupFile">${ic('file')} Descargar copia</button>`:''}<button class="btn" data-act="backup">${ic('copy')} Copiar datos</button><label class="btn" for="restore-input" style="cursor:pointer">Restaurar una copia</label><input id="restore-input" type="file" accept=".json,application/json" class="sr" data-in="restore">${DEMO?'<button class="btn danger" data-act="resetDemo">Volver a los datos de ejemplo</button>':''}</div></section>`;
+}
+
+/* ---------- Diálogos ---------- */
+function dlg(html,wide=false){const d=$('#dlg');d.className=wide?'wide':'';d.innerHTML=`<div class="dlg">${html}</div>`;if(!d.open)d.showModal();fitPapers();return d}
+const closeDlg=()=>{const d=$('#dlg');if(d?.open)d.close()};
+function confirmBox(title,text,yes,fn,danger=true){dlg(`<div class="dlg-head"><h2>${esc(title)}</h2></div><div class="dlg-body"><p style="margin:0">${esc(text)}</p></div><div class="dlg-foot"><button class="btn" data-act="closeDlg">Cancelar</button><button class="btn ${danger?'danger':'primary'}" data-act="confirmYes">${esc(yes)}</button></div>`);S.onYes=fn}
+function toast(msg){const t=document.createElement('div');t.className='toast';t.setAttribute('role','status');t.innerHTML=ic('check')+esc(msg);document.body.append(t);setTimeout(()=>t.remove(),2800)}
+
+function waText(q,mode){const c=client(q.client),t=calc(q),name=(c?.name||'').split(' ')[0];
+  if(mode==='follow')return `Hola ${name}, ¿qué tal? Soy Sergio, de Construcciones SGM. Te escribo por el presupuesto ${q.number} de «${q.title}» que te envié. ¿Has podido verlo? Si quieres ajustamos algo o pasamos a verlo en persona.\n\nUn saludo.`;
+  return `Hola ${name}, soy Sergio, de Construcciones SGM.\n\nTe envío el presupuesto ${q.number||''} de «${q.title}».\nTotal: ${eur(t.total)} (IVA incluido).\nVálido hasta el ${dLong(addDays(q.date,+q.validity||30))}.\n\nCualquier duda me dices. Un saludo.`}
+function openWhatsApp(id,mode){
+  const q=S.ed&&S.ed.q.id===id?S.ed.q:db.quotes.find(q=>q.id===id);if(!q)return;
+  if(!q.number){q.number=nextNumber('PRE',db.quotes,q.date)}
+  const c=client(q.client),msg=waText(q,mode),phone=(c?.phone||'').replace(/\D/g,'');
+  dlg(`<div class="dlg-head"><h2>${mode==='follow'?'Recordar al cliente':'Enviar por WhatsApp'}</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div>
+  <div class="dlg-body"><p class="muted" style="margin:0">Para: <b style="color:var(--ink)">${esc(c?.name||'cliente sin indicar')}</b> ${esc(c?.phone||'')}</p><div class="wa-msg" id="wa-msg">${esc(msg)}</div>${mode==='follow'?'':'<p class="hint" style="margin:0">En la app final se adjunta el PDF del presupuesto y un enlace para que el cliente lo acepte desde el móvil.</p>'}</div>
+  <div class="dlg-foot"><button class="btn" data-act="copyWa">${ic('copy')} Copiar mensaje</button>${phone?`<a class="btn wa" href="https://wa.me/${phone}?text=${encodeURIComponent(msg)}" target="_blank" rel="noopener">${ic('chat')} Abrir WhatsApp</a>`:''}${mode==='follow'?'':`<button class="btn primary" data-act="markSent" data-id="${q.id}">${ic('check')} Marcar como enviado</button>`}</div>`);
+}
+function invoicePick(){const acc=db.quotes.filter(q=>q.status==='Aceptado');
+  dlg(`<div class="dlg-head"><h2>Nueva factura</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div><div class="dlg-body"><p class="muted" style="margin:0">Elige el presupuesto aceptado que vas a facturar.</p>${acc.map(q=>`<button class="cp" data-act="invoiceFrom" data-id="${q.id}"><b>${esc(q.number)} · ${esc(q.title)}</b><span>${esc(client(q.client)?.name||'')} · ${eur(calc(q).total)}</span></button>`).join('')||'<div class="empty"><b>No hay presupuestos aceptados</b>Marca un presupuesto como aceptado para poder facturarlo.</div>'}</div>`)}
+function invoiceFrom(id){const q=db.quotes.find(q=>q.id===id)||(S.ed&&S.ed.q);if(!q)return;const t=calc(q),done=db.invoices.filter(f=>f.quote===q.id).reduce((s,f)=>s+calc(f).net,0);const left=r2(t.net-done);
+  dlg(`<div class="dlg-head"><h2>Facturar ${esc(q.number)}</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div>
+  <div class="dlg-body"><p style="margin:0"><b>${esc(q.title)}</b><br><span class="muted">Base presupuestada ${eur(t.net)} · ya facturado ${eur(done)} · queda ${eur(left)}</span></p>
+   <div class="stack" style="gap:8px">${[['full','Todo lo que queda',left],['30','Anticipo del 30 %',r2(t.net*.3)],['40','Pago del 40 % durante la obra',r2(t.net*.4)]].map(([k,l,a],i)=>`<label class="cp" style="grid-template-columns:auto 1fr auto;display:grid;align-items:center;gap:10px"><input type="radio" name="inv-kind" id="ik-${k}" value="${k}" ${i===0?'checked':''} style="width:20px;height:20px;accent-color:var(--brand)"><b>${l}</b><span class="num">${eur(a)} + IVA</span></label>`).join('')}</div>
+  </div><div class="dlg-foot"><button class="btn" data-act="closeDlg">Cancelar</button><button class="btn primary" data-act="createInvoice" data-id="${q.id}">${ic('receipt')} Crear factura</button></div>`)}
+function createInvoice(id){const q=db.quotes.find(q=>q.id===id);if(!q)return;const k=($('input[name="inv-kind"]:checked')||{}).value||'full';const t=calc(q);const done=db.invoices.filter(f=>f.quote===q.id).reduce((s,f)=>s+calc(f).net,0);
+  const d=today();const f={id:uid(),number:nextNumber('FAC',db.invoices,d),date:d,due:addDays(d,+db.company.dueDays||15),client:q.client,work:q.work,quote:q.id,iva:q.iva,discount:0,status:'Pendiente',lines:[]};
+  const note='Presupuesto '+q.number+' · '+q.title;
+  if(k==='full'&&done===0){f.lines=q.lines.map(l=>({...l,id:uid()}));f.discount=q.discount;f.lines.forEach(l=>l.note='');f.lines[0].note=note}
+  else{const amt=k==='full'?r2(t.net-done):r2(t.net*(+k)/100);f.lines=[{id:uid(),cap:'otr',name:k==='full'?'Liquidación final de los trabajos':k==='30'?'Anticipo del 30 % a la aceptación':'Pago del 40 % durante la obra',unit:'ud',qty:1,price:amt,scope:'',note}]}
+  db.invoices.push(f);save();closeDlg();S.view='facturas';S.ed=null;render();openInvoice(f.id);toast('Factura '+f.number+' creada')}
+function openInvoice(id){const f=db.invoices.find(f=>f.id===id);if(!f)return;const s=invStatus(f);
+  dlg(`<div class="dlg-head"><h2>${esc(f.number)}</h2><span class="pill st-${s}">${s}</span>${f.sentAt?'':'<span class="pill st-Pendiente">Sin enviar</span>'}<span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div>
+  <div class="dlg-body" style="padding:0"><div class="paper-wrap paper-fit" style="border-radius:0">${docHTML(f,'invoice')}</div></div>
+  <div class="dlg-foot"><button class="btn danger" data-act="delInvoice" data-id="${f.id}">${ic('trash')} Eliminar</button><span class="spacer"></span><button class="btn wa" data-act="sendInvoice" data-id="${f.id}">${ic('chat')} Enviar</button>${canSave()?`<button class="btn" data-act="pdfInvoice" data-id="${f.id}">${ic('file')} PDF</button>`:''}${f.status==='Cobrada'?`<button class="btn" data-act="payInvoice" data-id="${f.id}" data-v="0">Marcar pendiente</button>`:`<button class="btn primary" data-act="payInvoice" data-id="${f.id}" data-v="1">${ic('check')} Marcar cobrada</button>`}</div>`,true)}
+function editClient(id){const c=client(id)||{};const qs=id?db.quotes.filter(q=>q.client===id):[];
+  const f=(k,l,t='text')=>`<label class="field">${l}<input id="ec-${k}" type="${t}" value="${esc(c[k]||'')}"></label>`;
+  dlg(`<div class="dlg-head"><h2>${id?esc(c.name):'Nuevo cliente'}</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div>
+  <div class="dlg-body">${f('name','Nombre y apellidos *')}<div class="grid2">${f('phone','Teléfono','tel')}${f('email','Correo','email')}</div>${f('address','Dirección')}<div class="grid2">${f('nif','NIF / CIF')}<span></span></div><label class="field">Notas<textarea id="ec-notes">${esc(c.notes||'')}</textarea></label>
+  ${qs.length?`<div><div class="field" style="margin-bottom:6px">Historial</div><div class="list">${qs.map(quoteRow).join('')}</div></div>`:''}<div id="ec-err"></div></div>
+  <div class="dlg-foot">${id?`<button class="btn danger" data-act="delClient" data-id="${id}">${ic('trash')} Eliminar</button><span class="spacer"></span><button class="btn" data-act="quoteFor" data-id="${id}">${ic('file')} Nuevo presupuesto</button>`:''}<button class="btn primary" data-act="saveClient" data-id="${id||''}">${ic('check')} Guardar</button></div>`)}
+function editWork(id){const w=work(id)||{status:'Pendiente'};const s=id?workStats(w):null;const ex=id?db.expenses.filter(e=>e.work===id):[];
+  dlg(`<div class="dlg-head"><h2>${id?esc(w.name):'Nueva obra'}</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div>
+  <div class="dlg-body"><label class="field">Nombre de la obra *<input id="ew-name" value="${esc(w.name||'')}" placeholder="Ej.: Baño Calle Feria"></label>
+  <div class="grid2"><label class="field">Cliente<select id="ew-client"><option value="">Sin cliente</option>${db.clients.map(c=>`<option value="${c.id}" ${c.id===w.client?'selected':''}>${esc(c.name)}</option>`).join('')}</select></label><label class="field">Estado<select id="ew-status">${['Pendiente','En curso','Terminada'].map(x=>`<option ${x===w.status?'selected':''}>${x}</option>`).join('')}</select></label></div>
+  <label class="field">Dirección<input id="ew-address" value="${esc(w.address||'')}"></label><label class="field">Notas<textarea id="ew-notes">${esc(w.notes||'')}</textarea></label>
+  ${s?`<div class="kpis" style="grid-template-columns:repeat(3,minmax(0,1fr))"><div class="kpi"><span class="k-label">Presupuestado</span><span class="k-val" style="font-size:19px">${eur0(s.budget)}</span></div><div class="kpi"><span class="k-label">Gastado</span><span class="k-val" style="font-size:19px">${eur0(s.spent)}</span></div><div class="kpi"><span class="k-label">Margen</span><span class="k-val" style="font-size:19px;color:${s.margin<0?'var(--danger)':'var(--brand)'}">${eur0(s.margin)}</span></div></div>`:''}
+  ${ex.length?`<div><div class="field" style="margin-bottom:6px">Gastos de la obra</div>${ex.map(e=>`<div class="row small" style="justify-content:space-between;border-top:1px solid var(--line);padding:8px 0"><span>${dShort(e.date)} · ${esc(e.concept)}</span><b class="num">${eur(e.amount)}</b></div>`).join('')}</div>`:''}<div id="ew-err"></div></div>
+  <div class="dlg-foot">${id?`<button class="btn danger" data-act="delWork" data-id="${id}">${ic('trash')} Eliminar</button><span class="spacer"></span>`:''}<button class="btn primary" data-act="saveWork" data-id="${id||''}">${ic('check')} Guardar</button></div>`)}
+
+/* ---------- Asistente de texto ---------- */
+function parseText(txt){
+  const out=[];const segs=txt.toLowerCase().replace(/\s+y\s+/g,', ').split(/[,;\n.]+(?!\d)/).map(s=>s.trim()).filter(Boolean);
+  for(const seg of segs){const r=RULES.find(([re])=>re.test(seg));if(!r)continue;const name=r[1];const info=itemInfo(name);
+    const mu=[...seg.matchAll(/(\d+(?:[.,]\d+)?)\s*(m2|m²|metros?|ml|uds?|unidades|puntos?|horas)\b/g)];const m=mu.length?mu[mu.length-1]:seg.match(/(\d+(?:[.,]\d+)?)/);
+    let qty=m?parseNum(m[1]):1;if(!qty)qty=1;
+    const ex=out.find(o=>o.name===name);if(ex){ex.qty+=qty;continue}
+    out.push({name,qty,unit:info?.unit||'ud',src:seg,on:true})}
+  return out;
+}
+
+/* ---------- Asistente IA ---------- */
+let SAMPLE=null,DL=null;
+(async()=>{try{if(window.claude&&window.claude.use){const [a,b]=await Promise.all([window.claude.use('sample'),window.claude.use('downloads')]);SAMPLE=a;DL=b;const t=document.activeElement;if(AUTH&&!(t&&t.matches&&t.matches('input,textarea,select')))render()}}catch(e){}})();
+const AI_EXAMPLES=['Baño de 2 × 2,5 m: quitar azulejos y sanitarios, plato de ducha de 120, inodoro, mueble de lavabo, alicatar hasta el techo y suelo porcelánico','Pintar piso de 90 m² con techos y quitar el gotelé del salón (unos 45 m² de pared)','Cocina de 3 × 3 m: quitar azulejo y suelo, alicatar, suelo porcelánico, 6 enchufes, montar muebles y encimera de cuarzo de 3,5 m'];
+function aiPanel(){
+  const E=S.ed;
+  const msgs=E.chat.map(m=>`<div class="msg ${m.role}">${esc(m.content)}</div>`).join('');
+  const hello=`<div class="msg assistant">Hola, Sergio. Cuéntame el trabajo como se lo contarías a un compañero: estancia, medidas y qué hay que hacer. Yo voy poniendo las partidas con tus precios y te pregunto lo que falte.</div><div class="ai-ex">${AI_EXAMPLES.map((x,i)=>`<button data-act="aiExample" data-i="${i}">«${esc(x)}»</button>`).join('')}</div>`;
+  return `<div class="chat"><div class="msgs" id="msgs">${E.chat.length?'':hello}${msgs}${E.busy?`<div class="msg assistant ${E.aiLive?'':'think'}" id="ai-live">${E.aiLive?esc(E.aiLive):'Pensando…'}</div>`:''}</div>
+   <div class="compose"><textarea id="ai-text" data-in="aiDraft" placeholder="Escribe o dicta el trabajo…" aria-label="Mensaje para el asistente" ${E.busy?'disabled':''}>${esc(E.aiDraft)}</textarea>
+   <div class="col">${E.busy?`<button class="btn" data-act="aiStop">Parar</button>`:`<button class="btn primary" data-act="aiSend" aria-label="Enviar">${ic('next')}</button>`}<button class="icon-btn" data-act="mic" aria-label="Dictar con la voz" title="Dictar"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zM5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button></div></div>
+   ${SAMPLE?'':'<p class="hint" style="margin:0">Aquí el asistente funciona en modo básico (reconoce palabras clave). Con la IA activada entiende frases completas y calcula medidas.</p>'}</div>`;
+}
+function aiRules(){
+  const cat=catalog().map(c=>c.name+':\n'+c.items.map(i=>`- ${i.name} (${i.unit}, ${priceOf(i.name)} €)`).join('\n')).join('\n');
+  return `Eres el asistente de presupuestos de Construcciones SGM, empresa de reformas y trabajos integrales en España. Ayudas a Sergio, el dueño, a montar presupuestos hablando, porque no se maneja bien con el ordenador.
+
+Cómo trabajas:
+- Usa SIEMPRE las herramientas para cambiar el presupuesto; no basta con decirlo.
+- Usa el nombre EXACTO del catálogo cuando la partida exista. Si no existe, crea una partida con nombre claro, unidad y un precio razonable de mercado en España, y avísale para que lo revise.
+- No pongas precio en partidas del catálogo salvo que Sergio diga un precio concreto: la app usa su tarifa.
+- Calcula medidas: suelo = largo × ancho; alicatado o pintura de paredes = perímetro × altura (2,5 m si no la dice; restando ~2 m² por puerta). Pon la cuenta en la nota de la partida (ej.: "(2+2,5)×2×2,5 m − puerta").
+- Añade lo que un profesional no olvidaría (retirada de escombros, protección, limpieza final) cuando tenga sentido, y díselo.
+- Si falta un dato importante, pon una cantidad razonable y pregunta para confirmarla.
+- Si Sergio nombra al cliente o el trabajo, usa datos_generales. IVA del 10 % para reforma de vivienda particular, 21 % en lo demás.
+- Responde en español de España, cercano y breve (2-4 frases): qué has añadido y qué necesitas saber. Nunca menciones herramientas, JSON ni detalles técnicos.
+
+Clientes existentes: ${db.clients.map(c=>c.name).join('; ')||'ninguno'}.
+
+Catálogo con la tarifa de Sergio:
+${cat}`;
+}
+function aiState(){const q=S.ed.q,c=client(q.client);return `[Presupuesto ahora mismo]\nTítulo: ${q.title||'(sin título)'}\nCliente: ${c?c.name:'(sin elegir)'}\nIVA: ${q.iva} %\nPartidas:\n${q.lines.map(l=>`- ${l.name}: ${qtyFmt(l.qty)} ${l.unit} × ${l.price} €${l.note?' · '+l.note:''}`).join('\n')||'(ninguna)'}\nTotal con IVA: ${eur(calc(q).total)}`}
+function findLine(q,name){const n=String(name||'').toLowerCase().trim();return q.lines.find(l=>l.name.toLowerCase()===n)||q.lines.find(l=>l.name.toLowerCase().includes(n)||n.includes(l.name.toLowerCase()))}
+function aiNote(E,t){E.chat.push({role:'note',content:t});if(S.ed===E){edLines();edPicker();const h=$('.head h1');if(h)h.textContent=E.q.title||'Presupuesto sin título'}}
+function aiTools(E){const q=E.q;return [
+ {name:'anadir_partidas',description:'Añade partidas al presupuesto. Si la partida ya está, sustituye su cantidad. Devuelve lo que se ha hecho.',inputSchema:{type:'object',properties:{partidas:{type:'array',items:{type:'object',properties:{nombre:{type:'string',description:'Nombre exacto del catálogo, o uno nuevo y claro'},cantidad:{type:'number'},unidad:{type:'string',enum:UNITS},precio:{type:'number',description:'Solo si no está en el catálogo o Sergio dio un precio'},nota:{type:'string',description:'Medidas, estancia o acabado; visible para el cliente'}},required:['nombre','cantidad']}}},required:['partidas']},
+  execute(inp){const out=[];for(const p of (Array.isArray(inp.partidas)?inp.partidas:[])){const name=String(p.nombre||'').trim();if(!name)continue;const qty=Math.max(0,r2(+p.cantidad||1));const ex=q.lines.find(l=>l.name.toLowerCase()===name.toLowerCase());
+    if(ex){ex.qty=qty;if(p.nota)ex.note=String(p.nota);if(p.precio!=null&&+p.precio>0)ex.price=r2(+p.precio);out.push('actualizada '+ex.name);continue}
+    const info=itemInfo(name);let l;if(info){l=mkLine(info.name,qty,p.nota?String(p.nota):'');if(p.precio!=null&&+p.precio>0)l.price=r2(+p.precio)}else{l={id:uid(),cap:'otr',name,unit:UNITS.includes(p.unidad)?p.unidad:'ud',qty,price:r2(+p.precio||0),scope:SCOPES[0],note:p.nota?String(p.nota):''}}
+    q.lines.push(l);out.push((info?'añadida ':'añadida (nueva, revisar precio) ')+l.name)}
+   aiNote(E,'✓ '+out.length+' partida'+(out.length===1?'':'s')+': '+out.map(x=>x.replace(/^añadida (\(nueva, revisar precio\) )?|^actualizada /,'')).join(', '));return out.join('; ')||'nada'}},
+ {name:'cambiar_partida',description:'Cambia la cantidad, el precio o la nota de una partida que ya está en el presupuesto.',inputSchema:{type:'object',properties:{nombre:{type:'string'},cantidad:{type:'number'},precio:{type:'number'},nota:{type:'string'}},required:['nombre']},
+  execute(inp){const l=findLine(q,inp.nombre);if(!l)throw new Error('No está en el presupuesto: '+inp.nombre);if(inp.cantidad!=null)l.qty=Math.max(0,r2(+inp.cantidad));if(inp.precio!=null)l.price=Math.max(0,r2(+inp.precio));if(inp.nota!=null)l.note=String(inp.nota);aiNote(E,'✓ Cambiada: '+l.name+' ('+qtyFmt(l.qty)+' '+l.unit+' × '+eur(l.price)+')');return 'ok'}},
+ {name:'quitar_partida',description:'Quita una partida del presupuesto.',inputSchema:{type:'object',properties:{nombre:{type:'string'}},required:['nombre']},
+  execute(inp){const l=findLine(q,inp.nombre);if(!l)throw new Error('No está en el presupuesto: '+inp.nombre);q.lines=q.lines.filter(x=>x!==l);aiNote(E,'✓ Quitada: '+l.name);return 'ok'}},
+ {name:'datos_generales',description:'Pone el título del trabajo, el cliente (si existe uno con ese nombre lo usa, si no lo crea) y el IVA.',inputSchema:{type:'object',properties:{titulo:{type:'string'},cliente:{type:'string'},telefono:{type:'string'},direccion:{type:'string'},iva:{type:'number',enum:[21,10,0]}}},
+  execute(inp){const done=[];if(inp.titulo){q.title=String(inp.titulo);done.push('título')}
+   if(inp.cliente){const n=String(inp.cliente).trim().toLowerCase();let c=db.clients.find(c=>c.name.toLowerCase()===n)||db.clients.find(c=>c.name.toLowerCase().includes(n)||n.includes(c.name.toLowerCase().split(' ')[0]));if(!c){c={id:uid(),name:String(inp.cliente).trim(),phone:String(inp.telefono||''),email:'',address:String(inp.direccion||''),nif:'',notes:''};db.clients.push(c);save();done.push('cliente nuevo '+c.name)}else done.push('cliente '+c.name);q.client=c.id}
+   if(inp.iva!=null&&[0,10,21].includes(+inp.iva)){q.iva=+inp.iva;done.push('IVA '+q.iva+' %')}
+   aiNote(E,'✓ '+done.join(' · '));return done.join(', ')||'nada'}}
+]}
+function aiFallback(E,text){const f=parseText(text);for(const x of f){const ex=E.q.lines.find(l=>l.name===x.name);if(ex)ex.qty=x.qty;else E.q.lines.push(mkLine(x.name,x.qty))}
+  if(f.length)aiNote(E,'✓ '+f.length+' partidas: '+f.map(x=>x.name+' ('+qtyFmt(x.qty)+' '+x.unit+')').join(', '));
+  E.chat.push({role:'assistant',content:f.length?'He puesto estas partidas. Revisa las cantidades en la lista y cámbialas con − / + si hace falta.':'No he reconocido trabajos en ese mensaje. Prueba con palabras como «alicatar», «pintar», «plato de ducha» o «enchufes», separadas por comas.'})}
+async function aiSend(text){
+  const E=S.ed;if(!E||E.busy)return;text=String(text||'').trim();if(!text)return;
+  E.chat.push({role:'user',content:text});E.aiDraft='';E.busy=true;E.aiLive='';edPicker();
+  if(!SAMPLE){aiFallback(E,text);E.busy=false;edPicker();return}
+  const hist=E.chat.filter(m=>m.role==='user'||m.role==='assistant').slice(-14);
+  const turns=[{role:'user',content:aiRules()},...hist.slice(0,-1),{role:'user',content:text+'\n\n'+aiState()}];
+  if(turns[1]&&turns[1].role==='assistant')turns.splice(1,1);
+  const ctl=new AbortController();E.ctl=ctl;
+  try{const r=await SAMPLE(turns,{modelTier:'quick',signal:ctl.signal,tools:aiTools(E),onText:({text})=>{E.aiLive=text;const el=$('#ai-live');if(el&&S.ed===E){el.textContent=text;el.classList.remove('think');const b=$('#picker-body');if(b)b.scrollTop=b.scrollHeight}}});
+    E.chat.push({role:'assistant',content:r.text.trim()})}
+  catch(e){const code=e&&e.code;
+    if(code==='cancelled'){if(e.text)E.chat.push({role:'assistant',content:e.text})}
+    else if(['not_granted','sampling_disabled','not_declared','capability_disabled','capability_removed','tools_unavailable'].includes(code)){SAMPLE=null;aiFallback(E,text)}
+    else if(code==='rate_limited')E.chat.push({role:'assistant',content:(e.text?e.text+'\n\n':'')+'Ahora mismo hay demasiadas consultas. Espera un momento y vuelve a enviarlo.'})
+    else E.chat.push({role:'assistant',content:(e&&e.text?e.text+'\n\n':'')+'Se ha cortado la respuesta. Vuelve a enviarlo, por favor.'})}
+  finally{E.busy=false;E.ctl=null;E.aiLive='';if(S.ed===E){edLines();edPicker();setTimeout(()=>$('#ai-text')?.focus(),30)}}
+}
+
+/* ---------- PDF ---------- */
+const IN_CLAUDE=!!window.claude;
+const canSave=()=>!!DL||!IN_CLAUDE;
+function pdfName(d,kind){const c=client(d.client);return ((kind==='quote'?'Presupuesto ':'Factura ')+(d.number||'borrador')+(c?' - '+c.name:'')+'.pdf').replace(/[\\/:*?"<>|]/g,'')}
+async function addDocPages(pdf,d,kind,firstDoc){
+  const holder=document.createElement('div');holder.style.cssText='position:fixed;left:-12000px;top:0;width:794px;background:#fff';holder.innerHTML=docHTML(d,kind);document.body.append(holder);
+  const paper=holder.firstElementChild;paper.style.boxShadow='none';paper.style.zoom='1';
+  try{
+    const sc=2,canvas=await window.html2canvas(paper,{scale:sc,backgroundColor:'#ffffff',logging:false});
+    const top=paper.getBoundingClientRect().top;const cands=[...paper.querySelectorAll('tr,section,header')].map(e=>e.getBoundingClientRect().bottom-top).sort((a,b)=>a-b);
+    const H=paper.offsetHeight,PH=1123,TP=44,BP=40,pages=[];let y=0;
+    while(y<H-4){const first=!pages.length;const avail=PH-(first?0:TP)-BP;let end=y+avail;if(end<H){const c=cands.filter(v=>v>y+80&&v<=end);if(c.length)end=c[c.length-1]}else end=H;pages.push([y,end,first]);y=end}
+    const W=pdf.internal.pageSize.getWidth(),Hh=pdf.internal.pageSize.getHeight();
+    pages.forEach(([a,b,first],i)=>{const pc=document.createElement('canvas');pc.width=794*sc;pc.height=PH*sc;const g=pc.getContext('2d');g.fillStyle='#fff';g.fillRect(0,0,pc.width,pc.height);
+      g.drawImage(canvas,0,a*sc,794*sc,(b-a)*sc,0,(first?0:TP)*sc,794*sc,(b-a)*sc);
+      if(pages.length>1){g.fillStyle='#7b877e';g.font=`${10*sc}px sans-serif`;g.textAlign='right';g.fillText(`${d.number||''} · Página ${i+1} de ${pages.length}`,(794-56)*sc,(PH-18)*sc)}
+      if(!(firstDoc&&i===0))pdf.addPage();pdf.addImage(pc.toDataURL('image/jpeg',.92),'JPEG',0,0,W,Hh)});
+  }finally{holder.remove()}
+}
+async function buildPDF(docs,name){
+  if(!window.html2canvas||!window.jspdf){toast('Preparando el generador de PDF. Vuelve a pulsar en unos segundos.');return null}
+  toast('Generando PDF…');
+  try{if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+    const pdf=new window.jspdf.jsPDF({unit:'pt',format:'a4'});
+    for(let i=0;i<docs.length;i++)await addDocPages(pdf,docs[i].d,docs[i].kind,i===0);
+    return {blob:pdf.output('blob'),name:name||pdfName(docs[0].d,docs[0].kind)};
+  }catch(e){toast('No se ha podido generar el PDF');return null}
+}
+async function saveFile(blob,name,msg='PDF guardado'){
+  if(DL){try{await DL.save({filename:name,data:blob});toast(msg);return true}catch(e){if(e&&e.code!=='declined')toast('No se ha podido guardar el PDF');return false}}
+  if(IN_CLAUDE){toast('La descarga no está disponible en esta vista');return false}
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.append(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},4000);toast(msg);return true;
+}
+/* Abre el menú «Compartir» del móvil u ordenador (WhatsApp, correo…) con el PDF adjunto */
+async function shareFile(blob,name,text){
+  let file=null;try{file=new File([blob],name,{type:'application/pdf'})}catch(e){}
+  if(file&&navigator.canShare&&navigator.canShare({files:[file]})){
+    try{await navigator.share({files:[file],title:name,text});return true}catch(e){if(e&&e.name==='AbortError')return false}
+  }
+  const ok=await saveFile(blob,name);if(ok)toast('PDF listo: ábrelo y pulsa Compartir → WhatsApp o Correo');return ok;
+}
+async function downloadPDF(d,kind){const p=await buildPDF([{d,kind}]);if(p)await saveFile(p.blob,p.name)}
+function docMessage(d,kind,name){const first=String(name||'').split(' ')[0];const hi=first?`Hola ${first}`:'Hola';
+  return kind==='quote'?`${hi}, soy Sergio, de Construcciones SGM. Te envío el presupuesto ${d.number} de «${d.title}». Total: ${eur(calc(d).total)} (IVA incluido). Cualquier duda me dices. Un saludo.`
+  :`${hi}, soy Sergio, de Construcciones SGM. Te envío la factura ${d.number} por importe de ${eur(calc(d).total)} (IVA incluido). Vence el ${dLong(d.due)}. Un saludo.`}
+
+/* ---------- Agenda del móvil ---------- */
+function normPhone(p){let d=String(p||'').replace(/[^\d+]/g,'');if(d.startsWith('00'))d='+'+d.slice(2);if(/^[6789]\d{8}$/.test(d))d='+34'+d;return d}
+const waNum=p=>normPhone(p).replace(/\D/g,'');
+const prettyPhone=p=>{const n=normPhone(p);const m=n.match(/^\+34(\d{3})(\d{2})(\d{2})(\d{2})$/);return m?`+34 ${m[1]} ${m[2]} ${m[3]} ${m[4]}`:(p||'')};
+function parseVCF(txt){const out=[];let cur=null;
+  for(const L of String(txt).replace(/\r\n/g,'\n').replace(/\n[ \t]/g,'').split('\n')){const u=L.toUpperCase();
+    if(u.startsWith('BEGIN:VCARD')){cur={name:'',phones:[],emails:[]};continue}
+    if(u.startsWith('END:VCARD')){if(cur&&(cur.name||cur.phones.length))out.push(cur);cur=null;continue}
+    if(!cur)continue;const i=L.indexOf(':');if(i<0)continue;
+    const k=L.slice(0,i).toUpperCase().split(';')[0].split('.').pop(),val=L.slice(i+1).replace(/\\([,;\\nN])/g,(m,c)=>/n/i.test(c)?' ':c).trim();
+    if(k==='FN')cur.name=val;else if(k==='N'&&!cur.name){const p=val.split(';');cur.name=[p[1],p[0]].filter(Boolean).join(' ')}else if(k==='TEL')cur.phones.push(val);else if(k==='EMAIL')cur.emails.push(val)}
+  return out}
+function mergeContacts(list){let add=0;
+  for(const c of list){const phone=normPhone((c.phones||[])[0]||''),name=String(c.name||'').trim()||phone;if(!name)continue;
+    const ex=db.contacts.find(x=>(phone&&normPhone(x.phone)===phone)||x.name.toLowerCase()===name.toLowerCase());
+    if(ex){if(!ex.phone&&phone)ex.phone=phone;if(!ex.email&&(c.emails||[])[0])ex.email=c.emails[0];continue}
+    db.contacts.push({id:uid(),name,phone,email:(c.emails||[])[0]||''});add++}
+  save();return add}
+async function importAgenda(){
+  if(navigator.contacts&&navigator.contacts.select){try{const r=await navigator.contacts.select(['name','tel','email'],{multiple:true});if(r&&r.length){const n=mergeContacts(r.map(x=>({name:(x.name||[])[0],phones:x.tel||[],emails:x.email||[]})));toast(n+' contactos nuevos');afterAgenda()}return}catch(e){}}
+  dlg(`<div class="dlg-head"><h2>Traer contactos del móvil</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div>
+  <div class="dlg-body"><p style="margin:0">Este móvil no deja abrir la agenda desde aquí. Se hace en dos pasos y solo una vez:</p>
+   <div class="stack small" style="gap:8px"><div><b>iPhone:</b> abre Contactos → Listas → mantén pulsado «Todos los contactos» → Exportar. Guarda el archivo .vcf.</div><div><b>Android:</b> abre Contactos → Arreglar y gestionar (o Ajustes) → Exportar a archivo .vcf.</div><div><b>Google Contactos (ordenador):</b> contacts.google.com → Exportar → vCard.</div></div>
+   <label class="btn primary" for="vcf-input" style="cursor:pointer">${ic('users')} Elegir el archivo de contactos</label>
+   <p class="hint" style="margin:0">En la app instalada en Android se abre directamente la agenda del teléfono para marcar los contactos.</p></div>`)}
+function afterAgenda(){if(S.send&&$('#dlg')?.open)renderSend();else{closeDlg();render()}}
+function people(q){const s=String(q||'').toLowerCase().trim();const cl=db.clients.map(c=>({key:'c:'+c.id,name:c.name,phone:c.phone,email:c.email,tag:'Cliente'}));
+  const ph=new Set(cl.map(c=>normPhone(c.phone)).filter(Boolean));
+  const ag=db.contacts.filter(k=>!ph.has(normPhone(k.phone))).map(k=>({key:'k:'+k.id,name:k.name,phone:k.phone,email:k.email,tag:'Agenda'}));
+  return [...cl,...ag].filter(p=>!s||(p.name+' '+p.phone+' '+p.email).toLowerCase().includes(s)).sort((a,b)=>a.name.localeCompare(b.name,'es'))}
+
+/* ---------- Enviar presupuesto o factura ---------- */
+function sendDoc(){const x=S.send;if(!x)return null;if(x.kind==='quote')return S.ed&&S.ed.q.id===x.id?S.ed.q:db.quotes.find(q=>q.id===x.id);return db.invoices.find(f=>f.id===x.id)}
+function openSend(kind,id){const d=kind==='quote'?(S.ed&&S.ed.q.id===id?S.ed.q:db.quotes.find(q=>q.id===id)):db.invoices.find(f=>f.id===id);if(!d)return;
+  if(kind==='quote'&&!d.number){d.number=nextNumber('PRE',db.quotes,d.date);if(S.ed&&!S.ed.isNew)edCommit()}
+  const c=client(d.client);S.send={kind,id,to:c?{name:c.name,phone:c.phone,email:c.email}:null,picking:!c,q:''};renderSend()}
+function renderSend(){const x=S.send,d=sendDoc();if(!d)return;const to=x.to;
+  const list=people(x.q).slice(0,60);
+  const msg=docMessage(d,x.kind,to?.name);const wa=to&&to.phone?`https://wa.me/${waNum(to.phone)}?text=${encodeURIComponent(msg)}`:'';
+  dlg(`<div class="dlg-head"><h2>Enviar ${x.kind==='quote'?'presupuesto':'factura'} ${esc(d.number)}</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div>
+  <div class="dlg-body">
+   ${to&&!x.picking?`<div class="chosen"><span class="avatar">${esc(initials(to.name))}</span><div style="min-width:0;flex:1"><b>${esc(to.name)}</b><span>${esc([prettyPhone(to.phone),to.email].filter(Boolean).join(' · ')||'Sin teléfono ni correo')}</span></div><button class="btn sm" data-act="sendPick">Cambiar</button></div>
+   <div class="stack" style="gap:8px">
+     <button class="btn wa" data-act="sendShare" style="min-height:52px">${ic('chat')} Enviar PDF por WhatsApp</button>
+     <p class="hint" style="margin:-2px 0 4px">Se abre WhatsApp con el PDF adjunto: toca a <b>${esc(to.name)}</b> en la lista y envía. El mensaje va ya escrito.</p>
+     <button class="btn" data-act="sendShare">${ic('file')} Enviar PDF por correo u otra app</button>
+     ${wa?`<a class="btn ghost" href="${wa}" target="_blank" rel="noopener">${ic('chat')} Abrir el chat de ${esc(to.name.split(' ')[0])} (solo mensaje)</a>`:''}
+     ${canSave()?`<button class="btn ghost" data-act="sendDownload">${ic('file')} Descargar el PDF</button>`:''}
+   </div>`:
+   `<div class="row"><div class="search" style="flex:1;min-width:180px">${ic('search')}<input class="input" id="send-q" data-in="sendQ" placeholder="Buscar cliente o contacto" value="${esc(x.q)}"></div><button class="btn" data-act="importAgenda">${ic('users')} Agenda del móvil</button></div>
+    <div class="list" id="send-list" style="max-height:46vh;overflow:auto">${list.map(p=>`<button class="li" style="grid-template-columns:auto minmax(0,1fr) auto" data-act="sendTo" data-k="${esc(p.key)}"><span class="avatar" style="width:30px;height:30px;font-size:12px">${esc(initials(p.name))}</span><div style="min-width:0"><div class="t">${esc(p.name)}</div><div class="s">${esc(prettyPhone(p.phone)||p.email||'Sin teléfono')}</div></div><span class="pill ${p.tag==='Cliente'?'st-Aceptado':'st-Borrador'}">${p.tag}</span></button>`).join('')||'<div class="empty"><b>Nadie con ese nombre</b>Trae tus contactos con «Agenda del móvil».</div>'}</div>`}
+  </div>`)}
+function markDocSent(){const x=S.send,d=sendDoc();if(!d)return;
+  if(x.kind==='quote'){if(d.status==='Borrador'){d.status='Enviado';d.sentAt=today()}if(S.ed&&S.ed.q===d){if(!S.ed.isNew)edCommit()}else save()}
+  else{d.sentAt=today();save()}}
+
+function renderSendList(l,list){l.innerHTML=list.map(p=>`<button class="li" style="grid-template-columns:auto minmax(0,1fr) auto" data-act="sendTo" data-k="${esc(p.key)}"><span class="avatar" style="width:30px;height:30px;font-size:12px">${esc(initials(p.name))}</span><div style="min-width:0"><div class="t">${esc(p.name)}</div><div class="s">${esc(prettyPhone(p.phone)||p.email||'Sin teléfono')}</div></div><span class="pill ${p.tag==='Cliente'?'st-Aceptado':'st-Borrador'}">${p.tag}</span></button>`).join('')||'<div class="empty"><b>Nadie con ese nombre</b>Trae tus contactos con «Agenda del móvil».</div>'}
+/* ---------- Enviar al gestor ---------- */
+function gestorDialog(month){const months=[...new Set(db.invoices.map(f=>f.date.slice(0,7)))].sort().reverse();month=month||months[0]||today().slice(0,7);
+  const fs=db.invoices.filter(f=>f.date.startsWith(month)).sort((a,b)=>a.number.localeCompare(b.number));const tot=fs.reduce((a,f)=>{const t=calc(f);a.n+=t.net;a.i+=t.iva;a.t+=t.total;return a},{n:0,i:0,t:0});const [y,m]=month.split('-');const co=db.company;
+  S.gestor={month,ids:fs.map(f=>f.id)};
+  dlg(`<div class="dlg-head"><h2>Enviar al gestor</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div>
+  <div class="dlg-body"><label class="field">Mes<select id="g-month" data-in="gMonth">${months.map(x=>{const [yy,mm]=x.split('-');return `<option value="${x}" ${x===month?'selected':''}>${MONTHS[+mm-1]} ${yy}</option>`}).join('')}</select></label>
+   <div class="panel" style="padding:14px"><b>${fs.length} factura${fs.length===1?'':'s'} de ${MONTHS[+m-1]} ${y}</b><div class="small muted">${fs.map(f=>esc(f.number)).join(' · ')||'Ninguna'}</div><div class="row small" style="margin-top:8px;gap:16px"><span>Base <b class="num">${eur(tot.n)}</b></span><span>IVA <b class="num">${eur(tot.i)}</b></span><span>Total <b class="num">${eur(tot.t)}</b></span></div></div>
+   <p class="muted small" style="margin:0">Para: <b style="color:var(--ink)">${esc(co.gestorName||'tu gestoría')}</b> ${esc(co.gestorEmail||'')} · Cámbialo en Ajustes.</p>
+   <p class="hint" style="margin:0">Se genera un único PDF con todas las facturas del mes, listo para mandar por correo o WhatsApp.</p></div>
+  <div class="dlg-foot">${canSave()?`<button class="btn" data-act="gestorDownload" ${fs.length?'':'disabled'}>${ic('file')} Descargar</button>`:''}${co.gestorEmail?`<a class="btn" href="mailto:${esc(co.gestorEmail)}?subject=${encodeURIComponent('Facturas '+MONTHS[+m-1]+' '+y+' · Construcciones SGM')}&body=${encodeURIComponent('Hola, te adjunto las facturas de '+MONTHS[+m-1]+' '+y+'. Un saludo, Sergio')}">Correo al gestor</a>`:''}<button class="btn primary" data-act="gestorShare" ${fs.length?'':'disabled'}>${ic('chat')} Enviar PDF</button></div>`)}
+async function gestorPDF(){const g=S.gestor;if(!g||!g.ids.length)return null;const [y,m]=g.month.split('-');return buildPDF(g.ids.map(id=>({d:db.invoices.find(f=>f.id===id),kind:'invoice'})),`Facturas ${MONTHS[+m-1]} ${y} - Construcciones SGM.pdf`)}
+
+/* ---------- Acciones ---------- */
+function edRefreshTotals(){const q=S.ed.q,t=calc(q);const T=$('#ed-total');if(T)T.textContent=eur(t.total);t.caps.forEach(c=>{const el=$('#cs-'+c.id);if(el)el.textContent=eur(c.sub)})}
+function edLines(){const el=$('#lines');if(el)el.innerHTML=linesHTML();edRefreshTotals()}
+function edPicker(){const el=$('#picker-body');if(el){el.innerHTML=S.ed.mode==='cat'?catList():aiPanel();if(S.ed.mode==='ai')el.scrollTop=el.scrollHeight}}
+function edCommit(){const q=S.ed.q;const i=db.quotes.findIndex(x=>x.id===q.id);if(i>=0){db.quotes[i]=structuredClone(q);save()}}
+
+const ACT={
+ go:el=>{if(el.dataset.f)S.qFilter=el.dataset.f;go(el.dataset.v);closeDlg()},
+ newQuote:el=>{closeDlg();newQuote(el.dataset.tpl)},
+ openQuote:el=>{closeDlg();openQuote(el.dataset.id)},
+ moreMenu:()=>dlg(`<div class="dlg-head"><h2>Más</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div><div class="dlg-body"><div class="more-grid">${NAV.filter(([v])=>!['inicio','presupuestos','facturas'].includes(v)).map(([v,i])=>`<button data-act="go" data-v="${v}">${ic(i)} ${VIEWS[v]}</button>`).join('')}</div>${!DEMO&&!isStandalone()?`<button class="btn primary" data-act="install">${ic('plus')} Instalar en el móvil</button>`:''}<button class="btn" data-act="logout">Cerrar sesión</button>${DEMO?'<p class="hint" style="margin:0">Demo · datos de ejemplo guardados en este navegador.</p>':''}</div>`),
+ closeDlg,
+ aiSend:()=>{const t=$('#ai-text');aiSend(t?t.value:S.ed.aiDraft)},
+ aiStop:()=>{S.ed?.ctl?.abort()},
+ aiExample:el=>{S.ed.aiDraft=AI_EXAMPLES[+el.dataset.i];edPicker();const t=$('#ai-text');if(t){t.focus();t.setSelectionRange(t.value.length,t.value.length)}},
+ mic:()=>{const R=window.SpeechRecognition||window.webkitSpeechRecognition;const hint='Para dictar usa el micrófono del teclado: en el móvil, el icono del micrófono; en Windows, tecla Windows + H.';if(!R){toast(hint);$('#ai-text')?.focus();return}try{const r=new R();r.lang='es-ES';r.interimResults=false;r.onresult=e=>{const t=[...e.results].map(x=>x[0].transcript).join(' ');S.ed.aiDraft=((S.ed.aiDraft||'')+' '+t).trim();edPicker()};r.onerror=()=>toast(hint);r.start();toast('Te escucho…')}catch(e){toast(hint)}},
+ pdfQuote:()=>{const q=S.ed.q;if(!q.number)q.number=nextNumber('PRE',db.quotes,q.date);if(!S.ed.isNew)edCommit();downloadPDF(q,'quote')},
+ sendQuote:()=>openSend('quote',S.ed.q.id),
+ sendInvoice:el=>openSend('invoice',el.dataset.id),
+ sendPick:()=>{S.send.picking=true;renderSend();setTimeout(()=>$('#send-q')?.focus(),30)},
+ sendTo:el=>{const [t,id]=el.dataset.k.split(':');const p=t==='c'?client(id):db.contacts.find(k=>k.id===id);if(p){S.send.to={name:p.name,phone:p.phone,email:p.email};S.send.picking=false;renderSend()}},
+ sendShare:async()=>{const x=S.send,d=sendDoc();if(!d)return;const p=await buildPDF([{d,kind:x.kind}]);if(!p)return;const ok=await shareFile(p.blob,p.name,docMessage(d,x.kind,x.to?.name));if(ok){markDocSent();closeDlg();render();toast(x.kind==='quote'?'Presupuesto marcado como enviado':'Factura marcada como enviada')}},
+ sendDownload:async()=>{const d=sendDoc();if(d)await downloadPDF(d,S.send.kind)},
+ importAgenda:()=>importAgenda(),
+ install:async()=>{if(window.__installEvt){window.__installEvt.prompt();try{await window.__installEvt.userChoice}catch(e){}window.__installEvt=null;render();return}
+   const ios=/iphone|ipad|ipod/i.test(navigator.userAgent);dlg(`<div class="dlg-head"><h2>Instalar SGM</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div><div class="dlg-body stack small">${ios?'<div><b>iPhone:</b> abre esta página en Safari, pulsa el botón Compartir (cuadrado con flecha) y elige «Añadir a pantalla de inicio».</div>':'<div><b>Android:</b> en Chrome, menú ⋮ → «Instalar aplicación» o «Añadir a pantalla de inicio».</div><div><b>Ordenador (Chrome o Edge):</b> pulsa el icono de instalar que aparece a la derecha de la barra de direcciones, o menú ⋮ → «Instalar SGM».</div>'}<p class="hint" style="margin:0">Quedará un icono de SGM en el escritorio o en la pantalla de inicio que abre la app en su propia ventana.</p></div>`)},
+ changePass:async()=>{const a=$('#pw-1').value.trim(),b=$('#pw-2').value.trim();const e=t=>$('#pw-err').innerHTML=`<div class="err">${t}</div>`;if(a.length<6)return e('Usa al menos 6 caracteres.');if(a!==b)return e('Las dos contraseñas no coinciden.');store('sgm-pass',await passHash(a));$('#pw-1').value=$('#pw-2').value='';$('#pw-err').innerHTML='';toast('Contraseña cambiada')},
+ backupFile:()=>saveFile(new Blob([JSON.stringify(db)],{type:'application/json'}),'Copia SGM '+today()+'.json','Copia guardada'),
+ cTab:el=>{S.cTab=el.dataset.t;render()},
+ contactToClient:el=>{const k=db.contacts.find(x=>x.id===el.dataset.id);if(!k)return;const c={id:uid(),name:k.name,phone:k.phone,email:k.email,address:'',nif:'',notes:''};db.clients.push(c);db.contacts=db.contacts.filter(x=>x!==k);save();S.cTab='clientes';render();editClient(c.id);toast('Ahora es cliente: completa su dirección')},
+ delContact:el=>confirmBox('¿Quitar este contacto?','Solo se quita de la app, no de tu móvil.','Quitar',()=>{db.contacts=db.contacts.filter(x=>x.id!==el.dataset.id);save();render()}),
+ gestor:()=>gestorDialog(),
+ gestorShare:async()=>{const p=await gestorPDF();if(!p)return;const [y,m]=S.gestor.month.split('-');const ok=await shareFile(p.blob,p.name,`Hola, te envío las facturas de ${MONTHS[+m-1]} ${y} de Construcciones SGM. Un saludo, Sergio`);if(ok){S.gestor.ids.forEach(id=>{const f=db.invoices.find(f=>f.id===id);if(f&&!f.sentGestor)f.sentGestor=today()});save();closeDlg();toast('Facturas enviadas al gestor')}},
+ gestorDownload:async()=>{const p=await gestorPDF();if(p)await saveFile(p.blob,p.name)},
+ pdfInvoice:el=>{const f=db.invoices.find(f=>f.id===el.dataset.id);if(f)downloadPDF(f,'invoice')},
+ logout:()=>{closeDlg();AUTH=false;store('sgm-auth','0');S.view='inicio';S.ed=null;render()},
+ confirmYes:()=>{const f=S.onYes;S.onYes=null;closeDlg();f&&f()},
+ qFilter:el=>{S.qFilter=el.dataset.f;render()},
+ fFilter:el=>{S.fFilter=el.dataset.f;render()},
+ exitEditor:()=>{const E=S.ed;if(E.isNew&&(E.q.lines.length||E.q.title)){confirmBox('¿Salir sin guardar?','El presupuesto nuevo no se ha guardado todavía.','Salir sin guardar',()=>go('presupuestos'))}else{if(!E.isNew)edCommit();go('presupuestos')}},
+ step:el=>{S.ed.step=+el.dataset.n;S.ed.err='';S.ed.sheet=false;render();window.scrollTo(0,0)},
+ pickClient:el=>{S.ed.q.client=el.dataset.id;const ws=db.works.filter(w=>w.client===el.dataset.id&&w.status!=='Terminada');if(ws.length===1)S.ed.q.work=ws[0].id;render()},
+ clearClient:()=>{S.ed.q.client='';S.ed.q.work='';render()},
+ toggleNewClient:()=>{S.ed.newClient=!S.ed.newClient;render();setTimeout(()=>$('#nc-name')?.focus(),30)},
+ saveNewClient:()=>{const n=$('#nc-name').value.trim();if(!n){$('#nc-name').focus();return}const c={id:uid(),name:n,phone:$('#nc-phone').value.trim(),email:'',address:$('#nc-address').value.trim(),nif:'',notes:''};db.clients.push(c);save();S.ed.q.client=c.id;S.ed.newClient=false;render();toast('Cliente guardado')},
+ applyTpl:el=>{const t=TEMPLATES.find(t=>t.id===el.dataset.tpl);S.ed.q.lines=t.lines.map(([n,q,note,p])=>mkLine(n,q,note||'',p));if(!S.ed.q.title)S.ed.q.title=t.title;S.ed.step=2;render();toast(t.lines.length+' partidas añadidas')},
+ mode:el=>{S.ed.mode=el.dataset.m;render()},
+ cap:el=>{S.ed.cap=el.dataset.c;S.ed.search='';const s=$('#cat-search');if(s)s.value='';$$('#cap-chips .chip').forEach(b=>b.setAttribute('aria-pressed',b.dataset.c===S.ed.cap));edPicker()},
+ openSheet:()=>{S.ed.sheet=true;render()},
+ closeSheet:()=>{S.ed.sheet=false;render()},
+ addItem:el=>{const n=el.dataset.name,q=S.ed.q;const ex=q.lines.find(l=>l.name===n);if(ex)ex.qty=r2(ex.qty+1);else q.lines.push(mkLine(n,1));edLines();edPicker();toast(ex?n+': '+qtyFmt(ex.qty)+' '+ex.unit:'Añadido: '+n)},
+ freeLine:()=>{const l={id:uid(),cap:'otr',name:'Trabajo adicional',unit:'ud',qty:1,price:0,scope:SCOPES[0],note:''};S.ed.q.lines.push(l);edLines();const el=$('#ln-'+l.id);if(el){el.focus();el.select();el.scrollIntoView({block:'center'})}},
+ qty:el=>{const l=S.ed.q.lines.find(l=>l.id===el.dataset.id);l.qty=Math.max(0,r2(l.qty+ +el.dataset.d));$('#lq-'+l.id).value=qtyFmt(l.qty);$('#la-'+l.id).textContent=eur(l.qty*l.price);edRefreshTotals()},
+ delLine:el=>{S.ed.q.lines=S.ed.q.lines.filter(l=>l.id!==el.dataset.id);edLines()},
+ parse:()=>{S.ed.found=parseText(S.ed.dict);edPicker()},
+ addFound:()=>{const q=S.ed.q;let n=0;for(const f of S.ed.found.filter(f=>f.on)){const ex=q.lines.find(l=>l.name===f.name);if(ex)ex.qty=r2(ex.qty+f.qty);else q.lines.push(mkLine(f.name,f.qty));n++}S.ed.found=null;S.ed.dict='';S.ed.mode='cat';S.ed.sheet=false;render();toast(n+' partidas añadidas')},
+ setStatus:el=>{const q=S.ed.q;q.status=el.dataset.s;if(q.status==='Enviado'&&!q.sentAt)q.sentAt=today();if(q.status==='Aceptado'&&!q.acceptedAt)q.acceptedAt=today();if(!S.ed.isNew)edCommit();render()},
+ saveQuote:()=>{const E=S.ed,q=E.q;
+   if(!q.client){E.err='Falta el cliente. Vuelve al paso 1 y elígelo.';render();return}
+   if(!q.title.trim()){E.err='Falta el título del trabajo (paso 1).';render();return}
+   if(!q.lines.length){E.err='Añade al menos una partida (paso 2).';render();return}
+   if(!q.number)q.number=nextNumber('PRE',db.quotes,q.date);
+   let upd=0;for(const l of q.lines){if(itemInfo(l.name)&&r2(priceOf(l.name))!==r2(l.price)&&l.price>0){db.prices[l.name]=r2(l.price);upd++}}
+   const i=db.quotes.findIndex(x=>x.id===q.id);if(i<0)db.quotes.push(structuredClone(q));else db.quotes[i]=structuredClone(q);
+   save();E.isNew=false;E.err='';render();toast('Presupuesto '+q.number+' guardado'+(upd?` · ${upd} precio${upd>1?'s':''} actualizado${upd>1?'s':''} en tu tarifa`:''))},
+ dupQuote:el=>{const src=S.ed?.q.id===el.dataset.id?S.ed.q:db.quotes.find(q=>q.id===el.dataset.id);const q=structuredClone(src);Object.assign(q,{id:uid(),number:'',date:today(),status:'Borrador',title:q.title+' (copia)',sentAt:null,acceptedAt:null});q.lines.forEach(l=>l.id=uid());S.ed=edState(q,1,true);render();window.scrollTo(0,0);toast('Copia creada: cambia el cliente y las medidas')},
+ delQuote:el=>confirmBox('¿Eliminar este presupuesto?','Se borrará '+(S.ed?.q.number||'')+' y no se puede deshacer.','Eliminar',()=>{db.quotes=db.quotes.filter(q=>q.id!==el.dataset.id);save();go('presupuestos');toast('Presupuesto eliminado')}),
+ whatsapp:el=>openWhatsApp(el.dataset.id,el.dataset.mode),
+ copyWa:()=>copyText($('#wa-msg').textContent,'Mensaje copiado'),
+ markSent:el=>{const id=el.dataset.id;const set=q=>{q.status='Enviado';q.sentAt=today()};if(S.ed&&S.ed.q.id===id){set(S.ed.q);if(!db.quotes.some(q=>q.id===id)){ACT.saveQuote();closeDlg();return}edCommit()}else{const q=db.quotes.find(q=>q.id===id);if(q){set(q);save()}}closeDlg();render();toast('Marcado como enviado')},
+ invoicePick,
+ invoiceFrom:el=>{if(S.ed&&S.ed.q.id===el.dataset.id)edCommit();invoiceFrom(el.dataset.id)},
+ createInvoice:el=>createInvoice(el.dataset.id),
+ openInvoice:el=>openInvoice(el.dataset.id),
+ payInvoice:el=>{const f=db.invoices.find(f=>f.id===el.dataset.id);f.status=el.dataset.v==='1'?'Cobrada':'Pendiente';f.paidAt=el.dataset.v==='1'?today():null;save();closeDlg();render();toast(el.dataset.v==='1'?'Factura cobrada':'Factura pendiente')},
+ delInvoice:el=>confirmBox('¿Eliminar esta factura?','Solo deberías borrar facturas creadas por error. La numeración no se reutiliza.','Eliminar',()=>{db.invoices=db.invoices.filter(f=>f.id!==el.dataset.id);save();render();toast('Factura eliminada')}),
+ editClient:el=>editClient(el.dataset.id),
+ saveClient:el=>{const n=$('#ec-name').value.trim();if(!n){$('#ec-err').innerHTML='<div class="err">Escribe el nombre del cliente.</div>';return}const id=el.dataset.id;const c=id?client(id):{id:uid()};Object.assign(c,{name:n,phone:$('#ec-phone').value.trim(),email:$('#ec-email').value.trim(),address:$('#ec-address').value.trim(),nif:$('#ec-nif').value.trim(),notes:$('#ec-notes').value});if(!id)db.clients.push(c);save();closeDlg();render();toast('Cliente guardado')},
+ delClient:el=>{const id=el.dataset.id;const n=db.quotes.filter(q=>q.client===id).length;if(n){dlg(`<div class="dlg-head"><h2>No se puede eliminar</h2></div><div class="dlg-body"><p style="margin:0">Este cliente tiene ${n} presupuesto${n>1?'s':''}. Elimínalos antes o deja el cliente como está.</p></div><div class="dlg-foot"><button class="btn primary" data-act="closeDlg">Entendido</button></div>`);return}confirmBox('¿Eliminar cliente?','Se borrará su ficha.','Eliminar',()=>{db.clients=db.clients.filter(c=>c.id!==id);save();render();toast('Cliente eliminado')})},
+ quoteFor:el=>{closeDlg();newQuote();S.ed.q.client=el.dataset.id;render()},
+ editWork:el=>editWork(el.dataset.id),
+ saveWork:el=>{const n=$('#ew-name').value.trim();if(!n){$('#ew-err').innerHTML='<div class="err">Escribe el nombre de la obra.</div>';return}const id=el.dataset.id;const w=id?work(id):{id:uid(),start:today()};Object.assign(w,{name:n,client:$('#ew-client').value,status:$('#ew-status').value,address:$('#ew-address').value.trim(),notes:$('#ew-notes').value});if(!id)db.works.push(w);save();closeDlg();render();toast('Obra guardada')},
+ delWork:el=>confirmBox('¿Eliminar obra?','Los presupuestos y gastos se conservan, pero quedan sin obra asociada.','Eliminar',()=>{const id=el.dataset.id;db.works=db.works.filter(w=>w.id!==id);db.quotes.forEach(q=>{if(q.work===id)q.work=''});db.expenses.forEach(e=>{if(e.work===id)e.work=''});save();render();toast('Obra eliminada')}),
+ addExpense:()=>{const amount=parseNum($('#e-amount').value),concept=$('#e-concept').value.trim();if(!amount||!concept){$('#e-err').innerHTML='<div class="err">Pon el importe y el concepto.</div>';return}db.expenses.push({id:uid(),date:$('#e-date').value||today(),concept,supplier:$('#e-supplier').value.trim(),cat:$('#e-cat').value,amount:r2(amount),work:$('#e-work').value,thumb:S.thumb||''});S.thumb='';save();render();toast('Gasto apuntado')},
+ delExpense:el=>confirmBox('¿Borrar este gasto?','Se quitará de la obra y del resumen del mes.','Borrar',()=>{db.expenses=db.expenses.filter(e=>e.id!==el.dataset.id);save();render()}),
+ pasteExcel:()=>dlg(`<div class="dlg-head"><h2>Pegar precios desde Excel</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div><div class="dlg-body"><p class="muted" style="margin:0">En tu Excel, selecciona las columnas <b>Partida</b>, <b>Unidad</b> y <b>Precio</b>, cópialas y pégalas aquí. Las partidas que ya existen se actualizan; las nuevas se añaden como partidas propias.</p><label class="field">Datos copiados<textarea id="xl-text" placeholder="Alicatado de paredes&#9;m²&#9;42&#10;Pintura de paredes&#9;m²&#9;9,50"></textarea></label><label class="field">Capítulo para las partidas nuevas<select id="xl-cap">${CAPS.map(c=>`<option value="${c.id}">${c.name}</option>`).join('')}</select></label><div id="xl-err"></div></div><div class="dlg-foot"><button class="btn" data-act="closeDlg">Cancelar</button><button class="btn primary" data-act="importExcel">${ic('check')} Importar</button></div>`),
+ importExcel:()=>{const rows=$('#xl-text').value.split(/\n/).map(r=>r.split(/\t|;/).map(x=>x.trim())).filter(r=>r[0]);let up=0,add=0;const cap=$('#xl-cap').value;for(const r of rows){const name=r[0];const unit=UNITS.includes(r[1])?r[1]:(r[1]||'').replace('m2','m²')||'ud';const price=parseNum(r[r.length-1]);if(!price)continue;if(itemInfo(name)){db.prices[name]=r2(price);up++}else{db.custom.push({cap,name,unit:UNITS.includes(unit)?unit:'ud',price:r2(price)});add++}}if(!up&&!add){$('#xl-err').innerHTML='<div class="err">No he encontrado filas con precio. Revisa que cada fila tenga partida, unidad y precio.</div>';return}save();closeDlg();render();toast(`${up} precios actualizados · ${add} partidas nuevas`)},
+ customItem:()=>dlg(`<div class="dlg-head"><h2>Partida propia</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div><div class="dlg-body"><label class="field">Nombre de la partida *<input id="ci-name" placeholder="Ej.: Colocación de plato de ducha extraplano"></label><div class="grid3"><label class="field">Capítulo<select id="ci-cap">${CAPS.map(c=>`<option value="${c.id}">${c.name}</option>`).join('')}</select></label><label class="field">Unidad<select id="ci-unit">${UNITS.map(u=>`<option>${u}</option>`).join('')}</select></label><label class="field">Precio €<input id="ci-price" inputmode="decimal"></label></div><div id="ci-err"></div></div><div class="dlg-foot"><button class="btn" data-act="closeDlg">Cancelar</button><button class="btn primary" data-act="saveCustom">${ic('check')} Guardar</button></div>`),
+ saveCustom:()=>{const name=$('#ci-name').value.trim();if(!name||itemInfo(name)){$('#ci-err').innerHTML=`<div class="err">${name?'Ya existe una partida con ese nombre.':'Escribe el nombre de la partida.'}</div>`;return}db.custom.push({cap:$('#ci-cap').value,name,unit:$('#ci-unit').value,price:r2(parseNum($('#ci-price').value))});save();closeDlg();render();toast('Partida añadida a tu tarifa')},
+ backup:()=>copyText(JSON.stringify(db),'Datos copiados. Pégalos en un documento para guardarlos.'),
+ resetDemo:()=>confirmBox('¿Volver a los datos de ejemplo?','Se borrarán los cambios hechos en esta demo.','Restablecer',()=>{db=seed();save();go('inicio');toast('Datos de ejemplo restablecidos')})
+};
+function copyText(t,msg){const ok=()=>toast(msg);try{navigator.clipboard.writeText(t).then(ok,()=>fallbackCopy(t,ok))}catch(e){fallbackCopy(t,ok)}}
+function fallbackCopy(t,ok){const a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.append(a);a.select();try{document.execCommand('copy');ok()}catch(e){}a.remove()}
+
+const IN={
+ qSearch:el=>{S.qSearch=el.value;const pos=el.selectionStart;render();const n=$('#q-search');n.focus();n.setSelectionRange(pos,pos)},
+ cSearch:el=>{S.cSearch=el.value;const pos=el.selectionStart;render();const n=$('#c-search');n.focus();n.setSelectionRange(pos,pos)},
+ pSearch:el=>{S.pSearch=el.value;const pos=el.selectionStart;render();const n=$('#p-search');n.focus();n.setSelectionRange(pos,pos)},
+ cq:el=>{S.ed.cq=el.value;const s=el.value.toLowerCase();const cl=db.clients.filter(x=>!s||(x.name+' '+x.phone+' '+x.address).toLowerCase().includes(s)).slice(0,8);$('#cl-list').innerHTML=cl.map(x=>`<button class="cp" data-act="pickClient" data-id="${x.id}"><b>${esc(x.name)}</b><span>${esc(x.phone||x.address||'')}</span></button>`).join('')||'<p class="muted">No hay coincidencias. Crea el cliente nuevo.</p>'},
+ catSearch:el=>{S.ed.search=el.value;$$('#cap-chips .chip').forEach(b=>b.setAttribute('aria-pressed',!el.value&&b.dataset.c===S.ed.cap));edPicker()},
+ dict:el=>{S.ed.dict=el.value},
+ aiDraft:el=>{S.ed.aiDraft=el.value},
+ sendQ:el=>{S.send.q=el.value;const l=$('#send-list');if(!l)return;const tmp=document.createElement('div');S.send.picking=true;const html=people(el.value).slice(0,60);renderSendList(l,html)},
+ vcf:el=>{const f=el.files[0];if(!f)return;f.text().then(t=>{const list=parseVCF(t);if(!list.length){toast('Ese archivo no tiene contactos');return}const n=mergeContacts(list);toast(n+' contactos nuevos de '+list.length);el.value='';afterAgenda()})},
+ gMonth:el=>gestorDialog(el.value),
+ restore:el=>{const f=el.files[0];if(!f)return;f.text().then(t=>{let x;try{x=JSON.parse(t)}catch(e){}el.value='';if(!x||x.v!==2||!Array.isArray(x.quotes)){toast('Ese archivo no es una copia de SGM');return}confirmBox('¿Restaurar esta copia?','Se sustituirán los datos actuales por los de la copia.','Restaurar',()=>{x.contacts??=[];db=x;save();go('inicio');toast('Copia restaurada')},false)})},
+ found:el=>{S.ed.found[+el.dataset.i].on=el.checked;const b=$('[data-act="addFound"]');if(b)b.lastChild.textContent=' Añadir '+S.ed.found.filter(f=>f.on).length+' partidas'},
+ qf:el=>{const q=S.ed.q,k=el.dataset.k;q[k]=['iva','discount','validity'].includes(k)?Math.max(0,parseNum(el.value)):el.value;if(k==='discount')q.discount=Math.min(100,q.discount);edRefreshTotals();if(S.ed.step===3){const p=$('#preview');if(p){p.innerHTML=docHTML(q,'quote');fitPapers()}}const h=$('.head h1');if(k==='title'&&h)h.textContent=q.title||'Presupuesto sin título';if(!S.ed.isNew)edCommit()},
+ line:el=>{const l=S.ed.q.lines.find(l=>l.id===el.dataset.id),k=el.dataset.k;if(k==='qty'||k==='price')l[k]=Math.max(0,parseNum(el.value));else l[k]=el.value;$('#la-'+l.id).textContent=eur(l.qty*l.price);edRefreshTotals()},
+ price:el=>{const p=parseNum(el.value);db.prices[el.dataset.name]=r2(p);save()},
+ co:el=>{const k=el.dataset.k;db.company[k]=['iva','validity','dueDays'].includes(k)?parseNum(el.value):el.value;save()},
+ ticket:el=>{const f=el.files[0];if(!f)return;const img=new Image();const url=URL.createObjectURL(f);img.onload=()=>{const c=document.createElement('canvas'),s=Math.min(1,160/Math.max(img.width,img.height));c.width=img.width*s;c.height=img.height*s;c.getContext('2d').drawImage(img,0,0,c.width,c.height);S.thumb=c.toDataURL('image/jpeg',.7);const t=$('#e-thumb');t.src=S.thumb;t.hidden=false;URL.revokeObjectURL(url)};img.src=url}
+};
+
+document.addEventListener('click',e=>{const el=e.target.closest('[data-act]');if(!el)return;const f=ACT[el.dataset.act];if(f){e.preventDefault();f(el,e)}});
+document.addEventListener('input',e=>{const el=e.target.closest('[data-in]');if(!el)return;const f=IN[el.dataset.in];if(f&&el.type!=='file'&&el.type!=='checkbox')f(el)});
+document.addEventListener('change',e=>{const el=e.target.closest('[data-in]');if(!el)return;const f=IN[el.dataset.in];if(f&&(el.tagName==='SELECT'||el.type==='file'||el.type==='checkbox'))f(el)});
+document.addEventListener('submit',e=>{if(e.target.id==='ai-start'){e.preventDefault();const t=$('#ai-start-text').value.trim();newQuote();S.ed.step=2;S.ed.mode='ai';S.ed.sheet=true;render();window.scrollTo(0,0);if(t)aiSend(t)}});
+document.addEventListener('focusout',e=>{const el=e.target;if(el.matches&&el.matches('[data-in="line"][data-k="qty"],[data-in="line"][data-k="price"]')){const l=S.ed?.q.lines.find(l=>l.id===el.dataset.id);if(l)el.value=el.dataset.k==='qty'?qtyFmt(l.qty):String(l.price).replace('.',',')}});
+document.addEventListener('keydown',e=>{if(e.target&&e.target.id==='ai-text'&&e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();ACT.aiSend();return}
+if(e.key==='Escape'&&S.ed?.sheet){S.ed.sheet=false;render()}});
+
+/* ---------- Arranque ---------- */
+if(!DEMO){window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();window.__installEvt=e});window.addEventListener('appinstalled',()=>{window.__installEvt=null;toast('SGM instalada');if(AUTH)render()});if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{})}
+db=load();
+const h=(location.hash||'').slice(1);if(VIEWS[h])S.view=h;
+render();
+</script>
