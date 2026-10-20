@@ -341,7 +341,7 @@ textarea.inp{min-height:84px;resize:vertical}
     <span>PIN de Miguel: <span class="pin">1234</span></span>
     <span class="pins" aria-label="Otros PIN de prueba"><span class="pin">David 2345</span><span class="pin">Antonio 3456</span></span>
     <span class="sp"></span>
-    <span class="muted small">Los cambios se guardan en este navegador.</span>
+    <span class="muted small">Tus pruebas se guardan en este navegador. Los datos de ejemplo se renuevan cada día.</span>
     <button class="linkbtn small" id="resetDemo" type="button">Reiniciar demo</button>
   </div>
   <div id="view"></div>
@@ -439,7 +439,7 @@ function seed(){
   const cfg={season:'invierno',seasons:{invierno:{start:'08:00',end:'17:00',margin:15,days:[1,2,3,4,5]},verano:{start:'07:00',end:'15:00',margin:15,days:[1,2,3,4,5]}},
     especiales:[{id:'x1',date:`${today.getFullYear()}-10-12`,label:'Fiesta Nacional de España',type:'off'},{id:'x2',date:`${today.getFullYear()}-12-08`,label:'Inmaculada Concepción',type:'off'},{id:'x3',date:`${today.getFullYear()}-12-24`,label:'Nochebuena · media jornada',type:'special',start:'08:00',end:'14:00'}],
     sergioEmail:'sergio@sgmtrabajosintegrales.es',push:false};
-  S={v:2,obras,emps,fich:[],reqs:[],notes:[],cfg,mode:'admin',log:[]};
+  S={v:2,seedDay:dkey(today),obras,emps,fich:[],reqs:[],notes:[],cfg,mode:'admin',log:[]};
   const jitter=(o,m)=>{const a=rnd()*2*Math.PI,r=rnd()*m;return{lat:o.lat+r*Math.cos(a)/111320,lng:o.lng+r*Math.sin(a)/(111320*Math.cos(o.lat*Math.PI/180)),acc:ri(6,22)}};
   const mkPunch=(o,t,kind,far)=>{const p=far?{lat:o.lat+0.021,lng:o.lng-0.013,acc:12}:jitter(o,o.radius*.55);const z=zoneOf(p);return{t,lat:p.lat,lng:p.lng,acc:p.acc,zone:z.zone,dist:z.dist,zObra:z.obra,sched:schedCheck(kind,t)}};
   const work=[];for(let n=24;n>=1;n--){const d=daysAgo(n);if(scheduleFor(d))work.push(d)}
@@ -1115,7 +1115,7 @@ setInterval(tick,1000);
 
 /* ───────────── Arranque ───────────── */
 S=load();
-if(!S||S.v!==2){seed();save()}
+if(!S||S.v!==2||S.seedDay!==dkey(new Date())){const mode=S&&S.mode;seed();if(mode)S.mode=mode;save()}
 const h=(location.hash||'').slice(1);
 U.tab=TABS.some(t=>t[0]===h)?h:(S.mode==='kiosk'?'fichar':'resumen');
 if(S.mode==='kiosk')U.tab='fichar';
