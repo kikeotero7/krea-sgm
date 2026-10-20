@@ -455,7 +455,7 @@ const LOGO_FULL='__LOGO_FULL__';
 const LOGO_MARK='__LOGO_MARK__';
 const LOGO_LOGIN='__LOGO_LOGIN__';
 const DEMO=true;
-const KEY=DEMO?'sgm-app-v2':'sgm-app';
+const KEY=DEMO?'sgm-demo-v3':'sgm-app';
 const AUTH_KEY=DEMO?'sgm-demo-auth':'sgm-auth';
 const KV_IMG={arquitectura:'__KV_ARQUITECTURA__'};
 const KVS=[['oficio','Oficio'],['arquitectura','Arquitectura'],['plano','Plano'],['interior','Interior'],['emblema','Emblema SGM'],['dibujo','Dibujo técnico']];
@@ -656,9 +656,9 @@ function nextNumber(prefix,list,date){const y=(date||today()).slice(0,4);const r
 function invStatus(f){if(f.status==='Cobrada')return 'Cobrada';return f.due&&daysSince(f.due)>0?'Vencida':'Pendiente'}
 const invTotal=f=>calc(f).total;
 
-function seed(){
+function seed(sample=false){
   db={prices:{},custom:[]};
-  if(!DEMO)return {v:2,company:{name:'Construcciones SGM',legal:'Sergio García Molina',nif:'',address:'',city:'',email:'',phone:'+34 670 24 33 95',iban:'',iva:21,validity:30,dueDays:15,
+  if(!DEMO||!sample)return {v:2,company:{name:'Construcciones SGM',legal:'Sergio García Molina',nif:'',address:'',city:'',email:'',phone:'+34 670 24 33 95',iban:'',iva:21,validity:30,dueDays:15,
     conditions:'Incluye mano de obra y materiales de las partidas descritas.\nMediciones y estado del soporte se confirmarán tras visita técnica.\nCualquier trabajo adicional requerirá presupuesto previo.\nNo incluye licencias ni tasas municipales.',
     payment:'30 % a la aceptación, 40 % durante la obra y 30 % a la entrega.',gestorName:'',gestorEmail:''},clients:[],works:[],quotes:[],invoices:[],expenses:[],prices:{},custom:[],contacts:[]};
   const T=today(),D=n=>addDays(T,-n);
@@ -1082,7 +1082,7 @@ function vAjustes(v){
   <label class="field">Forma de pago<input id="co-payment" data-in="co" data-k="payment" value="${esc(c.payment)}"></label>
   <label class="field">Condiciones habituales<textarea id="co-conditions" data-in="co" data-k="conditions">${esc(c.conditions)}</textarea></label></section>
   ${DEMO?'':`<section class="panel stack"><h2>Contraseña</h2><div class="grid2"><label class="field">Contraseña nueva<input id="pw-1" type="password" autocomplete="new-password"></label><label class="field">Repite la contraseña<input id="pw-2" type="password" autocomplete="new-password"></label></div><div id="pw-err"></div><div class="row"><button class="btn primary" data-act="changePass">${ic('check')} Cambiar contraseña</button></div></section>`}
-  <section class="panel stack"><h2>Copia de seguridad</h2><p class="muted" style="margin:0">Guarda una copia de todos tus datos de vez en cuando (por ejemplo, una vez al mes).</p><div class="row">${canSave()?`<button class="btn" data-act="backupFile">${ic('file')} Descargar copia</button>`:''}<button class="btn" data-act="backup">${ic('copy')} Copiar datos</button><label class="btn" for="restore-input" style="cursor:pointer">Restaurar una copia</label><input id="restore-input" type="file" accept=".json,application/json" class="sr" data-in="restore">${DEMO?'<button class="btn danger" data-act="resetDemo">Volver a los datos de ejemplo</button>':''}</div></section>`;
+  <section class="panel stack"><h2>Copia de seguridad</h2><p class="muted" style="margin:0">Guarda una copia de todos tus datos de vez en cuando (por ejemplo, una vez al mes).</p><div class="row">${canSave()?`<button class="btn" data-act="backupFile">${ic('file')} Descargar copia</button>`:''}<button class="btn" data-act="backup">${ic('copy')} Copiar datos</button><label class="btn" for="restore-input" style="cursor:pointer">Restaurar una copia</label><input id="restore-input" type="file" accept=".json,application/json" class="sr" data-in="restore">${DEMO?'<button class="btn" data-act="sampleDemo">Cargar datos de ejemplo</button><button class="btn danger" data-act="resetDemo">Empezar de cero</button>':''}</div></section>`;
 }
 
 /* ---------- Diálogos ---------- */
@@ -1424,7 +1424,8 @@ const ACT={
  customItem:()=>dlg(`<div class="dlg-head"><h2>Partida propia</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div><div class="dlg-body"><label class="field">Nombre de la partida *<input id="ci-name" placeholder="Ej.: Colocación de plato de ducha extraplano"></label><div class="grid3"><label class="field">Capítulo<select id="ci-cap">${CAPS.map(c=>`<option value="${c.id}">${c.name}</option>`).join('')}</select></label><label class="field">Unidad<select id="ci-unit">${UNITS.map(u=>`<option>${u}</option>`).join('')}</select></label><label class="field">Precio €<input id="ci-price" inputmode="decimal"></label></div><div id="ci-err"></div></div><div class="dlg-foot"><button class="btn" data-act="closeDlg">Cancelar</button><button class="btn primary" data-act="saveCustom">${ic('check')} Guardar</button></div>`),
  saveCustom:()=>{const name=$('#ci-name').value.trim();if(!name||itemInfo(name)){$('#ci-err').innerHTML=`<div class="err">${name?'Ya existe una partida con ese nombre.':'Escribe el nombre de la partida.'}</div>`;return}db.custom.push({cap:$('#ci-cap').value,name,unit:$('#ci-unit').value,price:r2(parseNum($('#ci-price').value))});save();closeDlg();render();toast('Partida añadida a tu tarifa')},
  backup:()=>copyText(JSON.stringify(db),'Datos copiados. Pégalos en un documento para guardarlos.'),
- resetDemo:()=>confirmBox('¿Volver a los datos de ejemplo?','Se borrarán los cambios hechos en esta demo.','Restablecer',()=>{db=seed();save();go('inicio');toast('Datos de ejemplo restablecidos')})
+ sampleDemo:()=>confirmBox('¿Cargar datos de ejemplo?','Se sustituirán los datos de esta demo por presupuestos, clientes y facturas de ejemplo.','Cargar ejemplos',()=>{db=seed(true);save();go('inicio');toast('Datos de ejemplo cargados')},false),
+ resetDemo:()=>confirmBox('¿Empezar de cero?','Se borrarán todos los datos de esta demo.','Empezar de cero',()=>{db=seed();save();go('inicio');toast('Demo vacía')}),
 };
 function copyText(t,msg){const ok=()=>toast(msg);try{navigator.clipboard.writeText(t).then(ok,()=>fallbackCopy(t,ok))}catch(e){fallbackCopy(t,ok)}}
 function fallbackCopy(t,ok){const a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.append(a);a.select();try{document.execCommand('copy');ok()}catch(e){}a.remove()}
