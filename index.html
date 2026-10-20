@@ -517,6 +517,12 @@ const CAPS=[
 ];
 const UNITS=['ud','m²','ml','m³','h','kg'];
 const SCOPES=['Mano de obra y materiales','Solo mano de obra','Material aportado por el cliente'];
+const PAYS=['Transferencia a mi cuenta','Cargo en la cuenta del cliente','Bizum','Efectivo','Tarjeta'];
+const ibanClean=v=>String(v||'').replace(/\s+/g,'').toUpperCase();
+const ibanFmt=v=>ibanClean(v).replace(/(.{4})/g,'$1 ').trim();
+function ibanOk(v){const s=ibanClean(v);if(!/^[A-Z]{2}\d{2}[A-Z0-9]{10,30}$/.test(s))return false;const r=(s.slice(4)+s.slice(0,4)).replace(/[A-Z]/g,c=>c.charCodeAt(0)-55);let m=0;for(const ch of r)m=(m*10+ +ch)%97;return m===1}
+const ibanMask=v=>{const s=ibanClean(v);return s.length>8?s.slice(0,4)+' •••• •••• •••• '+s.slice(-4):ibanFmt(s)};
+const payOf=d=>d.payMethod||client(d.client)?.payMethod||PAYS[0];
 const CAP_ORDER=CAPS.map(c=>c.id).concat('otr');
 
 const TEMPLATES=[
@@ -954,7 +960,10 @@ function edStep3(){
     </section>
     <section class="panel stack"><h2>Condiciones</h2>
       <label class="field">Validez (días)<input id="q-val" inputmode="numeric" data-in="qf" data-k="validity" value="${q.validity}"></label>
-      <label class="field">Forma de pago<input id="q-pay" data-in="qf" data-k="payment" value="${esc(q.payment)}"></label>
+      <label class="field">Cómo paga el cliente<select id="q-paym" data-in="qf" data-k="payMethod">${PAYS.map(x=>`<option ${x===payOf(q)?'selected':''}>${x}</option>`).join('')}</select></label>
+      ${payOf(q)==='Transferencia a mi cuenta'&&!db.company.iban?'<p class="hint" style="margin:-6px 0 0">Aún no has puesto tu número de cuenta en Ajustes: en el PDF saldrá «se facilitará al confirmar».</p>':''}
+      ${payOf(q)==='Cargo en la cuenta del cliente'&&!client(q.client)?.iban?'<p class="hint" style="margin:-6px 0 0">Este cliente no tiene cuenta guardada. Añádela en su ficha (Clientes).</p>':''}
+      <label class="field">Plazos de pago<input id="q-pay" data-in="qf" data-k="payment" value="${esc(q.payment)}"></label>
       <label class="field">Condiciones y observaciones<textarea id="q-cond" data-in="qf" data-k="conditions">${esc(q.conditions)}</textarea></label>
     </section>
     <section class="panel stack"><h2>Estado</h2>
@@ -995,7 +1004,13 @@ function docHTML(d,kind){
     </div>
     <div class="p-tot"><div><span>Subtotal</span><b>${eur(t.base)}</b></div>${+d.discount?`<div><span>Descuento ${qtyFmt(d.discount)} %</span><b>−${eur(t.disc)}</b></div>`:''}<div><span>Base imponible</span><b>${eur(t.net)}</b></div><div><span>IVA ${qtyFmt(d.iva)} %</span><b>${eur(t.iva)}</b></div><div class="grand"><span>Total</span><b>${eur(t.total)}</b></div></div>
   </section>
-  <section class="p-pay"><div><h4>Forma de pago</h4><p>${esc(isQ?d.payment:'Transferencia bancaria antes del '+dLong(d.due)+'.')}</p></div>${co.iban?`<div><h4>Cuenta para transferencias</h4><p class="p-iban">${esc(co.iban)}</p><p>Titular: ${esc(co.legal||co.name)}</p></div>`:''}</section>
+  <section class="p-pay">${(()=>{const m=payOf(d);const plazos=isQ?d.payment:('Antes del '+dLong(d.due)+'.');
+    const box=(h,body)=>`<div><h4>${h}</h4>${body}</div>`;let how;
+    if(m==='Transferencia a mi cuenta')how=co.iban?box('Transferencia bancaria',`<p class="p-iban">${esc(ibanFmt(co.iban))}</p><p>Titular: ${esc(co.legal||co.name)}</p>`):box('Transferencia bancaria','<p>Número de cuenta: se facilitará al confirmar.</p>');
+    else if(m==='Cargo en la cuenta del cliente')how=box('Cargo en la cuenta del cliente',c?.iban?`<p class="p-iban">${esc(ibanMask(c.iban))}</p><p>Titular: ${esc(c.name)}</p>`:'<p>Cuenta del cliente pendiente de indicar.</p>');
+    else if(m==='Bizum')how=box('Bizum',`<p class="p-iban">${esc(prettyPhone(co.phone))}</p><p>A nombre de ${esc(co.legal||co.name)}</p>`);
+    else how=box(m==='Efectivo'?'Pago en efectivo':'Pago con tarjeta','<p>En el momento indicado en los plazos de pago.</p>');
+    return box('Plazos de pago',`<p>${esc(plazos)}</p>`)+how})()}</section>
   ${isQ?`<section class="p-sign"><div>Conforme del cliente · Firma, nombre y fecha</div><div>Por ${esc(co.legal||co.name)}</div></section>`:''}
   <footer class="p-foot"><span>${esc([co.legal||co.name,co.nif?'NIF '+co.nif:'',prettyPhone(co.phone)].filter(Boolean).join(' · '))}</span><span>${isQ?'Presupuesto válido hasta '+dShort(addDays(d.date,+d.validity||30))+'. Sin valor contractual hasta su aceptación firmada.':(DEMO?'Documento de ejemplo generado en la demo.':'Gracias por su confianza.')}</span></footer>
   </article>`;
@@ -1076,7 +1091,7 @@ function vAjustes(v){
   const f=(k,l,ph='')=>`<label class="field">${l}<input id="co-${k}" data-in="co" data-k="${k}" value="${esc(c[k])}" placeholder="${ph}"></label>`;
   v.innerHTML=`
   <div class="head"><div><div class="eyebrow">Ajustes</div><h1>Datos de la empresa</h1><p>Salen en todos los presupuestos y facturas. Se guardan al escribir.</p></div></div>
-  <section class="panel stack"><h2>Empresa</h2><div class="grid2">${f('legal','Razón social')}${f('nif','NIF')}${f('address','Dirección')}${f('city','Código postal y ciudad')}${f('phone','Teléfono')}${f('email','Correo')}</div>${f('iban','IBAN para transferencias')}</section>
+  <section class="panel stack"><h2>Empresa</h2><div class="grid2">${f('legal','Razón social')}${f('nif','NIF')}${f('address','Dirección')}${f('city','Código postal y ciudad')}${f('phone','Teléfono')}${f('email','Correo')}</div>${f('iban','Tu número de cuenta (IBAN) para transferencias','ES00 0000 0000 0000 0000 0000')}</section>
   <section class="panel stack"><h2>Gestoría</h2><div class="grid2">${f('gestorName','Nombre del gestor o gestoría')}${f('gestorEmail','Correo del gestor')}</div></section>
   <section class="panel stack"><h2>Valores por defecto</h2><div class="grid3"><label class="field">IVA habitual<select id="co-iva" data-in="co" data-k="iva"><option value="21" ${c.iva==21?'selected':''}>21 %</option><option value="10" ${c.iva==10?'selected':''}>10 %</option></select></label>${f('validity','Validez del presupuesto (días)')}${f('dueDays','Vencimiento de factura (días)')}</div>
   <label class="field">Forma de pago<input id="co-payment" data-in="co" data-k="payment" value="${esc(c.payment)}"></label>
@@ -1110,7 +1125,7 @@ function invoiceFrom(id){const q=db.quotes.find(q=>q.id===id)||(S.ed&&S.ed.q);if
    <div class="stack" style="gap:8px">${[['full','Todo lo que queda',left],['30','Anticipo del 30 %',r2(t.net*.3)],['40','Pago del 40 % durante la obra',r2(t.net*.4)]].map(([k,l,a],i)=>`<label class="cp" style="grid-template-columns:auto 1fr auto;display:grid;align-items:center;gap:10px"><input type="radio" name="inv-kind" id="ik-${k}" value="${k}" ${i===0?'checked':''} style="width:20px;height:20px;accent-color:var(--brand)"><b>${l}</b><span class="num">${eur(a)} + IVA</span></label>`).join('')}</div>
   </div><div class="dlg-foot"><button class="btn" data-act="closeDlg">Cancelar</button><button class="btn primary" data-act="createInvoice" data-id="${q.id}">${ic('receipt')} Crear factura</button></div>`)}
 function createInvoice(id){const q=db.quotes.find(q=>q.id===id);if(!q)return;const k=($('input[name="inv-kind"]:checked')||{}).value||'full';const t=calc(q);const done=db.invoices.filter(f=>f.quote===q.id).reduce((s,f)=>s+calc(f).net,0);
-  const d=today();const f={id:uid(),number:nextNumber('FAC',db.invoices,d),date:d,due:addDays(d,+db.company.dueDays||15),client:q.client,work:q.work,quote:q.id,iva:q.iva,discount:0,status:'Pendiente',lines:[]};
+  const d=today();const f={id:uid(),number:nextNumber('FAC',db.invoices,d),date:d,due:addDays(d,+db.company.dueDays||15),client:q.client,work:q.work,quote:q.id,iva:q.iva,discount:0,status:'Pendiente',payMethod:q.payMethod||'',lines:[]};
   const note='Presupuesto '+q.number+' · '+q.title;
   if(k==='full'&&done===0){f.lines=q.lines.map(l=>({...l,id:uid()}));f.discount=q.discount;f.lines.forEach(l=>l.note='');f.lines[0].note=note}
   else{const amt=k==='full'?r2(t.net-done):r2(t.net*(+k)/100);f.lines=[{id:uid(),cap:'otr',name:k==='full'?'Liquidación final de los trabajos':k==='30'?'Anticipo del 30 % a la aceptación':'Pago del 40 % durante la obra',unit:'ud',qty:1,price:amt,scope:'',note}]}
@@ -1122,7 +1137,8 @@ function openInvoice(id){const f=db.invoices.find(f=>f.id===id);if(!f)return;con
 function editClient(id){const c=client(id)||{};const qs=id?db.quotes.filter(q=>q.client===id):[];
   const f=(k,l,t='text')=>`<label class="field">${l}<input id="ec-${k}" type="${t}" value="${esc(c[k]||'')}"></label>`;
   dlg(`<div class="dlg-head"><h2>${id?esc(c.name):'Nuevo cliente'}</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div>
-  <div class="dlg-body">${f('name','Nombre y apellidos *')}<div class="grid2">${f('phone','Teléfono','tel')}${f('email','Correo','email')}</div>${f('address','Dirección')}<div class="grid2">${f('nif','NIF / CIF')}<span></span></div><label class="field">Notas<textarea id="ec-notes">${esc(c.notes||'')}</textarea></label>
+  <div class="dlg-body">${f('name','Nombre y apellidos *')}<div class="grid2">${f('phone','Teléfono','tel')}${f('email','Correo','email')}</div>${f('address','Dirección')}<div class="grid2">${f('nif','NIF / CIF')}<label class="field">Cómo suele pagar<select id="ec-paym">${PAYS.map(x=>`<option ${x===(c.payMethod||PAYS[0])?'selected':''}>${x}</option>`).join('')}</select></label></div>
+  <label class="field">Cuenta bancaria del cliente (IBAN, si paga con cargo en su cuenta)<input id="ec-iban" value="${esc(ibanFmt(c.iban||''))}" placeholder="ES00 0000 0000 0000 0000 0000" autocomplete="off"></label><label class="field">Notas<textarea id="ec-notes">${esc(c.notes||'')}</textarea></label>
   ${qs.length?`<div><div class="field" style="margin-bottom:6px">Historial</div><div class="list">${qs.map(quoteRow).join('')}</div></div>`:''}<div id="ec-err"></div></div>
   <div class="dlg-foot">${id?`<button class="btn danger" data-act="delClient" data-id="${id}">${ic('trash')} Eliminar</button><span class="spacer"></span><button class="btn" data-act="quoteFor" data-id="${id}">${ic('file')} Nuevo presupuesto</button>`:''}<button class="btn primary" data-act="saveClient" data-id="${id||''}">${ic('check')} Guardar</button></div>`)}
 function editWork(id){const w=work(id)||{status:'Pendiente'};const s=id?workStats(w):null;const ex=id?db.expenses.filter(e=>e.work===id):[];
@@ -1374,7 +1390,7 @@ const ACT={
  fFilter:el=>{S.fFilter=el.dataset.f;render()},
  exitEditor:()=>{const E=S.ed;if(E.isNew&&(E.q.lines.length||E.q.title)){confirmBox('¿Salir sin guardar?','El presupuesto nuevo no se ha guardado todavía.','Salir sin guardar',()=>go('presupuestos'))}else{if(!E.isNew)edCommit();go('presupuestos')}},
  step:el=>{S.ed.step=+el.dataset.n;S.ed.err='';S.ed.sheet=false;render();window.scrollTo(0,0)},
- pickClient:el=>{S.ed.q.client=el.dataset.id;const ws=db.works.filter(w=>w.client===el.dataset.id&&w.status!=='Terminada');if(ws.length===1)S.ed.q.work=ws[0].id;render()},
+ pickClient:el=>{S.ed.q.client=el.dataset.id;{const pc=client(el.dataset.id);if(pc&&pc.payMethod)S.ed.q.payMethod=pc.payMethod}const ws=db.works.filter(w=>w.client===el.dataset.id&&w.status!=='Terminada');if(ws.length===1)S.ed.q.work=ws[0].id;render()},
  clearClient:()=>{S.ed.q.client='';S.ed.q.work='';render()},
  toggleNewClient:()=>{S.ed.newClient=!S.ed.newClient;render();setTimeout(()=>$('#nc-name')?.focus(),30)},
  saveNewClient:()=>{const n=$('#nc-name').value.trim();if(!n){$('#nc-name').focus();return}const c={id:uid(),name:n,phone:$('#nc-phone').value.trim(),email:'',address:$('#nc-address').value.trim(),nif:'',notes:''};db.clients.push(c);save();S.ed.q.client=c.id;S.ed.newClient=false;render();toast('Cliente guardado')},
@@ -1410,7 +1426,7 @@ const ACT={
  payInvoice:el=>{const f=db.invoices.find(f=>f.id===el.dataset.id);f.status=el.dataset.v==='1'?'Cobrada':'Pendiente';f.paidAt=el.dataset.v==='1'?today():null;save();closeDlg();render();toast(el.dataset.v==='1'?'Factura cobrada':'Factura pendiente')},
  delInvoice:el=>confirmBox('¿Eliminar esta factura?','Solo deberías borrar facturas creadas por error. La numeración no se reutiliza.','Eliminar',()=>{db.invoices=db.invoices.filter(f=>f.id!==el.dataset.id);save();render();toast('Factura eliminada')}),
  editClient:el=>editClient(el.dataset.id),
- saveClient:el=>{const n=$('#ec-name').value.trim();if(!n){$('#ec-err').innerHTML='<div class="err">Escribe el nombre del cliente.</div>';return}const id=el.dataset.id;const c=id?client(id):{id:uid()};Object.assign(c,{name:n,phone:$('#ec-phone').value.trim(),email:$('#ec-email').value.trim(),address:$('#ec-address').value.trim(),nif:$('#ec-nif').value.trim(),notes:$('#ec-notes').value});if(!id)db.clients.push(c);save();closeDlg();render();toast('Cliente guardado')},
+ saveClient:el=>{const n=$('#ec-name').value.trim();if(!n){$('#ec-err').innerHTML='<div class="err">Escribe el nombre del cliente.</div>';return}{const ib=$('#ec-iban').value.trim();if(ib&&!ibanOk(ib)){$('#ec-err').innerHTML='<div class="err">Esa cuenta no es válida. Revisa los números del IBAN.</div>';return}}const id=el.dataset.id;const c=id?client(id):{id:uid()};Object.assign(c,{name:n,phone:$('#ec-phone').value.trim(),email:$('#ec-email').value.trim(),address:$('#ec-address').value.trim(),nif:$('#ec-nif').value.trim(),payMethod:$('#ec-paym').value,iban:ibanClean($('#ec-iban').value),notes:$('#ec-notes').value});if(!id)db.clients.push(c);save();closeDlg();render();toast('Cliente guardado')},
  delClient:el=>{const id=el.dataset.id;const n=db.quotes.filter(q=>q.client===id).length;if(n){dlg(`<div class="dlg-head"><h2>No se puede eliminar</h2></div><div class="dlg-body"><p style="margin:0">Este cliente tiene ${n} presupuesto${n>1?'s':''}. Elimínalos antes o deja el cliente como está.</p></div><div class="dlg-foot"><button class="btn primary" data-act="closeDlg">Entendido</button></div>`);return}confirmBox('¿Eliminar cliente?','Se borrará su ficha.','Eliminar',()=>{db.clients=db.clients.filter(c=>c.id!==id);save();render();toast('Cliente eliminado')})},
  quoteFor:el=>{closeDlg();newQuote();S.ed.q.client=el.dataset.id;render()},
  editWork:el=>editWork(el.dataset.id),
@@ -1441,7 +1457,7 @@ const IN={
  gMonth:el=>gestorDialog(el.value),
  restore:el=>{const f=el.files[0];if(!f)return;f.text().then(t=>{let x;try{x=JSON.parse(t)}catch(e){}el.value='';if(!x||x.v!==2||!Array.isArray(x.quotes)){toast('Ese archivo no es una copia de SGM');return}confirmBox('¿Restaurar esta copia?','Se sustituirán los datos actuales por los de la copia.','Restaurar',()=>{x.contacts??=[];db=x;save();go('inicio');toast('Copia restaurada')},false)})},
  found:el=>{S.ed.found[+el.dataset.i].on=el.checked;const b=$('[data-act="addFound"]');if(b)b.lastChild.textContent=' Añadir '+S.ed.found.filter(f=>f.on).length+' partidas'},
- qf:el=>{const q=S.ed.q,k=el.dataset.k;q[k]=['iva','discount','validity'].includes(k)?Math.max(0,parseNum(el.value)):el.value;if(k==='discount')q.discount=Math.min(100,q.discount);edRefreshTotals();if(S.ed.step===3){const p=$('#preview');if(p){p.innerHTML=docHTML(q,'quote');fitPapers()}}const h=$('.head h1');if(k==='title'&&h)h.textContent=q.title||'Presupuesto sin título';if(!S.ed.isNew)edCommit()},
+ qf:el=>{const q=S.ed.q,k=el.dataset.k;q[k]=['iva','discount','validity'].includes(k)?Math.max(0,parseNum(el.value)):el.value;if(k==='discount')q.discount=Math.min(100,q.discount);edRefreshTotals();if(S.ed.step===3){const p=$('#preview');if(p){p.innerHTML=docHTML(q,'quote');fitPapers()}}const h=$('.head h1');if(k==='title'&&h)h.textContent=q.title||'Presupuesto sin título';if(!S.ed.isNew)edCommit();if(k==='payMethod')render()},
  line:el=>{const l=S.ed.q.lines.find(l=>l.id===el.dataset.id),k=el.dataset.k;if(k==='qty'||k==='price')l[k]=Math.max(0,parseNum(el.value));else l[k]=el.value;$('#la-'+l.id).textContent=eur(l.qty*l.price);edRefreshTotals()},
  price:el=>{const p=parseNum(el.value);db.prices[el.dataset.name]=r2(p);save()},
  co:el=>{const k=el.dataset.k;db.company[k]=['iva','validity','dueDays'].includes(k)?parseNum(el.value):el.value;save()},
