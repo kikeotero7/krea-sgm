@@ -451,6 +451,7 @@ dialog::backdrop{background:rgba(10,20,13,.55)}
    ========================================================= */
 const LOGO_FULL='__LOGO_FULL__';
 const LOGO_MARK='__LOGO_MARK__';
+const LOGO_LOGIN='__LOGO_LOGIN__';
 const DEMO=true;
 const KEY=DEMO?'sgm-app-v2':'sgm-app';
 const KV_IMG={arquitectura:'__KV_ARQUITECTURA__'};
@@ -745,7 +746,7 @@ function vLogin(){
    <section class="login-visual">${kvHTML(KV)}<div class="login-cap"><span class="eyebrow">Construcciones SGM</span><h2>Reformas y trabajos integrales</h2><p>Presupuestos, facturas, clientes y obras en un solo sitio.</p></div></section>
    <section class="login-panel">
     <form class="login-box" id="login-form" autocomplete="on">
-      <div class="lg"><img src="${LOGO_FULL}" alt="Construcciones SGM · Trabajos integrales"></div>
+      <div class="lg"><img src="${LOGO_LOGIN}" alt="Construcciones SGM · Trabajos integrales"></div>
       ${hasPass?`<h1>Hola, Sergio</h1><p class="sub">Escribe tu contraseña para entrar.</p>`:`<h1>Bienvenido, Sergio</h1><p class="sub">Crea tu contraseña. La usarás para entrar desde ahora.</p>`}
       <input type="text" name="username" value="sergio" autocomplete="username" hidden>
       <label class="field">Contraseña<input id="lg-pass" type="password" autocomplete="${hasPass?'current-password':'new-password'}" placeholder="••••••••" required></label>

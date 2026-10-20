@@ -3,7 +3,7 @@ from PIL import Image
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 b=lambda f:'data:image/webp;base64,'+base64.b64encode(open(f,'rb').read()).decode()
 src=open('src.html',encoding='utf-8').read()
-for k,f in (('__LOGO_FULL__','logo-full-s.webp'),('__LOGO_MARK__','logo-mark-s.webp'),('__KV_ARQUITECTURA__','photos/kv-arquitectura.webp')):
+for k,f in (('__LOGO_FULL__','logo-full-s.webp'),('__LOGO_MARK__','logo-mark-s.webp'),('__LOGO_LOGIN__','logo-login.webp'),('__KV_ARQUITECTURA__','photos/kv-arquitectura.webp')):
     src=src.replace(k,b(f))
 open('sgm-presupuestos.html','w',encoding='utf-8').write(src)   # demo (artifact)
 # real app
