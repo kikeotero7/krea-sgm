@@ -1440,6 +1440,12 @@ if(e.key==='Escape'&&S.ed?.sheet){S.ed.sheet=false;render()}});
 /* ---------- Arranque ---------- */
 if(!DEMO){window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();window.__installEvt=e});window.addEventListener('appinstalled',()=>{window.__installEvt=null;toast('SGM instalada');if(AUTH)render()});if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{})}
 db=load();
+/* Enlace personal de configuración: #datos=<base64url JSON>. Se aplica solo en este dispositivo y se borra de la dirección. */
+(function(){const m=(location.hash||'').match(/^#datos=([A-Za-z0-9_-]+)$/);if(!m)return;
+  try{const b=m[1].replace(/-/g,'+').replace(/_/g,'/');const bin=atob(b+'==='.slice((b.length+3)%4));const x=JSON.parse(new TextDecoder().decode(Uint8Array.from(bin,c=>c.charCodeAt(0))));
+    const keys=['name','legal','nif','address','city','email','phone','iban','gestorName','gestorEmail'];let n=0;for(const k of keys)if(typeof x[k]==='string'&&x[k].trim()){db.company[k]=x[k].trim();n++}
+    if(n){save();setTimeout(()=>toast('Datos de la empresa guardados'),600)}}catch(e){}
+  try{history.replaceState(null,'',location.pathname+location.search)}catch(e){location.hash=''}})();
 const h=(location.hash||'').slice(1);if(VIEWS[h])S.view=h;
 render();
 </script>
