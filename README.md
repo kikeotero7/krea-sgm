@@ -10,7 +10,7 @@ Publicada en https://sgm.kreadigitalstudio.es (GitHub Pages, rama `main`, carpet
 ## Contenido del repositorio
 
 - Raíz: **SGM · Presupuestos** (presupuestos, facturas, clientes, obras, gastos y tarifa).
-- `sgm-fichajes/`: **SGM Fichajes · Control de obra** (fichajes con PIN, geozona, asistencia e incidencias), publicada en https://sgm.kreadigitalstudio.es/sgm-fichajes/. Demo con PIN de prueba (Miguel 1234, David 2345, Antonio 3456) y datos de ejemplo que se renuevan cada día. Ficha y capturas en `sgm-fichajes/portafolio/`. Para regenerarla: editar `sgm-fichajes/app.src.html` y ejecutar `python3 sgm-fichajes/build.py`.
+- `sgm-fichajes/`: redirección a **SGM Fichajes · Control de obra**, que ahora vive en su propio repositorio (`kikeotero7/krea-sgm-fichajes`) y se publica en https://sgm-fichajes.kreadigitalstudio.es. Aquí solo quedan la redirección (para los enlaces antiguos y el PDF del portafolio) y las capturas de `sgm-fichajes/portafolio/` que usa el portafolio.
 
 Pendiente de Sergio para la facturación: NIF, dirección fiscal, correo, IBAN, nombre y correo del gestor.
 
