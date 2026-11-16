@@ -90,7 +90,8 @@ h1,h2,h3,h4{font-family:var(--f-display);font-stretch:108%;margin:0;text-wrap:ba
 .btn.primary:hover{background:var(--brand-strong);border-color:var(--brand-strong);color:var(--brand-ink)}
 .btn.ghost{border-color:transparent;background:none}
 .btn.ghost:hover{background:var(--surface-2)}
-.btn.danger{color:var(--danger)}
+.btn.danger{color:var(--danger);border-color:color-mix(in srgb,var(--danger) 45%,var(--line-strong))}
+.btn.danger.solid,.btn.danger.solid:hover{background:var(--danger);border-color:var(--danger);color:#fff}
 .btn.danger:hover{border-color:var(--danger);color:var(--danger)}
 .btn.sm{min-height:36px;padding:6px 10px;font-size:14px}
 .btn.wa{background:#1f8f4e;border-color:#1f8f4e;color:#fff}
@@ -122,6 +123,12 @@ h1,h2,h3,h4{font-family:var(--f-display);font-stretch:108%;margin:0;text-wrap:ba
 .chip{flex:none;border:1px solid var(--line-strong);background:var(--surface);border-radius:20px;padding:7px 14px;font-weight:600;font-size:14px;color:var(--muted)}
 .chip[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:var(--forest-ink)}
 .chip .n{opacity:.7;margin-left:4px}
+.pay-pick{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.pay-op{min-height:44px;border:1px solid var(--line-strong);background:var(--surface);border-radius:22px;padding:8px 14px;font-weight:600;font-size:14px;color:var(--ink)}
+.pay-op[aria-checked="true"]{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+.pay-op[data-v="Sin especificar"][aria-checked="false"]{border-style:dashed;color:var(--muted)}
+.btn.guardando{pointer-events:none;color:#fff;border-color:var(--brand);background:linear-gradient(var(--brand),var(--brand)) left/100% 100% no-repeat,var(--brand-soft);animation:rellenar .55s ease-out}
+@media (prefers-reduced-motion:reduce){.btn.guardando{animation:none}}
 .search{position:relative}
 .search .ic{position:absolute;left:12px;top:50%;translate:0 -50%;color:var(--faint)}
 .search input{padding-left:40px}
@@ -634,7 +641,8 @@ const CAPS=[
 ];
 const UNITS=['ud','m²','ml','m³','h','kg','pa','l','saco','rollo','caja'];
 const SCOPES=['Mano de obra y materiales','Solo mano de obra','Material aportado por el cliente'];
-const PAYS=['Transferencia a mi cuenta','Cargo en la cuenta del cliente','Bizum','Efectivo','Tarjeta'];
+const PAYS=['Transferencia a mi cuenta','Cargo en la cuenta del cliente','Bizum','Efectivo','Tarjeta','Sin especificar'];
+const SIN_PAGO='Sin especificar';
 const ibanClean=v=>String(v||'').replace(/\s+/g,'').toUpperCase();
 const ibanFmt=v=>ibanClean(v).replace(/(.{4})/g,'$1 ').trim();
 function ibanOk(v){const s=ibanClean(v);if(!/^[A-Z]{2}\d{2}[A-Z0-9]{10,30}$/.test(s))return false;const r=(s.slice(4)+s.slice(0,4)).replace(/[A-Z]/g,c=>c.charCodeAt(0)-55);let m=0;for(const ch of r)m=(m*10+ +ch)%97;return m===1}
@@ -891,6 +899,10 @@ const CLOUD={session:null,rev:0,dirty:false,busy:false,again:false,timer:null,st
 function sbStore(x){CLOUD.session=x;try{x?localStorage.setItem('sgm2-session',JSON.stringify(x)):localStorage.removeItem('sgm2-session')}catch(e){}}
 function sbLoad(){try{return JSON.parse(localStorage.getItem('sgm2-session'))}catch(e){return null}}
 let CARGAS=0;
+/* Guardar: el botón se rellena de verde con la barra de carga arriba y después se guarda */
+const GUARDAR=new Set(['addExpense','createInvoice','saveClient','saveNewClient','saveWork','saveCustom','saveDatos','saveProfile','saveExpense','recSave','saveCo','changePass']);
+function guardando(b,fn){const quieto=matchMedia('(prefers-reduced-motion: reduce)').matches;b.classList.add('guardando');b.setAttribute('aria-busy','true');cargando(1);
+  setTimeout(()=>{cargando(-1);b.classList.remove('guardando');b.removeAttribute('aria-busy');fn()},quieto?0:550)}
 function cargando(d){CARGAS=Math.max(0,CARGAS+d);let b=document.getElementById('carga');if(!b){b=document.createElement('div');b.id='carga';b.setAttribute('aria-hidden','true');document.body.append(b)}b.classList.toggle('on',CARGAS>0)}
 async function api(accion,body,{signal}={}){
   cargando(1);try{
@@ -1257,6 +1269,7 @@ function docHTML(d,kind){
     if(m==='Transferencia a mi cuenta')how=co.iban?box('Transferencia bancaria',`<p class="p-iban">${esc(ibanFmt(co.iban))}</p><p>Titular: ${esc(co.legal||co.name)}</p>`):box('Transferencia bancaria','<p>Número de cuenta: se facilitará al confirmar.</p>');
     else if(m==='Cargo en la cuenta del cliente')how=box('Cargo en la cuenta del cliente',c?.iban?`<p class="p-iban">${esc(ibanMask(c.iban))}</p><p>Titular: ${esc(c.name)}</p>`:'<p>Cuenta del cliente pendiente de indicar.</p>');
     else if(m==='Bizum')how=box('Bizum',`<p class="p-iban">${esc(prettyPhone(co.phone))}</p><p>A nombre de ${esc(co.legal||co.name)}</p>`);
+    else if(m===SIN_PAGO)how=box('Forma de pago','<p>A convenir con el cliente.</p>');
     else how=box(m==='Efectivo'?'Pago en efectivo':'Pago con tarjeta','<p>En el momento indicado en los plazos de pago.</p>');
     return box('Plazos de pago',`<p>${esc(plazos)}</p>`)+how})()}</section>
   ${isQ?`<section class="p-sign"><div>Conforme del cliente · Firma, nombre y fecha</div><div>Por ${esc(co.legal||co.name)}</div></section>`:''}
@@ -1467,7 +1480,7 @@ function openAvisos(){
 /* ---------- Diálogos ---------- */
 function dlg(html,wide=false){const d=$('#dlg');d.className=wide?'wide':'';d.innerHTML=`<div class="dlg">${html}</div>`;if(!d.open)d.showModal();fitPapers();return d}
 const closeDlg=()=>{const d=$('#dlg');if(d?.open)d.close()};
-function confirmBox(title,text,yes,fn,danger=true){dlg(`<div class="dlg-head"><h2>${esc(title)}</h2></div><div class="dlg-body"><p style="margin:0">${esc(text)}</p></div><div class="dlg-foot"><button class="btn" data-act="closeDlg">Cancelar</button><button class="btn ${danger?'danger':'primary'}" data-act="confirmYes">${esc(yes)}</button></div>`);S.onYes=fn}
+function confirmBox(title,text,yes,fn,danger=true){dlg(`<div class="dlg-head"><h2>${esc(title)}</h2></div><div class="dlg-body"><p style="margin:0">${esc(text)}</p></div><div class="dlg-foot"><button class="btn" data-act="closeDlg">Cancelar</button><button class="btn ${danger?'danger solid':'primary'}" data-act="confirmYes">${danger?ic('trash')+' ':''}${esc(yes)}</button></div>`);S.onYes=fn}
 function toast(msg,kind){if(!kind){if(/eliminad|borrad|No se ha podido|no es una copia|no tiene contactos|no está disponible/i.test(msg))kind='del';else if(/guardad|cambiad|apuntado|creada|enviad|cargados|restaurada|instalada|Marcado|añadid|listo|Ahora es cliente/i.test(msg))kind='ok'}const t=document.createElement('div');t.className='toast'+(kind==='del'?' t-del':kind==='ok'?' t-ok':'');t.setAttribute('role','status');t.innerHTML=ic(kind==='del'?'trash':'check')+esc(msg);document.body.append(t);setTimeout(()=>t.remove(),2800)}
 
 function waText(q,mode){const c=client(q.client),name=(c?.name||'').split(' ')[0],full=(c?.name||'').trim();
@@ -1506,7 +1519,7 @@ function openInvoice(id){const f=db.invoices.find(f=>f.id===id);if(!f)return;con
 function editClient(id){const c=client(id)||{};const qs=id?db.quotes.filter(q=>q.client===id):[];
   const f=(k,l,t='text')=>`<label class="field">${l}<input id="ec-${k}" type="${t}" value="${esc(c[k]||'')}"></label>`;
   dlg(`<div class="dlg-head"><h2>${id?esc(c.name):'Nuevo cliente'}</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div>
-  <div class="dlg-body">${f('name','Nombre y apellidos *')}<div class="grid2">${f('phone','Teléfono','tel')}${f('email','Correo','email')}</div>${f('address','Dirección')}<div class="grid2">${f('nif','NIF / CIF')}<label class="field">Cómo suele pagar<select id="ec-paym">${PAYS.map(x=>`<option ${x===(c.payMethod||PAYS[0])?'selected':''}>${x}</option>`).join('')}</select></label></div>
+  <div class="dlg-body">${f('name','Nombre y apellidos *')}<div class="grid2">${f('phone','Teléfono','tel')}${f('email','Correo','email')}</div>${f('address','Dirección')}<div class="grid2">${f('nif','NIF / CIF')}</div><div class="field">Cómo suele pagar<div class="pay-pick" role="radiogroup" aria-label="Cómo suele pagar">${PAYS.map(x=>`<button type="button" class="pay-op" role="radio" data-act="payPick" data-v="${x}" aria-checked="${x===(c.payMethod||SIN_PAGO)}">${x}</button>`).join('')}</div><input type="hidden" id="ec-paym" value="${esc(c.payMethod||SIN_PAGO)}"></div>
   <label class="field">Cuenta bancaria del cliente (IBAN, si paga con cargo en su cuenta)<input id="ec-iban" value="${esc(ibanFmt(c.iban||''))}" placeholder="ES00 0000 0000 0000 0000 0000" autocomplete="off"></label><label class="field">Notas<textarea id="ec-notes">${esc(c.notes||'')}</textarea></label>
   ${qs.length?`<div><div class="field" style="margin-bottom:6px">Historial</div><div class="list">${qs.map(quoteRow).join('')}</div></div>`:''}<div id="ec-err"></div></div>
   <div class="dlg-foot">${id?`<button class="btn danger" data-act="delClient" data-id="${id}">${ic('trash')} Eliminar</button><span class="spacer"></span><button class="btn" data-act="quoteFor" data-id="${id}">${ic('file')} Nuevo presupuesto</button>`:''}<button class="btn primary" data-act="saveClient" data-id="${id||''}">${ic('check')} Guardar</button></div>`)}
@@ -1865,6 +1878,7 @@ const ACT={
  delInvoice:el=>confirmBox('¿Eliminar esta factura?','Solo deberías borrar facturas creadas por error. La numeración no se reutiliza.','Eliminar',()=>{db.invoices=db.invoices.filter(f=>f.id!==el.dataset.id);save();render();toast('Factura eliminada')}),
  editClient:el=>editClient(el.dataset.id),
  saveClient:el=>{const n=$('#ec-name').value.trim();if(!n){$('#ec-err').innerHTML='<div class="err">Escribe el nombre del cliente.</div>';return}{const ib=$('#ec-iban').value.trim();if(ib&&!ibanOk(ib)){$('#ec-err').innerHTML='<div class="err">Esa cuenta no es válida. Revisa los números del IBAN.</div>';return}}const id=el.dataset.id;const c=id?client(id):{id:uid()};Object.assign(c,{name:n,phone:$('#ec-phone').value.trim(),email:$('#ec-email').value.trim(),address:$('#ec-address').value.trim(),nif:$('#ec-nif').value.trim(),payMethod:$('#ec-paym').value,iban:ibanClean($('#ec-iban').value),notes:$('#ec-notes').value});if(!id)db.clients.push(c);save();closeDlg();render();toast('Cliente guardado')},
+ payPick:b=>{$$('.pay-op').forEach(x=>x.setAttribute('aria-checked',String(x===b)));$('#ec-paym').value=b.dataset.v},
  delClient:el=>{const id=el.dataset.id;const n=db.quotes.filter(q=>q.client===id).length;if(n){dlg(`<div class="dlg-head"><h2>No se puede eliminar</h2></div><div class="dlg-body"><p style="margin:0">Este cliente tiene ${n} presupuesto${n>1?'s':''}. Elimínalos antes o deja el cliente como está.</p></div><div class="dlg-foot"><button class="btn primary" data-act="closeDlg">Entendido</button></div>`);return}confirmBox('¿Eliminar cliente?','Se borrará su ficha.','Eliminar',()=>{db.clients=db.clients.filter(c=>c.id!==id);save();render();toast('Cliente eliminado')})},
  quoteFor:el=>{closeDlg();newQuote();S.ed.q.client=el.dataset.id;render()},
  editWork:el=>editWork(el.dataset.id),
@@ -1945,7 +1959,8 @@ document.addEventListener('pointercancel',()=>{HOLD=null});
 document.addEventListener('keydown',()=>{HOLD_CLICK=false});
 document.addEventListener('click',e=>{const b=e.target.closest('[data-hold]');if(!b)return;if(HOLD_CLICK){HOLD_CLICK=false;return}ACT[b.dataset.hold]&&ACT[b.dataset.hold](b)});
 document.addEventListener('contextmenu',e=>{if(e.target.closest('[data-hold]'))e.preventDefault()});
-document.addEventListener('click',e=>{const el=e.target.closest('[data-act]');if(!el)return;const f=ACT[el.dataset.act];if(f){e.preventDefault();if(el.dataset.close&&$('#dlg')?.open)closeDlg();f(el,e)}});
+document.addEventListener('click',e=>{const el=e.target.closest('[data-act]');if(!el)return;const f=ACT[el.dataset.act];if(f){e.preventDefault();if(el.dataset.close&&$('#dlg')?.open)closeDlg();
+  if(GUARDAR.has(el.dataset.act)&&el.tagName==='BUTTON'){if(el.classList.contains('guardando'))return;guardando(el,()=>f(el,e));return}f(el,e)}});
 document.addEventListener('input',e=>{const el=e.target.closest('[data-in]');if(!el)return;const f=IN[el.dataset.in];if(f&&el.type!=='file'&&el.type!=='checkbox')f(el)});
 document.addEventListener('change',e=>{const el=e.target.closest('[data-in]');if(!el)return;const f=IN[el.dataset.in];if(f&&(el.tagName==='SELECT'||el.type==='file'||el.type==='checkbox'))f(el)});
 document.addEventListener('submit',e=>{if(e.target.id==='ai-start'){e.preventDefault();const t=$('#ai-start-text').value.trim();newQuote();S.ed.step=2;S.ed.mode='ai';S.ed.sheet=true;render();window.scrollTo(0,0);if(t)aiSend(t)}});
