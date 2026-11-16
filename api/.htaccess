@@ -1,0 +1,5 @@
+# Solo se puede llamar a index.php; config.php y el resto quedan ocultos
+Options -Indexes
+<FilesMatch "^(?!index\.php$).*">
+  Require all denied
+</FilesMatch>

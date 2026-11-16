@@ -1,0 +1,77 @@
+name: Publicar en OVH
+on:
+  push:
+    branches: [main]
+    paths: ['src/**', 'api/**', 'portafolio/**', 'sgm-fichajes/**', '.github/workflows/publicar-ovh.yml']
+  workflow_dispatch:
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    env:
+      # Mientras no estén los datos del FTP en los secretos, se genera todo pero no se sube nada
+      LISTO: ${{ secrets.OVH_FTP_USER != '' && secrets.OVH_FTP_PASSWORD != '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Comprobar que la API no tiene errores (si falla, no se publica)
+        run: for f in api/*.php; do php -l "$f"; done
+      - name: Generar la app
+        run: |
+          pip install --quiet pillow
+          python3 src/build.py
+      - name: Preparar solo los archivos de la web
+        run: |
+          mkdir web
+          cp -r src/dist/. web/          # app instalable + demo pública
+          cp -r portafolio sgm-fichajes web/
+          cp -r api web/
+          rm -f web/api/config.ejemplo.php
+      - name: Crear la configuración del servidor con los secretos (no se guarda en el repo)
+        env:
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASS: ${{ secrets.DB_PASS }}
+          ALTAS: ${{ secrets.ALTAS_PERMITIDAS }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          php -r '$c = [
+            "db_host" => getenv("DB_HOST"), "db_name" => getenv("DB_NAME"),
+            "db_user" => getenv("DB_USER"), "db_pass" => getenv("DB_PASS"),
+            "altas_permitidas" => array_values(array_filter(array_map(fn($e) => strtolower(trim($e)), explode(",", (string) getenv("ALTAS"))))),
+            "url_app" => "https://sgm.kreadigitalstudio.es/",
+            "correo_remitente" => "no-responder@kreadigitalstudio.es",
+            "anthropic_key" => getenv("ANTHROPIC_API_KEY"),
+            "anthropic_model" => "claude-opus-5-5",
+          ];
+          file_put_contents("web/api/config.php", "<?php\nreturn " . var_export($c, true) . ";\n");'
+      # Comprobación sin mostrar las claves: solo su longitud y si llevan espacios pegados
+      - name: Revisar las claves (sin mostrarlas)
+        env:
+          U: ${{ secrets.OVH_FTP_USER }}
+          P: ${{ secrets.OVH_FTP_PASSWORD }}
+          D: ${{ secrets.DB_PASS }}
+          K: ${{ secrets.ANTHROPIC_API_KEY }}
+          A: ${{ secrets.ALTAS_PERMITIDAS }}
+        run: |
+          echo "Usuario del FTP: ${#U} caracteres"
+          echo "Longitud de la clave del FTP: ${#P}"
+          echo "Longitud de la clave de la base de datos: ${#D}"
+          echo "Longitud de la clave de Anthropic: ${#K}"
+          echo "Correos que pueden crear cuenta: $(printf '%s' "$A" | tr ',' '\n' | grep -c @)"
+          case "$K" in sk-ant-*) echo "La clave de Anthropic empieza por sk-ant-";; *) echo "::warning::La clave de Anthropic no empieza por sk-ant-: el asistente de IA no funcionará";; esac
+          if [ "$P" != "$(printf '%s' "$P" | tr -d '[:space:]')" ]; then echo "::warning::La clave del FTP lleva espacios o saltos de línea"; fi
+          if [ "$D" != "$(printf '%s' "$D" | tr -d '[:space:]')" ]; then echo "::warning::La clave de la base de datos lleva espacios o saltos de línea"; fi
+      # Usuario de FTP propio de esta app: solo puede entrar en la carpeta sgm
+      - name: Avisar si faltan los datos del FTP
+        if: env.LISTO != 'true'
+        run: |
+          echo "::notice::Faltan los secretos OVH_FTP_USER y OVH_FTP_PASSWORD: la app se ha generado pero no se ha subido a OVH."
+      - name: Subir por FTP a la carpeta de SGM
+        if: env.LISTO == 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.cluster131.hosting.ovh.net
+          username: ${{ secrets.OVH_FTP_USER }}
+          password: ${{ secrets.OVH_FTP_PASSWORD }}
+          local-dir: ./web/
+          server-dir: ./

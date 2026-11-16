@@ -1,0 +1,2959 @@
+{
+ "actualizada": "2026-11",
+ "zona": "Sevilla (Aljarafe)",
+ "notas": "Tarifa base orientativa para presupuestos de reforma en Tomares / Aljarafe (Sevilla), noviembre 2026. Precios de venta a cliente particular SIN IVA, material y mano de obra incluidos salvo que la descripción diga 'solo mano de obra'. MÉTODO: (1) Precios de mercado 2026 por gremio de Motor de Presupuestos (motordepresupuestos.com/cuanto-cobra/*, tablas publicadas abr-jun 2026, sin IVA; incluye página específica de climatización en Sevilla). (2) Guías Cronoshare 2026 para Sevilla (reforma integral, baño, cambio de bañera por ducha): son precios orientativos de consumidor que pueden incluir IVA, por lo que se usaron como referencia de rango y no se les sumó nada. (3) CYPE Generador de precios (generadordeprecios.info, módulo rehabilitación, España): sus importes son coste directo/PEM sin gastos generales ni beneficio; se convirtieron a precio de venta multiplicando por 1,19 (13 % GG + 6 % BI). Nota: las páginas CYPE consultadas no estaban localizadas en Sevilla y algunas cachés usan tarifas de mano de obra antiguas (p. ej. 17,24 €/h oficial solador), por lo que se contrastaron siempre con precios de mercado 2026. (4) Fuentes puntuales leídas: Venmartín 2026 (ventanas PVC, Madrid), ConstruIA 2026 (mosquiteras), Brico-Ventana 2026 (persianas), encimerassevilla.com 2026 (cuarzo 230-600 €/m²), Línea 3 Cocinas, Grupo A Plus 2026 (instalación de aire acondicionado), Cronoshare (laminado, monocapa, impermeabilización), Reformas Aguilera Sevilla (solería y enfoscado), ArQuality 2026 (porcelánicos), Habitissimo (albañiles), Gestión del Amianto / Cubas La Ranilla (cubas en Sevilla). Todas las fuentes son de 2025-2026, así que no se aplicó ajuste por IPC de construcción; donde la fuente es de Madrid u otra zona se mantuvo el precio porque Sevilla suele estar igual o algo por debajo. Las partidas marcadas 'estimado a partir de …' no tienen precio directo publicado: se calcularon desde precios de gremios adyacentes, precio-hora y rendimientos habituales; conviene revisarlas con los precios reales de la empresa. precio = valor típico propuesto; min/max = horquilla realista encontrada. Las partidas 'pa' de tasas, proyecto e ICIO son ejemplos: en presupuestos reales calcular como % del PEM y confirmar con la ordenanza fiscal de Tomares (no se pudo leer en línea). MANO DE OBRA: Convenio de la Construcción de Sevilla (BOP Sevilla 20/02/2026, tablas 2025 y 2026, subidas +3,5 % 2025 y +3,0 % 2026): oficial de 1ª salario diario 41,07 €/día (2025) y 42,30 €/día (2026); hora extraordinaria laborable oficial 1ª 21,58 €/h (2026); paga extra oficial 1ª 1.988,98 € (2026). Precio de venta por hora observado en 2026: oficial 1ª albañil 22-32 €/h, oficial 2ª 18-25 €/h, peón 15-21 €/h (Motor de Presupuestos albañiles); reformista oficial 1ª 28-42 €/h y peón 16-22 €/h; fontanero 38-52 €/h; electricista 40-55 €/h; pintor 22-32 €/h; climatización Sevilla 37-53 €/h; Habitissimo: oficial ≈130 €/día y peón ≈100 €/día. Valores de referencia adoptados en esta tarifa: oficial 1ª albañil 30 €/h, peón 20 €/h, fontanero/electricista 40-42 €/h. MÁRGENES: se asume precio de venta = coste directo + 13 % gastos generales + 6 % beneficio industrial (≈ +19 %, referencia RD 1098/2001 que el sector aplica también en obra privada; Motor de Presupuestos indica 20-24 % sobre coste). Para obras pequeñas o urgentes es habitual un mínimo de salida o desplazamiento; para reformas integrales se recomienda una partida de imprevistos del 5-10 %.",
+ "capitulos": [
+  {
+   "id": "demoliciones",
+   "nombre": "Demoliciones y desescombro",
+   "partidas": [
+    {
+     "codigo": "DEM-001",
+     "descripcion": "Demolición de tabique de ladrillo hueco con medios manuales, incluso carga de escombros sobre contenedor",
+     "unidad": "m2",
+     "precio": 16.0,
+     "min": 12.0,
+     "max": 30.0,
+     "fuente": "Motor de Presupuestos 2026 demoliciones: derribo de tabique 15-35 €/m² con retirada"
+    },
+    {
+     "codigo": "DEM-002",
+     "descripcion": "Demolición de muro de fábrica de ladrillo de 1/2 pie no estructural, incluso carga sobre contenedor",
+     "unidad": "m2",
+     "precio": 26.0,
+     "min": 18.0,
+     "max": 38.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 demoliciones (tabique 15-35 €/m²), mayor espesor"
+    },
+    {
+     "codigo": "DEM-003",
+     "descripcion": "Desmontaje de tabique de placa de yeso laminado, incluso perfilería y carga",
+     "unidad": "m2",
+     "precio": 8.0,
+     "min": 5.0,
+     "max": 14.0,
+     "fuente": "estimado a partir de Habitissimo albañiles (tirar tabique pladur 400 €/100 m²) más carga y acopio"
+    },
+    {
+     "codigo": "DEM-004",
+     "descripcion": "Picado de alicatado en paramentos verticales, incluso material de agarre y carga",
+     "unidad": "m2",
+     "precio": 13.0,
+     "min": 9.0,
+     "max": 18.0,
+     "fuente": "CYPE rehabilitación DRA010 demolición de alicatado 10,95 € (coste directo) x1,19; MP albañiles picado 8-18 €/m²"
+    },
+    {
+     "codigo": "DEM-005",
+     "descripcion": "Demolición de solado cerámico o terrazo con martillo eléctrico, incluso capa de mortero de agarre",
+     "unidad": "m2",
+     "precio": 16.0,
+     "min": 10.0,
+     "max": 25.0,
+     "fuente": "Motor de Presupuestos 2026 demoliciones: demolición de solado y base de mortero 10-25 €/m²"
+    },
+    {
+     "codigo": "DEM-006",
+     "descripcion": "Levantado de suelo laminado o tarima flotante, incluso manta y retirada",
+     "unidad": "m2",
+     "precio": 5.0,
+     "min": 3.0,
+     "max": 10.0,
+     "fuente": "Cronoshare suelo laminado: retirada de laminado antiguo 3-10 €/m²"
+    },
+    {
+     "codigo": "DEM-007",
+     "descripcion": "Levantado de rodapié cerámico o de madera, incluso retirada",
+     "unidad": "ml",
+     "precio": 3.0,
+     "min": 2.0,
+     "max": 5.0,
+     "fuente": "estimado a partir de precio de peón 16-22 €/h (MP reformas) con rendimiento aprox. 0,12 h/ml"
+    },
+    {
+     "codigo": "DEM-008",
+     "descripcion": "Demolición de falso techo de escayola o placa, incluso estructura de cuelgue y carga",
+     "unidad": "m2",
+     "precio": 11.0,
+     "min": 8.0,
+     "max": 18.0,
+     "fuente": "Motor de Presupuestos 2026 demoliciones: derribo de falso techo de escayola 8-18 €/m²"
+    },
+    {
+     "codigo": "DEM-009",
+     "descripcion": "Picado de guarnecido y enlucido de yeso en paredes hasta dejar fábrica vista",
+     "unidad": "m2",
+     "precio": 9.0,
+     "min": 7.0,
+     "max": 14.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 albañiles (picado de revestimientos 8-18 €/m²)"
+    },
+    {
+     "codigo": "DEM-010",
+     "descripcion": "Demolición de solera de hormigón en masa hasta 15 cm con martillo neumático, incluso carga",
+     "unidad": "m2",
+     "precio": 24.0,
+     "min": 16.0,
+     "max": 34.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 demoliciones (solado 10-25 €/m²) por mayor espesor y medios"
+    },
+    {
+     "codigo": "DEM-011",
+     "descripcion": "Desmontaje de bañera de acero o chapa, incluso picado perimetral y retirada",
+     "unidad": "ud",
+     "precio": 90.0,
+     "min": 60.0,
+     "max": 150.0,
+     "fuente": "estimado a partir de Cronoshare Sevilla 2026 cambio bañera por ducha (retirar bañera desde 30 € solo MO) más picado y transporte"
+    },
+    {
+     "codigo": "DEM-012",
+     "descripcion": "Desmontaje de aparato sanitario (inodoro, lavabo o bidé) con taponado de tomas y retirada",
+     "unidad": "ud",
+     "precio": 30.0,
+     "min": 20.0,
+     "max": 45.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 fontaneros (instalación inodoro 120-220 € incluye retirada del antiguo)"
+    },
+    {
+     "codigo": "DEM-013",
+     "descripcion": "Desmontaje de muebles de cocina altos y bajos con encimera, incluso retirada a vertedero",
+     "unidad": "ml",
+     "precio": 25.0,
+     "min": 18.0,
+     "max": 40.0,
+     "fuente": "estimado a partir de precio hora oficial/peón (Motor de Presupuestos 2026 reformas 16-42 €/h)"
+    },
+    {
+     "codigo": "DEM-014",
+     "descripcion": "Desmontaje de puerta de paso con cerco y tapajuntas, incluso retirada",
+     "unidad": "ud",
+     "precio": 30.0,
+     "min": 20.0,
+     "max": 45.0,
+     "fuente": "estimado a partir de precio hora oficial/peón (Motor de Presupuestos 2026 reformas)"
+    },
+    {
+     "codigo": "DEM-015",
+     "descripcion": "Desmontaje de carpintería exterior (ventana o balconera) con cerco, incluso retirada",
+     "unidad": "ud",
+     "precio": 45.0,
+     "min": 30.0,
+     "max": 70.0,
+     "fuente": "estimado a partir de precio hora oficial/peón (Motor de Presupuestos 2026 reformas)"
+    },
+    {
+     "codigo": "DEM-016",
+     "descripcion": "Retirada de instalaciones antiguas de electricidad y fontanería en vivienda, por m² construido",
+     "unidad": "m2",
+     "precio": 4.0,
+     "min": 3.0,
+     "max": 7.0,
+     "fuente": "estimado a partir de Cronoshare Sevilla 2026 (demoliciones y RCD piso 70-100 m² 1.500-3.500 €)"
+    },
+    {
+     "codigo": "DEM-017",
+     "descripcion": "Desmontaje de cubierta de teja cerámica, incluso acopio o retirada",
+     "unidad": "m2",
+     "precio": 18.0,
+     "min": 12.0,
+     "max": 26.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 tejados (sustitución total de teja 55-110 €/m²)"
+    },
+    {
+     "codigo": "DEM-018",
+     "descripcion": "Vaciado interior completo de vivienda para reforma integral (tabiquería, revestimientos, sanitarios), sin estructura",
+     "unidad": "m2",
+     "precio": 30.0,
+     "min": 18.0,
+     "max": 55.0,
+     "fuente": "Cronoshare Sevilla 2026: demoliciones y RCD piso 70-100 m² 1.500-3.500 €; Motor de Presupuestos 2026: vaciado local 100 m² 3.000-8.000 €"
+    },
+    {
+     "codigo": "DEM-019",
+     "descripcion": "Alquiler de contenedor de escombros de 5-6 m³, incluso colocación, retirada y canon de vertedero",
+     "unidad": "ud",
+     "precio": 185.0,
+     "min": 140.0,
+     "max": 260.0,
+     "fuente": "Gestión del Amianto Sevilla: cuba 5-6 m³ 80-170 €; Cubas La Ranilla 99 € (3-4 m³, IVA incl.); MP 200-600 €/ud; incluye gestión y margen"
+    },
+    {
+     "codigo": "DEM-020",
+     "descripcion": "Saco big-bag de 1 m³ para escombros, incluso recogida y gestión en vertedero autorizado",
+     "unidad": "ud",
+     "precio": 75.0,
+     "min": 55.0,
+     "max": 95.0,
+     "fuente": "estimado a partir de precios de cubas en Sevilla (80-170 €/5-6 m³) con recogida individual"
+    },
+    {
+     "codigo": "DEM-021",
+     "descripcion": "Carga manual de escombros y bajada a contenedor desde planta sin ascensor",
+     "unidad": "m3",
+     "precio": 38.0,
+     "min": 28.0,
+     "max": 55.0,
+     "fuente": "estimado a partir de precio hora peón 16-22 €/h (Motor de Presupuestos 2026 reformas)"
+    },
+    {
+     "codigo": "DEM-022",
+     "descripcion": "Protección de suelos, carpinterías, ascensor y zonas comunes durante la obra",
+     "unidad": "pa",
+     "precio": 150.0,
+     "min": 90.0,
+     "max": 250.0,
+     "fuente": "estimado a partir de precio hora peón y material de protección (cartón, plástico)"
+    }
+   ]
+  },
+  {
+   "id": "albanileria",
+   "nombre": "Albañilería",
+   "partidas": [
+    {
+     "codigo": "ALB-001",
+     "descripcion": "Tabique de ladrillo hueco doble 7 cm, recibido con mortero, incluso replanteo y aplomado",
+     "unidad": "m2",
+     "precio": 30.0,
+     "min": 26.0,
+     "max": 40.0,
+     "fuente": "CYPE rehabilitación FFQ010 24,42 € coste directo x1,19; MP albañiles 28-48 €/m²"
+    },
+    {
+     "codigo": "ALB-002",
+     "descripcion": "Tabicón o forrado de ladrillo hueco sencillo 4 cm recibido con mortero",
+     "unidad": "m2",
+     "precio": 24.0,
+     "min": 20.0,
+     "max": 32.0,
+     "fuente": "estimado a partir de CYPE FFQ010 (ladrillo hueco doble) con menor espesor y rendimiento"
+    },
+    {
+     "codigo": "ALB-003",
+     "descripcion": "Hoja interior de fachada en ladrillo hueco doble 7 cm, para trasdosado de muro",
+     "unidad": "m2",
+     "precio": 31.0,
+     "min": 27.0,
+     "max": 40.0,
+     "fuente": "CYPE rehabilitación FFR010 25,77 € coste directo x1,19"
+    },
+    {
+     "codigo": "ALB-004",
+     "descripcion": "Citara de ladrillo perforado de 1/2 pie para revestir, recibida con mortero",
+     "unidad": "m2",
+     "precio": 45.0,
+     "min": 36.0,
+     "max": 55.0,
+     "fuente": "estimado a partir de CYPE FFD010 (medianera dos hojas 16 cm 52,43 €) y FFQ010"
+    },
+    {
+     "codigo": "ALB-005",
+     "descripcion": "Guarnecido y enlucido de yeso maestreado en paramentos verticales",
+     "unidad": "m2",
+     "precio": 18.0,
+     "min": 14.0,
+     "max": 26.0,
+     "fuente": "Motor de Presupuestos 2026 albañiles: guarnecido + enlucido maestreado 14-26 €/m²"
+    },
+    {
+     "codigo": "ALB-006",
+     "descripcion": "Guarnecido y enlucido de yeso en techos",
+     "unidad": "m2",
+     "precio": 21.0,
+     "min": 16.0,
+     "max": 28.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 albañiles (14-26 €/m² en paredes) con incremento por trabajo en techo"
+    },
+    {
+     "codigo": "ALB-007",
+     "descripcion": "Enfoscado maestreado y fratasado con mortero de cemento en paramentos interiores",
+     "unidad": "m2",
+     "precio": 19.0,
+     "min": 15.0,
+     "max": 26.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 albañiles (enfoscado exterior 18-35 €/m²)"
+    },
+    {
+     "codigo": "ALB-008",
+     "descripcion": "Recrecido de suelo con mortero de cemento de 4-5 cm, maestreado y nivelado",
+     "unidad": "m2",
+     "precio": 18.0,
+     "min": 14.0,
+     "max": 25.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 albañiles (solera 22-40 €/m²) y soladores (autonivelante 12-22 €/m²)"
+    },
+    {
+     "codigo": "ALB-009",
+     "descripcion": "Solera de hormigón HM-20 de 15 cm con malla electrosoldada",
+     "unidad": "m2",
+     "precio": 30.0,
+     "min": 22.0,
+     "max": 40.0,
+     "fuente": "Motor de Presupuestos 2026 albañiles: solera de hormigón 15 cm con malla 22-40 €/m²"
+    },
+    {
+     "codigo": "ALB-010",
+     "descripcion": "Apertura de roza en paramento para instalaciones, incluso tapado con yeso o mortero",
+     "unidad": "ml",
+     "precio": 9.0,
+     "min": 6.0,
+     "max": 14.0,
+     "fuente": "Motor de Presupuestos 2026 albañiles: roza sin tapado 8-18 €/m; Habitissimo: rozas aprox. 8 €/m"
+    },
+    {
+     "codigo": "ALB-011",
+     "descripcion": "Apertura de hueco de paso en tabique, incluso cargadero, recibido y remates",
+     "unidad": "ud",
+     "precio": 240.0,
+     "min": 160.0,
+     "max": 380.0,
+     "fuente": "estimado a partir de precio hora oficial y peón (Motor de Presupuestos 2026 albañiles 15-32 €/h)"
+    },
+    {
+     "codigo": "ALB-012",
+     "descripcion": "Cegado de hueco con ladrillo hueco doble, incluso guarnecido y enlucido por ambas caras",
+     "unidad": "m2",
+     "precio": 55.0,
+     "min": 40.0,
+     "max": 75.0,
+     "fuente": "estimado a partir de CYPE FFQ010 y Motor de Presupuestos 2026 (guarnecido 14-26 €/m²) más remates"
+    },
+    {
+     "codigo": "ALB-013",
+     "descripcion": "Recibido de cerco de puerta o premarco de ventana con mortero",
+     "unidad": "ud",
+     "precio": 60.0,
+     "min": 45.0,
+     "max": 90.0,
+     "fuente": "Motor de Presupuestos 2026 albañiles: recibido de cercos y premarcos 45-90 €/ud"
+    },
+    {
+     "codigo": "ALB-014",
+     "descripcion": "Ayudas de albañilería a instalación de fontanería y saneamiento en vivienda completa",
+     "unidad": "pa",
+     "precio": 650.0,
+     "min": 400.0,
+     "max": 900.0,
+     "fuente": "estimado a partir de precio jornada cuadrilla (Habitissimo: oficial 130 €/día, peón 100 €/día)"
+    },
+    {
+     "codigo": "ALB-015",
+     "descripcion": "Ayudas de albañilería a instalación eléctrica en vivienda completa (rozas, cajas y tapados)",
+     "unidad": "pa",
+     "precio": 650.0,
+     "min": 400.0,
+     "max": 900.0,
+     "fuente": "estimado a partir de precio jornada cuadrilla (Habitissimo: oficial 130 €/día, peón 100 €/día)"
+    },
+    {
+     "codigo": "ALB-016",
+     "descripcion": "Ayudas de albañilería a carpintería y climatización (recibidos, pasamuros, remates)",
+     "unidad": "pa",
+     "precio": 300.0,
+     "min": 180.0,
+     "max": 450.0,
+     "fuente": "estimado a partir de precio jornada cuadrilla (Habitissimo)"
+    },
+    {
+     "codigo": "ALB-017",
+     "descripcion": "Formación de poyete o banco de obra en ducha con ladrillo, para revestir",
+     "unidad": "ml",
+     "precio": 85.0,
+     "min": 60.0,
+     "max": 120.0,
+     "fuente": "estimado a partir de CYPE FFQ010 y precio hora oficial"
+    },
+    {
+     "codigo": "ALB-018",
+     "descripcion": "Colocación de vierteaguas de piedra o mármol recibido con mortero",
+     "unidad": "ml",
+     "precio": 38.0,
+     "min": 28.0,
+     "max": 55.0,
+     "fuente": "estimado a partir de precio hora oficial más material comercial"
+    },
+    {
+     "codigo": "ALB-019",
+     "descripcion": "Reparación de grietas en paramento interior con malla de fibra y mortero",
+     "unidad": "ml",
+     "precio": 22.0,
+     "min": 15.0,
+     "max": 35.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 fachadas (reparación de grietas 20-60 €/m)"
+    },
+    {
+     "codigo": "ALB-020",
+     "descripcion": "Tratamiento de humedades por capilaridad con mortero hidrófugo en zócalo interior",
+     "unidad": "m2",
+     "precio": 60.0,
+     "min": 40.0,
+     "max": 90.0,
+     "fuente": "Motor de Presupuestos 2026 impermeabilización: tratamiento anti-humedad capilar 40-90 €/m²"
+    },
+    {
+     "codigo": "ALB-021",
+     "descripcion": "Mano de obra oficial 1ª albañil (trabajos por administración)",
+     "unidad": "h",
+     "precio": 30.0,
+     "min": 25.0,
+     "max": 35.0,
+     "fuente": "Motor de Presupuestos 2026 albañiles 22-32 €/h y reformas 28-42 €/h; convenio Sevilla 2026"
+    },
+    {
+     "codigo": "ALB-022",
+     "descripcion": "Mano de obra peón (trabajos por administración)",
+     "unidad": "h",
+     "precio": 20.0,
+     "min": 17.0,
+     "max": 23.0,
+     "fuente": "Motor de Presupuestos 2026 albañiles peón 15-21 €/h, reformas 16-22 €/h; Habitissimo 100 €/día"
+    }
+   ]
+  },
+  {
+   "id": "alicatados_solados",
+   "nombre": "Alicatados y solados",
+   "partidas": [
+    {
+     "codigo": "SOL-001",
+     "descripcion": "Solado de gres porcelánico rectificado 60x60 cm con adhesivo C2, material hasta 20 €/m², incluso rejuntado",
+     "unidad": "m2",
+     "precio": 48.0,
+     "min": 40.0,
+     "max": 60.0,
+     "fuente": "CYPE RSG130 porcelánico Grespania 51,60 € coste directo; MP soladores gran formato 28-55 €/m² MO; ArQuality rectificado 45-80 €/m²"
+    },
+    {
+     "codigo": "SOL-002",
+     "descripcion": "Solado de gres porcelánico 45x45 o 30x60 cm con adhesivo, material hasta 12 €/m², incluso rejuntado",
+     "unidad": "m2",
+     "precio": 38.0,
+     "min": 32.0,
+     "max": 48.0,
+     "fuente": "Motor de Presupuestos 2026 soladores 18-32 €/m² MO más material; Cronoshare Sevilla 2026 solado 35-75 €/m²"
+    },
+    {
+     "codigo": "SOL-003",
+     "descripcion": "Solado de gres esmaltado 33x33 cm gama económica, material hasta 8 €/m², con adhesivo",
+     "unidad": "m2",
+     "precio": 29.0,
+     "min": 24.0,
+     "max": 36.0,
+     "fuente": "CYPE rehabilitación RSG010 gres esmaltado 22,22 € coste directo x1,19 más reposición"
+    },
+    {
+     "codigo": "SOL-004",
+     "descripcion": "Solado de porcelánico imitación madera 20x120 cm a junta trabada con adhesivo C2TE",
+     "unidad": "m2",
+     "precio": 52.0,
+     "min": 42.0,
+     "max": 65.0,
+     "fuente": "ArQuality 2026: porcelánico imitación madera 30-65 €/m² total; MP soladores"
+    },
+    {
+     "codigo": "SOL-005",
+     "descripcion": "Solado de porcelánico de gran formato (120x120 o mayor) con nivelación por cuñas",
+     "unidad": "m2",
+     "precio": 75.0,
+     "min": 60.0,
+     "max": 95.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 soladores (gran formato 28-55 €/m² MO) más material 30-40 €/m²"
+    },
+    {
+     "codigo": "SOL-006",
+     "descripcion": "Solado exterior de gres porcelánico antideslizante clase 3 en terraza",
+     "unidad": "m2",
+     "precio": 45.0,
+     "min": 36.0,
+     "max": 58.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 soladores y CYPE RSG130"
+    },
+    {
+     "codigo": "SOL-007",
+     "descripcion": "Solado de baldosa hidráulica recibida con mortero, incluso rejuntado",
+     "unidad": "m2",
+     "precio": 75.0,
+     "min": 60.0,
+     "max": 95.0,
+     "fuente": "estimado a partir de Reformas Aguilera Sevilla (hidráulico artesanal desde 30 €/m² colocación) más material"
+    },
+    {
+     "codigo": "SOL-008",
+     "descripcion": "Alicatado con azulejo cerámico hasta 30x60 cm, material hasta 12 €/m², con adhesivo y rejuntado",
+     "unidad": "m2",
+     "precio": 36.0,
+     "min": 30.0,
+     "max": 45.0,
+     "fuente": "Motor de Presupuestos 2026 soladores: alicatado 20-38 €/m² MO; Cronoshare Sevilla 2026 alicatado 35-80 €/m²"
+    },
+    {
+     "codigo": "SOL-009",
+     "descripcion": "Alicatado con porcelánico rectificado de gran formato (60x120 cm) en paredes",
+     "unidad": "m2",
+     "precio": 58.0,
+     "min": 48.0,
+     "max": 75.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 soladores y CYPE RSG130 por formato y manipulación"
+    },
+    {
+     "codigo": "SOL-010",
+     "descripcion": "Alicatado con azulejo de pequeño formato tipo metro o enmallado",
+     "unidad": "m2",
+     "precio": 48.0,
+     "min": 38.0,
+     "max": 60.0,
+     "fuente": "estimado a partir de Habitissimo (cerámica enmallada 20-25 €/m² MO) más material"
+    },
+    {
+     "codigo": "SOL-011",
+     "descripcion": "Rodapié cerámico o porcelánico de 7-8 cm recibido con adhesivo",
+     "unidad": "ml",
+     "precio": 9.0,
+     "min": 7.0,
+     "max": 13.0,
+     "fuente": "CYPE rehabilitación rodapié cerámico 7,98 €/m coste directo x1,19"
+    },
+    {
+     "codigo": "SOL-012",
+     "descripcion": "Rodapié porcelánico cortado de pieza de solado, con canto pulido",
+     "unidad": "ml",
+     "precio": 12.0,
+     "min": 9.0,
+     "max": 16.0,
+     "fuente": "estimado a partir de CYPE rodapié cerámico más corte"
+    },
+    {
+     "codigo": "SOL-013",
+     "descripcion": "Nivelación de suelo con mortero autonivelante de 3 a 10 mm",
+     "unidad": "m2",
+     "precio": 16.0,
+     "min": 12.0,
+     "max": 22.0,
+     "fuente": "Motor de Presupuestos 2026 soladores: autonivelante 12-22 €/m²"
+    },
+    {
+     "codigo": "SOL-014",
+     "descripcion": "Suplemento por colocación sobre pavimento existente con imprimación de adherencia y adhesivo C2TE S1",
+     "unidad": "m2",
+     "precio": 5.0,
+     "min": 3.0,
+     "max": 8.0,
+     "fuente": "estimado a partir de precio de materiales de agarre y CYPE RSG130"
+    },
+    {
+     "codigo": "SOL-015",
+     "descripcion": "Rejuntado de pavimento o alicatado existente, incluso limpieza de juntas",
+     "unidad": "m2",
+     "precio": 10.0,
+     "min": 6.0,
+     "max": 14.0,
+     "fuente": "Motor de Presupuestos 2026 soladores: rejuntado 6-14 €/m²"
+    },
+    {
+     "codigo": "SOL-016",
+     "descripcion": "Perfil cantonera de aluminio o PVC para esquinas y remates de alicatado",
+     "unidad": "ml",
+     "precio": 8.0,
+     "min": 5.0,
+     "max": 12.0,
+     "fuente": "estimado a partir de precio hora oficial y material comercial"
+    },
+    {
+     "codigo": "SOL-017",
+     "descripcion": "Revestimiento de peldaño (huella y tabica) con gres porcelánico",
+     "unidad": "ml",
+     "precio": 55.0,
+     "min": 40.0,
+     "max": 75.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 soladores y CYPE RSG130"
+    },
+    {
+     "codigo": "SOL-018",
+     "descripcion": "Microcemento en suelos o paredes, sistema completo con sellado",
+     "unidad": "m2",
+     "precio": 75.0,
+     "min": 55.0,
+     "max": 110.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 soladores (microcemento en ducha 80-160 €/m²)"
+    },
+    {
+     "codigo": "SOL-019",
+     "descripcion": "Colocación de solado, solo mano de obra (material aportado por el cliente)",
+     "unidad": "m2",
+     "precio": 22.0,
+     "min": 18.0,
+     "max": 32.0,
+     "fuente": "Motor de Presupuestos 2026 soladores 18-32 €/m²; Reformas Aguilera Sevilla porcelánico desde 22 €/m²"
+    },
+    {
+     "codigo": "SOL-020",
+     "descripcion": "Colocación de alicatado, solo mano de obra (material aportado por el cliente)",
+     "unidad": "m2",
+     "precio": 24.0,
+     "min": 20.0,
+     "max": 38.0,
+     "fuente": "Motor de Presupuestos 2026 soladores 20-38 €/m²; Cronoshare Sevilla 2026 baño: alicatado/solado MO 22-38 €/m²"
+    }
+   ]
+  },
+  {
+   "id": "fontaneria",
+   "nombre": "Fontanería y saneamiento",
+   "partidas": [
+    {
+     "codigo": "FON-001",
+     "descripcion": "Instalación completa de fontanería y desagües de baño (lavabo, inodoro, ducha y bidé) en multicapa y PVC",
+     "unidad": "ud",
+     "precio": 1100.0,
+     "min": 800.0,
+     "max": 1800.0,
+     "fuente": "Motor de Presupuestos 2026 fontaneros: instalación fontanería baño completo 800-1.800 €"
+    },
+    {
+     "codigo": "FON-002",
+     "descripcion": "Instalación de fontanería y desagües de cocina (fregadero, lavavajillas y lavadora)",
+     "unidad": "ud",
+     "precio": 650.0,
+     "min": 450.0,
+     "max": 950.0,
+     "fuente": "estimado a partir de Cronoshare Sevilla 2026 (fontanería nueva baño + cocina 2.000-4.000 €)"
+    },
+    {
+     "codigo": "FON-003",
+     "descripcion": "Instalación general de fontanería de vivienda desde contador (1 baño y cocina), multicapa/PEX",
+     "unidad": "ud",
+     "precio": 2900.0,
+     "min": 2000.0,
+     "max": 4000.0,
+     "fuente": "Cronoshare Sevilla 2026: fontanería nueva baño + cocina 2.000-4.000 €"
+    },
+    {
+     "codigo": "FON-004",
+     "descripcion": "Punto de agua fría o caliente en multicapa/PEX hasta 5 m, empotrado",
+     "unidad": "ud",
+     "precio": 75.0,
+     "min": 55.0,
+     "max": 110.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 fontaneros (baño completo 800-1.800 € ≈ 10-14 tomas)"
+    },
+    {
+     "codigo": "FON-005",
+     "descripcion": "Punto de desagüe en PVC hasta bajante o bote, empotrado",
+     "unidad": "ud",
+     "precio": 65.0,
+     "min": 45.0,
+     "max": 95.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 fontaneros"
+    },
+    {
+     "codigo": "FON-006",
+     "descripcion": "Llave de corte de paso empotrada, incluso conexiones",
+     "unidad": "ud",
+     "precio": 45.0,
+     "min": 30.0,
+     "max": 65.0,
+     "fuente": "estimado a partir de precio hora fontanero (Motor de Presupuestos 2026 38-52 €/h)"
+    },
+    {
+     "codigo": "FON-007",
+     "descripcion": "Sustitución de tubería empotrada de cobre o multicapa, incluso apertura y tapado",
+     "unidad": "ml",
+     "precio": 38.0,
+     "min": 25.0,
+     "max": 55.0,
+     "fuente": "Motor de Presupuestos 2026 fontaneros: sustitución de tubería 25-55 €/m"
+    },
+    {
+     "codigo": "FON-008",
+     "descripcion": "Bajante de PVC de 110 mm para fecales, incluso abrazaderas y piezas especiales",
+     "unidad": "ml",
+     "precio": 32.0,
+     "min": 22.0,
+     "max": 45.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 tejados (bajante pluviales 12-28 €/m) por mayor diámetro"
+    },
+    {
+     "codigo": "FON-009",
+     "descripcion": "Arqueta de registro de ladrillo 40x40 cm con tapa, enfoscada interiormente",
+     "unidad": "ud",
+     "precio": 160.0,
+     "min": 110.0,
+     "max": 230.0,
+     "fuente": "estimado a partir de precio hora oficial albañil y material"
+    },
+    {
+     "codigo": "FON-010",
+     "descripcion": "Colector enterrado de PVC 110-125 mm, incluso excavación y relleno de zanja",
+     "unidad": "ml",
+     "precio": 48.0,
+     "min": 35.0,
+     "max": 70.0,
+     "fuente": "estimado a partir de precio hora cuadrilla y material"
+    },
+    {
+     "codigo": "FON-011",
+     "descripcion": "Sustitución de bote sifónico por sifones individuales en baño",
+     "unidad": "ud",
+     "precio": 85.0,
+     "min": 60.0,
+     "max": 120.0,
+     "fuente": "estimado a partir de precio hora fontanero (Motor de Presupuestos 2026)"
+    },
+    {
+     "codigo": "FON-012",
+     "descripcion": "Termo eléctrico de 80 L instalado, incluso válvula de seguridad y conexiones",
+     "unidad": "ud",
+     "precio": 420.0,
+     "min": 330.0,
+     "max": 550.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 fontaneros (instalación calentador 120-280 €) más equipo de gama media"
+    },
+    {
+     "codigo": "FON-013",
+     "descripcion": "Calentador estanco de gas 11 L instalado, incluso salida de humos",
+     "unidad": "ud",
+     "precio": 650.0,
+     "min": 500.0,
+     "max": 850.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 fontaneros (instalación 120-280 €) más equipo"
+    },
+    {
+     "codigo": "FON-014",
+     "descripcion": "Bomba de calor para ACS de 200 L instalada (aerotermia compacta)",
+     "unidad": "ud",
+     "precio": 2600.0,
+     "min": 2000.0,
+     "max": 3500.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 climatización Sevilla (aerotermia 5.910-13.790 €) para equipo solo ACS"
+    },
+    {
+     "codigo": "FON-015",
+     "descripcion": "Toma de lavadora o lavavajillas con desagüe y llave",
+     "unidad": "ud",
+     "precio": 110.0,
+     "min": 80.0,
+     "max": 150.0,
+     "fuente": "estimado a partir de precio hora fontanero (Motor de Presupuestos 2026)"
+    },
+    {
+     "codigo": "FON-016",
+     "descripcion": "Reparación de avería puntual de fontanería (fuga, atasco o cambio de pieza)",
+     "unidad": "ud",
+     "precio": 120.0,
+     "min": 80.0,
+     "max": 200.0,
+     "fuente": "Motor de Presupuestos 2026 fontaneros: reparación de avería puntual 80-200 €"
+    },
+    {
+     "codigo": "FON-017",
+     "descripcion": "Prueba de presión y estanqueidad de la instalación y puesta en servicio",
+     "unidad": "pa",
+     "precio": 90.0,
+     "min": 60.0,
+     "max": 140.0,
+     "fuente": "estimado a partir de precio hora fontanero (Motor de Presupuestos 2026)"
+    },
+    {
+     "codigo": "FON-018",
+     "descripcion": "Mano de obra oficial 1ª fontanero",
+     "unidad": "h",
+     "precio": 40.0,
+     "min": 30.0,
+     "max": 52.0,
+     "fuente": "Motor de Presupuestos 2026 fontaneros 38-52 €/h; Cronoshare Sevilla 2026 baño: fontanero 22-40 €/h"
+    }
+   ]
+  },
+  {
+   "id": "electricidad",
+   "nombre": "Electricidad",
+   "partidas": [
+    {
+     "codigo": "ELE-001",
+     "descripcion": "Instalación eléctrica completa de vivienda 80-90 m², electrificación básica, con cuadro, circuitos y mecanismos",
+     "unidad": "ud",
+     "precio": 4200.0,
+     "min": 3200.0,
+     "max": 6000.0,
+     "fuente": "Motor de Presupuestos 2026 electricistas: piso 80 m² 2.500-4.500 €; Cronoshare Sevilla 2026: 70-100 m² 3.500-6.500 €"
+    },
+    {
+     "codigo": "ELE-002",
+     "descripcion": "Instalación eléctrica completa de vivienda, por m² construido",
+     "unidad": "m2",
+     "precio": 50.0,
+     "min": 38.0,
+     "max": 70.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 y Cronoshare Sevilla 2026 (instalación completa piso 70-100 m²)"
+    },
+    {
+     "codigo": "ELE-003",
+     "descripcion": "Cuadro general de mando y protección con IGA, 2 diferenciales y 8-10 PIAs",
+     "unidad": "ud",
+     "precio": 520.0,
+     "min": 350.0,
+     "max": 700.0,
+     "fuente": "Motor de Presupuestos 2026 electricistas: cuadro eléctrico vivienda 350-700 €"
+    },
+    {
+     "codigo": "ELE-004",
+     "descripcion": "Punto de luz sencillo con cable, tubo, caja y mecanismo gama media",
+     "unidad": "ud",
+     "precio": 70.0,
+     "min": 55.0,
+     "max": 95.0,
+     "fuente": "Motor de Presupuestos 2026 electricistas: punto de luz 60-120 €; Cronoshare Sevilla 2026: punto de luz/toma 60-90 €"
+    },
+    {
+     "codigo": "ELE-005",
+     "descripcion": "Punto de luz conmutado con dos mecanismos",
+     "unidad": "ud",
+     "precio": 95.0,
+     "min": 75.0,
+     "max": 125.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 electricistas (punto de luz 60-120 €)"
+    },
+    {
+     "codigo": "ELE-006",
+     "descripcion": "Punto de luz de cruzamiento con tres mecanismos",
+     "unidad": "ud",
+     "precio": 130.0,
+     "min": 100.0,
+     "max": 170.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 electricistas (punto de luz 60-120 €)"
+    },
+    {
+     "codigo": "ELE-007",
+     "descripcion": "Base de enchufe 16 A con toma de tierra, empotrada, incluso línea",
+     "unidad": "ud",
+     "precio": 65.0,
+     "min": 50.0,
+     "max": 90.0,
+     "fuente": "Motor de Presupuestos 2026 electricistas: base de enchufe 55-100 €; Cronoshare Sevilla 2026 60-90 €"
+    },
+    {
+     "codigo": "ELE-008",
+     "descripcion": "Base de enchufe doble 16 A con toma de tierra, empotrada",
+     "unidad": "ud",
+     "precio": 80.0,
+     "min": 60.0,
+     "max": 100.0,
+     "fuente": "Motor de Presupuestos 2026 electricistas: base enchufe doble 55-100 €"
+    },
+    {
+     "codigo": "ELE-009",
+     "descripcion": "Toma de TV/SAT empotrada, incluso cableado coaxial",
+     "unidad": "ud",
+     "precio": 70.0,
+     "min": 50.0,
+     "max": 90.0,
+     "fuente": "Motor de Presupuestos 2026 electricistas: punto de TV/datos 50-90 €"
+    },
+    {
+     "codigo": "ELE-010",
+     "descripcion": "Toma de datos RJ45 categoría 6, incluso cableado",
+     "unidad": "ud",
+     "precio": 75.0,
+     "min": 55.0,
+     "max": 95.0,
+     "fuente": "Motor de Presupuestos 2026 electricistas: punto de TV/datos 50-90 €"
+    },
+    {
+     "codigo": "ELE-011",
+     "descripcion": "Circuito independiente para horno, placa o lavadora (2,5-6 mm²) con PIA",
+     "unidad": "ud",
+     "precio": 180.0,
+     "min": 130.0,
+     "max": 250.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 electricistas (línea de fuerza 200-450 €) y CYPE IEI010"
+    },
+    {
+     "codigo": "ELE-012",
+     "descripcion": "Circuito independiente para aire acondicionado con PIA y toma",
+     "unidad": "ud",
+     "precio": 160.0,
+     "min": 120.0,
+     "max": 230.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 electricistas (línea de fuerza 200-450 €)"
+    },
+    {
+     "codigo": "ELE-013",
+     "descripcion": "Derivación individual desde contador hasta cuadro, hasta 15 m",
+     "unidad": "ud",
+     "precio": 450.0,
+     "min": 300.0,
+     "max": 650.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 electricistas (línea trifásica 200-450 €) y precio hora"
+    },
+    {
+     "codigo": "ELE-014",
+     "descripcion": "Certificado de instalación eléctrica (boletín CIE) y registro en Junta de Andalucía",
+     "unidad": "ud",
+     "precio": 190.0,
+     "min": 120.0,
+     "max": 250.0,
+     "fuente": "Motor de Presupuestos 2026 electricistas: certificado de instalación BT 120-250 €"
+    },
+    {
+     "codigo": "ELE-015",
+     "descripcion": "Downlight LED empotrable 12-18 W, incluso hueco y conexionado (sin línea)",
+     "unidad": "ud",
+     "precio": 45.0,
+     "min": 32.0,
+     "max": 65.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 electricistas (instalación luminaria 35-65 €) más luminaria gama media"
+    },
+    {
+     "codigo": "ELE-016",
+     "descripcion": "Colocación y conexionado de luminaria aportada por el cliente",
+     "unidad": "ud",
+     "precio": 45.0,
+     "min": 35.0,
+     "max": 65.0,
+     "fuente": "Motor de Presupuestos 2026 electricistas: instalación de luminaria 35-65 €"
+    },
+    {
+     "codigo": "ELE-017",
+     "descripcion": "Tira LED con perfil de aluminio, difusor y driver, instalada",
+     "unidad": "ml",
+     "precio": 38.0,
+     "min": 28.0,
+     "max": 55.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 electricistas y precio hora (40-55 €/h)"
+    },
+    {
+     "codigo": "ELE-018",
+     "descripcion": "Extractor de baño con temporizador, incluso conducto hasta 3 m",
+     "unidad": "ud",
+     "precio": 120.0,
+     "min": 85.0,
+     "max": 170.0,
+     "fuente": "estimado a partir de precio hora electricista (Motor de Presupuestos 2026) más equipo"
+    },
+    {
+     "codigo": "ELE-019",
+     "descripcion": "Sustitución de mecanismo (interruptor o enchufe) por otro de gama media",
+     "unidad": "ud",
+     "precio": 22.0,
+     "min": 15.0,
+     "max": 32.0,
+     "fuente": "estimado a partir de precio hora electricista (Motor de Presupuestos 2026 40-55 €/h)"
+    },
+    {
+     "codigo": "ELE-020",
+     "descripcion": "Videoportero o portero automático para vivienda, instalado",
+     "unidad": "ud",
+     "precio": 380.0,
+     "min": 250.0,
+     "max": 550.0,
+     "fuente": "estimado a partir de precio hora electricista (Motor de Presupuestos 2026) más kit comercial"
+    },
+    {
+     "codigo": "ELE-021",
+     "descripcion": "Punto de recarga de vehículo eléctrico 7,4 kW en garaje unifamiliar, con línea y protecciones",
+     "unidad": "ud",
+     "precio": 1150.0,
+     "min": 850.0,
+     "max": 1600.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 electricistas (línea de fuerza 200-450 €) más equipo wallbox"
+    },
+    {
+     "codigo": "ELE-022",
+     "descripcion": "Mano de obra oficial 1ª electricista",
+     "unidad": "h",
+     "precio": 42.0,
+     "min": 35.0,
+     "max": 55.0,
+     "fuente": "Motor de Presupuestos 2026 electricistas: oficial 1ª 40-55 €/h"
+    }
+   ]
+  },
+  {
+   "id": "climatizacion",
+   "nombre": "Climatización",
+   "partidas": [
+    {
+     "codigo": "CLI-001",
+     "descripcion": "Aire acondicionado split 1x1 de 2.500 frigorías inverter A++, instalado con hasta 3 m de línea",
+     "unidad": "ud",
+     "precio": 1050.0,
+     "min": 886.0,
+     "max": 1576.0,
+     "fuente": "Motor de Presupuestos 2026 climatización Sevilla: split 1x1 2.500 fg 886-1.576 €"
+    },
+    {
+     "codigo": "CLI-002",
+     "descripcion": "Aire acondicionado split 1x1 de 3.500 frigorías inverter A++, instalado con hasta 3 m de línea",
+     "unidad": "ud",
+     "precio": 1300.0,
+     "min": 1083.0,
+     "max": 1970.0,
+     "fuente": "Motor de Presupuestos 2026 climatización Sevilla: split 1x1 3.500 fg 1.083-1.970 €"
+    },
+    {
+     "codigo": "CLI-003",
+     "descripcion": "Sistema multi-split 2x1 inverter instalado, con dos unidades interiores",
+     "unidad": "ud",
+     "precio": 2600.0,
+     "min": 2167.0,
+     "max": 4432.0,
+     "fuente": "Motor de Presupuestos 2026 climatización Sevilla: multi-split 2x1 2.167-4.432 €"
+    },
+    {
+     "codigo": "CLI-004",
+     "descripcion": "Sistema multi-split 3x1 inverter instalado, con tres unidades interiores",
+     "unidad": "ud",
+     "precio": 3500.0,
+     "min": 2800.0,
+     "max": 5200.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 climatización Sevilla (multi-split 2x1 2.167-4.432 €)"
+    },
+    {
+     "codigo": "CLI-005",
+     "descripcion": "Climatización por conductos para vivienda 80-100 m² (equipo 6.000 fg, red de conductos y rejillas)",
+     "unidad": "ud",
+     "precio": 6200.0,
+     "min": 4800.0,
+     "max": 8500.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 Sevilla (cassette 1.477-3.152 €) y Grupo A Plus (instalación por conductos desde 1.898 €)"
+    },
+    {
+     "codigo": "CLI-006",
+     "descripcion": "Unidad de cassette de techo instalada",
+     "unidad": "ud",
+     "precio": 2200.0,
+     "min": 1477.0,
+     "max": 3152.0,
+     "fuente": "Motor de Presupuestos 2026 climatización Sevilla: cassette de techo 1.477-3.152 €"
+    },
+    {
+     "codigo": "CLI-007",
+     "descripcion": "Conducto de panel de lana de vidrio tipo Climaver, montado",
+     "unidad": "m2",
+     "precio": 32.0,
+     "min": 24.0,
+     "max": 42.0,
+     "fuente": "estimado a partir de instalación por conductos (Grupo A Plus, MP Sevilla)"
+    },
+    {
+     "codigo": "CLI-008",
+     "descripcion": "Rejilla de impulsión o retorno de aluminio con plenum, instalada",
+     "unidad": "ud",
+     "precio": 75.0,
+     "min": 55.0,
+     "max": 110.0,
+     "fuente": "estimado a partir de instalación por conductos (Grupo A Plus, MP Sevilla)"
+    },
+    {
+     "codigo": "CLI-009",
+     "descripcion": "Preinstalación de split: línea frigorífica, desagüe y manguera eléctrica hasta 5 m, empotrada",
+     "unidad": "ud",
+     "precio": 320.0,
+     "min": 220.0,
+     "max": 450.0,
+     "fuente": "estimado a partir de Grupo A Plus (mano de obra split simple 150-350 €)"
+    },
+    {
+     "codigo": "CLI-010",
+     "descripcion": "Instalación de split aportado por el cliente, hasta 3 m de línea",
+     "unidad": "ud",
+     "precio": 280.0,
+     "min": 180.0,
+     "max": 380.0,
+     "fuente": "Grupo A Plus 2026: mano de obra split simple 150-350 €, trabajo en altura 150-400 €"
+    },
+    {
+     "codigo": "CLI-011",
+     "descripcion": "Metro adicional de línea frigorífica aislada con manguera y desagüe",
+     "unidad": "ml",
+     "precio": 35.0,
+     "min": 25.0,
+     "max": 50.0,
+     "fuente": "estimado a partir de Grupo A Plus (partidas por metros de línea)"
+    },
+    {
+     "codigo": "CLI-012",
+     "descripcion": "Desmontaje de equipo de aire acondicionado existente con recuperación de gas",
+     "unidad": "ud",
+     "precio": 90.0,
+     "min": 60.0,
+     "max": 140.0,
+     "fuente": "estimado a partir de precio hora técnico (Motor de Presupuestos 2026 Sevilla 37-53 €/h)"
+    },
+    {
+     "codigo": "CLI-013",
+     "descripcion": "Bomba de condensados para unidad interior, instalada",
+     "unidad": "ud",
+     "precio": 140.0,
+     "min": 100.0,
+     "max": 190.0,
+     "fuente": "estimado a partir de precio hora técnico (Motor de Presupuestos 2026 Sevilla) más equipo"
+    },
+    {
+     "codigo": "CLI-014",
+     "descripcion": "Mantenimiento anual de equipo de aire acondicionado (limpieza y revisión)",
+     "unidad": "ud",
+     "precio": 85.0,
+     "min": 59.0,
+     "max": 118.0,
+     "fuente": "Motor de Presupuestos 2026 climatización Sevilla: mantenimiento anual 59-118 €"
+    },
+    {
+     "codigo": "CLI-015",
+     "descripcion": "Bomba de calor aerotérmica aire-agua para calefacción y ACS, instalada",
+     "unidad": "ud",
+     "precio": 9500.0,
+     "min": 5910.0,
+     "max": 13790.0,
+     "fuente": "Motor de Presupuestos 2026 climatización Sevilla: aerotermia 5.910-13.790 €"
+    },
+    {
+     "codigo": "CLI-016",
+     "descripcion": "Suelo radiante por agua con tubo PEX, panel aislante y colectores",
+     "unidad": "m2",
+     "precio": 48.0,
+     "min": 34.0,
+     "max": 64.0,
+     "fuente": "Motor de Presupuestos 2026 climatización Sevilla: suelo radiante 34-64 €/m²"
+    },
+    {
+     "codigo": "CLI-017",
+     "descripcion": "Mano de obra oficial 1ª técnico de climatización",
+     "unidad": "h",
+     "precio": 42.0,
+     "min": 37.0,
+     "max": 53.0,
+     "fuente": "Motor de Presupuestos 2026 climatización Sevilla: oficial 1ª 37-53 €/h"
+    }
+   ]
+  },
+  {
+   "id": "carpinteria_madera",
+   "nombre": "Carpintería de madera y suelos",
+   "partidas": [
+    {
+     "codigo": "MAD-001",
+     "descripcion": "Puerta de paso abatible lisa lacada en blanco, 1 hoja, con premarco, tapajuntas y herrajes",
+     "unidad": "ud",
+     "precio": 330.0,
+     "min": 240.0,
+     "max": 450.0,
+     "fuente": "Motor de Presupuestos 2026 carpinteros: puerta interior 280-650 €; Cronoshare Sevilla 2026: puerta interior lacada 180-350 €"
+    },
+    {
+     "codigo": "MAD-002",
+     "descripcion": "Puerta de paso lacada con vidriera, 1 hoja, con premarco, tapajuntas y herrajes",
+     "unidad": "ud",
+     "precio": 420.0,
+     "min": 320.0,
+     "max": 560.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 carpinteros (puerta de paso 280-650 €)"
+    },
+    {
+     "codigo": "MAD-003",
+     "descripcion": "Puerta corredera empotrada en cajón metálico con hoja lacada, incluso tapajuntas",
+     "unidad": "ud",
+     "precio": 650.0,
+     "min": 480.0,
+     "max": 900.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 carpinteros y precio de cajón comercial"
+    },
+    {
+     "codigo": "MAD-004",
+     "descripcion": "Puerta corredera vista sobre guía exterior con hoja lacada",
+     "unidad": "ud",
+     "precio": 450.0,
+     "min": 320.0,
+     "max": 650.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 carpinteros (puerta de paso 280-650 €)"
+    },
+    {
+     "codigo": "MAD-005",
+     "descripcion": "Puerta de entrada blindada clase 3 con cerradura de seguridad, instalada",
+     "unidad": "ud",
+     "precio": 1500.0,
+     "min": 1200.0,
+     "max": 2500.0,
+     "fuente": "Motor de Presupuestos 2026 cerrajeros: puerta blindada clase 3 o superior 1.200-3.500 €"
+    },
+    {
+     "codigo": "MAD-006",
+     "descripcion": "Lijado y lacado o barnizado de puerta existente por ambas caras",
+     "unidad": "ud",
+     "precio": 120.0,
+     "min": 80.0,
+     "max": 160.0,
+     "fuente": "Motor de Presupuestos 2026 pintores: pintura de carpintería (puertas) 80-160 €"
+    },
+    {
+     "codigo": "MAD-007",
+     "descripcion": "Frente de armario empotrado corredero lacado, hasta 2,50 m de altura",
+     "unidad": "ml",
+     "precio": 420.0,
+     "min": 300.0,
+     "max": 600.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 carpinteros (armario a medida 700-2.500 €)"
+    },
+    {
+     "codigo": "MAD-008",
+     "descripcion": "Interior de armario con balda maletero, barra y cajonera",
+     "unidad": "ml",
+     "precio": 190.0,
+     "min": 130.0,
+     "max": 280.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 carpinteros (armario a medida 700-2.500 €)"
+    },
+    {
+     "codigo": "MAD-009",
+     "descripcion": "Armario empotrado completo a medida de 2 m (frente e interior)",
+     "unidad": "ud",
+     "precio": 1250.0,
+     "min": 700.0,
+     "max": 2500.0,
+     "fuente": "Motor de Presupuestos 2026 carpinteros: armario empotrado a medida 700-2.500 €"
+    },
+    {
+     "codigo": "MAD-010",
+     "descripcion": "Suelo laminado AC4 de 8 mm con manta niveladora, colocación flotante",
+     "unidad": "m2",
+     "precio": 30.0,
+     "min": 24.0,
+     "max": 40.0,
+     "fuente": "Cronoshare suelo laminado: 20-40 €/m² habitual; AC4 100 m² 2.000-3.500 €"
+    },
+    {
+     "codigo": "MAD-011",
+     "descripcion": "Suelo laminado AC5 de 10-12 mm con manta niveladora, colocación flotante",
+     "unidad": "m2",
+     "precio": 38.0,
+     "min": 30.0,
+     "max": 48.0,
+     "fuente": "Cronoshare suelo laminado: AC5 100 m² 2.500-4.500 €"
+    },
+    {
+     "codigo": "MAD-012",
+     "descripcion": "Suelo vinílico SPC/LVT de 5 mm con click, colocación flotante",
+     "unidad": "m2",
+     "precio": 40.0,
+     "min": 32.0,
+     "max": 52.0,
+     "fuente": "estimado a partir de Cronoshare suelo laminado y Motor de Presupuestos 2026 carpinteros (tarima 12-22 €/m² MO)"
+    },
+    {
+     "codigo": "MAD-013",
+     "descripcion": "Tarima flotante de madera natural multicapa con manta, colocada",
+     "unidad": "m2",
+     "precio": 62.0,
+     "min": 48.0,
+     "max": 85.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 carpinteros (tarima 12-22 €/m², parquet 20-40 €/m² MO) más material"
+    },
+    {
+     "codigo": "MAD-014",
+     "descripcion": "Parquet de roble pegado, incluso lijado y barnizado",
+     "unidad": "m2",
+     "precio": 75.0,
+     "min": 60.0,
+     "max": 95.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 carpinteros (parquet macizo 20-40 €/m² MO) más material"
+    },
+    {
+     "codigo": "MAD-015",
+     "descripcion": "Acuchillado, lijado y barnizado al agua de parquet o tarima existente",
+     "unidad": "m2",
+     "precio": 20.0,
+     "min": 14.0,
+     "max": 26.0,
+     "fuente": "Motor de Presupuestos 2026 pintores: barnizado de tarima 12-22 €/m²; ampliado por acuchillado"
+    },
+    {
+     "codigo": "MAD-016",
+     "descripcion": "Rodapié de MDF lacado en blanco de 7-10 cm, colocado",
+     "unidad": "ml",
+     "precio": 9.0,
+     "min": 6.0,
+     "max": 14.0,
+     "fuente": "Motor de Presupuestos 2026 carpinteros: rodapié y tapajuntas 6-14 €/m"
+    },
+    {
+     "codigo": "MAD-017",
+     "descripcion": "Colocación de tarima flotante o laminado, solo mano de obra",
+     "unidad": "m2",
+     "precio": 14.0,
+     "min": 12.0,
+     "max": 22.0,
+     "fuente": "Motor de Presupuestos 2026 carpinteros: instalación de tarima flotante 12-22 €/m²"
+    },
+    {
+     "codigo": "MAD-018",
+     "descripcion": "Colocación de puerta de paso abatible aportada por el cliente, con herrajes y tapajuntas (solo mano de obra)",
+     "unidad": "ud",
+     "precio": 85,
+     "min": 70,
+     "max": 110,
+     "fuente": "estimado a partir de partidas similares de esta tarifa y precios de mercado de Sevilla 2026; revisar con el cliente"
+    },
+    {
+     "codigo": "MAD-019",
+     "descripcion": "Colocación de puerta corredera de paso aportada por el cliente, en guía vista (solo mano de obra)",
+     "unidad": "ud",
+     "precio": 110,
+     "min": 90,
+     "max": 140,
+     "fuente": "estimado a partir de partidas similares de esta tarifa y precios de mercado de Sevilla 2026; revisar con el cliente"
+    },
+    {
+     "codigo": "MAD-020",
+     "descripcion": "Colocación de premarco de madera o metálico para puerta de paso, recibido con espuma o yeso",
+     "unidad": "ud",
+     "precio": 45,
+     "min": 35,
+     "max": 60,
+     "fuente": "estimado a partir de partidas similares de esta tarifa y precios de mercado de Sevilla 2026; revisar con el cliente"
+    },
+    {
+     "codigo": "MAD-021",
+     "descripcion": "Colocación de marco (block) y tapajuntas en puerta de paso (solo mano de obra)",
+     "unidad": "ud",
+     "precio": 60,
+     "min": 45,
+     "max": 80,
+     "fuente": "estimado a partir de partidas similares de esta tarifa y precios de mercado de Sevilla 2026; revisar con el cliente"
+    },
+    {
+     "codigo": "MAD-022",
+     "descripcion": "Ajuste, cepillado y regulación de puerta de paso existente",
+     "unidad": "ud",
+     "precio": 40,
+     "min": 30,
+     "max": 55,
+     "fuente": "estimado a partir de partidas similares de esta tarifa y precios de mercado de Sevilla 2026; revisar con el cliente"
+    },
+    {
+     "codigo": "MAD-023",
+     "descripcion": "Sustitución de manivelas y bisagras en puerta de paso, material de gama media incluido",
+     "unidad": "ud",
+     "precio": 45,
+     "min": 35,
+     "max": 65,
+     "fuente": "estimado a partir de partidas similares de esta tarifa y precios de mercado de Sevilla 2026; revisar con el cliente"
+    },
+    {
+     "codigo": "MAD-024",
+     "descripcion": "Colocación de puerta de entrada blindada aportada por el cliente, incluso retirada de la antigua (solo mano de obra)",
+     "unidad": "ud",
+     "precio": 220,
+     "min": 180,
+     "max": 300,
+     "fuente": "estimado a partir de partidas similares de esta tarifa y precios de mercado de Sevilla 2026; revisar con el cliente"
+    },
+    {
+     "codigo": "MAD-025",
+     "descripcion": "Colocación de rodapié de MDF o madera aportado por el cliente (solo mano de obra)",
+     "unidad": "ml",
+     "precio": 4.5,
+     "min": 3.5,
+     "max": 6,
+     "fuente": "estimado a partir de partidas similares de esta tarifa y precios de mercado de Sevilla 2026; revisar con el cliente"
+    },
+    {
+     "codigo": "MAD-026",
+     "descripcion": "Suelo vinílico en rollo (PVC) pegado sobre soporte nivelado, material de gama media incluido",
+     "unidad": "m2",
+     "precio": 24,
+     "min": 18,
+     "max": 32,
+     "fuente": "estimado a partir de partidas similares de esta tarifa y precios de mercado de Sevilla 2026; revisar con el cliente"
+    },
+    {
+     "codigo": "MAD-027",
+     "descripcion": "Colocación de suelo vinílico SPC/LVT de clic aportado por el cliente (solo mano de obra)",
+     "unidad": "m2",
+     "precio": 12,
+     "min": 9,
+     "max": 16,
+     "fuente": "estimado a partir de partidas similares de esta tarifa y precios de mercado de Sevilla 2026; revisar con el cliente"
+    },
+    {
+     "codigo": "MAD-028",
+     "descripcion": "Colocación de parquet pegado aportado por el cliente (solo mano de obra)",
+     "unidad": "m2",
+     "precio": 22,
+     "min": 18,
+     "max": 28,
+     "fuente": "estimado a partir de partidas similares de esta tarifa y precios de mercado de Sevilla 2026; revisar con el cliente"
+    }
+   ]
+  },
+  {
+   "id": "carpinteria_exterior",
+   "nombre": "Carpintería de aluminio/PVC y cristalería",
+   "partidas": [
+    {
+     "codigo": "CAR-001",
+     "descripcion": "Ventana de PVC oscilobatiente 1 hoja 60x60 cm con doble acristalamiento, instalada",
+     "unidad": "ud",
+     "precio": 280.0,
+     "min": 220.0,
+     "max": 350.0,
+     "fuente": "Venmartín 2026 (Madrid): ventana baño PVC 220-280 € instalada"
+    },
+    {
+     "codigo": "CAR-002",
+     "descripcion": "Ventana de PVC oscilobatiente 2 hojas 120x120 cm con doble acristalamiento, instalada",
+     "unidad": "ud",
+     "precio": 520.0,
+     "min": 420.0,
+     "max": 650.0,
+     "fuente": "Venmartín 2026: 420-510 € instalada; Cronoshare Sevilla 2026: ventana PVC 1,2x1,2 350-650 €"
+    },
+    {
+     "codigo": "CAR-003",
+     "descripcion": "Ventana de PVC 2 hojas 150x140 cm con persiana y cajón aislado, instalada",
+     "unidad": "ud",
+     "precio": 720.0,
+     "min": 600.0,
+     "max": 900.0,
+     "fuente": "Venmartín 2026: ventana salón con persiana 600-750 € instalada"
+    },
+    {
+     "codigo": "CAR-004",
+     "descripcion": "Puerta balconera de PVC 2 hojas oscilobatiente con doble acristalamiento, instalada",
+     "unidad": "ud",
+     "precio": 750.0,
+     "min": 550.0,
+     "max": 950.0,
+     "fuente": "Venmartín 2026: puerta balconera 550-650 € instalada; ampliado por medidas"
+    },
+    {
+     "codigo": "CAR-005",
+     "descripcion": "Ventana corredera de aluminio con rotura de puente térmico 120x120 cm, vidrio 4/16/4, instalada",
+     "unidad": "ud",
+     "precio": 520.0,
+     "min": 400.0,
+     "max": 700.0,
+     "fuente": "estimado a partir de Venmartín (PVC 350-500 €/m²) y Cronoshare Sevilla 2026 (ventana 350-650 €)"
+    },
+    {
+     "codigo": "CAR-006",
+     "descripcion": "Carpintería de aluminio RPT practicable u oscilobatiente con doble acristalamiento",
+     "unidad": "m2",
+     "precio": 380.0,
+     "min": 300.0,
+     "max": 480.0,
+     "fuente": "estimado a partir de Venmartín (PVC 350-500 €/m²) y Motor de Presupuestos 2026 carpinteros"
+    },
+    {
+     "codigo": "CAR-007",
+     "descripcion": "Carpintería de aluminio corredera sin RPT, gama básica, con doble vidrio",
+     "unidad": "m2",
+     "precio": 220.0,
+     "min": 170.0,
+     "max": 280.0,
+     "fuente": "estimado a partir de Venmartín (solo material vs instalada) y Cronoshare Sevilla 2026"
+    },
+    {
+     "codigo": "CAR-008",
+     "descripcion": "Puerta corredera de aluminio RPT para salida a terraza",
+     "unidad": "m2",
+     "precio": 400.0,
+     "min": 320.0,
+     "max": 520.0,
+     "fuente": "estimado a partir de Venmartín (350-500 €/m²)"
+    },
+    {
+     "codigo": "CAR-009",
+     "descripcion": "Cerramiento de terraza con correderas de aluminio y vidrio",
+     "unidad": "m2",
+     "precio": 260.0,
+     "min": 200.0,
+     "max": 350.0,
+     "fuente": "estimado a partir de Venmartín y Motor de Presupuestos 2026 cristaleros"
+    },
+    {
+     "codigo": "CAR-010",
+     "descripcion": "Persiana enrollable de aluminio térmico con cajón, instalada",
+     "unidad": "ud",
+     "precio": 260.0,
+     "min": 180.0,
+     "max": 380.0,
+     "fuente": "Brico-Ventana 2026: persiana aluminio gran tamaño 300-450 €"
+    },
+    {
+     "codigo": "CAR-011",
+     "descripcion": "Motorización de persiana existente con motor tubular y pulsador",
+     "unidad": "ud",
+     "precio": 220.0,
+     "min": 160.0,
+     "max": 320.0,
+     "fuente": "estimado a partir de Mosquiteras Baratas (persianas motorizadas desde 91 €) más instalación eléctrica"
+    },
+    {
+     "codigo": "CAR-012",
+     "descripcion": "Mosquitera enrollable vertical con cajón de aluminio, instalada",
+     "unidad": "ud",
+     "precio": 130.0,
+     "min": 90.0,
+     "max": 180.0,
+     "fuente": "ConstruIA 2026: mosquitera enrollable 90-180 € instalada"
+    },
+    {
+     "codigo": "CAR-013",
+     "descripcion": "Mosquitera fija o abatible con marco de aluminio, instalada",
+     "unidad": "ud",
+     "precio": 100.0,
+     "min": 70.0,
+     "max": 140.0,
+     "fuente": "ConstruIA 2026: mosquitera fija 70-140 € instalada"
+    },
+    {
+     "codigo": "CAR-014",
+     "descripcion": "Mosquitera enrollable lateral para puerta, instalada",
+     "unidad": "ud",
+     "precio": 210.0,
+     "min": 140.0,
+     "max": 280.0,
+     "fuente": "ConstruIA 2026: enrollable lateral puerta 140-280 €"
+    },
+    {
+     "codigo": "CAR-015",
+     "descripcion": "Sustitución de vidrio por doble acristalamiento 4/12/4 en ventana existente (hasta 1,5 m²)",
+     "unidad": "ud",
+     "precio": 150.0,
+     "min": 90.0,
+     "max": 200.0,
+     "fuente": "Motor de Presupuestos 2026 cristaleros: vidrio doble climalit 90-200 €"
+    },
+    {
+     "codigo": "CAR-016",
+     "descripcion": "Sustitución de vidrio simple roto (hasta 1 m²)",
+     "unidad": "ud",
+     "precio": 90.0,
+     "min": 60.0,
+     "max": 120.0,
+     "fuente": "Motor de Presupuestos 2026 cristaleros: sustitución vidrio simple 60-120 €"
+    },
+    {
+     "codigo": "CAR-017",
+     "descripcion": "Mampara de ducha con 1 fijo y 1 abatible, vidrio templado 6 mm y perfil de aluminio",
+     "unidad": "ud",
+     "precio": 520.0,
+     "min": 350.0,
+     "max": 750.0,
+     "fuente": "Motor de Presupuestos 2026 cristaleros: mampara 1 fija + 1 abatible 350-750 €"
+    },
+    {
+     "codigo": "CAR-018",
+     "descripcion": "Mampara frontal corredera de 2 hojas para plato o bañera, vidrio templado 6 mm",
+     "unidad": "ud",
+     "precio": 480.0,
+     "min": 350.0,
+     "max": 700.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 cristaleros (mampara 350-750 €)"
+    },
+    {
+     "codigo": "CAR-019",
+     "descripcion": "Panel fijo de ducha tipo walk-in, vidrio templado 8 mm con barra de sujeción",
+     "unidad": "ud",
+     "precio": 380.0,
+     "min": 280.0,
+     "max": 520.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 cristaleros (mampara 350-750 €)"
+    },
+    {
+     "codigo": "CAR-020",
+     "descripcion": "Espejo de baño a medida con cantos pulidos (hasta 1 m²)",
+     "unidad": "ud",
+     "precio": 140.0,
+     "min": 80.0,
+     "max": 200.0,
+     "fuente": "Motor de Presupuestos 2026 cristaleros: espejo a medida 80-200 €"
+    },
+    {
+     "codigo": "CAR-021",
+     "descripcion": "Barandilla de vidrio laminado 5+5 con perfil de aluminio anclado al suelo",
+     "unidad": "ml",
+     "precio": 320.0,
+     "min": 240.0,
+     "max": 450.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 cristaleros (vidrio laminado 120-280 €/m²) más perfilería"
+    },
+    {
+     "codigo": "CAR-022",
+     "descripcion": "Tabique de vidrio templado 10 mm sin perfilería",
+     "unidad": "m2",
+     "precio": 380.0,
+     "min": 250.0,
+     "max": 500.0,
+     "fuente": "Motor de Presupuestos 2026 cristaleros: tabique de cristal templado 250-500 €/m²"
+    },
+    {
+     "codigo": "CAR-023",
+     "descripcion": "Sustitución de ventana: retirada de la antigua y colocación de ventana de PVC de 2 hojas 120x120 cm con doble acristalamiento, incluso remates",
+     "unidad": "ud",
+     "precio": 640,
+     "min": 560,
+     "max": 780,
+     "fuente": "estimado a partir de partidas similares de esta tarifa y precios de mercado de Sevilla 2026; revisar con el cliente"
+    },
+    {
+     "codigo": "CAR-024",
+     "descripcion": "Instalación de ventana o balconera aportada por el cliente, con espuma, sellado y remates (solo mano de obra)",
+     "unidad": "ud",
+     "precio": 120,
+     "min": 90,
+     "max": 160,
+     "fuente": "estimado a partir de partidas similares de esta tarifa y precios de mercado de Sevilla 2026; revisar con el cliente"
+    },
+    {
+     "codigo": "CAR-025",
+     "descripcion": "Instalación de ventana con precerco nuevo, incluso recibido del precerco y remates",
+     "unidad": "ud",
+     "precio": 150,
+     "min": 120,
+     "max": 190,
+     "fuente": "estimado a partir de partidas similares de esta tarifa y precios de mercado de Sevilla 2026; revisar con el cliente"
+    },
+    {
+     "codigo": "CAR-026",
+     "descripcion": "Retirada de ventana o balconera antigua con su cerco, incluso remates y carga de escombros",
+     "unidad": "ud",
+     "precio": 60,
+     "min": 45,
+     "max": 80,
+     "fuente": "estimado a partir de partidas similares de esta tarifa y precios de mercado de Sevilla 2026; revisar con el cliente"
+    },
+    {
+     "codigo": "CAR-027",
+     "descripcion": "Sellado perimetral de ventana con silicona o masilla de poliuretano por ambas caras",
+     "unidad": "ud",
+     "precio": 35,
+     "min": 25,
+     "max": 45,
+     "fuente": "estimado a partir de partidas similares de esta tarifa y precios de mercado de Sevilla 2026; revisar con el cliente"
+    },
+    {
+     "codigo": "CAR-028",
+     "descripcion": "Colocación de vierteaguas o remate de aluminio en ventana",
+     "unidad": "ml",
+     "precio": 22,
+     "min": 18,
+     "max": 30,
+     "fuente": "estimado a partir de partidas similares de esta tarifa y precios de mercado de Sevilla 2026; revisar con el cliente"
+    },
+    {
+     "codigo": "CAR-029",
+     "descripcion": "Ajuste y regulación de ventana o balconera (herrajes y cierre)",
+     "unidad": "ud",
+     "precio": 45,
+     "min": 35,
+     "max": 60,
+     "fuente": "estimado a partir de partidas similares de esta tarifa y precios de mercado de Sevilla 2026; revisar con el cliente"
+    },
+    {
+     "codigo": "CAR-030",
+     "descripcion": "Instalación de puerta corredera de terraza de aluminio aportada por el cliente (solo mano de obra)",
+     "unidad": "ud",
+     "precio": 180,
+     "min": 140,
+     "max": 240,
+     "fuente": "estimado a partir de partidas similares de esta tarifa y precios de mercado de Sevilla 2026; revisar con el cliente"
+    }
+   ]
+  },
+  {
+   "id": "pintura",
+   "nombre": "Pintura y decoración",
+   "partidas": [
+    {
+     "codigo": "PIN-001",
+     "descripcion": "Pintura plástica lisa mate en paredes, 2 manos, incluso preparación ligera del soporte",
+     "unidad": "m2",
+     "precio": 8.5,
+     "min": 6.0,
+     "max": 12.0,
+     "fuente": "Motor de Presupuestos 2026 pintores: 8-16 €/m²; Cronoshare Sevilla 2026: pintura plástica lisa 6-12 €/m²"
+    },
+    {
+     "codigo": "PIN-002",
+     "descripcion": "Pintura plástica lisa mate en techos, 2 manos, incluso preparación ligera",
+     "unidad": "m2",
+     "precio": 9.5,
+     "min": 7.0,
+     "max": 13.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 pintores y Cronoshare Sevilla 2026 con incremento por techo"
+    },
+    {
+     "codigo": "PIN-003",
+     "descripcion": "Pintura plástica antimoho en baños y cocinas, 2 manos",
+     "unidad": "m2",
+     "precio": 11.0,
+     "min": 8.0,
+     "max": 14.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 pintores (8-16 €/m²)"
+    },
+    {
+     "codigo": "PIN-004",
+     "descripcion": "Alisado de paredes con gotelé: rascado, tendido de pasta y lijado, listo para pintar",
+     "unidad": "m2",
+     "precio": 16.0,
+     "min": 12.0,
+     "max": 25.0,
+     "fuente": "Motor de Presupuestos 2026 pintores: gotelé picar y aplanar 15-28 €/m²"
+    },
+    {
+     "codigo": "PIN-005",
+     "descripcion": "Alisado de gotelé y pintura plástica lisa 2 manos (todo incluido)",
+     "unidad": "m2",
+     "precio": 23.0,
+     "min": 18.0,
+     "max": 32.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 pintores (gotelé 15-28 €/m² + pintura 8-16 €/m²)"
+    },
+    {
+     "codigo": "PIN-006",
+     "descripcion": "Tendido y lijado de plastes en paredes con desperfectos",
+     "unidad": "m2",
+     "precio": 6.0,
+     "min": 4.0,
+     "max": 9.0,
+     "fuente": "estimado a partir de precio hora pintor (Motor de Presupuestos 2026 22-32 €/h)"
+    },
+    {
+     "codigo": "PIN-007",
+     "descripcion": "Esmalte sintético en puerta de madera por ambas caras, incluso lijado e imprimación",
+     "unidad": "ud",
+     "precio": 110.0,
+     "min": 80.0,
+     "max": 160.0,
+     "fuente": "Motor de Presupuestos 2026 pintores: pintura de carpintería (puertas) 80-160 €"
+    },
+    {
+     "codigo": "PIN-008",
+     "descripcion": "Esmalte sobre rejas o barandillas metálicas con imprimación antioxidante",
+     "unidad": "m2",
+     "precio": 18.0,
+     "min": 13.0,
+     "max": 26.0,
+     "fuente": "estimado a partir de precio hora pintor (Motor de Presupuestos 2026 22-32 €/h)"
+    },
+    {
+     "codigo": "PIN-009",
+     "descripcion": "Esmalte en radiador metálico con desengrasado e imprimación",
+     "unidad": "ud",
+     "precio": 50.0,
+     "min": 35.0,
+     "max": 70.0,
+     "fuente": "Motor de Presupuestos 2026 pintores: pintura de radiadores 35-70 €"
+    },
+    {
+     "codigo": "PIN-010",
+     "descripcion": "Pintura de fachada al pliolite o siloxano, 2 manos con imprimación",
+     "unidad": "m2",
+     "precio": 14.0,
+     "min": 8.0,
+     "max": 25.0,
+     "fuente": "Motor de Presupuestos 2026 pintores: fachada 12-25 €/m²; Motor de Presupuestos 2026 fachadas: 8-18 €/m²"
+    },
+    {
+     "codigo": "PIN-011",
+     "descripcion": "Pintura epoxi en suelo de garaje o trastero",
+     "unidad": "m2",
+     "precio": 16.0,
+     "min": 10.0,
+     "max": 20.0,
+     "fuente": "Motor de Presupuestos 2026 pintores: suelo garaje 10-20 €/m²"
+    },
+    {
+     "codigo": "PIN-012",
+     "descripcion": "Colocación de papel pintado o vinílico, incluso preparación del soporte",
+     "unidad": "m2",
+     "precio": 18.0,
+     "min": 12.0,
+     "max": 26.0,
+     "fuente": "estimado a partir de precio hora pintor (Motor de Presupuestos 2026 22-32 €/h) sin material"
+    },
+    {
+     "codigo": "PIN-013",
+     "descripcion": "Revestimiento decorativo de estuco o efecto en paredes",
+     "unidad": "m2",
+     "precio": 35.0,
+     "min": 25.0,
+     "max": 50.0,
+     "fuente": "estimado a partir de precio hora pintor (Motor de Presupuestos 2026) y rendimientos de alisado"
+    },
+    {
+     "codigo": "PIN-014",
+     "descripcion": "Pintura completa de piso de 80 m² (paredes y techos), 2 manos",
+     "unidad": "ud",
+     "precio": 1700.0,
+     "min": 1200.0,
+     "max": 2500.0,
+     "fuente": "Motor de Presupuestos 2026 pintores: pintura piso completo 80 m² 1.200-2.500 €"
+    },
+    {
+     "codigo": "PIN-015",
+     "descripcion": "Sellado de manchas de humedad o nicotina con fondo aislante",
+     "unidad": "m2",
+     "precio": 6.0,
+     "min": 4.0,
+     "max": 9.0,
+     "fuente": "estimado a partir de precio hora pintor (Motor de Presupuestos 2026)"
+    },
+    {
+     "codigo": "PIN-016",
+     "descripcion": "Mano de obra oficial 1ª pintor",
+     "unidad": "h",
+     "precio": 27.0,
+     "min": 22.0,
+     "max": 32.0,
+     "fuente": "Motor de Presupuestos 2026 pintores: 22-32 €/h"
+    }
+   ]
+  },
+  {
+   "id": "pladur_techos",
+   "nombre": "Pladur / yeso laminado y techos",
+   "partidas": [
+    {
+     "codigo": "PYL-001",
+     "descripcion": "Tabique de placa de yeso laminado 15+48+15 mm (73/48) con lana mineral, juntas tratadas",
+     "unidad": "m2",
+     "precio": 38.0,
+     "min": 28.0,
+     "max": 48.0,
+     "fuente": "Motor de Presupuestos 2026 pladuristas: tabique sencillo 28-48 €/m²; CYPE FBY150 sistema Pladur"
+    },
+    {
+     "codigo": "PYL-002",
+     "descripcion": "Tabique de placa de yeso laminado hidrófuga para baño o cocina con lana mineral",
+     "unidad": "m2",
+     "precio": 42.0,
+     "min": 32.0,
+     "max": 52.0,
+     "fuente": "Motor de Presupuestos 2026 pladuristas: placa hidrofugada 32-52 €/m²"
+    },
+    {
+     "codigo": "PYL-003",
+     "descripcion": "Tabique de doble placa 98/70 de alta prestación acústica con lana mineral",
+     "unidad": "m2",
+     "precio": 55.0,
+     "min": 42.0,
+     "max": 68.0,
+     "fuente": "Motor de Presupuestos 2026 pladuristas: tabique doble 42-68 €/m²"
+    },
+    {
+     "codigo": "PYL-004",
+     "descripcion": "Trasdosado autoportante con placa de 15 mm sobre perfilería y lana mineral 46 mm",
+     "unidad": "m2",
+     "precio": 30.0,
+     "min": 22.0,
+     "max": 40.0,
+     "fuente": "Motor de Presupuestos 2026 pladuristas: trasdosado autoportante 22-40 €/m²"
+    },
+    {
+     "codigo": "PYL-005",
+     "descripcion": "Trasdosado directo con placa de yeso laminado recibida con pasta de agarre",
+     "unidad": "m2",
+     "precio": 20.0,
+     "min": 15.0,
+     "max": 26.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 pladuristas (trasdosado 22-40 €/m²) sin perfilería"
+    },
+    {
+     "codigo": "PYL-006",
+     "descripcion": "Falso techo continuo de placa de yeso laminado 13 mm sobre perfilería suspendida",
+     "unidad": "m2",
+     "precio": 28.0,
+     "min": 22.0,
+     "max": 38.0,
+     "fuente": "Motor de Presupuestos 2026 pladuristas: falso techo continuo 20-38 €/m²; CYPE RTC070 24,45 € coste directo"
+    },
+    {
+     "codigo": "PYL-007",
+     "descripcion": "Falso techo continuo de placa hidrófuga en baños y cocinas",
+     "unidad": "m2",
+     "precio": 32.0,
+     "min": 25.0,
+     "max": 40.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 pladuristas (falso techo 20-38 €/m², hidrofugada +4 €)"
+    },
+    {
+     "codigo": "PYL-008",
+     "descripcion": "Falso techo registrable de placas 60x60 cm sobre perfilería vista",
+     "unidad": "m2",
+     "precio": 25.0,
+     "min": 18.0,
+     "max": 32.0,
+     "fuente": "Motor de Presupuestos 2026 pladuristas: techo registrable 60x60 18-32 €/m²"
+    },
+    {
+     "codigo": "PYL-009",
+     "descripcion": "Falso techo de placa de escayola lisa recibida con esparto",
+     "unidad": "m2",
+     "precio": 24.0,
+     "min": 18.0,
+     "max": 32.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 pladuristas/yeseros (techos 18-38 €/m²)"
+    },
+    {
+     "codigo": "PYL-010",
+     "descripcion": "Foseado perimetral o candileja de pladur para iluminación LED",
+     "unidad": "ml",
+     "precio": 38.0,
+     "min": 28.0,
+     "max": 55.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 pladuristas (molduras 18-35 €/m, cajones 35-70 €/m)"
+    },
+    {
+     "codigo": "PYL-011",
+     "descripcion": "Moldura de escayola en encuentro pared-techo, colocada",
+     "unidad": "ml",
+     "precio": 14.0,
+     "min": 9.0,
+     "max": 20.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 pladuristas (molduras decorativas 18-35 €/m) para moldura estándar"
+    },
+    {
+     "codigo": "PYL-012",
+     "descripcion": "Cajón de placa de yeso laminado para ocultar tuberías o conductos",
+     "unidad": "ml",
+     "precio": 48.0,
+     "min": 35.0,
+     "max": 70.0,
+     "fuente": "Motor de Presupuestos 2026 pladuristas: caja de instalaciones 35-70 €/m"
+    },
+    {
+     "codigo": "PYL-013",
+     "descripcion": "Trampilla de registro de 60x60 cm en falso techo de pladur",
+     "unidad": "ud",
+     "precio": 85.0,
+     "min": 60.0,
+     "max": 120.0,
+     "fuente": "estimado a partir de precio hora pladurista (Motor de Presupuestos 2026 22-32 €/h) más trampilla comercial"
+    },
+    {
+     "codigo": "PYL-014",
+     "descripcion": "Aislamiento de lana mineral de 50 mm sobre falso techo",
+     "unidad": "m2",
+     "precio": 9.0,
+     "min": 6.0,
+     "max": 13.0,
+     "fuente": "estimado a partir de CYPE RTC070 y precios de lana mineral"
+    },
+    {
+     "codigo": "PYL-015",
+     "descripcion": "Reparación de fisuras o desconchones en techo de escayola o pladur",
+     "unidad": "m2",
+     "precio": 18.0,
+     "min": 12.0,
+     "max": 28.0,
+     "fuente": "estimado a partir de precio hora pladurista (Motor de Presupuestos 2026)"
+    }
+   ]
+  },
+  {
+   "id": "cocinas",
+   "nombre": "Cocinas",
+   "partidas": [
+    {
+     "codigo": "COC-001",
+     "descripcion": "Muebles de cocina gama básica (laminado), altos y bajos, montados con zócalo y herrajes",
+     "unidad": "ml",
+     "precio": 380.0,
+     "min": 280.0,
+     "max": 480.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 carpinteros (muebles de cocina 2.500-8.000 €) y Cronoshare Sevilla 2026 (cocina completa 6.000-12.000 €)"
+    },
+    {
+     "codigo": "COC-002",
+     "descripcion": "Muebles de cocina gama media (laca/polilaminado, cierre amortiguado), altos y bajos, montados",
+     "unidad": "ml",
+     "precio": 600.0,
+     "min": 450.0,
+     "max": 800.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 carpinteros (2.500-8.000 €) y Focus Piedra (cocina media 15.000-20.000 €)"
+    },
+    {
+     "codigo": "COC-003",
+     "descripcion": "Muebles de cocina gama alta a medida, altos y bajos, montados",
+     "unidad": "ml",
+     "precio": 1000.0,
+     "min": 800.0,
+     "max": 1500.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 carpinteros y Focus Piedra 2025"
+    },
+    {
+     "codigo": "COC-004",
+     "descripcion": "Montaje de muebles de cocina aportados por el cliente (altos y bajos)",
+     "unidad": "ml",
+     "precio": 70.0,
+     "min": 50.0,
+     "max": 100.0,
+     "fuente": "estimado a partir de precio hora carpintero (Motor de Presupuestos 2026 28-42 €/h)"
+    },
+    {
+     "codigo": "COC-005",
+     "descripcion": "Encimera laminada postformada de 38 mm, incluso cortes y hueco de fregadero",
+     "unidad": "ml",
+     "precio": 110.0,
+     "min": 80.0,
+     "max": 150.0,
+     "fuente": "estimado a partir de precios de encimeras (encimerassevilla.com) para material laminado"
+    },
+    {
+     "codigo": "COC-006",
+     "descripcion": "Encimera de cuarzo compacto de 20 mm, fondo 62 cm, con hueco de fregadero y placa",
+     "unidad": "ml",
+     "precio": 330.0,
+     "min": 200.0,
+     "max": 450.0,
+     "fuente": "encimerassevilla.com 2026: cuarzo 230-600 €/m² (1 ml = 0,62 m²); Línea 3 Cocinas: Silestone desde 400 €/ml"
+    },
+    {
+     "codigo": "COC-007",
+     "descripcion": "Encimera porcelánica (tipo sinterizado) de 12 mm, fondo 62 cm, colocada",
+     "unidad": "ml",
+     "precio": 480.0,
+     "min": 380.0,
+     "max": 650.0,
+     "fuente": "estimado a partir de Línea 3 Cocinas y HOLA (encimeras técnicas desde 400-550 €/ml)"
+    },
+    {
+     "codigo": "COC-008",
+     "descripcion": "Frontal de cuarzo entre muebles altos y bajos",
+     "unidad": "m2",
+     "precio": 300.0,
+     "min": 220.0,
+     "max": 420.0,
+     "fuente": "encimerassevilla.com 2026: cuarzo 230-600 €/m²"
+    },
+    {
+     "codigo": "COC-009",
+     "descripcion": "Instalación de campana extractora con salida de humos hasta 3 m",
+     "unidad": "ud",
+     "precio": 150.0,
+     "min": 100.0,
+     "max": 220.0,
+     "fuente": "estimado a partir de precio hora instalador (Motor de Presupuestos 2026)"
+    },
+    {
+     "codigo": "COC-010",
+     "descripcion": "Montaje y conexión de electrodoméstico (horno, placa, lavavajillas o frigorífico integrable)",
+     "unidad": "ud",
+     "precio": 55.0,
+     "min": 40.0,
+     "max": 80.0,
+     "fuente": "estimado a partir de precio hora electricista/fontanero (Motor de Presupuestos 2026)"
+    },
+    {
+     "codigo": "COC-011",
+     "descripcion": "Fregadero de acero inoxidable bajo encimera con grifo monomando, instalado",
+     "unidad": "ud",
+     "precio": 320.0,
+     "min": 220.0,
+     "max": 480.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 fontaneros (cambio de grifo 80-160 €) más material"
+    },
+    {
+     "codigo": "COC-012",
+     "descripcion": "Sustitución de puertas y frentes de cocina existentes",
+     "unidad": "ml",
+     "precio": 220.0,
+     "min": 150.0,
+     "max": 320.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 carpinteros"
+    },
+    {
+     "codigo": "COC-013",
+     "descripcion": "Instalaciones de cocina completas (fontanería, electricidad y ayudas de albañilería)",
+     "unidad": "pa",
+     "precio": 1400.0,
+     "min": 950.0,
+     "max": 2000.0,
+     "fuente": "estimado a partir de Cronoshare Sevilla 2026 (fontanería baño+cocina 2.000-4.000 €) y Motor de Presupuestos 2026 electricistas"
+    },
+    {
+     "codigo": "COC-014",
+     "descripcion": "Reforma de cocina completa 8-10 m² gama media (demolición, instalaciones, alicatado, solado, muebles y encimera)",
+     "unidad": "ud",
+     "precio": 9000.0,
+     "min": 6000.0,
+     "max": 12000.0,
+     "fuente": "Cronoshare Sevilla 2026: cocina completa 8-10 m² 6.000-12.000 €; Motor de Presupuestos 2026 reformas 6.000-18.000 €"
+    }
+   ]
+  },
+  {
+   "id": "banos",
+   "nombre": "Baños",
+   "partidas": [
+    {
+     "codigo": "BAN-001",
+     "descripcion": "Sustitución de bañera por plato de ducha: retirada, plato de resina, reposición de alicatado, grifería y mampara",
+     "unidad": "ud",
+     "precio": 1650.0,
+     "min": 1200.0,
+     "max": 2300.0,
+     "fuente": "Cronoshare Sevilla 2026 cambio bañera por ducha: ejemplo total 1.620 €; solo MO 552-933 €"
+    },
+    {
+     "codigo": "BAN-002",
+     "descripcion": "Plato de ducha de resina extraplano hasta 140x80 cm, instalado con válvula",
+     "unidad": "ud",
+     "precio": 380.0,
+     "min": 280.0,
+     "max": 520.0,
+     "fuente": "Motor de Presupuestos 2026 fontaneros: instalación plato 180-380 €; Cronoshare Sevilla 2026: plato 55-150 € material"
+    },
+    {
+     "codigo": "BAN-003",
+     "descripcion": "Plato de ducha de obra con sumidero lineal, impermeabilización y solado",
+     "unidad": "ud",
+     "precio": 650.0,
+     "min": 480.0,
+     "max": 900.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 impermeabilización (base de ducha 30-60 €/m²) y soladores"
+    },
+    {
+     "codigo": "BAN-004",
+     "descripcion": "Impermeabilización de zona de ducha con membrana líquida o lámina en suelo y paredes",
+     "unidad": "m2",
+     "precio": 40.0,
+     "min": 30.0,
+     "max": 60.0,
+     "fuente": "Motor de Presupuestos 2026 impermeabilización: base de ducha 30-60 €/m²"
+    },
+    {
+     "codigo": "BAN-005",
+     "descripcion": "Inodoro de porcelana vitrificada con cisterna y tapa amortiguada, instalado",
+     "unidad": "ud",
+     "precio": 300.0,
+     "min": 220.0,
+     "max": 420.0,
+     "fuente": "Cronoshare Sevilla 2026 baño: WC 150-300 € total; Motor de Presupuestos 2026 fontaneros: instalación 120-220 €"
+    },
+    {
+     "codigo": "BAN-006",
+     "descripcion": "Inodoro suspendido con cisterna empotrada y bastidor, instalado",
+     "unidad": "ud",
+     "precio": 650.0,
+     "min": 480.0,
+     "max": 900.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 fontaneros (instalación inodoro 120-220 €) más bastidor y aparato"
+    },
+    {
+     "codigo": "BAN-007",
+     "descripcion": "Mueble de baño de 80 cm con lavabo, espejo y grifería monomando, instalado",
+     "unidad": "ud",
+     "precio": 480.0,
+     "min": 330.0,
+     "max": 750.0,
+     "fuente": "estimado a partir de Cronoshare Sevilla 2026 baño (lavabo con grifería 200-350 €) y Motor de Presupuestos 2026 fontaneros"
+    },
+    {
+     "codigo": "BAN-008",
+     "descripcion": "Lavabo de pedestal o sobre encimera con grifería, instalado",
+     "unidad": "ud",
+     "precio": 260.0,
+     "min": 200.0,
+     "max": 350.0,
+     "fuente": "Cronoshare Sevilla 2026 baño: lavabo con grifería 200-350 €; Motor de Presupuestos 2026: instalación lavabo 100-190 €"
+    },
+    {
+     "codigo": "BAN-009",
+     "descripcion": "Bidé de porcelana con grifería, instalado",
+     "unidad": "ud",
+     "precio": 220.0,
+     "min": 160.0,
+     "max": 300.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 fontaneros (instalación aparato 100-220 €) más material"
+    },
+    {
+     "codigo": "BAN-010",
+     "descripcion": "Grifería monomando de lavabo o bidé, instalada",
+     "unidad": "ud",
+     "precio": 120.0,
+     "min": 80.0,
+     "max": 180.0,
+     "fuente": "Motor de Presupuestos 2026 fontaneros: cambio de grifo monomando 80-160 €"
+    },
+    {
+     "codigo": "BAN-011",
+     "descripcion": "Conjunto termostático de ducha con barra, teleducha y rociador, instalado",
+     "unidad": "ud",
+     "precio": 260.0,
+     "min": 180.0,
+     "max": 380.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 fontaneros (grifo 80-160 €) y Cronoshare Sevilla 2026 (grifería 30-230 €)"
+    },
+    {
+     "codigo": "BAN-012",
+     "descripcion": "Grifería empotrada de ducha (cuerpo empotrado, rociador y teleducha), instalada",
+     "unidad": "ud",
+     "precio": 480.0,
+     "min": 350.0,
+     "max": 700.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 fontaneros y precio de material gama media"
+    },
+    {
+     "codigo": "BAN-013",
+     "descripcion": "Bañera acrílica de 170x70 cm instalada, incluso desagüe y faldón",
+     "unidad": "ud",
+     "precio": 520.0,
+     "min": 380.0,
+     "max": 750.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 fontaneros (instalación plato o bañera 180-380 €) más material"
+    },
+    {
+     "codigo": "BAN-014",
+     "descripcion": "Radiador toallero eléctrico, instalado",
+     "unidad": "ud",
+     "precio": 220.0,
+     "min": 150.0,
+     "max": 320.0,
+     "fuente": "estimado a partir de precio hora electricista (Motor de Presupuestos 2026) más equipo"
+    },
+    {
+     "codigo": "BAN-015",
+     "descripcion": "Baño completo tipo 4-5 m², gama básica (demolición, instalaciones, alicatado, solado, sanitarios y plato)",
+     "unidad": "ud",
+     "precio": 4500.0,
+     "min": 3500.0,
+     "max": 5500.0,
+     "fuente": "Cronoshare Sevilla 2026 baño: 3.500-6.000 € (estándar 4-5 m²); reforma básica 2.500-4.500 €"
+    },
+    {
+     "codigo": "BAN-016",
+     "descripcion": "Baño completo tipo 4-5 m², gama media (incluye falso techo, mampara y mueble de lavabo)",
+     "unidad": "ud",
+     "precio": 6200.0,
+     "min": 4500.0,
+     "max": 8500.0,
+     "fuente": "Cronoshare Sevilla 2026: baño completo 4-5 m² 3.500-7.500 €; Motor de Presupuestos 2026 reformas: 5.500-12.000 €"
+    },
+    {
+     "codigo": "BAN-017",
+     "descripcion": "Aseo completo 2-3 m² (inodoro, lavabo, revestimientos e instalaciones)",
+     "unidad": "ud",
+     "precio": 3600.0,
+     "min": 2800.0,
+     "max": 4800.0,
+     "fuente": "estimado a partir de Cronoshare Sevilla 2026 baño (500-1.000 €/m² y mínimos de partida)"
+    },
+    {
+     "codigo": "BAN-018",
+     "descripcion": "Barra de apoyo abatible o fija para baño adaptado, instalada",
+     "unidad": "ud",
+     "precio": 85.0,
+     "min": 60.0,
+     "max": 130.0,
+     "fuente": "estimado a partir de precio hora instalador (Motor de Presupuestos 2026) más accesorio"
+    }
+   ]
+  },
+  {
+   "id": "impermeabilizacion_cubiertas",
+   "nombre": "Impermeabilización y cubiertas",
+   "partidas": [
+    {
+     "codigo": "CUB-001",
+     "descripcion": "Impermeabilización de terraza transitable con membrana líquida de poliuretano armada, sobre soporte existente",
+     "unidad": "m2",
+     "precio": 45.0,
+     "min": 35.0,
+     "max": 60.0,
+     "fuente": "Motor de Presupuestos 2026 impermeabilización: terraza transitable 35-75 €/m²"
+    },
+    {
+     "codigo": "CUB-002",
+     "descripcion": "Impermeabilización de terraza con lámina asfáltica LBM-40 y capa de protección, sin solado",
+     "unidad": "m2",
+     "precio": 38.0,
+     "min": 30.0,
+     "max": 50.0,
+     "fuente": "Cronoshare impermeabilización: tela asfáltica 20-40 €/m²; Motor de Presupuestos 2026 35-75 €/m²"
+    },
+    {
+     "codigo": "CUB-003",
+     "descripcion": "Rehabilitación completa de terraza: levantado de solado, pendientes, lámina y nuevo solado antideslizante",
+     "unidad": "m2",
+     "precio": 110.0,
+     "min": 85.0,
+     "max": 150.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 demoliciones (10-25), impermeabilización (35-75) y soladores (18-55 €/m²)"
+    },
+    {
+     "codigo": "CUB-004",
+     "descripcion": "Cubierta plana no transitable con lámina de PVC o EPDM",
+     "unidad": "m2",
+     "precio": 42.0,
+     "min": 28.0,
+     "max": 60.0,
+     "fuente": "Motor de Presupuestos 2026 impermeabilización: cubierta no transitable 28-60 €/m²"
+    },
+    {
+     "codigo": "CUB-005",
+     "descripcion": "Formación de pendientes con hormigón celular o mortero aligerado",
+     "unidad": "m2",
+     "precio": 22.0,
+     "min": 16.0,
+     "max": 30.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 albañiles (solera 22-40 €/m²)"
+    },
+    {
+     "codigo": "CUB-006",
+     "descripcion": "Cubierta invertida con aislamiento XPS, lámina impermeable y acabado de grava",
+     "unidad": "m2",
+     "precio": 65.0,
+     "min": 45.0,
+     "max": 90.0,
+     "fuente": "Motor de Presupuestos 2026 tejados: cubierta invertida 45-90 €/m²"
+    },
+    {
+     "codigo": "CUB-007",
+     "descripcion": "Retejado completo con teja árabe nueva sobre soporte existente",
+     "unidad": "m2",
+     "precio": 75.0,
+     "min": 55.0,
+     "max": 110.0,
+     "fuente": "Motor de Presupuestos 2026 tejados: sustitución de teja cerámica 55-110 €/m²"
+    },
+    {
+     "codigo": "CUB-008",
+     "descripcion": "Retejado con aprovechamiento de teja existente (desmontaje, limpieza y recolocación)",
+     "unidad": "m2",
+     "precio": 45.0,
+     "min": 32.0,
+     "max": 60.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 tejados (sustitución 55-110 €/m²) sin material nuevo"
+    },
+    {
+     "codigo": "CUB-009",
+     "descripcion": "Sustitución puntual de teja rota o desplazada",
+     "unidad": "ud",
+     "precio": 14.0,
+     "min": 8.0,
+     "max": 20.0,
+     "fuente": "Motor de Presupuestos 2026 tejados: reparación puntual 8-20 €/ud"
+    },
+    {
+     "codigo": "CUB-010",
+     "descripcion": "Canalón de PVC o zinc, colocado con soportes",
+     "unidad": "ml",
+     "precio": 28.0,
+     "min": 18.0,
+     "max": 40.0,
+     "fuente": "Motor de Presupuestos 2026 tejados: canalón 18-40 €/m"
+    },
+    {
+     "codigo": "CUB-011",
+     "descripcion": "Bajante de pluviales de PVC o zinc, colocada",
+     "unidad": "ml",
+     "precio": 20.0,
+     "min": 12.0,
+     "max": 28.0,
+     "fuente": "Motor de Presupuestos 2026 tejados: bajante pluviales 12-28 €/m"
+    },
+    {
+     "codigo": "CUB-012",
+     "descripcion": "Sellado de junta de dilatación con masilla de poliuretano",
+     "unidad": "ml",
+     "precio": 25.0,
+     "min": 18.0,
+     "max": 40.0,
+     "fuente": "Motor de Presupuestos 2026 impermeabilización: sellado de juntas 18-40 €/m"
+    },
+    {
+     "codigo": "CUB-013",
+     "descripcion": "Inyección de resina epoxi o poliuretano en grietas de muros o forjados",
+     "unidad": "ml",
+     "precio": 55.0,
+     "min": 35.0,
+     "max": 80.0,
+     "fuente": "Motor de Presupuestos 2026 impermeabilización: inyección de resinas 35-80 €/m"
+    },
+    {
+     "codigo": "CUB-014",
+     "descripcion": "Sumidero sifónico de PVC en terraza con unión a lámina",
+     "unidad": "ud",
+     "precio": 95.0,
+     "min": 70.0,
+     "max": 140.0,
+     "fuente": "estimado a partir de precio hora oficial y material"
+    },
+    {
+     "codigo": "CUB-015",
+     "descripcion": "Impermeabilización de muro enterrado o medianera con humedades (resinas o lámina drenante)",
+     "unidad": "m2",
+     "precio": 80.0,
+     "min": 50.0,
+     "max": 120.0,
+     "fuente": "Motor de Presupuestos 2026 impermeabilización: sótano 50-120 €/m²"
+    },
+    {
+     "codigo": "CUB-016",
+     "descripcion": "Lucernario fijo o practicable en cubierta, instalado",
+     "unidad": "ud",
+     "precio": 1100.0,
+     "min": 600.0,
+     "max": 2000.0,
+     "fuente": "Motor de Presupuestos 2026 tejados: lucernario 600-2.000 €"
+    },
+    {
+     "codigo": "CUB-017",
+     "descripcion": "Pintura impermeabilizante elástica acrílica en terraza, 2 manos con malla en puntos críticos",
+     "unidad": "m2",
+     "precio": 16.0,
+     "min": 12.0,
+     "max": 22.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 impermeabilización (soluciones líquidas) sin armadura completa"
+    }
+   ]
+  },
+  {
+   "id": "fachadas_exteriores",
+   "nombre": "Fachadas y exteriores",
+   "partidas": [
+    {
+     "codigo": "FAC-001",
+     "descripcion": "Enfoscado maestreado y fratasado con mortero hidrófugo en paramento exterior",
+     "unidad": "m2",
+     "precio": 24.0,
+     "min": 18.0,
+     "max": 35.0,
+     "fuente": "Motor de Presupuestos 2026 albañiles: enfoscado exterior 18-35 €/m²; Reformas Aguilera Sevilla proyectado 18-24 €/m²"
+    },
+    {
+     "codigo": "FAC-002",
+     "descripcion": "Revestimiento de mortero monocapa acabado raspado en fachada",
+     "unidad": "m2",
+     "precio": 30.0,
+     "min": 22.0,
+     "max": 40.0,
+     "fuente": "Cronoshare monocapa 2026: 20-40 €/m²; Reformas Aguilera Sevilla: con monocapa 30-35 €/m²"
+    },
+    {
+     "codigo": "FAC-003",
+     "descripcion": "Picado de revestimiento exterior deteriorado, incluso carga de escombros",
+     "unidad": "m2",
+     "precio": 14.0,
+     "min": 10.0,
+     "max": 20.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 demoliciones (fachada 20-50 €/m², parcial)"
+    },
+    {
+     "codigo": "FAC-004",
+     "descripcion": "Saneado, enfoscado y pintura de fachada",
+     "unidad": "m2",
+     "precio": 38.0,
+     "min": 25.0,
+     "max": 55.0,
+     "fuente": "Motor de Presupuestos 2026 fachadas: enfoscado + pintura 25-55 €/m²"
+    },
+    {
+     "codigo": "FAC-005",
+     "descripcion": "Sistema SATE con panel EPS de 60-80 mm, mortero, malla y acabado acrílico",
+     "unidad": "m2",
+     "precio": 80.0,
+     "min": 55.0,
+     "max": 110.0,
+     "fuente": "Motor de Presupuestos 2026 fachadas: SATE 55-110 €/m²"
+    },
+    {
+     "codigo": "FAC-006",
+     "descripcion": "Limpieza de fachada con agua a presión",
+     "unidad": "m2",
+     "precio": 8.0,
+     "min": 5.0,
+     "max": 12.0,
+     "fuente": "Motor de Presupuestos 2026 fachadas: limpieza a presión 5-12 €/m²"
+    },
+    {
+     "codigo": "FAC-007",
+     "descripcion": "Montaje, alquiler mensual y desmontaje de andamio tubular en fachada",
+     "unidad": "m2",
+     "precio": 13.0,
+     "min": 8.0,
+     "max": 20.0,
+     "fuente": "Motor de Presupuestos 2026 fachadas: andamio 8-20 €/m²"
+    },
+    {
+     "codigo": "FAC-008",
+     "descripcion": "Reparación de grieta en fachada: apertura, saneado, mortero de reparación y acabado",
+     "unidad": "ml",
+     "precio": 35.0,
+     "min": 20.0,
+     "max": 60.0,
+     "fuente": "Motor de Presupuestos 2026 fachadas: reparación de grietas 20-60 €/m"
+    },
+    {
+     "codigo": "FAC-009",
+     "descripcion": "Zócalo de piedra artificial o porcelánico en fachada, recibido con adhesivo",
+     "unidad": "m2",
+     "precio": 60.0,
+     "min": 45.0,
+     "max": 80.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 soladores y CYPE RSG130 (material y colocación en vertical)"
+    },
+    {
+     "codigo": "FAC-010",
+     "descripcion": "Tratamiento de humedad por capilaridad con inyección de resinas en base de muro",
+     "unidad": "ml",
+     "precio": 60.0,
+     "min": 40.0,
+     "max": 90.0,
+     "fuente": "Motor de Presupuestos 2026 fachadas: tratamiento capilaridad 40-90 €/m"
+    },
+    {
+     "codigo": "FAC-011",
+     "descripcion": "Hidrofugante incoloro en ladrillo visto o piedra, 2 manos",
+     "unidad": "m2",
+     "precio": 9.0,
+     "min": 6.0,
+     "max": 13.0,
+     "fuente": "estimado a partir de precio hora pintor (Motor de Presupuestos 2026) y producto comercial"
+    },
+    {
+     "codigo": "FAC-012",
+     "descripcion": "Pavimento de hormigón impreso de 10 cm con mallazo, en exteriores",
+     "unidad": "m2",
+     "precio": 45.0,
+     "min": 35.0,
+     "max": 60.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 albañiles (solera 15 cm 22-40 €/m²) más acabado impreso"
+    },
+    {
+     "codigo": "FAC-013",
+     "descripcion": "Muro de bloque de hormigón de 20 cm para cerramiento de parcela, sin revestir",
+     "unidad": "m2",
+     "precio": 48.0,
+     "min": 38.0,
+     "max": 60.0,
+     "fuente": "estimado a partir de CYPE fábricas (FFQ010) y precio hora cuadrilla"
+    },
+    {
+     "codigo": "FAC-014",
+     "descripcion": "Albardilla de coronación de muro en piedra artificial",
+     "unidad": "ml",
+     "precio": 30.0,
+     "min": 22.0,
+     "max": 42.0,
+     "fuente": "estimado a partir de precio hora oficial y material comercial"
+    },
+    {
+     "codigo": "FAC-015",
+     "descripcion": "Canaleta de recogida de aguas con rejilla en exterior",
+     "unidad": "ml",
+     "precio": 55.0,
+     "min": 40.0,
+     "max": 75.0,
+     "fuente": "estimado a partir de precio hora oficial y material comercial"
+    }
+   ]
+  },
+  {
+   "id": "cerrajeria",
+   "nombre": "Cerrajería",
+   "partidas": [
+    {
+     "codigo": "CER-001",
+     "descripcion": "Reja de seguridad de acero para ventana (hasta 1,20x1,20 m), con imprimación, anclada",
+     "unidad": "ud",
+     "precio": 290.0,
+     "min": 180.0,
+     "max": 450.0,
+     "fuente": "Motor de Presupuestos 2026 cerrajeros: reja de seguridad para ventana 180-450 €"
+    },
+    {
+     "codigo": "CER-002",
+     "descripcion": "Reja de barrotes de acero macizo a medida, pintada y anclada",
+     "unidad": "m2",
+     "precio": 160.0,
+     "min": 120.0,
+     "max": 220.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 cerrajeros (reja ventana 180-450 €/ud)"
+    },
+    {
+     "codigo": "CER-003",
+     "descripcion": "Barandilla de acero pintado de 100 cm con barrotes verticales, anclada",
+     "unidad": "ml",
+     "precio": 140.0,
+     "min": 110.0,
+     "max": 200.0,
+     "fuente": "CYPE barandilla de fachada de acero 109,49 €/m coste directo x1,19"
+    },
+    {
+     "codigo": "CER-004",
+     "descripcion": "Barandilla de acero inoxidable con barrotes o cables, anclada",
+     "unidad": "ml",
+     "precio": 260.0,
+     "min": 190.0,
+     "max": 360.0,
+     "fuente": "estimado a partir de CYPE barandilla de acero y Tus Rejas (catálogo barandillas 176-241 € IVA incl.)"
+    },
+    {
+     "codigo": "CER-005",
+     "descripcion": "Pasamanos de acero inoxidable de 40-50 mm sobre soportes a pared",
+     "unidad": "ml",
+     "precio": 85.0,
+     "min": 60.0,
+     "max": 120.0,
+     "fuente": "estimado a partir de CYPE barandilla de acero y precio hora cerrajero"
+    },
+    {
+     "codigo": "CER-006",
+     "descripcion": "Puerta metálica de chapa de una hoja para trastero o patio, con cerradura",
+     "unidad": "ud",
+     "precio": 480.0,
+     "min": 350.0,
+     "max": 650.0,
+     "fuente": "estimado a partir de precio hora cerrajero (Motor de Presupuestos 2026 45-70 €/h) y material"
+    },
+    {
+     "codigo": "CER-007",
+     "descripcion": "Cancela metálica de acceso peatonal a medida, pintada",
+     "unidad": "ud",
+     "precio": 750.0,
+     "min": 500.0,
+     "max": 1100.0,
+     "fuente": "estimado a partir de precio hora cerrajero (Motor de Presupuestos 2026) y material"
+    },
+    {
+     "codigo": "CER-008",
+     "descripcion": "Puerta de garaje seccional motorizada para vivienda, instalada",
+     "unidad": "ud",
+     "precio": 1800.0,
+     "min": 1300.0,
+     "max": 2600.0,
+     "fuente": "estimado a partir de precio hora cerrajero (Motor de Presupuestos 2026) y precios comerciales"
+    },
+    {
+     "codigo": "CER-009",
+     "descripcion": "Puerta corredera de parcela motorizada a medida, instalada",
+     "unidad": "ud",
+     "precio": 2400.0,
+     "min": 1700.0,
+     "max": 3500.0,
+     "fuente": "estimado a partir de precio hora cerrajero (Motor de Presupuestos 2026) y precios comerciales"
+    },
+    {
+     "codigo": "CER-010",
+     "descripcion": "Motorización de puerta de garaje o cancela existente con dos mandos",
+     "unidad": "ud",
+     "precio": 650.0,
+     "min": 450.0,
+     "max": 900.0,
+     "fuente": "estimado a partir de precio hora cerrajero/electricista (Motor de Presupuestos 2026)"
+    },
+    {
+     "codigo": "CER-011",
+     "descripcion": "Cambio de bombín de seguridad con 5 llaves",
+     "unidad": "ud",
+     "precio": 95.0,
+     "min": 60.0,
+     "max": 150.0,
+     "fuente": "Motor de Presupuestos 2026 cerrajeros: cambio de bombín 60-150 €"
+    },
+    {
+     "codigo": "CER-012",
+     "descripcion": "Cerradura de seguridad antipalanca con placa de anclaje",
+     "unidad": "ud",
+     "precio": 240.0,
+     "min": 150.0,
+     "max": 350.0,
+     "fuente": "Motor de Presupuestos 2026 cerrajeros: cerradura antipalanca 150-350 €"
+    },
+    {
+     "codigo": "CER-013",
+     "descripcion": "Acero laminado S275 en perfiles para cargaderos o refuerzos, colocado con imprimación",
+     "unidad": "kg",
+     "precio": 3.2,
+     "min": 2.5,
+     "max": 4.5,
+     "fuente": "estimado a partir de precio hora cerrajero y precio del acero en perfiles (sin fuente directa leída)"
+    },
+    {
+     "codigo": "CER-014",
+     "descripcion": "Reparación o soldadura in situ de reja, barandilla o puerta metálica",
+     "unidad": "h",
+     "precio": 50.0,
+     "min": 40.0,
+     "max": 70.0,
+     "fuente": "Motor de Presupuestos 2026 cerrajeros: oficial 1ª 45-70 €/h"
+    }
+   ]
+  },
+  {
+   "id": "aislamiento",
+   "nombre": "Aislamiento térmico y acústico",
+   "partidas": [
+    {
+     "codigo": "AIS-001",
+     "descripcion": "Aislamiento por insuflado de lana mineral o celulosa en cámara de aire de fachada",
+     "unidad": "m2",
+     "precio": 22.0,
+     "min": 16.0,
+     "max": 30.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 fachadas (SATE 55-110 €/m²) como alternativa de menor coste"
+    },
+    {
+     "codigo": "AIS-002",
+     "descripcion": "Aislamiento con manta de lana mineral de 100 mm bajo cubierta o en desván",
+     "unidad": "m2",
+     "precio": 14.0,
+     "min": 10.0,
+     "max": 20.0,
+     "fuente": "estimado a partir de CYPE RTC070 y precio hora oficial"
+    },
+    {
+     "codigo": "AIS-003",
+     "descripcion": "Lámina anti-impacto bajo solado o recrecido para aislamiento acústico",
+     "unidad": "m2",
+     "precio": 8.0,
+     "min": 5.0,
+     "max": 12.0,
+     "fuente": "estimado a partir de precio hora oficial y material comercial"
+    },
+    {
+     "codigo": "AIS-004",
+     "descripcion": "Panel de poliestireno extruido XPS de 40 mm en suelos bajo recrecido",
+     "unidad": "m2",
+     "precio": 14.0,
+     "min": 10.0,
+     "max": 20.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 tejados (cubierta invertida XPS 45-90 €/m²)"
+    },
+    {
+     "codigo": "AIS-005",
+     "descripcion": "Trasdosado térmico de fachada por el interior con placa de yeso y lana mineral 50 mm",
+     "unidad": "m2",
+     "precio": 36.0,
+     "min": 28.0,
+     "max": 46.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 pladuristas (trasdosado 22-40 €/m²)"
+    },
+    {
+     "codigo": "AIS-006",
+     "descripcion": "Sistema SATE en vivienda unifamiliar con EPS grafito 80 mm, incluso remates de huecos",
+     "unidad": "m2",
+     "precio": 90.0,
+     "min": 65.0,
+     "max": 110.0,
+     "fuente": "Motor de Presupuestos 2026 fachadas: SATE 55-110 €/m²; remates en unifamiliar"
+    }
+   ]
+  },
+  {
+   "id": "piscinas",
+   "nombre": "Piscinas (reparaciones)",
+   "partidas": [
+    {
+     "codigo": "PIS-001",
+     "descripcion": "Revestimiento de vaso de piscina con gresite, incluso impermeabilización previa",
+     "unidad": "m2",
+     "precio": 60.0,
+     "min": 40.0,
+     "max": 80.0,
+     "fuente": "Motor de Presupuestos 2026 piscinas: revestimiento en gresite 40-80 €/m²"
+    },
+    {
+     "codigo": "PIS-002",
+     "descripcion": "Liner de PVC armado para renovación de piscina existente",
+     "unidad": "m2",
+     "precio": 38.0,
+     "min": 25.0,
+     "max": 50.0,
+     "fuente": "Motor de Presupuestos 2026 piscinas: liner PVC 25-50 €/m²"
+    },
+    {
+     "codigo": "PIS-003",
+     "descripcion": "Impermeabilización de vaso de piscina con mortero impermeable o lámina",
+     "unidad": "m2",
+     "precio": 90.0,
+     "min": 60.0,
+     "max": 140.0,
+     "fuente": "Motor de Presupuestos 2026 impermeabilización: piscina 60-140 €/m²"
+    },
+    {
+     "codigo": "PIS-004",
+     "descripcion": "Equipo de filtración (bomba, filtro de arena, skimmer e impulsión), instalado",
+     "unidad": "ud",
+     "precio": 1300.0,
+     "min": 800.0,
+     "max": 2000.0,
+     "fuente": "Motor de Presupuestos 2026 piscinas: filtración y bomba 800-2.000 €"
+    },
+    {
+     "codigo": "PIS-005",
+     "descripcion": "Pintura de piscina al clorocaucho, 2 manos, incluso limpieza del vaso",
+     "unidad": "m2",
+     "precio": 14.0,
+     "min": 10.0,
+     "max": 20.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 pintores (suelo epoxi 10-20 €/m²)"
+    },
+    {
+     "codigo": "PIS-006",
+     "descripcion": "Sustitución de foco de piscina por proyector LED, instalado",
+     "unidad": "ud",
+     "precio": 180.0,
+     "min": 120.0,
+     "max": 260.0,
+     "fuente": "estimado a partir de precio hora electricista (Motor de Presupuestos 2026) y material comercial"
+    },
+    {
+     "codigo": "PIS-007",
+     "descripcion": "Coronación de piscina con piedra artificial, recibida con mortero",
+     "unidad": "ml",
+     "precio": 55.0,
+     "min": 40.0,
+     "max": 75.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 soladores y precio de material"
+    },
+    {
+     "codigo": "PIS-008",
+     "descripcion": "Cubierta de piscina (lona de invierno a cubierta enrollable)",
+     "unidad": "ud",
+     "precio": 900.0,
+     "min": 300.0,
+     "max": 4000.0,
+     "fuente": "Motor de Presupuestos 2026 piscinas: cobertor o cubierta 300-4.000 €"
+    }
+   ]
+  },
+  {
+   "id": "gestion_varios",
+   "nombre": "Gestión y varios",
+   "partidas": [
+    {
+     "codigo": "GES-001",
+     "descripcion": "Tramitación de licencia de obra menor o declaración responsable ante el Ayuntamiento (sin tasas)",
+     "unidad": "pa",
+     "precio": 180.0,
+     "min": 100.0,
+     "max": 300.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 licencia de obra (tasa tramitación 120 € en ejemplo) y precio hora administrativo"
+    },
+    {
+     "codigo": "GES-002",
+     "descripcion": "Tasas municipales e ICIO orientativos de reforma de vivienda (≈3,5 % del PEM, ejemplo PEM 35.000 €)",
+     "unidad": "pa",
+     "precio": 1345.0,
+     "min": 800.0,
+     "max": 2000.0,
+     "fuente": "Motor de Presupuestos 2026 licencia de obra: tasa 50-400 € + ICIO 2-4 % PEM (ejemplo 1.345 €); Cronoshare Sevilla 2026: ICIO 3-4 % y tasa 0,5-1,5 % del PEM"
+    },
+    {
+     "codigo": "GES-003",
+     "descripcion": "Fianza de gestión de residuos de construcción (RCD), devolvible",
+     "unidad": "ud",
+     "precio": 300.0,
+     "min": 150.0,
+     "max": 600.0,
+     "fuente": "Cronoshare Sevilla 2026: fianza de residuos 150-600 €; Motor de Presupuestos 2026: 300-3.000 €"
+    },
+    {
+     "codigo": "GES-004",
+     "descripcion": "Proyecto técnico y dirección de obra para obra mayor (≈7 % del PEM, ejemplo PEM 60.000 €)",
+     "unidad": "pa",
+     "precio": 4200.0,
+     "min": 3000.0,
+     "max": 6000.0,
+     "fuente": "Cronoshare Sevilla 2026: proyecto y dirección técnica 6-10 % del PEM; Motor de Presupuestos 2026: honorarios 5-8 %"
+    },
+    {
+     "codigo": "GES-005",
+     "descripcion": "Memoria técnica o certificado de técnico para obra menor",
+     "unidad": "pa",
+     "precio": 450.0,
+     "min": 300.0,
+     "max": 700.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 licencia (honorarios técnicos 5-8 % del PEM) para obras pequeñas"
+    },
+    {
+     "codigo": "GES-006",
+     "descripcion": "Estudio básico de seguridad y salud",
+     "unidad": "pa",
+     "precio": 350.0,
+     "min": 250.0,
+     "max": 600.0,
+     "fuente": "estimado a partir de honorarios técnicos (Motor de Presupuestos 2026 licencia) para obra de reforma"
+    },
+    {
+     "codigo": "GES-007",
+     "descripcion": "Medidas de seguridad y salud en obra (EPIs, señalización, protecciones colectivas)",
+     "unidad": "pa",
+     "precio": 250.0,
+     "min": 150.0,
+     "max": 450.0,
+     "fuente": "estimado a partir de práctica habitual 1-2 % del PEM en reformas pequeñas"
+    },
+    {
+     "codigo": "GES-008",
+     "descripcion": "Estudio de gestión de residuos y certificado de gestor autorizado",
+     "unidad": "pa",
+     "precio": 150.0,
+     "min": 90.0,
+     "max": 250.0,
+     "fuente": "estimado a partir de precios de gestión de cubas en Sevilla y honorarios técnicos"
+    },
+    {
+     "codigo": "GES-009",
+     "descripcion": "Certificado de eficiencia energética de vivienda",
+     "unidad": "ud",
+     "precio": 180.0,
+     "min": 100.0,
+     "max": 300.0,
+     "fuente": "Motor de Presupuestos 2026: certificado energético 100-300 €"
+    },
+    {
+     "codigo": "GES-010",
+     "descripcion": "Gestión de permiso de ocupación de vía pública para contenedor",
+     "unidad": "ud",
+     "precio": 90.0,
+     "min": 50.0,
+     "max": 150.0,
+     "fuente": "estimado a partir de Motor de Presupuestos 2026 licencia (tasas municipales 50-400 €)"
+    },
+    {
+     "codigo": "GES-011",
+     "descripcion": "Limpieza final de obra, por m² de vivienda",
+     "unidad": "m2",
+     "precio": 4.0,
+     "min": 3.0,
+     "max": 6.0,
+     "fuente": "estimado a partir de precio hora peón (Motor de Presupuestos 2026 16-22 €/h)"
+    },
+    {
+     "codigo": "GES-012",
+     "descripcion": "Limpieza final de obra de vivienda completa (hasta 90 m²)",
+     "unidad": "pa",
+     "precio": 350.0,
+     "min": 250.0,
+     "max": 500.0,
+     "fuente": "estimado a partir de precio hora peón (Motor de Presupuestos 2026 16-22 €/h)"
+    },
+    {
+     "codigo": "GES-013",
+     "descripcion": "Transporte de materiales y desplazamiento a obra en el Aljarafe",
+     "unidad": "pa",
+     "precio": 60.0,
+     "min": 40.0,
+     "max": 90.0,
+     "fuente": "estimado a partir de precio hora peón y vehículo"
+    },
+    {
+     "codigo": "GES-014",
+     "descripcion": "Subida manual de materiales a planta sin ascensor",
+     "unidad": "pa",
+     "precio": 180.0,
+     "min": 100.0,
+     "max": 300.0,
+     "fuente": "estimado a partir de precio hora peón (Motor de Presupuestos 2026 16-22 €/h)"
+    }
+   ]
+  }
+ ]
+}

@@ -1,19 +1,18 @@
 # SGM · Presupuestos
 
-App de Construcciones SGM (presupuestos, facturas, clientes, obras, gastos y tarifa) creada por KREA Digital Studio.
+App de Construcciones SGM (Sergio García Molina): presupuestos, facturas, clientes, obras, gastos, tarifa por oficios con materiales, avisos y asistente de IA con voz. Creada por KREA Digital Studio. Desde noviembre de 2026 usa la misma base que la app de Daalcor (`kikeotero7/krea-daalcor`), con la marca de SGM.
 
-Publicada en https://sgm.kreadigitalstudio.es (GitHub Pages, rama `main`, carpeta raíz; DNS en OVH: CNAME `sgm` → `kikeotero7.github.io.`).
+Dirección: https://sgm.kreadigitalstudio.es (demo pública en `/demo/`, contraseña `sgm2026`; caso de estudio en `/portafolio/`).
 
-- `index.html`, `manifest.webmanifest`, `sw.js`, iconos: app instalable (PWA) que se publica.
-- `src/`: código fuente. `python3 src/build.py` genera la demo y la carpeta `dist/`; copia el contenido de `dist/` a la raíz para publicar.
+## Cómo está montado
 
-## Contenido del repositorio
+- `src/src.html`: toda la app (HTML, CSS y JS en un archivo). `python3 src/build.py` genera `src/dist/` con la app instalable y la demo (`dist/demo/`). Subir la versión de `CACHE` en `build.py` si cambia algo de la app instalada.
+- `api/`: servidor en PHP + MySQL del hosting de OVH (igual que Daalcor). Cuentas con correo y contraseña (cookie de sesión), datos de cada usuario como un documento JSON con versión y copias de seguridad, y el asistente de presupuestos y de gastos con Claude (`asistente.php`). Tablas con prefijo `sgm_`, que se crean solas (pueden convivir en la misma base que otra app). Solo pueden crear cuenta los correos de `ALTAS_PERMITIDAS`.
+- `.github/workflows/publicar-ovh.yml`: cada cambio en `main` genera la app, crea `api/config.php` con los secretos de GitHub y lo sube por FTP a la carpeta `sgm` del hosting (OVH Multisitio), junto con `portafolio/` y `sgm-fichajes/`. Secretos: `OVH_FTP_USER`, `OVH_FTP_PASSWORD`, `DB_HOST`, `DB_NAME`, `DB_USER`, `DB_PASS`, `ALTAS_PERMITIDAS`, `ANTHROPIC_API_KEY`. Sin los del FTP, genera todo pero no sube nada.
+- `app/datos/`: tarifa de 316 partidas por oficio (precios de Sevilla 2026) y 351 materiales; `tools/tarifa_a_app.py` los mete en `src/src.html`.
+- `portafolio/`: caso de estudio. `sgm-fichajes/`: redirección a https://sgm-fichajes.kreadigitalstudio.es (repositorio `kikeotero7/krea-sgm-fichajes`) y capturas que usa el portafolio.
+- Los datos personales de Sergio (NIF, dirección, correo, IBAN) no van en el repositorio: se rellenan en «Mis datos» o con el enlace personal `#datos=`.
 
-- Raíz: **SGM · Presupuestos** (presupuestos, facturas, clientes, obras, gastos y tarifa).
-- `sgm-fichajes/`: redirección a **SGM Fichajes · Control de obra**, que ahora vive en su propio repositorio (`kikeotero7/krea-sgm-fichajes`) y se publica en https://sgm-fichajes.kreadigitalstudio.es. Aquí solo quedan la redirección (para los enlaces antiguos y el PDF del portafolio) y las capturas de `sgm-fichajes/portafolio/` que usa el portafolio.
+## Paso de GitHub Pages + Supabase a OVH
 
-Pendiente de Sergio para la facturación: NIF, dirección fiscal, correo, IBAN, nombre y correo del gestor.
-
-## Datos en la nube
-
-La app de Sergio guarda los datos en Supabase (proyecto `krea-sgm`, región París, plan gratuito): tabla `sgm_state` con RLS por usuario y lista de correos autorizados `sgm_allowed_emails`. Entrada con correo y contraseña; mismos datos en móvil y ordenador. La demo (`/demo/`) sigue guardando solo en el navegador.
+Hasta que el subdominio `sgm` apunte al hosting de OVH, la raíz del repositorio sigue publicada en GitHub Pages (versión anterior con Supabase, que está en pausa). La demo de `demo/` ya es la versión nueva y funciona sin servidor. Cuando OVH sirva `sgm.kreadigitalstudio.es`, se quitan de la raíz `index.html`, `sw.js`, `manifest.webmanifest`, iconos y `CNAME`, y se desactiva GitHub Pages.
