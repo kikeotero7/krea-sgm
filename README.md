@@ -13,6 +13,6 @@ Dirección: https://sgm.kreadigitalstudio.es (demo pública en `/demo/`, contras
 - `portafolio/`: caso de estudio. `sgm-fichajes/`: redirección a https://sgm-fichajes.kreadigitalstudio.es (repositorio `kikeotero7/krea-sgm-fichajes`) y capturas que usa el portafolio.
 - Los datos personales de Sergio (NIF, dirección, correo, IBAN) no van en el repositorio: se rellenan en «Mis datos» o con el enlace personal `#datos=`.
 
-## Paso de GitHub Pages + Supabase a OVH
+## Publicación
 
-Hasta que el subdominio `sgm` apunte al hosting de OVH, la raíz del repositorio sigue publicada en GitHub Pages (versión anterior con Supabase, que está en pausa). La demo de `demo/` ya es la versión nueva y funciona sin servidor. Cuando OVH sirva `sgm.kreadigitalstudio.es`, se quitan de la raíz `index.html`, `sw.js`, `manifest.webmanifest`, iconos y `CNAME`, y se desactiva GitHub Pages.
+Desde el 16/11/2026 `sgm.kreadigitalstudio.es` apunta al hosting de OVH (Multisitio, carpeta `sgm`). La raíz del repositorio ya no se publica en GitHub Pages: todo sale de `src/`, `api/`, `portafolio/` y `sgm-fichajes/` con el flujo «Publicar en OVH».
