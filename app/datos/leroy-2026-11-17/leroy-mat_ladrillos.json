@@ -1,0 +1,288 @@
+{
+ "capitulo": "mat_ladrillos",
+ "fecha": "2026-11-17",
+ "equivalentes": [
+  {
+   "codigo": "MLB-001",
+   "sin_equivalente": false,
+   "descripcion": "Ladrillo hueco doble 24x11,5x8 cm",
+   "ref": "17555111",
+   "unidad": "ud",
+   "pvp_iva": 0.29,
+   "url": "https://www.leroymerlin.es/productos/ladrillo-hueco-doble-24x11-5x8-cm-17555111.html",
+   "nota": "Grueso 8 cm. El 22,5x10,5x7 cm (ref. 86296941) sale a 0,26 € en el listado. Precio tomado de la ficha indexada en el buscador (no de la página en vivo): confirmar."
+  },
+  {
+   "codigo": "MLB-002",
+   "sin_equivalente": false,
+   "descripcion": "Ladrillo hueco 7x16x33 cm",
+   "ref": "14077910",
+   "unidad": "ud",
+   "pvp_iva": 0.55,
+   "url": "https://www.leroymerlin.es/productos/ladrillo-hueco-7x16x33-cm-14077910.html",
+   "nota": "En el listado aparece a 0,47 €."
+  },
+  {
+   "codigo": "MLB-003",
+   "sin_equivalente": false,
+   "descripcion": "Ladrillo hueco sencillo 22,5x10,5x3,5 cm",
+   "ref": "",
+   "unidad": "ud",
+   "pvp_iva": 0.26,
+   "url": "https://www.leroymerlin.es/productos/construccion/bloques-de-hormigon-y-ladrillos/ladrillos-de-obra/ladrillo-hueco-p.html",
+   "nota": "Solo visto en listados (0,18-0,26 €); ref. no vista. Rasilla 24x11,5x3 cm a 0,28 €."
+  },
+  {
+   "codigo": "MLB-004",
+   "sin_equivalente": false,
+   "descripcion": "Rasilla tabiques 40x20x4 cm",
+   "ref": "17457531",
+   "unidad": "ud",
+   "pvp_iva": 0.54,
+   "url": "https://www.leroymerlin.es/productos/rasillon-perforado-de-de-40x20x4-cm-17457531.html",
+   "nota": "Precio de 40x20x4 visto sin ref. clara (también ref. 17112760). Precio tomado de la ficha indexada en el buscador (no de la página en vivo): confirmar."
+  },
+  {
+   "codigo": "MLB-005",
+   "sin_equivalente": false,
+   "descripcion": "Rasillón perforado 40x20x7 cm (La Paloma)",
+   "ref": "17112795",
+   "unidad": "ud",
+   "pvp_iva": 0.63,
+   "url": "https://www.leroymerlin.es/productos/rasillon-perforado-40x20x7-cm-17112795.html",
+   "nota": "Listados entre 0,53 y 0,66 €."
+  },
+  {
+   "codigo": "MLB-006",
+   "sin_equivalente": false,
+   "descripcion": "Rasillón perforado 50x20x7 cm (La Paloma)",
+   "ref": "17299632",
+   "unidad": "ud",
+   "pvp_iva": 0.83,
+   "url": "https://www.leroymerlin.es/productos/ladrillo-divisorio-de-7x50x20-cm-17299632.html",
+   "nota": "«Ladrillo Supermahón 50x20x7» a 0,89 € en listados (ref. no vista)."
+  },
+  {
+   "codigo": "MLB-007",
+   "sin_equivalente": false,
+   "descripcion": "Ladrillo hueco doble 25x12x8 cm",
+   "ref": "17457503",
+   "unidad": "ud",
+   "pvp_iva": 0.27,
+   "url": "https://www.leroymerlin.es/productos/ladrillo-hueco-doble-25x12x8-cm-17457503.html",
+   "nota": "No hay hueco triple 28x13,5x9; es el más parecido (más fino)."
+  },
+  {
+   "codigo": "MLB-008",
+   "sin_equivalente": false,
+   "descripcion": "Ladrillo perforado tosco 25x12x10 cm",
+   "ref": "17457524",
+   "unidad": "ud",
+   "pvp_iva": 0.26,
+   "url": "https://www.leroymerlin.es/productos/ladrillo-perforado-tosco-25x12x10-cm-17457524.html",
+   "nota": "Misma medida con ref. 16338490 a 0,49 €."
+  },
+  {
+   "codigo": "MLB-009",
+   "sin_equivalente": false,
+   "descripcion": "Ladrillo de construcción perforado tosco 7 cm (ficha «7x12x7 cm»)",
+   "ref": "17457510",
+   "unidad": "ud",
+   "pvp_iva": 0.37,
+   "url": "https://www.leroymerlin.es/productos/ladrillo-de-construccion-7x12x7-cm-17457510.html",
+   "nota": "Medidas de la ficha no cuadran del todo: confirmar."
+  },
+  {
+   "codigo": "MLB-010",
+   "sin_equivalente": false,
+   "descripcion": "Ladrillo macizo perforado 22,5x10,5x10 cm",
+   "ref": "86296918",
+   "unidad": "ud",
+   "pvp_iva": 0.38,
+   "url": "https://www.leroymerlin.es/productos/ladrillo-macizo-perforado-22-5x10-5x10cm-86296918.html",
+   "nota": "Otros listados 0,30 € con descuento por cantidad."
+  },
+  {
+   "codigo": "MLB-011",
+   "sin_equivalente": false,
+   "descripcion": "Ladrillo cara vista rojo raspado hidrófugo 11,6x4,8x24 cm (La Paloma)",
+   "ref": "81944557",
+   "unidad": "ud",
+   "pvp_iva": 0.49,
+   "url": "https://www.leroymerlin.es/productos/ladrillo-cara-vista-rojo-raspado-hidrofugo-11-6x4-8x24-cm-81944557.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MLB-012",
+   "sin_equivalente": false,
+   "descripcion": "Bloque cerámico (termoarcilla) 30x19x19 cm",
+   "ref": "17304350",
+   "unidad": "ud",
+   "pvp_iva": 1.32,
+   "url": "https://www.leroymerlin.es/productos/ladrillo-de-termoarcilla-30x19x19-cm-17304350.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MLB-013",
+   "sin_equivalente": false,
+   "descripcion": "Bloque cerámico (termoarcilla) 30x19x24 cm",
+   "ref": "17304364",
+   "unidad": "ud",
+   "pvp_iva": 1.89,
+   "url": "https://www.leroymerlin.es/productos/bloque-ceramico-30x19x24cm-17304364.html",
+   "nota": "Listado 1,65 €. Mazarrón 19x24x30 (81950785) a 1,69 €."
+  },
+  {
+   "codigo": "MLB-014",
+   "sin_equivalente": false,
+   "descripcion": "Bloque cerámico 30x19x14 cm",
+   "ref": "17304343",
+   "unidad": "ud",
+   "pvp_iva": null,
+   "url": "https://www.leroymerlin.es/productos/ladrillo-de-termoarcilla-30x19x14-cm-17304343.html",
+   "nota": "Existe en Leroy (ref. 17304343) pero no se vio el precio. PENDIENTE: no consultado; se agotó el cupo de búsquedas. No es que Leroy no lo tenga."
+  },
+  {
+   "codigo": "MLB-015",
+   "sin_equivalente": false,
+   "descripcion": "Bloque de hormigón liso gris 40x20x20 cm",
+   "ref": "17110562",
+   "unidad": "ud",
+   "pvp_iva": 0.89,
+   "url": "https://www.leroymerlin.es/productos/bloque-de-hormigon-liso-gris-40x20x20-cm-17110562.html",
+   "nota": "Otras refs. misma medida: 17029635 a 1,19 €, 19585671 a 1,49 €."
+  },
+  {
+   "codigo": "MLB-016",
+   "sin_equivalente": false,
+   "descripcion": "Bloque de hormigón liso gris 40x20x15 cm",
+   "ref": "18943113",
+   "unidad": "ud",
+   "pvp_iva": 0.8,
+   "url": "https://www.leroymerlin.es/productos/bloque-de-hormigon-liso-gris-40x20x15-cm-18943113.html",
+   "nota": "Suberolita 40x20x15 (12693114) a 0,65 € en oferta especial."
+  },
+  {
+   "codigo": "MLB-017",
+   "sin_equivalente": false,
+   "descripcion": "Bloque de hormigón liso gris 40x20x9 cm",
+   "ref": "",
+   "unidad": "ud",
+   "pvp_iva": 0.57,
+   "url": "https://www.leroymerlin.es/productos/construccion/bloques-de-hormigon-y-ladrillos/bloques-de-hormigon/bloques-p.html",
+   "nota": "Solo en listados (0,57-0,84 €), ref. no vista. Existe 40x10x20 (16427670) sin precio visto."
+  },
+  {
+   "codigo": "MLB-018",
+   "sin_equivalente": true,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "No se encontró bloque ligero/arlita en una búsqueda."
+  },
+  {
+   "codigo": "MLB-019",
+   "sin_equivalente": false,
+   "descripcion": "Bloque de hormigón Split blanco 40x20x20 cm (Verniprens)",
+   "ref": "15188873",
+   "unidad": "ud",
+   "pvp_iva": 4.49,
+   "url": "https://www.leroymerlin.es/productos/bloque-de-hormigon-split-blanco-40x20x20-cm-15188873.html",
+   "nota": "Mucho más caro que en Obramat. Liso blanco 40x20x20 (19104883) a 1,89 €."
+  },
+  {
+   "codigo": "MLB-020",
+   "sin_equivalente": false,
+   "descripcion": "Bloque de hormigón zuncho 39x19x19 cm",
+   "ref": "19098744",
+   "unidad": "ud",
+   "pvp_iva": 2.09,
+   "url": "https://www.leroymerlin.es/productos/bloque-de-hormigon-zuncho-39x19x19cm-19098744.html",
+   "nota": "Pieza en U para zunchos/armar; formato 40 cm, no 50x20x27."
+  }
+ ],
+ "nuevos": [
+  {
+   "descripcion": "Bloque de hormigón liso blanco 40x20x20 cm",
+   "ref": "19104883",
+   "unidad": "ud",
+   "pvp_iva": 1.89,
+   "url": "https://www.leroymerlin.es/productos/bloque-de-hormigon-liso-blanco-40x20x20-cm-19104883.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Palé de 60 bloques de hormigón 40x20x20 cm",
+   "ref": "93188141",
+   "unidad": "ud",
+   "pvp_iva": 369.0,
+   "url": "https://www.leroymerlin.es/productos/palet-de-60-bloques-hormigon-40x20x20-cm-93188141.html",
+   "nota": "Precio por palé de 60 uds."
+  },
+  {
+   "descripcion": "Ladrillo hueco doble 22,5x10,5x5 cm",
+   "ref": "86296940",
+   "unidad": "ud",
+   "pvp_iva": 0.27,
+   "url": "https://www.leroymerlin.es/productos/ladrillo-hueco-doble-22-5x10-5x5cm-86296940.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Ladrillo hueco doble 23,5x10,7x12 cm",
+   "ref": "17112823",
+   "unidad": "ud",
+   "pvp_iva": 0.32,
+   "url": "https://www.leroymerlin.es/productos/ladrillo-hueco-doble-23-5x10-7x12-cm-17112823.html",
+   "nota": "Listado a 0,38 €."
+  },
+  {
+   "descripcion": "Ladrillo hueco sencillo Mahón 28x14x4 cm",
+   "ref": "92400919",
+   "unidad": "ud",
+   "pvp_iva": 0.48,
+   "url": "https://www.leroymerlin.es/productos/ladrillo-hueco-sencillo-mahon-28x14x4-cm-92400919.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Ladrillo cara vista rojo Bilbao 11,4x5x23,6 cm",
+   "ref": "17299296",
+   "unidad": "ud",
+   "pvp_iva": 0.63,
+   "url": "https://www.leroymerlin.es/productos/ladrillo-cara-vista-rojo-bilbao-11-4x5x23-6-cm-17299296.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Ladrillo cara vista macizo Artesano rojo 10x4x22,5 cm",
+   "ref": "19241425",
+   "unidad": "ud",
+   "pvp_iva": 0.99,
+   "url": "https://www.leroymerlin.es/fp/19241425/ladrillo-cara-vista-macizo-artesano-rojo-10x4x22-5-cm",
+   "nota": "Otra captura 1,09 €."
+  },
+  {
+   "descripcion": "Ladrillo de termoarcilla 19x19x30 cm (Mazarrón)",
+   "ref": "81950784",
+   "unidad": "ud",
+   "pvp_iva": 1.59,
+   "url": "https://www.leroymerlin.es/productos/ladrillo-de-termoarcilla-19x19x30-cm-81950784.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Zuncho de hormigón de revestimiento 19x39x1,9 cm",
+   "ref": "82199231",
+   "unidad": "ud",
+   "pvp_iva": 2.3,
+   "url": "https://www.leroymerlin.es/productos/zuncho-de-hormigon-revestimiento-19x39x1-9-cm-82199231.html",
+   "nota": "Plaqueta para tapar cantos de forjado y dinteles."
+  },
+  {
+   "descripcion": "Armadura de zuncho 20x20 cm, 3 m, ø10 mm",
+   "ref": "17518816",
+   "unidad": "ud",
+   "pvp_iva": 32.99,
+   "url": "https://www.leroymerlin.es/productos/zuncho-20x20cm-3-metros-10mm-17518816.html",
+   "nota": ""
+  }
+ ]
+}

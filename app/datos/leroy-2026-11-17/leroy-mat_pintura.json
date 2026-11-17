@@ -1,0 +1,366 @@
+{
+ "capitulo": "mat_pintura",
+ "fecha": "2026-11-17",
+ "equivalentes": [
+  {
+   "codigo": "MPI-001",
+   "sin_equivalente": false,
+   "descripcion": "Pintura de interior CPP blanco mate 15 l, paredes y techos",
+   "ref": "81989564",
+   "unidad": "ud",
+   "pvp_iva": 10.49,
+   "url": "https://www.leroymerlin.es/productos/pintura-de-interior-cpp-color-blanco-mate-15-l-para-paredes-y-techos-81989564.html",
+   "nota": "Otra página de la misma ref. muestra 9,99 €. Alternativa: Primer precio blanco mate 15 l (ref. 96143325) a 16,70 €."
+  },
+  {
+   "codigo": "MPI-002",
+   "sin_equivalente": false,
+   "descripcion": "Pintura de interior LUXENS blanco mate 15 l, paredes y techos",
+   "ref": "96114387",
+   "unidad": "ud",
+   "pvp_iva": 26.99,
+   "url": "https://www.leroymerlin.es/productos/pintura-de-interior-luxens-color-blanco-mate-15l-para-paredes-y-techos-96114387.html",
+   "nota": "Alternativa más barata: LUXENS Basic blanco mate 15 l (ref. 81989566) a 24,29 €."
+  },
+  {
+   "codigo": "MPI-003",
+   "sin_equivalente": false,
+   "descripcion": "Pintura de interior cobertura total TITANLUX blanco mate 15 l, paredes y techos",
+   "ref": "82022499",
+   "unidad": "ud",
+   "pvp_iva": 75.55,
+   "url": "https://www.leroymerlin.es/productos/pintura-de-interior-cobertura-total-titanlux-color-blanco-mate-15-l-para-paredes-y-techos-82022499.html",
+   "nota": "Exclusivo web. Es de interior (Leroy no tiene Titanlux int/ext 15 l). Otro vendedor del marketplace la ofrece a 89 €."
+  },
+  {
+   "codigo": "MPI-004",
+   "sin_equivalente": false,
+   "descripcion": "Pintura de interior Unique Blanco Puro MONTÓ blanco mate 15 l (gama profesional)",
+   "ref": "88538097",
+   "unidad": "ud",
+   "pvp_iva": 50.87,
+   "url": "https://www.leroymerlin.es/productos/pintura-de-interior-unique-blanco-puro-monto-color-blanco-puro-mate-15l-para-paredes-y-techos-88538097.html",
+   "nota": "Leroy no vende un «extra mate» profesional idéntico; alternativas: Revetón Blanco Profesional mate 15 l (ref. 90876134) 54,99 €, JUNO alta cubrición 15 l (ref. 82625262) 42,64 €."
+  },
+  {
+   "codigo": "MPI-005",
+   "sin_equivalente": false,
+   "descripcion": "Pintura de interior alta cobertura LUXENS blanco satinado 15 l, paredes y techos",
+   "ref": "96114415",
+   "unidad": "ud",
+   "pvp_iva": 59.99,
+   "url": "https://www.leroymerlin.es/productos/pintura-de-interior-alta-cobertura-luxens-color-blanco-satinado-15-l-para-paredes-y-techos-96114415.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MPI-006",
+   "sin_equivalente": false,
+   "descripcion": "Pintura de interior Basic Blanco LUXENS blanco mate 4 l, paredes y techos",
+   "ref": "81989565",
+   "unidad": "ud",
+   "pvp_iva": 10.79,
+   "url": "https://www.leroymerlin.es/productos/pintura-de-interior-basic-blanco-luxens-color-blanco-mate-4l-para-paredes-y-techos-81989565.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MPI-007",
+   "sin_equivalente": false,
+   "descripcion": "Pintura interior LUXENS blanco satinado 4 l",
+   "ref": "81989579",
+   "unidad": "ud",
+   "pvp_iva": 28.99,
+   "url": "https://www.leroymerlin.es/productos/pintura-interior-luxens-blanco-satinado-4l-81989579.html",
+   "nota": "Precio de la ficha; en listados de categoría aparece a 15,79 €. Confirmar."
+  },
+  {
+   "codigo": "MPI-008",
+   "sin_equivalente": false,
+   "descripcion": "Pintura de interior techos LUXENS blanco mate 4 l",
+   "ref": "81989593",
+   "unidad": "ud",
+   "pvp_iva": 19.99,
+   "url": "https://www.leroymerlin.es/productos/pintura-de-interior-techos-luxens-color-blanco-mate-4l-para-paredes-y-techos-81989593.html",
+   "nota": "Leroy no tiene pintura específica de techos en 15 l; esta es de 4 l. Para 15 l: LUXENS blanco mate 15 l (ref. 96114387) 26,99 €."
+  },
+  {
+   "codigo": "MPI-009",
+   "sin_equivalente": false,
+   "descripcion": "Pintura de interior anticondensación LUXENS blanco mate 10 l, paredes y techos",
+   "ref": "85062244",
+   "unidad": "ud",
+   "pvp_iva": 74.99,
+   "url": "https://www.leroymerlin.es/productos/pintura-de-interior-anticondensacion-luxens-color-blanco-mate-10l-para-paredes-y-techos-85062244.html",
+   "nota": "En listados de categoría aparece a 72,65 €."
+  },
+  {
+   "codigo": "MPI-010",
+   "sin_equivalente": false,
+   "descripcion": "Pintura de interior antimanchas ISOLFIX blanco mate 4 l, paredes y techos",
+   "ref": "13307070",
+   "unidad": "ud",
+   "pvp_iva": 37.99,
+   "url": "https://www.leroymerlin.es/productos/pintura-de-interior-antimanchas-isolfix-color-blanco-mate-4l-para-paredes-y-techos-13307070.html",
+   "nota": "Formato 4 l (no hay 5 kg). Confirmar si es base agua o disolvente."
+  },
+  {
+   "codigo": "MPI-011",
+   "sin_equivalente": false,
+   "descripcion": "Pintura exterior blanca para fachada y hormigón mate 15 l, base agua antigoteo",
+   "ref": "81887951",
+   "unidad": "ud",
+   "pvp_iva": 14.95,
+   "url": "https://www.leroymerlin.es/productos/pintura-exterior-color-blanco-para-hormigon-fachada-mate-15l-base-agua-antigoteo-81887951.html",
+   "nota": "Precio marcado como «precio bajo» en el listado; confirmar. Alternativa: LUXENS fachada mate 15 l (ref. 81887964) 49,99 €."
+  },
+  {
+   "codigo": "MPI-012",
+   "sin_equivalente": false,
+   "descripcion": "Revestimiento fachada liso mate VALENTINE blanco 15 l",
+   "ref": "84684286",
+   "unidad": "ud",
+   "pvp_iva": 64.99,
+   "url": "https://www.leroymerlin.es/productos/revestimiento-fachada-liso-mate-valentine-15l-blanco-84684286.html",
+   "nota": "Leroy no vende un pétreo propiamente dicho; es el revestimiento acrílico liso mate más parecido."
+  },
+  {
+   "codigo": "MPI-013",
+   "sin_equivalente": false,
+   "descripcion": "Pintura exterior siloxano MONTÓ Siempre Limpias blanco mate 15 l, fachada y ladrillo",
+   "ref": "90215629",
+   "unidad": "ud",
+   "pvp_iva": 71.99,
+   "url": "https://www.leroymerlin.es/productos/pintura-exterior-para-fachada-siempre-limpias-monto-mate-15l-blanco-90215629.html",
+   "nota": "En categoría aparece a 69,99 €."
+  },
+  {
+   "codigo": "MPI-014",
+   "sin_equivalente": true,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "ud",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "Leroy no vende siloxano en color de 12 l (solo blanco 15 l, ver MPI-013)."
+  },
+  {
+   "codigo": "MPI-015",
+   "sin_equivalente": true,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "ud",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "Solo hay Revetón Texlite Pliolite 15 l de un vendedor externo (Pinturas Dispival) a 239,58 €; Leroy no lo vende directamente."
+  },
+  {
+   "codigo": "MPI-016",
+   "sin_equivalente": false,
+   "descripcion": "Mortero de revestimiento fachada acrílico MOLINS Revat Plas 20 kg (arena)",
+   "ref": "17527195",
+   "unidad": "saco",
+   "pvp_iva": 69.99,
+   "url": "https://www.leroymerlin.es/productos/mortero-de-revestimiento-fachada-acrilico-molins-revat-plas-20kg-arena-17527195.html",
+   "nota": "Mismo precio en otros colores. Alternativa más barata: revestimiento fachada rugoso LUXENS blanco 15 l (ref. 81902008) 37,99 €."
+  },
+  {
+   "codigo": "MPI-017",
+   "sin_equivalente": false,
+   "descripcion": "Esmalte sintético TITANLUX blanco exterior brillo 4 l",
+   "ref": "298116",
+   "unidad": "ud",
+   "pvp_iva": 59.99,
+   "url": "https://www.leroymerlin.es/productos/esmalte-sintetico-titanlux-blanco-exterior-brillo-4l-298116.html",
+   "nota": "Leroy no tiene un sintético blanco 4 l de gama económica; es el disponible."
+  },
+  {
+   "codigo": "MPI-018",
+   "sin_equivalente": false,
+   "descripcion": "Esmalte sintético TITANLUX 566D blanco decoración brillo 4 l",
+   "ref": "298095",
+   "unidad": "ud",
+   "pvp_iva": 59.99,
+   "url": "https://www.leroymerlin.es/productos/titan-titanlux-4-l-566d-blanco-decoracion-298095.html",
+   "nota": "Antioxidante 4 l solo en vendedores externos (Oxirite ~95 €). Hammerite antioxidante blanco 750 ml (ref. 15961106) 17,55 €."
+  },
+  {
+   "codigo": "MPI-019",
+   "sin_equivalente": false,
+   "descripcion": "Esmalte acrílico al agua OK PRO blanco satinado 4 l",
+   "ref": "83670548",
+   "unidad": "ud",
+   "pvp_iva": 34.65,
+   "url": "https://www.leroymerlin.es/productos/esmalte-acrilico-satinado-ok-4l-blanco-83670548.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MPI-020",
+   "sin_equivalente": false,
+   "descripcion": "Esmalte multisuperficies LUXENS blanco brillante 4 l",
+   "ref": "85063344",
+   "unidad": "ud",
+   "pvp_iva": 49.99,
+   "url": "https://www.leroymerlin.es/productos/esmalte-de-interior-multisuperficies-luxens-color-white-brillante-4l-para-ventanas-85063344.html",
+   "nota": "Equivalente multiadherente al Unilak. También en satinado y mate al mismo precio."
+  },
+  {
+   "codigo": "MPI-021",
+   "sin_equivalente": false,
+   "descripcion": "Esmalte multisuperficies LUXENS blanco brillante 4 l (apto radiadores)",
+   "ref": "85063344",
+   "unidad": "ud",
+   "pvp_iva": 49.99,
+   "url": "https://www.leroymerlin.es/productos/esmalte-de-interior-multisuperficies-luxens-color-white-brillante-4l-para-ventanas-85063344.html",
+   "nota": "Leroy no tiene esmalte de radiadores en 4 l (LUXENS radiador solo 500 ml); este se indica apto para radiadores. Alternativa: TITANLUX ecológico satinado 4 l, 64,95 €."
+  },
+  {
+   "codigo": "MPI-022",
+   "sin_equivalente": false,
+   "descripcion": "Imprimación fijadora para fachadas LUXENS blanco 15 l",
+   "ref": "81888034",
+   "unidad": "ud",
+   "pvp_iva": 47.99,
+   "url": "https://www.leroymerlin.es/productos/imprimacion-fijadora-para-fachadas-luxens-blanco-15l-81888034.html",
+   "nota": "Otra ficha 15 l (ref. 85063532) a 56,99 €."
+  },
+  {
+   "codigo": "MPI-023",
+   "sin_equivalente": false,
+   "descripcion": "Imprimación fijadora para fachadas LUXENS blanco 4 l",
+   "ref": "85063531",
+   "unidad": "ud",
+   "pvp_iva": 18.99,
+   "url": "https://www.leroymerlin.es/productos/imprimacion-fijadora-para-fachadas-luxens-4-l-blanco-85063531.html",
+   "nota": "Otra captura 19,49 €. Fijador acrílico incoloro LUXENS 4 l (ref. 19380270) 40,99 €."
+  },
+  {
+   "codigo": "MPI-024",
+   "sin_equivalente": false,
+   "descripcion": "Imprimación TODOTERRENO al agua BEISSIER blanco 750 ml (multiadherente)",
+   "ref": "17621240",
+   "unidad": "ud",
+   "pvp_iva": 14.95,
+   "url": "https://www.leroymerlin.es/productos/imprimacion-todoterreno-al-agua-beissier-750ml-blanco-17621240.html",
+   "nota": "Alternativa: imprimación multiuso al agua TITANLUX 750 ml (ref. 86747029) 17,49 €."
+  },
+  {
+   "codigo": "MPI-025",
+   "sin_equivalente": false,
+   "descripcion": "Puente de unión para morteros y yesos 5 kg",
+   "ref": "94864201",
+   "unidad": "ud",
+   "pvp_iva": 32.75,
+   "url": "https://www.leroymerlin.es/productos/puente-de-union-para-morteros-y-yesos-5-kg-94864201.html",
+   "nota": "Más barato: Knauf Betokontakt 5 kg, 17,99 € (sin ref. confirmada)."
+  },
+  {
+   "codigo": "MPI-026",
+   "sin_equivalente": false,
+   "descripcion": "Plaste Aguaplast Standard en polvo 5 kg",
+   "ref": "288533",
+   "unidad": "ud",
+   "pvp_iva": 14.9,
+   "url": "https://www.leroymerlin.es/productos/plaste-en-polvo-aguaplast-standard-5kg-288533.html",
+   "nota": "Otra página 13,45 €. Más barato: plaste rellenar en polvo AXTON 5 kg (ref. 83978646) 9,99 €."
+  },
+  {
+   "codigo": "MPI-027",
+   "sin_equivalente": false,
+   "descripcion": "Yeso Mecafino Plus saco 17 kg",
+   "ref": "19867582",
+   "unidad": "saco",
+   "pvp_iva": 5.99,
+   "url": "https://www.leroymerlin.es/productos/construccion/cementos-morteros-y-yesos/yesos-y-cal/yeso-mecafino-plus-de-17-kg-19867582.html",
+   "nota": "Yeso extrafino Iberfino 17 kg (ref. 19867666) 2,69 €."
+  }
+ ],
+ "nuevos": [
+  {
+   "descripcion": "Pintura plástica mate interior/exterior blanca EDM 15 l",
+   "ref": "84544847",
+   "unidad": "ud",
+   "pvp_iva": 46.13,
+   "url": "https://www.leroymerlin.es/productos/pintura-plastica-mate-interior-exterior-blanca-15l-edm-84544847.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Pintura de interior Blanco Profesional REVETÓN blanco mate 15 l",
+   "ref": "90876134",
+   "unidad": "ud",
+   "pvp_iva": 54.99,
+   "url": "https://www.leroymerlin.es/productos/pintura-de-interior-blanco-profesional-reveton-color-blanco-mate-15l-para-paredes-y-techos-90876134.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Pintura de interior alta cubrición JUNO blanco mate 15 l",
+   "ref": "82625262",
+   "unidad": "ud",
+   "pvp_iva": 42.64,
+   "url": "https://www.leroymerlin.es/productos/pintura-de-interior-alta-cubricion-juno-color-blanco-mate-15l-para-paredes-y-techos-82625262.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Pintura de interior antimoho LUXENS blanco mate 15 l (baños y cocinas)",
+   "ref": "89193800",
+   "unidad": "ud",
+   "pvp_iva": 46.0,
+   "url": "https://www.leroymerlin.es/productos/pintura-de-interior-antimoho-luxens-color-blanco-mate-15-l-para-paredes-y-techos-89193800.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Plaste para alisar en pasta AXTON 15 kg (listo al uso)",
+   "ref": "83978685",
+   "unidad": "ud",
+   "pvp_iva": 24.99,
+   "url": "https://www.leroymerlin.es/productos/plaste-para-alisar-en-pasta-axton-15kg-83978685.html",
+   "nota": "Otra ficha AXTON 15 kg (ref. 19379696) a 30,40 €."
+  },
+  {
+   "descripcion": "Plaste para rellenar en polvo AXTON 5 kg",
+   "ref": "83978646",
+   "unidad": "ud",
+   "pvp_iva": 9.99,
+   "url": "https://www.leroymerlin.es/productos/plaste-para-rellenar-en-polvo-axton-5-kg-83978646.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Cinta de carrocero 48 mm x 50 m",
+   "ref": "89390553",
+   "unidad": "rollo",
+   "pvp_iva": 6.91,
+   "url": "https://www.leroymerlin.es/productos/cinta-carrocero-48-mm-50-m-89390553.html",
+   "nota": "Precio normal 6,91 €; en oferta a 6,58 € (-4 %)."
+  },
+  {
+   "descripcion": "Rodillo DEXTER para paredes y techos lisos 22 cm, pelo corto poliamida",
+   "ref": "17876985",
+   "unidad": "ud",
+   "pvp_iva": 2.59,
+   "url": "https://www.leroymerlin.es/productos/rodillo-para-paredes-y-techos-lisos-dexter-22-cm-17876985.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Rodillo profesional Trilox para paredes y techos 22 cm, pelo medio",
+   "ref": "83427424",
+   "unidad": "ud",
+   "pvp_iva": 12.26,
+   "url": "https://www.leroymerlin.es/productos/rodillo-profesional-trilox-para-paredes-y-techos-22-cm-83427424.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Plástico para protección de pintura 4x5 m medium (35 micras)",
+   "ref": "81963532",
+   "unidad": "ud",
+   "pvp_iva": 2.89,
+   "url": "https://www.leroymerlin.es/productos/plastico-para-proteccion-de-pintura-4x5-m-medium-81963532.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Masilla acrílica Paracryl Pro DL Chemicals blanca, cartucho 300 ml (pintable)",
+   "ref": "83737776",
+   "unidad": "ud",
+   "pvp_iva": 3.41,
+   "url": "https://www.leroymerlin.es/productos/dl-chemicals-sellador-acrilico-paracryl-pro-310-ml-blanco-100595-83737776.html",
+   "nota": "Precio en oferta hasta el 19 de diciembre; precio normal no visto."
+  }
+ ]
+}

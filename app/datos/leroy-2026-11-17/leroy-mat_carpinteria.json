@@ -1,0 +1,302 @@
+{
+ "capitulo": "mat_carpinteria",
+ "fecha": "2026-11-17",
+ "equivalentes": [
+  {
+   "codigo": "MCA-001",
+   "sin_equivalente": false,
+   "descripcion": "Puerta prepintada lisa blanca hueca en block 72,5 cm (hoja + block)",
+   "ref": "15728531",
+   "unidad": "ud",
+   "pvp_iva": 60.99,
+   "url": "https://www.leroymerlin.es/fp/15728531/puerta-prepintada-lisa-blanco-de-apertura-izquierda-de-72-5-cm",
+   "nota": "Prepintada, no melamina. Ficha antigua: confirmar precio."
+  },
+  {
+   "codigo": "MCA-002",
+   "sin_equivalente": false,
+   "descripcion": "Puerta ciega maciza lacada Pro Mad blanca lisa en block, cerco 7x2, 72,5 cm",
+   "ref": "83542429",
+   "unidad": "ud",
+   "pvp_iva": 90.0,
+   "url": "https://www.leroymerlin.es/productos/puerta-interior-abatible-mad-lisa-blanco-pro-apertura-izquierda-72-5cm-83542429.html",
+   "nota": "En la ficha aparecía como precio válido en un periodo (posible oferta). Alternativa Toronto lacada maciza (ref. 88480272) 89 €."
+  },
+  {
+   "codigo": "MCA-003",
+   "sin_equivalente": false,
+   "descripcion": "Conjunto puerta Noruega lacada blanca rayada 72,5 cm + kit de tapetas",
+   "ref": "83587713",
+   "unidad": "ud",
+   "pvp_iva": 208.0,
+   "url": "https://www.leroymerlin.es/productos/conjunto-de-puerta-noruega-lacada-blanco-72-5-cm-derecha-kit-de-tapetas-83587713.html",
+   "nota": "Diseño rayado horizontal y vertical; incluye tapetas."
+  },
+  {
+   "codigo": "MCA-004",
+   "sin_equivalente": false,
+   "descripcion": "Puerta Mallorca Basic blanca con cristal 72,5 cm",
+   "ref": "86277329",
+   "unidad": "ud",
+   "pvp_iva": 155.0,
+   "url": "https://www.leroymerlin.es/productos/puerta-interior-abatible-mallorca-blanco-basic-derecha-con-cristal-72-5-cm-86277329.html",
+   "nota": "Pro Mad acristalada 72,5 cm a 189 € en listado."
+  },
+  {
+   "codigo": "MCA-005",
+   "sin_equivalente": false,
+   "descripcion": "Puerta ciega maciza lacada Line Lucerna blanca, cerco 7x3, 72,5 cm",
+   "ref": "14994952",
+   "unidad": "ud",
+   "pvp_iva": 139.0,
+   "url": "https://www.leroymerlin.es/productos/puerta-interior-abatible-lucerna-blanco-line-apertura-derecha-72-5cm-14994952.html",
+   "nota": "Sin molduras ni manilla. Pack con tapetas (ref. 82406868) 178 €."
+  },
+  {
+   "codigo": "MCA-006",
+   "sin_equivalente": false,
+   "descripcion": "Puerta Atenas roble 72,5 cm",
+   "ref": "81906698",
+   "unidad": "ud",
+   "pvp_iva": 189.0,
+   "url": "https://www.leroymerlin.es/fp/81906698/puerta-atenas-roble-de-apertura-derecha-de-72-5-cm",
+   "nota": "Con descuento aparecía a 160,65 €. Más barata: Canarias roble (ref. 16152206) 79,99 €."
+  },
+  {
+   "codigo": "MCA-007",
+   "sin_equivalente": false,
+   "descripcion": "Puerta corredera ciega maciza lacada Pro Mad blanca 72,5 cm (solo hoja)",
+   "ref": "83542449",
+   "unidad": "ud",
+   "pvp_iva": 97.99,
+   "url": "https://www.leroymerlin.es/productos/puerta-de-interior-corredera-ciega-maciza-lacada-pro-mad-blanco-anchura-72-5cm-83542449.html",
+   "nota": "Hoja lisa sin cerco (corredera); otro listado 93,45 €. No se encontró hoja abatible VT5 suelta."
+  },
+  {
+   "codigo": "MCA-008",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado (se agotó el presupuesto de búsquedas). Mantener precio actual hasta revisar.",
+   "pendiente": true
+  },
+  {
+   "codigo": "MCA-009",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado (se agotó el presupuesto de búsquedas). Mantener precio actual hasta revisar.",
+   "pendiente": true
+  },
+  {
+   "codigo": "MCA-010",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado (se agotó el presupuesto de búsquedas). Mantener precio actual hasta revisar.",
+   "pendiente": true
+  },
+  {
+   "codigo": "MCA-011",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado (se agotó el presupuesto de búsquedas). Mantener precio actual hasta revisar.",
+   "pendiente": true
+  },
+  {
+   "codigo": "MCA-012",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado (se agotó el presupuesto de búsquedas). Mantener precio actual hasta revisar.",
+   "pendiente": true
+  },
+  {
+   "codigo": "MCA-013",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado (se agotó el presupuesto de búsquedas). Mantener precio actual hasta revisar.",
+   "pendiente": true
+  },
+  {
+   "codigo": "MCA-014",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado (se agotó el presupuesto de búsquedas). Mantener precio actual hasta revisar.",
+   "pendiente": true
+  },
+  {
+   "codigo": "MCA-015",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado (se agotó el presupuesto de búsquedas). Mantener precio actual hasta revisar.",
+   "pendiente": true
+  },
+  {
+   "codigo": "MCA-016",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado (se agotó el presupuesto de búsquedas). Mantener precio actual hasta revisar.",
+   "pendiente": true
+  },
+  {
+   "codigo": "MCA-017",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado (se agotó el presupuesto de búsquedas). Mantener precio actual hasta revisar.",
+   "pendiente": true
+  },
+  {
+   "codigo": "MCA-018",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado (se agotó el presupuesto de búsquedas). Mantener precio actual hasta revisar.",
+   "pendiente": true
+  },
+  {
+   "codigo": "MCA-019",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado (se agotó el presupuesto de búsquedas). Mantener precio actual hasta revisar.",
+   "pendiente": true
+  },
+  {
+   "codigo": "MCA-020",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado (se agotó el presupuesto de búsquedas). Mantener precio actual hasta revisar.",
+   "pendiente": true
+  },
+  {
+   "codigo": "MCA-021",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado (se agotó el presupuesto de búsquedas). Mantener precio actual hasta revisar.",
+   "pendiente": true
+  },
+  {
+   "codigo": "MCA-022",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado (se agotó el presupuesto de búsquedas). Mantener precio actual hasta revisar.",
+   "pendiente": true
+  },
+  {
+   "codigo": "MCA-023",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado (se agotó el presupuesto de búsquedas). Mantener precio actual hasta revisar.",
+   "pendiente": true
+  }
+ ],
+ "nuevos": [
+  {
+   "descripcion": "Puerta corredera ciega maciza lacada Line Lucerna blanca 72,5 cm (solo hoja)",
+   "ref": "14994861",
+   "unidad": "ud",
+   "pvp_iva": 137.0,
+   "url": "https://www.leroymerlin.es/productos/puerta-de-interior-corredera-lucerna-blanco-line-72-5-cm-14994861.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Pack puerta Line Lucerna blanca 72,5 cm derecha + kit de tapetas",
+   "ref": "82406868",
+   "unidad": "ud",
+   "pvp_iva": 178.0,
+   "url": "https://www.leroymerlin.es/productos/conjunto-de-puerta-lucerna-72-5-derecha-tapeta-82406868.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Puerta ciega maciza lacada Toronto blanca, cerco 7x3, 72,5 cm",
+   "ref": "88480272",
+   "unidad": "ud",
+   "pvp_iva": 89.0,
+   "url": "https://www.leroymerlin.es/productos/puerta-de-interior-abatible-ciega-maciza-lacada-toronto-blanco-apertura-izquierda-cerco-de-7x3-anchura-72-5cm-88480272.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Puerta Canarias roble 72,5 cm",
+   "ref": "16152206",
+   "unidad": "ud",
+   "pvp_iva": 79.99,
+   "url": "https://www.leroymerlin.es/fp/16152206/puerta-canarias-roble-de-apertura-izquierda-de-72-5-cm",
+   "nota": "Ficha antigua."
+  },
+  {
+   "descripcion": "Pack puerta interior ELBRUS 72,5 cm + jambas + manivela",
+   "ref": "17565065",
+   "unidad": "ud",
+   "pvp_iva": 115.9,
+   "url": "https://www.leroymerlin.es/productos/pack-puerta-interior-elbrus-de-72-5-cm-izquierda-jambas-manivela-17565065.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Pack puerta corredera maciza Sahara roble 72,5 cm",
+   "ref": "84869613",
+   "unidad": "ud",
+   "pvp_iva": 169.9,
+   "url": "https://www.leroymerlin.es/productos/puertas-ventanas-y-escaleras/puertas-interior/puertas-correderas/pack-puerta-interior-maciza-sahara-roble-corredera-de-72-5-cm-84869613.html",
+   "nota": ""
+  }
+ ]
+}

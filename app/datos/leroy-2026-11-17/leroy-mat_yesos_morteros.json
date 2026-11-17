@@ -1,0 +1,360 @@
+{
+ "capitulo": "mat_yesos_morteros",
+ "fecha": "2026-11-17",
+ "equivalentes": [
+  {
+   "codigo": "MYM-001",
+   "sin_equivalente": false,
+   "descripcion": "Yeso basto Iberplast, saco 17 kg",
+   "ref": "85803919",
+   "unidad": "saco",
+   "pvp_iva": 1.6,
+   "url": "https://www.leroymerlin.es/productos/yeso-basto-iberplast-so-17-kg-85803919.html",
+   "nota": "Precio del listado de sacos de yeso («Yeso basto Iberplast 17kg»). Hay dos refs (SO 85803919 y MN 85806854): confirmar cuál."
+  },
+  {
+   "codigo": "MYM-002",
+   "sin_equivalente": false,
+   "descripcion": "Yeso controlado Longips, saco 17 kg",
+   "ref": "19867470",
+   "unidad": "saco",
+   "pvp_iva": 1.83,
+   "url": "https://www.leroymerlin.es/productos/yeso-controlado-longips-17-kg-19867470.html",
+   "nota": "Otra ref. Longips SO 17 kg (85803909) a 1,69 €."
+  },
+  {
+   "codigo": "MYM-003",
+   "sin_equivalente": false,
+   "descripcion": "Yeso fino Iberfino, saco 17 kg",
+   "ref": "85803933",
+   "unidad": "saco",
+   "pvp_iva": 2.69,
+   "url": "https://www.leroymerlin.es/productos/yeso-iberfino-17kg-85803933.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MYM-004",
+   "sin_equivalente": false,
+   "descripcion": "Yeso proyectado Proyal XXI, saco 20 kg",
+   "ref": "19867610",
+   "unidad": "saco",
+   "pvp_iva": 4.3,
+   "url": "https://www.leroymerlin.es/productos/yeso-proyectado-proyal-xxi-20-kg-19867610.html",
+   "nota": "Más barato: Yeso proyectado Proyal Max SO 20 kg (85803934) a 3,69 €."
+  },
+  {
+   "codigo": "MYM-005",
+   "sin_equivalente": false,
+   "descripcion": "Escayola blanca Iberyola, saco 17 kg",
+   "ref": "19867631",
+   "unidad": "saco",
+   "pvp_iva": 2.3,
+   "url": "https://www.leroymerlin.es/productos/escayola-blanca-iberyola-de-17-kg-19867631.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MYM-006",
+   "sin_equivalente": false,
+   "descripcion": "Pegamento de escayola Ibercol, saco 10 kg",
+   "ref": "19867715",
+   "unidad": "saco",
+   "pvp_iva": 4.4,
+   "url": "https://www.leroymerlin.es/productos/pegamento-de-escayola-ibercol-10-kg-19867715.html",
+   "nota": "Formato 10 kg (no hay precio visto del de 3 kg). Otra captura daba 3,25 €. Precio tomado de la ficha indexada en el buscador (no de la página en vivo): confirmar."
+  },
+  {
+   "codigo": "MYM-007",
+   "sin_equivalente": false,
+   "descripcion": "Cemento gris 32,5-N CEM II/B-L MB, saco 25 kg",
+   "ref": "85114817",
+   "unidad": "saco",
+   "pvp_iva": 4.29,
+   "url": "https://www.leroymerlin.es/productos/saco-cemento-gris-32-5-n-cem-ii-b-l-mb-25-kg-85114817.html",
+   "nota": "Misma descripción con ref. 82402311 a 3,89 € (captura antigua). Precio tomado de la ficha indexada en el buscador (no de la página en vivo): confirmar."
+  },
+  {
+   "codigo": "MYM-008",
+   "sin_equivalente": false,
+   "descripcion": "Cemento gris 42,5-R CEM II/A-P resistente al mar Océano, saco 25 kg",
+   "ref": "14577962",
+   "unidad": "saco",
+   "pvp_iva": 5.24,
+   "url": "https://www.leroymerlin.es/productos/saco-cemento-gris-42-5-r-cem-ii-a-p-marino-resistente-oceano-25-kg-14577962.html",
+   "nota": "Listado muestra también 42,5-R CEM II/A-L Elite Cementos a 4,99 € (ref. no vista). Precio tomado de la ficha indexada en el buscador (no de la página en vivo): confirmar."
+  },
+  {
+   "codigo": "MYM-009",
+   "sin_equivalente": false,
+   "descripcion": "Cemento blanco 42,5-R BL II/B-LL Tudela Veguín, saco 25 kg",
+   "ref": "19729535",
+   "unidad": "saco",
+   "pvp_iva": 7.15,
+   "url": "https://www.leroymerlin.es/productos/saco-cemento-blanco-42-5-r-bl-ii-b-ll-tudela-veguin-25-kg-19729535.html",
+   "nota": "La categoría lo mostraba a 7,87 €. Otros blancos: Elite 8,99 €, Valderrivas/Holcim ~9,2 €. Precio tomado de la ficha indexada en el buscador (no de la página en vivo): confirmar."
+  },
+  {
+   "codigo": "MYM-010",
+   "sin_equivalente": false,
+   "descripcion": "Mortero seco de albañilería Portland Seco gris M-7,5, saco 25 kg",
+   "ref": "89007060",
+   "unidad": "saco",
+   "pvp_iva": 1.89,
+   "url": "https://www.leroymerlin.es/productos/mortero-seco-de-albanileria-portland-seco-gris-m-7-5-25-kg-gris-89007060.html",
+   "nota": "Alternativa Valsec M-7,5 gris (81865565) a 2,39 €. Precio tomado de la ficha indexada en el buscador (no de la página en vivo): confirmar."
+  },
+  {
+   "codigo": "MYM-011",
+   "sin_equivalente": false,
+   "descripcion": "Mortero seco blanco M5 Valsec, saco 25 kg",
+   "ref": "18693612",
+   "unidad": "saco",
+   "pvp_iva": 5.37,
+   "url": "https://www.leroymerlin.es/productos/mortero-seco-blanco-m5-valsec-de-25-kg-18693612.html",
+   "nota": "No hay M-5 gris con cal. Es blanco (más caro). Mortero de cal capa fina AXTON 25 kg (86721840) a 5,49 €."
+  },
+  {
+   "codigo": "MYM-012",
+   "sin_equivalente": false,
+   "descripcion": "Mortero híbrido hidrófugo Portland gris, saco 25 kg",
+   "ref": "81882962",
+   "unidad": "saco",
+   "pvp_iva": 2.6,
+   "url": "https://www.leroymerlin.es/productos/mortero-hibrido-25kg-portland-gris-81882962.html",
+   "nota": "Mortero hidrófugo para paredes y suelos; clase M no indicada."
+  },
+  {
+   "codigo": "MYM-013",
+   "sin_equivalente": false,
+   "descripcion": "Mortero MOLINS gris, saco 25 kg",
+   "ref": "17526761",
+   "unidad": "saco",
+   "pvp_iva": 2.78,
+   "url": "https://www.leroymerlin.es/productos/mortero-molins-gris-25-kg-17526761.html",
+   "nota": "No hay ninguno etiquetado M-10; este es el mortero de albañilería más cercano (clase no indicada)."
+  },
+  {
+   "codigo": "MYM-014",
+   "sin_equivalente": false,
+   "descripcion": "Pasta niveladora interior AXTON 10 mm, saco 25 kg",
+   "ref": "85539162",
+   "unidad": "saco",
+   "pvp_iva": 16.3,
+   "url": "https://www.leroymerlin.es/productos/pasta-niveladora-interior-axton-10mm-25-kg-85539162.html",
+   "nota": "Solo interior y no para zonas húmedas. Precio tomado de la ficha indexada en el buscador (no de la página en vivo): confirmar."
+  },
+  {
+   "codigo": "MYM-015",
+   "sin_equivalente": false,
+   "descripcion": "Mortero autonivelante Sikafloor-200 Level (3-60 mm), saco 25 kg",
+   "ref": "90155211",
+   "unidad": "saco",
+   "pvp_iva": 18.99,
+   "url": "https://www.leroymerlin.es/productos/mortero-autonivelante-sikafloor-200-level-25-kg-90155211.html",
+   "nota": "Precio tomado de la ficha indexada en el buscador (no de la página en vivo): confirmar."
+  },
+  {
+   "codigo": "MYM-016",
+   "sin_equivalente": false,
+   "descripcion": "Mortero autonivelante Cementos Capa 20/50 gris (capa gruesa), saco 25 kg",
+   "ref": "86672604",
+   "unidad": "saco",
+   "pvp_iva": 8.12,
+   "url": "https://www.leroymerlin.es/productos/mortero-autonivelante-cementos-capa-20-50-25-kg-gris-86672604.html",
+   "nota": "Captura de hace ~628 días: confirmar."
+  },
+  {
+   "codigo": "MYM-017",
+   "sin_equivalente": false,
+   "descripcion": "Cemento cola Vat gris (Propamsa), saco 25 kg",
+   "ref": "17554530",
+   "unidad": "saco",
+   "pvp_iva": 3.99,
+   "url": "https://www.leroymerlin.es/productos/cemento-cola-vat-gris-25-kg-17554530.html",
+   "nota": "Clase C1 no confirmada en la ficha; para baldosa hasta 30x30 en soporte poroso."
+  },
+  {
+   "codigo": "MYM-018",
+   "sin_equivalente": false,
+   "descripcion": "Mortero cola AXTON blanco para exterior C1TE, saco 25 kg",
+   "ref": "81928502",
+   "unidad": "saco",
+   "pvp_iva": 6.25,
+   "url": "https://www.leroymerlin.es/productos/mortero-cola-axton-blanco-para-exterior-25-kg-81928502.html",
+   "nota": "Es blanco (no hay C1TE gris con precio visto)."
+  },
+  {
+   "codigo": "MYM-019",
+   "sin_equivalente": false,
+   "descripcion": "Mortero cola porcelánico gel AXTON blanco, saco 25 kg",
+   "ref": "81928410",
+   "unidad": "saco",
+   "pvp_iva": 8.99,
+   "url": "https://www.leroymerlin.es/productos/mortero-cola-porcelanico-gel-axton-blanco-25-kg-81928410.html",
+   "nota": "Mismo producto que MYM-019B (no hay C2TE gris con precio visto). Alternativa gris C2TE: Fassacol Plus (94512689) a 12,26 €, solo web."
+  },
+  {
+   "codigo": "MYM-019B",
+   "sin_equivalente": false,
+   "descripcion": "Mortero cola porcelánico gel AXTON blanco, saco 25 kg",
+   "ref": "81928410",
+   "unidad": "saco",
+   "pvp_iva": 8.99,
+   "url": "https://www.leroymerlin.es/productos/mortero-cola-porcelanico-gel-axton-blanco-25-kg-81928410.html",
+   "nota": "Confirmado en listado a 8,99 €, pero otra captura de la ficha mostraba 12,59 €: comprobar."
+  },
+  {
+   "codigo": "MYM-020",
+   "sin_equivalente": false,
+   "descripcion": "Mortero cola Felino Flex S1 blanco (Grupo Puma), saco 25 kg",
+   "ref": "83622365",
+   "unidad": "saco",
+   "pvp_iva": 10.79,
+   "url": "https://www.leroymerlin.es/productos/mortero-cola-felino-flex-s1-25-kg-blanco-83622365.html",
+   "nota": "Flexible S1 (clase C2TE no confirmada). Es blanco."
+  },
+  {
+   "codigo": "MYM-021",
+   "sin_equivalente": false,
+   "descripcion": "Cemento cola Pegoland Gel S2 blanco, saco 25 kg",
+   "ref": "82251391",
+   "unidad": "saco",
+   "pvp_iva": 25.12,
+   "url": "https://www.leroymerlin.es/productos/cemento-cola-pegoland-gel-s2-25-kg-blanco-82251391.html",
+   "nota": "Saco de 25 kg (el actual es de 20 kg). Sika C2TE S2 blanco 20 kg (90155560) a 34,99 €."
+  },
+  {
+   "codigo": "MYM-022",
+   "sin_equivalente": false,
+   "descripcion": "Mortero para juntas universal AXTON blanco, saco 5 kg",
+   "ref": "85480288",
+   "unidad": "saco",
+   "pvp_iva": 6.29,
+   "url": "https://www.leroymerlin.es/productos/mortero-para-juntas-universal-axton-blanco-5kg-85480288.html",
+   "nota": "Clase CG no indicada en lo visto."
+  },
+  {
+   "codigo": "MYM-023",
+   "sin_equivalente": false,
+   "descripcion": "Mortero para juntas exterior AXTON gris, saco 5 kg",
+   "ref": "85539173",
+   "unidad": "saco",
+   "pvp_iva": 10.03,
+   "url": "https://www.leroymerlin.es/productos/mortero-para-juntas-exterior-axton-gris-5kg-85539173.html",
+   "nota": "Interior/exterior y apto piscinas; clase CG2 no confirmada."
+  },
+  {
+   "codigo": "MYM-024",
+   "sin_equivalente": false,
+   "descripcion": "Saco de arena fina (0,2-4 mm), saco 25 kg",
+   "ref": "12164215",
+   "unidad": "saco",
+   "pvp_iva": 1.1,
+   "url": "https://www.leroymerlin.es/productos/saco-de-arena-fina-25kg-12164215.html",
+   "nota": "No hay «arena lavada» en saco. También arena amarilla 0,1-4 mm a 1,29 € (ref. no vista). Precio tomado de la ficha indexada en el buscador (no de la página en vivo): confirmar."
+  },
+  {
+   "codigo": "MYM-025",
+   "sin_equivalente": false,
+   "descripcion": "Big bag arena lavada de río beige 0-5 mm, 1.000 kg",
+   "ref": "14581644",
+   "unidad": "ud",
+   "pvp_iva": 25.79,
+   "url": "https://www.leroymerlin.es/productos/big-bag-arena-lavada-de-rio-color-beige-de-5-a-0-mm-1000-kg-14581644.html",
+   "nota": "Precio muy bajo frente a otros big bag de Leroy (~200 €): confirmar en la ficha."
+  },
+  {
+   "codigo": "MYM-026",
+   "sin_equivalente": false,
+   "descripcion": "Hormigón seco H-25 PRO, saco 25 kg",
+   "ref": "81928958",
+   "unidad": "saco",
+   "pvp_iva": 2.89,
+   "url": "https://www.leroymerlin.es/productos/hormigon-seco-h-25-pro-25-kg-81928958.html",
+   "nota": "Otras capturas 3,20 € y 4,26 €. Alternativa HA-25 Aridorme (82437670) a 2,87 €. Precio tomado de la ficha indexada en el buscador (no de la página en vivo): confirmar."
+  },
+  {
+   "codigo": "MYM-027",
+   "sin_equivalente": false,
+   "descripcion": "Mortero adhesivo Argotec Fixtherm gris (Danosa) para SATE, saco 25 kg",
+   "ref": "83614120",
+   "unidad": "saco",
+   "pvp_iva": 12.49,
+   "url": "https://www.leroymerlin.es/productos/mortero-adhesivo-argotec-fixtherm-gris-25kg-83614120.html",
+   "nota": "Precio tomado de la ficha indexada en el buscador (no de la página en vivo): confirmar."
+  }
+ ],
+ "nuevos": [
+  {
+   "descripcion": "Pegamento de escayola Ibercol, saco 17 kg",
+   "ref": "19868072",
+   "unidad": "saco",
+   "pvp_iva": 7.79,
+   "url": "https://www.leroymerlin.es/productos/pegamento-de-escayola-ibercol-17-kg-19868072.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Yeso extra fino AXTON, saco 5 kg",
+   "ref": "83978520",
+   "unidad": "saco",
+   "pvp_iva": 5.99,
+   "url": "https://www.leroymerlin.es/productos/yeso-extra-fino-axton-5-kg-83978520.html",
+   "nota": "Para repasos y pequeñas reparaciones."
+  },
+  {
+   "descripcion": "Mortero seco blanco M7,5 Valsec, saco 25 kg",
+   "ref": "18693640",
+   "unidad": "saco",
+   "pvp_iva": 2.99,
+   "url": "https://www.leroymerlin.es/productos/mortero-seco-blanco-m7-5-valsec-de-25-kg-18693640.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Mortero de cal capa fina AXTON blanco, saco 25 kg",
+   "ref": "86721840",
+   "unidad": "saco",
+   "pvp_iva": 5.49,
+   "url": "https://www.leroymerlin.es/productos/mortero-de-cal-capa-fina-axton-25-kg-blanco-86721840.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Cemento cola base blanco (Grupo Puma), saco 25 kg",
+   "ref": "12163970",
+   "unidad": "saco",
+   "pvp_iva": 3.29,
+   "url": "https://www.leroymerlin.es/productos/cemento-cola-base-blanco-25kg-12163970.html",
+   "nota": "Cemento cola blanco económico para interior."
+  },
+  {
+   "descripcion": "Mortero de proyección hidrófugo Valsec, saco 25 kg",
+   "ref": "18693731",
+   "unidad": "saco",
+   "pvp_iva": 4.19,
+   "url": "https://www.leroymerlin.es/productos/mortero-de-proyeccion-hidrofugo-valsec-de-25-kg-18693731.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Pasta niveladora interior-exterior AXTON 30 mm, saco 25 kg",
+   "ref": "85539165",
+   "unidad": "saco",
+   "pvp_iva": 27.99,
+   "url": "https://www.leroymerlin.es/productos/pasta-niveladora-interior-exterior-axton-30mm-25-kg-85539165.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Mortero impermeabilizante Sika MonoTop 107 Seal, saco 25 kg",
+   "ref": "17552290",
+   "unidad": "saco",
+   "pvp_iva": 47.99,
+   "url": "https://www.leroymerlin.es/productos/mortero-impermeabilizante-sika-monotop-107-seal-25-kg-17552290.html",
+   "nota": "Para depósitos, sótanos y muros enterrados."
+  },
+  {
+   "descripcion": "Saco cemento gris 42,5-R-SR CEM IV/A sulforresistente Elite Cementos, 25 kg",
+   "ref": "85114821",
+   "unidad": "saco",
+   "pvp_iva": 4.99,
+   "url": "https://www.leroymerlin.es/productos/saco-cemento-gris-42-5-r-sr-cem-iv-a-sulforresistente-elite-cementos-25-kg-85114821.html",
+   "nota": ""
+  }
+ ]
+}

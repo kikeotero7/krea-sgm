@@ -1,0 +1,464 @@
+{
+ "capitulo": "mat_aislamiento",
+ "fecha": "2026-11-17",
+ "equivalentes": [
+  {
+   "codigo": "MAI-001",
+   "sin_equivalente": false,
+   "descripcion": "Lana de vidrio ISOVER Easywall sin revestir 50 mm, rollo 10x0,6 m (6 m²)",
+   "ref": "78256620",
+   "unidad": "m2",
+   "pvp_iva": 1.64,
+   "url": "https://www.leroymerlin.es/productos/1-ud-de-aislamiento-fibra-de-vidrio-easywall-isover-10x0-6m-espesor-50mm-r-1-3-78256620.html",
+   "nota": "Rollo de 6 m² a 19,69 €. 50 mm (no hay 45 mm)."
+  },
+  {
+   "codigo": "MAI-002",
+   "sin_equivalente": false,
+   "descripcion": "Lana de vidrio ISOVER rollo 60 mm 8,5x0,4 m, R=1,62 (3 rollos, 10,2 m²)",
+   "ref": "95578041",
+   "unidad": "m2",
+   "pvp_iva": 2.43,
+   "url": "https://www.leroymerlin.es/productos/3-uds-de-aislamiento-fibra-de-vidrio-unidad-isover-8-5x0-4m-espesor-60mm-r-1-62-95578041.html",
+   "nota": "Precio por rollo mostrado: 24,80 €."
+  },
+  {
+   "codigo": "MAI-003",
+   "sin_equivalente": false,
+   "descripcion": "Lana de vidrio ISOVER IBR80 rollo 80 mm 10x1,2 m (12 m²)",
+   "ref": "95578039",
+   "unidad": "m2",
+   "pvp_iva": 3.55,
+   "url": "https://www.leroymerlin.es/productos/1-ud-de-aislamiento-fibra-de-vidrio-ibr80-isover-10x1-2m-espesor-80mm-r-2-95578039.html",
+   "nota": "Rollo de 12 m² a 42,58 €. Comprobar que la referencia lleva kraft (existe IBR80 kraft 12x1,2 m ref. 15929634, precio no visto)."
+  },
+  {
+   "codigo": "MAI-004",
+   "sin_equivalente": false,
+   "descripcion": "Panel lana de vidrio ISOVER Arena Apta 48 mm 1,35x0,6 m (acústico)",
+   "ref": "82577941",
+   "unidad": "m2",
+   "pvp_iva": 3.13,
+   "url": "https://www.leroymerlin.es/productos/1-ud-de-aislamiento-fibra-de-vidrio-arena-apta-isover-1-35x0-6m-espesor-48mm-r-1-41-82577941.html",
+   "nota": "Paquete a 35,50 €. Alternativa más barata: panel Drywall 37 50 mm (ref. 88849358) a 1,82 €/m², paquete 41,23 €."
+  },
+  {
+   "codigo": "MAI-005",
+   "sin_equivalente": false,
+   "descripcion": "Panel lana de vidrio ISOVER ECO 037 kraft 100 mm 1,35x0,6 m (paquete 7 uds, 5,67 m²)",
+   "ref": "91164396",
+   "unidad": "m2",
+   "pvp_iva": 9.29,
+   "url": "https://www.leroymerlin.es/productos/7-uds-de-aislamiento-fibra-de-vidrio-eco037-isover-1-35x0-6m-espesor-100mm-r-2-7-91164396.html",
+   "nota": "Paquete a 75,25 €."
+  },
+  {
+   "codigo": "MAI-006",
+   "sin_equivalente": false,
+   "descripcion": "Panel lana de roca ISOVER Geowall 37 40 mm 1,35x0,6 m",
+   "ref": "15929354",
+   "unidad": "m2",
+   "pvp_iva": 4.19,
+   "url": "https://www.leroymerlin.es/productos/1-ud-de-aislamiento-de-lana-de-roca-geowall-37-isover-1-35x0-6m-espesor-40mm-r-1-09-15929354.html",
+   "nota": "Caja a 40,72 €. Sonorock 40 mm solo aparece en lote de palé."
+  },
+  {
+   "codigo": "MAI-007",
+   "sin_equivalente": false,
+   "descripcion": "Panel lana de roca ISOVER Geowall 60 mm 1,35x0,6 m (caja 15 uds)",
+   "ref": "89752191",
+   "unidad": "m2",
+   "pvp_iva": 10.99,
+   "url": "https://www.leroymerlin.es/productos/15-uds-de-aislamiento-de-lana-de-roca-geowall-isover-1-35x0-6m-espesor-60mm-r-1-75-89752191.html",
+   "nota": "Caja a 89,02 €. Ojo: el €/m² mostrado no cuadra con 15 uds (12,15 m²); revisar en la ficha."
+  },
+  {
+   "codigo": "MAI-008",
+   "sin_equivalente": true,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "No se encontró panel de lana de roca para SATE (tipo Rocksate) en leroymerlin.es."
+  },
+  {
+   "codigo": "MAI-009",
+   "sin_equivalente": false,
+   "descripcion": "XPS THERMOGREEN media madera 40 mm 1,25x0,6 m (paquete 10 uds, 7,5 m²)",
+   "ref": "88493224",
+   "unidad": "m2",
+   "pvp_iva": 5.18,
+   "url": "https://www.leroymerlin.es/productos/10-uds-de-paneles-poliestireno-extruido-xps-thermogreen-xps-espesor-40mm-1-25x0-6m-r-1-25-88493224.html",
+   "nota": "Paquete a 38,85 €."
+  },
+  {
+   "codigo": "MAI-010",
+   "sin_equivalente": false,
+   "descripcion": "XPS THERMOGREEN 50 mm 1,25x0,6 m (paquete 8 uds, 6 m²)",
+   "ref": "88493228",
+   "unidad": "m2",
+   "pvp_iva": 6.55,
+   "url": "https://www.leroymerlin.es/productos/8-uds-de-paneles-poliestireno-extruido-xps-thermogreen-xps-espesor-50mm-1-25x0-6m-r-1-55-88493228.html",
+   "nota": "Paquete a 39,27 €."
+  },
+  {
+   "codigo": "MAI-011",
+   "sin_equivalente": false,
+   "descripcion": "XPS THERMOGREEN machihembrado 60 mm 2,6x0,6 m (paquete 7 uds)",
+   "ref": "92376929",
+   "unidad": "m2",
+   "pvp_iva": 7.85,
+   "url": "https://www.leroymerlin.es/productos/7-uds-de-paneles-poliestireno-extruido-xps-thermogreen-xps-espesor-60mm-2-6x0-6m-r-1-85-92376929.html",
+   "nota": "Paquete a 85,76 €."
+  },
+  {
+   "codigo": "MAI-012",
+   "sin_equivalente": false,
+   "descripcion": "XPS DANOSA Danopren media madera 80 mm 1,25x0,6 m",
+   "ref": "81932656",
+   "unidad": "m2",
+   "pvp_iva": 9.65,
+   "url": "https://www.leroymerlin.es/productos/construccion/aislamiento/poliestireno-extruido-xps/panel-aislante-danopren-tejado-80-mm-81932656.html",
+   "nota": "Alternativa Chovafoam 80 mm (ref. 85823801) a 10,36-10,53 €/m²."
+  },
+  {
+   "codigo": "MAI-013",
+   "sin_equivalente": false,
+   "descripcion": "XPS THERMOGREEN 100 mm 1,25x0,6 m (lote 4 uds, 3 m²)",
+   "ref": "",
+   "unidad": "m2",
+   "pvp_iva": 12.95,
+   "url": "https://www.leroymerlin.es/productos/construccion/aislamiento/aislamiento-termico/poliestireno-extruido-xps/poliestireno-extruido-100-mm-p.html",
+   "nota": "Paquete a 38,85 €. Referencia no localizada (precio visto en listado). Otro listado: 12,07 €/m²; machihembrado 2,6x0,6 m a 11,99 €/m²."
+  },
+  {
+   "codigo": "MAI-014",
+   "sin_equivalente": false,
+   "descripcion": "Panel EPS CYPSA 20 mm 2x1 m (2 m²)",
+   "ref": "82179984",
+   "unidad": "m2",
+   "pvp_iva": 1.8,
+   "url": "https://www.leroymerlin.es/productos/1-ud-de-aislante-de-poliestireno-expandido-eps-cypsa-eps-2x1m-espesor-20mm-r-0-5-82179984.html",
+   "nota": "Panel a 3,58 €."
+  },
+  {
+   "codigo": "MAI-015",
+   "sin_equivalente": false,
+   "descripcion": "Panel EPS CYPSA 40 mm 2x1 m (2 m²)",
+   "ref": "83088968",
+   "unidad": "m2",
+   "pvp_iva": 3.59,
+   "url": "https://www.leroymerlin.es/productos/1-ud-de-panel-poliestireno-expandido-eps-xps-cypsa-eps-espesor-40mm-2x1m-r-1-83088968.html",
+   "nota": "Panel a 7,18 € (la ficha antigua decía 7,25 € / 3,63 €/m²)."
+  },
+  {
+   "codigo": "MAI-016",
+   "sin_equivalente": false,
+   "descripcion": "Panel EPS SOPREMA SATE 60 mm 1x0,5 m (0,5 m²)",
+   "ref": "82179990",
+   "unidad": "m2",
+   "pvp_iva": 6.9,
+   "url": "https://www.leroymerlin.es/productos/1-ud-de-panel-poliestireno-expandido-eps-soprema-sate-espesor-60mm-1x0-5m-r-1-65-82179990.html",
+   "nota": "Panel a 3,45 €."
+  },
+  {
+   "codigo": "MAI-017",
+   "sin_equivalente": false,
+   "descripcion": "Cola de contacto Novopren Poliestireno 1 l",
+   "ref": "19007030",
+   "unidad": "ud",
+   "pvp_iva": 14.5,
+   "url": "https://www.leroymerlin.es/productos/cola-de-contacto-novopren-poliestireno-1l-19007030.html",
+   "nota": "Solo online. Tuvo oferta a 6,99 € (20 oct-16 nov, ya terminada). Alternativa: Copopren 1 l (ref. 14908222) 9,99 €."
+  },
+  {
+   "codigo": "MAI-018",
+   "sin_equivalente": false,
+   "descripcion": "Lámina anti-impacto DANOSA Impactodan 5 mm, rollo 15x1 m (15 m²)",
+   "ref": "17308452",
+   "unidad": "m2",
+   "pvp_iva": 2.36,
+   "url": "https://www.leroymerlin.es/productos/1-ud-rollo-polietileno-danosa-impactodan-espesor-5mm-15x1m-r-0-135-17308452.html",
+   "nota": "Rollo a 35,44 €."
+  },
+  {
+   "codigo": "MAI-019",
+   "sin_equivalente": true,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "No se encontró Impactodan 10 mm. Lo más parecido: rollo Geopannel Inpat 10 mm 14x1,2 m (ref. 17839990) a 33,99 €, otro material."
+  },
+  {
+   "codigo": "MAI-020",
+   "sin_equivalente": false,
+   "descripcion": "Base aislante suelo laminado Ca20+Film 2 mm antihumedad (caja 48 m²)",
+   "ref": "82456477",
+   "unidad": "m2",
+   "pvp_iva": 0.99,
+   "url": "https://www.leroymerlin.es/productos/base-aislante-suelo-laminado-ca20-film-2mm-capa-antihumedad-48m2-82456477.html",
+   "nota": "Caja a 47,52 €. Base 3 mm 12 m² (ref. 13641775) a 2,30 €/m²."
+  },
+  {
+   "codigo": "MAI-021",
+   "sin_equivalente": false,
+   "descripcion": "Banda adhesiva acústica Akifix 50 mm x 30 m gris",
+   "ref": "82686550",
+   "unidad": "rollo",
+   "pvp_iva": 6.04,
+   "url": "https://www.leroymerlin.es/productos/construccion/tabiques-y-techos/accesorios-de-montaje-para-tabiques-y-techos/banda-adhesiva-acustica-50mmx30m-gris-82686550.html",
+   "nota": "Rollo de 30 m (el actual es de 10 m)."
+  },
+  {
+   "codigo": "MAI-022",
+   "sin_equivalente": false,
+   "descripcion": "Lámina asfáltica DANOSA Imperdan APP 1x10 m negro (10 m²)",
+   "ref": "18702061",
+   "unidad": "m2",
+   "pvp_iva": 3.36,
+   "url": "https://www.leroymerlin.es/productos/lamina-asfaltica-imperdan-de-1x10m-negro-18702061.html",
+   "nota": "Rollo a 33,59 €. Gramaje no confirmado en el resultado. Alternativa Glasdan LBM-30 1x12 m (ref. 81872360) 4,46 €/m² (rollo 53,49 €)."
+  },
+  {
+   "codigo": "MAI-023",
+   "sin_equivalente": false,
+   "descripcion": "Tela asfáltica DANOSA Glasdan 40 P elastómero 1x10 m (LBM-40-FV)",
+   "ref": "18702551",
+   "unidad": "m2",
+   "pvp_iva": 5.5,
+   "url": "https://www.leroymerlin.es/productos/tela-asfaltica-glasdan-40-p-elastomero1x10m-141031-danosa-18702551.html",
+   "nota": "Precio por rollo de 10 m²: 54,99 € (€/m² calculado). Leroy no tiene LBM-40 de plastómero; esta es de elastómero."
+  },
+  {
+   "codigo": "MAI-024",
+   "sin_equivalente": false,
+   "descripcion": "Lámina asfáltica DANOSA Esterdan 40P 1x10 m (LBM-SBS-40-FP)",
+   "ref": "81872361",
+   "unidad": "m2",
+   "pvp_iva": 6.0,
+   "url": "https://www.leroymerlin.es/fp/81872361/lamina-asfaltica-esterdan-de-1x10-m",
+   "nota": "Precio por rollo de 10 m²: 59,99 € (€/m² calculado). Ficha antigua, compra por teléfono; otro listado la daba a 5,38 €/m²."
+  },
+  {
+   "codigo": "MAI-025",
+   "sin_equivalente": false,
+   "descripcion": "Lámina asfáltica autoprotegida DANOSA Glasdan 40/G-FV gris 1x10 m",
+   "ref": "81872364",
+   "unidad": "m2",
+   "pvp_iva": 4.75,
+   "url": "https://www.leroymerlin.es/productos/lamina-asfaltica-glasdan-de-1x10-m-gris-81872364.html",
+   "nota": "Rollo a 47,49 €."
+  },
+  {
+   "codigo": "MAI-026",
+   "sin_equivalente": false,
+   "descripcion": "Emulsión bituminosa Chova SUPERMUL-N 25 kg negro",
+   "ref": "11628372",
+   "unidad": "ud",
+   "pvp_iva": 42.0,
+   "url": "https://www.leroymerlin.es/fp/11628372/emulsion-bituminosa-supermul-n-25-kg",
+   "nota": "Otra página la muestra a 30,39 €; ficha antigua, confirmar."
+  },
+  {
+   "codigo": "MAI-027",
+   "sin_equivalente": false,
+   "descripcion": "Sika MultiSeal BT cinta butilo con film de aluminio 150 mm x 10 m gris",
+   "ref": "18884376",
+   "unidad": "rollo",
+   "pvp_iva": 37.99,
+   "url": "https://www.leroymerlin.es/productos/banda-impermeabilizanta-sikamultiseal-bt-15-cm-gris-18884376.html",
+   "nota": "Alternativa Soudal Butyband 15 cm x 10 m plomo (ref. 88876571) 31,46 €."
+  },
+  {
+   "codigo": "MAI-028",
+   "sin_equivalente": false,
+   "descripcion": "Pintura impermeabilizante AXTON acrílica con fibras gris 15 l",
+   "ref": "81876602",
+   "unidad": "ud",
+   "pvp_iva": 44.94,
+   "url": "https://www.leroymerlin.es/productos/pintura-impermeabilizante-axton-15l-gris-81876602.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MAI-029",
+   "sin_equivalente": false,
+   "descripcion": "Pintura impermeabilizante AXTON acrílica blanca 4 l",
+   "ref": "81876590",
+   "unidad": "ud",
+   "pvp_iva": 13.0,
+   "url": "https://www.leroymerlin.es/productos/pintura-impermeabilizante-4l-blanco-81876590.html",
+   "nota": "En listados de categoría aparece a 16,80 €."
+  },
+  {
+   "codigo": "MAI-030",
+   "sin_equivalente": false,
+   "descripcion": "Membrana de poliuretano híbrido base agua Sopgal gris 15 l",
+   "ref": "91946005",
+   "unidad": "ud",
+   "pvp_iva": 225.0,
+   "url": "https://www.leroymerlin.es/productos/construccion/cubiertas-y-tejados/pintura-para-tejados-y-cubiertas/membrana-de-poliuretano-hibrido-gris-15l-para-impermeabilizacion-de-tejados-terrazas-y-cubiertas-alta-resistencia-al-roce-y-al-transito-91946005.html",
+   "nota": "Mucho más cara que el actual (79 €). Eurotex poliuretano gris 15 l (ref. 82171179) 123 €, pero es al disolvente."
+  },
+  {
+   "codigo": "MAI-031",
+   "sin_equivalente": false,
+   "descripcion": "SikaFill 370 Fibers gris 5 kg, lote de 2 botes",
+   "ref": "98580431",
+   "unidad": "ud",
+   "pvp_iva": 78.0,
+   "url": "https://www.leroymerlin.es/productos/lote-de-2-unidades-sikafill-370-fibers-gris-5-kg-sika-98580431.html",
+   "nota": "Precio del lote de 2 x 5 kg (39 € por bote). No se vende suelto."
+  },
+  {
+   "codigo": "MAI-032",
+   "sin_equivalente": true,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "No se encontró lámina bajo baldosa de polietileno+geotextil. Solo lámina de polietileno reforzado Onduline 75 m² (ref. 18032210) a 81,75 €."
+  },
+  {
+   "codigo": "MAI-033",
+   "sin_equivalente": false,
+   "descripcion": "Silicona neutra cocinas y baños AXTON 280 ml blanco",
+   "ref": "82291467",
+   "unidad": "ud",
+   "pvp_iva": 4.89,
+   "url": "https://www.leroymerlin.es/productos/silicona-neutra-para-cocinas-y-banos-axton-280-ml-blanco-82291467.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MAI-034",
+   "sin_equivalente": false,
+   "descripcion": "Silicona multiuso ácida QUILOSA 280 ml",
+   "ref": "82561643",
+   "unidad": "ud",
+   "pvp_iva": 1.96,
+   "url": "https://www.leroymerlin.es/productos/silicona-multiuso-acida-quilosa-280-ml-82561643.html",
+   "nota": "En algún listado a 1,89 €."
+  },
+  {
+   "codigo": "MAI-035",
+   "sin_equivalente": false,
+   "descripcion": "Espuma de poliuretano Sikaboom 122 Pro 750 ml (manual)",
+   "ref": "81975333",
+   "unidad": "ud",
+   "pvp_iva": 7.29,
+   "url": "https://www.leroymerlin.es/productos/espuma-de-poliuretano-sikaboom-122-pro-750-ml-81975333.html",
+   "nota": "Más barata: Soudal Económica 750 ml (ref. 81884787) 4,19 €."
+  },
+  {
+   "codigo": "MAI-036",
+   "sin_equivalente": false,
+   "descripcion": "Resina puente de unión 1 l",
+   "ref": "17884286",
+   "unidad": "ud",
+   "pvp_iva": 6.7,
+   "url": "https://www.leroymerlin.es/productos/resina-puente-de-union-1l-17884286.html",
+   "nota": "Otro listado a 6,20 €; ficha antigua."
+  }
+ ],
+ "nuevos": [
+  {
+   "descripcion": "Espuma de poliuretano Soudal Económica 750 ml (aplicación manual)",
+   "ref": "81884787",
+   "unidad": "ud",
+   "pvp_iva": 4.19,
+   "url": "https://www.leroymerlin.es/productos/espuma-de-poliuretano-economica-750-ml-81884787.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Espuma de poliuretano POLYNOR 750 ml (para pistola)",
+   "ref": "45755423",
+   "unidad": "ud",
+   "pvp_iva": 10.99,
+   "url": "https://www.leroymerlin.es/productos/espuma-de-poliuretano-polynor-750-ml-45755423.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Silicona neutra cocinas y baños AXTON 280 ml transparente",
+   "ref": "82291477",
+   "unidad": "ud",
+   "pvp_iva": 4.89,
+   "url": "https://www.leroymerlin.es/productos/silicona-neutra-para-cocinas-y-banos-axton-280-ml-transparente-82291477.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Silicona sanitaria PATTEX Pure Sanitary 280 ml blanco",
+   "ref": "82747691",
+   "unidad": "ud",
+   "pvp_iva": 6.29,
+   "url": "https://www.leroymerlin.es/productos/silicona-pure-sanitary-pattex-280ml-blanco-82747691.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Lana de vidrio ISOVER IBR 100 rollo 100 mm 8x1,2 m (9,6 m²)",
+   "ref": "95578037",
+   "unidad": "ud",
+   "pvp_iva": 45.98,
+   "url": "https://www.leroymerlin.es/productos/1-ud-de-aislamiento-fibra-de-vidrio-ibr-100-isover-8x1-2m-espesor-100mm-r-2-5-95578037.html",
+   "nota": "4,79 €/m²."
+  },
+  {
+   "descripcion": "Lana de vidrio ISOVER IBR 120 rollo 120 mm 9x1,2 m (10,8 m²)",
+   "ref": "17852765",
+   "unidad": "ud",
+   "pvp_iva": 64.69,
+   "url": "https://www.leroymerlin.es/productos/1-ud-de-aislamiento-de-fibra-de-vidrio-ibr-120-isover-9x1-2m-espesor-120mm-r-3-17852765.html",
+   "nota": "5,99 €/m²."
+  },
+  {
+   "descripcion": "Emulsión bituminosa DANOSA Curidan 25 kg (muros enterrados)",
+   "ref": "16996665",
+   "unidad": "ud",
+   "pvp_iva": 53.99,
+   "url": "https://www.leroymerlin.es/productos/emulsion-bituminosa-curidan-25kg-16996665.html",
+   "nota": "Otra página la muestra a 36,39 €."
+  },
+  {
+   "descripcion": "Pintura impermeabilizante acrílica blanca 15 l",
+   "ref": "81876592",
+   "unidad": "ud",
+   "pvp_iva": 39.95,
+   "url": "https://www.leroymerlin.es/productos/pintura-impermeabilizante-15l-blanco-81876592.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Membrana líquida Eurotex poliuretano gris 15 l (al disolvente)",
+   "ref": "82171179",
+   "unidad": "ud",
+   "pvp_iva": 123.0,
+   "url": "https://www.leroymerlin.es/productos/membrana-liquida-eurotex-poliuretano-gris-15l-82171179.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Cola de contacto profesional COPOPREN 1 l",
+   "ref": "14908222",
+   "unidad": "ud",
+   "pvp_iva": 9.99,
+   "url": "https://www.leroymerlin.es/productos/cola-de-contacto-profesional-copopren-1l-14908222.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Cinta de butilo autoadhesiva Soudal Butyband 10 cm x 10 m aluminio",
+   "ref": "81954769",
+   "unidad": "rollo",
+   "pvp_iva": 26.68,
+   "url": "https://www.leroymerlin.es/productos/butyband-cinta-de-butilo-autoadhesiva-soudal-rollo-de-10-cm-x-10-m-aluminio-81954769.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Base aislante suelo laminado 3 mm antihumedad, rollo 12 m²",
+   "ref": "13641775",
+   "unidad": "rollo",
+   "pvp_iva": 27.6,
+   "url": "https://www.leroymerlin.es/productos/base-aislante-de-suelo-laminado-de-3mm-de-capa-antihumedad-12m2-13641775.html",
+   "nota": "2,30 €/m²."
+  }
+ ]
+}

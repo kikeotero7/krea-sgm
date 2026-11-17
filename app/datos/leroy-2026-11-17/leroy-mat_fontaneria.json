@@ -1,0 +1,456 @@
+{
+ "capitulo": "mat_fontaneria",
+ "fecha": "2026-11-17",
+ "equivalentes": [
+  {
+   "codigo": "MFS-001",
+   "sin_equivalente": false,
+   "descripcion": "Rollo de tubo multicapa 25 metros Ø16 mm",
+   "ref": "82069866",
+   "unidad": "rollo",
+   "pvp_iva": 19.9,
+   "url": "https://www.leroymerlin.es/productos/rollo-de-tubo-multicapa-25-metros-16-mm-82069866.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MFS-002",
+   "sin_equivalente": false,
+   "descripcion": "Rollo de tubo multicapa 25 metros Ø20 mm",
+   "ref": "82069867",
+   "unidad": "rollo",
+   "pvp_iva": 27.29,
+   "url": "https://www.leroymerlin.es/productos/rollo-de-tubo-multicapa-25-metros-20-mm-82069867.html",
+   "nota": "1,09 €/m"
+  },
+  {
+   "codigo": "MFS-003",
+   "sin_equivalente": false,
+   "descripcion": "Rollo de tubo PEX-A EVOH 16 x 1,8 mm, 200 m (con barrera de oxígeno)",
+   "ref": "88737087",
+   "unidad": "rollo",
+   "pvp_iva": 59.99,
+   "url": "https://www.leroymerlin.es/productos/rollo-de-tubo-pex-a-evoh-16-x-1-8-mm-200-m-88737087.html",
+   "nota": "Precio de un vendedor externo (WATEROUT) en leroymerlin.es; la ficha muestra también 219 €. Precio dudoso, verificar. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-004",
+   "sin_equivalente": false,
+   "descripcion": "Codo compresión de Ø16 mm (latón)",
+   "ref": "82070056",
+   "unidad": "ud",
+   "pvp_iva": 3.2,
+   "url": "https://www.leroymerlin.es/productos/codo-comprension-de-16-mm-de-diametro-82070056.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MFS-005",
+   "sin_equivalente": false,
+   "descripcion": "Te compresión de Ø16 mm (latón)",
+   "ref": "82070067",
+   "unidad": "ud",
+   "pvp_iva": 4.3,
+   "url": "https://www.leroymerlin.es/productos/te-comprension-de-16-mm-de-diametro-82070067.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-006",
+   "sin_equivalente": false,
+   "descripcion": "Unión compresión de Ø16 mm (latón)",
+   "ref": "82070065",
+   "unidad": "ud",
+   "pvp_iva": 3.14,
+   "url": "https://www.leroymerlin.es/productos/union-compresion-de-16-mm-de-diametro-82070065.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-007",
+   "sin_equivalente": false,
+   "descripcion": "Codo compresión con soporte (salida a pared) Ø16 mm x 1/2\"",
+   "ref": "82070063",
+   "unidad": "ud",
+   "pvp_iva": 3.45,
+   "url": "https://www.leroymerlin.es/productos/codo-comprension-con-soporte-de-16-mm-1-2-82070063.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-008",
+   "sin_equivalente": false,
+   "descripcion": "Tubo PVC de evacuación Ø40 mm 3 metros",
+   "ref": "81929203",
+   "unidad": "ud",
+   "pvp_iva": 2.97,
+   "url": "https://www.leroymerlin.es/productos/tubo-pvc-de-evacuacion-40-mm-3-metros-81929203.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MFS-009",
+   "sin_equivalente": false,
+   "descripcion": "Tubo PVC de evacuación Ø50 mm 3 metros",
+   "ref": "81929204",
+   "unidad": "ud",
+   "pvp_iva": 3.86,
+   "url": "https://www.leroymerlin.es/productos/tubo-pvc-de-evacuacion-50-mm-3-metros-81929204.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MFS-010",
+   "sin_equivalente": false,
+   "descripcion": "Tubo de evacuación de agua en PVC de 3 m x Ø110 mm",
+   "ref": "87003281",
+   "unidad": "ud",
+   "pvp_iva": 7.78,
+   "url": "https://www.leroymerlin.es/productos/tubo-de-evacuacion-de-agua-en-pvc-de-3m-x-110mm-87003281.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MFS-011",
+   "sin_equivalente": false,
+   "descripcion": "Tubo PVC multicapa AR Ø110 3 m (con reducción acústica)",
+   "ref": "82541825",
+   "unidad": "ud",
+   "pvp_iva": 40.29,
+   "url": "https://www.leroymerlin.es/productos/tubo-pvc-multicapa-ar-110-3m-82541825.html",
+   "nota": "No es PP3: es PVC multicapa insonorizado, lo más parecido en Leroy. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-012",
+   "sin_equivalente": false,
+   "descripcion": "Codo de PVC de Ø40 mm 87º hembra-hembra (gris)",
+   "ref": "12149543",
+   "unidad": "ud",
+   "pvp_iva": 0.22,
+   "url": "https://www.leroymerlin.es/productos/codo-de-pvc-de-40-mm-de-diametro-87-h-h-12149543.html",
+   "nota": "El codo blanco d-40 (ref 83299807) sale a 1,29 €. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-013",
+   "sin_equivalente": false,
+   "descripcion": "Codo de PVC de Ø110 mm 87º hembra-macho",
+   "ref": "476833",
+   "unidad": "ud",
+   "pvp_iva": 1.39,
+   "url": "https://www.leroymerlin.es/productos/codo-de-pvc-de-110-mm-87-h-m-476833.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-014",
+   "sin_equivalente": false,
+   "descripcion": "Bote sifónico PVC Ø110 50-40, altura 105 mm, con tapa metálica",
+   "ref": "92919438",
+   "unidad": "ud",
+   "pvp_iva": 17.1,
+   "url": "https://www.leroymerlin.es/productos/bote-sifonico-pvc-110-50-40-altura-105-mm-92919438.html",
+   "nota": "En oferta a 11,40 €. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-015",
+   "sin_equivalente": false,
+   "descripcion": "Sifón botella extensible S65 horizontal 1 1/2\" JIMTEN",
+   "ref": "86289995",
+   "unidad": "ud",
+   "pvp_iva": 5.45,
+   "url": "https://www.leroymerlin.es/productos/sifon-botella-extensible-s65-horizontal-1-1-2-jimten-86289995.html",
+   "nota": "Exclusivo web. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-016",
+   "sin_equivalente": false,
+   "descripcion": "Válvula de empotrar roscada 3/4\"",
+   "ref": "",
+   "unidad": "ud",
+   "pvp_iva": 11.79,
+   "url": "https://www.leroymerlin.es/productos/fontaneria/griferia-de-paso/llaves-de-paso-empotradas-p.html",
+   "nota": "Visto solo en el listado de categoría (sin ficha ni referencia localizada). La montura con pomo 3/4\" (ref 81897737) va aparte a 6,99 €. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-017",
+   "sin_equivalente": false,
+   "descripcion": "Llave de escuadra EQUATION 1/2\" x 3/8\" (latón)",
+   "ref": "81955006",
+   "unidad": "ud",
+   "pvp_iva": 2.19,
+   "url": "https://www.leroymerlin.es/productos/llave-de-escuadra-equation-de-1-2-3-8-81955006.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-018",
+   "sin_equivalente": false,
+   "descripcion": "Termo eléctrico 50 l vertical (Leroy Merlin)",
+   "ref": "92389692",
+   "unidad": "ud",
+   "pvp_iva": 95.0,
+   "url": "https://www.leroymerlin.es/productos/termo-electrico-50l-vertical-92389692.html",
+   "nota": "Etiqueta energética C. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-019",
+   "sin_equivalente": false,
+   "descripcion": "Termo eléctrico Haier A3 ES 80 l vertical",
+   "ref": "85810298",
+   "unidad": "ud",
+   "pvp_iva": 125.0,
+   "url": "https://www.leroymerlin.es/productos/termo-haier-es80va3-vertical-80-litros-1500-85810298.html",
+   "nota": "Exclusivo online. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-020",
+   "sin_equivalente": false,
+   "descripcion": "Termo eléctrico 100 l vertical (Leroy Merlin)",
+   "ref": "92389702",
+   "unidad": "ud",
+   "pvp_iva": 139.0,
+   "url": "https://www.leroymerlin.es/productos/termo-electrico-100l-vertical-92389702.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-021",
+   "sin_equivalente": false,
+   "descripcion": "Calentador de gas HTW UAN estanco bajo NOx 11 litros gas natural",
+   "ref": "85203049",
+   "unidad": "ud",
+   "pvp_iva": 204.99,
+   "url": "https://www.leroymerlin.es/productos/calentador-de-gas-htw-uan-estanco-nox-11-litros-gas-natural-85203049.html",
+   "nota": "La versión butano (ref 89320199) sale bastante más cara. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-022",
+   "sin_equivalente": false,
+   "descripcion": "Pack WC Universal AKRON II salida dual con tapa amortiguada blanco",
+   "ref": "94862203",
+   "unidad": "ud",
+   "pvp_iva": 98.99,
+   "url": "https://www.leroymerlin.es/productos/pack-wc-universal-akron-ii-s-dual-con-tapa-amortiguada-blanco-94862203.html",
+   "nota": "Cisterna 3/4,5 l. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-023",
+   "sin_equivalente": false,
+   "descripcion": "Pack WC SENSEA Compacta salida dual con tapa amortiguada",
+   "ref": "17481450",
+   "unidad": "ud",
+   "pvp_iva": 209.0,
+   "url": "https://www.leroymerlin.es/fp/17481450/pack-wc-salida-dual-sensea-compacta-rimless-con-tapa-amortiguada",
+   "nota": "No se halló pack Roca Gap completo de gama media; el pack Roca Gap Square rimless está a 389 €. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-024",
+   "sin_equivalente": false,
+   "descripcion": "Pack WC ROCA Gap Square compacto Rimless salida dual y tapa amortiguada blanco",
+   "ref": "83623139",
+   "unidad": "ud",
+   "pvp_iva": 389.0,
+   "url": "https://www.leroymerlin.es/productos/pack-wc-roca-gap-square-compacto-rimless-salida-dual-y-tapa-amortiguada-blanco-83623139.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-025",
+   "sin_equivalente": false,
+   "descripcion": "Lavabo sobre encimera SENSEA Essential redondo 38 cm blanco",
+   "ref": "82644579",
+   "unidad": "ud",
+   "pvp_iva": 49.99,
+   "url": "https://www.leroymerlin.es/productos/lavabo-essential-blanco-38x12-5x38-cm-82644579.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-026",
+   "sin_equivalente": false,
+   "descripcion": "Plato de ducha de resina extraplano 140x80 cm antideslizante textura pizarra blanco, con válvula y rejilla",
+   "ref": "87400968",
+   "unidad": "ud",
+   "pvp_iva": 230.0,
+   "url": "https://www.leroymerlin.es/productos/plato-ducha-de-resina-extraplano-140-x-80-cm-antideslizante-textura-pizarra-suave-valvula-de-desague-y-rejilla-blanco-87400968.html",
+   "nota": "En oferta -20 %: 184 €. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-027",
+   "sin_equivalente": false,
+   "descripcion": "Mampara de ducha frontal corredera SENSEA Essential 1 fijo + 1 puerta, 137-140 x 185 cm, cristal 4 mm, perfil cromo",
+   "ref": "82204634",
+   "unidad": "ud",
+   "pvp_iva": 205.0,
+   "url": "https://www.leroymerlin.es/productos/mampara-de-ducha-frontal-corredera-transparente-essential-perfil-cromo-137-140-x185-cm-82204634.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-028",
+   "sin_equivalente": false,
+   "descripcion": "Panel de ducha fijo walk-in 100 cm, vidrio 8 mm antical, 195 cm alto, perfil blanco",
+   "ref": "86858162",
+   "unidad": "ud",
+   "pvp_iva": 216.25,
+   "url": "https://www.leroymerlin.es/productos/panel-de-ducha-fijo-walk-in-100-cm-vidrio-8mm-transparente-antical-195cm-altura-perfil-blanco-86858162.html",
+   "nota": "En oferta -20 %: 173 €. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-029",
+   "sin_equivalente": false,
+   "descripcion": "Grifo de lavabo monomando ROCA Mitos cromo",
+   "ref": "16864344",
+   "unidad": "ud",
+   "pvp_iva": 38.99,
+   "url": "https://www.leroymerlin.es/fp/16864344/grifo-lavabo-monomando-roca-mitos-cromo",
+   "nota": "El más económico localizado con referencia. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-030",
+   "sin_equivalente": false,
+   "descripcion": "Grifo de lavabo SENSEA Remix monomando cromo brillo, antical (talla M)",
+   "ref": "88737174",
+   "unidad": "ud",
+   "pvp_iva": 54.99,
+   "url": "https://www.leroymerlin.es/productos/grifo-de-lavabo-sensea-remix-monomando-cromo-brillo-antical-laton-88737174.html",
+   "nota": "Talla S 39,99 €. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-031",
+   "sin_equivalente": false,
+   "descripcion": "Grifo de ducha monomando ROCA Mitos cromo, antical",
+   "ref": "16864372",
+   "unidad": "ud",
+   "pvp_iva": 54.59,
+   "url": "https://www.leroymerlin.es/fp/16864372/grifo-ducha-monomando-roca-mitos-cromado",
+   "nota": "Equivalente al Roca Rodas. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-032",
+   "sin_equivalente": false,
+   "descripcion": "Columna de ducha monomando SENSEA Essential cromado",
+   "ref": "82804701",
+   "unidad": "ud",
+   "pvp_iva": 109.0,
+   "url": "https://www.leroymerlin.es/productos/columna-de-ducha-monomando-sensea-essential-cromado-82804701.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-033",
+   "sin_equivalente": false,
+   "descripcion": "Columna de ducha termostática Nerea cromado",
+   "ref": "17364851",
+   "unidad": "ud",
+   "pvp_iva": 111.0,
+   "url": "https://www.leroymerlin.es/productos/banos/accesorios-para-ducha/columnas-de-ducha-e-hidromasaje/columna-de-ducha-termostatica-nerea-cromado-17364851.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-034",
+   "sin_equivalente": false,
+   "descripcion": "Fregadero encastrar cuadrado Tokio 50x50 1 seno acero inox",
+   "ref": "87968476",
+   "unidad": "ud",
+   "pvp_iva": 55.3,
+   "url": "https://www.leroymerlin.es/productos/fregadero-encastrar-cuadrado-tokio-50x50-1-seno-acero-inox-87968476.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-035",
+   "sin_equivalente": false,
+   "descripcion": "Fregadero Delinia Essential sobre encimera 1 seno + escurridor 50x86 cm acero inox",
+   "ref": "91329336",
+   "unidad": "ud",
+   "pvp_iva": 79.0,
+   "url": "https://www.leroymerlin.es/productos/fregadero-seno-con-escurridor-de-acero-inox-delinia-essential-86x50x17cm-91329336.html",
+   "nota": "En listados aparece a 79,99 € y 86,99 €. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MFS-036",
+   "sin_equivalente": false,
+   "descripcion": "Grifo de cocina monomando caño alto ROCA Mitos cromado",
+   "ref": "91426398",
+   "unidad": "ud",
+   "pvp_iva": 62.99,
+   "url": "https://www.leroymerlin.es/productos/grifo-de-cocina-monomando-cano-alto-roca-mitos-cromado-2024-91426398.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  }
+ ],
+ "nuevos": [
+  {
+   "descripcion": "Enlace compresión Ø16 mm hembra 1/2\" (latón)",
+   "ref": "82070074",
+   "unidad": "ud",
+   "pvp_iva": 2.35,
+   "url": "https://leroymerlin.es/fp/82070074/enlace-comprension-de-16-mm-hembra-1-2",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "descripcion": "Enlace compresión Ø16 mm macho 1/2\" (latón)",
+   "ref": "82070078",
+   "unidad": "ud",
+   "pvp_iva": 2.35,
+   "url": "https://www.leroymerlin.es/productos/enlace-comprension-de-16-mm-macho-1-2-82070078.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "descripcion": "Te Press multicapa Ø16 mm",
+   "ref": "82068986",
+   "unidad": "ud",
+   "pvp_iva": 2.25,
+   "url": "https://www.leroymerlin.es/productos/te-press-de-16-mm-multicapa-82068986.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "descripcion": "Tubo multicapa aislado rojo Ø16 mm, rollo 50 m (agua caliente)",
+   "ref": "83985696",
+   "unidad": "rollo",
+   "pvp_iva": 64.99,
+   "url": "https://www.leroymerlin.es/productos/tubo-multicapa-aislado-rojo-de-16mm-de-diametro-y-50m-de-largo-83985696.html",
+   "nota": "Azul (ref 83985766) mismo precio. 1,30 €/m."
+  },
+  {
+   "descripcion": "Montura válvula de empotrar 3/4\" con pomo triangular",
+   "ref": "81897737",
+   "unidad": "ud",
+   "pvp_iva": 6.99,
+   "url": "https://www.leroymerlin.es/productos/montura-valvula-empot-3-4-pomo-triang-81897737.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "descripcion": "Llave de escuadra Arco A-80 corta 1/2\" x 3/8\" antical",
+   "ref": "12751340",
+   "unidad": "ud",
+   "pvp_iva": 9.04,
+   "url": "https://www.leroymerlin.es/productos/llave-escuadra-arco-corta-a-80-1-2-3-8-12751340.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "descripcion": "Codo de PVC Ø40 mm 87º macho-hembra",
+   "ref": "12149606",
+   "unidad": "ud",
+   "pvp_iva": 0.71,
+   "url": "https://www.leroymerlin.es/productos/codo-de-pvc-de-40-mm-87-m-h-12149606.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "descripcion": "Lote 110 codos 87º hembra-hembra PVC evacuación Ø40",
+   "ref": "82585878",
+   "unidad": "caja",
+   "pvp_iva": 24.2,
+   "url": "https://www.leroymerlin.es/productos/fontaneria/evacuacion-de-agua/tuberias-de-pvc-evacuacion/conexiones-para-tubos-de-evacuacion/lote-110-codos-87-h-h-pvc-evac-d-40-82585878.html",
+   "nota": "Caja de 110 ud (≈0,22 €/ud). Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "descripcion": "Tubo multicapa de PVC Ø110 mm 3 metros (encolar)",
+   "ref": "17048983",
+   "unidad": "ud",
+   "pvp_iva": 10.79,
+   "url": "https://www.leroymerlin.es/fp/17048983/tubo-multicapa-de-pvc-110-mm-3-metros",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "descripcion": "Tapa de bote sifónico aireación Ø110 mm",
+   "ref": "89161423",
+   "unidad": "ud",
+   "pvp_iva": 4.89,
+   "url": "https://leroymerlin.es/productos/tapa-bote-sifonico-aireacion-110mm-89161423.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "descripcion": "Grifo de cocina monomando extraíble 90º cromo",
+   "ref": "89447287",
+   "unidad": "ud",
+   "pvp_iva": 98.99,
+   "url": "https://www.leroymerlin.es/productos/grifo-de-cocina-monomando-extraible-90-cromo-89447287.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  }
+ ]
+}

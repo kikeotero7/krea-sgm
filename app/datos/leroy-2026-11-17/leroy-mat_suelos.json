@@ -1,0 +1,400 @@
+{
+ "capitulo": "mat_suelos",
+ "fecha": "2026-11-17",
+ "equivalentes": [
+  {
+   "codigo": "MSU-001",
+   "sin_equivalente": false,
+   "descripcion": "Suelo porcelánico Arcano efecto cemento gris mate 60x60 cm C3 ARTENS",
+   "ref": "83020754",
+   "unidad": "m2",
+   "pvp_iva": 13.99,
+   "url": "https://www.leroymerlin.es/productos/suelo-porcelanico-arcano-efecto-cemento-gris-mate-60x60-cm-c3-artens-83020754.html",
+   "nota": "Caja 1,08 m² a 15,11 €"
+  },
+  {
+   "codigo": "MSU-002",
+   "sin_equivalente": false,
+   "descripcion": "Suelo porcelánico Vesta efecto piedra natural 60x60 cm",
+   "ref": "90323683",
+   "unidad": "m2",
+   "pvp_iva": 10.99,
+   "url": "https://www.leroymerlin.es/productos/suelo-porcelanico-vesta-efecto-piedra-natural-60x60-cm-90323683.html",
+   "nota": "No rectificado (el original pedía rectificado); caja a 11,87 €"
+  },
+  {
+   "codigo": "MSU-003",
+   "sin_equivalente": false,
+   "descripcion": "Suelo porcelánico B-stone efecto piedra gris 60x60 cm SALONI (rectificado)",
+   "ref": "85059078",
+   "unidad": "m2",
+   "pvp_iva": 24.99,
+   "url": "https://www.leroymerlin.es/productos/suelo-porcelanico-b-stone-efecto-piedra-gris-60x60-cm-saloni-85059078.html",
+   "nota": "Paquete a 26,99 €"
+  },
+  {
+   "codigo": "MSU-004",
+   "sin_equivalente": false,
+   "descripcion": "Suelo porcelánico Urbex efecto terrazo arena 60x60 cm C2 PAMESA",
+   "ref": "96325059",
+   "unidad": "m2",
+   "pvp_iva": 26.99,
+   "url": "https://www.leroymerlin.es/productos/suelo-porcelanico-urbex-efecto-terrazo-arena-60x60-cm-c2-pamesa-96325059.html",
+   "nota": "Caja 1,44 m² a 38,87 €"
+  },
+  {
+   "codigo": "MSU-005",
+   "sin_equivalente": false,
+   "descripcion": "Suelo porcelánico Martins efecto cemento gris 60x120 cm C1 ARTENS (rectificado)",
+   "ref": "19483485",
+   "unidad": "m2",
+   "pvp_iva": 23.29,
+   "url": "https://www.leroymerlin.es/productos/ceramica/suelos-ceramicos/suelos-porcelanicos/suelo-porcelanico-martins-efecto-cemento-gris-60x120-cm-c1-artens-19483485.html",
+   "nota": "Precio visto en resultado de búsqueda; ya no hay 60x120 cemento a ~16 €"
+  },
+  {
+   "codigo": "MSU-006",
+   "sin_equivalente": false,
+   "descripcion": "Suelo/Azulejo porcelánico rectificado piedra Ferrara Beige 60x120 (Keros)",
+   "ref": "95834797",
+   "unidad": "m2",
+   "pvp_iva": 29.95,
+   "url": "https://www.leroymerlin.es/productos/suelo-azulejo-porcelanico-rectificado-piedra-ferrara-beige-60x120-95834797.html",
+   "nota": "Caja 1,44 m² a 43,13 €"
+  },
+  {
+   "codigo": "MSU-007",
+   "sin_equivalente": false,
+   "descripcion": "Suelo/Azulejo porcelánico Absolute rectificado efecto mármol pulido 60x120 cm",
+   "ref": "94079073",
+   "unidad": "m2",
+   "pvp_iva": 26.9,
+   "url": "https://www.leroymerlin.es/productos/suelo-azulejo-porcelanico-absolute-rectificado-efecto-marmol-pulido-60x120-cm-94079073.html",
+   "nota": "Caja 1,44 m²"
+  },
+  {
+   "codigo": "MSU-008",
+   "sin_equivalente": false,
+   "descripcion": "Suelo porcelánico Levante efecto piedra bone 120x120 cm C1 ARTENS (rectificado)",
+   "ref": "98829734",
+   "unidad": "m2",
+   "pvp_iva": 34.99,
+   "url": "https://www.leroymerlin.es/productos/suelo-porcelanico-levante-efecto-piedra-bone-120x120-cm-c1-artens-98829734.html",
+   "nota": "Caja a 50,39 €"
+  },
+  {
+   "codigo": "MSU-009",
+   "sin_equivalente": false,
+   "descripcion": "Suelo porcelánico Tanzania efecto madera honey 20x120 cm C1",
+   "ref": "88758701",
+   "unidad": "m2",
+   "pvp_iva": 16.99,
+   "url": "https://www.leroymerlin.es/productos/suelo-porcelanico-tanzania-efecto-madera-honey-20x120-cm-c1-88758701.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MSU-010",
+   "sin_equivalente": false,
+   "descripcion": "Suelo porcelánico Harmony Mérida efecto madera roble 22,5x90 cm C1 ARTENS",
+   "ref": "82000979",
+   "unidad": "m2",
+   "pvp_iva": 14.99,
+   "url": "https://www.leroymerlin.es/productos/suelo-porcelanico-harmony-merida-efecto-madera-roble-22-5x90-cm-c1-artens-82000979.html",
+   "nota": "Otra captura muestra 15,99 €/m²; caja 1,215 m²"
+  },
+  {
+   "codigo": "MSU-011",
+   "sin_equivalente": false,
+   "descripcion": "Suelo porcelánico efecto piedra blanco Pizarra 30x60 cm ARTENS",
+   "ref": "19637912",
+   "unidad": "m2",
+   "pvp_iva": 21.99,
+   "url": "https://www.leroymerlin.es/productos/suelo-porcelanico-efecto-piedra-blanco-pizarra-30x60-cm-artens-19637912.html",
+   "nota": "Caja 1,44 m² a 31,67 €; no hay efecto empedrado en 30x60"
+  },
+  {
+   "codigo": "MSU-012",
+   "sin_equivalente": false,
+   "descripcion": "Suelo cerámico Denver efecto cemento gris 45x45 cm C1",
+   "ref": "87542737",
+   "unidad": "m2",
+   "pvp_iva": 7.95,
+   "url": "https://www.leroymerlin.es/productos/suelo-ceramico-denver-efecto-cemento-gris-45x45-cm-c1-87542737.html",
+   "nota": "En listado aparece a 6,99 €/m²; caja 1,42 m²"
+  },
+  {
+   "codigo": "MSU-013",
+   "sin_equivalente": false,
+   "descripcion": "Suelo porcelánico Tamarindo efecto piedra terra 45x45 cm C3",
+   "ref": "82070021",
+   "unidad": "m2",
+   "pvp_iva": 17.99,
+   "url": "https://www.leroymerlin.es/productos/ceramica/ceramica-para-exteriores-y-piscinas/baldosas-para-exterior-y-terraza/suelo-porcelanico-tamarindo-efecto-piedra-terra-45x45-cm-c3-82070021.html",
+   "nota": "Caja a 21,95 €"
+  },
+  {
+   "codigo": "MSU-014",
+   "sin_equivalente": false,
+   "descripcion": "Suelo porcelánico Martins efecto cemento gris 60x60 cm C3 ARTENS",
+   "ref": "87551971",
+   "unidad": "m2",
+   "pvp_iva": 19.99,
+   "url": "https://www.leroymerlin.es/productos/ceramica/ceramica-para-exteriores-y-piscinas/baldosas-para-exterior-y-terraza/suelo-porcelanico-exterior-efecto-cemento-gris-martins-60x60-cm-c3-artens-87551971.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MSU-015",
+   "sin_equivalente": false,
+   "descripcion": "Suelo porcelánico Alpha efecto piedra beige 60x60x2 cm C3 (2 cm, exterior)",
+   "ref": "86163886",
+   "unidad": "m2",
+   "pvp_iva": 49.99,
+   "url": "https://www.leroymerlin.es/productos/suelo-porcelanico-alpha-efecto-piedra-beige-60x60x2-cm-c3-86163886.html",
+   "nota": "C3 (no indica R11)"
+  },
+  {
+   "codigo": "MSU-016",
+   "sin_equivalente": false,
+   "descripcion": "Baldosa hidráulica original de 20x20 (1 m² = 20 uds.), producto artesanal",
+   "ref": "91037977",
+   "unidad": "m2",
+   "pvp_iva": 54.81,
+   "url": "https://www.leroymerlin.es/productos/baldosa-hidraulica-original-de-20x20-1-m2-20-uds-producto-artesanal-91037977.html",
+   "nota": "Marketplace; -12% sobre 62,50 €"
+  },
+  {
+   "codigo": "MSU-017",
+   "sin_equivalente": false,
+   "descripcion": "Suelo/Azulejo porcelánico Antigua efecto hidráulico beige deco 33x33 cm C1",
+   "ref": "88661903",
+   "unidad": "m2",
+   "pvp_iva": 24.99,
+   "url": "https://www.leroymerlin.es/productos/suelo-azulejo-porcelanico-antigua-efecto-hidraulico-beige-deco-33x33-cm-c1-88661903.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MSU-018",
+   "sin_equivalente": false,
+   "descripcion": "Suelo laminado Forte 8 mm Lowa efecto madera natural AC4 NAT380 ARTENS",
+   "ref": "85540152",
+   "unidad": "m2",
+   "pvp_iva": 9.9,
+   "url": "https://www.leroymerlin.es/productos/suelo-laminado-forte-8mm-lowa-efecto-madera-natural-ac4-nat380-artens-85540152.html",
+   "nota": "Caja 2,22 m² a 21,98 €"
+  },
+  {
+   "codigo": "MSU-019",
+   "sin_equivalente": false,
+   "descripcion": "Suelo laminado Intenso 8 mm New Dunmor efecto madera natural AC5 ARTENS NAT365",
+   "ref": "92449861",
+   "unidad": "m2",
+   "pvp_iva": 9.9,
+   "url": "https://www.leroymerlin.es/productos/suelo-laminado-intenso-8mm-new-dunmor-efecto-madera-natural-ac5-artens-nat365-92449861.html",
+   "nota": "Caja a 19,70 €"
+  },
+  {
+   "codigo": "MSU-020",
+   "sin_equivalente": false,
+   "descripcion": "Suelo laminado Extrem Water Resistant 100h 12 mm Jaén AC5 OSC420 ARTENS",
+   "ref": "83762737",
+   "unidad": "m2",
+   "pvp_iva": 18.99,
+   "url": "https://www.leroymerlin.es/productos/suelo-laminado-extrem-water-resistant-100h-12mm-jaen-ac5-osc420-artens-83762737.html",
+   "nota": "Apto baños y cocinas"
+  },
+  {
+   "codigo": "MSU-021",
+   "sin_equivalente": false,
+   "descripcion": "Suelo vinílico SPC clic Forte Kinvarra 5 mm con base integrada ARTENS GR105",
+   "ref": "89973248",
+   "unidad": "m2",
+   "pvp_iva": 15.99,
+   "url": "https://www.leroymerlin.es/productos/suelo-vinilico-spc-clic-forte-kinvarra-efecto-madera-blanca-artens-gr105-89973248.html",
+   "nota": "Caja a 28,14 €"
+  },
+  {
+   "codigo": "MSU-022",
+   "sin_equivalente": false,
+   "descripcion": "Suelo vinílico SPC click ARTENS Intenso Extrem 5,5 mm Jaén MOD048",
+   "ref": "89973276",
+   "unidad": "m2",
+   "pvp_iva": 24.99,
+   "url": "https://www.leroymerlin.es/productos/suelo-vinilico-spc-click-artens-intenso-extrem-5-5mm-jaen-mod048-89973276.html",
+   "nota": "Paquete 1,54 m²"
+  },
+  {
+   "codigo": "MSU-023",
+   "sin_equivalente": false,
+   "descripcion": "Suelo vinílico autoadhesivo Concrete CER515 ARTENS",
+   "ref": "81971345",
+   "unidad": "m2",
+   "pvp_iva": 12.99,
+   "url": "https://www.leroymerlin.es/productos/suelos/suelos-vinilicos/losetas-y-lamas-vinilicas/suelo-vinilico-autoadhesivo-medio-concrete-cer515-artens-81971345.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MSU-024",
+   "sin_equivalente": false,
+   "descripcion": "Parquet multicapa Trilama Forte roble natural satinado 108x19,8 cm (14 mm)",
+   "ref": "81876876",
+   "unidad": "m2",
+   "pvp_iva": 38.09,
+   "url": "https://www.leroymerlin.es/productos/parquet-multicapa-trilama-forte-roble-natural-satinado-108x19-8-cm-81876876.html",
+   "nota": "Caja a 56,99 €"
+  },
+  {
+   "codigo": "MSU-025",
+   "sin_equivalente": false,
+   "descripcion": "Parquet multicapa Monolama Rustic XL roble gris mate 198x19,8 cm",
+   "ref": "83611389",
+   "unidad": "m2",
+   "pvp_iva": 63.05,
+   "url": "https://www.leroymerlin.es/productos/suelos/suelos-de-madera/parquet/parquet-multicapa-monolama-rustic-xl-roble-gris-mate-198x20-cm-83611389.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MSU-026",
+   "sin_equivalente": false,
+   "descripcion": "Parquet multicapa Monolama Select XL roble natural mate 218x19,8 cm",
+   "ref": "83611382",
+   "unidad": "m2",
+   "pvp_iva": 82.42,
+   "url": "https://www.leroymerlin.es/productos/parquet-multicapa-monolama-select-xl-roble-natural-mate-218x19-8-cm-83611382.html",
+   "nota": "Caja a 249 €; la Rustic XXL (78,44 €/m²) no tenía ficha localizada"
+  },
+  {
+   "codigo": "MSU-027",
+   "sin_equivalente": false,
+   "descripcion": "Tarima de madera de pino natural machihembrada 2000x130x20 mm",
+   "ref": "91285809",
+   "unidad": "m2",
+   "pvp_iva": 17.99,
+   "url": "https://www.leroymerlin.es/productos/suelos/suelos-de-madera/tarima-de-pino/tarima-de-madera-de-pino-natural-machihembradas-de-2000x130x20mm-91285809.html",
+   "nota": "Caja 1,04 m² a 18,71 €"
+  },
+  {
+   "codigo": "MSU-028",
+   "sin_equivalente": false,
+   "descripcion": "Parquet de madera maciza de roble barnizado mate 18x125x400-1200 mm, aspecto rústico (WOODBORD)",
+   "ref": "",
+   "unidad": "m2",
+   "pvp_iva": 88.83,
+   "url": "https://www.leroymerlin.es/productos/suelos/suelos-de-madera/parquet/parquet-roble-macizo-p.html",
+   "nota": "Marketplace WOODBORD; paquete 1,8 m² a 159,90 €; ficha individual no localizada (URL de categoría)"
+  },
+  {
+   "codigo": "MSU-029",
+   "sin_equivalente": false,
+   "descripcion": "Piedra natural mármol Crema Marfil 30x60 cm acabado Antic",
+   "ref": "93181425",
+   "unidad": "m2",
+   "pvp_iva": 78.65,
+   "url": "https://www.leroymerlin.es/productos/piedra-natural-marmol-crema-marfil-30x60cm-acabado-antic-93181425.html",
+   "nota": "Semipulido, 30x60 (no hay 40x60 pulido en Leroy)"
+  },
+  {
+   "codigo": "MSU-030",
+   "sin_equivalente": false,
+   "descripcion": "Piedra natural travertino coquera multiformato 1,2 cm espesor (tetris)",
+   "ref": "82961398",
+   "unidad": "m2",
+   "pvp_iva": 35.89,
+   "url": "https://www.leroymerlin.es/productos/piedra-natural-travertino-coquera-multiformato-1-2cm-espesor-tetris-82961398.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MSU-031",
+   "sin_equivalente": false,
+   "descripcion": "Kit microcemento Ready para suelos de 10 m² (24 colores)",
+   "ref": "93658169",
+   "unidad": "ud",
+   "pvp_iva": 369.56,
+   "url": "https://www.leroymerlin.es/productos/kit-microcemento-ready-para-aplicacion-en-suelos-de-10m2-24-colores-disponibles-a-especificar-por-cliente-93658169.html",
+   "nota": "Marketplace HOMECRET; kit de 10 m² (no hay kit de 20 m²)"
+  },
+  {
+   "codigo": "MSU-032",
+   "sin_equivalente": false,
+   "descripcion": "Kit microcemento Ready para suelos 10 m², coste por m²",
+   "ref": "93658169",
+   "unidad": "m2",
+   "pvp_iva": 36.96,
+   "url": "https://www.leroymerlin.es/productos/kit-microcemento-ready-para-aplicacion-en-suelos-de-10m2-24-colores-disponibles-a-especificar-por-cliente-93658169.html",
+   "nota": "Calculado: 369,56 € / 10 m²"
+  }
+ ],
+ "nuevos": [
+  {
+   "descripcion": "Suelo porcelánico Arcano efecto cemento beige 60x60 cm C3 ARTENS",
+   "ref": "87542739",
+   "unidad": "m2",
+   "pvp_iva": 13.99,
+   "url": "https://www.leroymerlin.es/productos/suelo-porcelanico-arcano-efecto-cemento-beige-60x60-cm-c3-87542739.html",
+   "nota": "60x60 beige gama económica"
+  },
+  {
+   "descripcion": "Suelo porcelánico Imagine efecto cemento blanco 60,8x60,8 cm C1 ARTENS",
+   "ref": "90305149",
+   "unidad": "m2",
+   "pvp_iva": 17.99,
+   "url": "https://www.leroymerlin.es/productos/ceramica/novedades-ceramica/novedades-en-suelo-de-interior/suelo-porcelanico-imagine-efecto-cemento-blanco-60-8x60-8-cm-c1-artens-90305149.html",
+   "nota": "Rectificado; caja a 26,63 €"
+  },
+  {
+   "descripcion": "Suelo porcelánico Imagine efecto cemento blanco 60x120 cm ARTENS",
+   "ref": "90305150",
+   "unidad": "m2",
+   "pvp_iva": 24.99,
+   "url": "https://www.leroymerlin.es/productos/suelo-porcelanico-imagine-efecto-cemento-blanco-60x120-cm-artens-90305150.html",
+   "nota": "Caja a 35,99 €"
+  },
+  {
+   "descripcion": "Suelo/Azulejo porcelánico Livorno efecto piedra blanco 60x120 cm C2",
+   "ref": "90347689",
+   "unidad": "m2",
+   "pvp_iva": 21.99,
+   "url": "https://www.leroymerlin.es/productos/suelo-azulejo-porcelanico-livorno-efecto-piedra-blanco-60x120-cm-c2-90347689.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Suelo cerámico Denver efecto cemento crema 45x45 cm C1",
+   "ref": "87542738",
+   "unidad": "m2",
+   "pvp_iva": 7.99,
+   "url": "https://www.leroymerlin.es/productos/suelo-ceramico-denver-efecto-cemento-crema-45x45-cm-c1-87542738.html",
+   "nota": "Gres económico; caja a 11,35 €"
+  },
+  {
+   "descripcion": "Suelo cerámico New Aspen efecto mármol crema 45x45 cm",
+   "ref": "87542743",
+   "unidad": "m2",
+   "pvp_iva": 8.95,
+   "url": "https://www.leroymerlin.es/productos/suelo-ceramico-new-aspen-efecto-marmol-crema-45x45-cm-87542743.html",
+   "nota": "En listado a 6,99 €/m²"
+  },
+  {
+   "descripcion": "Suelo porcelánico Nayara efecto piedra plata soft 45x45 cm C3 (exterior)",
+   "ref": "82069980",
+   "unidad": "m2",
+   "pvp_iva": 13.99,
+   "url": "https://www.leroymerlin.es/productos/ceramica/ceramica-para-exteriores-y-piscinas/baldosas-para-exterior-y-terraza/suelo-porcelanico-nayara-efecto-piedra-gris-45x45-cm-c3-82069980.html",
+   "nota": "Caja 1,22 m² a 17,07 €"
+  },
+  {
+   "descripcion": "Suelo/Azulejo porcelánico Kirat efecto cemento greige 120x120 cm (6 mm)",
+   "ref": "96331962",
+   "unidad": "m2",
+   "pvp_iva": 29.99,
+   "url": "https://www.leroymerlin.es/productos/suelo-azulejo-porcelanico-kirat-efecto-cemento-greige-120x120-cm-96331962.html",
+   "nota": "Placa fina 6 mm rectificada"
+  },
+  {
+   "descripcion": "Suelo laminado Forte 8 mm Finlay efecto madera gris AC4 GR116 ARTENS",
+   "ref": "85540156",
+   "unidad": "m2",
+   "pvp_iva": 9.99,
+   "url": "https://www.leroymerlin.es/productos/suelo-laminado-forte-8mm-finlay-efecto-madera-gris-ac4-gr116-artens-85540156.html",
+   "nota": "Caja 2,22 m² a 22,18 €"
+  }
+ ]
+}

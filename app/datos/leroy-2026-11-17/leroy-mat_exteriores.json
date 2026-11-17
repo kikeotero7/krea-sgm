@@ -1,0 +1,238 @@
+{
+ "capitulo": "mat_exteriores",
+ "fecha": "2026-11-17",
+ "equivalentes": [
+  {
+   "codigo": "MEX-001",
+   "sin_equivalente": false,
+   "descripcion": "Mortero monocapa raspado gris (Grupo Puma), saco 25 kg",
+   "ref": "82361078",
+   "unidad": "saco",
+   "pvp_iva": 7.99,
+   "url": "https://www.leroymerlin.es/productos/mortero-monocapa-raspado-25kg-gris-82361078.html",
+   "nota": "Weberpral no aparece con precio en Leroy. Mismo precio en crema, beige, salmón y marengo."
+  },
+  {
+   "codigo": "MEX-002",
+   "sin_equivalente": false,
+   "descripcion": "Mortero monocapa raspado blanco (Grupo Puma), saco 25 kg",
+   "ref": "10568145",
+   "unidad": "saco",
+   "pvp_iva": 6.29,
+   "url": "https://www.leroymerlin.es/productos/mortero-monocapa-raspado-25kg-blanco-10568145.html",
+   "nota": "Otra página lo daba a 5,40 €."
+  },
+  {
+   "codigo": "MEX-003",
+   "sin_equivalente": false,
+   "descripcion": "Mortero hidrófugo de revoco MOLINS gris capa fina, saco 25 kg",
+   "ref": "81872084",
+   "unidad": "saco",
+   "pvp_iva": 5.19,
+   "url": "https://www.leroymerlin.es/productos/mortero-hidrofugo-de-revoco-molins-gris-capa-fina-25-kg-81872084.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MEX-004",
+   "sin_equivalente": false,
+   "descripcion": "Mortero de reparación estructural R4 Sika MonoTop-412 S, saco 25 kg",
+   "ref": "18599035",
+   "unidad": "saco",
+   "pvp_iva": 25.59,
+   "url": "https://www.leroymerlin.es/productos/mortero-de-reparacion-estructural-r4-sika-monotop-412s-25-kg-18599035.html",
+   "nota": "Mucho más caro que el actual (12 €)."
+  },
+  {
+   "codigo": "MEX-005",
+   "sin_equivalente": false,
+   "descripcion": "Bordillo hormigón gris 100x20x10 cm aristas rectas",
+   "ref": "91926503",
+   "unidad": "ud",
+   "pvp_iva": 10.29,
+   "url": "https://www.leroymerlin.es/productos/bordillo-hormigon-gris-100x20x10-cm-unidad-100x20x10-cm-aristas-rectas-gris-91926503.html",
+   "nota": "Vendido por Vetonek (no por Leroy). Palé 25 uds (91926378) a 244,37 €."
+  },
+  {
+   "codigo": "MEX-006",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado; se agotó el cupo de búsquedas. No es que Leroy no lo tenga."
+  },
+  {
+   "codigo": "MEX-007",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado; se agotó el cupo de búsquedas. No es que Leroy no lo tenga."
+  },
+  {
+   "codigo": "MEX-008",
+   "sin_equivalente": false,
+   "descripcion": "Cubremuros Coria gris 22x5x50 cm (Verniprens)",
+   "ref": "15189594",
+   "unidad": "ud",
+   "pvp_iva": 8.39,
+   "url": "https://www.leroymerlin.es/productos/cubremuros-coria-gris-22x5x50-cm-15189594.html",
+   "nota": "Mucho más caro que el actual (0,95 €)."
+  },
+  {
+   "codigo": "MEX-009",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado; se agotó el cupo de búsquedas. No es que Leroy no lo tenga."
+  },
+  {
+   "codigo": "MEX-010",
+   "sin_equivalente": true,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "No se encontró mortero coloreado para hormigón impreso en una búsqueda; revisar."
+  },
+  {
+   "codigo": "MEX-011",
+   "sin_equivalente": true,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "No se encontró endurecedor coloreado en una búsqueda; revisar."
+  },
+  {
+   "codigo": "MEX-012",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado; se agotó el cupo de búsquedas. No es que Leroy no lo tenga."
+  },
+  {
+   "codigo": "MEX-013",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado; se agotó el cupo de búsquedas. No es que Leroy no lo tenga."
+  },
+  {
+   "codigo": "MEX-014",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado; se agotó el cupo de búsquedas. No es que Leroy no lo tenga."
+  },
+  {
+   "codigo": "MEX-015",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "PENDIENTE: no consultado; se agotó el cupo de búsquedas. No es que Leroy no lo tenga."
+  }
+ ],
+ "nuevos": [
+  {
+   "descripcion": "Mortero monocapa raspado REVAT gris claro (Molins), saco 25 kg",
+   "ref": "82376840",
+   "unidad": "saco",
+   "pvp_iva": 9.79,
+   "url": "https://www.leroymerlin.es/productos/mortero-monocapa-raspado-revat-gris-claro-25-kg-82376840.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Mortero Molins Revat Cal enfoscado blanco, saco 25 kg",
+   "ref": "81955757",
+   "unidad": "saco",
+   "pvp_iva": 10.99,
+   "url": "https://www.leroymerlin.es/productos/mortero-molins-revat-cal-enfoscado-blanco-25-kg-81955757.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Mortero revoco cal hidráulica base arena (Grupo Puma), saco 25 kg",
+   "ref": "86689615",
+   "unidad": "saco",
+   "pvp_iva": 13.99,
+   "url": "https://www.leroymerlin.es/productos/mortero-revoco-cal-hidraulico-base-arena-25-kg-86689615.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Mortero de reparación estructural R4 Sika SikaRep-434, saco 25 kg",
+   "ref": "18598993",
+   "unidad": "saco",
+   "pvp_iva": 25.99,
+   "url": "https://www.leroymerlin.es/productos/mortero-de-reparacion-estructural-r4-sika-sikarep-434-25-kg-18598993.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Bordillo hormigón gris 100x20x10 cm arista chaflán, palé 25 uds",
+   "ref": "91926378",
+   "unidad": "ud",
+   "pvp_iva": 244.37,
+   "url": "https://www.leroymerlin.es/productos/bordillo-hormigon-gris-100x20x10-cm-palet-25-unidades-100x20x10-cm-arista-chaflan-gris-91926378.html",
+   "nota": "Precio por palé de 25 uds; vendido por Vetonek."
+  },
+  {
+   "descripcion": "Cubremuros 1 agua gris 50x6x50 cm",
+   "ref": "15236382",
+   "unidad": "ud",
+   "pvp_iva": 18.29,
+   "url": "https://www.leroymerlin.es/productos/cubremuros-1-agua-50x6x50-15236382.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Cubremuros 2 aguas gris 50x4x50 cm",
+   "ref": "15236333",
+   "unidad": "ud",
+   "pvp_iva": 15.99,
+   "url": "https://www.leroymerlin.es/productos/cubremuros-15-dos-aguas-50x4x50-15236333.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Albardilla blanca de hormigón 17x4,4x147 cm, 2 aguas",
+   "ref": "81929532",
+   "unidad": "ud",
+   "pvp_iva": 34.79,
+   "url": "https://www.leroymerlin.es/productos/albardilla-blanca-prefabricado-hormigon-17-x-4-4-x-147-cm-81929532.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Arlita (arcilla expandida) 10-20 mm, saco",
+   "ref": "19960990",
+   "unidad": "saco",
+   "pvp_iva": 7.66,
+   "url": "https://www.leroymerlin.es/productos/arlita-arcilla-expandida-super-ligera-de-10-a-20-mm-19960990.html",
+   "nota": "Saco de unos 13,75 kg; para rellenos y pendientes ligeros."
+  },
+  {
+   "descripcion": "Mortero acrílico de acabado SATE Morcemcril blanco, 25 kg",
+   "ref": "16019213",
+   "unidad": "ud",
+   "pvp_iva": 75.99,
+   "url": "https://www.leroymerlin.es/productos/mortero-acrilico-de-acabado-para-sate-morcemcril-blanco-25kg-16019213.html",
+   "nota": ""
+  }
+ ]
+}

@@ -1,0 +1,240 @@
+{
+ "capitulo": "mat_cocina_bano",
+ "fecha": "2026-11-17",
+ "equivalentes": [
+  {
+   "codigo": "MCB-001",
+   "sin_equivalente": false,
+   "descripcion": "Composición de cocina BASIC blanco 2,20 m (4 bajos + 4 altos + regleta horno + cajón)",
+   "ref": "81956957",
+   "unidad": "ud",
+   "pvp_iva": 294.18,
+   "url": "https://www.leroymerlin.es/productos/composicion-de-cocina-basic-blanco-2-20-m-81956957.html",
+   "nota": "Se vende como kit de 2,20 m: ≈133,72 €/ml. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MCB-002",
+   "sin_equivalente": false,
+   "descripcion": "Cocina en kit Delinia iD Sofía blanco 3,00 m",
+   "ref": "85034118",
+   "unidad": "ud",
+   "pvp_iva": 922.56,
+   "url": "https://www.leroymerlin.es/productos/cocina-en-kit-delinea-id-sofia-blanco-3-00-m-85034118.html",
+   "nota": "Kit de 3,00 m: ≈307,52 €/ml. Sin zócalo, encimera ni electrodomésticos. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MCB-003",
+   "sin_equivalente": false,
+   "descripcion": "Mueble bajo de cocina Delinia iD Sofía blanco 76,8x60 cm 1 puerta",
+   "ref": "82602430",
+   "unidad": "ud",
+   "pvp_iva": 100.77,
+   "url": "https://www.leroymerlin.es/productos/mueble-bajo-de-cocina-delinia-id-sofia-blanco-76-8x60-cm-1-pta-82602430.html",
+   "nota": "Puede ser precio con rebaja exclusiva CLUB -15 %. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MCB-004",
+   "sin_equivalente": false,
+   "descripcion": "Mueble bajo BASIC blanco 2 puertas 80x70 cm (aglomerado)",
+   "ref": "12197066",
+   "unidad": "ud",
+   "pvp_iva": 55.0,
+   "url": "https://www.leroymerlin.es/productos/mueble-bajo-basic-blanco-2-puertas-fabricado-en-aglomerado-80-x-70-cm-12197066.html",
+   "nota": "Otras capturas muestran 53 € y 42,99 €. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MCB-005",
+   "sin_equivalente": false,
+   "descripcion": "Mueble alto de cocina Basic blanco 1 puerta 60x70 cm",
+   "ref": "12196940",
+   "unidad": "ud",
+   "pvp_iva": 33.0,
+   "url": "https://www.leroymerlin.es/productos/mueble-alto-de-cocina-basic-blanco-mate-1-puerta-alt-70-x-an-60-cm-12196940.html",
+   "nota": "Una opción de la ficha aparece a 29,49 €. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MCB-006",
+   "sin_equivalente": false,
+   "descripcion": "Columna para cocina DELINIA blanco 60x220 cm",
+   "ref": "14128961",
+   "unidad": "ud",
+   "pvp_iva": 75.99,
+   "url": "https://www.leroymerlin.es/productos/columna-para-cocina-delinia-blanco-60-x-220-cm-ancho-x-alto-14128961.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MCB-007",
+   "sin_equivalente": false,
+   "descripcion": "Encimera de cocina laminada blanco mate 240x63 cm, 30 mm",
+   "ref": "17336431",
+   "unidad": "ud",
+   "pvp_iva": 60.27,
+   "url": "https://www.leroymerlin.es/productos/encimera-de-cocina-laminada-blanco-mate-240x63-cm-espesor-30mm-17336431.html",
+   "nota": "Pieza de 2,40 m: ≈25,11 €/ml. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MCB-008",
+   "sin_equivalente": false,
+   "descripcion": "Encimera de cocina laminada Amazona roble 180x62 cm, 38 mm",
+   "ref": "84630275",
+   "unidad": "ud",
+   "pvp_iva": 79.99,
+   "url": "https://www.leroymerlin.es/productos/encimera-de-cocina-laminada-amazona-roble-180x62-cm-espesor-38mm-84630275.html",
+   "nota": "Pieza de 1,80 m: ≈44,44 €/ml. No hay acabado cemento en 38 mm. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MCB-009",
+   "sin_equivalente": false,
+   "descripcion": "Encimera a medida de cuarzo SILESTONE Crema Minerva",
+   "ref": "19819464",
+   "unidad": "ml",
+   "pvp_iva": 265.0,
+   "url": "http://www.leroymerlin.es/fp/19819464/encimera-a-medida-silestone-crema-minerva",
+   "nota": "Leroy vende el cuarzo a medida por metro lineal (fondo 60-65 cm), no por m2; Silestone desde 259 €/ml en categoría. Ficha antigua. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MCB-010",
+   "sin_equivalente": false,
+   "descripcion": "Campana decorativa TURBOAIR Certosa 60 cm inox, 3 velocidades, 395 m3/h",
+   "ref": "82419261",
+   "unidad": "ud",
+   "pvp_iva": 74.99,
+   "url": "https://www.leroymerlin.es/productos/campana-decorativa-turboair-certosa-con-3-velocidades-60-cm-395-m-h-inox-clase-d-82419261.html",
+   "nota": "Clase D. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MCB-011",
+   "sin_equivalente": false,
+   "descripcion": "Mueble de baño con lavabo Essential blanco brillante 80x45 cm",
+   "ref": "86512376",
+   "unidad": "ud",
+   "pvp_iva": 135.1,
+   "url": "https://www.leroymerlin.es/productos/mueble-de-bano-con-lavabo-essential-blanco-brillante-80x45-cm-86512376.html",
+   "nota": "El modelo Eco 80x45 (ref 16974762) aparecía a 103,99 € en una ficha antigua. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "codigo": "MCB-012",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "ud",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "No consultado: se agotaron las búsquedas disponibles (Firecrawl sin créditos y límite de WebSearch). Precio pendiente.",
+   "pendiente": true
+  },
+  {
+   "codigo": "MCB-013",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "ud",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "No consultado: se agotaron las búsquedas disponibles (Firecrawl sin créditos y límite de WebSearch). Precio pendiente.",
+   "pendiente": true
+  },
+  {
+   "codigo": "MCB-014",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "ud",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "No consultado: se agotaron las búsquedas disponibles (Firecrawl sin créditos y límite de WebSearch). Precio pendiente.",
+   "pendiente": true
+  },
+  {
+   "codigo": "MCB-015",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "ud",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "No consultado: se agotaron las búsquedas disponibles (Firecrawl sin créditos y límite de WebSearch). Precio pendiente.",
+   "pendiente": true
+  },
+  {
+   "codigo": "MCB-016",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "ud",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "No consultado: se agotaron las búsquedas disponibles (Firecrawl sin créditos y límite de WebSearch). Precio pendiente.",
+   "pendiente": true
+  },
+  {
+   "codigo": "MCB-017",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "ud",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "No consultado: se agotaron las búsquedas disponibles (Firecrawl sin créditos y límite de WebSearch). Precio pendiente.",
+   "pendiente": true
+  }
+ ],
+ "nuevos": [
+  {
+   "descripcion": "Módulo alto de cocina blanco en kit Delinia iD 60x76,8x35 cm",
+   "ref": "436273",
+   "unidad": "ud",
+   "pvp_iva": 41.99,
+   "url": "https://www.leroymerlin.es/productos/modulo-alto-de-cocina-blanco-en-kit-delinia-id-60-x-76-8-x-35-cm-436273.html",
+   "nota": "Sin puerta ni patas. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "descripcion": "Módulo columna de cocina blanco en kit Delinia iD 60x214,4x58 cm (para horno/micro/frigo)",
+   "ref": "436281",
+   "unidad": "ud",
+   "pvp_iva": 113.0,
+   "url": "https://www.leroymerlin.es/productos/modulo-columna-de-cocina-blanco-en-kit-delinia-id-60-x-214-4-x-58-cm-436281.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "descripcion": "Mueble alto campana de cocina Basic blanco 1 puerta 60 cm",
+   "ref": "12196961",
+   "unidad": "ud",
+   "pvp_iva": 29.49,
+   "url": "https://www.leroymerlin.es/productos/mueble-alto-campana-de-cocina-basic-blanco-1-puerta-60-cm-12196961.html",
+   "nota": "Otra opción de la ficha a 33 €. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "descripcion": "Encimera de cocina laminada Oxford blanco mate 360x63 cm, 30 mm",
+   "ref": "84234203",
+   "unidad": "ud",
+   "pvp_iva": 82.99,
+   "url": "https://www.leroymerlin.es/productos/encimera-de-cocina-laminada-blanco-mate-3091-sef-360x63-cm-espesor-30mm-84234203.html",
+   "nota": "Pieza de 3,60 m: ≈23,05 €/ml. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "descripcion": "Campana decorativa MEPAMSA Silueta 60 cm inox, 590 m3/h, clase A",
+   "ref": "82573015",
+   "unidad": "ud",
+   "pvp_iva": 166.95,
+   "url": "https://www.leroymerlin.es/productos/campana-decorativa-mepamsa-silueta-con-3-velocidades-60-cm-590-m-h-inox-clase-a-82573015.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "descripcion": "Lavabo cerámico sobre encimera 60x38x10 cm blanco",
+   "ref": "91164593",
+   "unidad": "ud",
+   "pvp_iva": 116.9,
+   "url": "https://www.leroymerlin.es/productos/lavabo-ceramico-sobre-encimera-60x38x10-cm-blanco-91164593.html",
+   "nota": "Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  },
+  {
+   "descripcion": "Fregadero encastrar Viena 1 seno + escurridor 80x48 cm acero inox",
+   "ref": "87968471",
+   "unidad": "ud",
+   "pvp_iva": 73.48,
+   "url": "https://www.leroymerlin.es/productos/fregadero-encastrar-viena-1-seno-1-escurridera-80x48cm-acero-inox-plastimodul-87968471.html",
+   "nota": "Marketplace. Precio leído en resultados de búsqueda web de leroymerlin.es (Firecrawl sin créditos); conviene confirmar en la ficha."
+  }
+ ]
+}

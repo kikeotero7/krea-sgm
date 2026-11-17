@@ -1,0 +1,324 @@
+{
+ "capitulo": "mat_revestimientos",
+ "fecha": "2026-11-17",
+ "equivalentes": [
+  {
+   "codigo": "MRV-001",
+   "sin_equivalente": false,
+   "descripcion": "Azulejo cerámico Frosty efecto blanco mate 25x40 cm ARTENS (pasta roja)",
+   "ref": "82213811",
+   "unidad": "m2",
+   "pvp_iva": 6.99,
+   "url": "https://www.leroymerlin.es/productos/azulejo-ceramico-frosty-efecto-blanco-mate-25x40-cm-artens-82213811.html",
+   "nota": "Caja 1,6 m²"
+  },
+  {
+   "codigo": "MRV-002",
+   "sin_equivalente": false,
+   "descripcion": "Azulejo cerámico Frosty efecto blanco brillo 30x60 cm ARTENS",
+   "ref": "82213809",
+   "unidad": "m2",
+   "pvp_iva": 8.99,
+   "url": "https://www.leroymerlin.es/productos/azulejo-ceramico-frosty-efecto-blanco-brillo-30x60-cm-artens-82213809.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MRV-003",
+   "sin_equivalente": false,
+   "descripcion": "Azulejo cerámico Essential efecto mármol blanco 33,3x55 cm",
+   "ref": "83500627",
+   "unidad": "m2",
+   "pvp_iva": 8.99,
+   "url": "https://www.leroymerlin.es/productos/azulejo-ceramico-essential-efecto-marmol-blanco-33-3x55-cm-83500627.html",
+   "nota": "Caja 1,84 m² a 16,54 €"
+  },
+  {
+   "codigo": "MRV-004",
+   "sin_equivalente": false,
+   "descripcion": "Azulejo porcelánico Camargue 20x50 cm gris (pasta roja, efecto cemento)",
+   "ref": "17985450",
+   "unidad": "m2",
+   "pvp_iva": 19.49,
+   "url": "https://www.leroymerlin.es/fp/17985450/azulejo-porcelanico-camargue-20x50-cm-gris",
+   "nota": "Caja a 23,39 €; ficha antigua, confirmar"
+  },
+  {
+   "codigo": "MRV-005",
+   "sin_equivalente": false,
+   "descripcion": "Azulejo cerámico Basic White blanco brillante 30x90 cm C1 (pasta blanca rectificado)",
+   "ref": "90347002",
+   "unidad": "m2",
+   "pvp_iva": 11.99,
+   "url": "https://www.leroymerlin.es/productos/azulejo-ceramico-basic-white-blanco-brillante-30x90-cm-c1-90347002.html",
+   "nota": "Caja 1,35 m² a 16,19 €"
+  },
+  {
+   "codigo": "MRV-006",
+   "sin_equivalente": false,
+   "descripcion": "Azulejo cerámico Nova efecto mármol brillo 30x90 cm",
+   "ref": "84301957",
+   "unidad": "m2",
+   "pvp_iva": 12.95,
+   "url": "https://www.leroymerlin.es/productos/azulejo-ceramico-nova-efecto-marmol-brillo-30x90-cm-84301957.html",
+   "nota": "Caja a 17,48 €"
+  },
+  {
+   "codigo": "MRV-007",
+   "sin_equivalente": false,
+   "descripcion": "Azulejo cerámico Levante efecto piedra bone 30x90 cm",
+   "ref": "94770651",
+   "unidad": "m2",
+   "pvp_iva": 18.99,
+   "url": "https://www.leroymerlin.es/productos/azulejo-ceramico-levante-efecto-piedra-bone-30x90-cm-94770651.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MRV-008",
+   "sin_equivalente": false,
+   "descripcion": "Azulejo cerámico Linea efecto relieve sand 30x90 cm (Roig Cerámica)",
+   "ref": "89316360",
+   "unidad": "m2",
+   "pvp_iva": 25.99,
+   "url": "https://www.leroymerlin.es/productos/azulejo-ceramico-linea-efecto-relieve-sand-30x90-cm-89316360.html",
+   "nota": "No es Saloni; alternativa Saloni Blending 30x90 a 26,99 €/m² (ref 88036096, sin relieve)"
+  },
+  {
+   "codigo": "MRV-009",
+   "sin_equivalente": false,
+   "descripcion": "Suelo/Azulejo porcelánico Marquina rectificado efecto mármol pulido 60x120 cm",
+   "ref": "94062296",
+   "unidad": "m2",
+   "pvp_iva": 24.9,
+   "url": "https://www.leroymerlin.es/productos/suelo-azulejo-porcelanico-marquina-rectificado-efecto-marmol-pulido-60x120-cm-94062296.html",
+   "nota": ""
+  },
+  {
+   "codigo": "MRV-010",
+   "sin_equivalente": false,
+   "descripcion": "Suelo/Azulejo porcelánico Materia efecto piedra gris 31,6x60,8 cm ARTENS",
+   "ref": "17561915",
+   "unidad": "m2",
+   "pvp_iva": 17.99,
+   "url": "https://www.leroymerlin.es/productos/suelo-azulejo-porcelanico-materia-efecto-piedra-gris-31-6x60-8-cm-artens-17561915.html",
+   "nota": "Caja 1,15 m² a 20,69 €"
+  },
+  {
+   "codigo": "MRV-011",
+   "sin_equivalente": false,
+   "descripcion": "Azulejo cerámico Metro efecto blanco brillante 10x20 cm ARTENS",
+   "ref": "84302476",
+   "unidad": "m2",
+   "pvp_iva": 9.98,
+   "url": "https://www.leroymerlin.es/productos/azulejo-ceramico-metro-efecto-blanco-brillante-10x20-cm-artens-84302476.html",
+   "nota": "Caja 0,6 m² a 5,99 €"
+  },
+  {
+   "codigo": "MRV-012",
+   "sin_equivalente": false,
+   "descripcion": "Azulejo cerámico brillante CERAGNI biselado metro 10x30 (caja 25 uds = 0,75 m²)",
+   "ref": "89865211",
+   "unidad": "m2",
+   "pvp_iva": 32.24,
+   "url": "https://www.leroymerlin.es/productos/azulejo-ceramico-brillante-ceragni-biselado-metro-mostaza-920-m10x30-caja-con-25-unidades-0-75-m2-89865211.html",
+   "nota": "Marketplace TAILEDECOR; ficha color mostaza; blanco 000/001 a 27 €/m² en listado"
+  },
+  {
+   "codigo": "MRV-013",
+   "sin_equivalente": false,
+   "descripcion": "Azulejo cerámico Bronx efecto zellige hueso 7,5x30 cm",
+   "ref": "19205935",
+   "unidad": "m2",
+   "pvp_iva": 29.98,
+   "url": "https://www.leroymerlin.es/productos/azulejo-ceramico-bronx-efecto-zellige-hueso-7-5x30-cm-19205935.html",
+   "nota": "Zellige más económico visto; subió desde 17,99 €"
+  },
+  {
+   "codigo": "MRV-014",
+   "sin_equivalente": false,
+   "descripcion": "Azulejo cerámico Cosmos efecto blanco 15x15 cm (brillo)",
+   "ref": "82363298",
+   "unidad": "m2",
+   "pvp_iva": 21.99,
+   "url": "https://www.leroymerlin.es/productos/azulejo-ceramico-cosmos-efecto-blanco-15x15-cm-82363298.html",
+   "nota": "Cottoceram blanco brillo a 16,90 €/m² sin ficha localizada"
+  },
+  {
+   "codigo": "MRV-015",
+   "sin_equivalente": false,
+   "descripcion": "Azulejo pasta blanca LAUTIA antracita 7,5x15 (44 pzas - 0,5 m²)",
+   "ref": "95239668",
+   "unidad": "m2",
+   "pvp_iva": 42.5,
+   "url": "https://www.leroymerlin.es/productos/azulejo-pasta-blanca-lautia-antracita-7-5x15-44-pzas-0-5-m2-95239668.html",
+   "nota": "Marketplace Trestile"
+  },
+  {
+   "codigo": "MRV-016",
+   "sin_equivalente": false,
+   "descripcion": "Azulejo porcelánico Apalache efecto ladrillo blanco 17x52 cm",
+   "ref": "81907965",
+   "unidad": "m2",
+   "pvp_iva": 13.99,
+   "url": "https://www.leroymerlin.es/productos/azulejo-porcelanico-apalache-efecto-ladrillo-blanco-17x52-cm-81907965.html",
+   "nota": "Caja 1,33 m² a 18,61 €"
+  },
+  {
+   "codigo": "MRV-017",
+   "sin_equivalente": false,
+   "descripcion": "Suelo porcelánico Legend efecto madera miel 20,2x66,2 cm C3 ARTENS",
+   "ref": "",
+   "unidad": "m2",
+   "pvp_iva": 21.99,
+   "url": "https://www.leroymerlin.es/productos/ceramica/azulejos-ceramicos/",
+   "nota": "Precio visto en listado; ficha y referencia no localizadas (URL de categoría); confirmar"
+  },
+  {
+   "codigo": "MRV-018",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "m2",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "NO ACTUALIZADO: se agotó el presupuesto de búsqueda antes de consultar esta partida; mantener precio anterior hasta revisar"
+  },
+  {
+   "codigo": "MRV-019",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "m2",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "NO ACTUALIZADO: se agotó el presupuesto de búsqueda antes de consultar esta partida; mantener precio anterior hasta revisar"
+  },
+  {
+   "codigo": "MRV-020",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "m2",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "NO ACTUALIZADO: se agotó el presupuesto de búsqueda antes de consultar esta partida; mantener precio anterior hasta revisar"
+  },
+  {
+   "codigo": "MRV-021",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "m2",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "NO ACTUALIZADO: se agotó el presupuesto de búsqueda antes de consultar esta partida; mantener precio anterior hasta revisar"
+  },
+  {
+   "codigo": "MRV-022",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "m2",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "NO ACTUALIZADO: se agotó el presupuesto de búsqueda antes de consultar esta partida; mantener precio anterior hasta revisar"
+  },
+  {
+   "codigo": "MRV-023",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "m2",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "NO ACTUALIZADO: se agotó el presupuesto de búsqueda antes de consultar esta partida; mantener precio anterior hasta revisar"
+  },
+  {
+   "codigo": "MRV-024",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "m2",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "NO ACTUALIZADO: se agotó el presupuesto de búsqueda antes de consultar esta partida; mantener precio anterior hasta revisar"
+  },
+  {
+   "codigo": "MRV-025",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "ud",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "NO ACTUALIZADO: se agotó el presupuesto de búsqueda antes de consultar esta partida; mantener precio anterior hasta revisar"
+  },
+  {
+   "codigo": "MRV-026",
+   "sin_equivalente": false,
+   "descripcion": "",
+   "ref": "",
+   "unidad": "ud",
+   "pvp_iva": null,
+   "url": "",
+   "nota": "NO ACTUALIZADO: se agotó el presupuesto de búsqueda antes de consultar esta partida; mantener precio anterior hasta revisar"
+  }
+ ],
+ "nuevos": [
+  {
+   "descripcion": "Azulejo cerámico Basic White efecto blanco mate 30x90 cm (rectificado)",
+   "ref": "90347008",
+   "unidad": "m2",
+   "pvp_iva": 11.99,
+   "url": "https://www.leroymerlin.es/productos/azulejo-ceramico-basic-white-efecto-blanco-mate-30x90-cm-90347008.html",
+   "nota": "Caja 1,35 m²"
+  },
+  {
+   "descripcion": "Azulejo cerámico Arctic blanco mate 30x90 cm ARTENS (rectificado)",
+   "ref": "91656731",
+   "unidad": "m2",
+   "pvp_iva": 18.99,
+   "url": "https://www.leroymerlin.es/productos/azulejo-ceramico-arctic-blanco-mate-30x90-cm-artens-91656731.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Azulejo cerámico Metro efecto borde biselado blanco mate 10x20 cm ARTENS",
+   "ref": "84302479",
+   "unidad": "m2",
+   "pvp_iva": 10.98,
+   "url": "https://www.leroymerlin.es/productos/azulejo-ceramico-metro-blanco-mate-10x20-cm-artens-84302479.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Azulejo cerámico Eco Mármol efecto mármol aspen 33,3x55 cm",
+   "ref": "19548235",
+   "unidad": "m2",
+   "pvp_iva": 8.99,
+   "url": "https://www.leroymerlin.es/productos/azulejo-ceramico-eco-marmol-efecto-marmol-aspen-33-3x55-cm-19548235.html",
+   "nota": ""
+  },
+  {
+   "descripcion": "Azulejo cerámico Cement efecto cemento sand 30x90 cm (Azuvi)",
+   "ref": "84409860",
+   "unidad": "m2",
+   "pvp_iva": 21.99,
+   "url": "https://www.leroymerlin.es/productos/azulejo-ceramico-cement-efecto-cemento-sand-30x90-cm-84409860.html",
+   "nota": "Paquete 1,35 m²"
+  },
+  {
+   "descripcion": "Azulejo porcelánico Brickson efecto ladrillo old 17x52 cm ARTENS",
+   "ref": "82505445",
+   "unidad": "m2",
+   "pvp_iva": 17.99,
+   "url": "https://www.leroymerlin.es/productos/azulejo-porcelanico-brickson-efecto-ladrillo-old-17x52-cm-artens-82505445.html",
+   "nota": "Caja 1,33 m² a 23,93 €"
+  },
+  {
+   "descripcion": "Azulejo porcelánico Granite efecto piedra gris 31,6x60,8 cm C2 (Roig)",
+   "ref": "81896502",
+   "unidad": "m2",
+   "pvp_iva": 18.99,
+   "url": "https://www.leroymerlin.es/productos/azulejo-porcelanico-granite-efecto-piedra-gris-31-6x60-8-cm-c2-81896502.html",
+   "nota": "Caja 1,15 m² a 21,84 €"
+  }
+ ]
+}
