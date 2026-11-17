@@ -777,7 +777,14 @@ const ic=(n,c='')=>`<svg class="ic ${c}" viewBox="0 0 24 24" aria-hidden="true">
 
 /* ---------- Datos ---------- */
 let db;
-function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&x.v===2)return normData(x)}catch(e){}return normData(seed())}
+/* Datos de la versión anterior de la app (antes de noviembre de 2026): se recuperan una vez en este navegador */
+const KEY_ANTERIOR=DEMO?'sgm-demo-v3':'sgm-app';
+const CAP_ANTERIOR={dem:'demoliciones',alb:'albanileria',sue:'alicatados_solados',pin:'pintura',fon:'fontaneria',ele:'electricidad',car:'carpinteria_madera',tec:'pladur_techos',cli:'climatizacion',imp:'impermeabilizacion_cubiertas',coc:'cocinas',fin:'gestion_varios'};
+function deAnterior(x){for(const d of [...(x.quotes||[]),...(x.invoices||[])])for(const l of d.lines||[])if(CAP_ANTERIOR[l.cap])l.cap=CAP_ANTERIOR[l.cap];
+  for(const c of x.custom||[])if(CAP_ANTERIOR[c.cap])c.cap=CAP_ANTERIOR[c.cap];return x}
+function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&x.v===2)return normData(x)}catch(e){}
+  try{const x=JSON.parse(localStorage.getItem(KEY_ANTERIOR));if(x&&x.v===2&&(x.quotes||[]).length){const y=normData(deAnterior(x));localStorage.setItem(KEY,JSON.stringify(y));setTimeout(()=>toast('Recuperados tus datos de la versión anterior'),900);return y}}catch(e){}
+  return normData(seed())}
 function saveLocal(){try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){}}
 function save(){saveLocal();if(!DEMO&&CLOUD.session){CLOUD.dirty=true;store('sgm2-dirty','1');setCloud('saving');clearTimeout(CLOUD.timer);CLOUD.timer=setTimeout(cloudPush,1200)}}
 function catalog(){const out=CAPS.map(c=>({id:c.id,name:c.name,items:c.items.map(([name,unit,price])=>({name,unit,price}))}));for(const x of db.custom||[]){let c=out.find(c=>c.id===x.cap);if(!c){c=out.find(c=>c.id==='otr');if(!c){c={id:'otr',name:'Otros trabajos',items:[]};out.push(c)}}if(!c.items.some(i=>i.name===x.name))c.items.push({name:x.name,unit:x.unit,price:x.price,custom:true})}return out}
