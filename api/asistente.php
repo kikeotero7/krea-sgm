@@ -20,8 +20,10 @@ Cómo trabajas:
 - Calcula medidas: suelo = largo × ancho; alicatado o pintura de paredes = perímetro × altura (2,5 m si no la dice), restando unos 2 m² por puerta y 1,5 m² por ventana. Escribe la cuenta en la nota de la partida, por ejemplo "(2+2,5)×2×2,5 m − puerta".
 - Añade lo que un profesional no olvidaría cuando tenga sentido (protección, retirada de escombros y contenedor, ayudas de albañilería a otros oficios, limpieza final) y dilo.
 - Si falta un dato importante, pon una cantidad razonable y pregunta para confirmarla.
-- Si Sergio nombra al cliente o el trabajo, usa datos_generales. IVA del 10 % para reforma de vivienda particular; 21 % en locales, empresas y lo demás.
-- La tarifa incluye las partidas propias de Sergio, marcadas con [propia]: son su forma de trabajar y su precio. Úsalas antes que otras parecidas cuando encajen.
+- Si Sergio nombra al cliente o el trabajo, usa datos_generales para el título y el cliente.
+- IVA: NO lo cambies por tu cuenta; deja el que tenga el presupuesto. Si crees que corresponde otro (10 % en reforma de vivienda particular; 21 % en locales, empresas y lo demás), propónselo y pregúntale. Solo cámbialo si Sergio te lo pide expresamente.
+- Capítulos: cada partida va en el capítulo de su oficio; pásalo siempre en «oficio» con el nombre exacto de un capítulo de trabajo de la tarifa. Azulejos, porcelánicos, colas, cementos cola, rejuntados y perfiles o cantoneras de remate de azulejo → «Alicatados y solados» (nunca en Aislamiento ni en Albañilería). Puertas, ventanas y cerramientos de aluminio o PVC, también su retirada → «Carpintería de aluminio/PVC y cristalería». Grifos, fregaderos, sanitarios, tomas de agua y desagües → «Fontanería y saneamiento». Enchufes, puntos de luz y líneas → «Electricidad». No uses «Otros trabajos» si la partida encaja en algún oficio.
+- Partidas propias: al principio de la tarifa están las PARTIDAS PROPIAS DE SERGIO. Son su forma de trabajar y su precio: úsalas SIEMPRE antes que una parecida de la tarifa de ejemplo.
 - Si Sergio da un precio suyo para un trabajo que no está en la tarifa, o te pide guardar algo, usa guardar_partida_propia (y añádelo también al presupuesto si es para este trabajo). Usa como oficio el nombre de un capítulo de la tarifa.
 - Responde en español de España, cercano y breve (2 a 4 frases): qué has hecho y qué necesitas saber. No menciones herramientas, JSON ni detalles técnicos.
 
@@ -47,6 +49,7 @@ function ia_herramientas(): array {
          'unidad' => ['type' => 'string', 'enum' => $unidades],
          'precio' => ['type' => 'number', 'description' => 'Solo si no está en la tarifa o Sergio dio un precio'],
          'nota' => ['type' => 'string', 'description' => 'Medidas, estancia o acabado; la ve el cliente'],
+         'oficio' => ['type' => 'string', 'description' => 'Capítulo (oficio) donde va la partida: nombre exacto de un capítulo de trabajo de la tarifa'],
        ]]]]]],
     ['name' => 'cambiar_partida', 'description' => 'Cambia la cantidad, el precio o la nota de una partida que ya está en el presupuesto.',
      'input_schema' => ['type' => 'object', 'required' => ['nombre'], 'properties' => [
@@ -59,7 +62,7 @@ function ia_herramientas(): array {
        'oficio' => ['type' => 'string', 'description' => 'Nombre del capítulo de la tarifa, por ejemplo Electricidad; si no encaja, Otros trabajos'],
        'unidad' => ['type' => 'string', 'enum' => $unidades],
        'precio' => ['type' => 'number', 'description' => 'Precio sin IVA']]]],
-    ['name' => 'datos_generales', 'description' => 'Pone el título del trabajo, el cliente (si existe uno con ese nombre lo usa, si no lo crea) y el IVA.',
+    ['name' => 'datos_generales', 'description' => 'Pone el título del trabajo y el cliente (si existe uno con ese nombre lo usa, si no lo crea). El IVA solo si Sergio lo pide expresamente.',
      'input_schema' => ['type' => 'object', 'properties' => [
        'titulo' => ['type' => 'string'], 'cliente' => ['type' => 'string'], 'telefono' => ['type' => 'string'],
        'direccion' => ['type' => 'string'], 'iva' => ['type' => 'number', 'enum' => [21, 10, 0]]]]],
@@ -87,7 +90,7 @@ function asistente(string $crudo): array {
     'output_config' => ['effort' => 'medium'],
     'system' => [
       ['type' => 'text', 'text' => IA_REGLAS],
-      ['type' => 'text', 'text' => "Tarifa de Sergio (partida: unidad, precio sin IVA):\n$tarifa\n\nClientes existentes: " . ($clientes !== '' ? $clientes : 'ninguno') . '.',
+      ['type' => 'text', 'text' => "Tarifa de Sergio (partida: unidad, precio sin IVA). Empieza por sus partidas propias:\n$tarifa\n\nClientes existentes: " . ($clientes !== '' ? $clientes : 'ninguno') . '.',
        'cache_control' => ['type' => 'ephemeral']],
     ],
     'tools' => ia_herramientas(),

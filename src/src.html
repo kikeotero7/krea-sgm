@@ -123,6 +123,7 @@ h1,h2,h3,h4{font-family:var(--f-display);font-stretch:108%;margin:0;text-wrap:ba
 .chip{flex:none;border:1px solid var(--line-strong);background:var(--surface);border-radius:20px;padding:7px 14px;font-weight:600;font-size:14px;color:var(--muted)}
 .chip[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:var(--forest-ink)}
 .chip .n{opacity:.7;margin-left:4px}
+.chk-mp{display:flex;align-items:center;gap:10px;min-height:44px;font-size:14px;color:var(--muted)}.chk-mp input{width:20px;height:20px;accent-color:var(--brand)}
 .pay-pick{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
 .pay-op{min-height:44px;border:1px solid var(--line-strong);background:var(--surface);border-radius:22px;padding:8px 14px;font-weight:600;font-size:14px;color:var(--ink)}
 .pay-op[aria-checked="true"]{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
@@ -301,7 +302,8 @@ button.card:hover{border-color:var(--line-strong);box-shadow:var(--shadow)}
 .line details{padding-left:38px}
 .line summary{cursor:pointer;font-size:13px;color:var(--brand);font-weight:600;list-style:none;display:inline-flex;gap:6px;align-items:center}
 .line summary::-webkit-details-marker{display:none}
-.line .more{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) auto;gap:10px;margin-top:10px;align-items:end}
+.line .more{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin-top:10px;align-items:end}
+.line .more .chk-mp{grid-column:1/-1;order:5}.line .more [data-act=delLine]{order:6;justify-self:start}.line .more label.field:has([data-k=note]){grid-column:1/-1}
 .hint{font-size:12px;color:var(--faint)}
 .open-sheet{display:none}
 .scrim{display:none}
@@ -793,7 +795,25 @@ function priceOf(name){const i=itemInfo(name);return db.prices[name]??i?.price??
 const capName=id=>CAPS.find(c=>c.id===id)?.name||'Otros trabajos';
 // Los materiales sueltos van dentro del área (oficio) a la que pertenecen, no en un capítulo aparte
 const MAT_AREA={mat_suelos:'alicatados_solados',mat_revestimientos:'alicatados_solados',mat_placa_techos:'pladur_techos',mat_yesos_morteros:'albanileria',mat_ladrillos:'albanileria',mat_aislamiento:'aislamiento',mat_pintura:'pintura',mat_electricidad:'electricidad',mat_fontaneria:'fontaneria',mat_carpinteria:'carpinteria_madera',mat_cocina_bano:'cocinas',mat_climatizacion:'climatizacion',mat_exteriores:'fachadas_exteriores'};
-function mkLine(name,qty=1,note='',price){const i=itemInfo(name);const mat=i&&MAT_AREA[i.cap];return {id:uid(),cap:mat||i?.cap||'otr',mat:!!mat,name,unit:i?.unit||'ud',qty,price:price??priceOf(name),scope:SCOPES[0],note}}
+/* Capítulo (oficio) que corresponde a un trabajo o material por su nombre. Se usa para materiales sueltos y partidas nuevas. */
+const CAP_REGLAS=[
+ ['alicatados_solados',/azulej|porcel[aá]nic|\bgres\b|gresite|mosaico|plaqueta|baldosa|alicat|solad|rejunt|\bjuntas?\b|cantonera|perfil(es)? (de )?remate|remate(s)? (de |del )?azulej|(cemento )?cola (porcel|flex|conven|mejor|c1|c2)|cemento cola|adhesivo cer[aá]mic|rodapi[eé] cer[aá]mic/i],
+ ['electricidad',/enchufe|interruptor|conmutador|punto de luz|cuadro el[eé]ctr|\bpia\b|diferencial|cableado|\bcable\b|toma de tierra|\bled\b|foco|luminaria|downlight|plaf[oó]n|antena|portero|videoportero|l[ií]nea de \d+ ?a\b/i],
+ ['fontaneria',/grifo|grifer|fregadero|lavabo|inodoro|bid[eé]|plato de ducha|ba[ñn]era|desag[uü]e|toma(s)? de agua|llave(s)? de (paso|escuadra|grifo|corte)|tuber[ií]a|sif[oó]n|termo|calentador|saneamiento|bajante|arqueta|fontaner/i],
+ ['carpinteria_exterior',/alumin|\bpvc\b|ventana|balconera|cristaler|\bvidrio\b|persiana|mosquitera|mampara/i],
+ ['carpinteria_madera',/puerta|rodapi[eé]|tarima|parquet|laminad|armario|manilla|premarco|carpinter/i],
+ ['pintura',/pintura|pintar|esmalte|barniz|lacad|empapel/i],
+ ['pladur_techos',/pladur|yeso laminado|falso techo|trasdosado|escayola/i],
+ ['climatizacion',/aire acondicionado|\bsplit\b|climatiz|conductos? de (aire|clima)|bomba de calor|radiador|calefacci/i],
+ ['impermeabilizacion_cubiertas',/impermeab|asf[aá]ltic|cubierta|tejado|teja\b/i],
+ ['aislamiento',/aislam|lana de (roca|vidrio)|poliestireno|\bxps\b|\beps\b|ac[uú]stic/i],
+ ['cocinas',/mueble(s)? de cocina|encimera|cocina en kit|m[oó]dulo (alto|bajo|columna)/i],
+ ['demoliciones',/demoli|picado|picar|desmontaje|desmontar|retirada|arranque|desescombr|escombro|contenedor|big.?bag/i],
+ ['albanileria',/tabique|ladrillo|bloque|fábrica|fabrica de|enfoscad|enlucid|recrecid|solera|mortero|\byeso\b|tapado|rozas|ayudas? de alba|cangrejera/i]];
+function capPorNombre(name){const n=String(name||'');if(/cola de contacto/i.test(n))return 'aislamiento';for(const [cap,re] of CAP_REGLAS)if(re.test(n))return cap;return null}
+const CAPS_TRABAJO=()=>CAPS.filter(c=>!/^mat_/.test(c.id));
+function capDeOficio(oficio){const o=String(oficio||'').trim().toLowerCase();if(!o)return null;const c=CAPS_TRABAJO().find(c=>c.name.toLowerCase()===o)||CAPS_TRABAJO().find(c=>c.name.toLowerCase().startsWith(o)||o.startsWith(c.name.toLowerCase().split(/[ /]/)[0]));return c?c.id:(/^otros/.test(o)?'otr':null)}
+function mkLine(name,qty=1,note='',price){const i=itemInfo(name);const mat=i&&MAT_AREA[i.cap]&&(capPorNombre(name)||MAT_AREA[i.cap]);return {id:uid(),cap:mat||i?.cap||'otr',mat:!!mat,name,unit:i?.unit||'ud',qty,price:price??priceOf(name),scope:SCOPES[0],note}}
 const client=id=>db.clients.find(c=>c.id===id);
 const work=id=>db.works.find(w=>w.id===id);
 
@@ -1207,9 +1227,10 @@ function linesHTML(){
        <label class="price">×<input id="lp-${l.id}" inputmode="decimal" data-in="line" data-id="${l.id}" data-k="price" value="${String(l.price).replace('.',',')}" aria-label="Precio por unidad">€</label>
        <span class="amt" id="la-${l.id}">${eur(l.qty*l.price)}</span>
      </div>
-     <details ${l.note?'open':''}><summary>${ic('next')} Detalles y notas</summary>
-       <div class="more"><label class="field">Alcance<select id="ls-${l.id}" data-in="line" data-id="${l.id}" data-k="scope">${SCOPES.map(s=>`<option ${s===l.scope?'selected':''}>${s}</option>`).join('')}</select></label>
+     <details ${l.note||S.ed.abrir===l.id?'open':''}><summary>${ic('next')} Detalles y notas</summary>
+       <div class="more"><label class="field">Capítulo<select id="lc-${l.id}" data-in="lineCap" data-id="${l.id}">${capOpciones(l.cap)}</select></label><label class="field">Alcance<select id="ls-${l.id}" data-in="line" data-id="${l.id}" data-k="scope">${SCOPES.map(s=>`<option ${s===l.scope?'selected':''}>${s}</option>`).join('')}</select></label>
        <label class="field">Nota para el cliente<input id="lnote-${l.id}" data-in="line" data-id="${l.id}" data-k="note" value="${esc(l.note)}" placeholder="Medidas, estancia, acabado…"></label>
+       <label class="chk-mp"><input type="checkbox" data-in="lineNoGuardar" data-id="${l.id}" ${l.noGuardar?'':'checked'}> Guardar en Mis precios al guardar</label>
        <button class="btn danger sm" data-act="delLine" data-id="${l.id}" style="min-height:46px">${ic('trash')} Quitar</button></div>
      </details>
    </div>`).join('')}</div>`).join('');
@@ -1575,7 +1596,9 @@ Cómo trabajas:
 - Calcula medidas: suelo = largo × ancho; alicatado o pintura de paredes = perímetro × altura (2,5 m si no la dice; restando ~2 m² por puerta). Pon la cuenta en la nota de la partida (ej.: "(2+2,5)×2×2,5 m − puerta").
 - Añade lo que un profesional no olvidaría (retirada de escombros, protección, limpieza final) cuando tenga sentido, y díselo.
 - Si falta un dato importante, pon una cantidad razonable y pregunta para confirmarla.
-- Si Sergio nombra al cliente o el trabajo, usa datos_generales. IVA del 10 % para reforma de vivienda particular, 21 % en lo demás.
+- Si Sergio nombra al cliente o el trabajo, usa datos_generales. No cambies el IVA del presupuesto por tu cuenta: si crees que corresponde otro (10 % en reforma de vivienda particular), propónselo y pregunta.
+- Pon cada partida en su oficio con «oficio»: azulejos, colas, rejuntados y perfiles de remate en Alicatados y solados; puertas y ventanas de aluminio o PVC en Carpintería de aluminio/PVC; grifos, fregaderos y sanitarios en Fontanería y saneamiento. Nada en Otros trabajos si encaja en un oficio.
+- Usa primero las partidas propias de Sergio ([propia]) cuando encajen.
 - Responde en español de España, cercano y breve (2-4 frases): qué has añadido y qué necesitas saber. Nunca menciones herramientas, JSON ni detalles técnicos.
 
 Clientes existentes: ${db.clients.map(c=>c.name).join('; ')||'ninguno'}.
@@ -1587,25 +1610,25 @@ function aiState(){const q=S.ed.q,c=client(q.client);return `[Presupuesto ahora 
 function findLine(q,name){const n=String(name||'').toLowerCase().trim();return q.lines.find(l=>l.name.toLowerCase()===n)||q.lines.find(l=>l.name.toLowerCase().includes(n)||n.includes(l.name.toLowerCase()))}
 function aiNote(E,t){E.chat.push({role:'note',content:t});if(S.ed===E){edLines();edPicker();const h=$('.head h1');if(h)h.textContent=E.q.title||'Presupuesto sin título'}}
 function aiTools(E){const q=E.q;return [
- {name:'anadir_partidas',description:'Añade partidas al presupuesto. Si la partida ya está, sustituye su cantidad. Devuelve lo que se ha hecho.',inputSchema:{type:'object',properties:{partidas:{type:'array',items:{type:'object',properties:{nombre:{type:'string',description:'Nombre exacto del catálogo, o uno nuevo y claro'},cantidad:{type:'number'},unidad:{type:'string',enum:UNITS},precio:{type:'number',description:'Solo si no está en el catálogo o Sergio dio un precio'},nota:{type:'string',description:'Medidas, estancia o acabado; visible para el cliente'}},required:['nombre','cantidad']}}},required:['partidas']},
+ {name:'anadir_partidas',description:'Añade partidas al presupuesto. Si la partida ya está, sustituye su cantidad. Devuelve lo que se ha hecho.',inputSchema:{type:'object',properties:{partidas:{type:'array',items:{type:'object',properties:{nombre:{type:'string',description:'Nombre exacto del catálogo, o uno nuevo y claro'},cantidad:{type:'number'},unidad:{type:'string',enum:UNITS},precio:{type:'number',description:'Solo si no está en el catálogo o Sergio dio un precio'},nota:{type:'string',description:'Medidas, estancia o acabado; visible para el cliente'},oficio:{type:'string',description:'Capítulo (oficio) donde va la partida, con el nombre exacto de un capítulo de trabajo de la tarifa'}},required:['nombre','cantidad']}}},required:['partidas']},
   execute(inp){const out=[];for(const p of (Array.isArray(inp.partidas)?inp.partidas:[])){const name=String(p.nombre||'').trim();if(!name)continue;const qty=Math.max(0,r2(+p.cantidad||1));const ex=q.lines.find(l=>l.name.toLowerCase()===name.toLowerCase());
     if(ex){ex.qty=qty;if(p.nota)ex.note=String(p.nota);if(p.precio!=null&&+p.precio>0)ex.price=r2(+p.precio);out.push('actualizada '+ex.name);continue}
-    const info=itemInfo(name);let l;if(info){l=mkLine(info.name,qty,p.nota?String(p.nota):'');if(p.precio!=null&&+p.precio>0)l.price=r2(+p.precio)}else{l={id:uid(),cap:'otr',name,unit:UNITS.includes(p.unidad)?p.unidad:'ud',qty,price:r2(+p.precio||0),scope:SCOPES[0],note:p.nota?String(p.nota):''}}
+    const info=itemInfo(name),of=capDeOficio(p.oficio);let l;if(info){l=mkLine(info.name,qty,p.nota?String(p.nota):'');if(p.precio!=null&&+p.precio>0)l.price=r2(+p.precio);if(of&&(l.mat||l.cap==='otr'))l.cap=of}else{l={id:uid(),cap:(capPorNombre(name)==='alicatados_solados'&&of==='aislamiento'?'alicatados_solados':of)||capPorNombre(name)||'otr',name,unit:UNITS.includes(p.unidad)?p.unidad:'ud',qty,price:r2(+p.precio||0),scope:SCOPES[0],note:p.nota?String(p.nota):''}}
     q.lines.push(l);out.push((info?'añadida ':'añadida (nueva, revisar precio) ')+l.name)}
    aiNote(E,'✓ '+out.length+' partida'+(out.length===1?'':'s')+': '+out.map(x=>x.replace(/^añadida (\(nueva, revisar precio\) )?|^actualizada /,'')).join(', '));return out.join('; ')||'nada'}},
  {name:'cambiar_partida',description:'Cambia la cantidad, el precio o la nota de una partida que ya está en el presupuesto.',inputSchema:{type:'object',properties:{nombre:{type:'string'},cantidad:{type:'number'},precio:{type:'number'},nota:{type:'string'}},required:['nombre']},
   execute(inp){const l=findLine(q,inp.nombre);if(!l)throw new Error('No está en el presupuesto: '+inp.nombre);if(inp.cantidad!=null)l.qty=Math.max(0,r2(+inp.cantidad));if(inp.precio!=null)l.price=Math.max(0,r2(+inp.precio));if(inp.nota!=null)l.note=String(inp.nota);aiNote(E,'✓ Cambiada: '+l.name+' ('+qtyFmt(l.qty)+' '+l.unit+' × '+eur(l.price)+')');return 'ok'}},
  {name:'quitar_partida',description:'Quita una partida del presupuesto.',inputSchema:{type:'object',properties:{nombre:{type:'string'}},required:['nombre']},
   execute(inp){const l=findLine(q,inp.nombre);if(!l)throw new Error('No está en el presupuesto: '+inp.nombre);q.lines=q.lines.filter(x=>x!==l);aiNote(E,'✓ Quitada: '+l.name);return 'ok'}},
- {name:'datos_generales',description:'Pone el título del trabajo, el cliente (si existe uno con ese nombre lo usa, si no lo crea) y el IVA.',inputSchema:{type:'object',properties:{titulo:{type:'string'},cliente:{type:'string'},telefono:{type:'string'},direccion:{type:'string'},iva:{type:'number',enum:[21,10,0]}}},
+ {name:'datos_generales',description:'Pone el título del trabajo y el cliente (si existe uno con ese nombre lo usa, si no lo crea). El IVA solo se cambia si Sergio lo pide expresamente.',inputSchema:{type:'object',properties:{titulo:{type:'string'},cliente:{type:'string'},telefono:{type:'string'},direccion:{type:'string'},iva:{type:'number',enum:[21,10,0]}}},
   execute(inp){const done=[];if(inp.titulo){q.title=String(inp.titulo);done.push('título')}
    if(inp.cliente){const n=String(inp.cliente).trim().toLowerCase();let c=db.clients.find(c=>c.name.toLowerCase()===n)||db.clients.find(c=>c.name.toLowerCase().includes(n)||n.includes(c.name.toLowerCase().split(' ')[0]));if(!c){c={id:uid(),name:String(inp.cliente).trim(),phone:String(inp.telefono||''),email:'',address:String(inp.direccion||''),nif:'',notes:''};db.clients.push(c);save();done.push('cliente nuevo '+c.name)}else done.push('cliente '+c.name);q.client=c.id}
-   if(inp.iva!=null&&[0,10,21].includes(+inp.iva)){q.iva=+inp.iva;done.push('IVA '+q.iva+' %')}
+   if(inp.iva!=null&&[0,10,21].includes(+inp.iva)&&+inp.iva!==+q.iva){const u=String((E.chat.filter(m=>m.role==='user').pop()||{}).content||'');if(/\biva\b/i.test(u)){q.iva=+inp.iva;done.push('IVA '+q.iva+' %')}else done.push('IVA sin cambiar ('+q.iva+' %): pregúntale a Sergio si quiere el '+(+inp.iva)+' %')}
    aiNote(E,'✓ '+done.join(' · '));return done.join(', ')||'nada'}},
  {name:'guardar_partida_propia',description:'Guarda en la biblioteca de partidas propias de Sergio un trabajo con su precio, para que salga en futuros presupuestos.',inputSchema:{type:'object',properties:{nombre:{type:'string'},oficio:{type:'string',description:'Nombre del capítulo de la tarifa, por ejemplo Electricidad; si no encaja, Otros trabajos'},unidad:{type:'string',enum:UNITS},precio:{type:'number',description:'Precio sin IVA'}},required:['nombre','unidad','precio']},
   execute(inp){const name=String(inp.nombre||'').trim();if(!name)throw new Error('Falta el nombre del trabajo');if(itemInfo(name))return 'Ya estaba en la tarifa: '+name;
    const price=r2(+inp.precio||0);if(!(price>0))throw new Error('Falta un precio mayor que 0');
-   const unit=UNITS.includes(inp.unidad)?inp.unidad:'ud',cap=(catalog().find(c=>c.name.toLowerCase()===String(inp.oficio||'').trim().toLowerCase())||{id:'otr'}).id;
+   const unit=UNITS.includes(inp.unidad)?inp.unidad:'ud',cap=capDeOficio(inp.oficio)||capPorNombre(name)||'otr';
    db.custom.push({cap,name,unit,price});save();aiNote(E,'✓ Guardada en tu biblioteca: '+name+' ('+eur(price)+' / '+unit+')');return 'guardada en la biblioteca'}}
 ]}
 function aiFallback(E,text){const f=parseText(text);for(const x of f){const ex=E.q.lines.find(l=>l.name===x.name);if(ex)ex.qty=x.qty;else E.q.lines.push(mkLine(x.name,x.qty))}
@@ -1619,7 +1642,8 @@ async function cloudAI(E,text,signal){
   const hist=E.chat.filter(m=>m.role==='user'||m.role==='assistant').slice(-14,-1).map(m=>({role:m.role,content:m.content}));
   while(hist.length&&hist[0].role!=='user')hist.shift();
   const msgs=[...hist,{role:'user',content:text+'\n\n'+aiState()}];
-  const tarifa=catalog().map(c=>c.name+':\n'+c.items.map(i=>`- ${i.name}: ${i.unit}, ${priceOf(i.name)} €${i.custom?' [propia]':''}`).join('\n')).join('\n');
+  const propias=(db.custom||[]).map(x=>`- ${x.name}: ${x.unit}, ${priceOf(x.name)} € [propia · ${capName(x.cap)}]`).join('\n');
+  const tarifa=(propias?'PARTIDAS PROPIAS DE SERGIO (úsalas antes que la tarifa cuando encajen):\n'+propias+'\n\n':'')+'Capítulos de trabajo: '+CAPS_TRABAJO().map(c=>c.name).join(' · ')+'\n\n'+catalog().map(c=>c.name+':\n'+c.items.filter(i=>!i.custom).map(i=>`- ${i.name}: ${i.unit}, ${priceOf(i.name)} €`).join('\n')).join('\n');
   const clientes=db.clients.map(c=>c.name).join('; ');
   let last='';
   for(let turn=0;turn<8;turn++){
@@ -1780,6 +1804,16 @@ async function gestorPDF(){const g=S.gestor;if(!g||!g.ids.length)return null;con
 const totLabel=q=>+q.iva>0?'Total con IVA ('+qtyFmt(q.iva)+' %)':'Total sin IVA';
 function ivaSw(q,where=''){return `<div class="iva-sw ${where}" role="group" aria-label="IVA del presupuesto">${[['21','IVA 21 %'],['10','IVA 10 %'],['0','Sin IVA']].map(([m,l])=>`<button type="button" data-act="ivaMode" data-m="${m}" aria-pressed="${String(+q.iva)===m}">${where==='bar'?l.replace('IVA ',''):l}</button>`).join('')}</div>`}
 function edRefreshTotals(){edDirty();const q=S.ed.q,t=calc(q);const T=$('#ed-total');if(T)T.textContent=eur(t.total);const TL=$('#ed-tot-l');if(TL)TL.textContent=totLabel(q);$$('.iva-sw button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.m===String(+q.iva))));t.caps.forEach(c=>{const el=$('#cs-'+c.id);if(el)el.textContent=eur(c.sub)})}
+/* Partidas nuevas o cambiadas de un presupuesto → «Mis partidas propias» (sin duplicar: si ya hay una con el mismo nombre, se actualiza) */
+const enTarifaBase=name=>CAPS.some(c=>c.items.some(i=>i[0]===name));
+function guardarEnMisPrecios(lines){let nuevas=0,cambiadas=0;
+  for(const l of lines){const name=String(l.name||'').trim();if(!name||l.noGuardar||!(+l.price>0)||name==='Trabajo adicional'||enTarifaBase(name))continue;
+    const cap=l.cap&&!/^mat_/.test(l.cap)?l.cap:(capPorNombre(name)||'otr'),price=r2(+l.price);
+    const x=db.custom.find(c=>c.name.toLowerCase()===name.toLowerCase());
+    if(x){if(r2(priceOf(x.name))!==price||x.unit!==l.unit||x.cap!==cap){x.price=price;x.unit=l.unit;x.cap=cap;delete db.prices[x.name];cambiadas++}}
+    else{db.custom.push({cap,name,unit:l.unit,price});nuevas++}}
+  return {nuevas,cambiadas}}
+function capOpciones(sel){const ops=[...CAPS_TRABAJO().map(c=>[c.id,c.name]),['otr','Otros trabajos']];if(sel&&!ops.some(o=>o[0]===sel))ops.push([sel,capName(sel)]);return ops.map(([id,n])=>`<option value="${id}" ${id===sel?'selected':''}>${esc(n)}</option>`).join('')}
 function edLines(){const el=$('#lines');if(el)el.innerHTML=linesHTML();edRefreshTotals()}
 function edPicker(){const el=$('#picker-body');if(el){el.innerHTML=S.ed.mode==='cat'?catList():aiPanel();if(S.ed.mode==='ai')el.scrollTop=el.scrollHeight}}
 function edDirty(){if(!S.ed||!S.ed.saved)return;S.ed.saved=false;const b=$('#ed-save');if(b){b.classList.remove('saved');const t=b.querySelector('span');if(t)t.textContent='Guardar'}}
@@ -1852,7 +1886,9 @@ const ACT={
  openSheet:()=>{S.ed.sheet=true;render()},
  closeSheet:()=>{S.ed.sheet=false;render()},
  addItem:el=>{const n=el.dataset.name,q=S.ed.q;const ex=q.lines.find(l=>l.name===n);if(ex)ex.qty=r2(ex.qty+1);else q.lines.push(mkLine(n,1));edLines();edPicker();toast(ex?n+': '+qtyFmt(ex.qty)+' '+ex.unit:'Añadido: '+n)},
- freeLine:()=>{const l={id:uid(),cap:'otr',name:'Trabajo adicional',unit:'ud',qty:1,price:0,scope:SCOPES[0],note:''};S.ed.q.lines.push(l);edLines();const el=$('#ln-'+l.id);if(el){el.focus();el.select();el.scrollIntoView({block:'center'})}},
+ freeLine:()=>dlg(`<div class="dlg-head"><h2>Partida libre</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div>
+  <div class="dlg-body"><p class="muted" style="margin:0">¿En qué capítulo va?</p><div class="pay-pick">${[...CAPS_TRABAJO().map(c=>[c.id,c.name]),['otr','Otros trabajos']].map(([id,n])=>`<button type="button" class="pay-op" data-act="freeLineCap" data-cap="${id}">${esc(n)}</button>`).join('')}</div></div>`),
+ freeLineCap:b=>{closeDlg();const l={id:uid(),cap:b.dataset.cap,name:'Trabajo adicional',unit:'ud',qty:1,price:0,scope:SCOPES[0],note:''};S.ed.q.lines.push(l);edLines();const el=$('#ln-'+l.id);if(el){el.focus();el.select();el.scrollIntoView({block:'center'})}},
  qty:el=>{const l=S.ed.q.lines.find(l=>l.id===el.dataset.id);l.qty=Math.max(0,r2(l.qty+ +el.dataset.d));$('#lq-'+l.id).value=qtyFmt(l.qty);$('#la-'+l.id).textContent=eur(l.qty*l.price);edRefreshTotals()},
  delLine:el=>{S.ed.q.lines=S.ed.q.lines.filter(l=>l.id!==el.dataset.id);edLines()},
  parse:()=>{S.ed.found=parseText(S.ed.dict);edPicker()},
@@ -1863,9 +1899,10 @@ const ACT={
    if(!q.title.trim()){E.err='Falta el título del trabajo (paso 1).';render();return}
    if(!q.lines.length){E.err='Añade al menos una partida (paso 2).';render();return}
    if(!q.number)q.number=nextNumber('PRE',db.quotes,q.date);
-   let upd=0;for(const l of q.lines){if(itemInfo(l.name)&&r2(priceOf(l.name))!==r2(l.price)&&l.price>0){db.prices[l.name]=r2(l.price);upd++}}
+   let upd=0;for(const l of q.lines){if(enTarifaBase(l.name)&&r2(priceOf(l.name))!==r2(l.price)&&l.price>0){db.prices[l.name]=r2(l.price);upd++}}
+   const prop=guardarEnMisPrecios(q.lines);
    const i=db.quotes.findIndex(x=>x.id===q.id);if(i<0)db.quotes.push(structuredClone(q));else db.quotes[i]=structuredClone(q);
-   save();E.isNew=false;E.err='';E.saved=true;render();toast('Presupuesto '+q.number+' guardado'+(upd?` · ${upd} precio${upd>1?'s':''} actualizado${upd>1?'s':''} en tu tarifa`:''))},
+   save();E.isNew=false;E.err='';E.saved=true;render();toast('Presupuesto '+q.number+' guardado'+(upd?` · ${upd} precio${upd>1?'s':''} actualizado${upd>1?'s':''} en tu tarifa`:'')+(prop.nuevas?` · ${prop.nuevas} partida${prop.nuevas>1?'s':''} nueva${prop.nuevas>1?'s':''} en Mis precios`:'')+(prop.cambiadas?` · ${prop.cambiadas} actualizada${prop.cambiadas>1?'s':''} en Mis precios`:''))},
  dupQuote:el=>{const src=S.ed?.q.id===el.dataset.id?S.ed.q:db.quotes.find(q=>q.id===el.dataset.id);const q=structuredClone(src);Object.assign(q,{id:uid(),number:'',date:today(),status:'Borrador',title:q.title+' (copia)',sentAt:null,acceptedAt:null});q.lines.forEach(l=>l.id=uid());S.ed=edState(q,1,true);render();window.scrollTo(0,0);toast('Copia creada: cambia el cliente y las medidas')},
  delQuote:el=>confirmBox('¿Eliminar este presupuesto?','Se borrará '+(S.ed?.q.number||'')+' y no se puede deshacer.','Eliminar',()=>{db.quotes=db.quotes.filter(q=>q.id!==el.dataset.id);save();go('presupuestos');toast('Presupuesto eliminado')}),
  whatsapp:el=>openWhatsApp(el.dataset.id,el.dataset.mode),
@@ -1949,6 +1986,8 @@ const IN={
  restore:el=>{const f=el.files[0];if(!f)return;f.text().then(t=>{let x;try{x=JSON.parse(t)}catch(e){}el.value='';if(!x||x.v!==2||!Array.isArray(x.quotes)){toast('Ese archivo no es una copia de SGM');return}confirmBox('¿Restaurar esta copia?','Se sustituirán los datos actuales por los de la copia.','Restaurar',()=>{x.contacts??=[];db=x;save();go('inicio');toast('Copia restaurada')},false)})},
  found:el=>{S.ed.found[+el.dataset.i].on=el.checked;const b=$('[data-act="addFound"]');if(b)b.lastChild.textContent=' Añadir '+S.ed.found.filter(f=>f.on).length+' partidas'},
  qf:el=>{const q=S.ed.q,k=el.dataset.k;q[k]=['iva','discount','validity'].includes(k)?Math.max(0,parseNum(el.value)):el.value;if(k==='discount')q.discount=Math.min(100,q.discount);edRefreshTotals();if(S.ed.step===3){const p=$('#preview');if(p){p.innerHTML=docHTML(q,'quote');fitPapers()}}const h=$('.head h1');if(k==='title'&&h)h.textContent=q.title||'Presupuesto sin título';if(!S.ed.isNew)edCommit();if(k==='payMethod')render()},
+ lineNoGuardar:el=>{const l=S.ed.q.lines.find(l=>l.id===el.dataset.id);if(l){if(el.checked)delete l.noGuardar;else l.noGuardar=true;edDirty()}},
+ lineCap:el=>{const l=S.ed.q.lines.find(l=>l.id===el.dataset.id);if(!l||l.cap===el.value)return;l.cap=el.value;l.mat=false;S.ed.abrir=l.id;edDirty();edLines();setTimeout(()=>{$('#L-'+l.id)?.scrollIntoView({block:'center',behavior:'smooth'});S.ed.abrir=null},30);toast('Partida movida a '+capName(l.cap))},
  line:el=>{const l=S.ed.q.lines.find(l=>l.id===el.dataset.id),k=el.dataset.k;if(k==='qty'||k==='price')l[k]=Math.max(0,parseNum(el.value));else l[k]=el.value;$('#la-'+l.id).textContent=eur(l.qty*l.price);edRefreshTotals()},
  price:el=>{const p=parseNum(el.value);db.prices[el.dataset.name]=r2(p);save()},
  co:el=>{const k=el.dataset.k;if(k==='invNext'||k==='quoteNext'){const n=Math.max(1,Math.floor(parseNum(el.value)||1)),p=k==='invNext'?'inv':'quote';db.company[p+'Start']=n;db.company[p+'StartYear']=today().slice(0,4);save();return}db.company[k]=['iva','validity','dueDays'].includes(k)?parseNum(el.value):el.value;save()},
