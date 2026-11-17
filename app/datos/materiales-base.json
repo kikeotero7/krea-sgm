@@ -1394,6 +1394,18 @@
      "fecha": "2026-11"
     },
     {
+     "codigo": "MYM-019B",
+     "descripcion": "Mortero cola porcelánico gel AXTON blanco C2TE, saco 25 kg (Leroy Merlin ref. 81928410)",
+     "unidad": "saco",
+     "precio": 7.43,
+     "pvp_iva": 8.99,
+     "min": 7.43,
+     "max": 7.43,
+     "tienda": "Leroy Merlin",
+     "fuente": "leroymerlin.es ref. 81928410, 8,99 € con IVA (0,36 €/kg); captura de Kike",
+     "fecha": "2026-11"
+    },
+    {
      "codigo": "MYM-020",
      "descripcion": "Cemento cola flexible C2TE S1 (gran formato), saco 25 kg",
      "unidad": "saco",
