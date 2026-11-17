@@ -50,5 +50,14 @@ function db(): PDO {
       creado DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
       INDEX (usuario_id, version)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
+  // Fotos y PDF de tickets de material (fuera del documento de datos para que no pese)
+  $pdo->exec("CREATE TABLE IF NOT EXISTS sgm_fotos (
+      id CHAR(24) PRIMARY KEY,
+      usuario_id INT NOT NULL,
+      tipo VARCHAR(40) NOT NULL,
+      datos MEDIUMBLOB NOT NULL,
+      creado DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      INDEX (usuario_id)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
   return $pdo;
 }

@@ -188,3 +188,73 @@ function gasto_ia(string $crudo): array {
   if (!is_array($g)) return [502, ['ok' => false, 'error' => 'No he entendido el gasto. Escríbelo a mano.']];
   return [200, ['ok' => true, 'gasto' => $g]];
 }
+
+/** Tickets y albaranes de material: una o varias fotos (o un PDF) → proveedor, fecha, número, líneas e IVA.
+ *  La lectura se basa en la de Gastobra (KREA), adaptada a la compra de material de obra. [código HTTP, respuesta]. */
+function ticket_ia(string $crudo): array {
+  global $CFG;
+  $clave = preg_replace('/[^\x21-\x7E]/', '', (string)($CFG['anthropic_key'] ?? ''));
+  if ($clave === '') return [500, ['ok' => false, 'error' => 'Falta la clave de la IA en la configuración del servidor.']];
+  if (strlen($crudo) > 12000000) return [413, ['ok' => false, 'error' => 'Las fotos pesan demasiado. Prueba con menos fotos.']];
+  $b = json_decode($crudo, true);
+  $imgs = is_array($b['imagenes'] ?? null) ? array_slice($b['imagenes'], 0, 6) : [];
+  if (!$imgs) return [400, ['ok' => false, 'error' => 'No hay ninguna foto.']];
+  $hoy = preg_match('/^\d{4}-\d{2}-\d{2}$/', (string)($b['hoy'] ?? '')) ? $b['hoy'] : date('Y-m-d');
+  $contenido = [];
+  foreach ($imgs as $img) {
+    if (!preg_match('#^data:(image/(?:jpeg|png|webp)|application/pdf);base64,([A-Za-z0-9+/=]+)$#', (string)$img, $m)) return [400, ['ok' => false, 'error' => 'Una de las fotos no es válida.']];
+    $contenido[] = $m[1] === 'application/pdf'
+      ? ['type' => 'document', 'source' => ['type' => 'base64', 'media_type' => 'application/pdf', 'data' => $m[2]]]
+      : ['type' => 'image', 'source' => ['type' => 'base64', 'media_type' => $m[1], 'data' => $m[2]]];
+  }
+  $contenido[] = ['type' => 'text', 'text' => count($imgs) > 1 ? 'Estas fotos son partes del MISMO ticket o albarán, en orden. Léelo entero.' : 'Lee este ticket o albarán.'];
+  $reglas = "Eres un lector de tickets, facturas y albaranes de compra de material de obra en España (Guivel, Leroy Merlin, Bricomart, Obramat, almacenes de fontanería, electricidad, cerámica...), para Construcciones SGM. Hoy es $hoy.\n"
+    . "Devuelve los datos del ticket:\n"
+    . "- proveedor: tienda o empresa que vende; fecha en AAAA-MM-DD; numero: nº de ticket, factura o albarán (vacío si no aparece).\n"
+    . "- lineas: una por producto, en el orden del ticket, sin inventar ninguna: cantidad, unidad (ud, m, m², kg, l, saco, caja...), concepto legible (sin códigos raros), ref (referencia o código del producto, o vacío), precio unitario e importe de la línea TAL COMO APARECEN.\n"
+    . "- precios_con_iva: true si los precios de las líneas ya llevan IVA (lo normal en tickets de tienda); false si van sin IVA (albaranes y facturas de proveedor con base imponible, o si pone a mano «precios sin IVA», «+IVA», «IVA no incluido»).\n"
+    . "- iva_pct: tipo de IVA del ticket (21 si no se ve otro).\n"
+    . "- base, iva y total del ticket: si hay desglose, cópialo. Si no hay desglose: con precios sin IVA, base = suma de importes, iva = base × iva_pct / 100 y total = base + iva; con precios con IVA, total = suma de importes, base = total / (1 + iva_pct/100) e iva = total − base. Redondea a 2 decimales.\n"
+    . "- dudosa: true en cada línea que no se lea con seguridad (borrosa, cortada, a mano, números que no cuadran). dudosos: lista de campos de la cabecera que no se leen con seguridad (proveedor, fecha, numero, total).\n"
+    . "- respuesta: una frase corta en español: qué has leído y qué conviene revisar.\n"
+    . "Si no es un ticket ni una factura, devuelve lineas vacías y explícalo en respuesta.";
+  $num = ['type' => 'number'];
+  $esquema = ['type' => 'object', 'additionalProperties' => false,
+    'required' => ['proveedor', 'fecha', 'numero', 'precios_con_iva', 'iva_pct', 'lineas', 'base', 'iva', 'total', 'dudosos', 'respuesta'],
+    'properties' => [
+      'proveedor' => ['type' => 'string'], 'fecha' => ['type' => 'string'], 'numero' => ['type' => 'string'],
+      'precios_con_iva' => ['type' => 'boolean'], 'iva_pct' => $num,
+      'lineas' => ['type' => 'array', 'items' => ['type' => 'object', 'additionalProperties' => false,
+        'required' => ['cantidad', 'unidad', 'concepto', 'ref', 'precio', 'importe', 'dudosa'],
+        'properties' => ['cantidad' => $num, 'unidad' => ['type' => 'string'], 'concepto' => ['type' => 'string'], 'ref' => ['type' => 'string'],
+          'precio' => $num, 'importe' => $num, 'dudosa' => ['type' => 'boolean']]]],
+      'base' => $num, 'iva' => $num, 'total' => $num,
+      'dudosos' => ['type' => 'array', 'items' => ['type' => 'string']],
+      'respuesta' => ['type' => 'string']]];
+  $peticion = [
+    'model' => $CFG['anthropic_model'] ?? 'claude-opus-5-5',
+    'max_tokens' => 12000,
+    'fallbacks' => 'default',
+    'output_config' => ['effort' => 'medium', 'format' => ['type' => 'json_schema', 'schema' => $esquema]],
+    'system' => $reglas,
+    'messages' => [['role' => 'user', 'content' => $contenido]],
+  ];
+  @set_time_limit(170);
+  $ch = curl_init('https://api.anthropic.com/v1/messages');
+  curl_setopt_array($ch, [
+    CURLOPT_POST => true, CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 160,
+    CURLOPT_HTTPHEADER => ['x-api-key: ' . $clave, 'anthropic-version: 2023-06-01', 'anthropic-beta: server-side-fallback-2026-07-01', 'content-type: application/json'],
+    CURLOPT_POSTFIELDS => json_encode($peticion, JSON_UNESCAPED_UNICODE),
+  ]);
+  $txt = curl_exec($ch); $estado = (int)curl_getinfo($ch, CURLINFO_RESPONSE_CODE); curl_close($ch);
+  if ($txt === false) return [502, ['ok' => false, 'error' => 'No se ha podido conectar con la IA. Vuelve a intentarlo.']];
+  if ($estado === 429) return [429, ['ok' => false, 'error' => 'Ahora mismo hay demasiadas consultas. Espera un momento.']];
+  $r = json_decode($txt, true);
+  if ($estado !== 200 || !is_array($r)) { error_log('[sgm] ticket IA ' . $estado . ': ' . mb_substr((string)$txt, 0, 400)); return [502, ['ok' => false, 'error' => "La IA ha devuelto un error ($estado)."]]; }
+  if (($r['stop_reason'] ?? '') === 'refusal') return [200, ['ok' => false, 'error' => 'No he podido leer el ticket. Apúntalo a mano.']];
+  $salida = '';
+  foreach ($r['content'] ?? [] as $bl) if (($bl['type'] ?? '') === 'text') $salida .= $bl['text'];
+  $t = json_decode($salida, true);
+  if (!is_array($t)) return [502, ['ok' => false, 'error' => 'No he entendido el ticket. Prueba con otra foto.']];
+  return [200, ['ok' => true, 'ticket' => $t]];
+}

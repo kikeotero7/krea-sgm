@@ -185,6 +185,43 @@ try {
       responder($codigo, $res);
     }
 
+    case 'ticket': {
+      $u = exigir_usuario();
+      limitar('ticket:' . $u['id'], 60, 60);
+      [$codigo, $res] = ticket_ia(cuerpo_crudo());
+      responder($codigo, $res);
+    }
+
+    // Fotos de tickets: se guardan aparte, cada usuario solo ve las suyas
+    case 'foto_subir': {
+      $u = exigir_usuario();
+      limitar('foto:' . $u['id'], 200, 60);
+      if (!preg_match('#^data:(image/(?:jpeg|png|webp)|application/pdf);base64,([A-Za-z0-9+/=]+)$#', (string)($b['imagen'] ?? ''), $m)) error_(400, 'La foto no es válida.');
+      $datos = base64_decode($m[2], true);
+      if ($datos === false || strlen($datos) > 6000000) error_(413, 'La foto es demasiado grande.');
+      $st = db()->prepare('SELECT COUNT(*) FROM sgm_fotos WHERE usuario_id = ?'); $st->execute([$u['id']]);
+      if ((int)$st->fetchColumn() >= 5000) error_(413, 'Has llegado al máximo de fotos guardadas.');
+      $id = bin2hex(random_bytes(12));
+      db()->prepare('INSERT INTO sgm_fotos (id, usuario_id, tipo, datos) VALUES (?, ?, ?, ?)')->execute([$id, $u['id'], $m[1], $datos]);
+      responder(200, ['ok' => true, 'id' => $id]);
+    }
+
+    case 'foto_ver': {
+      $u = exigir_usuario();
+      $st = db()->prepare('SELECT tipo, datos FROM sgm_fotos WHERE id = ? AND usuario_id = ?');
+      $st->execute([(string)($b['id'] ?? ''), $u['id']]);
+      $f = $st->fetch();
+      if (!$f) error_(404, 'No se encuentra la foto.');
+      responder(200, ['ok' => true, 'imagen' => 'data:' . $f['tipo'] . ';base64,' . base64_encode($f['datos'])]);
+    }
+
+    case 'foto_borrar': {
+      $u = exigir_usuario();
+      $ids = array_slice(array_filter(is_array($b['ids'] ?? null) ? $b['ids'] : [], 'is_string'), 0, 50);
+      foreach ($ids as $id) db()->prepare('DELETE FROM sgm_fotos WHERE id = ? AND usuario_id = ?')->execute([$id, $u['id']]);
+      responder(200, ['ok' => true]);
+    }
+
     case 'gasto': {
       $u = exigir_usuario();
       limitar('gasto:' . $u['id'], 120, 60);

@@ -123,6 +123,32 @@ h1,h2,h3,h4{font-family:var(--f-display);font-stretch:108%;margin:0;text-wrap:ba
 .chip{flex:none;border:1px solid var(--line-strong);background:var(--surface);border-radius:20px;padding:7px 14px;font-weight:600;font-size:14px;color:var(--muted)}
 .chip[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:var(--forest-ink)}
 .chip .n{opacity:.7;margin-left:4px}
+.tk{gap:14px}.tk-msg{margin:0;max-width:none}.tk-h{font-size:16px;margin:4px 0 0}
+.tk-pregunta{display:flex;gap:8px;align-items:center}.tk-pregunta .input{flex:1;min-width:0}
+.tk-prop{background:var(--brand-soft);border:1px solid color-mix(in srgb,var(--brand) 30%,transparent);border-radius:var(--r);padding:12px 14px}
+.tk-lista{max-height:240px;overflow:auto;display:grid;gap:8px;padding:2px}.tk-cli{display:flex;flex-wrap:wrap;gap:6px}
+.tk-op{min-height:44px;border:1px solid var(--line-strong);background:var(--surface);border-radius:22px;padding:8px 14px;font-weight:600;font-size:14px;color:var(--ink);display:inline-flex;align-items:center;gap:6px}
+.tk-op.obra{font-weight:500;color:var(--muted);border-style:dashed}.tk-op:hover{border-color:var(--brand)}
+.tk-dest{display:flex;align-items:center;gap:12px;background:var(--brand-soft);border-radius:var(--r);padding:12px 14px}.tk-dest>.ic{color:var(--brand)}.tk-dest div{flex:1;min-width:0}.tk-dest small{display:block;color:var(--muted)}
+.tk-thumbs{display:flex;gap:10px;flex-wrap:wrap}.tk-thumbs figure{position:relative;margin:0}.tk-thumbs img,.tk-pdf{width:88px;height:110px;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:grid;place-items:center;background:var(--surface-2);font-weight:800;color:var(--danger)}
+.tk-x{position:absolute;top:-8px;right:-8px;width:30px;height:30px;border-radius:50%;border:0;background:var(--ink);color:var(--surface);display:grid;place-items:center}.tk-x .ic{width:16px;height:16px}
+.tk-botones{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tk-gran{min-height:56px;font-size:16px;justify-content:center;cursor:pointer}
+.tk-leyendo{display:grid;justify-items:center;gap:12px;padding:30px 10px;text-align:center}
+.tk-iva{gap:12px;flex-wrap:wrap;align-items:end}.tk-pct{width:90px;margin:0}
+.tk-tabla{display:grid;gap:6px}.tk-fila{display:grid;grid-template-columns:64px minmax(0,1fr) 84px 92px 40px;gap:6px;align-items:center;border-radius:8px;padding:2px}
+.tk-tabla.ver .tk-fila{grid-template-columns:50px minmax(0,1fr) 80px 90px;padding:6px 4px;border-bottom:1px solid var(--line)}
+.tk-fila input{min-width:0;width:100%;min-height:44px;border:1px solid var(--line-strong);border-radius:8px;padding:6px 8px;font:inherit;background:var(--surface);color:var(--ink)}
+.tk-cab{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.tk-dud input,.field.tk-dud input,.tk-fila.tk-dud{background:#fff4c2}.tk-fila.tk-dud{box-shadow:0 0 0 2px #f0c64a}.field.tk-dud input{border-color:#e0b020}
+.tk-ley{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}.tk-ley i{width:14px;height:14px;border-radius:4px;background:#fff4c2;box-shadow:0 0 0 2px #f0c64a}
+.tk-tot{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.tk-tot div{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:grid;gap:2px}.tk-tot span{font-size:12px;color:var(--muted)}.tk-tot b{font-size:17px}.tk-tot .t{background:var(--forest);color:var(--forest-ink);border-color:var(--forest)}.tk-tot .t span{color:#c9d6cb}
+.tk-aviso{margin:0;background:var(--warn-soft);color:var(--warn);border-radius:10px;padding:10px 12px;display:flex;gap:8px;align-items:center;font-size:14px}
+.tk-foto{max-width:100%;border-radius:10px;border:1px solid var(--line)}
+.mat{border:1px solid var(--line);border-radius:var(--r);padding:10px 14px;display:grid;gap:10px}.mat>summary{display:flex;align-items:center;gap:8px;font-weight:700;cursor:pointer;min-height:40px}.mat>summary b{margin-left:auto}
+.mat-li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;text-align:left;width:100%;border:0;background:none;padding:10px 4px;border-bottom:1px solid var(--line)}.mat-li .num{grid-row:1/3;grid-column:2;align-self:center}
+.mat-cmp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.mat-cmp div{border-radius:10px;padding:10px 12px;display:grid;gap:2px;background:var(--surface-2)}.mat-cmp span{font-size:12px;color:var(--muted)}.mat-cmp div:last-child{color:#fff}.mat-cmp.ok div:last-child{background:var(--brand)}.mat-cmp.mal div:last-child{background:var(--danger)}.mat-cmp div:last-child span{color:rgba(255,255,255,.85)}
+.li-tk{cursor:pointer}.g-filtro{margin:4px 0 2px}.btn-new.btn-tk{background:transparent;border:1px solid var(--side-line);color:var(--side-ink);margin-top:-6px}
+@media (max-width:560px){.tk-fila{grid-template-columns:64px minmax(0,1fr) minmax(0,1fr) 40px;gap:6px}.tk-fila>input[data-k=concepto]{grid-column:1/-1;order:-1;font-weight:600}.tk-tabla:not(.ver) .tk-fila{border:1px solid var(--line);padding:8px;border-radius:10px}.tk-tabla:not(.ver) .tk-cab{border:0;padding:0 8px}.tk-tabla:not(.ver) .tk-cab span:nth-child(2){display:none}.tk-tabla.ver .tk-fila{grid-template-columns:40px minmax(0,1fr) 70px 80px}.tk-tot,.mat-cmp{grid-template-columns:1fr 1fr}.tk-tot .t,.mat-cmp div:last-child{grid-column:1/-1}.tk-botones{grid-template-columns:1fr}}
 .chk-mp{display:flex;align-items:center;gap:10px;min-height:44px;font-size:14px;color:var(--muted)}.chk-mp input{width:20px;height:20px;accent-color:var(--brand)}
 .pay-pick{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
 .pay-op{min-height:44px;border:1px solid var(--line-strong);background:var(--surface);border-radius:22px;padding:8px 14px;font-weight:600;font-size:14px;color:var(--ink)}
@@ -517,12 +543,13 @@ dialog::backdrop{background:rgba(15,16,15,.55)}
   .topbar img{height:40px;width:auto;display:block}
   .topbar .demo-tag{font-size:11px}
   .main{padding-block:18px 110px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-  .tabbar{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+  .tabbar{display:grid;grid-template-columns:repeat(6,1fr);position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
   .tabbar button{border:0;background:none;display:grid;justify-items:center;gap:2px;padding:8px 2px 10px;font-size:11px;font-weight:600;color:var(--muted)}
   .tabbar button[aria-current="page"]{color:var(--brand-strong)}
   .tabbar .fab{position:relative;top:-14px}
   .tabbar .fab span{width:54px;height:54px;border-radius:16px;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;box-shadow:0 8px 20px color-mix(in srgb,var(--brand) 45%,transparent)}
   .tabbar .fab .ic{width:26px;height:26px}
+  .tabbar .fab-tk{gap:0}.tabbar .fab-tk span{background:var(--forest);color:#fff;box-shadow:0 8px 20px rgba(20,38,26,.35)}.tabbar .fab-tk small{font-size:11px;font-weight:700;color:var(--ink);margin-top:3px}
   body.editing .tabbar{display:none}
   .ed-bar{left:0}
   .ed-grid{grid-template-columns:1fr}
@@ -770,6 +797,7 @@ const ICONS={
  spark:'M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 17l.8 2.2L22 20l-2.2.8L19 23l-.8-2.2L16 20l2.2-.8z',
  list:'M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01',
  x:'M6 6l12 12M18 6L6 18',
+ image:'M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M15.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z',
  camera:'M4 8h3l2-3h6l2 3h3v11H4zM12 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8z',
  phone:'M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2',
  dup:'M8 8h12v12H8zM16 8V4H4v12h4',
@@ -895,6 +923,7 @@ function shell(){
     <div class="side-logo"><img src="${LOGO_MARK}" alt="Construcciones SGM"></div>
     <div class="side-sub">Presupuestos y obras</div>
     <button class="btn-new" data-act="newQuote">${ic('plus')} Nuevo presupuesto</button>
+    <button class="btn-new btn-tk" data-act="ticketNuevo">${ic('camera')} Ticket de material</button>
     <nav class="nav" aria-label="Secciones">${NAV.map(([v,i])=>`<button data-act="go" data-v="${v}" ${S.view===v||(S.view==='editor'&&v==='presupuestos')?'aria-current="page"':''}>${ic(i)} ${VIEWS[v]}${v==='presupuestos'&&pending?`<span class="count">${pending}</span>`:''}</button>`).join('')}</nav>
     <div class="side-foot">
       ${DEMO?'<span class="demo-tag">Demo · datos de ejemplo guardados en este navegador</span>':''}
@@ -914,6 +943,7 @@ function shell(){
   <nav class="tabbar" aria-label="Secciones">
     ${[['inicio','home','Inicio'],['presupuestos','file','Presupuestos']].map(([v,i,l])=>`<button data-act="go" data-v="${v}" ${S.view===v?'aria-current="page"':''}>${ic(i)}${l}</button>`).join('')}
     <button class="fab" data-act="newQuote" aria-label="Nuevo presupuesto"><span>${ic('plus')}</span></button>
+    <button class="fab fab-tk" data-act="ticketNuevo" aria-label="Ticket de material: hacer foto"><span>${ic('camera')}</span><small>Ticket</small></button>
     <button data-act="go" data-v="facturas" ${S.view==='facturas'?'aria-current="page"':''}>${ic('receipt')}Facturas</button>
     <button data-act="moreMenu" ${['clientes','obras','gastos','precios','datos','ajustes'].includes(S.view)?'aria-current="page"':''}>${ic('more')}Más</button>
   </nav>
@@ -927,7 +957,7 @@ function sbStore(x){CLOUD.session=x;try{x?localStorage.setItem('sgm2-session',JS
 function sbLoad(){try{return JSON.parse(localStorage.getItem('sgm2-session'))}catch(e){return null}}
 let CARGAS=0;
 /* Guardar: el botón se rellena de verde con la barra de carga arriba y después se guarda */
-const GUARDAR=new Set(['addExpense','createInvoice','saveClient','saveNewClient','saveWork','saveCustom','saveDatos','saveProfile','saveExpense','recSave','saveCo','changePass']);
+const GUARDAR=new Set(['tkGuardar','tkCrearCli','addExpense','createInvoice','saveClient','saveNewClient','saveWork','saveCustom','saveDatos','saveProfile','saveExpense','recSave','saveCo','changePass']);
 function guardando(b,fn){const quieto=matchMedia('(prefers-reduced-motion: reduce)').matches;b.classList.add('guardando');b.setAttribute('aria-busy','true');cargando(1);
   setTimeout(()=>{cargando(-1);b.classList.remove('guardando');b.removeAttribute('aria-busy');fn()},quieto?0:550)}
 function cargando(d){CARGAS=Math.max(0,CARGAS+d);let b=document.getElementById('carga');if(!b){b=document.createElement('div');b.id='carga';b.setAttribute('aria-hidden','true');document.body.append(b)}b.classList.toggle('on',CARGAS>0)}
@@ -1353,9 +1383,12 @@ function vObras(v){
 /* ---------- Gastos ---------- */
 const CATS=['Material','Subcontrata','Transporte','Herramienta','Vehículo','Otros'];
 function vGastos(v){
-  const byMonth={};[...db.expenses].sort((a,b)=>b.date.localeCompare(a.date)).forEach(e=>{(byMonth[e.date.slice(0,7)]??=[]).push(e)});
+  const fil=S.gFiltro||'',pasa=e=>!fil||(fil==='sin'?!expCliente(e)&&!e.work:fil[0]==='w'?e.work===fil.slice(2):expCliente(e)===fil.slice(2));
+  const sinAsig=db.expenses.filter(e=>e.ticket&&!expCliente(e)&&!e.work);
+  const byMonth={};[...db.expenses].filter(pasa).sort((a,b)=>b.date.localeCompare(a.date)).forEach(e=>{(byMonth[e.date.slice(0,7)]??=[]).push(e)});
   v.innerHTML=`
-  <div class="head"><div><div class="eyebrow">Gastos</div><h1>Gastos y tickets</h1><p>Apunta cada compra en su obra y sabrás cuánto te deja cada trabajo.</p></div></div>
+  <div class="head"><div><div class="eyebrow">Gastos</div><h1>Gastos y tickets</h1><p>Apunta cada compra en su obra y sabrás cuánto te deja cada trabajo.</p></div><div class="head-actions"><button class="btn primary" data-act="ticketNuevo">${ic('camera')} Ticket de material</button></div></div>
+  ${sinAsig.length?`<section class="panel tk-sin"><div class="panel-head"><h2>${ic('bell')} Tickets sin asignar</h2><span class="muted small">${sinAsig.length}</span></div><div class="list">${sinAsig.map(e=>`<button class="li mat-li" data-act="openTicket" data-id="${e.id}"><span class="t">${dShort(e.date)} · ${esc(e.supplier||'Ticket')}</span><span class="muted small">Pulsa para asignarlo a un cliente u obra</span><b class="num">${eur(e.amount)}</b></button>`).join('')}</div></section>`:''}
   <section class="panel stack"><h2>Apuntar gasto</h2>
     ${DEMO?'':`<div class="gasto-ia"><button class="voz ${S.gVoz?'on':''}" data-hold="gastoVoz" aria-pressed="${!!S.gVoz}">${S.gVoz?'<span class="voz-onda" aria-hidden="true"></span> Te escucho… suelta o pulsa para terminar':MIC+' Díctame el gasto'}</button><label class="btn foto-ticket" for="e-photo">${ic('camera')} Foto del ticket: se lee sola</label></div>
     <p class="voz-ayuda" id="e-ia">${S.gVoz?'Ej.: «Ochenta y cinco euros de azulejo en Obramat para la obra de Constantina».':'Di o fotografía el gasto y se rellenan solos el importe, el proveedor, la obra y la fecha. Revisa y pulsa «Apuntar gasto».'}</p>`}
@@ -1364,8 +1397,160 @@ function vGastos(v){
     <div class="row"><label class="btn" for="e-photo" style="cursor:pointer">${ic('camera')} Foto del ticket</label><input id="e-photo" type="file" accept="image/*" class="sr" data-in="ticket"><img id="e-thumb" class="ticket-thumb" hidden alt="Ticket adjunto"><span class="spacer"></span><button class="btn primary" data-act="addExpense">${ic('plus')} Apuntar gasto</button></div>
     <div id="e-err"></div>
   </section>
-  ${Object.entries(byMonth).map(([m,es])=>{const [y,mm]=m.split('-');return `<section class="panel" style="padding-block:10px"><div class="panel-head" style="margin:6px 0"><h2 style="text-transform:capitalize">${MONTHS[+mm-1]} ${y}</h2><b class="num">${eur(es.reduce((s,e)=>s+e.amount,0))}</b></div><div class="list">${es.map(e=>`<div class="li" style="grid-template-columns:auto minmax(0,1fr) auto auto"><span>${e.thumb?`<img class="ticket-thumb" src="${e.thumb}" alt="Ticket">`:`<span class="dot muted" style="display:block;margin:0 17px"></span>`}</span><div style="min-width:0"><div class="t">${esc(e.concept)}</div><div class="s">${esc([dShort(e.date),e.supplier,e.cat,work(e.work)?.name||'General'].filter(Boolean).join(' · '))}</div></div><span class="amt">${eur(e.amount)}</span><button class="icon-btn" data-act="delExpense" data-id="${e.id}" aria-label="Borrar gasto">${ic('trash')}</button></div>`).join('')}</div></section>`}).join('')||'<div class="panel empty"><b>Sin gastos</b>Apunta el primero arriba.</div>'}`;
+  <div class="row g-filtro"><label class="field" style="flex:1;margin:0">Ver gastos de<select id="g-filtro" data-in="gFiltro"><option value="">Todos los clientes y obras</option><option value="sin" ${fil==='sin'?'selected':''}>Sin asignar</option>${tkDestOps(fil).replace('<option value="" selected>Sin asignar</option>','').replace('<option value="" >Sin asignar</option>','')}</select></label></div>
+  ${Object.entries(byMonth).map(([m,es])=>{const [y,mm]=m.split('-');return `<section class="panel" style="padding-block:10px"><div class="panel-head" style="margin:6px 0"><h2 style="text-transform:capitalize">${MONTHS[+mm-1]} ${y}</h2><b class="num">${eur(es.reduce((s,e)=>s+e.amount,0))}</b></div><div class="list">${es.map(e=>`<div class="li${e.ticket?' li-tk':''}" ${e.ticket?`data-act="openTicket" data-id="${e.id}" role="button" tabindex="0"`:''} style="grid-template-columns:auto minmax(0,1fr) auto auto"><span>${e.thumb?`<img class="ticket-thumb" src="${e.thumb}" alt="Ticket">`:`<span class="dot muted" style="display:block;margin:0 17px"></span>`}</span><div style="min-width:0"><div class="t">${esc(e.concept)}</div><div class="s">${esc([dShort(e.date),e.supplier,e.cat,work(e.work)?.name||client(expCliente(e))?.name||(e.ticket?'Sin asignar':'General')].filter(Boolean).join(' · '))}</div></div><span class="amt">${eur(e.amount)}</span><button class="icon-btn" data-act="delExpense" data-id="${e.id}" aria-label="Borrar gasto">${ic('trash')}</button></div>`).join('')}</div></section>`}).join('')||'<div class="panel empty"><b>Sin gastos</b>Apunta el primero arriba.</div>'}`;
 }
+
+/* ---------- Tickets de material por cliente (lectura con IA basada en Gastobra) ---------- */
+const norm=s=>String(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+const expCliente=e=>e.client||work(e.work)?.client||'';
+const esMaterial=e=>!!e.ticket||e.cat==='Material';
+function destinoTxt(cid,wid){const w=work(wid),c=client(cid||w?.client);return c?esc(c.name)+(w?' · '+esc(w.name):''):(w?esc(w.name):'')}
+const UNI_TK={'m':'ml','ml':'ml','m2':'m²','m²':'m²','m3':'m³','m³':'m³','ud':'ud','ud.':'ud','uds':'ud','u':'ud','und':'ud','kg':'kg','l':'l','litro':'l','litros':'l','saco':'saco','sacos':'saco','caja':'caja','cajas':'caja','rollo':'rollo','rollos':'rollo','h':'h'};
+const uniTk=u=>UNI_TK[norm(u).replace(/\s/g,'')]||'ud';
+/* Busca el cliente y la obra que mejor encajan con lo que se dice («para Javier, la obra de Gines») */
+const VACIAS=new Set(['para','esto','este','esta','ticket','obra','cliente','casa','calle','del','las','los','una','uno','que','con','por','va','de','la','el','en']);
+function buscarDestino(texto){const toks=norm(texto).split(/[^a-z0-9ñ]+/).filter(t=>t.length>=3&&!VACIAS.has(t));if(!toks.length)return null;
+  const has=(s,t)=>norm(s).split(/[^a-z0-9ñ]+/).some(x=>x===t||(t.length>=4&&x.startsWith(t)));
+  let best=null;
+  for(const c of db.clients){let sc=0;for(const t of toks)if(has(c.name,t))sc+=3;
+    const ws=db.works.filter(w=>w.client===c.id);let bw=null,bws=0;for(const w of ws){let s=0;for(const t of toks)if(has(w.name,t)||has(w.address,t))s+=2;if(s>bws){bws=s;bw=w}}
+    if(sc+bws>0&&(!best||sc+bws>best.sc))best={sc:sc+bws,client:c.id,work:bw?bw.id:(ws.length===1&&sc?ws[0].id:'')}}
+  for(const w of db.works.filter(w=>!w.client)){let s=0;for(const t of toks)if(has(w.name,t)||has(w.address,t))s+=2;if(s>0&&(!best||s>best.sc))best={sc:s,client:'',work:w.id}}
+  return best}
+function tkNuevo(){S.tk={fotos:[],client:'',work:'',sin:false,paso:'fotos',t:null,act:true,err:'',prop:null,nuevo:false};tkRender()}
+function tkRender(){const T=S.tk;dlg(T.paso==='revisar'?tkRevisarHTML():T.paso==='leyendo'?tkLeyendoHTML():tkFotosHTML(),true)}
+function tkLista(q){const s=norm(q);const cs=db.clients.filter(c=>!s||norm(c.name).includes(s)||db.works.some(w=>w.client===c.id&&(norm(w.name).includes(s)||norm(w.address).includes(s)))).slice(0,40);
+  if(!cs.length)return `<p class="muted small" style="margin:6px 0">No hay ningún cliente con «${esc(q)}». Créalo abajo.</p>`;
+  return cs.map(c=>{const ws=db.works.filter(w=>w.client===c.id);return `<div class="tk-cli"><button type="button" class="tk-op" data-act="tkElegir" data-c="${c.id}">${ic('users')} ${esc(c.name)}</button>${ws.map(w=>`<button type="button" class="tk-op obra" data-act="tkElegir" data-c="${c.id}" data-w="${w.id}">${ic('work')} ${esc(w.name)}</button>`).join('')}</div>`}).join('')}
+function tkDestinoHTML(){const T=S.tk;
+  if(T.client||T.work||T.sin)return `<div class="tk-dest">${ic('check')}<div><small>Este ticket es para</small><b>${T.sin?'Sin asignar (lo asignas después)':destinoTxt(T.client,T.work)}</b></div><button type="button" class="btn sm" data-act="tkCambiar">Cambiar</button></div>`;
+  return `<form class="tk-pregunta" id="tk-form"><input class="input" id="tk-texto" placeholder="Ej.: para Javier, la obra de Gines" autocomplete="off" aria-label="Para qué cliente u obra es">${micBtn('tk-texto','Decir para quién es')}<button class="btn primary" type="submit">${ic('search')} Buscar</button></form>
+   ${T.prop?`<div class="tk-prop">${T.prop.client||T.prop.work?`¿Es para <b>${destinoTxt(T.prop.client,T.prop.work)}</b>?<span class="row" style="gap:8px;margin-top:8px"><button type="button" class="btn primary sm" data-act="tkSi">${ic('check')} Sí, es ese</button><button type="button" class="btn sm" data-act="tkNo">No, elegir de la lista</button></span>`:`No encuentro a nadie con «${esc(T.prop.texto)}». Elígelo de la lista o créalo.`}</div>`:''}
+   <div class="search">${ic('search')}<input class="input" id="tk-q" data-in="tkQ" placeholder="Buscar cliente u obra" autocomplete="off"></div>
+   <div class="tk-lista" id="tk-lista">${tkLista('')}</div>
+   ${T.nuevo?`<div class="tk-nuevo grid2"><label class="field">Nombre del cliente *<input id="tk-nn" autocomplete="off"></label><label class="field">Teléfono<input id="tk-nt" type="tel" autocomplete="off"></label><div class="row" style="grid-column:1/-1;gap:8px"><button type="button" class="btn primary sm" data-act="tkCrearCli">${ic('check')} Crear y usar</button><button type="button" class="btn sm" data-act="tkNuevoCli">Cancelar</button></div></div>`
+   :`<div class="row" style="gap:8px;flex-wrap:wrap"><button type="button" class="btn sm" data-act="tkNuevoCli">${ic('plus')} Crear cliente nuevo</button><button type="button" class="btn sm" data-act="tkSin">Sin asignar</button></div>`}`}
+function tkFotosHTML(){const T=S.tk;
+  return `<div class="dlg-head"><h2>${ic('camera')} Ticket de material</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div>
+  <div class="dlg-body tk">
+   <div class="msg assistant tk-msg">${ic('spark')} ¿Para qué cliente u obra es este ticket?</div>
+   ${tkDestinoHTML()}
+   <h3 class="tk-h">Fotos del ticket</h3>
+   ${T.fotos.length?`<div class="tk-thumbs">${T.fotos.map((f,i)=>`<figure>${f.pdf?`<span class="tk-pdf">PDF</span>`:`<img src="${f.thumb}" alt="Foto ${i+1} del ticket">`}<button type="button" class="tk-x" data-act="tkQuitarFoto" data-i="${i}" aria-label="Quitar la foto ${i+1}">${ic('x')}</button></figure>`).join('')}</div>`:''}
+   <div class="tk-botones"><label class="btn primary tk-gran" for="tk-cam">${ic('camera')} ${T.fotos.length?'Hacer otra foto':'Hacer foto'}</label><input id="tk-cam" type="file" accept="image/*" capture="environment" class="sr" data-in="tkFoto">
+   <label class="btn tk-gran" for="tk-sub">${ic('image')} Subir foto o PDF</label><input id="tk-sub" type="file" accept="image/*,application/pdf" multiple class="sr" data-in="tkFoto"></div>
+   <p class="hint" style="margin:0">Si el ticket es largo, haz varias fotos de arriba abajo: se leen juntas.${DEMO?' En la demo no se lee con IA: escribirás las líneas a mano.':''}</p>
+   ${T.err?`<div class="err">${esc(T.err)}</div>`:''}
+  </div>
+  <div class="dlg-foot"><button class="btn" data-act="closeDlg">Cancelar</button><button class="btn primary" data-act="tkLeer" ${T.fotos.length?'':'disabled'}>${ic('spark')} ${DEMO?'Seguir':'Leer ticket'}</button></div>`}
+function tkLeyendoHTML(){return `<div class="dlg-head"><h2>${ic('camera')} Leyendo el ticket…</h2></div><div class="dlg-body tk"><div class="tk-leyendo"><span class="voz-onda" aria-hidden="true"></span><p>La IA está leyendo ${S.tk.fotos.length>1?'las '+S.tk.fotos.length+' fotos':'la foto'}: proveedor, fecha, líneas e IVA. Tarda unos segundos.</p></div></div>`}
+function tkTotales(t){const p=+t.ivaPct||0,sum=r2(t.lineas.reduce((s,l)=>s+(+l.importe||0),0));
+  if(t.conIva){const total=sum,base=r2(total/(1+p/100));return {base,iva:r2(total-base),total}}const iva=r2(sum*p/100);return {base:sum,iva,total:r2(sum+iva)}}
+function tkTotHTML(t){const x=tkTotales(t);const dif=t.totalLeido>0&&Math.abs(t.totalLeido-x.total)>.05;
+  return `<div class="tk-tot"><div><span>Total sin IVA</span><b>${eur(x.base)}</b></div><div><span>IVA pagado (${t.ivaPct} %)</span><b>${eur(x.iva)}</b></div><div class="t"><span>Total</span><b>${eur(x.total)}</b></div></div>
+  ${dif?`<p class="tk-aviso">${ic('bell')} El ticket dice ${eur(t.totalLeido)} de total y las líneas suman ${eur(x.total)}. Revisa las líneas en amarillo o si hay algún descuento.</p>`:''}`}
+function tkDestOps(sel){return `<option value="" ${!sel?'selected':''}>Sin asignar</option>`+db.clients.map(c=>`<option value="c:${c.id}" ${sel==='c:'+c.id?'selected':''}>${esc(c.name)}</option>${db.works.filter(w=>w.client===c.id).map(w=>`<option value="w:${w.id}" ${sel==='w:'+w.id?'selected':''}>   ${esc(c.name)} · ${esc(w.name)}</option>`).join('')}`).join('')+db.works.filter(w=>!w.client).map(w=>`<option value="w:${w.id}" ${sel==='w:'+w.id?'selected':''}>${esc(w.name)}</option>`).join('')}
+const destVal=(cid,wid)=>wid?'w:'+wid:cid?'c:'+cid:'';
+function tkRevisarHTML(){const T=S.tk,t=T.t,dud=k=>t.dudosos.includes(k)?' tk-dud':'';
+  return `<div class="dlg-head"><h2>${ic('camera')} Revisa el ticket</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div>
+  <div class="dlg-body tk">
+   ${t.respuesta?`<div class="msg assistant tk-msg">${ic('spark')} ${esc(t.respuesta)}</div>`:''}
+   <label class="field">Para qué cliente u obra<select id="tk-dest" data-in="tkDest">${tkDestOps(destVal(T.client,T.work))}</select></label>
+   <div class="grid3"><label class="field${dud('proveedor')}">Proveedor<input id="tk-prov" data-in="tkH" data-k="proveedor" value="${esc(t.proveedor)}" placeholder="Ej.: Guivel"></label><label class="field${dud('fecha')}">Fecha<input id="tk-fecha" type="date" data-in="tkH" data-k="fecha" value="${esc(t.fecha)}"></label><label class="field${dud('numero')}">Nº de ticket o albarán<input id="tk-num" data-in="tkH" data-k="numero" value="${esc(t.numero)}"></label></div>
+   <div class="row tk-iva"><div class="seg" role="group" aria-label="Los precios del ticket"><button type="button" data-act="tkConIva" data-v="1" aria-pressed="${t.conIva}">Precios con IVA</button><button type="button" data-act="tkConIva" data-v="0" aria-pressed="${!t.conIva}">Precios sin IVA (+IVA)</button></div><label class="field tk-pct">IVA %<input id="tk-pct" inputmode="decimal" data-in="tkH" data-k="ivaPct" value="${t.ivaPct}"></label></div>
+   <div class="tk-tabla" role="table" aria-label="Líneas del ticket"><div class="tk-fila tk-cab" role="row"><span>Cant.</span><span>Concepto</span><span>Precio</span><span>Importe</span><span></span></div>
+   ${t.lineas.map((l,i)=>`<div class="tk-fila${l.dudosa?' tk-dud':''}" role="row" id="tkl-${i}"><input inputmode="decimal" data-in="tkL" data-i="${i}" data-k="cantidad" value="${String(l.cantidad).replace('.',',')}" aria-label="Cantidad"><input data-in="tkL" data-i="${i}" data-k="concepto" value="${esc(l.concepto)}" aria-label="Concepto"><input inputmode="decimal" data-in="tkL" data-i="${i}" data-k="precio" value="${String(l.precio).replace('.',',')}" aria-label="Precio"><input inputmode="decimal" id="tki-${i}" data-in="tkL" data-i="${i}" data-k="importe" value="${String(l.importe).replace('.',',')}" aria-label="Importe"><button type="button" class="icon-btn" data-act="tkQuitarL" data-i="${i}" aria-label="Quitar la línea">${ic('trash')}</button></div>`).join('')}
+   </div>
+   <div class="row" style="gap:8px;flex-wrap:wrap"><button type="button" class="btn sm" data-act="tkMasL">${ic('plus')} Añadir línea</button>${t.lineas.some(l=>l.dudosa)||t.dudosos.length?'<span class="tk-ley"><i></i> En amarillo, lo que la IA no ha leído con seguridad. Revísalo.</span>':''}</div>
+   <div id="tk-tot">${tkTotHTML(t)}</div>
+   <label class="chk-mp"><input type="checkbox" id="tk-act" data-in="tkAct" ${T.act?'checked':''}> Actualizar Mis precios con estos precios (con su proveedor)</label>
+   ${T.err?`<div class="err">${esc(T.err)}</div>`:''}
+  </div>
+  <div class="dlg-foot"><button class="btn" data-act="tkRehacer">${ic('camera')} Volver a hacer foto</button><span class="spacer"></span><button class="btn primary" data-act="tkGuardar">${ic('check')} Guardar</button></div>`}
+function tkNormal(x){const n=v=>Math.max(0,r2(+v||0));const p=x&&+x.iva_pct>0?r2(+x.iva_pct):21;
+  return {proveedor:String(x?.proveedor||''),fecha:/^\d{4}-\d{2}-\d{2}$/.test(x?.fecha||'')?x.fecha:today(),numero:String(x?.numero||''),conIva:x?.precios_con_iva!==false,ivaPct:p,
+   lineas:(x?.lineas||[]).map(l=>({cantidad:n(l.cantidad)||1,unidad:String(l.unidad||'ud'),concepto:String(l.concepto||''),ref:String(l.ref||''),precio:n(l.precio),importe:n(l.importe)||r2(n(l.cantidad)*n(l.precio)),dudosa:!!l.dudosa})),
+   totalLeido:n(x?.total),dudosos:Array.isArray(x?.dudosos)?x.dudosos.map(String):[],respuesta:String(x?.respuesta||'')}}
+function fotoArchivo(f){return new Promise((ok,ko)=>{
+  if(f.type==='application/pdf'){if(f.size>6e6)return ko(new Error('El PDF pesa demasiado (máx. 6 MB).'));const r=new FileReader();r.onload=()=>ok({url:r.result,pdf:true,thumb:''});r.onerror=()=>ko(new Error('No se ha podido abrir el PDF.'));r.readAsDataURL(f);return}
+  const img=new Image(),u=URL.createObjectURL(f);img.onload=()=>{const k=Math.min(1,1600/Math.max(img.width,img.height)),g=document.createElement('canvas');g.width=Math.round(img.width*k);g.height=Math.round(img.height*k);g.getContext('2d').drawImage(img,0,0,g.width,g.height);
+    const t=document.createElement('canvas'),s=Math.min(1,200/Math.max(img.width,img.height));t.width=Math.round(img.width*s);t.height=Math.round(img.height*s);t.getContext('2d').drawImage(img,0,0,t.width,t.height);
+    URL.revokeObjectURL(u);ok({url:g.toDataURL('image/jpeg',.82),thumb:t.toDataURL('image/jpeg',.7),pdf:false})};
+  img.onerror=()=>{URL.revokeObjectURL(u);ko(new Error('Esa foto no se puede abrir. Prueba con otra.'))};img.src=u})}
+async function tkLeer(){const T=S.tk;
+  if(DEMO){T.t=tkNormal({lineas:[{cantidad:1,unidad:'ud',concepto:'',precio:0,importe:0}],respuesta:'En la demo no se lee con IA: escribe las líneas del ticket.'});T.paso='revisar';tkRender();return}
+  T.paso='leyendo';T.err='';tkRender();
+  try{const r=await api('ticket',{imagenes:T.fotos.map(f=>f.url),hoy:today()});T.t=tkNormal(r.ticket);if(!T.t.lineas.length)T.t.lineas.push({cantidad:1,unidad:'ud',concepto:'',ref:'',precio:0,importe:0,dudosa:true});T.paso='revisar'}
+  catch(e){T.paso='fotos';T.err=e.message||'No se ha podido leer el ticket.'}
+  if(S.tk===T)tkRender()}
+/* Guarda los precios del ticket en «Mis partidas propias»: precio unitario sin IVA, con su proveedor; si ya existe, actualiza */
+function tkMisPrecios(t){let n=0;const p=+t.ivaPct||0;
+  for(const l of t.lineas){const name=l.concepto.trim();if(!name||!(l.precio>0))continue;const price=r2(t.conIva?l.precio/(1+p/100):l.precio);
+    const x=db.custom.find(c=>c.name.toLowerCase()===name.toLowerCase());
+    if(x){x.price=price;x.proveedor=t.proveedor;if(l.ref)x.ref=l.ref;delete db.prices[x.name]}else db.custom.push({cap:capPorNombre(name)||'otr',name,unit:uniTk(l.unidad),price,proveedor:t.proveedor,ref:l.ref||''});n++}
+  return n}
+async function tkGuardar(){const T=S.tk,t=T.t;t.lineas=t.lineas.filter(l=>l.concepto.trim()||l.importe>0);
+  const x=tkTotales(t);if(!(x.total>0)){T.err='Pon al menos una línea con su importe.';tkRender();return}
+  let fotos=[];
+  if(!DEMO){try{cargando(1);for(const f of T.fotos){const r=await api('foto_subir',{imagen:f.url});fotos.push(r.id)}}catch(e){T.err='No se han podido guardar las fotos: '+(e.message||'sin conexión')+'. Vuelve a pulsar «Guardar».';tkRender();return}finally{cargando(-1)}}
+  const cid=T.client||work(T.work)?.client||'';
+  db.expenses.push({id:uid(),date:t.fecha,concept:t.lineas.length===1?t.lineas[0].concepto:`Material ${t.proveedor||'de obra'} (${t.lineas.length} líneas)`,supplier:t.proveedor,cat:'Material',amount:x.total,work:T.work||'',client:cid,thumb:T.fotos.find(f=>!f.pdf)?.thumb||'',
+    ticket:{numero:t.numero,conIva:t.conIva,ivaPct:t.ivaPct,lineas:t.lineas.map(({dudosa,...l})=>l),base:x.base,iva:x.iva,total:x.total,fotos}});
+  const n=T.act?tkMisPrecios(t):0;save();closeDlg();S.tk=null;render();
+  toast('Ticket guardado'+(cid||T.work?' en '+destinoTxt(cid,T.work).replace(/&amp;/g,'&'):' sin asignar')+(n?` · ${n} precio${n>1?'s':''} en Mis precios`:''))}
+/* Ver un ticket guardado: líneas, fotos, moverlo a otro cliente u obra, borrarlo */
+function openTicket(id){const e=db.expenses.find(x=>x.id===id);if(!e)return;const t=e.ticket;
+  dlg(`<div class="dlg-head"><h2>${esc(e.supplier||'Ticket')} · ${eur(e.amount)}</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div>
+  <div class="dlg-body tk"><p class="muted" style="margin:0">${dLong(e.date)}${t?.numero?' · Nº '+esc(t.numero):''}</p>
+   <label class="field">Cliente u obra<select data-in="tkMover" data-id="${e.id}">${tkDestOps(destVal(e.client,e.work))}</select></label>
+   ${t?`<div class="tk-tabla ver"><div class="tk-fila tk-cab"><span>Cant.</span><span>Concepto</span><span>Precio</span><span>Importe</span></div>${t.lineas.map(l=>`<div class="tk-fila"><span>${qtyFmt(l.cantidad)}</span><span>${esc(l.concepto)}</span><span>${eur(l.precio)}</span><b>${eur(l.importe)}</b></div>`).join('')}</div>
+   <div class="tk-tot"><div><span>Total sin IVA</span><b>${eur(t.base)}</b></div><div><span>IVA pagado</span><b>${eur(t.iva)}</b></div><div class="t"><span>Total</span><b>${eur(t.total)}</b></div></div>
+   <p class="muted small" style="margin:0">Precios del ticket ${t.conIva?'con':'sin'} IVA (${t.ivaPct} %).</p>`:`<p style="margin:0">${esc(e.concept)}</p>`}
+   ${t?.fotos?.length?`<div class="row" style="gap:8px;flex-wrap:wrap">${t.fotos.map((f,i)=>`<button class="btn sm" data-act="tkVerFoto" data-f="${f}">${ic('image')} Ver foto ${t.fotos.length>1?i+1:''}</button>`).join('')}</div><div id="tk-foto"></div>`:e.thumb?`<img class="tk-foto" src="${e.thumb}" alt="Ticket">`:''}
+  </div>
+  <div class="dlg-foot"><button class="btn danger" data-act="tkBorrar" data-id="${e.id}">${ic('trash')} Borrar</button><span class="spacer"></span><button class="btn primary" data-act="closeDlg">Hecho</button></div>`,true)}
+/* Material gastado de un cliente o una obra */
+function materialDe(f){return db.expenses.filter(e=>esMaterial(e)&&(f.work?e.work===f.work:expCliente(e)===f.client)).sort((a,b)=>b.date.localeCompare(a.date))}
+const baseExp=e=>e.ticket?e.ticket.base:r2(e.amount/1.21);
+function materialResumen(f){const es=materialDe(f);const base=r2(es.reduce((s,e)=>s+baseExp(e),0)),total=r2(es.reduce((s,e)=>s+e.amount,0));
+  const prov={};for(const e of es){const k=e.supplier||'Sin proveedor';prov[k]=r2((prov[k]||0)+e.amount)}
+  const qs=db.quotes.filter(q=>q.status==='Aceptado'&&(f.work?q.work===f.work:q.client===f.client));
+  let mat=0,tot=0;for(const q of qs){const k=1-(+q.discount||0)/100;for(const l of q.lines){const v=l.qty*l.price*k;tot+=v;if(l.mat||/^mat_/.test(l.cap))mat+=v}}
+  return {es,base,iva:r2(total-base),total,prov,qs,pres:r2(mat||tot),soloMat:mat>0}}
+function materialHTML(f){const R=materialResumen(f);
+  const cmp=R.qs.length?(()=>{const d=r2(R.pres-R.base),pct=R.pres>0?Math.round(R.base/R.pres*100):0,ok=d>=0;return `<div class="mat-cmp ${ok?'ok':'mal'}"><div><span>${R.soloMat?'Material presupuestado':'Presupuestado (total)'}</span><b>${eur(R.pres)}</b></div><div><span>Material gastado (sin IVA)</span><b>${eur(R.base)}</b></div><div><span>${ok?'Te queda':'Te has pasado'}</span><b>${eur(Math.abs(d))} · ${pct} %</b></div></div>${R.soloMat?'':'<p class="muted small" style="margin:0">El presupuesto aceptado no separa el material: se compara con el total presupuestado.</p>'}`})():'';
+  return `<details class="mat" ${R.es.length?'open':''}><summary>${ic('wallet')} Material gastado <b>${eur(R.total)}</b></summary>
+   ${R.es.length?`${cmp}<div class="tk-tot"><div><span>Sin IVA</span><b>${eur(R.base)}</b></div><div><span>IVA pagado</span><b>${eur(R.iva)}</b></div><div class="t"><span>Total</span><b>${eur(R.total)}</b></div></div>
+   <div class="list">${R.es.map(e=>`<button class="li mat-li" data-act="openTicket" data-id="${e.id}"><span class="t">${dShort(e.date)} · ${esc(e.supplier||'Ticket')}</span><span class="muted small">${e.ticket?e.ticket.lineas.length+' líneas':esc(e.concept)}</span><b class="num">${eur(e.amount)}</b></button>`).join('')}</div>
+   <p class="muted small" style="margin:6px 0 0"><b>Por proveedor:</b> ${Object.entries(R.prov).map(([p,v])=>esc(p)+' '+eur(v)).join(' · ')}</p>
+   <div class="row" style="gap:8px;flex-wrap:wrap"><button class="btn sm" data-act="matPDF" data-c="${f.client||''}" data-w="${f.work||''}">${ic('file')} Exportar PDF</button><button class="btn sm" data-act="matExcel" data-c="${f.client||''}" data-w="${f.work||''}">${ic('file')} Exportar Excel</button></div>`
+   :`<p class="muted" style="margin:6px 0">Aún no hay tickets de material. Usa el botón ${ic('camera')} <b>Ticket</b>.</p>`}</details>`}
+function matTitulo(f){return f.work?destinoTxt(work(f.work)?.client,f.work):destinoTxt(f.client,'')}
+const matArchivo=f=>('Material '+matTitulo(f)+' '+today()).replace(/&amp;/g,'y').replace(/ · /g,' - ').replace(/[\\/:*?"<>|·]/g,'')
+function materialDocHTML(d){const co=db.company,R=materialResumen(d.f),c=client(d.f.client||work(d.f.work)?.client),w=work(d.f.work);
+  return `<article class="paper">
+  <header class="p-head"><img src="${LOGO_FULL}" alt="Construcciones SGM"><div class="p-id"><span class="p-kind">Material gastado</span><span class="p-no">${esc(c?.name||w?.name||'')}</span><dl class="p-dates"><dt>Fecha</dt><dd>${dLong(today())}</dd></dl></div></header>
+  <section class="p-parties"><div><h4>Empresa</h4><strong>${esc(co.name)}</strong>${co.legal&&co.legal!==co.name?`<p>${esc(co.legal)}</p>`:''}${co.nif?`<p>NIF ${esc(co.nif)}</p>`:''}</div><div><h4>Cliente y obra</h4><strong>${esc(c?.name||'—')}</strong>${w?`<p>${esc(w.name)}</p>${w.address?`<p>${esc(w.address)}</p>`:''}`:''}</div></section>
+  <table class="p-table"><thead><tr><th>Nº</th><th>Material</th><th class="r">Cant.</th><th>Ud.</th><th class="r">Precio</th><th class="r">Importe</th></tr></thead><tbody>
+  ${R.es.slice().reverse().map((e,i)=>`<tr class="chapr"><td>${i+1}</td><td colspan="4">${dShort(e.date)} · ${esc(e.supplier||'Ticket')}${e.ticket?.numero?' · Nº '+esc(e.ticket.numero):''}${e.ticket?(e.ticket.conIva?' · precios con IVA':' · precios sin IVA'):''}</td><td class="r">${eur(e.amount)}</td></tr>${e.ticket?e.ticket.lineas.map((l,j)=>`<tr><td>${i+1}.${j+1}</td><td><b>${esc(l.concepto)}</b></td><td class="r">${qtyFmt(l.cantidad)}</td><td>${esc(l.unidad||'')}</td><td class="r">${eur(l.precio)}</td><td class="r">${eur(l.importe)}</td></tr>`).join(''):`<tr><td>${i+1}.1</td><td><b>${esc(e.concept)}</b></td><td class="r">1</td><td>ud</td><td class="r">${eur(e.amount)}</td><td class="r">${eur(e.amount)}</td></tr>`}`).join('')}
+  </tbody></table>
+  <section class="p-sum"><div class="p-caps"><h4>Por proveedor</h4>${Object.entries(R.prov).map(([p,v])=>`<div><span>${esc(p)}</span><b>${eur(v)}</b></div>`).join('')}${R.qs.length?`<h4 style="margin-top:14px">Presupuestado frente a gastado</h4><div><span>${R.soloMat?'Material presupuestado':'Presupuestado (total)'}</span><b>${eur(R.pres)}</b></div><div><span>Material gastado sin IVA</span><b>${eur(R.base)}</b></div><div><span>Diferencia</span><b>${eur(r2(R.pres-R.base))}</b></div>`:''}</div>
+  <div class="p-tot"><div><span>Total sin IVA</span><b>${eur(R.base)}</b></div><div><span>IVA pagado</span><b>${eur(R.iva)}</b></div><div class="grand"><span>Total</span><b>${eur(R.total)}</b></div></div></section>
+  <footer class="p-foot"><span>${esc([co.legal||co.name,co.nif?'NIF '+co.nif:''].filter(Boolean).join(' · '))}</span><span>Relación de material según tickets y albaranes de proveedor.</span></footer>
+  </article>`}
+let XLSX_CARGA=null;
+function cargarXLSX(){if(window.XLSX)return Promise.resolve();return XLSX_CARGA||(XLSX_CARGA=new Promise((ok,ko)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js';s.onload=ok;s.onerror=()=>{XLSX_CARGA=null;ko(new Error('sin conexión'))};document.head.append(s)}))}
+async function matExcel(f){const R=materialResumen(f),nom=matArchivo(f);
+  const filas=[['Fecha','Proveedor','Nº ticket','Material','Cantidad','Unidad','Precio','Importe','Precios con IVA','Cliente','Obra']];
+  for(const e of R.es.slice().reverse()){const c=client(expCliente(e))?.name||'',w=work(e.work)?.name||'';
+    if(e.ticket)for(const l of e.ticket.lineas)filas.push([e.date,e.supplier||'',e.ticket.numero||'',l.concepto,l.cantidad,l.unidad||'',l.precio,l.importe,e.ticket.conIva?'Sí':'No',c,w]);
+    else filas.push([e.date,e.supplier||'','',e.concept,1,'ud',e.amount,e.amount,'Sí',c,w])}
+  const res=[['Material gastado',matTitulo(f).replace(/&amp;/g,'&')],['Total sin IVA',R.base],['IVA pagado',R.iva],['Total',R.total],[],['Proveedor','Total'],...Object.entries(R.prov)];
+  if(R.qs.length)res.push([],[R.soloMat?'Material presupuestado':'Presupuestado (total)',R.pres],['Diferencia',r2(R.pres-R.base)]);
+  try{await cargarXLSX();const wb=XLSX.utils.book_new();const h1=XLSX.utils.aoa_to_sheet(filas);h1['!cols']=[{wch:11},{wch:18},{wch:12},{wch:48},{wch:9},{wch:7},{wch:10},{wch:11},{wch:9},{wch:24},{wch:24}];XLSX.utils.book_append_sheet(wb,h1,'Material');XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(res),'Resumen');
+    const out=XLSX.write(wb,{bookType:'xlsx',type:'array'});await saveFile(new Blob([out],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'}),nom+'.xlsx','Excel guardado')}
+  catch(e){const csv='﻿'+filas.map(r=>r.map(v=>typeof v==='number'?String(v).replace('.',','):'"'+String(v).replace(/"/g,'""')+'"').join(';')).join('\r\n');await saveFile(new Blob([csv],{type:'text/csv'}),nom+'.csv','Hoja guardada (CSV)')}}
 
 /* ---------- Mis precios ---------- */
 function vPrecios(v){
@@ -1549,6 +1734,7 @@ function editClient(id){const c=client(id)||{};const qs=id?db.quotes.filter(q=>q
   dlg(`<div class="dlg-head"><h2>${id?esc(c.name):'Nuevo cliente'}</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div>
   <div class="dlg-body">${f('name','Nombre y apellidos *')}<div class="grid2">${f('phone','Teléfono','tel')}${f('email','Correo','email')}</div>${f('address','Dirección')}<div class="grid2">${f('nif','NIF / CIF')}</div><div class="field">Cómo suele pagar<div class="pay-pick" role="radiogroup" aria-label="Cómo suele pagar">${PAYS.map(x=>`<button type="button" class="pay-op" role="radio" data-act="payPick" data-v="${x}" aria-checked="${x===(c.payMethod||SIN_PAGO)}">${x}</button>`).join('')}</div><input type="hidden" id="ec-paym" value="${esc(c.payMethod||SIN_PAGO)}"></div>
   <label class="field">Cuenta bancaria del cliente (IBAN, si paga con cargo en su cuenta)<input id="ec-iban" value="${esc(ibanFmt(c.iban||''))}" placeholder="ES00 0000 0000 0000 0000 0000" autocomplete="off"></label><label class="field">Notas<textarea id="ec-notes">${esc(c.notes||'')}</textarea></label>
+  ${id?materialHTML({client:id}):''}
   ${qs.length?`<div><div class="field" style="margin-bottom:6px">Historial</div><div class="list">${qs.map(quoteRow).join('')}</div></div>`:''}<div id="ec-err"></div></div>
   <div class="dlg-foot">${id?`<button class="btn danger" data-act="delClient" data-id="${id}">${ic('trash')} Eliminar</button><span class="spacer"></span><button class="btn" data-act="quoteFor" data-id="${id}">${ic('file')} Nuevo presupuesto</button>`:''}<button class="btn primary" data-act="saveClient" data-id="${id||''}">${ic('check')} Guardar</button></div>`)}
 function editWork(id){const w=work(id)||{status:'Pendiente'};const s=id?workStats(w):null;const ex=id?db.expenses.filter(e=>e.work===id):[];
@@ -1557,6 +1743,7 @@ function editWork(id){const w=work(id)||{status:'Pendiente'};const s=id?workStat
   <div class="grid2"><label class="field">Cliente<select id="ew-client"><option value="">Sin cliente</option>${db.clients.map(c=>`<option value="${c.id}" ${c.id===w.client?'selected':''}>${esc(c.name)}</option>`).join('')}</select></label><label class="field">Estado<select id="ew-status">${['Pendiente','En curso','Terminada'].map(x=>`<option ${x===w.status?'selected':''}>${x}</option>`).join('')}</select></label></div>
   <label class="field">Dirección<input id="ew-address" value="${esc(w.address||'')}"></label><label class="field">Notas<textarea id="ew-notes">${esc(w.notes||'')}</textarea></label>
   ${s?`<div class="kpis" style="grid-template-columns:repeat(3,minmax(0,1fr))"><div class="kpi"><span class="k-label">Presupuestado</span><span class="k-val" style="font-size:19px">${eur0(s.budget)}</span></div><div class="kpi"><span class="k-label">Gastado</span><span class="k-val" style="font-size:19px">${eur0(s.spent)}</span></div><div class="kpi"><span class="k-label">Margen</span><span class="k-val" style="font-size:19px;color:${s.margin<0?'var(--danger)':'var(--brand)'}">${eur0(s.margin)}</span></div></div>`:''}
+  ${id?materialHTML({work:id}):''}
   ${ex.length?`<div><div class="field" style="margin-bottom:6px">Gastos de la obra</div>${ex.map(e=>`<div class="row small" style="justify-content:space-between;border-top:1px solid var(--line);padding:8px 0"><span>${dShort(e.date)} · ${esc(e.concept)}</span><b class="num">${eur(e.amount)}</b></div>`).join('')}</div>`:''}<div id="ew-err"></div></div>
   <div class="dlg-foot">${id?`<button class="btn danger" data-act="delWork" data-id="${id}">${ic('trash')} Eliminar</button><span class="spacer"></span>`:''}<button class="btn primary" data-act="saveWork" data-id="${id||''}">${ic('check')} Guardar</button></div>`)}
 
@@ -1685,7 +1872,7 @@ const IN_CLAUDE=!!window.claude;
 const canSave=()=>!!DL||!IN_CLAUDE;
 function pdfName(d,kind){const c=client(d.client);return ((kind==='quote'?'Presupuesto ':'Factura ')+(d.number||'borrador')+(c?' - '+c.name:'')+'.pdf').replace(/[\\/:*?"<>|]/g,'')}
 async function addDocPages(pdf,d,kind,firstDoc){
-  const holder=document.createElement('div');holder.style.cssText='position:fixed;left:-12000px;top:0;width:794px;background:#fff';holder.innerHTML=docHTML(d,kind);document.body.append(holder);
+  const holder=document.createElement('div');holder.style.cssText='position:fixed;left:-12000px;top:0;width:794px;background:#fff';holder.innerHTML=kind==='material'?materialDocHTML(d):docHTML(d,kind);document.body.append(holder);
   const paper=holder.firstElementChild;paper.style.boxShadow='none';paper.style.zoom='1';
   try{
     const sc=2,canvas=await window.html2canvas(paper,{scale:sc,backgroundColor:'#ffffff',logging:false});
@@ -1922,6 +2109,26 @@ const ACT={
  delInvoice:el=>confirmBox('¿Eliminar esta factura?','Solo deberías borrar facturas creadas por error. La numeración no se reutiliza.','Eliminar',()=>{db.invoices=db.invoices.filter(f=>f.id!==el.dataset.id);save();render();toast('Factura eliminada')}),
  editClient:el=>editClient(el.dataset.id),
  saveClient:el=>{const n=$('#ec-name').value.trim();if(!n){$('#ec-err').innerHTML='<div class="err">Escribe el nombre del cliente.</div>';return}{const ib=$('#ec-iban').value.trim();if(ib&&!ibanOk(ib)){$('#ec-err').innerHTML='<div class="err">Esa cuenta no es válida. Revisa los números del IBAN.</div>';return}}const id=el.dataset.id;const c=id?client(id):{id:uid()};Object.assign(c,{name:n,phone:$('#ec-phone').value.trim(),email:$('#ec-email').value.trim(),address:$('#ec-address').value.trim(),nif:$('#ec-nif').value.trim(),payMethod:$('#ec-paym').value,iban:ibanClean($('#ec-iban').value),notes:$('#ec-notes').value});if(!id)db.clients.push(c);save();closeDlg();render();toast('Cliente guardado')},
+ ticketNuevo:()=>tkNuevo(),
+ tkElegir:b=>{const T=S.tk;T.client=b.dataset.c||'';T.work=b.dataset.w||'';T.sin=false;T.prop=null;tkRender()},
+ tkCambiar:()=>{const T=S.tk;T.client='';T.work='';T.sin=false;tkRender()},
+ tkSin:()=>{const T=S.tk;T.client='';T.work='';T.sin=true;T.prop=null;tkRender()},
+ tkSi:()=>{const T=S.tk;T.client=T.prop.client;T.work=T.prop.work;T.prop=null;tkRender()},
+ tkNo:()=>{S.tk.prop=null;tkRender();setTimeout(()=>$('#tk-q')?.focus(),30)},
+ tkNuevoCli:()=>{S.tk.nuevo=!S.tk.nuevo;tkRender();setTimeout(()=>$('#tk-nn')?.focus(),30)},
+ tkCrearCli:()=>{const n=$('#tk-nn').value.trim();if(!n){$('#tk-nn').focus();return}const c={id:uid(),name:n,phone:$('#tk-nt').value.trim(),email:'',address:'',nif:'',notes:'',payMethod:SIN_PAGO,iban:''};db.clients.push(c);save();const T=S.tk;T.client=c.id;T.work='';T.sin=false;T.nuevo=false;tkRender();toast('Cliente creado')},
+ tkQuitarFoto:b=>{S.tk.fotos.splice(+b.dataset.i,1);tkRender()},
+ tkLeer:()=>tkLeer(),
+ tkConIva:b=>{const t=S.tk.t;t.conIva=b.dataset.v==='1';$$('[data-act=tkConIva]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));$('#tk-tot').innerHTML=tkTotHTML(t)},
+ tkMasL:()=>{S.tk.t.lineas.push({cantidad:1,unidad:'ud',concepto:'',ref:'',precio:0,importe:0,dudosa:false});tkRender()},
+ tkQuitarL:b=>{S.tk.t.lineas.splice(+b.dataset.i,1);tkRender()},
+ tkRehacer:()=>{const T=S.tk;T.fotos=[];T.t=null;T.paso='fotos';T.err='';tkRender()},
+ tkGuardar:()=>tkGuardar(),
+ openTicket:b=>openTicket(b.dataset.id),
+ tkVerFoto:async b=>{const box=$('#tk-foto');if(!box)return;box.innerHTML='<p class="muted">Cargando la foto…</p>';try{const r=await api('foto_ver',{id:b.dataset.f});if(r.imagen.startsWith('data:application/pdf')){const bl=await (await fetch(r.imagen)).blob();box.innerHTML='';window.open(URL.createObjectURL(bl),'_blank')}else box.innerHTML=`<img class="tk-foto" src="${r.imagen}" alt="Foto del ticket">`}catch(e){box.innerHTML=`<div class="err">${esc(e.message||'No se ha podido cargar la foto')}</div>`}},
+ tkBorrar:b=>{const e=db.expenses.find(x=>x.id===b.dataset.id);if(!e)return;confirmBox('¿Borrar este ticket?','Se borra el ticket de '+(e.supplier||'material')+' ('+eur(e.amount)+') con sus fotos. No se puede deshacer.','Borrar',()=>{db.expenses=db.expenses.filter(x=>x!==e);save();if(!DEMO&&e.ticket?.fotos?.length)api('foto_borrar',{ids:e.ticket.fotos}).catch(()=>{});render();toast('Ticket borrado')})},
+ matPDF:async b=>{const f={client:b.dataset.c,work:b.dataset.w};const r=await buildPDF([{d:{f,number:'Material gastado'},kind:'material'}],matArchivo(f)+'.pdf');if(r)saveFile(r.blob,r.name)},
+ matExcel:b=>matExcel({client:b.dataset.c,work:b.dataset.w}),
  payPick:b=>{$$('.pay-op').forEach(x=>x.setAttribute('aria-checked',String(x===b)));$('#ec-paym').value=b.dataset.v},
  delClient:el=>{const id=el.dataset.id;const n=db.quotes.filter(q=>q.client===id).length;if(n){dlg(`<div class="dlg-head"><h2>No se puede eliminar</h2></div><div class="dlg-body"><p style="margin:0">Este cliente tiene ${n} presupuesto${n>1?'s':''}. Elimínalos antes o deja el cliente como está.</p></div><div class="dlg-foot"><button class="btn primary" data-act="closeDlg">Entendido</button></div>`);return}confirmBox('¿Eliminar cliente?','Se borrará su ficha.','Eliminar',()=>{db.clients=db.clients.filter(c=>c.id!==id);save();render();toast('Cliente eliminado')})},
  quoteFor:el=>{closeDlg();newQuote();S.ed.q.client=el.dataset.id;render()},
@@ -1986,6 +2193,14 @@ const IN={
  restore:el=>{const f=el.files[0];if(!f)return;f.text().then(t=>{let x;try{x=JSON.parse(t)}catch(e){}el.value='';if(!x||x.v!==2||!Array.isArray(x.quotes)){toast('Ese archivo no es una copia de SGM');return}confirmBox('¿Restaurar esta copia?','Se sustituirán los datos actuales por los de la copia.','Restaurar',()=>{x.contacts??=[];db=x;save();go('inicio');toast('Copia restaurada')},false)})},
  found:el=>{S.ed.found[+el.dataset.i].on=el.checked;const b=$('[data-act="addFound"]');if(b)b.lastChild.textContent=' Añadir '+S.ed.found.filter(f=>f.on).length+' partidas'},
  qf:el=>{const q=S.ed.q,k=el.dataset.k;q[k]=['iva','discount','validity'].includes(k)?Math.max(0,parseNum(el.value)):el.value;if(k==='discount')q.discount=Math.min(100,q.discount);edRefreshTotals();if(S.ed.step===3){const p=$('#preview');if(p){p.innerHTML=docHTML(q,'quote');fitPapers()}}const h=$('.head h1');if(k==='title'&&h)h.textContent=q.title||'Presupuesto sin título';if(!S.ed.isNew)edCommit();if(k==='payMethod')render()},
+ tkQ:el=>{const l=$('#tk-lista');if(l)l.innerHTML=tkLista(el.value)},
+ tkFoto:async el=>{const fs=[...el.files];el.value='';const T=S.tk;if(!T)return;for(const f of fs.slice(0,6-T.fotos.length)){try{T.fotos.push(await fotoArchivo(f))}catch(e){T.err=e.message}}if(fs.length>6-T.fotos.length+fs.length&&T.fotos.length>=6)T.err='Como mucho 6 fotos por ticket.';tkRender()},
+ tkH:el=>{const t=S.tk.t,k=el.dataset.k;t[k]=k==='ivaPct'?Math.max(0,parseNum(el.value)):el.value;t.dudosos=t.dudosos.filter(x=>x!==k);el.closest('.field')?.classList.remove('tk-dud');$('#tk-tot').innerHTML=tkTotHTML(t)},
+ tkL:el=>{const t=S.tk.t,l=t.lineas[+el.dataset.i],k=el.dataset.k;if(!l)return;if(k==='concepto')l.concepto=el.value;else{l[k]=Math.max(0,parseNum(el.value));if(k!=='importe'){l.importe=r2(l.cantidad*l.precio);const im=$('#tki-'+el.dataset.i);if(im)im.value=String(l.importe).replace('.',',')}}l.dudosa=false;$('#tkl-'+el.dataset.i)?.classList.remove('tk-dud');$('#tk-tot').innerHTML=tkTotHTML(t)},
+ tkDest:el=>{const v=el.value,T=S.tk;T.work=v[0]==='w'?v.slice(2):'';T.client=v[0]==='c'?v.slice(2):(work(T.work)?.client||'');T.sin=!v},
+ tkAct:el=>{S.tk.act=el.checked},
+ tkMover:el=>{const e=db.expenses.find(x=>x.id===el.dataset.id);if(!e)return;const v=el.value;e.work=v[0]==='w'?v.slice(2):'';e.client=v[0]==='c'?v.slice(2):(work(e.work)?.client||'');save();render();toast(v?'Ticket movido a '+destinoTxt(e.client,e.work).replace(/&amp;/g,'&'):'Ticket sin asignar')},
+ gFiltro:el=>{S.gFiltro=el.value;render()},
  lineNoGuardar:el=>{const l=S.ed.q.lines.find(l=>l.id===el.dataset.id);if(l){if(el.checked)delete l.noGuardar;else l.noGuardar=true;edDirty()}},
  lineCap:el=>{const l=S.ed.q.lines.find(l=>l.id===el.dataset.id);if(!l||l.cap===el.value)return;l.cap=el.value;l.mat=false;S.ed.abrir=l.id;edDirty();edLines();setTimeout(()=>{$('#L-'+l.id)?.scrollIntoView({block:'center',behavior:'smooth'});S.ed.abrir=null},30);toast('Partida movida a '+capName(l.cap))},
  line:el=>{const l=S.ed.q.lines.find(l=>l.id===el.dataset.id),k=el.dataset.k;if(k==='qty'||k==='price')l[k]=Math.max(0,parseNum(el.value));else l[k]=el.value;$('#la-'+l.id).textContent=eur(l.qty*l.price);edRefreshTotals()},
@@ -2009,7 +2224,7 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-act]');if
   if(GUARDAR.has(el.dataset.act)&&el.tagName==='BUTTON'){if(el.classList.contains('guardando'))return;guardando(el,()=>f(el,e));return}f(el,e)}});
 document.addEventListener('input',e=>{const el=e.target.closest('[data-in]');if(!el)return;const f=IN[el.dataset.in];if(f&&el.type!=='file'&&el.type!=='checkbox')f(el)});
 document.addEventListener('change',e=>{const el=e.target.closest('[data-in]');if(!el)return;const f=IN[el.dataset.in];if(f&&(el.tagName==='SELECT'||el.type==='file'||el.type==='checkbox'))f(el)});
-document.addEventListener('submit',e=>{if(e.target.id==='ai-start'){e.preventDefault();const t=$('#ai-start-text').value.trim();newQuote();S.ed.step=2;S.ed.mode='ai';S.ed.sheet=true;render();window.scrollTo(0,0);if(t)aiSend(t)}});
+document.addEventListener('submit',e=>{if(e.target.id==='tk-form'){e.preventDefault();const tx=$('#tk-texto').value.trim();if(!tx)return;const r=buscarDestino(tx);S.tk.prop=r?{...r,texto:tx}:{client:'',work:'',texto:tx};tkRender();return}if(e.target.id==='ai-start'){e.preventDefault();const t=$('#ai-start-text').value.trim();newQuote();S.ed.step=2;S.ed.mode='ai';S.ed.sheet=true;render();window.scrollTo(0,0);if(t)aiSend(t)}});
 document.addEventListener('focusout',e=>{const el=e.target;if(el.matches&&el.matches('[data-in="line"][data-k="qty"],[data-in="line"][data-k="price"]')){const l=S.ed?.q.lines.find(l=>l.id===el.dataset.id);if(l)el.value=el.dataset.k==='qty'?qtyFmt(l.qty):String(l.price).replace('.',',')}});
 document.addEventListener('keydown',e=>{if(e.target&&e.target.id==='ai-text'&&e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();ACT.aiSend();return}
 if(e.key==='Escape'&&S.ed?.sheet){S.ed.sheet=false;render()}});
