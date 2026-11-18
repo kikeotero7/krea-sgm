@@ -1,0 +1,930 @@
+tienda;capitulo;codigo;descripcion;ref;unidad;pvp_iva;url;nota
+Leroy Merlin;mat_suelos;MSU-001;Suelo porcelánico Arcano efecto cemento gris mate 60x60 cm ARTENS;83020657;m2;9.99;https://www.leroymerlin.es/productos/suelo-porcelanico-arcano-efecto-cemento-gris-mate-60x60-cm-artens-83020657.html;
+Leroy Merlin;mat_suelos;MSU-002;Suelo porcelánico Vesta efecto piedra natural 60x60 cm C3;90321404;m2;14.99;https://www.leroymerlin.es/productos/suelo-porcelanico-vesta-efecto-piedra-natural-60x60-cm-c3-90321404.html;
+Leroy Merlin;mat_suelos;MSU-003;Suelo porcelánico Athos efecto piedra beige 60x60 cm SALONI;88036108;m2;28.66;https://www.leroymerlin.es/productos/suelo-porcelanico-athos-efecto-piedra-beige-60x60-cm-saloni-88036108.html;
+Leroy Merlin;mat_suelos;MSU-004;Suelo cerámico Cavir efecto terrazo gris 60x60 cm C3 ARTENS;87812678;m2;22.99;https://www.leroymerlin.es/productos/suelo-ceramico-cavir-efecto-terrazo-gris-60x60-cm-c3-artens-87812678.html;
+Leroy Merlin;mat_suelos;MSU-005;Suelo Porcelánico IRIS GOLDEN PULIDO 60x120cm.;74329461;m2;19.5;https://www.leroymerlin.es/productos/suelo-porcelanico-iris-golden-pulido-60x120cm-74329461.html;Vendido por vendedor del marketplace, no por Leroy Merlin
+Leroy Merlin;mat_suelos;MSU-006;Azulejo/Pavimento Porcelánico Ultra Abu Almond Rectificado Inout efecto pizarra antideslizante 60x120;76487732;m2;17.99;https://www.leroymerlin.es/productos/azulejo-pavimento-porcelanico-ultra-abu-almond-rectificado-inout-efecto-pizarra-antideslizante-60x120-76487732.html;Vendido por vendedor del marketplace, no por Leroy Merlin
+Leroy Merlin;mat_suelos;MSU-007;Suelo Porcelánico SLOW BLACK PULIDO 60x120cm.;74329460;m2;30.65;https://www.leroymerlin.es/productos/suelo-porcelanico-slow-black-pulido-60x120cm-74329460.html;Vendido por vendedor del marketplace, no por Leroy Merlin
+Leroy Merlin;mat_suelos;MSU-008;Suelo porcelánico Treviso efecto cemento natural 120x120 cm ARTENS;86215373;m2;33.99;https://www.leroymerlin.es/productos/suelo-porcelanico-treviso-efecto-cemento-natural-120x120-cm-artens-86215373.html;
+Leroy Merlin;mat_suelos;MSU-009;Pavimento Porcelánico Calm Nubole Rectificado efecto madera 20x120;96927109;m2;13.91;https://www.leroymerlin.es/productos/pavimento-porcelanico-calm-nubole-rectificado-efecto-madera-20x120-96927109.html;Vendido por vendedor del marketplace, no por Leroy Merlin
+Leroy Merlin;mat_suelos;MSU-010;Suelo porcelánico Tokyo efecto madera natural 20x75 cm;90231838;m2;9.99;https://www.leroymerlin.es/productos/suelo-porcelanico-tokyo-efecto-madera-natural-20x75-cm-90231838.html;
+Leroy Merlin;mat_suelos;MSU-011;Suelo Porcelanico Esmaltado JAIPUR BLANCO C3 30X60CM.;78597097;m2;14.9;https://www.leroymerlin.es/productos/suelo-porcelanico-esmaltado-jaipur-blanco-c3-30x60cm-78597097.html;Vendido por vendedor del marketplace, no por Leroy Merlin
+Leroy Merlin;mat_suelos;MSU-012;Suelo porcelánico Malaga efecto piedra dune 45x45 cm ARTENS;18016866;m2;9.99;https://www.leroymerlin.es/productos/suelo-porcelanico-malaga-efecto-piedra-dune-45x45-cm-artens-18016866.html;
+Leroy Merlin;mat_suelos;MSU-013;Suelo porcelánico Tamarindo efecto empedrado efecto piedra natural 45x45 cm C3;82070023;m2;13.99;https://www.leroymerlin.es/productos/suelo-porcelanico-tamarindo-efecto-empedrado-efecto-piedra-natural-45x45-cm-c3-82070023.html;
+Leroy Merlin;mat_suelos;MSU-014;Suelo porcelánico Arcano efecto cemento gris mate 60x60 cm C3 ARTENS;83020754;m2;13.99;https://www.leroymerlin.es/productos/suelo-porcelanico-arcano-efecto-cemento-gris-mate-60x60-cm-c3-artens-83020754.html;
+Leroy Merlin;mat_suelos;MSU-015;Suelo porcelánico Levante efecto cemento bone 60x60 cm C3 ARTENS;98829737;m2;29.99;https://www.leroymerlin.es/productos/suelo-porcelanico-levante-efecto-cemento-bone-60x60-cm-c3-artens-98829737.html;
+Leroy Merlin;mat_suelos;MSU-016;Suelo cerámico Verona efecto hidráulico multicolor 20x20 cm;82016844;m2;45.99;https://www.leroymerlin.es/productos/suelo-ceramico-verona-efecto-hidraulico-multicolor-20x20-cm-82016844.html;
+Leroy Merlin;mat_suelos;MSU-017;Suelo/Azulejo porcelánico Stella blue efecto hidráulico azul cobalto 20x20 cm C3;79997262;m2;59.99;https://www.leroymerlin.es/productos/suelo-azulejo-porcelanico-stella-blue-efecto-hidraulico-azul-cobalto-20x20-cm-c3-79997262.html;Oferta temporal: 24.99 € (precio normal 59.99 €)
+Leroy Merlin;mat_suelos;MSU-018;Suelo laminado Forte REVIA resistente al agua 24h 8mm espesor AC4 ARTENS BG205;95785482;m2;10.99;https://www.leroymerlin.es/productos/suelo-laminado-forte-revia-resistente-al-agua-24h-8mm-espesor-ac4-artens-bg205-95785482.html;
+Leroy Merlin;mat_suelos;MSU-019;Suelo laminado Intenso OAK NATURE resistente al agua 24h 7mm espesor AC5 NAT340;89736822;m2;7.99;https://www.leroymerlin.es/productos/suelo-laminado-intenso-oak-nature-resistente-al-agua-24h-7mm-espesor-ac5-nat340-89736822.html;
+Leroy Merlin;mat_suelos;MSU-020;Suelo laminado Intenso FOLIGNO resistente al agua 24h 8mm espesor AC5 ARTENS BG215;87909676;m2;13.99;https://www.leroymerlin.es/productos/suelo-laminado-intenso-foligno-resistente-al-agua-24h-8mm-espesor-ac5-artens-bg215-87909676.html;
+Leroy Merlin;mat_suelos;MSU-021;Suelo vinílico SPC en clic extrem BERLIN 5.5mm espesor base integrada NAT348;88332915;m2;17.99;https://www.leroymerlin.es/productos/suelo-vinilico-spc-en-clic-extrem-berlin-5-5mm-espesor-base-integrada-nat348-88332915.html;Oferta temporal: 15.99 € (precio normal 17.99 €)
+Leroy Merlin;mat_suelos;MSU-022;Suelo vinílico SPC en clic extrem ZARAGOZA 5.5mm espesor base integrada ARTENS NAT340;89973267;m2;22.99;https://www.leroymerlin.es/productos/suelo-vinilico-spc-en-clic-extrem-zaragoza-5-5mm-espesor-base-integrada-artens-nat340-89973267.html;
+Leroy Merlin;mat_suelos;MSU-023;Arquiservi - Suelo Vinílico Autoadhesivo PVC Roble Natural 2.5 m² - Para salón y dormitorio | Impermeable | Fácil Instalación | 2mm.;92257143;m2;15.37;https://www.leroymerlin.es/productos/arquiservi-suelo-vinilico-autoadhesivo-pvc-roble-natural-2-5-m2-para-salon-y-dormitorio-impermeable-facil-instalacion-2mm-92257143.html;Vendido por vendedor del marketplace, no por Leroy Merlin. Oferta temporal: 9.6 € (precio normal 15.37 €)
+Leroy Merlin;mat_suelos;MSU-024;Parquet multicapa Trilama Forte roble natural satinado 108x19.8 cm;81876876;m2;38.09;https://www.leroymerlin.es/productos/parquet-multicapa-trilama-forte-roble-natural-satinado-108x19-8-cm-81876876.html;
+Leroy Merlin;mat_suelos;MSU-025;Parquet multicapa Monolama Rustic XL roble antique mate 198x19.8 cm;83611395;m2;63.05;https://www.leroymerlin.es/productos/parquet-multicapa-monolama-rustic-xl-roble-antique-mate-198x19-8-cm-83611395.html;
+Leroy Merlin;mat_suelos;MSU-026;Parquet multicapa Monolama Classic XXL roble natural mate 218x25 cm;83611381;m2;90.37;https://www.leroymerlin.es/productos/parquet-multicapa-monolama-classic-xxl-roble-natural-mate-218x25-cm-83611381.html;
+Leroy Merlin;mat_suelos;MSU-027;Tarima de madera de pino natural machihembradas de 2000x130x20mm;91285809;m2;17.49;https://www.leroymerlin.es/productos/tarima-de-madera-de-pino-natural-machihembradas-de-2000x130x20mm-91285809.html;
+Leroy Merlin;mat_suelos;MSU-028;Parquet multicapa Segno roble natural cepillado 60x12 cm;88759477;m2;84.64;https://www.leroymerlin.es/productos/parquet-multicapa-segno-roble-natural-cepillado-60x12-cm-88759477.html;
+Leroy Merlin;mat_suelos;MSU-029;Piedra natural MÁRMOL CREMA MARFIL 30x60cm acabado Antic;93181425;m2;78.65;https://www.leroymerlin.es/productos/piedra-natural-marmol-crema-marfil-30x60cm-acabado-antic-93181425.html;Vendido por vendedor del marketplace, no por Leroy Merlin
+Leroy Merlin;mat_suelos;MSU-030;Piedra natural Travertino coquera multiformato 1,2cm espesor tetris;82961398;m2;35.89;https://www.leroymerlin.es/productos/piedra-natural-travertino-coquera-multiformato-1-2cm-espesor-tetris-82961398.html;
+Leroy Merlin;mat_suelos;MSU-031;Kit Microcemento para Baño y Suelo 20 m² Listo al Uso – Meexe Shale Grey Satinado;99041387;ud;420;https://www.leroymerlin.es/productos/kit-microcemento-para-bano-y-suelo-20-m2-listo-al-uso-meexe-shale-grey-satinado-99041387.html;Vendido por vendedor del marketplace, no por Leroy Merlin
+Leroy Merlin;mat_suelos;MSU-032;MICROLANIC ONE FINO 20KG 40m2 Microcemento Listo al Uso de grano Fino para decoración de suelos y paredes. Gris 20%;90052401;ud;140;https://www.leroymerlin.es/productos/microlanic-one-fino-20kg-40m2-microcemento-listo-al-uso-de-grano-fino-para-decoracion-de-suelos-y-paredes-gris-20-90052401.html;Vendido por vendedor del marketplace, no por Leroy Merlin. Unidad distinta a la de la lista (m2)
+Leroy Merlin;mat_revestimientos;MRV-001;Azulejo cerámico Frosty blanco mate 25x40 cm ARTENS;82213811;m2;6.49;https://www.leroymerlin.es/productos/azulejo-ceramico-frosty-blanco-mate-25x40-cm-artens-82213811.html;
+Leroy Merlin;mat_revestimientos;MRV-002;Azulejo cerámico Frosty blanco brillo 30x60 cm ARTENS;82213809;m2;7.99;https://www.leroymerlin.es/productos/azulejo-ceramico-frosty-blanco-brillo-30x60-cm-artens-82213809.html;
+Leroy Merlin;mat_revestimientos;MRV-003;Azulejo cerámico Eco Mármol efecto mármol aspen 33.3x55 cm;19548235;m2;8.99;https://www.leroymerlin.es/productos/azulejo-ceramico-eco-marmol-efecto-marmol-aspen-33-3x55-cm-19548235.html;
+Leroy Merlin;mat_revestimientos;MRV-004;Azulejo cerámico Plot efecto cemento gris 25x50 cm ARTENS;86617202;m2;13.99;https://www.leroymerlin.es/productos/azulejo-ceramico-plot-efecto-cemento-gris-25x50-cm-artens-86617202.html;
+Leroy Merlin;mat_revestimientos;MRV-005;Azulejo cerámico Basic white blanco mate 30x90 cm;90347008;m2;11.49;https://www.leroymerlin.es/productos/azulejo-ceramico-basic-white-blanco-mate-30x90-cm-90347008.html;
+Leroy Merlin;mat_revestimientos;MRV-006;Azulejo cerámico Nova efecto mármol nova brillo 30x90 cm;84301957;m2;11.99;https://www.leroymerlin.es/productos/azulejo-ceramico-nova-efecto-marmol-nova-brillo-30x90-cm-84301957.html;
+Leroy Merlin;mat_revestimientos;MRV-007;Azulejo cerámico New manchester efecto cemento blanco 30x90 cm;85084873;m2;13.99;https://www.leroymerlin.es/productos/azulejo-ceramico-new-manchester-efecto-cemento-blanco-30x90-cm-85084873.html;
+Leroy Merlin;mat_revestimientos;MRV-008;Azulejo cerámico New manchester efecto relieve cemento blanco relieve 30x90 cm;85084870;m2;16.99;https://www.leroymerlin.es/productos/azulejo-ceramico-new-manchester-efecto-relieve-cemento-blanco-relieve-30x90-cm-85084870.html;
+Leroy Merlin;mat_revestimientos;MRV-009;Suelo/Azulejo porcelánico Casablanca efecto mármol gris 60x120 cm;82427871;m2;13.99;https://www.leroymerlin.es/productos/suelo-azulejo-porcelanico-casablanca-efecto-marmol-gris-60x120-cm-82427871.html;
+Leroy Merlin;mat_revestimientos;MRV-010;Suelo Porcelanico Esmaltado JAIPUR BLANCO C3 30X60CM.;78597097;m2;14.9;https://www.leroymerlin.es/productos/suelo-porcelanico-esmaltado-jaipur-blanco-c3-30x60cm-78597097.html;Vendido por vendedor del marketplace, no por Leroy Merlin
+Leroy Merlin;mat_revestimientos;MRV-011;Azulejo cerámico Metro efecto borde biselado blanco brillo 10x20 cm ARTENS;84302476;m2;8.98;https://www.leroymerlin.es/productos/azulejo-ceramico-metro-efecto-borde-biselado-blanco-brillo-10x20-cm-artens-84302476.html;
+Leroy Merlin;mat_revestimientos;MRV-012;Azulejo cerámico Mate CERAGNI BISELADO Metro Blanco 001 | M10x20 (caja con 38 unidades = 0,76 m2);89865087;m2;27;https://www.leroymerlin.es/productos/azulejo-ceramico-mate-ceragni-biselado-metro-blanco-001-m10x20-caja-con-38-unidades-0-76-m2-89865087.html;Vendido por vendedor del marketplace, no por Leroy Merlin
+Leroy Merlin;mat_revestimientos;MRV-013;Azulejo cerámico Moha Square efecto zellige white 31.6x60 cm ARTENS;84731826;m2;12.99;https://www.leroymerlin.es/productos/azulejo-ceramico-moha-square-efecto-zellige-white-31-6x60-cm-artens-84731826.html;
+Leroy Merlin;mat_revestimientos;MRV-014;Azulejo Cosmos blanco brillante 15x15 cm;82363298;m2;21.99;https://www.leroymerlin.es/productos/azulejo-cosmos-blanco-brillante-15x15-cm-82363298.html;
+Leroy Merlin;mat_revestimientos;MRV-015;Azulejo cerámico Glamour efecto zellige beige 7.5x15 cm;82242804;m2;22;https://www.leroymerlin.es/productos/azulejo-ceramico-glamour-efecto-zellige-beige-7-5x15-cm-82242804.html;
+Leroy Merlin;mat_revestimientos;MRV-016;Azulejo porcelánico Apalache efecto ladrillo blanco 17x52 cm;81907965;m2;14.99;https://www.leroymerlin.es/productos/azulejo-porcelanico-apalache-efecto-ladrillo-blanco-17x52-cm-81907965.html;
+Leroy Merlin;mat_revestimientos;MRV-017;Suelo/Azulejo cerámico Verna efecto madera roble 20.5x61.5 cm;83020653;m2;6.99;https://www.leroymerlin.es/productos/suelo-azulejo-ceramico-verna-efecto-madera-roble-20-5x61-5-cm-83020653.html;
+Leroy Merlin;mat_revestimientos;MRV-018;Mosaico vitreo Mod MUSGO de 2x2cm, malla de 30,5x33cm, VERDE IRIDISCENTE;96035492;ud;3;https://www.leroymerlin.es/productos/mosaico-vitreo-mod-musgo-de-2x2cm-malla-de-30-5x33cm-verde-iridiscente-96035492.html;Vendido por vendedor del marketplace, no por Leroy Merlin. Unidad distinta a la de la lista (m2)
+Leroy Merlin;mat_revestimientos;MRV-019;Gresite Piscina Stone verde 9.5x31.5 cm C1;86214350;m2;18.99;https://www.leroymerlin.es/productos/gresite-piscina-stone-verde-9-5x31-5-cm-c1-86214350.html;
+Leroy Merlin;mat_revestimientos;MRV-020;Revestimiento de piedra natural PETRA beige 15x40 cm;16544514;m2;40;https://www.leroymerlin.es/productos/revestimiento-de-piedra-natural-petra-beige-15x40-cm-16544514.html;
+Leroy Merlin;mat_revestimientos;MRV-021;(sin equivalente en Leroy Merlin);;m2;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_revestimientos;MRV-022;(sin equivalente en Leroy Merlin);;m2;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_revestimientos;MRV-023;(sin equivalente en Leroy Merlin);;m2;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_revestimientos;MRV-024;Revestimiento hormigón ligero Campana Esquina efecto ladrillo crema 13x15cm;89056476;caja;39.92;https://www.leroymerlin.es/productos/revestimiento-hormigon-ligero-campana-esquina-efecto-ladrillo-crema-13x15cm-89056476.html;Unidad distinta a la de la lista (m2)
+Leroy Merlin;mat_revestimientos;MRV-025;Perfil de esquina y borde externo curvo de pvc Blanco int/ext 2.5m x1cm;82114240;ud;1.99;https://www.leroymerlin.es/productos/perfil-de-esquina-y-borde-externo-curvo-de-pvc-blanco-int-ext-2-5m-x1cm-82114240.html;
+Leroy Merlin;mat_revestimientos;MRV-026;Perfil de esquina y borde externo cuadrado aluminio Dorado Mate int/ext 2.5Mx1cm;82009115;ud;7.99;https://www.leroymerlin.es/productos/perfil-de-esquina-y-borde-externo-cuadrado-aluminio-dorado-mate-int-ext-2-5mx1cm-82009115.html;
+Leroy Merlin;mat_placa_techos;MPY-001;Placa de Cartón-yeso laminado erGO 3000x1200x13 mm;93415088;m2;3.07;https://www.leroymerlin.es/productos/placa-de-carton-yeso-laminado-ergo-3000x1200x13-mm-93415088.html;
+Leroy Merlin;mat_placa_techos;MPY-002;Placa de Cartón-yeso laminado erGO 3000x1200x13 mm;93415088;ud;11.04;https://www.leroymerlin.es/productos/placa-de-carton-yeso-laminado-ergo-3000x1200x13-mm-93415088.html;
+Leroy Merlin;mat_placa_techos;MPY-003;Placa de cartón-yeso FK 2600x1200x15 mm;19646956;m2;3.32;https://www.leroymerlin.es/productos/placa-de-carton-yeso-fk-2600x1200x15-mm-19646956.html;
+Leroy Merlin;mat_placa_techos;MPY-004;Placa de Cartón-yeso laminado FK PPM 2600x1200x13 mm;19723186;m2;4.46;https://www.leroymerlin.es/productos/placa-de-carton-yeso-laminado-fk-ppm-2600x1200x13-mm-19723186.html;
+Leroy Merlin;mat_placa_techos;MPY-005;(sin equivalente en Leroy Merlin);;m2;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_placa_techos;MPY-006;Placa de Yeso PPF 250 x 120 cm x 13 mm;17806292;m2;5.67;https://www.leroymerlin.es/productos/placa-de-yeso-ppf-250-x-120-cm-x-13-mm-17806292.html;
+Leroy Merlin;mat_placa_techos;MPY-007;Placa de cartón-yeso PHONIQUE 2500x1200x13 mm;15433110;m2;6.27;https://www.leroymerlin.es/productos/placa-de-carton-yeso-phonique-2500x1200x13-mm-15433110.html;
+Leroy Merlin;mat_placa_techos;MPY-008;Placa glasroc x 2400x1200x13 mm;82540981;m2;21.67;https://www.leroymerlin.es/productos/placa-glasroc-x-2400x1200x13-mm-82540981.html;
+Leroy Merlin;mat_placa_techos;MPY-009;Perfil montante acero 48x36x3000mm;85806820;ud;2.83;https://www.leroymerlin.es/productos/perfil-montante-acero-48x36x3000mm-85806820.html;
+Leroy Merlin;mat_placa_techos;MPY-010;Perfil montante acero 70x36x3000mm;82274394;ud;3.52;https://www.leroymerlin.es/productos/perfil-montante-acero-70x36x3000mm-82274394.html;
+Leroy Merlin;mat_placa_techos;MPY-011;Perfil canal acero 48x30x3000mm;82274396;ud;2.33;https://www.leroymerlin.es/productos/perfil-canal-acero-48x30x3000mm-82274396.html;
+Leroy Merlin;mat_placa_techos;MPY-012;Perfil canal acero 70x30x3000m;82274397;ud;2.93;https://www.leroymerlin.es/productos/perfil-canal-acero-70x30x3000m-82274397.html;
+Leroy Merlin;mat_placa_techos;MPY-013;Perfil techo continuo 47X17 3 metros;82274400;ud;2.42;https://www.leroymerlin.es/productos/perfil-techo-continuo-47x17-3-metros-82274400.html;
+Leroy Merlin;mat_placa_techos;MPY-014;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_placa_techos;MPY-015;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_placa_techos;MPY-016;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_placa_techos;MPY-017;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_placa_techos;MPY-018;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_placa_techos;MPY-019;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_placa_techos;MPY-020;(sin equivalente en Leroy Merlin);;caja;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_placa_techos;MPY-021;Pasta de junta CE78 2 horas 25 kg;14822906;saco;19.36;https://www.leroymerlin.es/productos/pasta-de-junta-ce78-2-horas-25-kg-14822906.html;
+Leroy Merlin;mat_placa_techos;MPY-022;Masilla en pasta AXTON de 25 kg. Para juntas. Para interior.;18769716;ud;18;https://www.leroymerlin.es/productos/masilla-en-pasta-axton-de-25-kg-para-juntas-para-interior-18769716.html;
+Leroy Merlin;mat_placa_techos;MPY-023;Pasta de agarre Isocol 25 kg;12901672;saco;9.95;https://www.leroymerlin.es/productos/pasta-de-agarre-isocol-25-kg-12901672.html;
+Leroy Merlin;mat_placa_techos;MPY-024;Rollo cinta de juntas 50 mm de 75 m de largo;12901742;rollo;3.24;https://www.leroymerlin.es/productos/rollo-cinta-de-juntas-50-mm-de-75-m-de-largo-12901742.html;
+Leroy Merlin;mat_placa_techos;MPY-025;Guardavivos cartón yeso y aluminio 2,5 m;17885140;ud;1.96;https://www.leroymerlin.es/productos/guardavivos-carton-yeso-y-aluminio-2-5-m-17885140.html;Perfil guardavivos de 2,5 m (no cinta en rollo)
+Leroy Merlin;mat_placa_techos;MPY-026;(sin equivalente en Leroy Merlin);;rollo;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_placa_techos;MPY-027;(sin equivalente en Leroy Merlin);;rollo;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_placa_techos;MPY-028;Escayola blanca Iberyola de 17 kg;19867631;saco;2.3;https://www.leroymerlin.es/productos/escayola-blanca-iberyola-de-17-kg-19867631.html;
+Leroy Merlin;mat_placa_techos;MPY-029;Placa de techo continuo escayola lisa 60x100x2,1 cm;16800546;m2;1.9;https://www.leroymerlin.es/productos/placa-de-techo-continuo-escayola-lisa-60x100x2-1-cm-16800546.html;
+Leroy Merlin;mat_placa_techos;MPY-030;6 placas de techos escayola gota fina visto 60x60;85759218;m2;2.69;https://www.leroymerlin.es/productos/6-placas-de-techos-escayola-gota-fina-visto-60x60-85759218.html;
+Leroy Merlin;mat_placa_techos;MPY-031;Pack 8 placas de yeso con vinilo blanco 60x60x0,9 cm;82250485;m2;6.35;https://www.leroymerlin.es/productos/pack-8-placas-de-yeso-con-vinilo-blanco-60x60x0-9-cm-82250485.html;
+Leroy Merlin;mat_placa_techos;MPY-032;Lote de 12 placas de fibra Basic1 12 mm 60x60;82930638;m2;5.71;https://www.leroymerlin.es/productos/lote-de-12-placas-de-fibra-basic1-12-mm-60x60-82930638.html;
+Leroy Merlin;mat_placa_techos;MPY-033;Perfil primario T24 FTD negro 3,7m;82250471;ud;4.44;https://www.leroymerlin.es/productos/perfil-primario-t24-ftd-negro-3-7m-82250471.html;
+Leroy Merlin;mat_placa_techos;MPY-034;Perfil secundario T24 FTD negro 1,2m;82250473;ud;1.44;https://www.leroymerlin.es/productos/perfil-secundario-t24-ftd-negro-1-2m-82250473.html;
+Leroy Merlin;mat_placa_techos;MPY-035;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_placa_techos;MPY-036;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_placa_techos;MPY-037;(sin equivalente en Leroy Merlin);;ml;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_yesos_morteros;MYM-001;(sin equivalente en Leroy Merlin);;saco;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_yesos_morteros;MYM-002;Yeso controlado Longips 17 kg;19867470;saco;1.85;https://www.leroymerlin.es/productos/yeso-controlado-longips-17-kg-19867470.html;
+Leroy Merlin;mat_yesos_morteros;MYM-003;Yeso extrafino Iberfino de 17 kg;19867666;saco;2.73;https://www.leroymerlin.es/productos/yeso-extrafino-iberfino-de-17-kg-19867666.html;
+Leroy Merlin;mat_yesos_morteros;MYM-004;Yeso proyectado Proyal XXI 20 kg;19867610;saco;4.5;https://www.leroymerlin.es/productos/yeso-proyectado-proyal-xxi-20-kg-19867610.html;
+Leroy Merlin;mat_yesos_morteros;MYM-005;(sin equivalente en Leroy Merlin);;saco;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_yesos_morteros;MYM-006;Pegamento de escayola Ibercol 10 kg;19867715;saco;4.4;https://www.leroymerlin.es/productos/pegamento-de-escayola-ibercol-10-kg-19867715.html;
+Leroy Merlin;mat_yesos_morteros;MYM-007;Saco cemento gris 32,5-N CEM II/B-L BALBOA 25 kg;17444903;saco;4.38;https://www.leroymerlin.es/productos/saco-cemento-gris-32-5-n-cem-ii-b-l-balboa-25-kg-17444903.html;
+Leroy Merlin;mat_yesos_morteros;MYM-008;(sin equivalente en Leroy Merlin);;saco;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_yesos_morteros;MYM-009;Saco cemento Blanco 42,5-R BL II/AL HOLCIM 25 kg;19729332;saco;9.4;https://www.leroymerlin.es/productos/saco-cemento-blanco-42-5-r-bl-ii-al-holcim-25-kg-19729332.html;
+Leroy Merlin;mat_yesos_morteros;MYM-010;Mortero MOLINS Gris 25 kg;17526761;saco;3.02;https://www.leroymerlin.es/productos/mortero-molins-gris-25-kg-17526761.html;
+Leroy Merlin;mat_yesos_morteros;MYM-011;Mortero de cal capa gruesa AXTON 25 kg blanco;86721842;saco;5.28;https://www.leroymerlin.es/productos/mortero-de-cal-capa-gruesa-axton-25-kg-blanco-86721842.html;
+Leroy Merlin;mat_yesos_morteros;MYM-012;(sin equivalente en Leroy Merlin);;saco;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_yesos_morteros;MYM-013;(sin equivalente en Leroy Merlin);;saco;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_yesos_morteros;MYM-014;(sin equivalente en Leroy Merlin);;saco;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_yesos_morteros;MYM-015;(sin equivalente en Leroy Merlin);;saco;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_yesos_morteros;MYM-016;Mortero autonivelante CEMENTOS CAPA 20/50 25 kg gris;86672604;saco;7.73;https://www.leroymerlin.es/productos/mortero-autonivelante-cementos-capa-20-50-25-kg-gris-86672604.html;
+Leroy Merlin;mat_yesos_morteros;MYM-017;Mortero cola interior exterior 25 kg gris;85539177;saco;3.95;https://www.leroymerlin.es/productos/mortero-cola-interior-exterior-25-kg-gris-85539177.html;
+Leroy Merlin;mat_yesos_morteros;MYM-018;Mortero cola AXTON blanco para exterior 25 kg;81928502;saco;5.95;https://www.leroymerlin.es/productos/mortero-cola-axton-blanco-para-exterior-25-kg-81928502.html;
+Leroy Merlin;mat_yesos_morteros;MYM-019;Mortero cola porcelánico flexible Pegoland blanco 25 KG;13925520;saco;9.5;https://www.leroymerlin.es/productos/mortero-cola-porcelanico-flexible-pegoland-blanco-25-kg-13925520.html;
+Leroy Merlin;mat_yesos_morteros;MYM-019B;(sin equivalente en Leroy Merlin);;saco;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_yesos_morteros;MYM-020;Mortero cola Flex H40 gel blanco KERAKOLL de 20kg;90112007;saco;14.5;https://www.leroymerlin.es/productos/mortero-cola-flex-h40-gel-blanco-kerakoll-de-20kg-90112007.html;
+Leroy Merlin;mat_yesos_morteros;MYM-021;(sin equivalente en Leroy Merlin);;saco;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_yesos_morteros;MYM-022;Mortero para juntas AXTON 5kg;85480287;saco;4.99;https://www.leroymerlin.es/productos/mortero-para-juntas-axton-5kg-85480287.html;
+Leroy Merlin;mat_yesos_morteros;MYM-023;(sin equivalente en Leroy Merlin);;saco;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_yesos_morteros;MYM-024;(sin equivalente en Leroy Merlin);;saco;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_yesos_morteros;MYM-025;Arena Lavada Construcción Big bag 1.000 kg. / 0-6 mm;91926705;ud;212.05;https://www.leroymerlin.es/productos/arena-lavada-construccion-big-bag-1-000-kg-0-6-mm-91926705.html;Vendido por vendedor del marketplace, no por Leroy Merlin
+Leroy Merlin;mat_yesos_morteros;MYM-026;(sin equivalente en Leroy Merlin);;saco;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_yesos_morteros;MYM-027;(sin equivalente en Leroy Merlin);;saco;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_ladrillos;MLB-001;LADRILLO HUECO DOBLE 22,5X10,5X7CM;86296941;ud;0.22;https://www.leroymerlin.es/productos/ladrillo-hueco-doble-22-5x10-5x7cm-86296941.html;
+Leroy Merlin;mat_ladrillos;MLB-002;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_ladrillos;MLB-003;LADRILLO HUECO SENCILLO 22.5X10,5X3.5CM;86296916;ud;0.2;https://www.leroymerlin.es/productos/ladrillo-hueco-sencillo-22-5x10-5x3-5cm-86296916.html;
+Leroy Merlin;mat_ladrillos;MLB-004;RASILLON HUECO SENCILLO 40X20X5CM;90299856;ud;0.58;https://www.leroymerlin.es/productos/rasillon-hueco-sencillo-40x20x5cm-90299856.html;
+Leroy Merlin;mat_ladrillos;MLB-005;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_ladrillos;MLB-006;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_ladrillos;MLB-007;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_ladrillos;MLB-008;LADRILLO MACIZO PERFORADO 22,5X10,5X10cm;86296918;ud;0.3;https://www.leroymerlin.es/productos/ladrillo-macizo-perforado-22-5x10-5x10cm-86296918.html;
+Leroy Merlin;mat_ladrillos;MLB-009;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_ladrillos;MLB-010;LADRILLO MACIZO PERFORADO 22,5X10,5X10cm;86296918;ud;0.3;https://www.leroymerlin.es/productos/ladrillo-macizo-perforado-22-5x10-5x10cm-86296918.html;
+Leroy Merlin;mat_ladrillos;MLB-011;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_ladrillos;MLB-012;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_ladrillos;MLB-013;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_ladrillos;MLB-014;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_ladrillos;MLB-015;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_ladrillos;MLB-016;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_ladrillos;MLB-017;Bloque de hormigón liso gris 40x10x20 cm;16427670;ud;0.74;https://www.leroymerlin.es/productos/bloque-de-hormigon-liso-gris-40x10x20-cm-16427670.html;
+Leroy Merlin;mat_ladrillos;MLB-018;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_ladrillos;MLB-019;Bloque de hormigón Split blanco 40x20x20 cm;15188873;ud;4.49;https://www.leroymerlin.es/productos/bloque-de-hormigon-split-blanco-40x20x20-cm-15188873.html;
+Leroy Merlin;mat_ladrillos;MLB-020;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_aislamiento;MAI-001;1 ud de Aislamiento de Fibra de vidrio Drywall 37 Rollo ISOVER 10x0.4m Espesor 50mm R = 1.35;95578038;m2;1.79;https://www.leroymerlin.es/productos/1-ud-de-aislamiento-de-fibra-de-vidrio-drywall-37-rollo-isover-10x0-4m-espesor-50mm-r-1-35-95578038.html;
+Leroy Merlin;mat_aislamiento;MAI-002;1 ud de Aislamiento Fibra de vidrio IBR80 ISOVER 10x1.2m Espesor 80mm R = 2;95578039;m2;3.38;https://www.leroymerlin.es/productos/1-ud-de-aislamiento-fibra-de-vidrio-ibr80-isover-10x1-2m-espesor-80mm-r-2-95578039.html;
+Leroy Merlin;mat_aislamiento;MAI-003;(sin equivalente en Leroy Merlin);;m2;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_aislamiento;MAI-004;1 ud de Aislamiento Fibra de vidrio Drywall 37 ISOVER 1.35x0.6m Espesor 50mm R = 1.36;88849358;m2;1.73;https://www.leroymerlin.es/productos/1-ud-de-aislamiento-fibra-de-vidrio-drywall-37-isover-1-35x0-6m-espesor-50mm-r-1-36-88849358.html;
+Leroy Merlin;mat_aislamiento;MAI-005;(sin equivalente en Leroy Merlin);;m2;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_aislamiento;MAI-006;1 ud de Aislamiento de Lana de roca Geowall 37 ISOVER 1.35x0.6m Espesor 40mm R = 1.09;15929354;m2;4.39;https://www.leroymerlin.es/productos/1-ud-de-aislamiento-de-lana-de-roca-geowall-37-isover-1-35x0-6m-espesor-40mm-r-1-09-15929354.html;
+Leroy Merlin;mat_aislamiento;MAI-007;15 uds de Aislamiento de Lana de roca Geowall ISOVER 1.35x0.6m Espesor 60mm R = 1.75;89752191;m2;10.99;https://www.leroymerlin.es/productos/15-uds-de-aislamiento-de-lana-de-roca-geowall-isover-1-35x0-6m-espesor-60mm-r-1-75-89752191.html;
+Leroy Merlin;mat_aislamiento;MAI-008;(sin equivalente en Leroy Merlin);;m2;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_aislamiento;MAI-009;10 uds de Aislante de Poliestireno extruido (XPS) DANOSA Danopren TR 40 1.25x0.6m Espesor 40mm R=1.2;97179935;m2;5.99;https://www.leroymerlin.es/productos/10-uds-de-aislante-de-poliestireno-extruido-xps-danosa-danopren-tr-40-1-25x0-6m-espesor-40mm-r-1-2-97179935.html;
+Leroy Merlin;mat_aislamiento;MAI-010;8 ud de Aislante de Poliestireno extruido (XPS) THERMOGREEN Media madera 1.25x0.6m Espesor 50mm  R=1.55;88493228;m2;6.8;https://www.leroymerlin.es/productos/8-ud-de-aislante-de-poliestireno-extruido-xps-thermogreen-media-madera-1-25x0-6m-espesor-50mm-r-1-55-88493228.html;
+Leroy Merlin;mat_aislamiento;MAI-011;7 ud de Aislante de Poliestireno extruido (XPS) THERMOGREEN Media madera 1.25x0.6m Espesor 60mm  R=1.85;88493230;m2;8.16;https://www.leroymerlin.es/productos/7-ud-de-aislante-de-poliestireno-extruido-xps-thermogreen-media-madera-1-25x0-6m-espesor-60mm-r-1-85-88493230.html;
+Leroy Merlin;mat_aislamiento;MAI-012;5 uds de Aislante de Poliestireno extruido (XPS) THERMOGREEN Media madera 1.25x0.6m Espesor 80mm R=2.5;88493229;m2;10.88;https://www.leroymerlin.es/productos/5-uds-de-aislante-de-poliestireno-extruido-xps-thermogreen-media-madera-1-25x0-6m-espesor-80mm-r-2-5-88493229.html;
+Leroy Merlin;mat_aislamiento;MAI-013;4 uds de Aislante de Poliestireno extruido (XPS) DANOSA Danopren TR 100 1.25x0.6m Espesor 100mm R=2.85;97179939;m2;15.29;https://www.leroymerlin.es/productos/4-uds-de-aislante-de-poliestireno-extruido-xps-danosa-danopren-tr-100-1-25x0-6m-espesor-100mm-r-2-85-97179939.html;
+Leroy Merlin;mat_aislamiento;MAI-014;1 ud de Aislante de Poliestireno expandido (EPS) DANOSA Danotherm EPS 1x0.5m Espesor 20mm R=0.54;95931758;m2;2.42;https://www.leroymerlin.es/productos/1-ud-de-aislante-de-poliestireno-expandido-eps-danosa-danotherm-eps-1x0-5m-espesor-20mm-r-0-54-95931758.html;
+Leroy Merlin;mat_aislamiento;MAI-015;(sin equivalente en Leroy Merlin);;m2;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_aislamiento;MAI-016;1 ud de Aislante de Poliestireno expandido (EPS) PUMA Traditerm 1x0.5m Espesor 80mm R=2.15;82808118;m2;10.8;https://www.leroymerlin.es/productos/1-ud-de-aislante-de-poliestireno-expandido-eps-puma-traditerm-1x0-5m-espesor-80mm-r-2-15-82808118.html;
+Leroy Merlin;mat_aislamiento;MAI-017;Cola NOVOPREN 1000 ml amarillo para poliestireno, aplicación con rodillo, espátula, pincel, resistente al agua. Para unir materiales.;19007030;ud;6.99;https://www.leroymerlin.es/productos/cola-novopren-1000-ml-amarillo-para-poliestireno-aplicacion-con-rodillo-espatula-pincel-resistente-al-agua-para-unir-materiales-19007030.html;
+Leroy Merlin;mat_aislamiento;MAI-018;1 ud de Rollo de aislante acústico Impactodan DANOSA de Polietileno 15x1m Espesor 5mm Reducción acústica 20dB;17308452;m2;1.86;https://www.leroymerlin.es/productos/1-ud-de-rollo-de-aislante-acustico-impactodan-danosa-de-polietileno-15x1m-espesor-5mm-reduccion-acustica-20db-17308452.html;
+Leroy Merlin;mat_aislamiento;MAI-019;1 ud de Rollo de aislante acústico Impactodan DANOSA de Polietileno 25x2m Espesor 1mm Reducción acústica 27dB;82600926;rollo;173;https://www.leroymerlin.es/productos/1-ud-de-rollo-de-aislante-acustico-impactodan-danosa-de-polietileno-25x2m-espesor-1mm-reduccion-acustica-27db-82600926.html;La ficha indica 173 € por rollo (también 3,46 €/kg). Unidad distinta a la de la lista (m2)
+Leroy Merlin;mat_aislamiento;MAI-020;Base aislante suelo laminado  Ca20+Film 2mm capa antihumedad 48m²;82456477;m2;0.87;https://www.leroymerlin.es/productos/base-aislante-suelo-laminado-ca20-film-2mm-capa-antihumedad-48m2-82456477.html;
+Leroy Merlin;mat_aislamiento;MAI-021;(sin equivalente en Leroy Merlin);;rollo;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_aislamiento;MAI-022;1 Rollo lámina CHOVAPLAST VEL 30 Densidad: 3Kg/m² 12x1m;10873373;m2;2.59;https://www.leroymerlin.es/productos/1-rollo-lamina-chovaplast-vel-30-densidad-3kg-m2-12x1m-10873373.html;
+Leroy Merlin;mat_aislamiento;MAI-023;1 rollo lámina GLASDAN 40/GP POL gris Densidad: 4Kg/m² 10x1m;81872359;m2;5.6;https://www.leroymerlin.es/productos/1-rollo-lamina-glasdan-40-gp-pol-gris-densidad-4kg-m2-10x1m-81872359.html;
+Leroy Merlin;mat_aislamiento;MAI-024;(sin equivalente en Leroy Merlin);;m2;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_aislamiento;MAI-025;1 rollo lámina AXTON gris Densidad: 4kg/m² 8x1m;82220592;m2;6.93;https://www.leroymerlin.es/productos/1-rollo-lamina-axton-gris-densidad-4kg-m2-8x1m-82220592.html;
+Leroy Merlin;mat_aislamiento;MAI-026;Emulsión bituminosa SUPERMUL-N 25KG negro;11628372;ud;54;https://www.leroymerlin.es/productos/emulsion-bituminosa-supermul-n-25kg-negro-11628372.html;
+Leroy Merlin;mat_aislamiento;MAI-027;Banda de butilo 0,1x10 m aluminio;17774771;rollo;19.29;https://www.leroymerlin.es/productos/banda-de-butilo-0-1x10-m-aluminio-17774771.html;
+Leroy Merlin;mat_aislamiento;MAI-028;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_aislamiento;MAI-029;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_aislamiento;MAI-030;Membrana de poliuretano FISCHER 15Kg terracota;87674762;ud;119;https://www.leroymerlin.es/productos/membrana-de-poliuretano-fischer-15kg-terracota-87674762.html;
+Leroy Merlin;mat_aislamiento;MAI-031;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_aislamiento;MAI-032;(sin equivalente en Leroy Merlin);;m2;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_aislamiento;MAI-033;Silicona sanitaria Stop Moho X10 CEYS 280 ml blanco;85093693;ud;8.99;https://www.leroymerlin.es/productos/silicona-sanitaria-stop-moho-x10-ceys-280-ml-blanco-85093693.html;
+Leroy Merlin;mat_aislamiento;MAI-034;Silicona multiuso ácida QUILOSA 280 ml;82561643;ud;1.96;https://www.leroymerlin.es/productos/silicona-multiuso-acida-quilosa-280-ml-82561643.html;
+Leroy Merlin;mat_aislamiento;MAI-035;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_aislamiento;MAI-036;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_pintura;MPI-001;Pintura de interior Primer precio color blanco mate 15 L para paredes y techos;96143325;ud;16.7;https://www.leroymerlin.es/productos/pintura-de-interior-primer-precio-color-blanco-mate-15-l-para-paredes-y-techos-96143325.html;
+Leroy Merlin;mat_pintura;MPI-002;Pintura de interior alta cobertura LUXENS color blanco mate 15 L para paredes y techos;96114412;ud;46;https://www.leroymerlin.es/productos/pintura-de-interior-alta-cobertura-luxens-color-blanco-mate-15-l-para-paredes-y-techos-96114412.html;
+Leroy Merlin;mat_pintura;MPI-003;Pintura exterior color blanco para cemento, fachada MONTÓ mate 15L base agua;89133425;ud;48.99;https://www.leroymerlin.es/productos/pintura-exterior-color-blanco-para-cemento-fachada-monto-mate-15l-base-agua-89133425.html;
+Leroy Merlin;mat_pintura;MPI-004;Pintura de interior Rehabit P30 MONTÓ color blanco mate 15L para paredes y techos;82697189;ud;63.99;https://www.leroymerlin.es/productos/pintura-de-interior-rehabit-p30-monto-color-blanco-mate-15l-para-paredes-y-techos-82697189.html;
+Leroy Merlin;mat_pintura;MPI-005;Pintura de interior LUXENS color blanco satinado 15L para paredes y techos;96114413;ud;44.99;https://www.leroymerlin.es/productos/pintura-de-interior-luxens-color-blanco-satinado-15l-para-paredes-y-techos-96114413.html;
+Leroy Merlin;mat_pintura;MPI-006;Pintura de interior Primer precio color blanco mate 4 L para paredes y techos;96143324;ud;7.1;https://www.leroymerlin.es/productos/pintura-de-interior-primer-precio-color-blanco-mate-4-l-para-paredes-y-techos-96143324.html;
+Leroy Merlin;mat_pintura;MPI-007;Pintura de interior alta cobertura LUXENS color blanco satinado 4 L para paredes y techos;96114396;ud;19.99;https://www.leroymerlin.es/productos/pintura-de-interior-alta-cobertura-luxens-color-blanco-satinado-4-l-para-paredes-y-techos-96114396.html;
+Leroy Merlin;mat_pintura;MPI-008;Pintura de interior especial techos LUXENS color blanco mate 4 L para techos;96114383;ud;27.99;https://www.leroymerlin.es/productos/pintura-de-interior-especial-techos-luxens-color-blanco-mate-4-l-para-techos-96114383.html;
+Leroy Merlin;mat_pintura;MPI-009;Pintura de interior anticondensación LUXENS color blanco mate 2.5 L para paredes y techos;85062243;ud;21.99;https://www.leroymerlin.es/productos/pintura-de-interior-anticondensacion-luxens-color-blanco-mate-2-5-l-para-paredes-y-techos-85062243.html;Oferta temporal: 19.37 € (precio normal 21.99 €)
+Leroy Merlin;mat_pintura;MPI-010;Pintura de interior antimanchas ISOLFIX color blanco mate 4 L para paredes y techos;13307070;ud;37.99;https://www.leroymerlin.es/productos/pintura-de-interior-antimanchas-isolfix-color-blanco-mate-4-l-para-paredes-y-techos-13307070.html;
+Leroy Merlin;mat_pintura;MPI-011;Pintura exterior color blanco para fachada, hormigón LUXENS mate 15L base agua antigoteo;81887955;ud;40.99;https://www.leroymerlin.es/productos/pintura-exterior-color-blanco-para-fachada-hormigon-luxens-mate-15l-base-agua-antigoteo-81887955.html;
+Leroy Merlin;mat_pintura;MPI-012;[Blanco 22KG] Revestimiento pétreo rugoso blanco exterior, Alta cubrición para fachadas, paneles y muros, No gotea ni salpica;96702927;ud;64.99;https://www.leroymerlin.es/productos/blanco-22kg-revestimiento-petreo-rugoso-blanco-exterior-alta-cubricion-para-fachadas-paneles-y-muros-no-gotea-ni-salpica-96702927.html;Vendido por vendedor del marketplace, no por Leroy Merlin
+Leroy Merlin;mat_pintura;MPI-013;Reveton Silicone Blanco 15 Lt;88017546;ud;105.25;https://www.leroymerlin.es/productos/reveton-silicone-blanco-15-lt-88017546.html;Vendido por vendedor del marketplace, no por Leroy Merlin
+Leroy Merlin;mat_pintura;MPI-014;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_pintura;MPI-015;Reveton Texlite Pliolite Blanco 15 Lt;87907929;ud;239.58;https://www.leroymerlin.es/productos/reveton-texlite-pliolite-blanco-15-lt-87907929.html;Vendido por vendedor del marketplace, no por Leroy Merlin
+Leroy Merlin;mat_pintura;MPI-016;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_pintura;MPI-017;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_pintura;MPI-018;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_pintura;MPI-019;Esmalte de interior acrilico OK PRO color blanco mate 4L para muebles;83670590;ud;34.99;https://www.leroymerlin.es/productos/esmalte-de-interior-acrilico-ok-pro-color-blanco-mate-4l-para-muebles-83670590.html;
+Leroy Merlin;mat_pintura;MPI-020;Esmalte de interior laca UNILAK TITAN color blanco satinado 4L para puertas, ventanas, radiadores y muebles;11486195;ud;58.99;https://www.leroymerlin.es/productos/esmalte-de-interior-laca-unilak-titan-color-blanco-satinado-4l-para-puertas-ventanas-radiadores-y-muebles-11486195.html;
+Leroy Merlin;mat_pintura;MPI-021;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_pintura;MPI-022;Imprimación fijadora para fachadas LUXENS 15 L blanco;85063532;ud;58.99;https://www.leroymerlin.es/productos/imprimacion-fijadora-para-fachadas-luxens-15-l-blanco-85063532.html;
+Leroy Merlin;mat_pintura;MPI-023;Fijador vinílico de 4 L;19380200;ud;17.4;https://www.leroymerlin.es/productos/fijador-vinilico-de-4-l-19380200.html;
+Leroy Merlin;mat_pintura;MPI-024;Imprimación universal LUXENS de 5 L;19380354;ud;26.99;https://www.leroymerlin.es/productos/imprimacion-universal-luxens-de-5-l-19380354.html;
+Leroy Merlin;mat_pintura;MPI-025;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_pintura;MPI-026;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_pintura;MPI-027;Yeso Mecafino Plus de 17 Kg;19867582;saco;6.83;https://www.leroymerlin.es/productos/yeso-mecafino-plus-de-17-kg-19867582.html;
+Leroy Merlin;mat_electricidad;MEL-001;Cable LEXMAN H07V-K 100 metros 1,5 mm² color marrón;19303333;rollo;27;https://www.leroymerlin.es/productos/cable-lexman-h07v-k-100-metros-1-5-mm2-color-marron-19303333.html;
+Leroy Merlin;mat_electricidad;MEL-002;Cable LEXMAN H07V-K 100 metros 2,5 mm² color amarillo/verde;19303326;rollo;43.21;https://www.leroymerlin.es/productos/cable-lexman-h07v-k-100-metros-2-5-mm2-color-amarillo-verde-19303326.html;
+Leroy Merlin;mat_electricidad;MEL-003;Cable eléctrico LEXMAN H07V-K vd/amarillo 4 mm² 25 m;17917480;rollo;23.99;https://www.leroymerlin.es/productos/cable-electrico-lexman-h07v-k-vd-amarillo-4-mm2-25-m-17917480.html;
+Leroy Merlin;mat_electricidad;MEL-004;Cable eléctrico LEXMAN H07V-K vd/amarillo 6 mm² 25 m;17917662;rollo;28.99;https://www.leroymerlin.es/productos/cable-electrico-lexman-h07v-k-vd-amarillo-6-mm2-25-m-17917662.html;
+Leroy Merlin;mat_electricidad;MEL-005;Manguera LEXMAN RZ1-K verde 3x1,5 mm² 25 m.;17915933;rollo;42.78;https://www.leroymerlin.es/productos/manguera-lexman-rz1-k-verde-3x1-5-mm2-25-m-17915933.html;
+Leroy Merlin;mat_electricidad;MEL-006;Manguera LEXMAN RZ1-K verde 3x2,5 mm² 5 m.;17916262;ml;2.08;https://www.leroymerlin.es/productos/manguera-lexman-rz1-k-verde-3x2-5-mm2-5-m-17916262.html;
+Leroy Merlin;mat_electricidad;MEL-007;(sin equivalente en Leroy Merlin);;ml;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_electricidad;MEL-008;Cable eléctrico TOP CABLE RZ1-K 3x6mm verde;90013546;ml;4.5;https://www.leroymerlin.es/productos/cable-electrico-top-cable-rz1-k-3x6mm-verde-90013546.html;
+Leroy Merlin;mat_electricidad;MEL-009;Tubo corrugado forrado LEXMAN 20 mm 100 m;81908948;rollo;18.82;https://www.leroymerlin.es/productos/tubo-corrugado-forrado-lexman-20-mm-100-m-81908948.html;
+Leroy Merlin;mat_electricidad;MEL-010;Tubo corrugado forrado LEXMAN 25 mm 75 m;81908951;rollo;18.71;https://www.leroymerlin.es/productos/tubo-corrugado-forrado-lexman-25-mm-75-m-81908951.html;
+Leroy Merlin;mat_electricidad;MEL-011;Tubo corrugado forrado LEXMAN 32 mm 50 m;81908952;rollo;21.99;https://www.leroymerlin.es/productos/tubo-corrugado-forrado-lexman-32-mm-50-m-81908952.html;
+Leroy Merlin;mat_electricidad;MEL-012;Caja mecanismos empotrar FAMATEL 66x66 mm universal;82046974;ud;0.2;https://www.leroymerlin.es/productos/caja-mecanismos-empotrar-famatel-66x66-mm-universal-82046974.html;
+Leroy Merlin;mat_electricidad;MEL-013;Caja doble de mecanismos FAMATEL para tabiques huecos;82049166;ud;1.42;https://www.leroymerlin.es/productos/caja-doble-de-mecanismos-famatel-para-tabiques-huecos-82049166.html;
+Leroy Merlin;mat_electricidad;MEL-014;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_electricidad;MEL-015;Caja empotrar con tapa FAMATEL 200x130x60 mm;82046980;ud;1.35;https://www.leroymerlin.es/productos/caja-empotrar-con-tapa-famatel-200x130x60-mm-82046980.html;
+Leroy Merlin;mat_electricidad;MEL-016;Caja de derivación FAMATEL 30x20x6 cm;82046982;ud;5.6;https://www.leroymerlin.es/productos/caja-de-derivacion-famatel-30x20x6-cm-82046982.html;
+Leroy Merlin;mat_electricidad;MEL-017;Interruptor LEGRAND Niloé Step blanco;81950547;ud;3.77;https://www.leroymerlin.es/productos/interruptor-legrand-niloe-step-blanco-81950547.html;
+Leroy Merlin;mat_electricidad;MEL-018;Enchufe LEGRAND Niloé Step color blanco;81950575;ud;3.49;https://www.leroymerlin.es/productos/enchufe-legrand-niloe-step-color-blanco-81950575.html;
+Leroy Merlin;mat_electricidad;MEL-019;Interruptor/conmutador SIMON S270 blanco;85164262;ud;4.39;https://www.leroymerlin.es/productos/interruptor-conmutador-simon-s270-blanco-85164262.html;
+Leroy Merlin;mat_electricidad;MEL-020;Enchufe shucko SIMON 270 color blanco;85164181;ud;4.59;https://www.leroymerlin.es/productos/enchufe-shucko-simon-270-color-blanco-85164181.html;
+Leroy Merlin;mat_electricidad;MEL-021;Enchufe usb A + usb C 30W SIMON 270 blanco;85164185;ud;43.99;https://www.leroymerlin.es/productos/enchufe-usb-a-usb-c-30w-simon-270-blanco-85164185.html;
+Leroy Merlin;mat_electricidad;MEL-022;Conmutador SIMON 31 75 82;85807293;ud;6.79;https://www.leroymerlin.es/productos/conmutador-simon-31-75-82-85807293.html;
+Leroy Merlin;mat_electricidad;MEL-023;Enchufe SIMON 75-82;81901919;ud;4.19;https://www.leroymerlin.es/productos/enchufe-simon-75-82-81901919.html;
+Leroy Merlin;mat_electricidad;MEL-024;Toma TV/SAT SIMON 31/75/82;95983133;ud;13.29;https://www.leroymerlin.es/productos/toma-tv-sat-simon-31-75-82-95983133.html;
+Leroy Merlin;mat_electricidad;MEL-025;Cuadro eléctrico FAMATEL Vita de 12 módulos para cartón-yeso;19463430;ud;21.49;https://www.leroymerlin.es/productos/cuadro-electrico-famatel-vita-de-12-modulos-para-carton-yeso-19463430.html;
+Leroy Merlin;mat_electricidad;MEL-026;Cuadro eléctrico FAMATEL Nuova de 24 módulos;19463374;ud;25.99;https://www.leroymerlin.es/productos/cuadro-electrico-famatel-nuova-de-24-modulos-19463374.html;
+Leroy Merlin;mat_electricidad;MEL-027;Cuadro eléctrico de empotrar Famatel de 2 filas 36 módulos;82837706;ud;34.99;https://www.leroymerlin.es/productos/cuadro-electrico-de-empotrar-famatel-de-2-filas-36-modulos-82837706.html;
+Leroy Merlin;mat_electricidad;MEL-028;Interruptor magnetotérmico CHINT bipolar 40A;16634331;ud;7.13;https://www.leroymerlin.es/productos/interruptor-magnetotermico-chint-bipolar-40a-16634331.html;
+Leroy Merlin;mat_electricidad;MEL-029;Interruptor magnetotérmico LEXMAN bipolar 16A;90179078;ud;3.4;https://www.leroymerlin.es/productos/interruptor-magnetotermico-lexman-bipolar-16a-90179078.html;
+Leroy Merlin;mat_electricidad;MEL-030;Interruptor magnetotérmico P+N Schneider  16A R9;85804228;ud;4.83;https://www.leroymerlin.es/productos/interruptor-magnetotermico-p-n-schneider-16a-r9-85804228.html;
+Leroy Merlin;mat_electricidad;MEL-031;Diferencial bipolar 40A LEXMAN;89490872;ud;13.83;https://www.leroymerlin.es/productos/diferencial-bipolar-40a-lexman-89490872.html;
+Leroy Merlin;mat_electricidad;MEL-032;Diferencial bipolar superinmunizado LEXMAN 40A;88918341;ud;44.7;https://www.leroymerlin.es/productos/diferencial-bipolar-superinmunizado-lexman-40a-88918341.html;
+Leroy Merlin;mat_electricidad;MEL-033;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_electricidad;MEL-034;Downlight led 18w de potencia de color blanco;92467756;ud;7.49;https://www.leroymerlin.es/productos/downlight-led-18w-de-potencia-de-color-blanco-92467756.html;Oferta temporal: 5.19 € (precio normal 7.49 €)
+Leroy Merlin;mat_electricidad;MEL-035;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_electricidad;MEL-036;Tira LED 24V ALVERLAMP IP20 apto para zonas secas 1512 lm luz blanco cálido 3000K 5 metros corte c/5cm;85742999;rollo;16.49;https://www.leroymerlin.es/productos/tira-led-24v-alverlamp-ip20-apto-para-zonas-secas-1512-lm-luz-blanco-calido-3000k-5-metros-corte-c-5cm-85742999.html;
+Leroy Merlin;mat_electricidad;MEL-037;Perfil de aluminio blanco con difusor 2m;93542091;ud;11.99;https://www.leroymerlin.es/productos/perfil-de-aluminio-blanco-con-difusor-2m-93542091.html;
+Leroy Merlin;mat_electricidad;MEL-038;Tira LED 24V fuente de alimentación 30W IP20;93542059;ud;12.99;https://www.leroymerlin.es/productos/tira-led-24v-fuente-de-alimentacion-30w-ip20-93542059.html;
+Leroy Merlin;mat_electricidad;MEL-039;Extractor de baño CATA UC-10 estándar 110 m³/h, Blanco;82401366;ud;22.79;https://www.leroymerlin.es/productos/extractor-de-bano-cata-uc-10-estandar-110-m3-h-blanco-82401366.html;
+Leroy Merlin;mat_electricidad;MEL-040;Extractor de baño axial EQUATION Silentis 100 mm Timer para techo o pared;82014558;ud;30.99;https://www.leroymerlin.es/productos/extractor-de-bano-axial-equation-silentis-100-mm-timer-para-techo-pared-82014558.html;
+Leroy Merlin;mat_fontaneria;MFS-001;Rollo de tubo multicapa 25 metros Ø16 mm;82069866;rollo;19;https://www.leroymerlin.es/productos/rollo-de-tubo-multicapa-25-metros-16-mm-82069866.html;
+Leroy Merlin;mat_fontaneria;MFS-002;Rollo de tubo multicapa 25 metros Ø20 mm;82069867;rollo;27.35;https://www.leroymerlin.es/productos/rollo-de-tubo-multicapa-25-metros-20-mm-82069867.html;
+Leroy Merlin;mat_fontaneria;MFS-003;Tubería de polietileno PEx-A 16x1.8 EVOH - Rollo de 120 metros;87108491;rollo;79;https://www.leroymerlin.es/productos/tuberia-de-polietileno-pex-a-16x1-8-evoh-rollo-de-120-metros-87108491.html;Vendido por vendedor del marketplace, no por Leroy Merlin. Oferta temporal: 71.1 € (precio normal 79 €)
+Leroy Merlin;mat_fontaneria;MFS-004;Codo Comprensión de 16 mm de diámetro;82070056;ud;3.2;https://www.leroymerlin.es/productos/codo-comprension-de-16-mm-de-diametro-82070056.html;
+Leroy Merlin;mat_fontaneria;MFS-005;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_fontaneria;MFS-006;Unión compresión de 16 mm de diámetro;82070065;ud;3.2;https://www.leroymerlin.es/productos/union-compresion-de-16-mm-de-diametro-82070065.html;
+Leroy Merlin;mat_fontaneria;MFS-007;"Codo con base de fijación hembra 1/2"" para tubo de 16 x 2 mm, acabado niquelado, ref. 860010A";71185197;ud;14.66;https://www.leroymerlin.es/productos/codo-con-base-de-fijacion-hembra-1-2-para-tubo-de-16-x-2-mm-acabado-niquelado-ref-860010a-71185197.html;Vendido por vendedor del marketplace, no por Leroy Merlin
+Leroy Merlin;mat_fontaneria;MFS-008;Tubo  PVC de evacuación Ø40 mm 3 metros;81929203;ud;3.55;https://www.leroymerlin.es/productos/tubo-pvc-de-evacuacion-40-mm-3-metros-81929203.html;
+Leroy Merlin;mat_fontaneria;MFS-009;Tubo PVC de evacuación Ø50 mm 3 metros;81929204;ud;4.33;https://www.leroymerlin.es/productos/tubo-pvc-de-evacuacion-50-mm-3-metros-81929204.html;
+Leroy Merlin;mat_fontaneria;MFS-010;Tubo de evacuación de agua  en pvc de 3m x ø 110mm;87003281;ud;9.35;https://www.leroymerlin.es/productos/tubo-de-evacuacion-de-agua-en-pvc-de-3m-x-110mm-87003281.html;
+Leroy Merlin;mat_fontaneria;MFS-011;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_fontaneria;MFS-012;Codo de PVC de 40 mm de diámetro 87º H-H;12149543;ud;0.19;https://www.leroymerlin.es/productos/codo-de-pvc-de-40-mm-de-diametro-87-h-h-12149543.html;
+Leroy Merlin;mat_fontaneria;MFS-013;Codo macho-hembra 87 110 mm de diámetro;85175990;ud;1.09;https://www.leroymerlin.es/productos/codo-macho-hembra-87-110-mm-de-diametro-85175990.html;
+Leroy Merlin;mat_fontaneria;MFS-014;Bote sifónico t/expansión 85 mm de alto;89161421;ud;4.89;https://www.leroymerlin.es/productos/bote-sifonico-t-expansion-85-mm-de-alto-89161421.html;
+Leroy Merlin;mat_fontaneria;MFS-015;Sifón botella 1 1/2 - 40mm  JIMTEM;96602872;ud;4.49;https://www.leroymerlin.es/productos/sifon-botella-1-1-2-40mm-jimtem-96602872.html;
+Leroy Merlin;mat_fontaneria;MFS-016;"Válvula para empotrar - roscada 1/2""";84534095;ud;8.49;https://www.leroymerlin.es/productos/valvula-para-empotrar-roscada-1-2-84534095.html;
+Leroy Merlin;mat_fontaneria;MFS-017;Llave escuadra EQUATION antical m1/2-m3/8;88042366;ud;2.79;https://www.leroymerlin.es/productos/llave-escuadra-equation-antical-m1-2-m3-8-88042366.html;
+Leroy Merlin;mat_fontaneria;MFS-018;Termo eléctrico 50l vertical;92389692;ud;95;https://www.leroymerlin.es/productos/termo-electrico-50l-vertical-92389692.html;
+Leroy Merlin;mat_fontaneria;MFS-019;Termo eléctrico NETSU PLUS ELUXE  80L;94708191;ud;99;https://www.leroymerlin.es/productos/termo-electrico-netsu-plus-eluxe-80l-94708191.html;
+Leroy Merlin;mat_fontaneria;MFS-020;Termo eléctrico ElProm de 100 litros vertical en color blanco;96465065;ud;139;https://www.leroymerlin.es/productos/termo-electrico-elprom-de-100-litros-vertical-en-color-blanco-96465065.html;
+Leroy Merlin;mat_fontaneria;MFS-021;Calentador de gas estanco CLIMAX gas butano 11 L;94344417;ud;229;https://www.leroymerlin.es/productos/calentador-de-gas-estanco-climax-gas-butano-11-l-94344417.html;
+Leroy Merlin;mat_fontaneria;MFS-022;Pack WC Universal AKRON II S/DUAL con tapa amortiguada blanco;94862203;ud;99;https://www.leroymerlin.es/productos/pack-wc-universal-akron-ii-s-dual-con-tapa-amortiguada-blanco-94862203.html;
+Leroy Merlin;mat_fontaneria;MFS-023;Taza inodoro WC ROCA Gap salida Dual;84824856;ud;148;https://www.leroymerlin.es/productos/taza-inodoro-wc-roca-gap-salida-dual-84824856.html;Oferta temporal: 111.99 € (precio normal 148 €)
+Leroy Merlin;mat_fontaneria;MFS-024;Pack WC rimless 3 con tapa amortiguada blanco;95555226;ud;334;https://www.leroymerlin.es/productos/pack-wc-rimless-3-con-tapa-amortiguada-blanco-95555226.html;Oferta temporal: 201 € (precio normal 334 €)
+Leroy Merlin;mat_fontaneria;MFS-025;Lavabo de encimera 45,5 x 32,5 cm - blanco brillante - sin rebosadero - Infinitio SAT (SATINF4532);83135531;ud;171;https://www.leroymerlin.es/productos/lavabo-de-encimera-45-5-x-32-5-cm-blanco-brillante-sin-rebosadero-infinitio-sat-satinf4532-83135531.html;Vendido por vendedor del marketplace, no por Leroy Merlin. Oferta temporal: 55.8 € (precio normal 171 €)
+Leroy Merlin;mat_fontaneria;MFS-026;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_fontaneria;MFS-027;Mampara de ducha corredera 1 hoja fija + 1 puerta corredera Vista con perfil aluminio cromo (138-142)x195 cm 6 mm;82959378;ud;399;https://www.leroymerlin.es/productos/mampara-de-ducha-corredera-1-hoja-fija-1-puerta-corredera-vista-con-perfil-aluminio-cromo-138-142-x195-cm-6-mm-82959378.html;Oferta temporal: 231 € (precio normal 399 €)
+Leroy Merlin;mat_fontaneria;MFS-028;Mampara de ducha fija Easy perfil aluminio cromo (117-118.5)x195 cm cristal templado 6mm transparente reversible. Barra fijación muro o techo recortable incluida Sensea;88796217;ud;155;https://www.leroymerlin.es/productos/mampara-de-ducha-fija-easy-perfil-aluminio-cromo-117-118-5-x195-cm-cristal-templado-6mm-transparente-reversible-barra-fijacion-muro-techo-recortable-incluida-sensea-88796217.html;
+Leroy Merlin;mat_fontaneria;MFS-029;Grifo de lavabo Nerea monomando bajo cromo brillo. Latón.;64292396;ud;11.79;https://www.leroymerlin.es/productos/grifo-de-lavabo-nerea-monomando-bajo-cromo-brillo-laton-64292396.html;
+Leroy Merlin;mat_fontaneria;MFS-030;Grifo de lavabo ROCA Mitos-N monomando cromo brillo. Apertura en frío. Antical. Latón.;98830101;ud;33.99;https://www.leroymerlin.es/productos/grifo-de-lavabo-roca-mitos-n-monomando-cromo-brillo-apertura-en-frio-antical-laton-98830101.html;
+Leroy Merlin;mat_fontaneria;MFS-031;Grifo de ducha monomando ROCA MITOS-N cromo brillo Antical Latón;98830103;ud;40.99;https://www.leroymerlin.es/productos/grifo-de-ducha-monomando-roca-mitos-n-cromo-brillo-antical-laton-98830103.html;
+Leroy Merlin;mat_fontaneria;MFS-032;Columna de ducha con grifo Monomando STROHM TEKA Ethika Cromo Brillo Rociador 25 cm redondo extraplano Barra extensible Sistema antical Con ahorro de agua;90779916;ud;135;https://www.leroymerlin.es/productos/columna-de-ducha-con-grifo-monomando-strohm-teka-ethika-cromo-brillo-rociador-25-cm-redondo-extraplano-barra-extensible-sistema-antical-con-ahorro-de-agua-90779916.html;
+Leroy Merlin;mat_fontaneria;MFS-033;Columna de ducha con grifo termostático SENSEA Essential Cromo Brillo Rociador redondo Barra extensible Sistema antical Con ahorro de agua Cuerpo frío antiquemaduras;87965630;ud;153;https://www.leroymerlin.es/productos/columna-de-ducha-con-grifo-termostatico-sensea-essential-cromo-brillo-rociador-redondo-barra-extensible-sistema-antical-con-ahorro-de-agua-cuerpo-frio-antiquemaduras-87965630.html;
+Leroy Merlin;mat_fontaneria;MFS-034;Fregadero cocina Rodi Brasilia bajo encimera 1 seno 44x38 cm acero inox mueble a partir de 45 cm;16117444;ud;92.99;https://www.leroymerlin.es/productos/fregadero-cocina-rodi-brasilia-bajo-encimera-1-seno-44x38-cm-acero-inox-mueble-a-partir-de-45-cm-16117444.html;
+Leroy Merlin;mat_fontaneria;MFS-035;Fregadero cocina Delinia Eleki enrasado 1 seno con sifón 48x56 cm acero inox mueble a partir de 60 cm;91329345;ud;69.99;https://www.leroymerlin.es/productos/fregadero-cocina-delinia-eleki-enrasado-1-seno-con-sifon-48x56-cm-acero-inox-mueble-a-partir-de-60-cm-91329345.html;
+Leroy Merlin;mat_fontaneria;MFS-036;Grifo de cocina monomando caño alto MARCO MAMMOLITI Sole en acero brillo;14760571;ud;17.95;https://www.leroymerlin.es/productos/grifo-de-cocina-monomando-cano-alto-marco-mammoliti-sole-en-acero-brillo-14760571.html;
+Leroy Merlin;mat_carpinteria;MCA-001;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_carpinteria;MCA-002;Puerta de interior abatible ciega hueca prepintado Prepintada provenzal blanco apertura derecha cerco de 7x2 anchura 72.5cm;14492380;ud;69.99;https://www.leroymerlin.es/productos/puerta-de-interior-abatible-ciega-hueca-prepintado-prepintada-provenzal-blanco-apertura-derecha-cerco-de-7x2-anchura-72-5cm-14492380.html;
+Leroy Merlin;mat_carpinteria;MCA-003;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_carpinteria;MCA-004;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_carpinteria;MCA-005;Pack puerta interior maciza aligerada TOKY0 72,5 cm DERECHA con burlete de goma perimetral isofónico con mejor aislamiento;93830110;ud;162.9;https://www.leroymerlin.es/productos/pack-puerta-interior-maciza-aligerada-toky0-72-5-cm-derecha-con-burlete-de-goma-perimetral-isofonico-con-mejor-aislamiento-93830110.html;Oferta temporal: 115 € (precio normal 162.9 €)
+Leroy Merlin;mat_carpinteria;MCA-006;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_carpinteria;MCA-007;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_carpinteria;MCA-008;Puerta de entrada blindada serie 3P liso sapelly / interior liso  sapelly apertura derecha 205x86cm;14059360;ud;331;https://www.leroymerlin.es/productos/puerta-de-entrada-blindada-serie-3p-liso-sapelly-interior-liso-sapelly-apertura-derecha-205x86cm-14059360.html;
+Leroy Merlin;mat_carpinteria;MCA-009;Puerta de entrada blindada serie 3P liso roble / interior liso  roble apertura izquierda 205x86cm;14059402;ud;361;https://www.leroymerlin.es/productos/puerta-de-entrada-blindada-serie-3p-liso-roble-interior-liso-roble-apertura-izquierda-205x86cm-14059402.html;
+Leroy Merlin;mat_carpinteria;MCA-010;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_carpinteria;MCA-011;Casoneto puerta corredera para tabique de placa yeso de 9.5cm 70x203x100 cm;93365484;ud;135;https://www.leroymerlin.es/productos/casoneto-puerta-corredera-para-tabique-de-placa-yeso-de-9-5cm-70x203x100-cm-93365484.html;
+Leroy Merlin;mat_carpinteria;MCA-012;Premarco universal de madera de 7x210x3cm para puerta de 62.5/72.5/82.5cm;14972090;ud;13.89;https://www.leroymerlin.es/productos/premarco-universal-de-madera-de-7x210x3cm-para-puerta-de-62-5-72-5-82-5cm-14972090.html;
+Leroy Merlin;mat_carpinteria;MCA-013;Juego de manilla con roseta redonda INSPIRE serie Sara de acero inoxidable;84302622;ud;9.49;https://www.leroymerlin.es/productos/juego-de-manilla-con-roseta-redonda-inspire-serie-sara-de-acero-inoxidable-84302622.html;
+Leroy Merlin;mat_carpinteria;MCA-014;Ventana sin persiana de PVC blanca de apertura oscilobatiente izquierda 60x70 cm;90378863;ud;109;https://www.leroymerlin.es/productos/ventana-sin-persiana-de-pvc-blanca-de-apertura-oscilobatiente-izquierda-60x70-cm-90378863.html;
+Leroy Merlin;mat_carpinteria;MCA-015;Ventana PVC 100x115cm oscilobatiente blanca doble acristalamiento transparente 4/16/4 bajo emisivo con persiana;82709309;ud;149;https://www.leroymerlin.es/productos/ventana-pvc-100x115cm-oscilobatiente-blanca-doble-acristalamiento-transparente-4-16-4-bajo-emisivo-con-persiana-82709309.html;
+Leroy Merlin;mat_carpinteria;MCA-016;Ventana PVC 120x135cm oscilobatiente blanca doble acristalamiento transparente 4/16/4 bajo emisivo con persiana;82709312;ud;295;https://www.leroymerlin.es/productos/ventana-pvc-120x135cm-oscilobatiente-blanca-doble-acristalamiento-transparente-4-16-4-bajo-emisivo-con-persiana-82709312.html;
+Leroy Merlin;mat_carpinteria;MCA-017;Balconera PVC 120x229cm oscilobatiente blanca Isoxa doble acristalamiento transparente 4/16/4 bajo emisivo con persiana;83616166;ud;535;https://www.leroymerlin.es/productos/balconera-pvc-120x229cm-oscilobatiente-blanca-isoxa-doble-acristalamiento-transparente-4-16-4-bajo-emisivo-con-persiana-83616166.html;
+Leroy Merlin;mat_carpinteria;MCA-018;Ventana aluminio 120x100cm corredera blanca Isoxa doble acristalamiento sin persiana;82456217;ud;169;https://www.leroymerlin.es/productos/ventana-aluminio-120x100cm-corredera-blanca-isoxa-doble-acristalamiento-sin-persiana-82456217.html;
+Leroy Merlin;mat_carpinteria;MCA-019;Ventana aluminio 150x135cm corredera blanca Isoxa doble acristalamiento transparente 4/8/4 con persiana;82456516;ud;385;https://www.leroymerlin.es/productos/ventana-aluminio-150x135cm-corredera-blanca-isoxa-doble-acristalamiento-transparente-4-8-4-con-persiana-82456516.html;
+Leroy Merlin;mat_carpinteria;MCA-020;Pack de 5 rodapiés  de mdf de 225x7cm blanco;82616337;caja;36.99;https://www.leroymerlin.es/productos/pack-de-5-rodapies-de-mdf-de-225x7cm-blanco-82616337.html;Unidad distinta a la de la lista (ml)
+Leroy Merlin;mat_carpinteria;MCA-021;Pack de 5 rodapiés  de mdf de 220x10cm blanco;82616339;caja;44.64;https://www.leroymerlin.es/productos/pack-de-5-rodapies-de-mdf-de-220x10cm-blanco-82616339.html;Unidad distinta a la de la lista (ml)
+Leroy Merlin;mat_carpinteria;MCA-022;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_carpinteria;MCA-023;Puerta Armario Corredera Spaceo Evo'M Riga Blanco 60x224 cm (ancho x alto) Pack 4 Paneles sin Perfiles;84600992;ud;28.79;https://www.leroymerlin.es/productos/puerta-armario-corredera-spaceo-evo-m-riga-blanco-60x224-cm-ancho-x-alto-pack-4-paneles-sin-perfiles-84600992.html;
+Leroy Merlin;mat_cocina_bano;MCB-001;Cocina en kit Eleki blanca  3 módulos bajos  L.180 x H.87 x P.58 cm;90581336;ud;211.97;https://www.leroymerlin.es/productos/cocina-en-kit-eleki-blanca-3-modulos-bajos-l-180-x-h-87-x-p-58-cm-90581336.html;Unidad distinta a la de la lista (ml)
+Leroy Merlin;mat_cocina_bano;MCB-002;(sin equivalente en Leroy Merlin);;ml;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_cocina_bano;MCB-003;Módulo bajo de cocina blanco en kit Delinia ID 60 x 76.8 x 58 cm;436245;ud;53.99;https://www.leroymerlin.es/productos/modulo-bajo-de-cocina-blanco-en-kit-delinia-id-60-x-76-8-x-58-cm-436245.html;
+Leroy Merlin;mat_cocina_bano;MCB-004;Módulo bajo de cocina blanco en kit Delinia ID 80 x 76.8 x 58 cm;436247;ud;54.99;https://www.leroymerlin.es/productos/modulo-bajo-de-cocina-blanco-en-kit-delinia-id-80-x-76-8-x-58-cm-436247.html;
+Leroy Merlin;mat_cocina_bano;MCB-005;Mueble alto de cocina Delinia ID Eleki blanco mate 1 puerta 60 x 72 cm;88486979;ud;54.99;https://www.leroymerlin.es/productos/mueble-alto-de-cocina-delinia-id-eleki-blanco-mate-1-puerta-60-x-72-cm-88486979.html;
+Leroy Merlin;mat_cocina_bano;MCB-006;Columna de cocina Basic blanco 1 puerta 60 cm;15664264;ud;80.99;https://www.leroymerlin.es/productos/columna-de-cocina-basic-blanco-1-puerta-60-cm-15664264.html;
+Leroy Merlin;mat_cocina_bano;MCB-007;Encimera de cocina laminada Eleki haya mate 246x62 cm espesor 28mm;88922947;ud;64.97;https://www.leroymerlin.es/productos/encimera-de-cocina-laminada-eleki-haya-mate-246x62-cm-espesor-28mm-88922947.html;Unidad distinta a la de la lista (ml). Oferta temporal: 54.99 € (precio normal 64.97 €)
+Leroy Merlin;mat_cocina_bano;MCB-008;Encimera de cocina laminada hidrófuga Milos Mármol blanco mate 304x63 cm espesor 38mm;98080214;ud;139;https://www.leroymerlin.es/productos/encimera-de-cocina-laminada-hidrofuga-milos-marmol-blanco-mate-304x63-cm-espesor-38mm-98080214.html;Unidad distinta a la de la lista (ml)
+Leroy Merlin;mat_cocina_bano;MCB-009;(sin equivalente en Leroy Merlin);;m2;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_cocina_bano;MCB-010;Campana decorativa TURBOAIR CERTOSA con 3 velocidades 60 cm 395 m/h inox clase D;82419261;ud;74.99;https://www.leroymerlin.es/productos/campana-decorativa-turboair-certosa-con-3-velocidades-60-cm-395-m-h-inox-clase-d-82419261.html;
+Leroy Merlin;mat_cocina_bano;MCB-011;Mueble de baño con lavabo New Essential Blanco  80x45 cm  con 2 cajones;97321091;ud;137.99;https://www.leroymerlin.es/productos/mueble-de-bano-con-lavabo-new-essential-blanco-80x45-cm-con-2-cajones-97321091.html;
+Leroy Merlin;mat_cocina_bano;MCB-012;Mueble de baño Lea roble 80x45 cm (lavabo no incluido);96601801;ud;100;https://www.leroymerlin.es/productos/mueble-de-bano-lea-roble-80x45-cm-lavabo-no-incluido-96601801.html;
+Leroy Merlin;mat_cocina_bano;MCB-013;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_cocina_bano;MCB-014;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_cocina_bano;MCB-015;Espejo de baño rectangular con luz LED Push 60x80 cm táctil color cromo;17907225;ud;44.99;https://www.leroymerlin.es/productos/espejo-de-bano-rectangular-con-luz-led-push-60x80-cm-tactil-color-cromo-17907225.html;
+Leroy Merlin;mat_cocina_bano;MCB-016;Espejo de baño cuadrado con luz LED Mia 80x80 cm;82118700;ud;133;https://www.leroymerlin.es/productos/espejo-de-bano-cuadrado-con-luz-led-mia-80x80-cm-82118700.html;
+Leroy Merlin;mat_cocina_bano;MCB-017;Toallero   40x6 cm;19387886;ud;20.99;https://www.leroymerlin.es/productos/toallero-40x6-cm-19387886.html;
+Leroy Merlin;mat_climatizacion;MCL-001;Aire acondicionado split 1X1 BEKO BEHPG 240 2200/2000 fg Wi-Fi;91527978;ud;369.01;https://www.leroymerlin.es/productos/aire-acondicionado-split-1x1-beko-behpg-240-2200-2000-fg-wi-fi-91527978.html;
+Leroy Merlin;mat_climatizacion;MCL-002;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_climatizacion;MCL-003;Aire acondicionado split 1X1 HAIER Perla A+++ Wi-Fi 3000 fg;90402654;ud;579;https://www.leroymerlin.es/productos/aire-acondicionado-split-1x1-haier-perla-a-wi-fi-3000-fg-90402654.html;
+Leroy Merlin;mat_climatizacion;MCL-004;Aire acondicionado Split 1x1 KAWAIR Inverter 4500 frigorias - WiFi INCLUIDO – A++ / A+++ con bomba de calor;77399339;ud;537;https://www.leroymerlin.es/productos/aire-acondicionado-split-1x1-kawair-inverter-4500-frigorias-wifi-incluido-a-a-con-bomba-de-calor-77399339.html;Vendido por vendedor del marketplace, no por Leroy Merlin. Oferta temporal: 475 € (precio normal 537 €)
+Leroy Merlin;mat_climatizacion;MCL-005;Aire acondicionado split 1X1 BEKO BEHPG 240 6000/4200 fg Wi-Fi;92476739;ud;894.99;https://www.leroymerlin.es/productos/aire-acondicionado-split-1x1-beko-behpg-240-6000-4200-fg-wi-fi-92476739.html;
+Leroy Merlin;mat_climatizacion;MCL-006;Aire acondicionado multisplit 2x1 HAIER TIDE PREMIUM 25+25/40 A+++ WIFI;99435439;ud;1005;https://www.leroymerlin.es/productos/aire-acondicionado-multisplit-2x1-haier-tide-premium-25-25-40-a-wifi-99435439.html;
+Leroy Merlin;mat_climatizacion;MCL-007;Aire Acondicionado 2X1 DAIKIN Perfera 40N Wifi 2150+3010 fg Instalación básica incluida;87557419;ud;3395.01;https://www.leroymerlin.es/productos/aire-acondicionado-2x1-daikin-perfera-40n-wifi-2150-3010-fg-instalacion-basica-incluida-87557419.html;
+Leroy Merlin;mat_climatizacion;MCL-008;"Tubería de cobre para A/A 1/4""-3/8"" 5m con aislamiento";16583364;ud;41.8;https://www.leroymerlin.es/productos/tuberia-de-cobre-para-a-a-1-4-3-8-5m-con-aislamiento-16583364.html;
+Leroy Merlin;mat_climatizacion;MCL-009;"Tubería de cobre para A/A 1/4""-3/8"" 20m con aislamiento";16558052;ud;119;https://www.leroymerlin.es/productos/tuberia-de-cobre-para-a-a-1-4-3-8-20m-con-aislamiento-16558052.html;Unidad distinta a la de la lista (ml)
+Leroy Merlin;mat_climatizacion;MCL-010;Kit instalación aire acondicionado bitubo 1/4x3/8 3 metros;94464284;ud;44.95;https://www.leroymerlin.es/productos/kit-instalacion-aire-acondicionado-bitubo-1-4x3-8-3-metros-94464284.html;
+Leroy Merlin;mat_climatizacion;MCL-011;Bomba de condensados externa;83732939;ud;45;https://www.leroymerlin.es/productos/bomba-de-condensados-externa-83732939.html;
+Leroy Merlin;mat_climatizacion;MCL-012;Soporte aire acondicionado escuadra para pared 450x450;94464292;ud;9.99;https://www.leroymerlin.es/productos/soporte-aire-acondicionado-escuadra-para-pared-450x450-94464292.html;
+Leroy Merlin;mat_climatizacion;MCL-013;Canaleta para tuberías de aire acondicionado ClimaPlus 2Mts. Blanco 90x65 mm;86232734;ud;21.79;https://www.leroymerlin.es/productos/canaleta-para-tuberias-de-aire-acondicionado-climaplus-2mts-blanco-90x65-mm-86232734.html;Vendido por vendedor del marketplace, no por Leroy Merlin
+Leroy Merlin;mat_climatizacion;MCL-014;Canaleta de descarga de condensados ClimaPlus 2Mts. Blanco 25x25 mm;86211472;ud;7.44;https://www.leroymerlin.es/productos/canaleta-de-descarga-de-condensados-climaplus-2mts-blanco-25x25-mm-86211472.html;Vendido por vendedor del marketplace, no por Leroy Merlin
+Leroy Merlin;mat_climatizacion;MCL-015;Curva pasa-muros para canaleta ClimaPlus Blanco 90x65 mm;86232845;ud;7.44;https://www.leroymerlin.es/productos/curva-pasa-muros-para-canaleta-climaplus-blanco-90x65-mm-86232845.html;Vendido por vendedor del marketplace, no por Leroy Merlin
+Leroy Merlin;mat_exteriores;MEX-001;Mortero monocapa MOLINS Revat Raspado blanco 25 kg;19002522;saco;8.29;https://www.leroymerlin.es/productos/mortero-monocapa-molins-revat-raspado-blanco-25-kg-19002522.html;
+Leroy Merlin;mat_exteriores;MEX-002;Mortero monocapa MOLINS Revat Raspado marfil 25 kg;19002543;saco;7.99;https://www.leroymerlin.es/productos/mortero-monocapa-molins-revat-raspado-marfil-25-kg-19002543.html;
+Leroy Merlin;mat_exteriores;MEX-003;Mortero de revoco AXTON capa fina 25 kg;81928508;saco;4.67;https://www.leroymerlin.es/productos/mortero-de-revoco-axton-capa-fina-25-kg-81928508.html;
+Leroy Merlin;mat_exteriores;MEX-004;SikaEmaco®-2400 - Mortero tixotrópico de reparación estructural R4 - 25 kg Saco Gris hormigón;73220489;saco;26.14;https://www.leroymerlin.es/productos/sikaemaco-2400-mortero-tixotropico-de-reparacion-estructural-r4-25-kg-saco-gris-hormigon-73220489.html;Vendido por vendedor del marketplace, no por Leroy Merlin
+Leroy Merlin;mat_exteriores;MEX-005;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_exteriores;MEX-006;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_exteriores;MEX-007;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_exteriores;MEX-008;Cubremuros Nilo blanco 22x4x50 cm;19723473;ud;8.29;https://www.leroymerlin.es/productos/cubremuros-nilo-blanco-22x4x50-cm-19723473.html;
+Leroy Merlin;mat_exteriores;MEX-009;(sin equivalente en Leroy Merlin);;ud;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_exteriores;MEX-010;(sin equivalente en Leroy Merlin);;saco;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_exteriores;MEX-011;(sin equivalente en Leroy Merlin);;saco;;;No se encontró en Leroy Merlin un producto del mismo tipo, formato y calidad
+Leroy Merlin;mat_exteriores;MEX-012;Resina hormigón impreso al agua MONESTIR 10l;87507086;ud;94.99;https://www.leroymerlin.es/productos/resina-hormigon-impreso-al-agua-monestir-10l-87507086.html;
+Leroy Merlin;mat_exteriores;MEX-013;Impermeabilizante exterior MONESTIR incoloro para fachadas y suelos de hormigón, piedra, terracota, multimaterial 1 Litro. Acrílico. Mejorar la adherencia, impermeabilizar, impedir la aparición de la humedad.;87507025;ud;26.05;https://www.leroymerlin.es/productos/impermeabilizante-exterior-monestir-incoloro-para-fachadas-y-suelos-de-hormigon-piedra-terracota-multimaterial-1-litro-acrilico-mejorar-adherencia-impermeabilizar-impedir-aparicion-de-humedad-87507025.html;
+Leroy Merlin;mat_exteriores;MEX-014;Malla metálica electrosoldada FENSANET12 de acero galvanizado 1x5m;12164404;ud;20;https://www.leroymerlin.es/productos/malla-metalica-electrosoldada-fensanet12-de-acero-galvanizado-1x5m-12164404.html;
+Leroy Merlin;mat_exteriores;MEX-015;Peldaño extrusionado Artens Calacatta efecto mármol blanco 120x33cm espesor 12mm ARTENS;81904567;ud;59.99;https://www.leroymerlin.es/productos/peldano-extrusionado-artens-calacatta-efecto-marmol-blanco-120x33cm-espesor-12mm-artens-81904567.html;
+Leroy Merlin;mat_electricidad;;Cable eléctrico al corte  RZ1-K 3G10mm² Mín30m - Máx100m;82015030;ud;7.29;https://www.leroymerlin.es/productos/cable-electrico-al-corte-rz1-k-3g10mm2-min30m-max100m-82015030.html;
+Leroy Merlin;mat_electricidad;;Cable eléctrico LEXMAN H07V-K azul 6 mm² 10 m;17917494;rollo;13.29;https://www.leroymerlin.es/productos/cable-electrico-lexman-h07v-k-azul-6-mm2-10-m-17917494.html;
+Leroy Merlin;mat_electricidad;;Tubo corrugado de PVC LEXMAN 16 mm 100 m;81908934;rollo;14.99;https://www.leroymerlin.es/productos/tubo-corrugado-de-pvc-lexman-16-mm-100-m-81908934.html;
+Leroy Merlin;mat_electricidad;;Tubo rígido de PVC gris de 20 mm 2,4 m;14003892;ud;1.56;https://www.leroymerlin.es/productos/tubo-rigido-de-pvc-gris-de-20-mm-2-4-m-14003892.html;
+Leroy Merlin;mat_electricidad;;Caja con membranas PLEXO modular  1 elemento superficie blanco;95314966;ud;4.19;https://www.leroymerlin.es/productos/caja-con-membranas-plexo-modular-1-elemento-superficie-blanco-95314966.html;
+Leroy Merlin;mat_electricidad;;Tecla Interruptor SIMON 82 aluminio;82166185;ud;4.69;https://www.leroymerlin.es/productos/tecla-interruptor-simon-82-aluminio-82166185.html;
+Leroy Merlin;mat_electricidad;;Marco simple SIMON 82 blanco;82166183;ud;2.59;https://www.leroymerlin.es/productos/marco-simple-simon-82-blanco-82166183.html;
+Leroy Merlin;mat_electricidad;;Toma de teléfono RJ45 LEXMAN Surface blanco;82603352;ud;7.55;https://www.leroymerlin.es/productos/toma-de-telefono-rj45-lexman-surface-blanco-82603352.html;
+Leroy Merlin;mat_electricidad;;Interruptor conmutador NIESSEN Zenit blanco;14787801;ud;4.09;https://www.leroymerlin.es/productos/interruptor-conmutador-niessen-zenit-blanco-14787801.html;
+Leroy Merlin;mat_electricidad;;Enchufe NIESSEN Zenit color blanco;14787843;ud;4.39;https://www.leroymerlin.es/productos/enchufe-niessen-zenit-color-blanco-14787843.html;
+Leroy Merlin;mat_electricidad;;Marco individual NIESSEN Zenit blanco;14906724;ud;2.09;https://www.leroymerlin.es/productos/marco-individual-niessen-zenit-blanco-14906724.html;
+Leroy Merlin;mat_electricidad;;Marco individual LEGRAND Valena Next blanco;82117986;ud;1.39;https://www.leroymerlin.es/productos/marco-individual-legrand-valena-next-blanco-82117986.html;
+Leroy Merlin;mat_electricidad;;Interruptor magnetotérmico bipolar Schneider 10A R9;85804225;ud;4.83;https://www.leroymerlin.es/productos/interruptor-magnetotermico-bipolar-schneider-10a-r9-85804225.html;
+Leroy Merlin;mat_electricidad;;Interruptor magnetotérmico SCHNEIDER  1P+N 2 módulos 20A mn;85818291;ud;9.31;https://www.leroymerlin.es/productos/interruptor-magnetotermico-schneider-1p-n-2-modulos-20a-mn-85818291.html;
+Leroy Merlin;mat_electricidad;;Interruptor magnetotérmico SCHNEIDER  1P+N 2 módulos 25A mn;85818292;ud;9.31;https://www.leroymerlin.es/productos/interruptor-magnetotermico-schneider-1p-n-2-modulos-25a-mn-85818292.html;
+Leroy Merlin;mat_electricidad;;Interruptor magnetotérmico bipolar 32A R9 SCHNEIDER;85804245;ud;10.73;https://www.leroymerlin.es/productos/interruptor-magnetotermico-bipolar-32a-r9-schneider-85804245.html;
+Leroy Merlin;mat_electricidad;;Diferencial bipolar SCHNEIDER 25A 30MA R9;87469315;ud;25.4;https://www.leroymerlin.es/productos/diferencial-bipolar-schneider-25a-30ma-r9-87469315.html;
+Leroy Merlin;mat_electricidad;;Diferencial bipolar 63A LEXMAN;88918339;ud;53;https://www.leroymerlin.es/productos/diferencial-bipolar-63a-lexman-88918339.html;
+Leroy Merlin;mat_electricidad;;Cuadro eléctrico FAMATEL Nuova de 14 módulos en superficie;19463402;ud;15.79;https://www.leroymerlin.es/productos/cuadro-electrico-famatel-nuova-de-14-modulos-en-superficie-19463402.html;
+Leroy Merlin;mat_electricidad;;Regleta LED INSPIRE blanco neutro 60 cm 1500 lm;87928064;ud;10.99;https://www.leroymerlin.es/productos/regleta-led-inspire-blanco-neutro-60-cm-1500-lm-87928064.html;
+Leroy Merlin;mat_electricidad;;Aplique de pared LED exterior Telin INSPIRE beige de aluminio luz neutra 4000K IP54 1580 lm;88249137;ud;19.99;https://www.leroymerlin.es/productos/aplique-de-pared-led-exterior-telin-inspire-beige-de-aluminio-luz-neutra-4000k-ip54-1580-lm-88249137.html;
+Leroy Merlin;mat_electricidad;;Detector de movimiento Pir 180º blanco Lexman;82211545;ud;7.29;https://www.leroymerlin.es/productos/detector-de-movimiento-pir-180-blanco-lexman-82211545.html;
+Leroy Merlin;mat_electricidad;;Borna de conexión WAGO 221 Mini 5x4mm² con palancas para hilo flexible y rígido - WAGO - 25 uds - 221-415;81899941;ud;1.47;https://www.leroymerlin.es/productos/borna-de-conexion-wago-221-mini-5x4mm2-con-palancas-para-hilo-flexible-y-rigido-wago-25-uds-221-415-81899941.html;Vendido por vendedor del marketplace, no por Leroy Merlin. Oferta temporal: 1.1 € (precio normal 1.47 €)
+Leroy Merlin;mat_electricidad;;Proyector LED exterior orientable SIMON IL426109 rectangular CCT 3000K-6500K 50W 5000 lm IP65 resistente a la lluvia y al polvo;79830176;ud;29.95;https://www.leroymerlin.es/productos/proyector-led-exterior-orientable-simon-il426109-rectangular-cct-3000k-6500k-50w-5000-lm-ip65-resistente-a-lluvia-y-al-polvo-79830176.html;
+Leroy Merlin;mat_fontaneria;;Tubo PEX-A 20 x 1. 9 rollo 25 m;84972061;ud;30.99;https://www.leroymerlin.es/productos/tubo-pex-a-20-x-1-9-rollo-25-m-84972061.html;
+Leroy Merlin;mat_fontaneria;;Tubo  PVC de evacuación Ø32 mm 3 metros;81929202;ud;2.69;https://www.leroymerlin.es/productos/tubo-pvc-de-evacuacion-32-mm-3-metros-81929202.html;
+Leroy Merlin;mat_fontaneria;;Tubo de evacuación de agua  en pvc de 3m x ø 90mm;87003280;ud;6.9;https://www.leroymerlin.es/productos/tubo-de-evacuacion-de-agua-en-pvc-de-3m-x-90mm-87003280.html;
+Leroy Merlin;mat_fontaneria;;Tubo de evacuación de agua  en pvc de 3m x ø 125mm;87003282;ud;10.75;https://www.leroymerlin.es/productos/tubo-de-evacuacion-de-agua-en-pvc-de-3m-x-125mm-87003282.html;
+Leroy Merlin;mat_fontaneria;;Manguito hembra / hembra 40 mm de Ø;12165671;ud;0.67;https://www.leroymerlin.es/productos/manguito-hembra-hembra-40-mm-de-12165671.html;
+Leroy Merlin;mat_fontaneria;;Sifón curvo para fregadero EQUATION 1 seno blanco 1''1/2 o 1''1/2 de ø 40mm con toma para lavadora;91779063;ud;3.8;https://www.leroymerlin.es/productos/sifon-curvo-para-fregadero-equation-1-seno-blanco-1-1-2-1-1-2-de-40mm-con-toma-para-lavadora-91779063.html;
+Leroy Merlin;mat_fontaneria;;Latiguillo EQUATION 30cm h3/8-h3/8 DN8 ACB;82661571;ud;1.99;https://www.leroymerlin.es/productos/latiguillo-equation-30cm-h3-8-h3-8-dn8-acb-82661571.html;
+Leroy Merlin;mat_fontaneria;;Latiguillo EQUATION 40cm h3/8-h3/8 DN8 ACB;89410213;ud;2.59;https://www.leroymerlin.es/productos/latiguillo-equation-40cm-h3-8-h3-8-dn8-acb-89410213.html;
+Leroy Merlin;mat_fontaneria;;Grifo de bañera monomando Nerea cromo brillo Latón;64292522;ud;19.4;https://www.leroymerlin.es/productos/grifo-de-banera-monomando-nerea-cromo-brillo-laton-64292522.html;
+Leroy Merlin;mat_fontaneria;;Grifo monomando de bidé Nerea cromo brillo. Antical. Latón;36175566;ud;12.99;https://www.leroymerlin.es/productos/grifo-monomando-de-bide-nerea-cromo-brillo-antical-laton-36175566.html;
+Leroy Merlin;mat_fontaneria;;Termo eléctrico CORBERO CTM 30l vertical;89847726;ud;95;https://www.leroymerlin.es/productos/termo-electrico-corbero-ctm-30l-vertical-89847726.html;
+Leroy Merlin;mat_fontaneria;;Lavabo pedestal completo blanco Nerea 56x85.5x46 cm;81989286;ud;61.99;https://www.leroymerlin.es/productos/lavabo-pedestal-completo-blanco-nerea-56x85-5x46-cm-81989286.html;
+Leroy Merlin;mat_fontaneria;;Cinta teflón PTFE contacto con agua 12 mm x 0.075 mm 12 m;85809672;ud;0.4;https://www.leroymerlin.es/productos/cinta-teflon-ptfe-contacto-con-agua-12-mm-x-0-075-mm-12-m-85809672.html;
+Leroy Merlin;mat_fontaneria;;Grifo de ducha termostático SENSEA Essential cromo brillo;91855873;ud;54.99;https://www.leroymerlin.es/productos/grifo-de-ducha-termostatico-sensea-essential-cromo-brillo-91855873.html;
+Leroy Merlin;mat_yesos_morteros;;Masilla en polvo tapagrietas BRUGUER 1kg;84540934;ud;12.49;https://www.leroymerlin.es/productos/masilla-en-polvo-tapagrietas-bruguer-1kg-84540934.html;
+Leroy Merlin;mat_yesos_morteros;;Mortero rápido AXTON 20 kg gris;86721836;ud;8.2;https://www.leroymerlin.es/productos/mortero-rapido-axton-20-kg-gris-86721836.html;
+Leroy Merlin;mat_yesos_morteros;;Mortero refractario AXTON 25 kg gris;81928351;ud;15.26;https://www.leroymerlin.es/productos/mortero-refractario-axton-25-kg-gris-81928351.html;
+Leroy Merlin;mat_yesos_morteros;;Cemento fraguado rápido AXTON 1.5 kg;83978080;ud;4.99;https://www.leroymerlin.es/productos/cemento-fraguado-rapido-axton-1-5-kg-83978080.html;
+Leroy Merlin;mat_yesos_morteros;;Fibras de polipropileno 12mm 500 gr;88694379;ud;2.49;https://www.leroymerlin.es/productos/fibras-de-polipropileno-12mm-500-gr-88694379.html;
+Leroy Merlin;mat_yesos_morteros;;Medio saco BIG-BAG 80x60 cm;18930555;ud;4.68;https://www.leroymerlin.es/productos/medio-saco-big-bag-80x60-cm-18930555.html;
+Leroy Merlin;mat_yesos_morteros;;Mortero cola blanco CEMENTOS CAPA C2TE;94556535;ud;7.29;https://www.leroymerlin.es/productos/mortero-cola-blanco-cementos-capa-c2te-94556535.html;
+Leroy Merlin;mat_yesos_morteros;;Mortero cola AXTON flexible 25 kg gris;85539167;ud;12.29;https://www.leroymerlin.es/productos/mortero-cola-axton-flexible-25-kg-gris-85539167.html;
+Leroy Merlin;mat_ladrillos;;Ladrillo de hormigón Jaén blanco 24x5x24 cm;19723452;ud;1.59;https://www.leroymerlin.es/productos/ladrillo-de-hormigon-jaen-blanco-24x5x24-cm-19723452.html;
+Leroy Merlin;mat_revestimientos;;Pack de 4 Rodapiés cerámico Monocolor 45x8 cm blanco mate ARTENS;81876546;ud;1.99;https://www.leroymerlin.es/productos/pack-de-4-rodapies-ceramico-monocolor-45x8-cm-blanco-mate-artens-81876546.html;
+Leroy Merlin;mat_revestimientos;;Pack de 4 Rodapiés porcelánico Cemento 60x10 cm cemento blanco ARTENS;85827078;ud;4.49;https://www.leroymerlin.es/productos/pack-de-4-rodapies-porcelanico-cemento-60x10-cm-cemento-blanco-artens-85827078.html;
+Leroy Merlin;mat_revestimientos;;Perfil de esquina y borde externo cuadrado acero inox Brillo int/ext 2.5Mx1.23cm;82009118;ud;11.99;https://www.leroymerlin.es/productos/perfil-de-esquina-y-borde-externo-cuadrado-acero-inox-brillo-int-ext-2-5mx1-23cm-82009118.html;
+Leroy Merlin;mat_revestimientos;;Perfil de escalera de aluminio Gris int/ext 2.5m x3.5cm;82314963;ud;10.99;https://www.leroymerlin.es/productos/perfil-de-escalera-de-aluminio-gris-int-ext-2-5m-x3-5cm-82314963.html;
+Leroy Merlin;mat_revestimientos;;Set de 250 crucetas DEXTER de 2mm;85610398;caja;2.79;https://www.leroymerlin.es/productos/set-de-250-crucetas-dexter-de-2mm-85610398.html;
+Leroy Merlin;mat_revestimientos;;Set de 250 crucetas DEXTER de 3mm;85610402;caja;3.39;https://www.leroymerlin.es/productos/set-de-250-crucetas-dexter-de-3mm-85610402.html;
+Leroy Merlin;mat_revestimientos;;Azulejo cerámico New frosty blanco mate 20x20 cm;87813691;caja;6.99;https://www.leroymerlin.es/productos/azulejo-ceramico-new-frosty-blanco-mate-20x20-cm-87813691.html;
+Leroy Merlin;mat_revestimientos;;Azulejo cerámico Capitol efecto piedra grey 30x60 cm;90463955;caja;27.52;https://www.leroymerlin.es/productos/azulejo-ceramico-capitol-efecto-piedra-grey-30x60-cm-90463955.html;
+Leroy Merlin;mat_revestimientos;;Azulejo cerámico Moha efecto zellige verde brick 31.6x60 cm ARTENS;84731825;caja;21.26;https://www.leroymerlin.es/productos/azulejo-ceramico-moha-efecto-zellige-verde-brick-31-6x60-cm-artens-84731825.html;
+Leroy Merlin;mat_suelos;;Suelo porcelánico Autore efecto cemento perla 75x75 cm;83020662;caja;20.89;https://www.leroymerlin.es/productos/suelo-porcelanico-autore-efecto-cemento-perla-75x75-cm-83020662.html;
+Leroy Merlin;mat_suelos;;Suelo/Azulejo porcelánico Piatra efecto cemento gris 80x80 cm;83076430;caja;34.55;https://www.leroymerlin.es/productos/suelo-azulejo-porcelanico-piatra-efecto-cemento-gris-80x80-cm-83076430.html;
+Leroy Merlin;mat_suelos;;Suelo/Azulejo porcelánico Kalksten efecto piedra marrón 90x90 cm C2;82327567;caja;64.78;https://www.leroymerlin.es/productos/suelo-azulejo-porcelanico-kalksten-efecto-piedra-marron-90x90-cm-c2-82327567.html;
+Leroy Merlin;mat_suelos;;Suelo porcelánico Levante efecto piedra blanco 60x60 cm ARTENS;98829745;caja;20.87;https://www.leroymerlin.es/productos/suelo-porcelanico-levante-efecto-piedra-blanco-60x60-cm-artens-98829745.html;
+Leroy Merlin;mat_suelos;;Suelo porcelánico New pizarra efecto metal negro 30.3x61.3 cm ARTENS;85063925;caja;31.19;https://www.leroymerlin.es/productos/suelo-porcelanico-new-pizarra-efecto-metal-negro-30-3x61-3-cm-artens-85063925.html;
+Leroy Merlin;mat_suelos;;Suelo Porcelánico SOLEI PULIDO 60x120cm. (7mm.);74329255;caja;42.12;https://www.leroymerlin.es/productos/suelo-porcelanico-solei-pulido-60x120cm-7mm-74329255.html;Vendido por vendedor del marketplace, no por Leroy Merlin
+Leroy Merlin;mat_suelos;;Gres Porcelánico Interior/Exterior Azulejo Efecto Terracota. Decor Blanco Terracota 20x20;93901423;caja;25.94;https://www.leroymerlin.es/productos/gres-porcelanico-interior-exterior-azulejo-efecto-terracota-decor-blanco-terracota-20x20-93901423.html;Vendido por vendedor del marketplace, no por Leroy Merlin
+Leroy Merlin;mat_suelos;;Suelo laminado intenso NEW DUNMOR 8mm espesor AC5 ARTENS NAT365;92449861;caja;19.7;https://www.leroymerlin.es/productos/suelo-laminado-intenso-new-dunmor-8mm-espesor-ac5-artens-nat365-92449861.html;
+Leroy Merlin;mat_suelos;;Suelo vinílico rollo Lux efecto madera natural blond 3m ancho Pedido mín 6m2 - Producto A MEDIDA - NO Admite Devolución.;83309794;m2;12.99;https://www.leroymerlin.es/productos/suelo-vinilico-rollo-lux-efecto-madera-natural-blond-3m-ancho-pedido-min-6m2-producto-a-medida-no-admite-devolucion-83309794.html;
+Leroy Merlin;mat_suelos;;Pack de 4 tarima de exterior marrón  14.5 x 270 cm y 28 mm clase de uso 4;94534544;caja;46.99;https://www.leroymerlin.es/productos/pack-de-4-tarima-de-exterior-marron-14-5-x-270-cm-y-28-mm-clase-de-uso-4-94534544.html;
+Leroy Merlin;mat_pintura;;Pintura exterior color blanco para fachada, hormigón mate 15L base agua antigoteo;81887951;ud;14.95;https://www.leroymerlin.es/productos/pintura-exterior-color-blanco-para-fachada-hormigon-mate-15l-base-agua-antigoteo-81887951.html;
+Leroy Merlin;mat_pintura;;Barniz de madera interior PROMADE en color nogal, acabado mate para artesonado, mobiliario, puertas, encimeras, vigas líquido de 375 ml. Base agua.;95925517;ud;5.19;https://www.leroymerlin.es/productos/barniz-de-madera-interior-promade-en-color-nogal-acabado-mate-para-artesonado-mobiliario-puertas-encimeras-vigas-liquido-de-375-ml-base-agua-95925517.html;
+Leroy Merlin;mat_pintura;;Pintura suelo color gris para hormigón, piedra, ladrillo MONTÓ mate 12 L base agua;81975329;ud;71.49;https://www.leroymerlin.es/productos/pintura-suelo-color-gris-para-hormigon-piedra-ladrillo-monto-mate-12-l-base-agua-81975329.html;
+Leroy Merlin;mat_pintura;;Plaste en pasta para rellenar AXTON 1,5 kg;19379773;ud;7.29;https://www.leroymerlin.es/productos/plaste-en-pasta-para-rellenar-axton-1-5-kg-19379773.html;
+Leroy Merlin;mat_pintura;;Cinta de pintor standard TESA 50 m x 50mm;16116205;ud;5.69;https://www.leroymerlin.es/productos/cinta-de-pintor-standard-tesa-50-m-x-50mm-16116205.html;
+Leroy Merlin;mat_pintura;;Alargo 115-200 cm + rodillo de 22 cm + un recambio de rodillo DEXTER;92079469;ud;16.8;https://www.leroymerlin.es/productos/alargo-115-200-cm-rodillo-de-22-cm-un-recambio-de-rodillo-dexter-92079469.html;
+Leroy Merlin;mat_pintura;;Kit de 3 brochas planas 20 mm 40 mm 60 mm;82796437;ud;2.79;https://www.leroymerlin.es/productos/kit-de-3-brochas-planas-20-mm-40-mm-60-mm-82796437.html;
+Leroy Merlin;mat_pintura;;Plástico de protección cubretodo 4 x 5 m 5 micras;82261722;ud;1.09;https://www.leroymerlin.es/productos/plastico-de-proteccion-cubretodo-4-x-5-m-5-micras-82261722.html;
+Leroy Merlin;mat_pintura;;Papel para protección de suelos hidrófugo NERPEL 0.90 x 45 m;93154486;ud;7.99;https://www.leroymerlin.es/productos/papel-para-proteccion-de-suelos-hidrofugo-nerpel-0-90-x-45-m-93154486.html;
+Leroy Merlin;mat_pintura;;Pack 3 esponjas para lijar DEXTER;81885800;ud;1.59;https://www.leroymerlin.es/productos/pack-3-esponjas-para-lijar-dexter-81885800.html;
+Leroy Merlin;mat_pintura;;Pack de 4 espátulas de plástico 50,75,100,120 mm;84467769;ud;1.39;https://www.leroymerlin.es/productos/pack-de-4-espatulas-de-plastico-50-75-100-120-mm-84467769.html;
+Leroy Merlin;mat_pintura;;Bandeja para pintura DEXTER para rodillo de 230 mm. Con escurridor.;82841000;ud;2.39;https://www.leroymerlin.es/productos/bandeja-para-pintura-dexter-para-rodillo-de-230-mm-con-escurridor-82841000.html;
+Leroy Merlin;mat_pintura;;Disolvente universal para diluir EUROTEX 1 litro multisuperficie;83547838;ud;4.79;https://www.leroymerlin.es/productos/disolvente-universal-para-diluir-eurotex-1-litro-multisuperficie-83547838.html;
+Leroy Merlin;mat_pintura;;Aguarrás Simil para diluir EUROTEX 1 litro multisuperficie;83547891;ud;2.39;https://www.leroymerlin.es/productos/aguarras-simil-para-diluir-eurotex-1-litro-multisuperficie-83547891.html;
+Leroy Merlin;mat_placa_techos;;Palet de 40 Placas Cartón-Yeso ERGO 2000x1200x13 mm;97320965;caja;294;https://www.leroymerlin.es/productos/palet-de-40-placas-carton-yeso-ergo-2000x1200x13-mm-97320965.html;
+Leroy Merlin;mat_placa_techos;;Lote Placa Cartón-yeso laminado BA 250X120 cm 10mm;97435755;m2;3.96;https://www.leroymerlin.es/productos/lote-placa-carton-yeso-laminado-ba-250x120-cm-10mm-97435755.html;
+Leroy Merlin;mat_placa_techos;;Montante para tabique de acero de 4 m y 46 mm;91775832;ud;3.79;https://www.leroymerlin.es/productos/montante-para-tabique-de-acero-de-4-m-y-46-mm-91775832.html;
+Obramat;mat_suelos;MSU-001;SUELO PORCELÁNICO 60X60CM EVIAN GRIS;25073697;m2;9.95;https://www.obramat.es/productos/suelo-porcelanico-60x60cm-evian-gris-25073697.html;
+Obramat;mat_suelos;MSU-002;BALDOSA EXTERIOR PORCELÁNICO 60X60CM MARRACHI IVORY;25106959;m2;13.95;https://www.obramat.es/productos/baldosa-exterior-porcelanico-60x60cm-marrachi-ivory-25106959.html;
+Obramat;mat_suelos;MSU-003;SUELO PORCELÁNICO 60X60CM MILANO BEIGE;25073611;m2;13.95;https://www.obramat.es/productos/suelo-porcelanico-60x60cm-milano-beige-25073611.html;
+Obramat;mat_suelos;MSU-004;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_suelos;MSU-005;SUELO PORCELÁNICO 60X120CM LIBERTY BLANCO;25073470;m2;14.95;https://www.obramat.es/productos/suelo-porcelanico-60x120cm-liberty-blanco-25073470.html;
+Obramat;mat_suelos;MSU-006;SUELO PORCELÁNICO 60X120CM CORBERA SAND;25133178;m2;16.95;https://www.obramat.es/productos/suelo-porcelanico-60x120cm-corbera-sand-25133178.html;
+Obramat;mat_suelos;MSU-007;SUELO PORCELÁNICO 59X119CM LUNA NATURAL PULIDO;25073507;m2;18.95;https://www.obramat.es/productos/suelo-porcelanico-59x119cm-luna-natural-pulido-25073507.html;
+Obramat;mat_suelos;MSU-008;SUELO PORCELÁNICO 120X120CM AUSTRAL GREY;25082302;m2;18.95;https://www.obramat.es/productos/suelo-porcelanico-120x120cm-austral-grey-25082302.html;
+Obramat;mat_suelos;MSU-009;SUELO PORCELÁNICO 20X120CM LEÑO BEIGE;25073444;m2;14.95;https://www.obramat.es/productos/suelo-porcelanico-20x120cm-leno-beige-25073444.html;
+Obramat;mat_suelos;MSU-010;SUELO PORCELÁNICO 20X80CM VALLESANA;25073726;m2;9.95;https://www.obramat.es/productos/suelo-porcelanico-20x80cm-vallesana-25073726.html;
+Obramat;mat_suelos;MSU-011;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_suelos;MSU-012;SUELO PORCELANICO 45X45CM VOLVIC BEIGE MATE;25073628;m2;8.95;https://www.obramat.es/productos/suelo-porcelanico-45x45cm-volvic-beige-mate-25073628.html;
+Obramat;mat_suelos;MSU-013;BALDOSA EXTERIOR  PORCELÁNICO 45X45CM FOCUS GRIS;25073627;m2;10.95;https://www.obramat.es/productos/baldosa-exterior-porcelanico-45x45cm-focus-gris-25073627.html;
+Obramat;mat_suelos;MSU-014;BALDOSA EXTERIOR PORCELÁNICO 60X60CM MARRACHI IVORY;25106959;m2;13.95;https://www.obramat.es/productos/baldosa-exterior-porcelanico-60x60cm-marrachi-ivory-25106959.html;
+Obramat;mat_suelos;MSU-015;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_suelos;MSU-016;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_suelos;MSU-017;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_suelos;MSU-018;SUELO LAMINADO AC5 8MM MODELO ROBLE KHAKI;10807741;m2;9.9;https://www.obramat.es/productos/suelo-laminado-ac5-8mm-modelo-roble-khaki-10807741.html;
+Obramat;mat_suelos;MSU-019;SUELO LAMINADO AC5 AQUA 100 HORAS 8MM MODELO RIAZA;25117332;m2;13.9;https://www.obramat.es/productos/suelo-laminado-ac5-aqua-100-horas-8mm-modelo-riaza-25117332.html;
+Obramat;mat_suelos;MSU-020;SUELO LAMINADO AC5 AQUA 100 HORAS 8MM MODELO AINORA;25117356;m2;13.9;https://www.obramat.es/productos/suelo-laminado-ac5-aqua-100-horas-8mm-modelo-ainora-25117356.html;
+Obramat;mat_suelos;MSU-021;SUELO VINÍLICO 5MM MODELO OAK;25034319;m2;15.9;https://www.obramat.es/productos/suelo-vinilico-5mm-modelo-oak-25034319.html;
+Obramat;mat_suelos;MSU-022;SUELO VINÍLICO 6MM MODELO ESCULT;25086955;m2;21.9;https://www.obramat.es/productos/suelo-vinilico-6mm-modelo-escult-25086955.html;
+Obramat;mat_suelos;MSU-023;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_suelos;MSU-024;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_suelos;MSU-025;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_suelos;MSU-026;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_suelos;MSU-027;TARIMA DE PINO MACIZO CON NUDO ANCHO 14,5 CM GROSOR 2,2 CM;10356941;m2;16.43;https://www.obramat.es/productos/tarima-de-pino-macizo-con-nudo-ancho-14-5-cm-grosor-2-2-cm-10356941.html;
+Obramat;mat_suelos;MSU-028;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_suelos;MSU-029;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_suelos;MSU-030;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_suelos;MSU-031;MICROCEMENTO DECORATIVO MYREADY GO03 17 KG HUESO;25078059;ud;74;https://www.obramat.es/productos/microcemento-decorativo-myready-go03-17-kg-hueso-25078059.html;
+Obramat;mat_suelos;MSU-032;MICROCEMENTO AL USO METEORE 14 12L;25051863;ud;137;https://www.obramat.es/productos/microcemento-al-uso-meteore-14-12l-25051863.html;Unidad distinta a la de la lista (m2)
+Obramat;mat_revestimientos;MRV-001;AZULEJO PASTA ROJA 30X60CM WHITE MATE;25073671;m2;7.9;https://www.obramat.es/productos/azulejo-pasta-roja-30x60cm-white-mate-25073671.html;
+Obramat;mat_revestimientos;MRV-002;AZULEJO PASTA BLANCA 30X60CM BLANCO BRILLO;25073565;m2;9.95;https://www.obramat.es/productos/azulejo-pasta-blanca-30x60cm-blanco-brillo-25073565.html;
+Obramat;mat_revestimientos;MRV-003;AZULEJO PASTA ROJA 30X60CM ANKA GRIS;25073593;m2;9.95;https://www.obramat.es/productos/azulejo-pasta-roja-30x60cm-anka-gris-25073593.html;
+Obramat;mat_revestimientos;MRV-004;AZULEJO PASTA ROJA 25X50CM ALANGE BEIGE;25073623;m2;8.95;https://www.obramat.es/productos/azulejo-pasta-roja-25x50cm-alange-beige-25073623.html;
+Obramat;mat_revestimientos;MRV-005;AZULEJO PASTA BLANCA 30X90CM BLANCO BRILLO;25073656;m2;11.5;https://www.obramat.es/productos/azulejo-pasta-blanca-30x90cm-blanco-brillo-25073656.html;
+Obramat;mat_revestimientos;MRV-006;AZULEJO PASTA BLANCA 30X90CM. PROVENCE BRILLO;25073588;m2;11.95;https://www.obramat.es/productos/azulejo-pasta-blanca-30x90cm-provence-brillo-25073588.html;
+Obramat;mat_revestimientos;MRV-007;AZULEJO PASTA BLANCA 30X90CM FURIO CENIZA;25106539;m2;14.95;https://www.obramat.es/productos/azulejo-pasta-blanca-30x90cm-furio-ceniza-25106539.html;
+Obramat;mat_revestimientos;MRV-008;AZULEJO PASTA BLANCA 30X90CM MATER DECOR CREMA;25073722;m2;15.95;https://www.obramat.es/productos/azulejo-pasta-blanca-30x90cm-mater-decor-crema-25073722.html;
+Obramat;mat_revestimientos;MRV-009;SUELO PORCELÁNICO 60X120CM HORIZON MARFIL;25106543;m2;16.95;https://www.obramat.es/productos/suelo-porcelanico-60x120cm-horizon-marfil-25106543.html;
+Obramat;mat_revestimientos;MRV-010;REVESTIMIENTO PORCELÁNICO 30X60CM TORAL BEIGE;25106954;m2;8.95;https://www.obramat.es/productos/revestimiento-porcelanico-30x60cm-toral-beige-25106954.html;
+Obramat;mat_revestimientos;MRV-011;AZULEJO PASTA ROJA 10X20CM METROTILE BLANCO;25074938;m2;8.95;https://www.obramat.es/productos/azulejo-pasta-roja-10x20cm-metrotile-blanco-25074938.html;
+Obramat;mat_revestimientos;MRV-012;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_revestimientos;MRV-013;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_revestimientos;MRV-014;AZULEJO PASTA ROJA 20X20CM BLANCO BRILLO;25073587;m2;5.95;https://www.obramat.es/productos/azulejo-pasta-roja-20x20cm-blanco-brillo-25073587.html;
+Obramat;mat_revestimientos;MRV-015;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_revestimientos;MRV-016;REVESTIMIENTO PORCELANICO 16.3X51.7CM DUBLIN NATUR;25073643;m2;14.95;https://www.obramat.es/productos/revestimiento-porcelanico-16-3x51-7cm-dublin-natur-25073643.html;
+Obramat;mat_revestimientos;MRV-017;SUELO PORCELÁNICO 23X120CM LIMEWOOD ROBLE;25073460;m2;10.95;https://www.obramat.es/productos/suelo-porcelanico-23x120cm-limewood-roble-25073460.html;
+Obramat;mat_revestimientos;MRV-018;GRESITE PISCINAS 31X46.7CM MEDITERRÁNEO;25073570;m2;11.95;https://www.obramat.es/productos/gresite-piscinas-31x46-7cm-mediterraneo-25073570.html;
+Obramat;mat_revestimientos;MRV-019;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_revestimientos;MRV-020;REVESTIMIENTO PIEDRA NATURAL 15X40CM. MOGAN;25082321;m2;39.96;https://www.obramat.es/productos/revestimiento-piedra-natural-15x40cm-mogan-25082321.html;
+Obramat;mat_revestimientos;MRV-021;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_revestimientos;MRV-022;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_revestimientos;MRV-023;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_revestimientos;MRV-024;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_revestimientos;MRV-025;PERFIL ESQUINA REDONDEADA PVC 10.5X2600 MM BLANCO;10272500;ud;1.95;https://www.obramat.es/productos/perfil-esquina-redondeada-pvc-10-5x2600-mm-blanco-10272500.html;
+Obramat;mat_revestimientos;MRV-026;PERFIL ESQUINA RECTA ALUMINIO 10.5X2600 MM PLATA BRILLO;10272430;ud;8.95;https://www.obramat.es/productos/perfil-esquina-recta-aluminio-10-5x2600-mm-plata-brillo-10272430.html;
+Obramat;mat_placa_techos;MPY-001;PLACA DE YESO LAMINADO BA 2500X1200X13 MM;10043054;m2;3.06;https://www.obramat.es/productos/placa-de-yeso-laminado-ba-2500x1200x13-mm-10043054.html;
+Obramat;mat_placa_techos;MPY-002;PLACA DE YESO LAMINADO BA 2500X1200X13 MM;10043054;ud;9.19;https://www.obramat.es/productos/placa-de-yeso-laminado-ba-2500x1200x13-mm-10043054.html;
+Obramat;mat_placa_techos;MPY-003;PLACA DE YESO LAMINADO BA 2500X1200X15MM;10852450;m2;3.69;https://www.obramat.es/productos/placa-de-yeso-laminado-ba-2500x1200x15mm-10852450.html;
+Obramat;mat_placa_techos;MPY-004;PLACA DE YESO LAMINADO FK PPM 2600X1200X13 MM;10632762;m2;4.46;https://www.obramat.es/productos/placa-de-yeso-laminado-fk-ppm-2600x1200x13-mm-10632762.html;
+Obramat;mat_placa_techos;MPY-005;PLACA DE YESO LAMINADO PPM 2500X1200X15MM;10452323;m2;6.86;https://www.obramat.es/productos/placa-de-yeso-laminado-ppm-2500x1200x15mm-10452323.html;
+Obramat;mat_placa_techos;MPY-006;PLACA DE YESO LAMINADO PLACO PPF 2500X1200X13 MM;10402714;m2;5.67;https://www.obramat.es/productos/placa-de-yeso-laminado-placo-ppf-2500x1200x13-mm-10402714.html;
+Obramat;mat_placa_techos;MPY-007;PLACA DE YESO LAMINADO PPH 2500X1200X13 MM;10232670;m2;6.27;https://www.obramat.es/productos/placa-de-yeso-laminado-pph-2500x1200x13-mm-10232670.html;
+Obramat;mat_placa_techos;MPY-008;PLACA DE YESO LAMINADO GLASROC X 2000X1200X13 MM;25024034;m2;21.67;https://www.obramat.es/productos/placa-de-yeso-laminado-glasroc-x-2000x1200x13-mm-25024034.html;
+Obramat;mat_placa_techos;MPY-009;MONTANTE EGA 48 MM 3 M;25151941;ud;2.83;https://www.obramat.es/productos/montante-ega-48-mm-3-m-25151941.html;
+Obramat;mat_placa_techos;MPY-010;MONTANTE EGA 70 MM 3 M;10188171;ud;3.52;https://www.obramat.es/productos/montante-ega-70-mm-3-m-10188171.html;
+Obramat;mat_placa_techos;MPY-011;CANAL EGA 48 MM 3 M;25151929;ud;2.33;https://www.obramat.es/productos/canal-ega-48-mm-3-m-25151929.html;
+Obramat;mat_placa_techos;MPY-012;CANAL EGA 73 MM 3 M;10977414;ud;2.93;https://www.obramat.es/productos/canal-ega-73-mm-3-m-10977414.html;
+Obramat;mat_placa_techos;MPY-013;PERFIL TECHO TC47 EGA 47 MM 3 M;10188101;ud;2.42;https://www.obramat.es/productos/perfil-techo-tc47-ega-47-mm-3-m-10188101.html;
+Obramat;mat_placa_techos;MPY-014;MAESTRA EGA 80/15 MM 3 M;10977400;ud;2.5;https://www.obramat.es/productos/maestra-ega-80-15-mm-3-m-10977400.html;
+Obramat;mat_placa_techos;MPY-015;PERFIL EN L EGA 30X30 MM 3 M;10977393;ud;1.79;https://www.obramat.es/productos/perfil-en-l-ega-30x30-mm-3-m-10977393.html;
+Obramat;mat_placa_techos;MPY-016;ANCLAJE DIRECTO UNIVERSAL 51X120 MM;10390884;ud;0.28;https://www.obramat.es/productos/anclaje-directo-universal-51x120-mm-10390884.html;
+Obramat;mat_placa_techos;MPY-017;HORQUILLA CUELGUE TECHO CONTINUO TC47;10390863;ud;0.15;https://www.obramat.es/productos/horquilla-cuelgue-techo-continuo-tc47-10390863.html;
+Obramat;mat_placa_techos;MPY-018;EMPALME PERFIL TECHO CONTINUO TC47;10390870;ud;0.18;https://www.obramat.es/productos/empalme-perfil-techo-continuo-tc47-10390870.html;
+Obramat;mat_placa_techos;MPY-019;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_placa_techos;MPY-020;TORNILLOS PLACA YESO FOSFATADOS 3,5 X 45MM. 1000UDS;10285674;caja;10.95;https://www.obramat.es/productos/tornillos-placa-yeso-fosfatados-3-5-x-45mm-1000uds-10285674.html;
+Obramat;mat_placa_techos;MPY-021;PASTA DE JUNTAS SEMIN 2H CE78 25 KG;10587570;saco;19.36;https://www.obramat.es/productos/pasta-de-juntas-semin-2h-ce78-25-kg-10587570.html;
+Obramat;mat_placa_techos;MPY-022;PASTA DE JUNTAS PREPARADA PLACOMIX PRO 20 KG;10047282;ud;20.79;https://www.obramat.es/productos/pasta-de-juntas-preparada-placomix-pro-20-kg-10047282.html;
+Obramat;mat_placa_techos;MPY-023;PASTA DE AGARRE SEMIN ISOCOL 25 KG;10701782;saco;9.95;https://www.obramat.es/productos/pasta-de-agarre-semin-isocol-25-kg-10701782.html;
+Obramat;mat_placa_techos;MPY-024;CINTA JUNTAS 50 MM 150 M;10977512;rollo;4;https://www.obramat.es/productos/cinta-juntas-50-mm-150-m-10977512.html;
+Obramat;mat_placa_techos;MPY-025;CINTA DE GUARDAVIVOS 51 MM 30 M;10977526;rollo;8.8;https://www.obramat.es/productos/cinta-de-guardavivos-51-mm-30-m-10977526.html;
+Obramat;mat_placa_techos;MPY-026;CINTA MALLA AUTOADHESIVA 153 M;10788435;rollo;7.6;https://www.obramat.es/productos/cinta-malla-autoadhesiva-153-m-10788435.html;
+Obramat;mat_placa_techos;MPY-027;BANDA ESTANCA AUTOADHESIVA 45 MM 30 M;10188213;rollo;5.75;https://www.obramat.es/productos/banda-estanca-autoadhesiva-45-mm-30-m-10188213.html;
+Obramat;mat_placa_techos;MPY-028;ESCAYOLA RUÍZ DORANTES E-35 25 KG;10505404;saco;4;https://www.obramat.es/productos/escayola-ruiz-dorantes-e-35-25-kg-10505404.html;
+Obramat;mat_placa_techos;MPY-029;PLACA DE TECHO ESCAYOLA LISA RECTO-A 60X60X2 CM 6 UDS;10749795;m2;2.66;https://www.obramat.es/productos/placa-de-techo-escayola-lisa-recto-a-60x60x2-cm-6-uds-10749795.html;
+Obramat;mat_placa_techos;MPY-030;PLACA DE TECHO ESCAYOLA FISURADO ESCALONADA E24 60X60X2 CM 6 UDS;10749844;m2;2.69;https://www.obramat.es/productos/placa-de-techo-escayola-fisurado-escalonada-e24-60x60x2-cm-6-uds-10749844.html;
+Obramat;mat_placa_techos;MPY-031;PLACA TECHO YESO LAMINADO VINILO RECTO-A 60X60X0.9 CM 8 UDS;10849671;m2;6.35;https://www.obramat.es/productos/placa-techo-yeso-laminado-vinilo-recto-a-60x60x0-9-cm-8-uds-10849671.html;
+Obramat;mat_placa_techos;MPY-032;PLACA TECHO ACÚSTICO MINERVAL BORDE RECTO A 60X60X1.2 CM;10987760;m2;7.5;https://www.obramat.es/productos/placa-techo-acustico-minerval-borde-recto-a-60x60x1-2-cm-10987760.html;
+Obramat;mat_placa_techos;MPY-033;PERFIL PRIMARIO T-24 24X38 MM 3.70 M BLANCO;10233146;ud;4.02;https://www.obramat.es/productos/perfil-primario-t-24-24x38-mm-3-70-m-blanco-10233146.html;
+Obramat;mat_placa_techos;MPY-034;PERFIL SECUNDARIO T-24 24X38 MM 1.20 M BLANCO;10233160;ud;1.32;https://www.obramat.es/productos/perfil-secundario-t-24-24x38-mm-1-20-m-blanco-10233160.html;
+Obramat;mat_placa_techos;MPY-035;PERFIL SECUNDARIO T-24 24X33 MM 0.60 M BLANCO;10233132;ud;0.65;https://www.obramat.es/productos/perfil-secundario-t-24-24x33-mm-0-60-m-blanco-10233132.html;
+Obramat;mat_placa_techos;MPY-036;PERFIL ANGULAR T-24 24X24 MM 3 M BLANCO;10035732;ud;2.37;https://www.obramat.es/productos/perfil-angular-t-24-24x24-mm-3-m-blanco-10035732.html;
+Obramat;mat_placa_techos;MPY-037;LAMA DE TECHO ALUMINIO THU VENEZIA 200MM 2.5 M BLANCO;10365341;ml;4.5;https://www.obramat.es/productos/lama-de-techo-aluminio-thu-venezia-200mm-2-5-m-blanco-10365341.html;
+Obramat;mat_yesos_morteros;MYM-001;YESO RAPIDO IBERPLAST MN 17 KG;10975314;saco;1.52;https://www.obramat.es/productos/yeso-rapido-iberplast-mn-17-kg-10975314.html;
+Obramat;mat_yesos_morteros;MYM-002;YESO CONTROLADO LONGIPS MN 17 KG;10975321;saco;1.85;https://www.obramat.es/productos/yeso-controlado-longips-mn-17-kg-10975321.html;
+Obramat;mat_yesos_morteros;MYM-003;YESO FINO LEBRIFINO 20 KG;10505383;saco;7;https://www.obramat.es/productos/yeso-fino-lebrifino-20-kg-10505383.html;
+Obramat;mat_yesos_morteros;MYM-004;YESO DE PROYECCIÓN PLACO PROYAL MN 20 KG;10975335;saco;3.96;https://www.obramat.es/productos/yeso-de-proyeccion-placo-proyal-mn-20-kg-10975335.html;
+Obramat;mat_yesos_morteros;MYM-005;ESCAYOLA PLACO IBERYOLA MN 17 KG;10975356;saco;2.54;https://www.obramat.es/productos/escayola-placo-iberyola-mn-17-kg-10975356.html;
+Obramat;mat_yesos_morteros;MYM-006;PEGAMENTO DE ESCAYOLA RUIZ DORANTES 3 KG;10658746;saco;2.1;https://www.obramat.es/productos/pegamento-de-escayola-ruiz-dorantes-3-kg-10658746.html;
+Obramat;mat_yesos_morteros;MYM-007;CEMENTO 32.5N 25 KG GRIS;10677996;saco;4.38;https://www.obramat.es/productos/cemento-32-5n-25-kg-gris-10677996.html;
+Obramat;mat_yesos_morteros;MYM-008;CEMENTO IBERCEM 42.5R 25 KG GRIS;10861515;saco;5.9;https://www.obramat.es/productos/cemento-ibercem-42-5r-25-kg-gris-10861515.html;
+Obramat;mat_yesos_morteros;MYM-009;CEMENTO VALDERRIVAS 42.5N 25 KG BLANCO;25046172;saco;9.4;https://www.obramat.es/productos/cemento-valderrivas-42-5n-25-kg-blanco-25046172.html;
+Obramat;mat_yesos_morteros;MYM-010;MORTERO SECO M7.5 APLICASEC 25 KG GRIS;10734311;saco;2.24;https://www.obramat.es/productos/mortero-seco-m7-5-aplicasec-25-kg-gris-10734311.html;
+Obramat;mat_yesos_morteros;MYM-011;MORTERO BASE CAL APLICAREV 25 KG BLANCO;25054254;saco;6.87;https://www.obramat.es/productos/mortero-base-cal-aplicarev-25-kg-blanco-25054254.html;
+Obramat;mat_yesos_morteros;MYM-012;MORTERO DE REVOCO WEBEREV HIDRO PLUS 25 KG GRIS;25035027;saco;4.98;https://www.obramat.es/productos/mortero-de-revoco-weberev-hidro-plus-25-kg-gris-25035027.html;
+Obramat;mat_yesos_morteros;MYM-013;(sin equivalente en Obramat);;saco;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_yesos_morteros;MYM-014;MORTERO AUTONIVELANTE CAPAFLOOR 0-10MM 25 KG;10388294;saco;15.52;https://www.obramat.es/productos/mortero-autonivelante-capafloor-0-10mm-25-kg-10388294.html;
+Obramat;mat_yesos_morteros;MYM-015;MORTERO AUTONIVELANTE LEVELPLUS TECNICO 3-40MM 25 KG;10974103;saco;13.9;https://www.obramat.es/productos/mortero-autonivelante-levelplus-tecnico-3-40mm-25-kg-10974103.html;
+Obramat;mat_yesos_morteros;MYM-016;MORTERO AUTONIVELANTE CAPAFLOOR 20-50MM 25 KG;25069052;saco;7.73;https://www.obramat.es/productos/mortero-autonivelante-capafloor-20-50mm-25-kg-25069052.html;
+Obramat;mat_yesos_morteros;MYM-017;CEMENTO COLA G50 CONVENCIONAL C1 25KG GRIS;25118682;saco;3.95;https://www.obramat.es/productos/cemento-cola-g50-convencional-c1-25kg-gris-25118682.html;
+Obramat;mat_yesos_morteros;MYM-018;CEMENTO COLA DUR WEBER C1TE 25KG BLANCO;10984456;saco;5.95;https://www.obramat.es/productos/cemento-cola-dur-weber-c1te-25kg-blanco-10984456.html;
+Obramat;mat_yesos_morteros;MYM-019;CEMENTO COLA G50 SMART C2TE 25KG GRIS;25115305;saco;6.95;https://www.obramat.es/productos/cemento-cola-g50-smart-c2te-25kg-gris-25115305.html;
+Obramat;mat_yesos_morteros;MYM-019B;CEMENTO COLA PEGOLAND GEL PORCEL C2TE 25KG BLANCO;25118308;saco;9.5;https://www.obramat.es/productos/cemento-cola-pegoland-gel-porcel-c2te-25kg-blanco-25118308.html;
+Obramat;mat_yesos_morteros;MYM-020;CEMENTO COLA PEGOLAND GEL C2TES1 25KG BLANCO;25118311;saco;12.95;https://www.obramat.es/productos/cemento-cola-pegoland-gel-c2tes1-25kg-blanco-25118311.html;
+Obramat;mat_yesos_morteros;MYM-021;(sin equivalente en Obramat);;saco;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_yesos_morteros;MYM-022;JUNTA CONVENCIONAL 5KG BLANCO;25118961;saco;4.95;https://www.obramat.es/productos/junta-convencional-5kg-blanco-25118961.html;
+Obramat;mat_yesos_morteros;MYM-023;JUNTA ALTAS PRESTACIONES 5KG ARENA;25118313;saco;8.5;https://www.obramat.es/productos/junta-altas-prestaciones-5kg-arena-25118313.html;
+Obramat;mat_yesos_morteros;MYM-024;ARENA FINA 0-2 MM 25 KG;10269070;saco;1.4;https://www.obramat.es/productos/arena-fina-0-2-mm-25-kg-10269070.html;
+Obramat;mat_yesos_morteros;MYM-025;ARENA GRUESA LAVADA 0-6 MM BIGBAG 1000 KG;10409322;ud;40;https://www.obramat.es/productos/arena-gruesa-lavada-0-6-mm-bigbag-1000-kg-10409322.html;
+Obramat;mat_yesos_morteros;MYM-026;HORMIGÓN SECO H-25 CAPA 25 KG GRIS;10734423;saco;4.06;https://www.obramat.es/productos/hormigon-seco-h-25-capa-25-kg-gris-10734423.html;
+Obramat;mat_yesos_morteros;MYM-027;MORTERO ADHESIVO Y REGULARIZADOR SATEPRO THERM 25 KG GRIS;25091202;saco;9.73;https://www.obramat.es/productos/mortero-adhesivo-y-regularizador-satepro-therm-25-kg-gris-25091202.html;
+Obramat;mat_ladrillos;MLB-001;LADRILLO HUECO DOBLE 23X10X7 CM;10421145;ud;0.22;https://www.obramat.es/productos/ladrillo-hueco-doble-23x10x7-cm-10421145.html;
+Obramat;mat_ladrillos;MLB-002;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_ladrillos;MLB-003;LADRILLO HUECO SENCILLO 23X10X3.5 CM;10421124;ud;0.21;https://www.obramat.es/productos/ladrillo-hueco-sencillo-23x10x3-5-cm-10421124.html;
+Obramat;mat_ladrillos;MLB-004;LADRILLO HUECO SENCILLO 40X20X5 CM;10421215;ud;0.6;https://www.obramat.es/productos/ladrillo-hueco-sencillo-40x20x5-cm-10421215.html;
+Obramat;mat_ladrillos;MLB-005;LADRILLO HUECO DOBLE 40X20X7 CM;10993241;ud;0.6;https://www.obramat.es/productos/ladrillo-hueco-doble-40x20x7-cm-10993241.html;
+Obramat;mat_ladrillos;MLB-006;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_ladrillos;MLB-007;LADRILLO HUECO TRIPLE 23X10X10 CM;10421166;ud;0.29;https://www.obramat.es/productos/ladrillo-hueco-triple-23x10x10-cm-10421166.html;
+Obramat;mat_ladrillos;MLB-008;LADRILLO PERFORADO 23X10X10 CM;10421040;ud;0.3;https://www.obramat.es/productos/ladrillo-perforado-23x10x10-cm-10421040.html;
+Obramat;mat_ladrillos;MLB-009;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_ladrillos;MLB-010;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_ladrillos;MLB-011;LADRILLO CARAVISTA 24X11.4X4.8 CM ROJO;10797115;ud;0.39;https://www.obramat.es/productos/ladrillo-caravista-24x11-4x4-8-cm-rojo-10797115.html;
+Obramat;mat_ladrillos;MLB-012;BLOQUE LADRILLO TERMOCERÁMICO 30X19X19 CM;10421271;ud;1.37;https://www.obramat.es/productos/bloque-ladrillo-termoceramico-30x19x19-cm-10421271.html;
+Obramat;mat_ladrillos;MLB-013;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_ladrillos;MLB-014;BLOQUE LADRILLO TERMOCERÁMICO 30X19X14 CM;25096068;ud;1.04;https://www.obramat.es/productos/bloque-ladrillo-termoceramico-30x19x14-cm-25096068.html;
+Obramat;mat_ladrillos;MLB-015;BLOQUE DE HORMIGÓN 39X19X19 CM GRIS;10756130;ud;0.74;https://www.obramat.es/productos/bloque-de-hormigon-39x19x19-cm-gris-10756130.html;
+Obramat;mat_ladrillos;MLB-016;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_ladrillos;MLB-017;BLOQUE DE HORMIGÓN 39X10X19 CM GRIS;25090331;ud;0.59;https://www.obramat.es/productos/bloque-de-hormigon-39x10x19-cm-gris-25090331.html;
+Obramat;mat_ladrillos;MLB-018;BLOQUE DE HORMIGÓN LIGERO 39X19X19 CM GRIS;10776696;ud;0.56;https://www.obramat.es/productos/bloque-de-hormigon-ligero-39x19x19-cm-gris-10776696.html;
+Obramat;mat_ladrillos;MLB-019;BLOQUE DE HORMIGÓN SPLIT 39X19X19 CM BLANCO;10756585;ud;1.79;https://www.obramat.es/productos/bloque-de-hormigon-split-39x19x19-cm-blanco-10756585.html;
+Obramat;mat_ladrillos;MLB-020;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_aislamiento;MAI-001;ROLLO LANA DE VIDRIO DECIWOOL 1920X60X4.5 CM;25104919;m2;1.38;https://www.obramat.es/productos/rollo-lana-de-vidrio-deciwool-1920x60x4-5-cm-25104919.html;
+Obramat;mat_aislamiento;MAI-002;ROLLO LANA DE VIDRIO ULTRACOUSTIC NEO R 1260X40X6 CM;25098270;m2;2.32;https://www.obramat.es/productos/rollo-lana-de-vidrio-ultracoustic-neo-r-1260x40x6-cm-25098270.html;
+Obramat;mat_aislamiento;MAI-003;ROLLO LANA DE VIDRIO KRAFT TI-212 1220X120X8 CM;10391325;m2;3.38;https://www.obramat.es/productos/rollo-lana-de-vidrio-kraft-ti-212-1220x120x8-cm-10391325.html;
+Obramat;mat_aislamiento;MAI-004;PANEL LANA DE VIDRIO ULTRACOUSTIC P 135X60X5CM;10781442;m2;1.86;https://www.obramat.es/productos/panel-lana-de-vidrio-ultracoustic-p-135x60x5cm-10781442.html;
+Obramat;mat_aislamiento;MAI-005;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_aislamiento;MAI-006;PANEL LANA DE ROCA SONOROCK ECO 135X60X4CM;25046668;m2;4.4;https://www.obramat.es/productos/panel-lana-de-roca-sonorock-eco-135x60x4cm-25046668.html;
+Obramat;mat_aislamiento;MAI-007;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_aislamiento;MAI-008;PANEL ROCKSATE DUO PLUS 120X60X6CM 6UD;25148989;m2;12.5;https://www.obramat.es/productos/panel-rocksate-duo-plus-120x60x6cm-6ud-25148989.html;
+Obramat;mat_aislamiento;MAI-009;POLIESTIRENO EXTRUIDO SL XPS 300KPA 125X60X4 CM THERMOGREEN;25047119;m2;5.44;https://www.obramat.es/productos/poliestireno-extruido-sl-xps-300kpa-125x60x4-cm-thermogreen-25047119.html;
+Obramat;mat_aislamiento;MAI-010;POLIESTIRENO EXTRUIDO SL XPS 300KPA 125X60X5 CM THERMOGREEN;25047142;m2;6.8;https://www.obramat.es/productos/poliestireno-extruido-sl-xps-300kpa-125x60x5-cm-thermogreen-25047142.html;
+Obramat;mat_aislamiento;MAI-011;POLIESTIRENO EXTRUIDO SL XPS 300KPA 125X60X6 CM THERMOGREEN;25047143;m2;8.16;https://www.obramat.es/productos/poliestireno-extruido-sl-xps-300kpa-125x60x6-cm-thermogreen-25047143.html;
+Obramat;mat_aislamiento;MAI-012;POLIESTIRENO EXTRUIDO SL XPS 300KPA 125X60X8 CM THERMOGREEN;25047144;m2;10.88;https://www.obramat.es/productos/poliestireno-extruido-sl-xps-300kpa-125x60x8-cm-thermogreen-25047144.html;
+Obramat;mat_aislamiento;MAI-013;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_aislamiento;MAI-014;POLIESTIRENO EXPANDIDO EPS 10 KG/M3 200X100X2 CM ROYCLE;10311581;m2;1.53;https://www.obramat.es/productos/poliestireno-expandido-eps-10-kg-m3-200x100x2-cm-roycle-10311581.html;
+Obramat;mat_aislamiento;MAI-015;POLIESTIRENO EXPANDIDO EPS 10 KG/M3 200X100X4 CM ROYCLE;10784501;m2;2.62;https://www.obramat.es/productos/poliestireno-expandido-eps-10-kg-m3-200x100x4-cm-roycle-10784501.html;
+Obramat;mat_aislamiento;MAI-016;POLIESTIRENO EXPANDIDO EPS SATE 20 KG/M3 100X50 CM 6 CM ESPESOR;10748535;m2;7.26;https://www.obramat.es/productos/poliestireno-expandido-eps-sate-20-kg-m3-100x50-cm-6-cm-espesor-10748535.html;
+Obramat;mat_aislamiento;MAI-017;COLA DE CONTACTO PARA  POLIESTIRENO 1KG;10890761;ud;8.99;https://www.obramat.es/productos/cola-de-contacto-para-poliestireno-1kg-10890761.html;
+Obramat;mat_aislamiento;MAI-018;LÁMINA ACÚSTICA IMPACTODAN 5 DANOSA 1500X100X0.5 CM;10390352;m2;1.86;https://www.obramat.es/productos/lamina-acustica-impactodan-5-danosa-1500x100x0-5-cm-10390352.html;
+Obramat;mat_aislamiento;MAI-019;LÁMINA ACÚSTICA IMPACTODAN 10 DANOSA 2500X200X1 CM;10598000;m2;3.46;https://www.obramat.es/productos/lamina-acustica-impactodan-10-danosa-2500x200x1-cm-10598000.html;
+Obramat;mat_aislamiento;MAI-020;BASE SUELO LAMINADO;10893876;m2;0.79;https://www.obramat.es/productos/base-suelo-laminado-10893876.html;
+Obramat;mat_aislamiento;MAI-021;BANDA ACÚSTICA ELASTOBAND 50 4 MM 0.05X10 M;10486833;rollo;9.87;https://www.obramat.es/productos/banda-acustica-elastoband-50-4-mm-0-05x10-m-10486833.html;
+Obramat;mat_aislamiento;MAI-022;LÁMINA ASFÁLTICA DE BETÚN ADITIVADO 3 KG/M2 CHOVAPLAST VEL 30;10486056;m2;3.33;https://www.obramat.es/productos/lamina-asfaltica-de-betun-aditivado-3-kg-m2-chovaplast-vel-30-10486056.html;
+Obramat;mat_aislamiento;MAI-023;LÁMINA ASFÁLTICA PLASTÓMERO 4 KG/M2 CHOVAPLAST VEL 40;10387272;m2;4.5;https://www.obramat.es/productos/lamina-asfaltica-plastomero-4-kg-m2-chovaplast-vel-40-10387272.html;
+Obramat;mat_aislamiento;MAI-024;LÁMINA ASFÁLTICA ELASTÓMERO POLITABER COMBI 40FP;25034290;m2;6.3;https://www.obramat.es/productos/lamina-asfaltica-elastomero-politaber-combi-40fp-25034290.html;
+Obramat;mat_aislamiento;MAI-025;LÁMINA ASFÁLTICA AUTOPROTEGIDA 4 KG/M2 POLITABER VEL 40/G;10012555;m2;5.6;https://www.obramat.es/productos/lamina-asfaltica-autoprotegida-4-kg-m2-politaber-vel-40-g-10012555.html;
+Obramat;mat_aislamiento;MAI-026;EMULSIÓN ASFÁLTICA SUPERMUL 25 KG;10267831;ud;54;https://www.obramat.es/productos/emulsion-asfaltica-supermul-25-kg-10267831.html;
+Obramat;mat_aislamiento;MAI-027;BANDA AUTOADHESIVA IMPERBAND BUTILO ALUMINIO 15 CM 10 M;25086565;rollo;33.02;https://www.obramat.es/productos/banda-autoadhesiva-imperband-butilo-aluminio-15-cm-10-m-25086565.html;
+Obramat;mat_aislamiento;MAI-028;IMPERMEABILIZANTE CAUCHO 15L BLANCO;25057976;ud;36;https://www.obramat.es/productos/impermeabilizante-caucho-15l-blanco-25057976.html;
+Obramat;mat_aislamiento;MAI-029;IMPERMEABILIZANTE CAUCHO 4L BLANCO;25057997;ud;13;https://www.obramat.es/productos/impermeabilizante-caucho-4l-blanco-25057997.html;
+Obramat;mat_aislamiento;MAI-030;IMPERMEABILIZANTE MEMBRANA DE POLIURETANO 15L GRIS;10472091;ud;125;https://www.obramat.es/productos/impermeabilizante-membrana-de-poliuretano-15l-gris-10472091.html;
+Obramat;mat_aislamiento;MAI-031;REVESTIMIENTO ELÁSTICO SIKAFILL-370 FIBRAS 5 KG GRIS;25058253;ud;28;https://www.obramat.es/productos/revestimiento-elastico-sikafill-370-fibras-5-kg-gris-25058253.html;
+Obramat;mat_aislamiento;MAI-032;LÁMINA IMPERMEABLE 335 GR/M2 REVESTECH DRY50 30X1.2 M;10769024;m2;8;https://www.obramat.es/productos/lamina-impermeable-335-gr-m2-revestech-dry50-30x1-2-m-10769024.html;
+Obramat;mat_aislamiento;MAI-033;SILICONA NEUTRA PARA BAÑOS Y COCINAS 280ML BLANCO;10964590;ud;4.9;https://www.obramat.es/productos/silicona-neutra-para-banos-y-cocinas-280ml-blanco-10964590.html;
+Obramat;mat_aislamiento;MAI-034;SILICONA ACIDA MULTIUSOS 280ML BLANCA;25026388;ud;1.96;https://www.obramat.es/productos/silicona-acida-multiusos-280ml-blanca-25026388.html;
+Obramat;mat_aislamiento;MAI-035;ESPUMA DE POLIURETANO MULTIUSO MANUAL 750 ML;25034363;ud;4.73;https://www.obramat.es/productos/espuma-de-poliuretano-multiuso-manual-750-ml-25034363.html;
+Obramat;mat_aislamiento;MAI-036;IMPRIMACIÓN DE ADHERENCIA PUENTE DE UNIÓN PLUS MORTEROS HENARES 1 L;25058266;ud;6.7;https://www.obramat.es/productos/imprimacion-de-adherencia-puente-de-union-plus-morteros-henares-1-l-25058266.html;
+Obramat;mat_pintura;MPI-001;PINTURA PLASTICA BLANCA MATE 15L OKTIMA;10988250;ud;16.7;https://www.obramat.es/productos/pintura-plastica-blanca-mate-15l-oktima-10988250.html;
+Obramat;mat_pintura;MPI-002;PINTURA PLASTICA BLANCA MATE 15L L4000;10814321;ud;42;https://www.obramat.es/productos/pintura-plastica-blanca-mate-15l-l4000-10814321.html;
+Obramat;mat_pintura;MPI-003;PINTURA PLASTICA INTERIOR/EXTERIOR MATE T200 15L BLANCO;25082426;ud;44;https://www.obramat.es/productos/pintura-plastica-interior-exterior-mate-t200-15l-blanco-25082426.html;
+Obramat;mat_pintura;MPI-004;PINTURA PLASTICA INTERIOR/EXTERIOR EXTRA MATE T400 15L BLANCO;25082427;ud;59;https://www.obramat.es/productos/pintura-plastica-interior-exterior-extra-mate-t400-15l-blanco-25082427.html;
+Obramat;mat_pintura;MPI-005;PINTURA PLASTICA BLANCA SATINADA 15L EXTRALUX;10860353;ud;43;https://www.obramat.es/productos/pintura-plastica-blanca-satinada-15l-extralux-10860353.html;
+Obramat;mat_pintura;MPI-006;PINTURA PLASTICA BLANCA MATE 4L L3000;10838604;ud;12;https://www.obramat.es/productos/pintura-plastica-blanca-mate-4l-l3000-10838604.html;
+Obramat;mat_pintura;MPI-007;PINTURA PLASTICA BLANCA SATINADA 4L EXTRALUX;10860360;ud;15;https://www.obramat.es/productos/pintura-plastica-blanca-satinada-4l-extralux-10860360.html;
+Obramat;mat_pintura;MPI-008;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_pintura;MPI-009;PINTURA INTERIOR/EXTERIOR ANTIHUMEDAD AL AGUA 5KG BLANCO;25058122;ud;44;https://www.obramat.es/productos/pintura-interior-exterior-antihumedad-al-agua-5kg-blanco-25058122.html;
+Obramat;mat_pintura;MPI-010;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_pintura;MPI-011;REVESTIMIENTO FACHADA RF-2000 14L BLANCO;25058437;ud;28.4;https://www.obramat.es/productos/revestimiento-fachada-rf-2000-14l-blanco-25058437.html;
+Obramat;mat_pintura;MPI-012;REVESTIMIENTO FACHADA MATE PÉTREO RF-4000 14L BLANCO;25035116;ud;41;https://www.obramat.es/productos/revestimiento-fachada-mate-petreo-rf-4000-14l-blanco-25035116.html;
+Obramat;mat_pintura;MPI-013;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_pintura;MPI-014;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_pintura;MPI-015;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_pintura;MPI-016;REVESTIMIENTO FACHADAS DELTA PLUS  20KG BLANCO;10524773;ud;60;https://www.obramat.es/productos/revestimiento-fachadas-delta-plus-20kg-blanco-10524773.html;
+Obramat;mat_pintura;MPI-017;ESMALTE SINTÉTICO SATINADO NOVOLACK 4L BLANCO;10537226;ud;31.75;https://www.obramat.es/productos/esmalte-sintetico-satinado-novolack-4l-blanco-10537226.html;
+Obramat;mat_pintura;MPI-018;ESMALTE SINTÉTICO TITANLAK 4L BLANCO;10830764;ud;49.5;https://www.obramat.es/productos/esmalte-sintetico-titanlak-4l-blanco-10830764.html;
+Obramat;mat_pintura;MPI-019;ESMALTE ACRILICO MATE NOVOACRILIC 4L BLANCO;10871896;ud;31.75;https://www.obramat.es/productos/esmalte-acrilico-mate-novoacrilic-4l-blanco-10871896.html;
+Obramat;mat_pintura;MPI-020;ESMALTE ACRILICO MATE  MULTIADHERENTE UNILAK 4L BLANCO;10830484;ud;59;https://www.obramat.es/productos/esmalte-acrilico-mate-multiadherente-unilak-4l-blanco-10830484.html;
+Obramat;mat_pintura;MPI-021;ESMALTE PARA RADIADORES 4L BLANCO;10964695;ud;46.8;https://www.obramat.es/productos/esmalte-para-radiadores-4l-blanco-10964695.html;
+Obramat;mat_pintura;MPI-022;FONDO FIJADOR ACRILICO 15L BLANCO;10932502;ud;42.5;https://www.obramat.es/productos/fondo-fijador-acrilico-15l-blanco-10932502.html;
+Obramat;mat_pintura;MPI-023;FONDO FIJADOR ACRILICO 4L BLANCO;10932495;ud;17.4;https://www.obramat.es/productos/fondo-fijador-acrilico-4l-blanco-10932495.html;
+Obramat;mat_pintura;MPI-024;IMPRIMACIÓN MULTI AL AGUA TODO TERRENO BEISSIER 750ML BLANCO;10479294;ud;12.95;https://www.obramat.es/productos/imprimacion-multi-al-agua-todo-terreno-beissier-750ml-blanco-10479294.html;
+Obramat;mat_pintura;MPI-025;FONDO CONSOLIDANTE A/DISOLVENTE 5L;10932810;ud;41.4;https://www.obramat.es/productos/fondo-consolidante-a-disolvente-5l-10932810.html;
+Obramat;mat_pintura;MPI-026;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_pintura;MPI-027;(sin equivalente en Obramat);;saco;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_electricidad;MEL-001;HILO PVC H07V-K 1,5mm2 MARRÓN 200M;10540572;rollo;46.55;https://www.obramat.es/productos/hilo-pvc-h07v-k-1-5mm2-marron-200m-10540572.html;
+Obramat;mat_electricidad;MEL-002;HILO PVC H07V-K 2,5mm2 MARRÓN 200M;10540586;rollo;82;https://www.obramat.es/productos/hilo-pvc-h07v-k-2-5mm2-marron-200m-10540586.html;
+Obramat;mat_electricidad;MEL-003;HILO PVC H07V-K 4mm2 VERDE/AMARILLO 50M;10004162;rollo;36;https://www.obramat.es/productos/hilo-pvc-h07v-k-4mm2-verde-amarillo-50m-10004162.html;
+Obramat;mat_electricidad;MEL-004;HILO PVC H07V-K 6mm2 VERDE/AMARILLO 50M;10004204;rollo;53;https://www.obramat.es/productos/hilo-pvc-h07v-k-6mm2-verde-amarillo-50m-10004204.html;
+Obramat;mat_electricidad;MEL-005;CABLE LIBRE DE HALÓGENOS RZ1-K 3G 1.5MM2 VERDE 100M;10651340;rollo;137;https://www.obramat.es/productos/cable-libre-de-halogenos-rz1-k-3g-1-5mm2-verde-100m-10651340.html;
+Obramat;mat_electricidad;MEL-006;CABLE LIBRE DE HALÓGENOS RZ1-K 3G 2.5MM2 VERDE METRO LINEAL;10595011;ml;2.17;https://www.obramat.es/productos/cable-libre-de-halogenos-rz1-k-3g-2-5mm2-verde-metro-lineal-10595011.html;
+Obramat;mat_electricidad;MEL-007;CABLE LIBRE DE HALÓGENOS RZ1-K 3G 4MM2 VERDE METRO LINEAL;10550883;ml;3.25;https://www.obramat.es/productos/cable-libre-de-halogenos-rz1-k-3g-4mm2-verde-metro-lineal-10550883.html;
+Obramat;mat_electricidad;MEL-008;CABLE LIBRE DE HALÓGENOS RZ1-K 3G 6MM2 VERDE METRO LINEAL;10550890;ml;4.5;https://www.obramat.es/productos/cable-libre-de-halogenos-rz1-k-3g-6mm2-verde-metro-lineal-10550890.html;
+Obramat;mat_electricidad;MEL-009;TUBO CORRUGADO REFORZADO NEGRO 20MM 100M;10979094;rollo;18.82;https://www.obramat.es/productos/tubo-corrugado-reforzado-negro-20mm-100m-10979094.html;
+Obramat;mat_electricidad;MEL-010;TUBO CORRUGADO REFORZADO NEGRO 25MM 75M;10158470;rollo;18.71;https://www.obramat.es/productos/tubo-corrugado-reforzado-negro-25mm-75m-10158470.html;
+Obramat;mat_electricidad;MEL-011;(sin equivalente en Obramat);;rollo;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_electricidad;MEL-012;CAJA DE MECANISMOS ELÉCTRICO 65X65MM PARA EMPOTRAR DE INTERIOR;10016846;ud;0.2;https://www.obramat.es/productos/caja-de-mecanismos-electrico-65x65mm-para-empotrar-de-interior-10016846.html;
+Obramat;mat_electricidad;MEL-013;CAJA DE MECANISMOS ELÉCTRICOS 136X68X42MM PARA EMPOTRAR DE INTERIOR;10017021;ud;1.42;https://www.obramat.es/productos/caja-de-mecanismos-electricos-136x68x42mm-para-empotrar-de-interior-10017021.html;
+Obramat;mat_electricidad;MEL-014;CAJA DE REGISTRO ELÉCTRICO 100X100X45MM PARA EMPOTRAR DE INTERIOR CON TAPA DE GARRAS;10015964;ud;0.75;https://www.obramat.es/productos/caja-de-registro-electrico-100x100x45mm-para-empotrar-de-interior-con-tapa-de-garras-10015964.html;
+Obramat;mat_electricidad;MEL-015;CAJA DE REGISTRO ELÉCTRICO 200X130X60MM PARA EMPOTRAR EN INTERIOR CON TAPA DE GARRAS METÁLICAS;10016013;ud;1.35;https://www.obramat.es/productos/caja-de-registro-electrico-200x130x60mm-para-empotrar-en-interior-con-tapa-de-garras-metalicas-10016013.html;
+Obramat;mat_electricidad;MEL-016;CAJA DE REGISTRO ELÉCTRICO 300X200X60MM PARA EMPOTRAR CON TAPA DE TORNILLO;10551275;ud;5.6;https://www.obramat.es/productos/caja-de-registro-electrico-300x200x60mm-para-empotrar-con-tapa-de-tornillo-10551275.html;
+Obramat;mat_electricidad;MEL-017;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_electricidad;MEL-018;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_electricidad;MEL-019;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_electricidad;MEL-020;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_electricidad;MEL-021;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_electricidad;MEL-022;CONMUTADOR SIMON 82;10978331;ud;6.11;https://www.obramat.es/productos/conmutador-simon-82-10978331.html;
+Obramat;mat_electricidad;MEL-023;SCHUKO SIMON 82;10978261;ud;4.04;https://www.obramat.es/productos/schuko-simon-82-10978261.html;
+Obramat;mat_electricidad;MEL-024;TAPA TOMA TV-RADIO-SAT SERIE SIMON 82 CONCEPT BCO;10889445;ud;3.25;https://www.obramat.es/productos/tapa-toma-tv-radio-sat-serie-simon-82-concept-bco-10889445.html;
+Obramat;mat_electricidad;MEL-025;CUADRO ELÉCTRICO PARA EMPOTRAR EN VIVIENDA DE 12 MÓDULOS SCHNEIDER;25047099;ud;16.39;https://www.obramat.es/productos/cuadro-electrico-para-empotrar-en-vivienda-de-12-modulos-schneider-25047099.html;
+Obramat;mat_electricidad;MEL-026;CUADRO ELÉCTRICO PARA EMPOTRAR EN VIVIENDA DE 24 MÓDULOS SCHNEIDER;25047100;ud;24.66;https://www.obramat.es/productos/cuadro-electrico-para-empotrar-en-vivienda-de-24-modulos-schneider-25047100.html;
+Obramat;mat_electricidad;MEL-027;CUADRO ELÉCTRICO PARA EMPOTRAR EN VIVIENDA DE 36 MÓDULOS SCHNEIDER;25047101;ud;39.27;https://www.obramat.es/productos/cuadro-electrico-para-empotrar-en-vivienda-de-36-modulos-schneider-25047101.html;
+Obramat;mat_electricidad;MEL-028;AUTOMATICO MAGNETOTERMICO 2P 40A SOLERA;25125226;ud;4.75;https://www.obramat.es/productos/automatico-magnetotermico-2p-40a-solera-25125226.html;
+Obramat;mat_electricidad;MEL-029;AUTOMÁTICO MAGNETOTÉRMICO 1 P+N 16A SOLERA;10365572;ud;3.2;https://www.obramat.es/productos/automatico-magnetotermico-1-p-n-16a-solera-10365572.html;
+Obramat;mat_electricidad;MEL-030;AUTOMATICO MAGNETOTÉRMICO 1P+N 2 MODULOS 16A RESI9 SCHNEIDER;10971205;ud;4.83;https://www.obramat.es/productos/automatico-magnetotermico-1p-n-2-modulos-16a-resi9-schneider-10971205.html;
+Obramat;mat_electricidad;MEL-031;DIFERENCIAL 2P 40A 30MA SOLERA;25085735;ud;14;https://www.obramat.es/productos/diferencial-2p-40a-30ma-solera-25085735.html;
+Obramat;mat_electricidad;MEL-032;DIFERENCIAL SUPERINMUNIZADO 2P 40A 30MA-A;25125240;ud;46.5;https://www.obramat.es/productos/diferencial-superinmunizado-2p-40a-30ma-a-25125240.html;
+Obramat;mat_electricidad;MEL-033;DOWNLIGHT LED EMPOTRAR CIRCULAR BLANCO 12W LUZ CALIDA;10492594;ud;4.75;https://www.obramat.es/productos/downlight-led-empotrar-circular-blanco-12w-luz-calida-10492594.html;
+Obramat;mat_electricidad;MEL-034;DOWNLIGHT LED EMPOTRAR CIRCULAR BLANCO 20W LUZ FRIA;10392375;ud;6.05;https://www.obramat.es/productos/downlight-led-empotrar-circular-blanco-20w-luz-fria-10392375.html;
+Obramat;mat_electricidad;MEL-035;FOCO LED EMPOTRABLE 7W CIRCULAR BASCULANTE CCT;25112335;ud;5;https://www.obramat.es/productos/foco-led-empotrable-7w-circular-basculante-cct-25112335.html;
+Obramat;mat_electricidad;MEL-036;TIRA LED 24V 5M 14,4W/M LUZ CÁLIDA  IP20;10844652;rollo;14.49;https://www.obramat.es/productos/tira-led-24v-5m-14-4w-m-luz-calida-ip20-10844652.html;
+Obramat;mat_electricidad;MEL-037;PERFIL TIRA LED DE SUPERFICIE ALUMINIO BLANCO 17X7MM 2M;10973046;ud;8.95;https://www.obramat.es/productos/perfil-tira-led-de-superficie-aluminio-blanco-17x7mm-2m-10973046.html;
+Obramat;mat_electricidad;MEL-038;FUENTE ALIMENTACIÓN PARA REGLETA LED EXTRAPLANA 24W CON SENSOR;25056428;ud;24.95;https://www.obramat.es/productos/fuente-alimentacion-para-regleta-led-extraplana-24w-con-sensor-25056428.html;
+Obramat;mat_electricidad;MEL-039;EXTRACTOR DE BAÑO Ø100MM ANTIRRETORNO;25109198;ud;15.95;https://www.obramat.es/productos/extractor-de-bano-100mm-antirretorno-25109198.html;
+Obramat;mat_electricidad;MEL-040;EXTRACTOR BAÑO DECORATIVO 100T TEMPORIZADO NOVOVENT;25029977;ud;29.95;https://www.obramat.es/productos/extractor-bano-decorativo-100t-temporizado-novovent-25029977.html;
+Obramat;mat_fontaneria;MFS-001;TUBO MULTICAPA 16MM ROLLO 25M;10285254;rollo;19;https://www.obramat.es/productos/tubo-multicapa-16mm-rollo-25m-10285254.html;
+Obramat;mat_fontaneria;MFS-002;TUBO MULTICAPA 20MM ROLLO 25M;10285282;rollo;27.35;https://www.obramat.es/productos/tubo-multicapa-20mm-rollo-25m-10285282.html;
+Obramat;mat_fontaneria;MFS-003;ROLLO PEX-A BARRERA EVOH 16X1.8MM 200M;25061570;rollo;125;https://www.obramat.es/productos/rollo-pex-a-barrera-evoh-16x1-8mm-200m-25061570.html;
+Obramat;mat_fontaneria;MFS-004;"CODO 90º 16MMX1/2"" HEMBRA COMPRESIÓN MULTICAPA";10436475;ud;3.45;https://www.obramat.es/productos/codo-90-16mmx1-2-hembra-compresion-multicapa-10436475.html;
+Obramat;mat_fontaneria;MFS-005;TE 16MM COMPRESIÓN MULTICAPA;10436615;ud;4.55;https://www.obramat.es/productos/te-16mm-compresion-multicapa-10436615.html;
+Obramat;mat_fontaneria;MFS-006;MANGUITO 16MM COMPRESIÓN MULTICAPA;10436454;ud;3.2;https://www.obramat.es/productos/manguito-16mm-compresion-multicapa-10436454.html;
+Obramat;mat_fontaneria;MFS-007;"CODO 90º CON SOPORTE 16MMX1/2"" COMPRESIÓN MULTICAPA";10436552;ud;3.45;https://www.obramat.es/productos/codo-90-con-soporte-16mmx1-2-compresion-multicapa-10436552.html;
+Obramat;mat_fontaneria;MFS-008;TUBO 40MM 3M PVC;25073183;ud;3.55;https://www.obramat.es/productos/tubo-40mm-3m-pvc-25073183.html;
+Obramat;mat_fontaneria;MFS-009;TUBO 50MM 3M PVC;10309446;ud;3.86;https://www.obramat.es/productos/tubo-50mm-3m-pvc-10309446.html;
+Obramat;mat_fontaneria;MFS-010;TUBO 110MM 3M PVC;25073180;ud;9.35;https://www.obramat.es/productos/tubo-110mm-3m-pvc-25073180.html;
+Obramat;mat_fontaneria;MFS-011;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_fontaneria;MFS-012;CODO PVC 87º 40MM HEMBRA-HEMBRA;25072661;ud;0.19;https://www.obramat.es/productos/codo-pvc-87-40mm-hembra-hembra-25072661.html;
+Obramat;mat_fontaneria;MFS-013;CODO 87º 110MM PVC HEMBRA-HEMBRA;10106852;ud;2.29;https://www.obramat.es/productos/codo-87-110mm-pvc-hembra-hembra-10106852.html;
+Obramat;mat_fontaneria;MFS-014;BOTE SIFÓNICO CON TAPA EXPANSIVA;25045323;ud;4.7;https://www.obramat.es/productos/bote-sifonico-con-tapa-expansiva-25045323.html;
+Obramat;mat_fontaneria;MFS-015;"SIFON LAVABO BOTELLA EXTENSIBLE 1 1/4"" BLANCO GIRPI";25045330;ud;2.86;https://www.obramat.es/productos/sifon-lavabo-botella-extensible-1-1-4-blanco-girpi-25045330.html;
+Obramat;mat_fontaneria;MFS-016;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_fontaneria;MFS-017;"LLAVE DE ESCUADRA 1/2""X3/8";25055990;ud;2;https://www.obramat.es/productos/llave-de-escuadra-1-2-x3-8-25055990.html;
+Obramat;mat_fontaneria;MFS-018;TERMO ELÉCTRICO 50 LITROS WELCOME;25143250;ud;94;https://www.obramat.es/productos/termo-electrico-50-litros-welcome-25143250.html;
+Obramat;mat_fontaneria;MFS-019;TERMO ELÉCTRICO 75 LITROS WELCOME;10371326;ud;104;https://www.obramat.es/productos/termo-electrico-75-litros-welcome-10371326.html;
+Obramat;mat_fontaneria;MFS-020;TERMO ELÉCTRICO 100 LITROS WELCOME;10371312;ud;134;https://www.obramat.es/productos/termo-electrico-100-litros-welcome-10371312.html;
+Obramat;mat_fontaneria;MFS-021;CALENTADOR GAS NATURAL ESTANCO BAJO NOx 11L THERMOR  TOP SEALED;25024770;ud;199;https://www.obramat.es/productos/calentador-gas-natural-estanco-bajo-nox-11l-thermor-top-sealed-25024770.html;
+Obramat;mat_fontaneria;MFS-022;PACK WC NOA SALIDA DUAL;25101359;ud;119;https://www.obramat.es/productos/pack-wc-noa-salida-dual-25101359.html;
+Obramat;mat_fontaneria;MFS-023;TAZA INODORO ROCA GAP COMPACTO SALIDA DUAL;25075705;ud;149;https://www.obramat.es/productos/taza-inodoro-roca-gap-compacto-salida-dual-25075705.html;
+Obramat;mat_fontaneria;MFS-024;CONJUNTO WC INODORO RIMLESS CON SALIDA DUAL, CISTERNA INFERIOR Y  TAPA AMORTIGUADA GAP;25154655;ud;369;https://www.obramat.es/productos/pack-wc-inodoro-rimless-con-salida-dual-cisterna-inferior-y-tapa-amortiguada-gap-25154655.html;
+Obramat;mat_fontaneria;MFS-025;LAVABO SOBREPONER OVALADO BLANCO BRILLO;25074574;ud;49;https://www.obramat.es/productos/lavabo-sobreponer-ovalado-blanco-brillo-25074574.html;
+Obramat;mat_fontaneria;MFS-026;PLATO DE DUCHA RESINA RECTANGULAR BLANCO 80X140X3CM;25141989;ud;134;https://www.obramat.es/productos/plato-de-ducha-resina-rectangular-blanco-80x140x3cm-25141989.html;
+Obramat;mat_fontaneria;MFS-027;MAMPARA DE DUCHA FRONTAL CORREDERA CATANIA PRO 140CM CROMO;10960614;ud;205;https://www.obramat.es/productos/mampara-de-ducha-frontal-corredera-catania-pro-140cm-cromo-10960614.html;
+Obramat;mat_fontaneria;MFS-028;MAMPARA DE DUCHA FRONTAL FIJA CARIBE PRO 120CM CROMO;25050810;ud;159;https://www.obramat.es/productos/mampara-de-ducha-frontal-fija-caribe-pro-120cm-cromo-25050810.html;
+Obramat;mat_fontaneria;MFS-029;GRIFO DE LAVABO MONOMANDO NEREA;25016679;ud;11.65;https://www.obramat.es/productos/grifo-de-lavabo-monomando-nerea-25016679.html;
+Obramat;mat_fontaneria;MFS-030;GRIFO LAVABO MONOMANDO RAMON SOLER TIBET;25058859;ud;41.95;https://www.obramat.es/productos/grifo-lavabo-monomando-ramon-soler-tibet-25058859.html;
+Obramat;mat_fontaneria;MFS-031;GRIFO DE DUCHA MONOMANDO ROCA NORA;10474842;ud;41.75;https://www.obramat.es/productos/grifo-de-ducha-monomando-roca-nora-10474842.html;
+Obramat;mat_fontaneria;MFS-032;COLUMNA DE DUCHA MONOMANDO MERCURY PRO2;25069465;ud;99;https://www.obramat.es/productos/columna-de-ducha-monomando-mercury-pro2-25069465.html;
+Obramat;mat_fontaneria;MFS-033;COLUMNA DE DUCHA CON GRIFO TERMOSTATICO AUSTRALIS;10530184;ud;149;https://www.obramat.es/productos/columna-de-ducha-con-grifo-termostatico-australis-10530184.html;
+Obramat;mat_fontaneria;MFS-034;FREGADERO DE COCINA 1 SENO TEKA CUADRADO 43,5 X 43,5 X 18 CM;10736670;ud;49;https://www.obramat.es/productos/fregadero-de-cocina-1-seno-teka-cuadrado-43-5-x-43-5-x-18-cm-10736670.html;
+Obramat;mat_fontaneria;MFS-035;FREGADERO DE COCINA 1 SENO + ESCURRIDOR TEKA CUADRADO 78 X 43,5 X 14,6 CM;10736684;ud;46;https://www.obramat.es/productos/fregadero-de-cocina-1-seno-escurridor-teka-cuadrado-78-x-43-5-x-14-6-cm-10736684.html;
+Obramat;mat_fontaneria;MFS-036;MONOMANDO FREG ENCIMERA C/ALTO BRANDON;10834411;ud;35.3;https://www.obramat.es/productos/monomando-freg-encimera-c-alto-brandon-10834411.html;
+Obramat;mat_carpinteria;MCA-001;PUERTA INTERIOR EN BLOCK LISA MELAMINA BLANCA CIEGA 82,5CM DERECHA;10340911;ud;62;https://www.obramat.es/productos/puerta-interior-en-block-lisa-melamina-blanca-ciega-82-5cm-derecha-10340911.html;
+Obramat;mat_carpinteria;MCA-002;PUERTA INTERIOR EN BLOCK LISA LACADA BLANCA CIEGA 82.5CM DERECHA;25048779;ud;90;https://www.obramat.es/productos/puerta-interior-en-block-lisa-lacada-blanca-ciega-82-5cm-derecha-25048779.html;
+Obramat;mat_carpinteria;MCA-003;PUERTA ABATIBLE EN BLOCK VT5 LACADA BLANCA CIEGA 72,5CM DERECHA;10759651;ud;119;https://www.obramat.es/productos/puerta-abatible-en-block-vt5-lacada-blanca-ciega-72-5cm-derecha-10759651.html;
+Obramat;mat_carpinteria;MCA-004;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_carpinteria;MCA-005;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_carpinteria;MCA-006;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_carpinteria;MCA-007;HOJA VT2 LACADA BLANCA CIEGA 72,5CM;10609774;ud;89;https://www.obramat.es/productos/hoja-vt2-lacada-blanca-ciega-72-5cm-10609774.html;
+Obramat;mat_carpinteria;MCA-008;PUERTA ENTRADA  BLINDADA RECHAPADA SAPELLY 1 PUNTO IZQUIERDA;10295362;ud;245;https://www.obramat.es/productos/puerta-entrada-blindada-rechapada-sapelly-1-punto-izquierda-10295362.html;
+Obramat;mat_carpinteria;MCA-009;PUERTA ENTRADA  BLINDADA SAPELLY Y BLANCO IZQUIERDA;10547964;ud;370;https://www.obramat.es/productos/puerta-entrada-blindada-sapelly-y-blanco-izquierda-10547964.html;
+Obramat;mat_carpinteria;MCA-010;PUERTA INTERIOR BLINDADA VT5 LACADA BLANCA 3 PUNTOS IZQUIERDA;25028692;ud;370;https://www.obramat.es/productos/puerta-interior-blindada-vt5-lacada-blanca-3-puntos-izquierda-25028692.html;
+Obramat;mat_carpinteria;MCA-011;ESTRUCTURA PUERTA CORREDERA  10 CM HOJA 80 CM;10306534;ud;134;https://www.obramat.es/productos/estructura-puerta-corredera-10-cm-hoja-80-cm-10306534.html;
+Obramat;mat_carpinteria;MCA-012;PREMARCO DE PUERTA TABIQUE 7 CM;10158575;ud;13.89;https://www.obramat.es/productos/premarco-de-puerta-tabique-7-cm-10158575.html;
+Obramat;mat_carpinteria;MCA-013;JUEGO DE MANILLA ROSETAS ACERO INOXIDABLE  MOD RI-503;25086435;ud;9.2;https://www.obramat.es/productos/juego-de-manilla-rosetas-acero-inoxidable-mod-ri-503-25086435.html;
+Obramat;mat_carpinteria;MCA-014;VENTANA PVC OSCILOBATIENTE BLANCA 60X60CM VIDRIO MATE;10881304;ud;130;https://www.obramat.es/productos/ventana-pvc-oscilobatiente-blanca-60x60cm-vidrio-mate-10881304.html;
+Obramat;mat_carpinteria;MCA-015;VENTANA PVC OSCILOBATIENTE CON PERSIANA BLANCA 100X115CM;10881346;ud;145;https://www.obramat.es/productos/ventana-pvc-oscilobatiente-con-persiana-blanca-100x115cm-10881346.html;
+Obramat;mat_carpinteria;MCA-016;VENTANA PVC OSCILOBATIENTE CON PERSIANA BLANCA 120X115CM;10881374;ud;280;https://www.obramat.es/productos/ventana-pvc-oscilobatiente-con-persiana-blanca-120x115cm-10881374.html;
+Obramat;mat_carpinteria;MCA-017;BALCONERA PVC OSCILOBATIENTE CON PERSIANA BLANCA 120X218CM;10881395;ud;535;https://www.obramat.es/productos/balconera-pvc-oscilobatiente-con-persiana-blanca-120x218cm-10881395.html;
+Obramat;mat_carpinteria;MCA-018;VENTANA ALUMINIO CORREDERA PERSIANA BLANCA 100X115CM;10380545;ud;136;https://www.obramat.es/productos/ventana-aluminio-corredera-persiana-blanca-100x115cm-10380545.html;
+Obramat;mat_carpinteria;MCA-019;VENTANA ALUMINIO CORREDERA CON PERSIANA BLANCA 120X115CM;10488436;ud;305;https://www.obramat.es/productos/ventana-aluminio-corredera-con-persiana-blanca-120x115cm-10488436.html;
+Obramat;mat_carpinteria;MCA-020;RODAPIE LACADO BLANCO 2250 X 70 X 12 MM;10732470;ml;4;https://www.obramat.es/productos/rodapie-lacado-blanco-2250-x-70-x-12-mm-10732470.html;
+Obramat;mat_carpinteria;MCA-021;RODAPIE LACADO BLANCO 2250 X 120 X 12 MM;10732491;ml;6;https://www.obramat.es/productos/rodapie-lacado-blanco-2250-x-120-x-12-mm-10732491.html;
+Obramat;mat_carpinteria;MCA-022;CUBRE RODAPIE DM LACADO BLANCO 2240 X 90 MM;10732526;ud;12;https://www.obramat.es/productos/cubre-rodapie-dm-lacado-blanco-2240-x-90-mm-10732526.html;
+Obramat;mat_carpinteria;MCA-023;PUERTA DE ARMARIO CORREDERA BLANCO  ANCHO 80 CM;10819564;ud;89;https://www.obramat.es/productos/puerta-de-armario-corredera-blanco-ancho-80-cm-10819564.html;
+Obramat;mat_cocina_bano;MCB-001;(sin equivalente en Obramat);;ml;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_cocina_bano;MCB-002;(sin equivalente en Obramat);;ml;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_cocina_bano;MCB-003;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_cocina_bano;MCB-004;MÓDULO COCINA BLANCO BAJO 80X60X58CM;25070681;ud;36;https://www.obramat.es/productos/modulo-cocina-blanco-bajo-80x60x58cm-25070681.html;
+Obramat;mat_cocina_bano;MCB-005;MÓDULO COCINA BLANCO ALTO 60X60X35CM;25070711;ud;31;https://www.obramat.es/productos/modulo-cocina-blanco-alto-60x60x35cm-25070711.html;
+Obramat;mat_cocina_bano;MCB-006;MÓDULO COCINA BLANCO COLUMNA 220X60X58CM;25070710;ud;103;https://www.obramat.es/productos/modulo-cocina-blanco-columna-220x60x58cm-25070710.html;
+Obramat;mat_cocina_bano;MCB-007;ENCIMERA ACABADO PIZARRA NEGRA 360X63X3CM;10181941;ml;24.72;https://www.obramat.es/productos/encimera-acabado-pizarra-negra-360x63x3cm-10181941.html;
+Obramat;mat_cocina_bano;MCB-008;ENCIMERA ACABADO CEMENTO 360 X 62 X 3.8CM;10968566;ml;31.67;https://www.obramat.es/productos/encimera-acabado-cemento-360-x-62-x-3-8cm-10968566.html;
+Obramat;mat_cocina_bano;MCB-009;(sin equivalente en Obramat);;m2;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_cocina_bano;MCB-010;CAMPANA COCINA DECORATIVA PIRAMIDAL 60 CM ACABADO INOX CATA V3-T600 X;10873534;ud;75;https://www.obramat.es/productos/campana-cocina-decorativa-piramidal-60-cm-acabado-inox-cata-v3-t600-x-10873534.html;
+Obramat;mat_cocina_bano;MCB-011;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_cocina_bano;MCB-012;MUEBLE DE BAÑO MAYA ROBLE 80X45CM 2 CAJONES;25062106;ud;118;https://www.obramat.es/productos/mueble-de-bano-maya-roble-80x45cm-2-cajones-25062106.html;
+Obramat;mat_cocina_bano;MCB-013;MUEBLE DE BAÑO CON LAVABO SOBREPONER Y ESPEJO 80CM ROBLE EMOTION;25153463;ud;367;https://www.obramat.es/productos/mueble-de-bano-con-lavabo-sobreponer-y-espejo-80cm-roble-emotion-25153463.html;
+Obramat;mat_cocina_bano;MCB-014;MUEBLE DE BAÑO LIMA BLANCO 60X39CM 3 CAJONES;25061878;ud;133;https://www.obramat.es/productos/mueble-de-bano-lima-blanco-60x39cm-3-cajones-25061878.html;
+Obramat;mat_cocina_bano;MCB-015;ESPEJO DE BAÑO CON LUZ LED MARC 60X80CM;10891643;ud;99;https://www.obramat.es/productos/espejo-de-bano-con-luz-led-marc-60x80cm-10891643.html;
+Obramat;mat_cocina_bano;MCB-016;ESPEJO DE BAÑO CON LUZ LED MARC 80X80CM;10891650;ud;109;https://www.obramat.es/productos/espejo-de-bano-con-luz-led-marc-80x80cm-10891650.html;
+Obramat;mat_cocina_bano;MCB-017;TOALLERO BARRA TEKA INCA DUAL;25043357;ud;27.5;https://www.obramat.es/productos/toallero-barra-teka-inca-dual-25043357.html;
+Obramat;mat_climatizacion;MCL-001;AIRE ACONDICIONADO WIFI SPLIT 2236 FRIGORIAS AIRMART PRO;25117196;ud;239;https://www.obramat.es/productos/aire-acondicionado-wifi-split-2236-frigorias-airmart-pro-25117196.html;
+Obramat;mat_climatizacion;MCL-002;AIRE ACONDICIONADO WIFI SPLIT 2752 FRIGORIAS AIRMART PRO;25117199;ud;259;https://www.obramat.es/productos/aire-acondicionado-wifi-split-2752-frigorias-airmart-pro-25117199.html;
+Obramat;mat_climatizacion;MCL-003;AIRE ACONDICIONADO WIFI SPLIT 2924 FRIGORIAS FUJITSU ASY35KN;25094306;ud;639;https://www.obramat.es/productos/aire-acondicionado-wifi-split-2924-frigorias-fujitsu-asy35kn-25094306.html;
+Obramat;mat_climatizacion;MCL-004;AIRE ACONDICIONADO WIFI SPLIT 4200 FRIGORIAS AIRMART PRO;25117197;ud;479;https://www.obramat.es/productos/aire-acondicionado-wifi-split-4200-frigorias-airmart-pro-25117197.html;
+Obramat;mat_climatizacion;MCL-005;AIRE ACONDICIONADO WIFI SPLIT 5160 FRIGORIAS AIRMART PRO;25117198;ud;699;https://www.obramat.es/productos/aire-acondicionado-wifi-split-5160-frigorias-airmart-pro-25117198.html;
+Obramat;mat_climatizacion;MCL-006;AIRE ACONDICIONADO WIFI MULTISPLIT 2X3010 FRIGORIAS HAIER GEOS R+;25060660;ud;1165;https://www.obramat.es/productos/aire-acondicionado-wifi-multisplit-2x3010-frigorias-haier-geos-r-25060660.html;
+Obramat;mat_climatizacion;MCL-007;AIRE ACONDICIONADO WIFI MULTISPLIT 2X2924 FRIGORIAS FUJITSU;25043329;ud;1580;https://www.obramat.es/productos/aire-acondicionado-wifi-multisplit-2x2924-frigorias-fujitsu-25043329.html;
+Obramat;mat_climatizacion;MCL-008;"TUBO COBRE REFRIGERACION AISLADO 1/4""-3/8"" 5M";25036417;ud;38;https://www.obramat.es/productos/tubo-cobre-refrigeracion-aislado-1-4-3-8-5m-25036417.html;
+Obramat;mat_climatizacion;MCL-009;"TUBO COBRE REFRIGERACION AISLADO 1/4""-3/8"" 20M";10570280;ml;5.35;https://www.obramat.es/productos/tubo-cobre-refrigeracion-aislado-1-4-3-8-20m-10570280.html;
+Obramat;mat_climatizacion;MCL-010;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_climatizacion;MCL-011;BOMBA DE CONDENSADOS EXTERNA;10979626;ud;45.78;https://www.obramat.es/productos/bomba-de-condensados-externa-10979626.html;
+Obramat;mat_climatizacion;MCL-012;SOPORTES SUPER SOLDADOS 450X450MM ESPESOR 2MM CARGA MAXIMA 125+125KG 2UDS;25120516;ud;11.95;https://www.obramat.es/productos/soportes-super-soldados-450x450mm-espesor-2mm-carga-maxima-125-125kg-2uds-25120516.html;
+Obramat;mat_climatizacion;MCL-013;REVERSO CANAL CLIMA 90X65MM 2M BLANCO;10972612;ud;7;https://www.obramat.es/productos/reverso-canal-clima-90x65mm-2m-blanco-10972612.html;
+Obramat;mat_climatizacion;MCL-014;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_climatizacion;MCL-015;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_exteriores;MEX-001;MORTERO MONOCAPA WEBERPRAL PRISMA 25 KG BLANCO;10484964;saco;7.9;https://www.obramat.es/productos/mortero-monocapa-weberpral-prisma-25-kg-blanco-10484964.html;
+Obramat;mat_exteriores;MEX-002;(sin equivalente en Obramat);;saco;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_exteriores;MEX-003;MORTERO DE REVOCO WEBEREV HIDRO PLUS 25 KG BLANCO;25035052;saco;5.28;https://www.obramat.es/productos/mortero-de-revoco-weberev-hidro-plus-25-kg-blanco-25035052.html;
+Obramat;mat_exteriores;MEX-004;MORTERO DE REPARACIÓN GECOL REPARATEC R4 25KG;25058850;saco;14.92;https://www.obramat.es/productos/mortero-de-reparacion-gecol-reparatec-r4-25kg-25058850.html;
+Obramat;mat_exteriores;MEX-005;BORDILLO DE HORMIGÓN CUADRADO 100X20X10 CM BLANCO;10756774;ud;3.09;https://www.obramat.es/productos/bordillo-de-hormigon-cuadrado-100x20x10-cm-blanco-10756774.html;
+Obramat;mat_exteriores;MEX-006;BORDILLO DE HORMIGÓN REDONDEADO 50X20X6 CM BLANCO;10756753;ud;1.25;https://www.obramat.es/productos/bordillo-de-hormigon-redondeado-50x20x6-cm-blanco-10756753.html;
+Obramat;mat_exteriores;MEX-007;ALBARDILLA DE HORMIGÓN 25X20 CM GRIS;10756263;ud;0.61;https://www.obramat.es/productos/albardilla-de-hormigon-25x20-cm-gris-10756263.html;
+Obramat;mat_exteriores;MEX-008;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_exteriores;MEX-009;(sin equivalente en Obramat);;ud;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_exteriores;MEX-010;(sin equivalente en Obramat);;saco;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_exteriores;MEX-011;(sin equivalente en Obramat);;saco;;;No se encontró en Obramat un producto del mismo tipo, formato y calidad
+Obramat;mat_exteriores;MEX-012;SELLADOR PARA HORMIGÓN IMPRESO MS83 METACRILATO 25 L;25044069;ud;129;https://www.obramat.es/productos/sellador-para-hormigon-impreso-ms83-metacrilato-25-l-25044069.html;
+Obramat;mat_exteriores;MEX-013;HIDROFUGANTE FACHADAS COLLAK 5L INCOLORO;10397422;ud;29;https://www.obramat.es/productos/hidrofugante-fachadas-collak-5l-incoloro-10397422.html;
+Obramat;mat_exteriores;MEX-014;MALLAZO ACERO CONSTRUCCIÓN 4MM 3X2.20M;10214351;ud;8.88;https://www.obramat.es/productos/mallazo-acero-construccion-4mm-3x2-20m-10214351.html;
+Obramat;mat_exteriores;MEX-015;PELDAÑO PORCELÁNICO 31.7X120CM HARDWOOD ICE GREY;10953586;ud;49;https://www.obramat.es/productos/peldano-porcelanico-31-7x120cm-hardwood-ice-grey-10953586.html;
+Obramat;mat_electricidad;;CAJA DE REGISTRO ELÉCTRICO ESTANCA 110X110X60MM PARA SUPERFICIE DE EXTERIOR CON TAPA DE TORNILLO;10016811;ud;2.1;https://www.obramat.es/productos/caja-de-registro-electrico-estanca-110x110x60mm-para-superficie-de-exterior-con-tapa-de-tornillo-10016811.html;
+Obramat;mat_electricidad;;CAJA DE REGISTRO ELÉCTRICO ESTANCA 80X80X40MM PARA SUPERFICIE DE EXTERIOR CON TAPA A PRESIÓN;10016804;ud;1.45;https://www.obramat.es/productos/caja-de-registro-electrico-estanca-80x80x40mm-para-superficie-de-exterior-con-tapa-a-presion-10016804.html;
+Obramat;mat_electricidad;;TECLA NEUTRA SERIE SIMON 82 CONCEPT BCO;10889333;ud;2.87;https://www.obramat.es/productos/tecla-neutra-serie-simon-82-concept-bco-10889333.html;
+Obramat;mat_electricidad;;MARCO SIMPLE SERIE SIMON 82 CONCEPT BCO;10889473;ud;2.36;https://www.obramat.es/productos/marco-simple-serie-simon-82-concept-bco-10889473.html;
+Obramat;mat_electricidad;;PULSADOR SIMON 82;10978422;ud;6.2;https://www.obramat.es/productos/pulsador-simon-82-10978422.html;
+Obramat;mat_electricidad;;TOMA RED RJ45 SERIE ASFORA BLANCO;10515841;ud;9.25;https://www.obramat.es/productos/toma-red-rj45-serie-asfora-blanco-10515841.html;
+Obramat;mat_electricidad;;MARCO SIMPLE BÁSICO SERIE ZENIT BLANCO;10692962;ud;1.08;https://www.obramat.es/productos/marco-simple-basico-serie-zenit-blanco-10692962.html;
+Obramat;mat_electricidad;;AUTOMATICO MAGNETOTÉRMICO 2P 10A SCHNEIDER RESI9;10971324;ud;7.83;https://www.obramat.es/productos/automatico-magnetotermico-2p-10a-schneider-resi9-10971324.html;
+Obramat;mat_electricidad;;AUTOMATICO MAGNETOTÉRMICO 2P 20A SCHNEIDER RESI9;10971352;ud;7.83;https://www.obramat.es/productos/automatico-magnetotermico-2p-20a-schneider-resi9-10971352.html;
+Obramat;mat_electricidad;;AUTOMATICO MAGNETOTÉRMICO 2P 25A SCHNEIDER RESI9;10971373;ud;7.91;https://www.obramat.es/productos/automatico-magnetotermico-2p-25a-schneider-resi9-10971373.html;
+Obramat;mat_electricidad;;AUTOMATICO MAGNETOTÉRMICO 2P 32A SCHNEIDER RESI9;10971380;ud;10.73;https://www.obramat.es/productos/automatico-magnetotermico-2p-32a-schneider-resi9-10971380.html;
+Obramat;mat_electricidad;;DIFERENCIAL 2P 63A 30MA SOLERA;25085712;ud;53;https://www.obramat.es/productos/diferencial-2p-63a-30ma-solera-25085712.html;
+Obramat;mat_electricidad;;CUADRO ELÉCTRICO PARA SUPERFICIE DE 18 ELEMENTOS IP40 SOLERA;10347694;ud;17.77;https://www.obramat.es/productos/cuadro-electrico-para-superficie-de-18-elementos-ip40-solera-10347694.html;
+Obramat;mat_electricidad;;REGLETA LED 120CM 40W LUZ CCT;25056846;ud;24.95;https://www.obramat.es/productos/regleta-led-120cm-40w-luz-cct-25056846.html;
+Obramat;mat_electricidad;;PANEL LED DE EMPOTRAR 60X60 26.5W LUZ FRIA;25076357;ud;12.5;https://www.obramat.es/productos/panel-led-de-empotrar-60x60-26-5w-luz-fria-25076357.html;
+Obramat;mat_electricidad;;APLIQUE DE PARED EXTERIOR DE SUPERFICIE 60W BLANCO IP44;1537340;ud;3.55;https://www.obramat.es/productos/aplique-de-pared-exterior-de-superficie-60w-blanco-ip44-1537340.html;
+Obramat;mat_electricidad;;DETECTOR MOVIMIENTO SUPERFICIE PARED IP44;10157665;ud;9.87;https://www.obramat.es/productos/detector-movimiento-superficie-pared-ip44-10157665.html;
+Obramat;mat_electricidad;;REGLETA DE CONEXIÓN 12 CONTACTOS 16 MM BLANCA;10025141;ud;1.14;https://www.obramat.es/productos/regleta-de-conexion-12-contactos-16-mm-blanca-10025141.html;
+Obramat;mat_electricidad;;PROYECTOR LED 50W LUZ FRÍA;10736313;ud;18.95;https://www.obramat.es/productos/proyector-led-50w-luz-fria-10736313.html;
+Obramat;mat_fontaneria;;TUBO 32MM 3M PVC;25073068;ud;2.85;https://www.obramat.es/productos/tubo-32mm-3m-pvc-25073068.html;
+Obramat;mat_fontaneria;;TUBO 90MM 3M PVC;25073184;ud;6.9;https://www.obramat.es/productos/tubo-90mm-3m-pvc-25073184.html;
+Obramat;mat_fontaneria;;TUBO 125MM 3M PVC;25073185;ud;10.75;https://www.obramat.es/productos/tubo-125mm-3m-pvc-25073185.html;
+Obramat;mat_fontaneria;;MANGUITO 40MM PVC PRESIÓN HEMBRA;10108623;ud;0.67;https://www.obramat.es/productos/manguito-40mm-pvc-presion-hembra-10108623.html;
+Obramat;mat_fontaneria;;"VÁLVULA CLICK CLACK LAVABO 1 1/4"" CROMADA";25026283;ud;5.4;https://www.obramat.es/productos/valvula-click-clack-lavabo-1-1-4-cromada-25026283.html;
+Obramat;mat_fontaneria;;"SIFÓN FREGADERO BOTELLA EXTENSIBLE 1 1/2"" BLANCO GIRPI";25045337;ud;6.6;https://www.obramat.es/productos/sifon-fregadero-botella-extensible-1-1-2-blanco-girpi-25045337.html;
+Obramat;mat_fontaneria;;"LLAVE DE CORTE ESCUADRA CORTA 1/2""- 3/8"" 2 UDS";25055968;ud;3.15;https://www.obramat.es/productos/llave-de-corte-escuadra-corta-1-2-3-8-2-uds-25055968.html;
+Obramat;mat_fontaneria;;"LATIGUILLO 30CM 3/8""- 1/2"" HEMBRA DN8";10119655;ud;1.3;https://www.obramat.es/productos/latiguillo-30cm-3-8-1-2-hembra-dn8-10119655.html;
+Obramat;mat_fontaneria;;"LATIGUILLO 40CM 3/8"" HEMBRA DN8";10727150;ud;1.5;https://www.obramat.es/productos/latiguillo-40cm-3-8-hembra-dn8-10727150.html;
+Obramat;mat_fontaneria;;GRIFO DE BAÑERA MONOMANDO NEREA;10064982;ud;19.4;https://www.obramat.es/productos/grifo-de-banera-monomando-nerea-10064982.html;
+Obramat;mat_fontaneria;;GRIFO DE BIDET MONOMANDO NEREA;10064987;ud;13.1;https://www.obramat.es/productos/grifo-de-bidet-monomando-nerea-10064987.html;
+Obramat;mat_fontaneria;;INODORO SUSPENDIDO TEKA MANACOR PRO SALIDA HORIZONTAL;10927714;ud;145;https://www.obramat.es/productos/inodoro-suspendido-teka-manacor-pro-salida-horizontal-10927714.html;
+Obramat;mat_fontaneria;;PLATO DE DUCHA RESINA RECTANGULAR BLANCO 70X120X3CM;25141595;ud;89;https://www.obramat.es/productos/plato-de-ducha-resina-rectangular-blanco-70x120x3cm-25141595.html;
+Obramat;mat_fontaneria;;PLATO DE DUCHA RESINA RECTANGULAR BLANCO 80X120X3CM;25142000;ud;112;https://www.obramat.es/productos/plato-de-ducha-resina-rectangular-blanco-80x120x3cm-25142000.html;
+Obramat;mat_fontaneria;;PLATO DE DUCHA RESINA RECTANGULAR NEGRO 90X160X3CM;25142378;ud;161;https://www.obramat.es/productos/plato-de-ducha-resina-rectangular-negro-90x160x3cm-25142378.html;
+Obramat;mat_fontaneria;;TERMO ELÉCTRICO 30 LITROS WELCOME;25104028;ud;95;https://www.obramat.es/productos/termo-electrico-30-litros-welcome-25104028.html;
+Obramat;mat_fontaneria;;LAVABO PARA PEDESTAL CAROL;10203795;ud;39;https://www.obramat.es/productos/lavabo-para-pedestal-carol-10203795.html;
+Obramat;mat_fontaneria;;VALVULA DESAGÜE PLATO DUCHA NAKNEK;10824394;ud;9.95;https://www.obramat.es/productos/valvula-desague-plato-ducha-naknek-10824394.html;
+Obramat;mat_fontaneria;;CINTA TEFLÓN 12X0.075MM 12M 0.2G/CM2;25056723;ud;0.4;https://www.obramat.es/productos/cinta-teflon-12x0-075mm-12m-0-2g-cm2-25056723.html;
+Obramat;mat_fontaneria;;GRIFO DE DUCHA TERMOSTÁTICO NEREA II;10953250;ud;30.15;https://www.obramat.es/productos/grifo-de-ducha-termostatico-nerea-ii-10953250.html;
+Obramat;mat_fontaneria;;"LLAVE DE LAVADORA 1/2""-3/4"" MACHO ARCO";10410043;ud;5.95;https://www.obramat.es/productos/llave-de-lavadora-1-2-3-4-macho-arco-10410043.html;
+Obramat;mat_yesos_morteros;;CINTA ADHESIVA TAPAGRIETAS FIBRA DE VIDRIO 50 MM X 20 M;10199742;ud;2;https://www.obramat.es/productos/cinta-adhesiva-tapagrietas-fibra-de-vidrio-50-mm-x-20-m-10199742.html;
+Obramat;mat_yesos_morteros;;MORTERO RAPIDO CAPACEM RAPID 20 KG;10438246;ud;8.2;https://www.obramat.es/productos/mortero-rapido-capacem-rapid-20-kg-10438246.html;
+Obramat;mat_yesos_morteros;;MORTERO REFRACTARIO WEBERTEC FOC 25 KG;10300570;ud;14.82;https://www.obramat.es/productos/mortero-refractario-webertec-foc-25-kg-10300570.html;
+Obramat;mat_yesos_morteros;;CEMENTO RÁPIDO CAPAPROMPT 20 KG;10437315;ud;12.79;https://www.obramat.es/productos/cemento-rapido-capaprompt-20-kg-10437315.html;
+Obramat;mat_yesos_morteros;;ARENA GRUESA 0-6 MM 25KG;10269084;ud;1.4;https://www.obramat.es/productos/arena-gruesa-0-6-mm-25kg-10269084.html;
+Obramat;mat_yesos_morteros;;ARENA/GRAVA 0-12 MM BIGBAG 1000 KG;10575985;ud;40;https://www.obramat.es/productos/arena-grava-0-12-mm-bigbag-1000-kg-10575985.html;
+Obramat;mat_yesos_morteros;;MALLA DE FIBRA DE VIDRIO DE REFUERZO REGARSA MORTERO 90 GR/M2 1X50 M;10036880;ud;28.95;https://www.obramat.es/productos/malla-de-fibra-de-vidrio-de-refuerzo-regarsa-mortero-90-gr-m2-1x50-m-10036880.html;
+Obramat;mat_yesos_morteros;;CEMENTO COLA FLEX DUO WEBER C2TE 25KG BLANCO;10547005;ud;8.95;https://www.obramat.es/productos/cemento-cola-flex-duo-weber-c2te-25kg-blanco-10547005.html;
+Obramat;mat_yesos_morteros;;MORTERO IMPERMEABLE WEBERDRY IMPER G 25 KG;10447374;ud;18.9;https://www.obramat.es/productos/mortero-impermeable-weberdry-imper-g-25-kg-10447374.html;
+Obramat;mat_ladrillos;;LADRILLO REFRACTARIO 22X11X4 CM;10757145;ud;1.24;https://www.obramat.es/productos/ladrillo-refractario-22x11x4-cm-10757145.html;
+Obramat;mat_ladrillos;;BOVEDILLA DE POLIESTIRENO EXPANDIDO EPS 100X62.5X17 CM;25066460;ud;8.31;https://www.obramat.es/productos/bovedilla-de-poliestireno-expandido-eps-100x62-5x17-cm-25066460.html;
+Obramat;mat_revestimientos;;RODAPIE CERAMICO 8X45CM MADERA BEIGE. PACK 4 UNIDADES.;10950233;ud;7.95;https://www.obramat.es/productos/rodapie-ceramico-8x45cm-madera-beige-pack-4-unidades-10950233.html;
+Obramat;mat_revestimientos;;PERFIL ESQUINA ACERO  12X12X2600 MM INOX BRILLO;10482745;ud;11.95;https://www.obramat.es/productos/perfil-esquina-acero-12x12x2600-mm-inox-brillo-10482745.html;
+Obramat;mat_revestimientos;;CRUCETAS JUNTAS CERÁMICA 2MM. BOLSA 300 PIEZAS;10482612;ud;3.25;https://www.obramat.es/productos/crucetas-juntas-ceramica-2mm-bolsa-300-piezas-10482612.html;
+Obramat;mat_revestimientos;;CRUCETAS JUNTAS CERÁMICA 3MM. BOLSA 300 PIEZAS;10482626;ud;3.75;https://www.obramat.es/productos/crucetas-juntas-ceramica-3mm-bolsa-300-piezas-10482626.html;
+Obramat;mat_revestimientos;;AZULEJO PASTA ROJA 30X60CM CALA GREY DECOR;25073423;caja;13.8;https://www.obramat.es/productos/azulejo-pasta-roja-30x60cm-cala-grey-decor-25073423.html;
+Obramat;mat_suelos;;SUELO PORCELÁNICO 75X75CM DAYSON GREY;25106946;caja;15.44;https://www.obramat.es/productos/suelo-porcelanico-75x75cm-dayson-grey-25106946.html;
+Obramat;mat_suelos;;SUELO PORCELÁNICO 90X90CM DAKAR ARENA;25106542;caja;25.84;https://www.obramat.es/productos/suelo-porcelanico-90x90cm-dakar-arena-25106542.html;
+Obramat;mat_suelos;;SUELO PORCELANICO 60X60CM FLAVIA BRILLO;25085300;caja;14.53;https://www.obramat.es/productos/suelo-porcelanico-60x60cm-flavia-brillo-25085300.html;
+Obramat;mat_suelos;;SUELO PORCELÁNICO 59X119CM ESSENZIAL NEGRO PULIDO;25073529;caja;27.93;https://www.obramat.es/productos/suelo-porcelanico-59x119cm-essenzial-negro-pulido-25073529.html;
+Obramat;mat_suelos;;SUELO PORCELÁNICO 60X120CM DAYSON SOFT PEARL;25106951;caja;21.35;https://www.obramat.es/productos/suelo-porcelanico-60x120cm-dayson-soft-pearl-25106951.html;
+Obramat;mat_suelos;;SUELO LAMINADO AC5 7MM MODELO ROBLE MALTA;10693760;ud;20.51;https://www.obramat.es/productos/suelo-laminado-ac5-7mm-modelo-roble-malta-10693760.html;
+Obramat;mat_suelos;;PERFIL DE TRANSICIÓN ADHESIVO ACERO ROBLE CLARO 83CM;25041110;ud;4.98;https://www.obramat.es/productos/perfil-de-transicion-adhesivo-acero-roble-claro-83cm-25041110.html;
+Obramat;mat_suelos;;SUELO VINÍLICO 5MM MODELO GRIS;25116444;ud;35.13;https://www.obramat.es/productos/suelo-vinilico-5mm-modelo-gris-25116444.html;
+Obramat;mat_suelos;;BALDOSA EXTERIOR PORCELÁNICO 32.5X32.5CM  TERRACINA GRIS;25073442;caja;12.26;https://www.obramat.es/productos/baldosa-exterior-porcelanico-32-5x32-5cm-terracina-gris-25073442.html;
+Obramat;mat_pintura;;LASUR SINTÉTICO MATE  BARPIDECOR  750ML ROBLE;10077221;ud;10;https://www.obramat.es/productos/lasur-sintetico-mate-barpidecor-750ml-roble-10077221.html;
+Obramat;mat_pintura;;ESMALTE SINTÉTICO BRILLANTE NOVOLACK 4L NEGRO;10537023;ud;32.5;https://www.obramat.es/productos/esmalte-sintetico-brillante-novolack-4l-negro-10537023.html;
+Obramat;mat_pintura;;PINTURA EPOXI SUELOS + CATALIZADOR 5KG GRIS;10684506;ud;49;https://www.obramat.es/productos/pintura-epoxi-suelos-catalizador-5kg-gris-10684506.html;
+Obramat;mat_pintura;;CINTA DE PINTOR EXTERIOR 50MM 50M;10962595;ud;6.6;https://www.obramat.es/productos/cinta-de-pintor-exterior-50mm-50m-10962595.html;
+Obramat;mat_pintura;;RODILLO SUPERFICIES LISAS ANTIGOTA  22 CM;10764831;ud;3.6;https://www.obramat.es/productos/rodillo-superficies-lisas-antigota-22-cm-10764831.html;
+Obramat;mat_pintura;;RODILLO SUPERFICES LISAS ANTIGOTA 22 CM;10374490;ud;2.98;https://www.obramat.es/productos/rodillo-superfices-lisas-antigota-22-cm-10374490.html;
+Obramat;mat_pintura;;PLÁSTICO CUBRETODO STANDARD RECICLADO 4X5 M;10963512;ud;1.25;https://www.obramat.es/productos/plastico-cubretodo-standard-reciclado-4x5-m-10963512.html;
+Obramat;mat_pintura;;5 TACOS DE LIJA GRANO FINO;10754723;ud;2.6;https://www.obramat.es/productos/5-tacos-de-lija-grano-fino-10754723.html;
+Obramat;mat_pintura;;ESPATULA EMPLASTECER INOX MANGO BIMATERIAL 120MM PENTRILO;25033916;ud;3.5;https://www.obramat.es/productos/espatula-emplastecer-inox-mango-bimaterial-120mm-pentrilo-25033916.html;
+Obramat;mat_pintura;;DISOLVENTE UNIVERSAL 5L;25103217;ud;12;https://www.obramat.es/productos/disolvente-universal-5l-25103217.html;
+Obramat;mat_pintura;;AGUARRAS PURO 1L;10862460;ud;2.9;https://www.obramat.es/productos/aguarras-puro-1l-10862460.html;
+Obramat;mat_placa_techos;;PLACA DE YESO LAMINADO PPM 2000X1200X13 MM;10402735;ud;13;https://www.obramat.es/productos/placa-de-yeso-laminado-ppm-2000x1200x13-mm-10402735.html;
+Obramat;mat_placa_techos;;MONTANTE EGA 46 MM 2.6 M;25125971;ud;2.45;https://www.obramat.es/productos/montante-ega-46-mm-2-6-m-25125971.html;
+Obramat;mat_placa_techos;;TORNILLO  PLACA YESO FOSFATADO 3.5X25MM. 1000UDS.;10982104;ud;6.8;https://www.obramat.es/productos/tornillo-placa-yeso-fosfatado-3-5x25mm-1000uds-10982104.html;
+Obramat;mat_placa_techos;;TORNILLOS PARA METAL AUTOPERFORANTES CINCADOS 4,2X13MM. 500UDS;10957205;ud;8.3;https://www.obramat.es/productos/tornillos-para-metal-autoperforantes-cincados-4-2x13mm-500uds-10957205.html;
+Obramat;mat_placa_techos;;TACO AUTOPERFORANTE DUOBLADE PARA PLACA 5X44MM FISCHER 20 UDS;10788232;caja;8.91;https://www.obramat.es/productos/taco-autoperforante-duoblade-para-placa-5x44mm-fischer-20-uds-10788232.html;
+Obramat;mat_placa_techos;;VARILLA ROSCADA ACERO CINCADO DIÁMETRO 6MM LARGO 1M;10070235;ud;0.58;https://www.obramat.es/productos/varilla-roscada-acero-cincado-diametro-6mm-largo-1m-10070235.html;
+Obramat;mat_placa_techos;;HORQUILLA CUELGUE TECHO CONTINUO PLACO F530 100 UDS;10594213;ud;13.02;https://www.obramat.es/productos/horquilla-cuelgue-techo-continuo-placo-f530-100-uds-10594213.html;
+Obramat;mat_placa_techos;;PLACA TECHO ACÚSTICO BASIC 2 60X60X1.2 CM 12 UDS;25047018;ud;28.03;https://www.obramat.es/productos/placa-techo-acustico-basic-2-60x60x1-2-cm-12-uds-25047018.html;
+Obramat;mat_placa_techos;;PLACA DE YESO LAMINADO BA 3000X1200X15 MM;10331972;ud;13.29;https://www.obramat.es/productos/placa-de-yeso-laminado-ba-3000x1200x15-mm-10331972.html;
+Obramat;mat_placa_techos;;PERFIL ANGULAR T-24 24X24 MM 3 M NEGRO;10661182;ud;2.72;https://www.obramat.es/productos/perfil-angular-t-24-24x24-mm-3-m-negro-10661182.html;
+Obramat;mat_placa_techos;;PLACA TECHO YESO LAMINADO VINILO RECTO-A 120X60X0.9 CM 6 UDS;10849685;ud;29.2;https://www.obramat.es/productos/placa-techo-yeso-laminado-vinilo-recto-a-120x60x0-9-cm-6-uds-10849685.html;
+Obramat;mat_placa_techos;;TRAMPILLA DE INSPECCIÓN ALUMINIO 60X60CM;10784123;ud;30.1;https://www.obramat.es/productos/trampilla-de-inspeccion-aluminio-60x60cm-10784123.html;
+Obramat;mat_placa_techos;;TORNILLOS PARA PLACAS DE YESO FOSFATADOS 3,5X55MM. 850UDS;10285681;caja;13.95;https://www.obramat.es/productos/tornillos-para-placas-de-yeso-fosfatados-3-5x55mm-850uds-10285681.html;
+Obramat;mat_aislamiento;;PANEL LANA DE ROCA SONOROCK ECO 135X40X4CM;25046667;ud;35.68;https://www.obramat.es/productos/panel-lana-de-roca-sonorock-eco-135x40x4cm-25046667.html;
+Obramat;mat_aislamiento;;ESPUMA DE POLIURETANO MULTISUSOS 750ML PISTOLA;10563784;ud;6.9;https://www.obramat.es/productos/espuma-de-poliuretano-multisusos-750ml-pistola-10563784.html;
+Obramat;mat_aislamiento;;ESPUMA DE POLIURETANO IGNIFUGA 700ML MANUAL;10382834;ud;10.3;https://www.obramat.es/productos/espuma-de-poliuretano-ignifuga-700ml-manual-10382834.html;
+Obramat;mat_aislamiento;;SILICONA NEUTRA PARA BAÑOS Y COCINAS 280ML TRANSPARENTE;10964611;ud;4.9;https://www.obramat.es/productos/silicona-neutra-para-banos-y-cocinas-280ml-transparente-10964611.html;
+Obramat;mat_aislamiento;;MASILLA POLIURETANO MULTIUSOS 300ML BLANCA;25055902;ud;4.5;https://www.obramat.es/productos/masilla-poliuretano-multiusos-300ml-blanca-25055902.html;
+Obramat;mat_aislamiento;;LÁMINA ASFÁLTICA PLASTÓMERO 4 KG/M2 ESTERDAN 40P POL;25035224;ud;47.45;https://www.obramat.es/productos/lamina-asfaltica-plastomero-4-kg-m2-esterdan-40p-pol-25035224.html;
+Obramat;mat_aislamiento;;LÁMINA DRENANTE DANODREN H15 28X2.1 M;10569986;ud;122;https://www.obramat.es/productos/lamina-drenante-danodren-h15-28x2-1-m-10569986.html;
+Obramat;mat_aislamiento;;BURLETE AUTOADHESIVO VENTANA GRIS 6M - BRESME;10096814;ud;2.45;https://www.obramat.es/productos/burlete-autoadhesivo-ventana-gris-6m-bresme-10096814.html;
+Obramat;mat_carpinteria;;PUERTA INTERIOR EN BLOCK VT5 NORD MELAMINA ROBLE PARA ACRISTALAR 82.5CM DERECHA;25054986;ud;195;https://www.obramat.es/productos/puerta-interior-en-block-vt5-nord-melamina-roble-para-acristalar-82-5cm-derecha-25054986.html;
+Obramat;mat_carpinteria;;PUERTA INTERIOR EN BLOCK LISA MELAMINA BLANCA CIEGA 62,5CM IZQUIERDA;10340876;ud;62;https://www.obramat.es/productos/puerta-interior-en-block-lisa-melamina-blanca-ciega-62-5cm-izquierda-10340876.html;
+Obramat;mat_carpinteria;;PUERTA ALUMINIO CORREDERA ATELIER CON GUIA CORREDERA INCLUIDA 4 PAÑOS NEGRO 85X208;10917606;ud;289;https://www.obramat.es/productos/puerta-aluminio-corredera-atelier-con-guia-corredera-incluida-4-panos-negro-85x208-10917606.html;
+Obramat;mat_carpinteria;;BISAGRA PARA PUERTA VAIVÉN DOBLE 180X133,5MM ORO;10513664;ud;26.05;https://www.obramat.es/productos/bisagra-para-puerta-vaiven-doble-180x133-5mm-oro-10513664.html;
+Obramat;mat_carpinteria;;PACK 5 RODAPIES DM MELAMINA ROBLE 2200 X 90 X 15MM;10990280;ud;36;https://www.obramat.es/productos/pack-5-rodapies-dm-melamina-roble-2200-x-90-x-15mm-10990280.html;
+Obramat;mat_carpinteria;;VENTANA ALUMINIO CORREDERA CON PERSIANA BLANCA 150X115CM;10526915;ud;345;https://www.obramat.es/productos/ventana-aluminio-corredera-con-persiana-blanca-150x115cm-10526915.html;
+Obramat;mat_carpinteria;;VENTANA PVC OSCILOBATIENTE CON PERSIANA BLANCA 140X138CM;25032050;ud;469;https://www.obramat.es/productos/ventana-pvc-oscilobatiente-con-persiana-blanca-140x138cm-25032050.html;
+Obramat;mat_carpinteria;;LAMA PARA PERSIANA ALUMINIO 45 MM BLANCA. 1.5 M;10109365;ud;2.25;https://www.obramat.es/productos/lama-para-persiana-aluminio-45-mm-blanca-1-5-m-10109365.html;
+Obramat;mat_carpinteria;;CINTA PARA PERSIANA 20 MM BLANCO CON PINTAS 6 M;25025674;ud;2;https://www.obramat.es/productos/cinta-para-persiana-20-mm-blanco-con-pintas-6-m-25025674.html;
+Obramat;mat_carpinteria;;POMO TIRADOR PARA PUERTA DE ENTRADA ACERO INOX LATONADO;10751923;ud;8.7;https://www.obramat.es/productos/pomo-tirador-para-puerta-de-entrada-acero-inox-latonado-10751923.html;
+Obramat;mat_carpinteria;;TOPE PARA PUERTA DE METAL ATORNILLADO ACERO INOXIDABLE;10420795;ud;3.65;https://www.obramat.es/productos/tope-para-puerta-de-metal-atornillado-acero-inoxidable-10420795.html;
+Obramat;mat_carpinteria;;PICAPORTE UNIFICADO 50  MM. CANTO REDONDO 47 MM  MODELO 247 NIQUELADO;10327093;ud;4;https://www.obramat.es/productos/picaporte-unificado-50-mm-canto-redondo-47-mm-modelo-247-niquelado-10327093.html;
+Obramat;mat_carpinteria;;PUERTA  INTERIOR EN BLOCK VT2 LACADA BLANCA CIEGA 72,5CM  IZQUIERDA;10609655;ud;99;https://www.obramat.es/productos/puerta-interior-en-block-vt2-lacada-blanca-ciega-72-5cm-izquierda-10609655.html;
+Obramat;mat_cocina_bano;;MUEBLE DE BAÑO BOSTON ROBLE 60X45CM 3 CAJONES;25061766;ud;133;https://www.obramat.es/productos/mueble-de-bano-boston-roble-60x45cm-3-cajones-25061766.html;
+Obramat;mat_cocina_bano;;MUEBLE DE BAÑO MAYA ROBLE 100X45CM 2 CAJONES;25062109;ud;128;https://www.obramat.es/productos/mueble-de-bano-maya-roble-100x45cm-2-cajones-25062109.html;
+Obramat;mat_cocina_bano;;ESPEJO DE BAÑO CON APLIQUE DE LUZ LED ORION 60X80 CM;25094994;ud;26.5;https://www.obramat.es/productos/espejo-de-bano-con-aplique-de-luz-led-orion-60x80-cm-25094994.html;
+Obramat;mat_cocina_bano;;ENCIMERA ACABADO NOGAL ENTABLILLADO 240X63X3CM;10250982;ud;53;https://www.obramat.es/productos/encimera-acabado-nogal-entablillado-240x63x3cm-10250982.html;
+Obramat;mat_cocina_bano;;MÓDULO COCINA BLANCO COLUMNA 220X40X58CM;25070698;ud;75;https://www.obramat.es/productos/modulo-cocina-blanco-columna-220x40x58cm-25070698.html;
+Obramat;mat_cocina_bano;;MÓDULO COCINA BLANCO BAJO FREGADERO HIDRÓFUGO 80X60X58CM;25070684;ud;37;https://www.obramat.es/productos/modulo-cocina-blanco-bajo-fregadero-hidrofugo-80x60x58cm-25070684.html;
+Obramat;mat_cocina_bano;;PLACA DE INDUCCIÓN 3 ZONAS TEKA IBC 63900 TTC;25029168;ud;236;https://www.obramat.es/productos/placa-de-induccion-3-zonas-teka-ibc-63900-ttc-25029168.html;
+Obramat;mat_cocina_bano;;HORNO ESTÁTICO ACABADO INOX BEKO BIC 22100X;10904040;ud;162;https://www.obramat.es/productos/horno-estatico-acabado-inox-beko-bic-22100x-10904040.html;
+Obramat;mat_cocina_bano;;MAMPARA DE DUCHA RECTANGULAR CORREDERA CATANIA PRO 70X120CM CROMO;10960684;ud;160;https://www.obramat.es/productos/mampara-de-ducha-rectangular-corredera-catania-pro-70x120cm-cromo-10960684.html;
+Obramat;mat_cocina_bano;;PORTARROLLOS DE PAPEL INDUSTRIAL ABS BLANCO;25100252;ud;19.95;https://www.obramat.es/productos/portarrollos-de-papel-industrial-abs-blanco-25100252.html;
+Obramat;mat_cocina_bano;;BARRA TELESCOPICA EXTENSIBLE PARA CORTINA DE DUCHA 125-220CM BLANCA;25063479;ud;8.95;https://www.obramat.es/productos/barra-telescopica-extensible-para-cortina-de-ducha-125-220cm-blanca-25063479.html;
+Obramat;mat_cocina_bano;;PLATO DE DUCHA RESINA RECTANGULAR BLANCO 70X100X3CM;25141598;ud;80;https://www.obramat.es/productos/plato-de-ducha-resina-rectangular-blanco-70x100x3cm-25141598.html;
+Obramat;mat_cocina_bano;;TIRADOR MUEBLE ACERO INOXIDABLE NEGRO 1UD;25067708;ud;2.1;https://www.obramat.es/productos/tirador-mueble-acero-inoxidable-negro-1ud-25067708.html;
+Obramat;mat_climatizacion;;AIRE ACONDICIONADO WIFI POR CONDUCTOS 6100 FRIGORIAS AIRMART PRO;25118658;ud;795;https://www.obramat.es/productos/aire-acondicionado-wifi-por-conductos-6100-frigorias-airmart-pro-25118658.html;
+Obramat;mat_climatizacion;;REJILLA IMPULSION LAMA MOVIL 300X150MM;10161781;ud;6.77;https://www.obramat.es/productos/rejilla-impulsion-lama-movil-300x150mm-10161781.html;
+Obramat;mat_climatizacion;;REJILLA RETORNO LAMA FIJA 45º 600X300MM;10161732;ud;26.25;https://www.obramat.es/productos/rejilla-retorno-lama-fija-45-600x300mm-10161732.html;
+Obramat;mat_climatizacion;;"DIFUSOR CON TOBERA 5CM 1/2"" K-RAIN";10906364;ud;2.15;https://www.obramat.es/productos/difusor-con-tobera-5cm-1-2-k-rain-10906364.html;
+Obramat;mat_climatizacion;;REJILLA DE VENTILACION CON MOSQUITERA SOBREPONER ALUMINIO BLANCO 15X15CM. ESPESOR 0.8MM;10093622;ud;1.66;https://www.obramat.es/productos/rejilla-de-ventilacion-con-mosquitera-sobreponer-aluminio-blanco-15x15cm-espesor-0-8mm-10093622.html;
+Obramat;mat_climatizacion;;RADIADOR DE ALUMINIO FERROLI EUROPA 600 10 ELEMENTOS;10752595;ud;112;https://www.obramat.es/productos/radiador-de-aluminio-ferroli-europa-600-10-elementos-10752595.html;
+Obramat;mat_climatizacion;;TOALLERO ELÉCTRICO PROGRAMABLE 400W BLANCO;25105485;ud;89;https://www.obramat.es/productos/toallero-electrico-programable-400w-blanco-25105485.html;
+Obramat;mat_climatizacion;;BOMBA DE CALOR AEROTERMIA AIRMAT HPM10-MT2  R290 MONOBLOC UNIDAD EXTERIOR 10 KW MONOFASICA;25090433;ud;2995;https://www.obramat.es/productos/bomba-de-calor-aerotermia-airmat-hpm10-mt2-r290-monobloc-unidad-exterior-10-kw-monofasica-25090433.html;
+Obramat;mat_climatizacion;;VENTILADOR DE TECHO CON ASPA RETRACTIL Ø91CM CON LUZ;25118410;ud;49;https://www.obramat.es/productos/ventilador-de-techo-con-aspa-retractil-91cm-con-luz-25118410.html;
+Obramat;mat_climatizacion;;TUBO DESAGUE DE CONDENSADOS 10M;10984204;ud;7.52;https://www.obramat.es/productos/tubo-desague-de-condensados-10m-10984204.html;
+Obramat;mat_climatizacion;;CINTA ALUMINIO 50MM X 45M;10161242;ud;5.3;https://www.obramat.es/productos/cinta-aluminio-50mm-x-45m-10161242.html;
+Obramat;mat_climatizacion;;CRONOTERMOSTATO WIFI CALOR/FRÍO;25061589;ud;31.55;https://www.obramat.es/productos/cronotermostato-wifi-calor-frio-25061589.html;
+Obramat;mat_exteriores;;BORDILLO BICAPA GRIS 50X25X15X12CM;10756781;ud;3.27;https://www.obramat.es/productos/bordillo-bicapa-gris-50x25x15x12cm-10756781.html;
+Obramat;mat_exteriores;;ALBARDILLA DE HORMIGÓN 25X20 CM BLANCO;10756620;ud;0.74;https://www.obramat.es/productos/albardilla-de-hormigon-25x20-cm-blanco-10756620.html;
+Obramat;mat_exteriores;;CELOSIA DE PINO 220 X 84 CM;10977680;ud;46;https://www.obramat.es/productos/celosia-de-pino-220-x-84-cm-10977680.html;
+Obramat;mat_exteriores;;"REJILLA SUMIDERO 2""";10769115;ud;9.75;https://www.obramat.es/productos/rejilla-sumidero-2-10769115.html;
+Obramat;mat_exteriores;;ARQUETA 40X40CM;25050740;ud;13.44;https://www.obramat.es/productos/arqueta-40x40cm-25050740.html;
+Obramat;mat_exteriores;;MALLA ANTIHIERBAS 1.6X10 M MARRÓN;10903046;ud;15.72;https://www.obramat.es/productos/malla-antihierbas-1-6x10-m-marron-10903046.html;
+Obramat;mat_exteriores;;GRAVA BLANCA 12-18 MM 20 KG;25036734;ud;2.75;https://www.obramat.es/productos/grava-blanca-12-18-mm-20-kg-25036734.html;
