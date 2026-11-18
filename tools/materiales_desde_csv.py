@@ -86,6 +86,14 @@ for c in salida['capitulos']:
     for r in sorted((r for r in filas.values() if not r['codigo'] and r['capitulo'] == c['id'] and r['pvp']), key=lambda r: (norm(r['tienda']), norm(r['descripcion']))):
         cod = 'N-' + CORTO.get(norm(r['tienda']), 'XX') + '-' + (r['ref'] or norm(r['descripcion'])[:24].replace(' ', '-'))
         nuevas.append(item(r, cod))
+    # El mismo producto de la misma tienda puede ser equivalente de dos materiales: en un mismo capítulo sale una sola vez
+    vistos, unicas = set(), []
+    for x in nuevas:
+        k = (norm(x.get('tienda')), x.get('ref')) if x.get('ref') else None
+        if k and k in vistos: continue
+        if k: vistos.add(k)
+        unicas.append(x)
+    nuevas = unicas
     for x in nuevas:
         k = norm(x['descripcion'])
         if k in nombres: avisos.append(f"nombre repetido: «{x['descripcion']}» ({nombres[k]} y {x['codigo']})")

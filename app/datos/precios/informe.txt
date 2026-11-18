@@ -1,0 +1,64 @@
+Archivos: materiales-sgm-2026-11-18-axton.csv, materiales-sgm-2026-11-18.csv
+Materiales en la tarifa: 800
+Por tienda: Obramat 445, Leroy Merlin 353, Ferrolan (online) 1, Encimeras Sevilla 1
+
+Por capítulo:
+  mat_suelos: 71
+  mat_revestimientos: 58
+  mat_placa_techos: 75
+  mat_yesos_morteros: 61
+  mat_ladrillos: 28
+  mat_aislamiento: 66
+  mat_pintura: 67
+  mat_electricidad: 113
+  mat_fontaneria: 103
+  mat_carpinteria: 51
+  mat_cocina_bano: 40
+  mat_climatizacion: 38
+  mat_exteriores: 29
+
+Filas sin precio (sin equivalente en esa tienda): 150
+
+Avisos (3):
+  materiales-sgm-2026-11-18.csv:116 código «MYM-019B» no está en la lista (se trata como nuevo)
+  materiales-sgm-2026-11-18.csv:551 código «MYM-019B» no está en la lista (se trata como nuevo)
+  nombre repetido: «Suelo Porcelanico Esmaltado JAIPUR BLANCO C3 30X60CM. (Leroy Merlin ref. 78597097)» (MSU-011-LM y MRV-010-LM)
+
+Precios o unidades para revisar (37):
+  materiales-sgm-2026-11-18.csv:18 MSU-017 Leroy Merlin: 59.99 € con IVA (antes 22.4 €, Leroy Merlin) · Suelo/Azulejo porcelánico Stella blue efecto hidráulico azul cobalto 20x20 cm C3
+  materiales-sgm-2026-11-18.csv:467 MSU-031 Obramat: 74.0 € con IVA (antes 420.0 €, Leroy Merlin) · MICROCEMENTO DECORATIVO MYREADY GO03 17 KG HUESO
+  materiales-sgm-2026-11-18.csv:468 MSU-032 Obramat: unidad ud (en la lista m2) · MICROCEMENTO AL USO METEORE 14 12L
+  materiales-sgm-2026-11-18.csv:33 MSU-032 Leroy Merlin: unidad ud (en la lista m2) · MICROLANIC ONE FINO 20KG 40m2 Microcemento Listo al Uso de grano Fino para decoración de suelos y paredes. Gris 20%
+  materiales-sgm-2026-11-18.csv:482 MRV-014 Obramat: 5.95 € con IVA (antes 16.9 €, Leroy Merlin) · AZULEJO PASTA ROJA 20X20CM BLANCO BRILLO
+  materiales-sgm-2026-11-18.csv:50 MRV-017 Leroy Merlin: 6.99 € con IVA (antes 23.99 €, Leroy Merlin) · Suelo/Azulejo cerámico Verna efecto madera roble 20.5x61.5 cm
+  materiales-sgm-2026-11-18.csv:51 MRV-018 Leroy Merlin: unidad ud (en la lista m2) · Mosaico vitreo Mod MUSGO de 2x2cm, malla de 30,5x33cm, VERDE IRIDISCENTE
+  materiales-sgm-2026-11-18.csv:57 MRV-024 Leroy Merlin: unidad caja (en la lista m2) · Revestimiento hormigón ligero Campana Esquina efecto ladrillo crema 13x15cm
+  materiales-sgm-2026-11-18.csv:84 MPY-025 Leroy Merlin: unidad ud (en la lista rollo) · Guardavivos cartón yeso y aluminio 2,5 m
+  materiales-sgm-2026-11-18.csv:534 MYM-003 Obramat: 7.0 € con IVA (antes 2.47 €, Obramat) · YESO FINO LEBRIFINO 20 KG
+  materiales-sgm-2026-11-18.csv:542 MYM-011 Obramat: 6.87 € con IVA (antes 1.98 €, Obramat) · MORTERO BASE CAL APLICAREV 25 KG BLANCO
+  materiales-sgm-2026-11-18.csv:107 MYM-011 Leroy Merlin: 5.28 € con IVA (antes 1.98 €, Obramat) · Mortero de cal capa gruesa AXTON 25 kg blanco
+  materiales-sgm-2026-11-18.csv:122 MYM-025 Leroy Merlin: 212.05 € con IVA (antes 25.95 €, Obramat) · Arena Lavada Construcción Big bag 1.000 kg. / 0-6 mm
+  materiales-sgm-2026-11-18.csv:143 MLB-019 Leroy Merlin: 4.49 € con IVA (antes 1.05 €, Obramat) · Bloque de hormigón Split blanco 40x20x20 cm
+  materiales-sgm-2026-11-18.csv:163 MAI-019 Leroy Merlin: unidad rollo (en la lista m2) · 1 ud de Rollo de aislante acústico Impactodan DANOSA de Polietileno 25x2m Espesor 1mm Reducción acústica 27dB
+  materiales-sgm-2026-11-18.csv:189 MPI-009 Leroy Merlin: 21.99 € con IVA (antes 72.7 €, Leroy Merlin) · Pintura de interior anticondensación LUXENS color blanco mate 2.5 L para paredes y techos
+  materiales-sgm-2026-11-18.csv:195 MPI-015 Leroy Merlin: 239.58 € con IVA (antes 62.0 €, Obramat / tiendas de pintura) · Reveton Texlite Pliolite Blanco 15 Lt
+  materiales-sgm-2026-11-18.csv:644 MEL-002 Obramat: 82.0 € con IVA (antes 30.25 €, Obramat) · HILO PVC H07V-K 2,5mm2 MARRÓN 200M
+  materiales-sgm-2026-11-18.csv:211 MEL-004 Leroy Merlin: 28.99 € con IVA (antes 75.0 €, Obramat) · Cable eléctrico LEXMAN H07V-K vd/amarillo 6 mm² 25 m
+  materiales-sgm-2026-11-18.csv:666 MEL-024 Obramat: 3.25 € con IVA (antes 16.29 €, Leroy Merlin) · TAPA TOMA TV-RADIO-SAT SERIE SIMON 82 CONCEPT BCO
+  materiales-sgm-2026-11-18.csv:672 MEL-030 Obramat: 4.83 € con IVA (antes 13.7 €, Obramat) · AUTOMATICO MAGNETOTÉRMICO 1P+N 2 MODULOS 16A RESI9 SCHNEIDER
+  materiales-sgm-2026-11-18.csv:237 MEL-030 Leroy Merlin: 4.83 € con IVA (antes 13.7 €, Obramat) · Interruptor magnetotérmico P+N Schneider  16A R9
+  materiales-sgm-2026-11-18.csv:254 MFS-007 Leroy Merlin: 14.66 € con IVA (antes 2.85 €, Obramat) · Codo con base de fijación hembra 1/2" para tubo de 16 x 2 mm, acabado niquelado, ref. 860010A
+  materiales-sgm-2026-11-18.csv:694 MFS-012 Obramat: 0.19 € con IVA (antes 0.73 €, Obramat) · CODO PVC 87º 40MM HEMBRA-HEMBRA
+  materiales-sgm-2026-11-18.csv:259 MFS-012 Leroy Merlin: 0.19 € con IVA (antes 0.73 €, Obramat) · Codo de PVC de 40 mm de diámetro 87º H-H
+  materiales-sgm-2026-11-18.csv:272 MFS-025 Leroy Merlin: 171.0 € con IVA (antes 55.0 €, Obramat) · Lavabo de encimera 45,5 x 32,5 cm - blanco brillante - sin rebosadero - Infinitio SAT (SATINF4532)
+  materiales-sgm-2026-11-18.csv:303 MCA-020 Leroy Merlin: unidad caja (en la lista ml) · Pack de 5 rodapiés  de mdf de 225x7cm blanco
+  materiales-sgm-2026-11-18.csv:304 MCA-021 Leroy Merlin: unidad caja (en la lista ml) · Pack de 5 rodapiés  de mdf de 220x10cm blanco
+  materiales-sgm-2026-11-18.csv:741 MCA-023 Obramat: 89.0 € con IVA (antes 28.79 €, Leroy Merlin) · PUERTA DE ARMARIO CORREDERA BLANCO  ANCHO 80 CM
+  materiales-sgm-2026-11-18.csv:307 MCB-001 Leroy Merlin: unidad ud (en la lista ml) · Cocina en kit Eleki blanca  3 módulos bajos  L.180 x H.87 x P.58 cm
+  materiales-sgm-2026-11-18.csv:313 MCB-007 Leroy Merlin: unidad ud (en la lista ml) · Encimera de cocina laminada Eleki haya mate 246x62 cm espesor 28mm
+  materiales-sgm-2026-11-18.csv:314 MCB-008 Leroy Merlin: unidad ud (en la lista ml) · Encimera de cocina laminada hidrófuga Milos Mármol blanco mate 304x63 cm espesor 38mm
+  materiales-sgm-2026-11-18.csv:318 MCB-012 Leroy Merlin: 100.0 € con IVA (antes 260.0 €, Obramat) · Mueble de baño Lea roble 80x45 cm (lavabo no incluido)
+  materiales-sgm-2026-11-18.csv:330 MCL-007 Leroy Merlin: 3395.01 € con IVA (antes 995.0 €, Obramat) · Aire Acondicionado 2X1 DAIKIN Perfera 40N Wifi 2150+3010 fg Instalación básica incluida
+  materiales-sgm-2026-11-18.csv:332 MCL-009 Leroy Merlin: unidad ud (en la lista ml) · Tubería de cobre para A/A 1/4"-3/8" 20m con aislamiento
+  materiales-sgm-2026-11-18.csv:771 MCL-013 Obramat: 7.0 € con IVA (antes 21.79 €, Leroy Merlin) · REVERSO CANAL CLIMA 90X65MM 2M BLANCO
+  materiales-sgm-2026-11-18.csv:346 MEX-008 Leroy Merlin: 8.29 € con IVA (antes 0.95 €, Obramat) · Cubremuros Nilo blanco 22x4x50 cm

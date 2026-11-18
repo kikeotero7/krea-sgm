@@ -80,7 +80,7 @@ function asistente(string $crudo): array {
   $mensajes = is_object($b) && is_array($b->messages ?? null) ? array_slice($b->messages, -40) : [];
   if (!$mensajes || ($mensajes[0]->role ?? '') !== 'user') return [400, ['ok' => false, 'error' => 'Conversación no válida.']];
   foreach ($mensajes as $m) if (!in_array($m->role ?? '', ['user', 'assistant'], true)) return [400, ['ok' => false, 'error' => 'Conversación no válida.']];
-  $tarifa = mb_substr((string)($b->tarifa ?? ''), 0, 120000);
+  $tarifa = mb_substr((string)($b->tarifa ?? ''), 0, 200000);
   $clientes = mb_substr((string)($b->clientes ?? ''), 0, 8000);
 
   $peticion = [
