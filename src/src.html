@@ -123,6 +123,12 @@ h1,h2,h3,h4{font-family:var(--f-display);font-stretch:108%;margin:0;text-wrap:ba
 .chip{flex:none;border:1px solid var(--line-strong);background:var(--surface);border-radius:20px;padding:7px 14px;font-weight:600;font-size:14px;color:var(--muted)}
 .chip[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:var(--forest-ink)}
 .chip .n{opacity:.7;margin-left:4px}
+.est-tag{background:#fff4c2;color:#7a5a00;border:1px solid #f0c64a;border-radius:6px;font-size:11px;font-weight:700;padding:2px 6px;margin-right:6px;white-space:nowrap;align-self:center}
+.calc-btn{min-height:44px;gap:4px}.calc-btn span{font-size:13px}
+.calc-huecos{display:grid;gap:8px}.calc-h{display:grid;grid-template-columns:1fr auto 1fr auto 64px 40px;gap:6px;align-items:center}.calc-h input{min-height:44px;border:1px solid var(--line-strong);border-radius:8px;padding:6px 8px;font:inherit;min-width:0;background:var(--surface);color:var(--ink)}
+.calc-res{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px}.calc-res div{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:grid}.calc-res span{font-size:12px;color:var(--muted)}.calc-res b{font-size:18px}.calc-res .t{background:var(--forest);color:var(--forest-ink)}.calc-res .t span{color:#c9d6cb}
+.prov{border:1px dashed var(--line-strong);border-radius:10px;padding:8px 12px;display:grid;gap:10px}.prov>summary{cursor:pointer;font-weight:600;min-height:36px;display:flex;align-items:center;gap:6px}
+.cat-item .origen{display:block;font-size:12px;color:var(--brand-text);margin-top:2px}
 .chk-mp{display:flex;align-items:center;gap:10px;min-height:44px;font-size:14px;color:var(--muted)}.chk-mp input{width:20px;height:20px;accent-color:var(--brand)}
 .pay-pick{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
 .pay-op{min-height:44px;border:1px solid var(--line-strong);background:var(--surface);border-radius:22px;padding:8px 14px;font-weight:600;font-size:14px;color:var(--ink)}
@@ -770,6 +776,7 @@ const ICONS={
  spark:'M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 17l.8 2.2L22 20l-2.2.8L19 23l-.8-2.2L16 20l2.2-.8z',
  list:'M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01',
  x:'M6 6l12 12M18 6L6 18',
+ calc:'M6 3h12v18H6zM9 7h6M9 11h1M12 11h1M15 11h0M9 14h1M12 14h1M9 17h1M12 17h1M15 14v4',
  camera:'M4 8h3l2-3h6l2 3h3v11H4zM12 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8z',
  phone:'M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2',
  dup:'M8 8h12v12H8zM16 8V4H4v12h4',
@@ -789,7 +796,12 @@ function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&x.v===2)
   return normData(seed())}
 function saveLocal(){try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){}}
 function save(){saveLocal();if(!DEMO&&CLOUD.session){CLOUD.dirty=true;store('sgm2-dirty','1');setCloud('saving');clearTimeout(CLOUD.timer);CLOUD.timer=setTimeout(cloudPush,1200)}}
-function catalog(){const out=CAPS.map(c=>({id:c.id,name:c.name,items:c.items.map(([name,unit,price])=>({name,unit,price}))}));for(const x of db.custom||[]){let c=out.find(c=>c.id===x.cap);if(!c){c=out.find(c=>c.id==='otr');if(!c){c={id:'otr',name:'Otros trabajos',items:[]};out.push(c)}}if(!c.items.some(i=>i.name===x.name))c.items.push({name:x.name,unit:x.unit,price:x.price,custom:true})}return out}
+/* Partidas propias con precio de proveedor: coste real = precio sin IVA (+ IVA si se marca) y, encima, el margen de material de Ajustes */
+const margenMat=()=>Math.max(0,+db.company?.margenMat||0);
+function costeProv(x){return x&&+x.pProv>0?r2(+x.pProv*(x.ivaProv?1+(+x.ivaProvPct||21)/100:1)):0}
+function precioProv(x){const c=costeProv(x);return c?r2(c*(1+margenMat()/100)):0}
+function origenPrecio(x){if(!(+x.pProv>0))return '';const m=margenMat();return `${x.proveedor?esc(x.proveedor)+' · ':''}${x.ref?'ref. '+esc(x.ref)+' · ':''}${eur(+x.pProv)} sin IVA${x.ivaProv?' + IVA '+(+x.ivaProvPct||21)+' % = '+eur(costeProv(x)):''}${m?' + '+m+' % margen':''} → ${eur(precioProv(x))}`}
+function catalog(){const out=CAPS.map(c=>({id:c.id,name:c.name,items:c.items.map(([name,unit,price])=>({name,unit,price}))}));for(const x of db.custom||[]){let c=out.find(c=>c.id===x.cap);if(!c){c=out.find(c=>c.id==='otr');if(!c){c={id:'otr',name:'Otros trabajos',items:[]};out.push(c)}}if(!c.items.some(i=>i.name===x.name))c.items.push({name:x.name,unit:x.unit,price:+x.pProv>0?precioProv(x):x.price,custom:true})}return out}
 function itemInfo(name){for(const c of catalog()){const i=c.items.find(i=>i.name===name);if(i)return {cap:c.id,...i}}return null}
 function priceOf(name){const i=itemInfo(name);return db.prices[name]??i?.price??0}
 const capName=id=>CAPS.find(c=>c.id===id)?.name||'Otros trabajos';
@@ -1223,16 +1235,18 @@ function linesHTML(){
   if(!q.lines.length)return head+`<div class="panel empty"><b>Aún no hay partidas</b>Toca los trabajos del catálogo o escribe el trabajo en «Escribir rápido».</div>`;
   return head+t.caps.map((c,ci)=>`<div class="chap"><div class="chap-head"><span class="ci">${ci+1}</span><h3>${esc(c.name)}</h3><span class="money" id="cs-${c.id}">${eur(c.sub)}</span></div>
    ${c.lines.map((l,li)=>`<div class="line" id="L-${l.id}">
-     <div class="line-top"><span class="lno">${ci+1}.${li+1}</span><input class="line-name" id="ln-${l.id}" data-in="line" data-id="${l.id}" data-k="name" value="${esc(l.name)}" aria-label="Descripción"></div>
+     <div class="line-top"><span class="lno">${ci+1}.${li+1}</span>${l.estimado?'<span class="est-tag" title="Precio estimado, a confirmar">A confirmar</span>':''}<input class="line-name" id="ln-${l.id}" data-in="line" data-id="${l.id}" data-k="name" value="${esc(l.name)}" aria-label="Descripción"></div>
      <div class="line-row">
        <div class="stepper"><button data-act="qty" data-id="${l.id}" data-d="-1" aria-label="Restar">−</button><input id="lq-${l.id}" inputmode="decimal" data-in="line" data-id="${l.id}" data-k="qty" value="${qtyFmt(l.qty)}" aria-label="Cantidad"><button data-act="qty" data-id="${l.id}" data-d="1" aria-label="Sumar">+</button></div>
        <select class="unit" id="lu-${l.id}" data-in="line" data-id="${l.id}" data-k="unit" aria-label="Unidad">${UNITS.map(u=>`<option ${u===l.unit?'selected':''}>${u}</option>`).join('')}</select>
+       ${l.unit==='m²'?`<button type="button" class="btn sm calc-btn" data-act="calcMuro" data-id="${l.id}" aria-label="Calcular metros cuadrados" title="Calcular m²">${ic('calc')}<span>Calcular</span></button>`:''}
        <label class="price">×<input id="lp-${l.id}" inputmode="decimal" data-in="line" data-id="${l.id}" data-k="price" value="${String(l.price).replace('.',',')}" aria-label="Precio por unidad">€</label>
        <span class="amt" id="la-${l.id}">${eur(l.qty*l.price)}</span>
      </div>
      <details ${l.note||S.ed.abrir===l.id?'open':''}><summary>${ic('next')} Detalles y notas</summary>
        <div class="more"><label class="field">Capítulo<select id="lc-${l.id}" data-in="lineCap" data-id="${l.id}">${capOpciones(l.cap)}</select></label><label class="field">Alcance<select id="ls-${l.id}" data-in="line" data-id="${l.id}" data-k="scope">${SCOPES.map(s=>`<option ${s===l.scope?'selected':''}>${s}</option>`).join('')}</select></label>
        <label class="field">Nota para el cliente<input id="lnote-${l.id}" data-in="line" data-id="${l.id}" data-k="note" value="${esc(l.note)}" placeholder="Medidas, estancia, acabado…"></label>
+       <label class="chk-mp est"><input type="checkbox" data-in="lineEst" data-id="${l.id}" ${l.estimado?'checked':''}> Precio estimado / a confirmar (solo lo ves tú, no sale en el PDF)</label>
        <label class="chk-mp"><input type="checkbox" data-in="lineNoGuardar" data-id="${l.id}" ${l.noGuardar?'':'checked'}> Guardar en Mis precios al guardar</label>
        <button class="btn danger sm" data-act="delLine" data-id="${l.id}" style="min-height:46px">${ic('trash')} Quitar</button></div>
      </details>
@@ -1243,6 +1257,7 @@ function edStep3(){
   return `<div class="review" style="margin-top:18px">
    <div class="stack">
     ${datosFaltan().length?`<div class="warn-box">Faltan tus datos (${datosFaltan().join(', ')}) para que salgan en el presupuesto. <button class="acc-link" data-act="go" data-v="datos">Completar mis datos</button></div>`:''}
+    ${(()=>{const es=q.lines.filter(l=>l.estimado);return es.length?`<div class="warn-box">${ic('bell')} ${es.length===1?'Queda 1 partida':'Quedan '+es.length+' partidas'} con <b>precio estimado</b>: ${es.map(l=>esc(l.name)).slice(0,4).join(' · ')}${es.length>4?'…':''}. Confírmalas antes de enviar (en el PDF no sale la marca).</div>`:''})()}
     ${E.err?`<div class="err">${esc(E.err)}</div>`:''}
     <section class="panel stack"><h2>Importe</h2>
       <div class="grid2"><label class="field">IVA<select id="q-iva" data-in="qf" data-k="iva"><option value="21" ${q.iva==21?'selected':''}>21 % · general</option><option value="10" ${q.iva==10?'selected':''}>10 % · reforma de vivienda</option><option value="0" ${q.iva==0?'selected':''}>Sin IVA</option></select></label>
@@ -1376,7 +1391,7 @@ function vPrecios(v){
   v.innerHTML=`
   <div class="head"><div><div class="eyebrow">Mis precios</div><h1>Tu tarifa</h1><p>Estos son los precios que se ponen solos en cada presupuesto. Si cambias un precio dentro de un presupuesto, se guarda aquí para la próxima vez.</p></div><div class="head-actions"><button class="btn" data-act="pasteExcel">${ic('copy')} Pegar desde Excel</button><button class="btn primary" data-act="customItem">${ic('plus')} Partida propia</button></div></div>
   <section class="panel"><div class="panel-head"><div><h2>Mis partidas propias</h2><p class="muted small" style="margin:2px 0 0">Tus trabajos y precios. Salen al añadir trabajos en cualquier presupuesto y el asistente también las usa.</p></div><button class="btn primary sm" data-act="customItem">${ic('plus')} Añadir</button></div>
-   ${(db.custom||[]).length?`<div class="list">${db.custom.map((x,i)=>`<div class="cat-item" style="grid-template-columns:minmax(0,1fr) auto auto"><div style="min-width:0"><b>${esc(x.name)}</b><span>${esc(capName(x.cap))} · ${eur(priceOf(x.name))} / ${esc(x.unit)}</span></div><button class="icon-btn" data-act="customEdit" data-i="${i}" aria-label="Editar ${esc(x.name)}">${ic('edit')}</button><button class="icon-btn" data-act="customDel" data-i="${i}" aria-label="Borrar ${esc(x.name)}" style="color:var(--danger)">${ic('trash')}</button></div>`).join('')}</div>`:'<div class="empty" style="padding:18px 8px"><b>Aún no tienes partidas propias</b>Pulsa «Añadir» y guarda los trabajos que haces a tu manera, con tu precio.</div>'}</section>
+   ${(db.custom||[]).length?`<div class="list">${db.custom.map((x,i)=>`<div class="cat-item" style="grid-template-columns:minmax(0,1fr) auto auto"><div style="min-width:0"><b>${esc(x.name)}</b><span>${esc(capName(x.cap))} · ${eur(priceOf(x.name))} / ${esc(x.unit)}${x.proveedor&&!(+x.pProv>0)?' · '+esc(x.proveedor):''}</span>${+x.pProv>0?`<span class="origen">${origenPrecio(x)}</span>`:''}</div><button class="icon-btn" data-act="customEdit" data-i="${i}" aria-label="Editar ${esc(x.name)}">${ic('edit')}</button><button class="icon-btn" data-act="customDel" data-i="${i}" aria-label="Borrar ${esc(x.name)}" style="color:var(--danger)">${ic('trash')}</button></div>`).join('')}</div>`:'<div class="empty" style="padding:18px 8px"><b>Aún no tienes partidas propias</b>Pulsa «Añadir» y guarda los trabajos que haces a tu manera, con tu precio.</div>'}</section>
   <div class="search">${ic('search')}<input class="input" id="p-search" data-in="pSearch" placeholder="Buscar partida" value="${esc(S.pSearch)}"></div>
   ${catalog().map(c=>{const items=c.items.filter(i=>!s||i.name.toLowerCase().includes(s));if(!items.length)return '';return `<section class="panel"><div class="panel-head"><h2>${esc(c.name)}</h2><span class="muted small">${items.length} partidas</span></div><div class="list">${items.map(i=>{const own=db.prices[i.name]!=null;return `<div class="cat-item" style="grid-template-columns:minmax(0,1fr) auto auto"><div style="min-width:0"><b>${esc(i.name)}</b><span>${own?'Tu precio':'Precio de ejemplo'} · por ${i.unit}${i.custom?' · partida propia':''}</span></div><label class="price"><input id="pp-${esc(i.name).replace(/\W/g,'')}" inputmode="decimal" data-in="price" data-name="${esc(i.name)}" value="${String(priceOf(i.name)).replace('.',',')}" aria-label="Precio de ${esc(i.name)}">€</label><span class="muted small" style="min-width:24px">/${i.unit}</span></div>`}).join('')}</div></section>`}).join('')}`;
 }
@@ -1389,7 +1404,7 @@ function vAjustes(v){
   <div class="head"><div><div class="eyebrow">Ajustes</div><h1>Ajustes</h1><p>Valores por defecto, contraseña y copias. Tus datos y los de la empresa están en <button class="acc-link" data-act="go" data-v="datos">Mis datos</button>.</p></div></div>
 
   <section class="panel stack"><h2>Gestoría</h2><div class="grid2">${f('gestorName','Nombre del gestor o gestoría')}${f('gestorEmail','Correo del gestor')}</div></section>
-  <section class="panel stack"><h2>Valores por defecto</h2><div class="grid3"><label class="field">IVA habitual<select id="co-iva" data-in="co" data-k="iva"><option value="21" ${c.iva==21?'selected':''}>21 %</option><option value="10" ${c.iva==10?'selected':''}>10 %</option><option value="0" ${+c.iva===0?'selected':''}>Sin IVA</option></select></label>${f('validity','Validez del presupuesto (días)')}${f('dueDays','Vencimiento de factura (días)')}<label class="field">Siguiente número de presupuesto<input id="co-quoteNext" data-in="co" data-k="quoteNext" inputmode="numeric" value="${+nextNumber('PRE',db.quotes,today()).slice(-4)}"></label><label class="field">Siguiente número de factura<input id="co-invNext" data-in="co" data-k="invNext" inputmode="numeric" value="${+nextNumber('FAC',db.invoices,today()).slice(-4)}"></label></div>
+  <section class="panel stack"><h2>Valores por defecto</h2><div class="grid3"><label class="field">IVA habitual<select id="co-iva" data-in="co" data-k="iva"><option value="21" ${c.iva==21?'selected':''}>21 %</option><option value="10" ${c.iva==10?'selected':''}>10 %</option><option value="0" ${+c.iva===0?'selected':''}>Sin IVA</option></select></label>${f('validity','Validez del presupuesto (días)')}${f('dueDays','Vencimiento de factura (días)')}<label class="field">Margen sobre material (%)<input id="co-margenMat" data-in="co" data-k="margenMat" inputmode="decimal" value="${+c.margenMat||0}" placeholder="0"></label><label class="field">Siguiente número de presupuesto<input id="co-quoteNext" data-in="co" data-k="quoteNext" inputmode="numeric" value="${+nextNumber('PRE',db.quotes,today()).slice(-4)}"></label><label class="field">Siguiente número de factura<input id="co-invNext" data-in="co" data-k="invNext" inputmode="numeric" value="${+nextNumber('FAC',db.invoices,today()).slice(-4)}"></label></div>
   <label class="field">Forma de pago<input id="co-payment" data-in="co" data-k="payment" value="${esc(c.payment)}"></label>
   <label class="field">Condiciones habituales<textarea id="co-conditions" data-in="co" data-k="conditions">${esc(c.conditions)}</textarea></label></section>
   ${DEMO?'':`<section class="panel stack"><h2>Contraseña</h2><div class="grid2"><label class="field">Contraseña nueva<input id="pw-1" type="password" autocomplete="new-password"></label><label class="field">Repite la contraseña<input id="pw-2" type="password" autocomplete="new-password"></label></div><div id="pw-err"></div><div class="row"><button class="btn primary" data-act="changePass">${ic('check')} Cambiar contraseña</button></div></section>`}
@@ -1409,7 +1424,11 @@ function openCustom(i,fromEd){
    <label class="field">Trabajo *<input id="ci-name" value="${esc(x?x.name:'')}" placeholder="Ej.: Colocación de plato de ducha extraplano con desagüe"></label>
    <div class="grid3"><label class="field">Oficio<select id="ci-cap">${caps.map(([id,n])=>`<option value="${id}" ${id===cap?'selected':''}>${esc(n)}</option>`).join('')}</select></label>
    <label class="field">Unidad<select id="ci-unit">${UNITS.map(u=>`<option ${x&&x.unit===u?'selected':''}>${u}</option>`).join('')}</select></label>
-   <label class="field">Precio sin IVA (€)<input id="ci-price" inputmode="decimal" value="${x?String(priceOf(x.name)).replace('.',','):''}" placeholder="0,00"></label></div>
+   <label class="field">Precio sin IVA (€)<input id="ci-price" inputmode="decimal" value="${x?String(priceOf(x.name)).replace('.',','):''}" placeholder="0,00" ${x&&+x.pProv>0?'readonly':''}></label></div>
+   <details class="prov" ${x&&(x.proveedor||+x.pProv>0)?'open':''}><summary>${ic('tag')} Precio de proveedor (opcional)</summary>
+    <div class="grid3"><label class="field">Proveedor<input id="ci-prov" value="${esc(x?.proveedor||'')}" placeholder="Ej.: Guivel, Leroy Merlin"></label><label class="field">Referencia<input id="ci-ref" value="${esc(x?.ref||'')}"></label><label class="field">Precio de proveedor sin IVA (€)<input id="ci-pprov" inputmode="decimal" data-in="ciProv" value="${x&&+x.pProv>0?String(x.pProv).replace('.',','):''}" placeholder="0,00"></label></div>
+    <label class="chk-mp"><input type="checkbox" id="ci-ivaprov" data-in="ciProv" ${x?.ivaProv?'checked':''}> Sumar IVA del proveedor (21 %) para tener el coste real</label>
+    <p class="hint" id="ci-origen" style="margin:0">${x&&+x.pProv>0?'De dónde sale el precio: '+origenPrecio(x):'Si pones el precio del proveedor, el precio de la partida se calcula solo'+(margenMat()?' con tu margen de material ('+margenMat()+' %, en Ajustes).':'.')}</p></details>
    <div id="ci-err" role="alert"></div></div>
   <div class="dlg-foot">${x?`<button class="btn danger" data-act="customDel" data-i="${i}" style="margin-right:auto">${ic('trash')} Borrar</button>`:''}<button class="btn" data-act="closeDlg">Cancelar</button><button class="btn primary" data-act="saveCustom">${ic('check')} ${fromEd?'Guardar y añadir':'Guardar'}</button></div>`);
   setTimeout(()=>$('#ci-name')?.focus(),30);
@@ -1616,7 +1635,7 @@ function aiTools(E){const q=E.q;return [
  {name:'anadir_partidas',description:'Añade partidas al presupuesto. Si la partida ya está, sustituye su cantidad. Devuelve lo que se ha hecho.',inputSchema:{type:'object',properties:{partidas:{type:'array',items:{type:'object',properties:{nombre:{type:'string',description:'Nombre exacto del catálogo, o uno nuevo y claro'},cantidad:{type:'number'},unidad:{type:'string',enum:UNITS},precio:{type:'number',description:'Solo si no está en el catálogo o Sergio dio un precio'},nota:{type:'string',description:'Medidas, estancia o acabado; visible para el cliente'},oficio:{type:'string',description:'Capítulo (oficio) donde va la partida, con el nombre exacto de un capítulo de trabajo de la tarifa'}},required:['nombre','cantidad']}}},required:['partidas']},
   execute(inp){const out=[];for(const p of (Array.isArray(inp.partidas)?inp.partidas:[])){const name=String(p.nombre||'').trim();if(!name)continue;const qty=Math.max(0,r2(+p.cantidad||1));const ex=q.lines.find(l=>l.name.toLowerCase()===name.toLowerCase());
     if(ex){ex.qty=qty;if(p.nota)ex.note=String(p.nota);if(p.precio!=null&&+p.precio>0)ex.price=r2(+p.precio);out.push('actualizada '+ex.name);continue}
-    const info=itemInfo(name),of=capDeOficio(p.oficio);let l;if(info){l=mkLine(info.name,qty,p.nota?String(p.nota):'');if(p.precio!=null&&+p.precio>0)l.price=r2(+p.precio);if(of&&(l.mat||l.cap==='otr'))l.cap=of}else{l={id:uid(),cap:(capPorNombre(name)==='alicatados_solados'&&of==='aislamiento'?'alicatados_solados':of)||capPorNombre(name)||'otr',name,unit:UNITS.includes(p.unidad)?p.unidad:'ud',qty,price:r2(+p.precio||0),scope:SCOPES[0],note:p.nota?String(p.nota):''}}
+    const info=itemInfo(name),of=capDeOficio(p.oficio);let l;if(info){l=mkLine(info.name,qty,p.nota?String(p.nota):'');if(p.precio!=null&&+p.precio>0)l.price=r2(+p.precio);if(of&&(l.mat||l.cap==='otr'))l.cap=of}else{l={id:uid(),cap:(capPorNombre(name)==='alicatados_solados'&&of==='aislamiento'?'alicatados_solados':of)||capPorNombre(name)||'otr',name,unit:UNITS.includes(p.unidad)?p.unidad:'ud',qty,price:r2(+p.precio||0),scope:SCOPES[0],note:p.nota?String(p.nota):'',estimado:true}}
     q.lines.push(l);out.push((info?'añadida ':'añadida (nueva, revisar precio) ')+l.name)}
    aiNote(E,'✓ '+out.length+' partida'+(out.length===1?'':'s')+': '+out.map(x=>x.replace(/^añadida (\(nueva, revisar precio\) )?|^actualizada /,'')).join(', '));return out.join('; ')||'nada'}},
  {name:'cambiar_partida',description:'Cambia la cantidad, el precio o la nota de una partida que ya está en el presupuesto.',inputSchema:{type:'object',properties:{nombre:{type:'string'},cantidad:{type:'number'},precio:{type:'number'},nota:{type:'string'}},required:['nombre']},
@@ -1816,6 +1835,25 @@ function guardarEnMisPrecios(lines){let nuevas=0,cambiadas=0;
     if(x){if(r2(priceOf(x.name))!==price||x.unit!==l.unit||x.cap!==cap){x.price=price;x.unit=l.unit;x.cap=cap;delete db.prices[x.name];cambiadas++}}
     else{db.custom.push({cap,name,unit:l.unit,price});nuevas++}}
   return {nuevas,cambiadas}}
+/* Calculadora de muros: largo × alto × caras − huecos = m²; en fábrica de bloque 40×20, 12,5 bloques por m² */
+const BLOQ_M2=12.5;
+const bloques40=()=>catalog().filter(c=>/^mat_ladrillos|^mat_/.test(c.id)).flatMap(c=>c.items).filter(i=>/bloque/i.test(i.name)&&/40\s?x\s?20/i.test(i.name));
+function calcMuro(id){const l=S.ed.q.lines.find(x=>x.id===id);if(!l)return;const C=S.calc={id,largo:'',alto:'',caras:1,huecos:[],bloque:/bloque/i.test(l.name)};
+  calcRender()}
+function calcVal(){const C=S.calc,n=v=>Math.max(0,parseNum(v)||0);const bruto=r2(n(C.largo)*n(C.alto)*Math.max(1,Math.round(n(C.caras)||1)));const hu=r2(C.huecos.reduce((s,h)=>s+n(h.an)*n(h.al)*Math.max(1,Math.round(n(h.n)||1)),0));return {bruto,hu,m2:Math.max(0,r2(bruto-hu))}}
+function calcRender(){const C=S.calc,l=S.ed.q.lines.find(x=>x.id===C.id),v=calcVal(),bs=bloques40();
+  dlg(`<div class="dlg-head"><h2>${ic('calc')} Calcular m²</h2><span class="spacer"></span><button class="icon-btn" data-act="closeDlg" aria-label="Cerrar">${ic('x')}</button></div>
+  <div class="dlg-body calc"><p class="muted" style="margin:0">${esc(l?.name||'')}</p>
+   <div class="grid3"><label class="field">Largo (m)<input inputmode="decimal" data-in="calcF" data-k="largo" value="${esc(C.largo)}" placeholder="0,00"></label><label class="field">Alto (m)<input inputmode="decimal" data-in="calcF" data-k="alto" value="${esc(C.alto)}" placeholder="0,00"></label><label class="field">Nº de caras<input inputmode="numeric" data-in="calcF" data-k="caras" value="${esc(C.caras)}"></label></div>
+   <div class="calc-huecos"><b>Huecos que se restan</b> (puertas, ventanas)
+    ${C.huecos.map((h,i)=>`<div class="calc-h"><input inputmode="decimal" data-in="calcH" data-i="${i}" data-k="an" value="${esc(h.an)}" placeholder="Ancho" aria-label="Ancho del hueco"><span>×</span><input inputmode="decimal" data-in="calcH" data-i="${i}" data-k="al" value="${esc(h.al)}" placeholder="Alto" aria-label="Alto del hueco"><span>×</span><input inputmode="numeric" data-in="calcH" data-i="${i}" data-k="n" value="${esc(h.n)}" aria-label="Cuántos"><button type="button" class="icon-btn" data-act="calcHDel" data-i="${i}" aria-label="Quitar el hueco">${ic('trash')}</button></div>`).join('')}
+    <button type="button" class="btn sm" data-act="calcHMas">${ic('plus')} Añadir hueco</button></div>
+   <div class="calc-res" id="calc-res">${calcResHTML(v)}</div>
+   <label class="chk-mp"><input type="checkbox" data-in="calcBloq" ${C.bloque?'checked':''}> Fábrica de bloque 40×20: añadir también los bloques (${String(BLOQ_M2).replace('.',',')} ud/m²)</label>
+   ${C.bloque&&bs.length?(()=>{const g=(String(l?.name||'').match(/(\d{1,2})\s?cm/)||[])[1];let pre=-1;if(g)bs.forEach((b,i)=>{if(new RegExp('40\\s?x\\s?20\\s?x\\s?'+g+'\\b','i').test(b.name)&&(pre<0||b.price<bs[pre].price))pre=i});return `<label class="field">Bloque<select id="calc-bq">${bs.map((b,i)=>`<option ${i===pre?'selected':''}>${esc(b.name)}</option>`).join('')}</select></label>`})():''}
+  </div>
+  <div class="dlg-foot"><button class="btn" data-act="closeDlg">Cancelar</button><button class="btn primary" data-act="calcOk">${ic('check')} Poner en la partida</button></div>`)}
+function calcResHTML(v){const C=S.calc;return `<div><span>Muro</span><b>${String(v.bruto).replace('.',',')} m²</b></div><div><span>Huecos</span><b>− ${String(v.hu).replace('.',',')} m²</b></div><div class="t"><span>Total</span><b>${String(v.m2).replace('.',',')} m²</b></div>${C.bloque?`<div><span>Bloques</span><b>${Math.ceil(v.m2*BLOQ_M2)} ud</b></div>`:''}`}
 function capOpciones(sel){const ops=[...CAPS_TRABAJO().map(c=>[c.id,c.name]),['otr','Otros trabajos']];if(sel&&!ops.some(o=>o[0]===sel))ops.push([sel,capName(sel)]);return ops.map(([id,n])=>`<option value="${id}" ${id===sel?'selected':''}>${esc(n)}</option>`).join('')}
 function edLines(){const el=$('#lines');if(el)el.innerHTML=linesHTML();edRefreshTotals()}
 function edPicker(){const el=$('#picker-body');if(el){el.innerHTML=S.ed.mode==='cat'?catList():aiPanel();if(S.ed.mode==='ai')el.scrollTop=el.scrollHeight}}
@@ -1925,6 +1963,13 @@ const ACT={
  delInvoice:el=>confirmBox('¿Eliminar esta factura?','Solo deberías borrar facturas creadas por error. La numeración no se reutiliza.','Eliminar',()=>{db.invoices=db.invoices.filter(f=>f.id!==el.dataset.id);save();render();toast('Factura eliminada')}),
  editClient:el=>editClient(el.dataset.id),
  saveClient:el=>{const n=$('#ec-name').value.trim();if(!n){$('#ec-err').innerHTML='<div class="err">Escribe el nombre del cliente.</div>';return}{const ib=$('#ec-iban').value.trim();if(ib&&!ibanOk(ib)){$('#ec-err').innerHTML='<div class="err">Esa cuenta no es válida. Revisa los números del IBAN.</div>';return}}const id=el.dataset.id;const c=id?client(id):{id:uid()};Object.assign(c,{name:n,phone:$('#ec-phone').value.trim(),email:$('#ec-email').value.trim(),address:$('#ec-address').value.trim(),nif:$('#ec-nif').value.trim(),payMethod:$('#ec-paym').value,iban:ibanClean($('#ec-iban').value),notes:$('#ec-notes').value});if(!id)db.clients.push(c);save();closeDlg();render();toast('Cliente guardado')},
+ calcMuro:b=>calcMuro(b.dataset.id),
+ calcHMas:()=>{S.calc.huecos.push({an:'',al:'',n:1});calcRender()},
+ calcHDel:b=>{S.calc.huecos.splice(+b.dataset.i,1);calcRender()},
+ calcOk:()=>{const C=S.calc,q=S.ed.q,l=q.lines.find(x=>x.id===C.id),v=calcVal();if(!l)return closeDlg();if(!(v.m2>0)){toast('Pon el largo y el alto del muro');return}
+   l.qty=v.m2;if(l.unit!=='m²')l.unit='m²';const cuenta=`${C.largo}×${C.alto}${+C.caras>1?'×'+C.caras+' caras':''}${v.hu?' − huecos '+String(v.hu).replace('.',',')+' m²':''}`;l.note=l.note?l.note+' · '+cuenta:cuenta;
+   let msg='Partida: '+String(v.m2).replace('.',',')+' m²';if(C.bloque){const bn=$('#calc-bq')?.value;if(bn){const n=Math.ceil(v.m2*BLOQ_M2);const ex=q.lines.find(x=>x.name===bn);if(ex){ex.qty=n}else{const b=mkLine(bn,n,'Para '+String(v.m2).replace('.',',')+' m² de fábrica (12,5 ud/m²)');b.cap=l.cap&&!/^mat_/.test(l.cap)?l.cap:b.cap;q.lines.push(b)}msg+=' · '+n+' bloques'}}
+   closeDlg();edDirty();edLines();toast(msg)},
  payPick:b=>{$$('.pay-op').forEach(x=>x.setAttribute('aria-checked',String(x===b)));$('#ec-paym').value=b.dataset.v},
  delClient:el=>{const id=el.dataset.id;const n=db.quotes.filter(q=>q.client===id).length;if(n){dlg(`<div class="dlg-head"><h2>No se puede eliminar</h2></div><div class="dlg-body"><p style="margin:0">Este cliente tiene ${n} presupuesto${n>1?'s':''}. Elimínalos antes o deja el cliente como está.</p></div><div class="dlg-foot"><button class="btn primary" data-act="closeDlg">Entendido</button></div>`);return}confirmBox('¿Eliminar cliente?','Se borrará su ficha.','Eliminar',()=>{db.clients=db.clients.filter(c=>c.id!==id);save();render();toast('Cliente eliminado')})},
  quoteFor:el=>{closeDlg();newQuote();S.ed.q.client=el.dataset.id;render()},
@@ -1939,8 +1984,9 @@ const ACT={
  saveCustom:()=>{const C=S.custom||{},name=$('#ci-name').value.trim(),err=t=>{$('#ci-err').innerHTML=`<div class="err">${t}</div>`};
    if(!name)return err('Escribe el nombre del trabajo.');
    const prev=C.i!=null?db.custom[C.i]:null;if((!prev||prev.name!==name)&&itemInfo(name))return err('Ya hay una partida con ese nombre. Cámbialo un poco para distinguirla.');
-   const price=r2(parseNum($('#ci-price').value));if(!(price>0))return err('Pon un precio mayor que 0.');
-   const x={cap:$('#ci-cap').value,name,unit:$('#ci-unit').value,price};
+   const pProv=r2(parseNum($('#ci-pprov')?.value||''));const prov={proveedor:($('#ci-prov')?.value||'').trim(),ref:($('#ci-ref')?.value||'').trim(),pProv:pProv>0?pProv:0,ivaProv:!!$('#ci-ivaprov')?.checked,ivaProvPct:21};
+   const price=pProv>0?precioProv(prov):r2(parseNum($('#ci-price').value));if(!(price>0))return err('Pon un precio mayor que 0 (o el precio del proveedor).');
+   const x={cap:$('#ci-cap').value,name,unit:$('#ci-unit').value,price,...prov};if(!x.proveedor)delete x.proveedor;if(!x.ref)delete x.ref;if(!x.pProv){delete x.pProv;delete x.ivaProv;delete x.ivaProvPct}
    if(prev){if(prev.name!==name){delete db.prices[prev.name]}db.custom[C.i]=x;delete db.prices[name]}else db.custom.push(x);
    save();closeDlg();
    if(C.ed&&S.ed){S.ed.q.lines.push(mkLine(name,1));toast('Guardada en tu biblioteca y añadida al presupuesto','ok');edLines();edPicker()}
@@ -1989,11 +2035,16 @@ const IN={
  restore:el=>{const f=el.files[0];if(!f)return;f.text().then(t=>{let x;try{x=JSON.parse(t)}catch(e){}el.value='';if(!x||x.v!==2||!Array.isArray(x.quotes)){toast('Ese archivo no es una copia de SGM');return}confirmBox('¿Restaurar esta copia?','Se sustituirán los datos actuales por los de la copia.','Restaurar',()=>{x.contacts??=[];db=x;save();go('inicio');toast('Copia restaurada')},false)})},
  found:el=>{S.ed.found[+el.dataset.i].on=el.checked;const b=$('[data-act="addFound"]');if(b)b.lastChild.textContent=' Añadir '+S.ed.found.filter(f=>f.on).length+' partidas'},
  qf:el=>{const q=S.ed.q,k=el.dataset.k;q[k]=['iva','discount','validity'].includes(k)?Math.max(0,parseNum(el.value)):el.value;if(k==='discount')q.discount=Math.min(100,q.discount);edRefreshTotals();if(S.ed.step===3){const p=$('#preview');if(p){p.innerHTML=docHTML(q,'quote');fitPapers()}}const h=$('.head h1');if(k==='title'&&h)h.textContent=q.title||'Presupuesto sin título';if(!S.ed.isNew)edCommit();if(k==='payMethod')render()},
+ lineEst:el=>{const l=S.ed.q.lines.find(l=>l.id===el.dataset.id);if(!l)return;if(el.checked)l.estimado=true;else delete l.estimado;edDirty();const t=$('#L-'+l.id+' .line-top');if(t){t.querySelector('.est-tag')?.remove();if(l.estimado)t.querySelector('.lno').insertAdjacentHTML('afterend','<span class="est-tag" title="Precio estimado, a confirmar">A confirmar</span>')}},
+ ciProv:()=>{const p=r2(parseNum($('#ci-pprov').value)),x={proveedor:$('#ci-prov').value.trim(),ref:$('#ci-ref').value.trim(),pProv:p,ivaProv:$('#ci-ivaprov').checked,ivaProvPct:21};const pr=$('#ci-price'),o=$('#ci-origen');if(p>0){pr.value=String(precioProv(x)).replace('.',',');pr.readOnly=true;o.innerHTML='De dónde sale el precio: '+origenPrecio(x)}else{pr.readOnly=false;o.textContent='Si pones el precio del proveedor, el precio de la partida se calcula solo.'}},
+ calcF:el=>{S.calc[el.dataset.k]=el.value;$('#calc-res').innerHTML=calcResHTML(calcVal())},
+ calcH:el=>{S.calc.huecos[+el.dataset.i][el.dataset.k]=el.value;$('#calc-res').innerHTML=calcResHTML(calcVal())},
+ calcBloq:el=>{S.calc.bloque=el.checked;calcRender()},
  lineNoGuardar:el=>{const l=S.ed.q.lines.find(l=>l.id===el.dataset.id);if(l){if(el.checked)delete l.noGuardar;else l.noGuardar=true;edDirty()}},
  lineCap:el=>{const l=S.ed.q.lines.find(l=>l.id===el.dataset.id);if(!l||l.cap===el.value)return;l.cap=el.value;l.mat=false;S.ed.abrir=l.id;edDirty();edLines();setTimeout(()=>{$('#L-'+l.id)?.scrollIntoView({block:'center',behavior:'smooth'});S.ed.abrir=null},30);toast('Partida movida a '+capName(l.cap))},
  line:el=>{const l=S.ed.q.lines.find(l=>l.id===el.dataset.id),k=el.dataset.k;if(k==='qty'||k==='price')l[k]=Math.max(0,parseNum(el.value));else l[k]=el.value;$('#la-'+l.id).textContent=eur(l.qty*l.price);edRefreshTotals()},
  price:el=>{const p=parseNum(el.value);db.prices[el.dataset.name]=r2(p);save()},
- co:el=>{const k=el.dataset.k;if(k==='invNext'||k==='quoteNext'){const n=Math.max(1,Math.floor(parseNum(el.value)||1)),p=k==='invNext'?'inv':'quote';db.company[p+'Start']=n;db.company[p+'StartYear']=today().slice(0,4);save();return}db.company[k]=['iva','validity','dueDays'].includes(k)?parseNum(el.value):el.value;save()},
+ co:el=>{const k=el.dataset.k;if(k==='invNext'||k==='quoteNext'){const n=Math.max(1,Math.floor(parseNum(el.value)||1)),p=k==='invNext'?'inv':'quote';db.company[p+'Start']=n;db.company[p+'StartYear']=today().slice(0,4);save();return}db.company[k]=['iva','validity','dueDays','margenMat'].includes(k)?parseNum(el.value):el.value;save()},
  ticket:el=>{const f=el.files[0];if(!f)return;const img=new Image();const url=URL.createObjectURL(f);img.onload=()=>{const c=document.createElement('canvas'),s=Math.min(1,160/Math.max(img.width,img.height));c.width=img.width*s;c.height=img.height*s;c.getContext('2d').drawImage(img,0,0,c.width,c.height);S.thumb=c.toDataURL('image/jpeg',.7);const t=$('#e-thumb');t.src=S.thumb;t.hidden=false;if(!DEMO&&aiCloud()){const g=document.createElement('canvas'),k=Math.min(1,1600/Math.max(img.width,img.height));g.width=img.width*k;g.height=img.height*k;g.getContext('2d').drawImage(img,0,0,g.width,g.height);rellenarGasto({imagen:g.toDataURL('image/jpeg',.82)})}URL.revokeObjectURL(url)};img.src=url}
 };
 
