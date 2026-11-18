@@ -1,5 +1,5 @@
 <?php
-// API de SGM · Presupuestos (KREA Digital Studio)
+// API de SGM · Presupuestos (KREAVANCE)
 // Cuentas con correo y contraseña, los datos de cada usuario guardados como un documento JSON
 // y el asistente de presupuestos con Claude. Todo en el hosting de OVH (PHP + MySQL).
 
@@ -113,7 +113,7 @@ try {
         db()->prepare('INSERT INTO sgm_recuperaciones (token_hash, usuario_id, expira) VALUES (?, ?, NOW() + INTERVAL 1 HOUR)')->execute([hash('sha256', $token), $u['id']]);
         $enlace = $CFG['url_app'] . '?recuperar=' . $token;
         $asunto = '=?UTF-8?B?' . base64_encode('SGM · Cambia tu contraseña') . '?=';
-        $texto = "Hola:\n\nPara elegir una contraseña nueva en la app de SGM, abre este enlace (caduca en 1 hora):\n\n$enlace\n\nSi no lo has pedido tú, ignora este correo.\n\nSGM · Presupuestos · KREA Digital Studio";
+        $texto = "Hola:\n\nPara elegir una contraseña nueva en la app de SGM, abre este enlace (caduca en 1 hora):\n\n$enlace\n\nSi no lo has pedido tú, ignora este correo.\n\nSGM · Presupuestos · KREAVANCE";
         $cab = "From: SGM <{$CFG['correo_remitente']}>\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit";
         @mail($email, $asunto, $texto, $cab);
       }
@@ -198,7 +198,7 @@ try {
   error_log('[sgm] ' . $e->getMessage());
   // Fallo al conectar con la base de datos: lo decimos claro (sin dar detalles del servidor)
   if ($e instanceof PDOException && in_array((int)($e->errorInfo[1] ?? $e->getCode()), [1044, 1045, 2002, 2005], true)) {
-    error_(503, 'La app no puede conectar con su base de datos. Avisa a KREA Digital Studio.');
+    error_(503, 'La app no puede conectar con su base de datos. Avisa a KREAVANCE.');
   }
   error_(500, 'No se ha podido completar. Inténtalo de nuevo en un momento.');
 }
