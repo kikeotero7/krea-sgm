@@ -1,23 +1,23 @@
-Archivos: materiales-sgm-2026-11-18-axton.csv, materiales-sgm-2026-11-18.csv
-Materiales en la tarifa: 800
-Por tienda: Obramat 445, Leroy Merlin 353, Ferrolan (online) 1, Encimeras Sevilla 1
+Archivos: materiales-sgm-2026-11-18-axton.csv, materiales-sgm-2026-11-18.csv, materiales-sgm-leroy-nuevos-2026-11-18.csv, materiales-sgm-zz-correcciones.csv
+Materiales en la tarifa: 854
+Por tienda: Obramat 445, Leroy Merlin 407, Ferrolan (online) 1, Encimeras Sevilla 1
 
 Por capítulo:
   mat_suelos: 71
   mat_revestimientos: 58
-  mat_placa_techos: 75
+  mat_placa_techos: 81
   mat_yesos_morteros: 61
   mat_ladrillos: 28
-  mat_aislamiento: 66
+  mat_aislamiento: 72
   mat_pintura: 67
   mat_electricidad: 113
   mat_fontaneria: 103
-  mat_carpinteria: 51
-  mat_cocina_bano: 40
-  mat_climatizacion: 38
-  mat_exteriores: 29
+  mat_carpinteria: 65
+  mat_cocina_bano: 50
+  mat_climatizacion: 48
+  mat_exteriores: 37
 
-Filas sin precio (sin equivalente en esa tienda): 150
+Filas sin precio (sin equivalente en esa tienda): 151
 
 Avisos (3):
   materiales-sgm-2026-11-18.csv:116 código «MYM-019B» no está en la lista (se trata como nuevo)
