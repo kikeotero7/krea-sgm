@@ -576,7 +576,7 @@ dialog::backdrop{background:rgba(15,16,15,.55)}
 <script>
 'use strict';
 /* =========================================================
-   SGM · Presupuestos — KREA Digital Studio
+   SGM · Presupuestos — KREAVANCE
    Demo: datos de ejemplo guardados en este navegador.
    ========================================================= */
 const LOGO_FULL='__LOGO_FULL__';
@@ -998,7 +998,7 @@ const EYE='<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12
 const EYE_OFF='<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18"/><path d="M10.6 5.1A10.7 10.7 0 0 1 12 5c6.4 0 10 7 10 7a17.6 17.6 0 0 1-3.2 4.1M6.6 6.6C3.8 8.4 2 12 2 12s3.6 7 10 7c1.8 0 3.4-.5 4.8-1.3"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>';
 function pwField(id,label,ac){return `<div class="field acc-f"><label for="${id}">${label}</label><div class="con-ojo"><input id="${id}" type="password" autocomplete="${ac}" required><button type="button" class="ver-clave" data-ojo="${id}" aria-label="Mostrar la contraseña" aria-pressed="false">${EYE}</button></div></div>`}
 function legalLinks(){return `<nav class="legal-links" aria-label="Información legal"><button type="button" data-legal="aviso">Aviso legal</button><button type="button" data-legal="privacidad">Privacidad</button><button type="button" data-legal="condiciones">Condiciones de uso</button><button type="button" data-legal="cookies">Cookies</button></nav>`}
-function pieKrea(){return `<p class="pie-krea"><b>${APP_NAME} 2026</b><span>© <a href="https://kreadigitalstudio.es" target="_blank" rel="noopener">KREA Digital Studio</a> · Creación y desarrollo</span></p>`}
+function pieKrea(){return `<p class="pie-krea"><b>${APP_NAME} 2026</b><span>© <a href="https://kreavance.es" target="_blank" rel="noopener">KREAVANCE</a> · Creación y desarrollo</span></p>`}
 function accShell(tit,sub,inner,foot=true){
   document.body.classList.remove('editing');
   $('#app').innerHTML=`<div class="acc" style="grid-column:1/-1">
@@ -1063,24 +1063,24 @@ function vRecovery(){
 }
 /* ---------- Información legal ---------- */
 const LEGAL={
- aviso:['Aviso legal',`<p>SGM · Presupuestos es una aplicación creada y desarrollada por KREA Digital Studio para Construcciones SGM.</p>
-  <ul><li><b>Titular:</b> KREA Digital Studio</li><li><b>NIF:</b> 28795999E</li><li><b>Domicilio:</b> 41018 Sevilla</li><li><b>Contacto:</b> contacto@kreadigitalstudio.es</li><li><b>Web:</b> kreadigitalstudio.es</li></ul>
-  <p>El diseño, el código y la aplicación son propiedad de KREA Digital Studio. El nombre, el logotipo y el símbolo de SGM pertenecen a Construcciones SGM. No se permite copiarlos, reproducirlos ni distribuirlos sin autorización por escrito.</p>
-  <p>KREA Digital Studio no se hace responsable del mal uso de la aplicación ni de los datos que cada persona introduce en ella.</p>`],
- privacidad:['Política de privacidad',`<p><b>Quién trata los datos:</b> Construcciones SGM es responsable de los datos de sus clientes que guarda en la app. KREA Digital Studio (NIF 28795999E, contacto@kreadigitalstudio.es) presta el servicio técnico y solo trata esos datos por encargo de SGM.</p>
+ aviso:['Aviso legal',`<p>SGM · Presupuestos es una aplicación creada y desarrollada por KREAVANCE para Construcciones SGM.</p>
+  <ul><li><b>Titular:</b> KREAVANCE</li><li><b>NIF:</b> 28795999E</li><li><b>Domicilio:</b> 41018 Sevilla</li><li><b>Contacto:</b> hola@kreavance.es</li><li><b>Web:</b> kreavance.es</li></ul>
+  <p>El diseño, el código y la aplicación son propiedad de KREAVANCE. El nombre, el logotipo y el símbolo de SGM pertenecen a Construcciones SGM. No se permite copiarlos, reproducirlos ni distribuirlos sin autorización por escrito.</p>
+  <p>KREAVANCE no se hace responsable del mal uso de la aplicación ni de los datos que cada persona introduce en ella.</p>`],
+ privacidad:['Política de privacidad',`<p><b>Quién trata los datos:</b> Construcciones SGM es responsable de los datos de sus clientes que guarda en la app. KREAVANCE (NIF 28795999E, hola@kreavance.es) presta el servicio técnico y solo trata esos datos por encargo de SGM.</p>
   <p><b>Qué datos se guardan:</b> el correo y la contraseña (cifrada) para entrar; los presupuestos, facturas, clientes (nombre, teléfono, correo, dirección y NIF), obras, gastos y fotos de tickets que se añaden en la app.</p>
   <p><b>Para qué:</b> solo para que la app funcione: preparar y enviar presupuestos y facturas, y llevar el control de obras y gastos. No se venden ni se ceden datos y no se usan para publicidad.</p>
   <p><b>Base legal:</b> la prestación del servicio contratado y, para los datos de clientes, la relación comercial entre SGM y cada cliente.</p>
   <p><b>Quién ayuda a prestar el servicio:</b> OVHcloud (alojamiento de la web y base de datos, servidores en Francia) y Anthropic (asistente de presupuestos con IA; procesa el texto que se le escribe para proponer partidas, sin usarlo para entrenar).</p>
   <p><b>Cuánto tiempo:</b> mientras la cuenta esté activa, y después el tiempo que exija la ley para facturas y documentos contables.</p>
-  <p><b>Derechos:</b> acceder, corregir, borrar, oponerse, limitar o llevarse los datos. Escribe a contacto@kreadigitalstudio.es o a SGM. También se puede reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p>`],
+  <p><b>Derechos:</b> acceder, corregir, borrar, oponerse, limitar o llevarse los datos. Escribe a hola@kreavance.es o a SGM. También se puede reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p>`],
  condiciones:['Condiciones de uso',`<p>Al crear una cuenta aceptas estas condiciones.</p>
-  <ul><li>La app ayuda a preparar presupuestos, facturas y el control de obras. No es un programa de contabilidad oficial ni sustituye al gestor.</li><li>El asistente con IA puede equivocarse: revisa siempre partidas, medidas y precios antes de enviar un presupuesto o una factura.</li><li>Los precios de la tarifa son orientativos; cada presupuesto es responsabilidad de quien lo emite.</li><li>Eres responsable de tu cuenta y de los datos que guardas. No guardes contenido ilegal ni datos de terceros sin permiso.</li><li>KREA Digital Studio se reserva el derecho de admisión: puede suspender o cerrar cuentas que hagan un uso fraudulento, abusivo o contrario a estas condiciones.</li><li>La app y estas condiciones pueden mejorar o cambiar; se avisará de los cambios importantes.</li><li>Se aplica la ley española.</li></ul>`],
+  <ul><li>La app ayuda a preparar presupuestos, facturas y el control de obras. No es un programa de contabilidad oficial ni sustituye al gestor.</li><li>El asistente con IA puede equivocarse: revisa siempre partidas, medidas y precios antes de enviar un presupuesto o una factura.</li><li>Los precios de la tarifa son orientativos; cada presupuesto es responsabilidad de quien lo emite.</li><li>Eres responsable de tu cuenta y de los datos que guardas. No guardes contenido ilegal ni datos de terceros sin permiso.</li><li>KREAVANCE se reserva el derecho de admisión: puede suspender o cerrar cuentas que hagan un uso fraudulento, abusivo o contrario a estas condiciones.</li><li>La app y estas condiciones pueden mejorar o cambiar; se avisará de los cambios importantes.</li><li>Se aplica la ley española.</li></ul>`],
  cookies:['Cookies',`<p>La app no usa cookies de publicidad ni de seguimiento. Solo guarda en el navegador lo imprescindible para funcionar: la sesión iniciada, una copia de tus datos para trabajar sin conexión y una copia de la app para que abra rápido. Por eso no necesita consentimiento.</p>`]
 };
 function vLegal(k){
   const back=AUTH?()=>{S.view='ajustes';render()}:()=>render();
-  accShell('Información legal','SGM · KREA Digital Studio',`<div class="acc-legal">
+  accShell('Información legal','SGM · KREAVANCE',`<div class="acc-legal">
     <button class="btn ghost acc-back" type="button" id="lg-back">${ic('back')} Volver</button>
     ${Object.keys(LEGAL).map(x=>`<article class="legal" id="legal-${x}"${x===k?'':' hidden'}><h2>${LEGAL[x][0]}</h2>${LEGAL[x][1]}</article>`).join('')}
   </div>`);
@@ -1410,7 +1410,7 @@ function vAjustes(v){
   ${DEMO?'':`<section class="panel stack"><h2>Contraseña</h2><div class="grid2"><label class="field">Contraseña nueva<input id="pw-1" type="password" autocomplete="new-password"></label><label class="field">Repite la contraseña<input id="pw-2" type="password" autocomplete="new-password"></label></div><div id="pw-err"></div><div class="row"><button class="btn primary" data-act="changePass">${ic('check')} Cambiar contraseña</button></div></section>`}
   <section class="panel stack"><h2>Copia de seguridad</h2><p class="muted" style="margin:0">Guarda una copia de todos tus datos de vez en cuando (por ejemplo, una vez al mes).</p><div class="row">${canSave()?`<button class="btn" data-act="backupFile">${ic('file')} Descargar copia</button>`:''}<button class="btn" data-act="backup">${ic('copy')} Copiar datos</button><label class="btn" for="restore-input" style="cursor:pointer">Restaurar una copia</label><input id="restore-input" type="file" accept=".json,application/json" class="sr" data-in="restore">${DEMO?'<button class="btn" data-act="sampleDemo">Cargar datos de ejemplo</button><button class="btn danger" data-act="resetDemo">Empezar de cero</button>':''}</div></section>`;
   v.insertAdjacentHTML('beforeend',`<section class="panel stack"><h2>Información legal</h2>${legalLinks()}
-    ${DEMO?'':`<p class="muted" style="margin:0">¿Quieres borrar tu cuenta y todos tus datos? Escribe desde el correo de la cuenta a <b>contacto@kreadigitalstudio.es</b> pidiendo el borrado y lo haremos en un máximo de 30 días.</p>`}</section>${pieKrea()}`);
+    ${DEMO?'':`<p class="muted" style="margin:0">¿Quieres borrar tu cuenta y todos tus datos? Escribe desde el correo de la cuenta a <b>hola@kreavance.es</b> pidiendo el borrado y lo haremos en un máximo de 30 días.</p>`}</section>${pieKrea()}`);
   v.querySelectorAll('[data-legal]').forEach(b=>b.addEventListener('click',()=>vLegal(b.dataset.legal)));
 }
 

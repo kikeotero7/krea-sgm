@@ -1,7 +1,7 @@
 # SGM Fichajes · Control de obra
 
 **Cliente:** SGM Construcciones · Trabajos Integrales (Sevilla)
-**Estudio:** KREA Digital Studio
+**Estudio:** KREAVANCE
 **Tipo de proyecto:** App web instalable (PWA) para móvil, tablet y ordenador
 **Estado:** Demo funcional, lista para enseñar a clientes
 

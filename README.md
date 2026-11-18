@@ -1,6 +1,6 @@
 # SGM · Presupuestos
 
-App de Construcciones SGM (Sergio García Molina): presupuestos, facturas, clientes, obras, gastos, tarifa por oficios con materiales, avisos y asistente de IA con voz. Creada por KREA Digital Studio. Desde noviembre de 2026 usa la misma base que la app de Daalcor (`kikeotero7/krea-daalcor`), con la marca de SGM.
+App de Construcciones SGM (Sergio García Molina): presupuestos, facturas, clientes, obras, gastos, tarifa por oficios con materiales, avisos y asistente de IA con voz. Creada por KREAVANCE. Desde noviembre de 2026 usa la misma base que la app de Daalcor (`kikeotero7/krea-daalcor`), con la marca de SGM.
 
 Dirección: https://sgm.kreadigitalstudio.es (demo pública en `/demo/`, contraseña `sgm2026`; caso de estudio en `/portafolio/`).
 
