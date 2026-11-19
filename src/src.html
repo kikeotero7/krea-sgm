@@ -353,6 +353,7 @@ button.card:hover{border-color:var(--line-strong);box-shadow:var(--shadow)}
 .p-table th.r,.p-table td.r{text-align:right}
 .p-table td{padding:11px 9px;vertical-align:top;border-bottom:1px solid var(--p-line);font-variant-numeric:tabular-nums;font-size:11.5px}
 .p-table tr.z td{background:var(--p-soft)}
+.p-bottom,.p-sum,.p-cond,.p-tot,.p-pay,.p-pay>div,.p-sign,.p-head,.p-parties,.p-table tr{break-inside:avoid;page-break-inside:avoid}.p-table tr.chapr{break-after:avoid;page-break-after:avoid}
 .p-table .chapr td{background:#dbe8d6;color:var(--p-forest);font-weight:800;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--p-forest);padding-top:9px;padding-bottom:7px}
 .p-table td b{display:block;font-weight:700;color:#203b28;font-size:12px}
 .p-table td small{display:block;color:var(--p-muted);font-size:10.5px;margin-top:4px;line-height:1.5}
@@ -1711,9 +1712,15 @@ async function addDocPages(pdf,d,kind,firstDoc){
   const paper=holder.firstElementChild;paper.style.boxShadow='none';paper.style.zoom='1';
   try{
     const sc=2,canvas=await window.html2canvas(paper,{scale:sc,backgroundColor:'#ffffff',logging:false});
-    const top=paper.getBoundingClientRect().top;const cands=[...paper.querySelectorAll('tr,section,header')].map(e=>e.getBoundingClientRect().bottom-top).sort((a,b)=>a-b);
+    const top=paper.getBoundingClientRect().top,box=e=>{const r=e.getBoundingClientRect();return [r.top-top,r.bottom-top]};
+    /* Bloques que nunca se parten: cabecera, datos, cada fila, resumen + totales, condiciones, plazos de pago, firmas y pie.
+       Solo se puede saltar de página en el borde de uno de ellos (nunca dentro), y nunca justo debajo de la cabecera de un capítulo. */
+    const enteros=[...paper.querySelectorAll('.p-head,.p-parties,.p-work,.p-table thead,.p-table tr,.p-bottom,.p-sum,.p-cond,.p-tot,.p-pay,.p-pay>div,.p-sign,.p-foot')].map(box);
+    const tras=new Set([...paper.querySelectorAll('.p-table tr.chapr')].map(e=>Math.round(box(e)[1])));
+    const cands=[...new Set(enteros.flatMap(([a,b])=>[a,b]).map(Math.round))].filter(v=>!tras.has(v)&&!enteros.some(([a,b])=>v>a+1&&v<b-1)).sort((a,b)=>a-b);
     const H=paper.offsetHeight,PH=1123,TP=44,BP=40,pages=[];let y=0;
     while(y<H-4){const first=!pages.length;const avail=PH-(first?0:TP)-BP;let end=y+avail;if(end<H){const c=cands.filter(v=>v>y+80&&v<=end);if(c.length)end=c[c.length-1]}else end=H;pages.push([y,end,first]);y=end}
+    window.__cortesPDF={pages:pages.map(p=>p.slice(0,2)),enteros};
     const W=pdf.internal.pageSize.getWidth(),Hh=pdf.internal.pageSize.getHeight();
     pages.forEach(([a,b,first],i)=>{const pc=document.createElement('canvas');pc.width=794*sc;pc.height=PH*sc;const g=pc.getContext('2d');g.fillStyle='#fff';g.fillRect(0,0,pc.width,pc.height);
       g.drawImage(canvas,0,a*sc,794*sc,(b-a)*sc,0,(first?0:TP)*sc,794*sc,(b-a)*sc);
