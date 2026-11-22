@@ -2,7 +2,7 @@
 
 App de Construcciones SGM (Sergio García Molina): presupuestos, facturas, clientes, obras, gastos, tarifa por oficios con materiales, avisos y asistente de IA con voz. Creada por KREAVANCE. Desde noviembre de 2026 usa la misma base que la app de Daalcor (`kikeotero7/krea-daalcor`), con la marca de SGM.
 
-Dirección: https://sgm.kreavance.es (demo pública en `/demo/`, contraseña `sgm2026`; caso de estudio en `/portafolio/`).
+Dirección: https://sgm.kreadigitalstudio.es (demo pública en `/demo/`, contraseña `sgm2026`; caso de estudio en `/portafolio/`).
 
 ## Cómo está montado
 
@@ -15,4 +15,4 @@ Dirección: https://sgm.kreavance.es (demo pública en `/demo/`, contraseña `sg
 
 ## Publicación
 
-Desde el 16/11/2026 `sgm.kreavance.es` apunta al hosting de OVH (Multisitio, carpeta `sgm`). La raíz del repositorio ya no se publica en GitHub Pages: todo sale de `src/`, `api/`, `portafolio/` y `sgm-fichajes/` con el flujo «Publicar en OVH».
+Desde el 16/11/2026 `sgm.kreadigitalstudio.es` apunta al hosting de OVH (Multisitio, carpeta `sgm`). La raíz del repositorio ya no se publica en GitHub Pages: todo sale de `src/`, `api/`, `portafolio/` y `sgm-fichajes/` con el flujo «Publicar en OVH».

@@ -9,8 +9,8 @@ return [
   // Correos que pueden crear cuenta (la app es privada)
   'altas_permitidas' => ['correo@ejemplo.com'],
   // Dirección pública de la app (para los enlaces de recuperar contraseña)
-  'url_app' => 'https://sgm.kreavance.es/',
-  'correo_remitente' => 'no-responder@kreavance.es',
+  'url_app' => 'https://sgm.kreadigitalstudio.es/',
+  'correo_remitente' => 'no-responder@kreadigitalstudio.es',
   // Asistente de presupuestos
   'anthropic_key' => 'sk-ant-...',
   'anthropic_model' => 'claude-opus-5-5',
