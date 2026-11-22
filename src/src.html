@@ -2079,6 +2079,10 @@ if(e.key==='Escape'&&S.ed?.sheet){S.ed.sheet=false;render()}});
 if(!DEMO){window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();window.__installEvt=e});window.addEventListener('appinstalled',()=>{window.__installEvt=null;toast('SGM instalada');if(AUTH)render()});if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{})}
 db=load();
 if(!DEMO){CLOUD.session=sbLoad();AUTH=!!CLOUD.session}
+// Dirección antigua (kreadigitalstudio.es): primero se sube al servidor lo que quede pendiente en este aparato y después se pasa a sgm.kreavance.es
+const VIEJA=location.hostname==='sgm.kreadigitalstudio.es';
+if(VIEJA){const aNueva=()=>location.replace('https://sgm.kreavance.es'+location.pathname+location.search+location.hash);
+  if(!DEMO&&AUTH&&store('sgm2-dirty')==='1'){CLOUD.rev=+(store('sgm2-rev')||0);CLOUD.dirty=true;cloudPush().finally(()=>{if(store('sgm2-dirty')!=='1')aNueva()})}else aNueva()}
 /* Enlace personal de configuración: #datos=<base64url JSON>. Se aplica solo en este dispositivo y se borra de la dirección. */
 (function(){const m=(location.hash||'').match(/^#datos=([A-Za-z0-9_-]+)$/);if(!m)return;
   try{const b=m[1].replace(/-/g,'+').replace(/_/g,'/');const bin=atob(b+'==='.slice((b.length+3)%4));const x=JSON.parse(new TextDecoder().decode(Uint8Array.from(bin,c=>c.charCodeAt(0))));
@@ -2087,7 +2091,7 @@ if(!DEMO){CLOUD.session=sbLoad();AUTH=!!CLOUD.session}
   try{history.replaceState(null,'',location.pathname+location.search)}catch(e){location.hash=''}})();
 const h=(location.hash||'').slice(1);if(VIEWS[h])S.view=h;
 render();
-if(!DEMO&&AUTH)cloudStart();
+if(!DEMO&&AUTH&&!VIEJA)cloudStart();
 // Si la sesión del servidor ya no existe (otro navegador cerró sesión, caducó), volver a la entrada
 if(!DEMO&&AUTH)api('sesion').then(j=>{if(!j.usuario)sessionEnded()}).catch(()=>{});
 </script>

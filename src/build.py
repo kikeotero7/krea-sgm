@@ -46,7 +46,7 @@ json.dump({"name":"SGM · Presupuestos","short_name":"SGM","description":"Presup
  "icons":[{"src":"sgm-icono2-192.png","sizes":"192x192","type":"image/png"},{"src":"sgm-icono2-512.png","sizes":"512x512","type":"image/png"},{"src":"sgm-icono2-512-maskable.png","sizes":"512x512","type":"image/png","purpose":"maskable"}]},
  open(f'{d}/manifest.webmanifest','w',encoding='utf-8'),ensure_ascii=False,indent=1)
 open(f'{d}/sw.js','w').write('''// SGM · app sin conexión: guarda la app y las librerías para abrirla sin internet
-const CACHE='sgm-v12';
+const CACHE='sgm-v12-1';
 const SHELL=['./','./index.html','./manifest.webmanifest','./sgm-icono2-192.png','./sgm-icono2-512.png','./sgm-icono2-apple.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()).then(()=>self.clients.matchAll({type:'window'})).then(cs=>cs.forEach(c=>{try{c.navigate(c.url)}catch(e){}})))});
@@ -64,6 +64,9 @@ open(f'{d}/.htaccess','w').write('''# Forzar HTTPS (necesario para instalar la a
 RewriteEngine On
 # La dirección de siempre es sgm.kreavance.es: la antigua (kreadigitalstudio.es) lleva a la nueva
 RewriteCond %{HTTP_HOST} ^sgm\\.kreadigitalstudio\\.es$ [NC]
+# La app y su servidor no se redirigen aquí: la propia app sube antes lo que tenga sin guardar y luego cambia de dirección
+RewriteCond %{REQUEST_URI} !^/(index\\.html|sw\\.js|manifest\\.webmanifest)?$
+RewriteCond %{REQUEST_URI} !^/api/
 RewriteRule ^ https://sgm.kreavance.es%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
