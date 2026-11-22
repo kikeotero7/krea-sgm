@@ -114,8 +114,13 @@ try {
         $enlace = $CFG['url_app'] . '?recuperar=' . $token;
         $asunto = '=?UTF-8?B?' . base64_encode('SGM · Cambia tu contraseña') . '?=';
         $texto = "Hola:\n\nPara elegir una contraseña nueva en la app de SGM, abre este enlace (caduca en 1 hora):\n\n$enlace\n\nSi no lo has pedido tú, ignora este correo.\n\nSGM · Presupuestos · KREAVANCE";
-        $cab = "From: SGM <{$CFG['correo_remitente']}>\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit";
-        @mail($email, $asunto, $texto, $cab);
+        $rem = $CFG['correo_remitente'];
+        $dom = substr(strrchr($rem, '@'), 1);
+        // OVH solo entrega bien si el remitente del sobre (-f) es del mismo dominio que el «From»
+        $cab = "From: SGM <$rem>\r\nReply-To: $rem\r\nMIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\n"
+             . 'Date: ' . date('r') . "\r\nMessage-ID: <" . bin2hex(random_bytes(12)) . "@$dom>";
+        $ok = @mail($email, $asunto, $texto, $cab, '-f' . $rem);
+        if (!$ok) error_log('SGM: no se pudo enviar el correo de recuperación');
       }
       // Siempre la misma respuesta, para no revelar qué correos tienen cuenta
       responder(200, ['ok' => true]);
