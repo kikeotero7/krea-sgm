@@ -33,6 +33,9 @@ jobs:
           DB_PASS: ${{ secrets.DB_PASS }}
           ALTAS: ${{ secrets.ALTAS_PERMITIDAS }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
         run: |
           php -r '$c = [
             "db_host" => getenv("DB_HOST"), "db_name" => getenv("DB_NAME"),
@@ -42,6 +45,8 @@ jobs:
             "correo_remitente" => "no-responder@kreadigitalstudio.es",
             "anthropic_key" => getenv("ANTHROPIC_API_KEY"),
             "anthropic_model" => "claude-opus-5-5",
+            "smtp_user" => trim((string) getenv("SMTP_USER")), "smtp_pass" => (string) getenv("SMTP_PASS"),
+            "smtp_host" => trim((string) getenv("SMTP_HOST")) ?: "smtp.mail.ovh.net", "smtp_port" => 465,
           ];
           file_put_contents("web/api/config.php", "<?php\nreturn " . var_export($c, true) . ";\n");'
       # Comprobación sin mostrar las claves: solo su longitud y si llevan espacios pegados
@@ -52,7 +57,10 @@ jobs:
           D: ${{ secrets.DB_PASS }}
           K: ${{ secrets.ANTHROPIC_API_KEY }}
           A: ${{ secrets.ALTAS_PERMITIDAS }}
+          SU: ${{ secrets.SMTP_USER }}
+          SP: ${{ secrets.SMTP_PASS }}
         run: |
+          echo "Buzón para enviar correos: $([ -n "$SU" ] && [ -n "$SP" ] && echo configurado || echo 'sin configurar (se usa el envío básico del alojamiento)')"
           echo "Usuario del FTP: ${#U} caracteres"
           echo "Longitud de la clave del FTP: ${#P}"
           echo "Longitud de la clave de la base de datos: ${#D}"
