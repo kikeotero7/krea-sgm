@@ -7,4 +7,4 @@
 - Backend PHP + MySQL en `api/` (OVH, tablas `sgm_`). Se publica sola con GitHub Actions por FTP al hacer push a `main`.
 - Marca: verde `#14741a`, bosque `#14261a`, logo con letras oscuras (va siempre sobre blanco). PDF con el formato de cajas verdes que le gusta a Kike.
 - Entrada y parte legal según el estándar KREA (skill `krea-entrada-apps`); © KREAVANCE al pie.
-- Kike revisa por enlace: tras cada cambio, publicar y pasarle https://sgm.kreadigitalstudio.es (y `/demo/`).
+- Kike revisa por enlace: tras cada cambio, publicar y pasarle https://sgm.kreavance.es (y `/demo/`).
